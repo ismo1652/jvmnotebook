@@ -1,4 +1,4 @@
-#Project Diary to follow the status of the jvm notebook.
+#summary Project Diary to follow the status of the jvm notebook
 
 = Project Diary and Changelog =
 
