@@ -1,4 +1,5 @@
 #summary Project Diary to follow the status of the jvm notebook
+#labels Featured
 
 = Project Diary and Changelog =
 
