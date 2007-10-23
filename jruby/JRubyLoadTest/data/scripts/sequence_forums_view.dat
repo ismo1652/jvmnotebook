@@ -1,0 +1,7 @@
+#------------------------------------------------ 
+# Sequence Format File should contain the following format:
+# 
+# METHOD_TYPE, URL, <DATA if POST enabled, separated by ';' semicolon [key=value]>
+#------------------------------------------------
+GET, http://localhost:8080/botlist/
+
