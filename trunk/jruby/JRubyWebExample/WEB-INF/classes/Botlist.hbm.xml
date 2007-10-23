@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.spirit.bean.impl.BotListUserLink"
+			table="user_links"
+        	dynamic-update="true" >
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="createdOn" column="created_on" not-null="true" />
+        <property name="mainUrl" column="main_url" not-null="true"/>
+        
+        <property name="description" column="url_description" not-null="false" />
+        <property name="keywords" column="keywords" not-null="false" />
+	</class>
+	
+	<class name="org.spirit.bean.impl.BotListPostListing"
+			table="post_listing"
+        	dynamic-update="true" >
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+
+		<property name="cityId" column="city_id" not-null="true" />
+        <property name="createdOn" column="created_on" not-null="true" />
+        
+        <property name="message" column="message" not-null="true"/>
+        <property name="email" column="email" not-null="true"/>
+        <property name="location" column="location" />
+        <property name="title" column="title" />
+        <property name="age" column="age" />
+        <property name="category" column="category" />             
+        
+        <property name="mainUrl" column="main_url" not-null="false"/>
+        <property name="keywords" column="keywords" not-null="false"/>
+	</class>
+	
+	<class  name="org.spirit.bean.impl.BotListCityListing"
+			table="city_listing"
+        	dynamic-update="true" >
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+		<property name="createdOn" column="created_on" not-null="true" />
+		<property name="cityName" column="city_name" not-null="true"/>
+		
+		<bag
+            name="listings" 
+            inverse="true" 
+            lazy="true"
+            order-by="id" 
+            cascade="all">            
+            <key column="id"/>
+            <one-to-many 
+            	class="org.spirit.bean.impl.BotListPostListing" />            
+		</bag>
+	</class>
+	
+	
+	<class name="org.spirit.bean.impl.BotListUserVisitLog" table="user_visit_log">
+
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+		<property name="requestPage" column="request_page" not-null="false" />
+		<property name="host" column="host" not-null="true" />
+		<property name="createdOn" column="created_on" not-null="true" />
+		<property name="referer" column="referer" not-null="false" />
+		<property name="userAgent" column="user_agent" not-null="false" />
+		<property name="remoteHost" column="remote_host" not-null="false" />
+		<property name="requestUri" column="request_uri" not-null="false" />
+
+	</class>
+	
+</hibernate-mapping>

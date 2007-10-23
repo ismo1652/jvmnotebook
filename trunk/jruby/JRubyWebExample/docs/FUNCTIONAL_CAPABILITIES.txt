@@ -1,0 +1,21 @@
+##
+## Functional Capabilities
+## contains a list of requirements for the system
+##
+
+* Image upload
+
+* Add Auditing of all requests
+
+* The system should contain a administration tool to edit specific
+aspects of the system.
+
+ For example, the admin should be able to add cities.
+ 
+* For every form that gets posted, must protect against double 
+ posting.
+ 
+* Write cookies that include:
+	- unique-ip ip only
+	- unique id identifying the user
+ 
