@@ -1,0 +1,11 @@
+#
+# Also use the following to load scripts:
+# script://./data/scripts/sequence_add_comment_bug.dat
+#
+
+http://localhost:9080/publictest/index.jsp
+
+#script://./data/scripts/sequence_add_comment_bug.dat
+
+
+
