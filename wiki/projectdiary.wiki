@@ -3,5 +3,7 @@
 
 = Project Diary and Changelog =
 
-*10/23/2007*
+*10/23/2007*   
+
+
 Made initial code imports of the jvm language notebook source.  So far, I have a couple of jython and jruby practical examples.  I suggest monitoring the subversion source which is linked in the project tabs above.  There you should be able to check out the latest jruby, jython, scala or abcl examples.
