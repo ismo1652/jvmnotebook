@@ -1,0 +1,8 @@
+##
+##
+
+ 12/2/2006:
+ 
+ - Adding commons validator - email validation
+ - Adding support for sending email, 
+ 	simple system to protect.

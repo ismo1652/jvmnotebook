@@ -1,0 +1,76 @@
+/**********************************************************
+ * Berlin Brown
+ * botlist.css
+ * 11/10/2006
+ **********************************************************/
+ 
+h3.bot_headerinfo {
+	color: #816943;
+	font-size: 12pt;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+/**********************************************************
+ *
+ * Default Table - used for listings on main page
+ *
+ **********************************************************/
+table.sample td {
+    padding: 2px;
+}
+table.sample th {
+	background-color: #DDD; 
+    padding: 2px; 
+}
+table.sample a {
+	color: green;
+}
+
+/** End of style for default table */
+
+table.viewlisting td {
+	font-size: 10pt;
+}
+
+/**
+ *=========================================================
+ * Error and Messages with Red highlights
+ *=========================================================
+ */
+.general_field_error {
+	font-weight: bold;
+	color: #990000;
+}
+
+#info_spam_addition {
+  border: 2px solid red;
+  padding: 6px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  background-color: #f0f0f0;
+}
+
+#info_spam_addition h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 2px 2px 2px 2px;
+  font-size: 10px;
+  margin: -7px;
+  background-color: #CE8181;
+  color: #fff;
+}
+
+#info_spam_addition p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+
+
+/** End of File */
+ 

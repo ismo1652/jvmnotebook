@@ -1,0 +1,17 @@
+##
+##
+
+ Use this document as a reference for licensing and getting
+ tutorials or documentation.
+ 
+ * Spring 2.0 framework
+ 
+ * Datetime taglib
+ 
+ * String taglib
+ 
+ * Hibernate 3
+ 
+ * pyparsing-1.4.4
+ 
+ 

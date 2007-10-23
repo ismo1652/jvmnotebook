@@ -1,0 +1,23 @@
+##
+## 
+
+ 12/2/2006:
+ 
+ This project uses the Ant build tool in order to build the project.
+ 
+ The build.xml file is locate at the root of the project.
+ 
+ To deploy to tomcat, use:
+ 
+ 'ant tomcat.deploy'
+ 
+ Make sure that you have started Tomcat (as well as the MySQL Database engine)
+ 
+ 
+ ** To deploy on Production **
+ 
+ 1. Build the target, jar.webapp
+ 
+ 2. FTP web-application archive file to production server
+ 
+ 3. Stop and then start tomcat
