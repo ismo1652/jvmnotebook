@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ****************************************************** -->
+<!-- Copyright (c) 2006 - Berlin Brown -->
+<!-- Date: 4/1/2007 -->
+<!-- ****************************************************** -->
+<project name="Botlist Blog Client in Scala" default="init" basedir=".">
+		
+	<property file="build.properties" />
+		
+	<property name="proxy.setting.enable"	value="false" />
+	<property name="proxy.setting.host"     value="PROXY" />
+	<property name="proxy.setting.port"	    value="PORT" />	
+	
+	<property name="build.dir"	value="${basedir}/build" />
+	<property name="build.dir.classes"	value="${basedir}/build/classes" />
+		
+	<property name="scala.src.dir"	value="${basedir}/scala" />
+	<property name="lib.dir"	value="${basedir}/lib" />
+	<property name="base.lib.dir"	value="${basedir}/../jvmprojectslib" />
+	
+	<target name="init" description="Initialization">
+		<tstamp/>		
+	</target>
+
+	<!-- Target: Prepare -->
+	<target name="prepare">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.dir.classes}"/>
+	</target>
+	
+	<!-- Define the library files -->
+	<property name="scala-compiler.jar"    value="${base.lib.dir}/scala-compiler-2.5.0.jar" />
+	<property name="scala-library.jar"     value="${base.lib.dir}/scala-library-2.5.0.jar" />	
+
+    <property name="gdata-1"    value="${lib.dir}/gdata-base-1.0.jar" />
+    <property name="gdata-2"    value="${lib.dir}/gdata-calendar-1.0.jar" />
+    <property name="gdata-3"    value="${lib.dir}/gdata-calendar-meta-1.0.jar" />
+    <property name="gdata-4"    value="${lib.dir}/gdata-client-1.0.jar" />
+    <property name="gdata-5"    value="${lib.dir}/gdata-client-meta-1.0.jar" />
+    <property name="gdata-6"    value="${lib.dir}/gdata-core-1.0.jar" />
+    <property name="gdata-7"    value="${lib.dir}/gdata-docs-1.0.jar" />
+    <property name="gdata-8"    value="${lib.dir}/gdata-docs-meta-1.0.jar" />
+    <property name="gdata-9"    value="${lib.dir}/gdata-spreadsheet-1.0.jar" />
+    <property name="gdata-10"   value="${lib.dir}/gdata-spreadsheet-meta-1.0.jar" />
+
+	<!-- Target: CLASSPATH -->
+	<path id="classpath">
+		<pathelement location="${scala-compiler.jar}"/>
+		<pathelement location="${scala-library.jar}"/>
+		
+		<pathelement location="${gdata-1}"/>
+		<pathelement location="${gdata-2}"/>
+		<pathelement location="${gdata-3}"/>
+		<pathelement location="${gdata-4}"/>
+		<pathelement location="${gdata-5}"/>
+		<pathelement location="${gdata-6}"/>
+		<pathelement location="${gdata-7}"/>
+		<pathelement location="${gdata-8}"/>
+		<pathelement location="${gdata-9}"/>
+		<pathelement location="${gdata-10}"/>
+	</path>
+	
+	<path id="runtime.classpath">
+		<pathelement location="${build.dir}/${appname.jar}.jar" />
+	</path>
+	
+	<taskdef resource="scala/tools/ant/antlib.xml">
+	  <classpath refid="classpath" />
+	</taskdef>
+	
+	<target name="compile" depends="prepare">
+	  <scalac srcdir="${scala.src.dir}" destdir="${build.dir.classes}" 
+	  		classpathref="classpath" force="never">
+	    <include name="**/*.scala"/>
+	  </scalac>
+	</target>
+
+	<!-- Build jar -->
+	<target name="package" depends="compile">
+		<jar jarfile="${build.dir}/${appname.jar}.jar">
+			<fileset dir="${build.dir.classes}">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+	</target>
+	
+	<!-- Run the application -->
+	<!-- Also see the JRE_HOME -->
+	<target name="run" depends="package">
+		<java classname="PublishEntryClient" 
+				jvm="C:\Program Files\Java\jre1.5.0_06\bin\java.exe"
+				fork="true">
+			<sysproperty key="proxySet" value="${proxy.setting.enable}" />						
+			<sysproperty key="proxyHost" value="${proxy.setting.host}" />
+			<sysproperty key="proxyPort" value="${proxy.setting.port}" />
+			<classpath refid="classpath"/>
+			<classpath refid="runtime.classpath"/>
+			<arg value="/usr/local/ubutils/docs/bclientconf.properties" />
+		</java>
+	</target>
+	
+
+	<!-- Zip the development code base -->
+	<target name="zip.codebase" depends="clean,package">
+		<fail unless="appname.jar">APPNAME.JAR must be set, see the build.properties file</fail>
+		<zip destfile="${basedir}/build/${appname.jar}.zip" basedir="${basedir}" />
+	</target>
+	
+	<!-- Main Clean -->
+	<target name="clean">
+		<delete dir="${build.dir}" />		
+	</target>
+	<!-- End of Main Clean -->
+</project>
+<!-- End of the File -->
