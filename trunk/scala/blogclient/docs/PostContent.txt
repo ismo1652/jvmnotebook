@@ -1,0 +1,3 @@
+#title How to post to blogger through gdata API (example in Scala Language)
+The Content is here
+post whatever
