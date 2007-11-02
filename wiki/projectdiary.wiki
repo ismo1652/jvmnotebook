@@ -24,6 +24,12 @@ that array.
 >>>
 }}}
 
+{{{
+Now with python's map functionality:
+
+c = map(lambda line: line.strip(), a.split("\t"))
+}}}
+
 *10/23/2007*   
 
 
