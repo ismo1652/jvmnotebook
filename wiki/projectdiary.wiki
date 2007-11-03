@@ -30,6 +30,10 @@ Now with python's map functionality:
 c = map(lambda line: line.strip(), a.split("\t"))
 }}}
 
+You can read more about functional programming in python, here:
+
+http://python.genedrift.org/2007/11/01/functional-programming-in-python-using-filter-take-one/
+
 *10/23/2007*   
 
 
