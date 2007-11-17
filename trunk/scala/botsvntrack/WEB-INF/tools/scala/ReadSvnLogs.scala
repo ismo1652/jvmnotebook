@@ -34,9 +34,10 @@ object ReadSvnLogs {
     
    def handleInfo (info: SVNInfo) {
      Console.println("Local Path: " + info.getFile().getPath())
-     Console.println("URL: " + info.getURL())
+     //Console.println("URL: " + info.getURL())
      Console.println("Revision: " + info.getRevision().getNumber())
-     Console.println("Node Kind: " + info.getKind().toString())
+     //Console.println("Node Kind: " + info.getKind().toString())
+     Console.println("Last Changed Date: " + info.getCommittedDate())
    }
 
   }
