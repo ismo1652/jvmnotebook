@@ -5,8 +5,14 @@ import org.antlr.runtime.*;
 
 public class ParseMain {
 	public static void main(String [] args)  throws Exception { 
- 	        CParserLexer lex = new CParserLexer(
+ 	        AnsiCLexer lex = new AnsiCLexer(
 			new ANTLRFileStream(args[0]));
  	        CommonTokenStream tokens = new CommonTokenStream(lex);
- 	    }
+		AnsiCParser g = new AnsiCParser(tokens);
+        	try {
+            		g.translation_unit();
+        	} catch (RecognitionException e) {
+            		e.printStackTrace();
+        	}
+	}
 }

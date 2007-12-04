@@ -3,11 +3,8 @@
 # Berlin Brown
 
 rm -v *.class
-rm -v CParser__.g
-rm -v CLexer*
-rm -v CParserLexer*
-
-
-
+rm -v AnsiC__.g
+rm -v AnsiCLexer*
+rm -v AnsiCParser*
 
 
