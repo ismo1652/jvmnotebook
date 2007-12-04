@@ -12,10 +12,8 @@ LIBb=${LIB}antlr-2.7.7.jar
 echo $LIB1
 CP1=".;$LIBb;$LIB1;$LIB2;$LIB3"
 
-rm -v *.class
-rm -v CParser__.g
 
-java -classpath $CP1 org.antlr.Tool c.g 
+java -classpath $CP1 org.antlr.Tool AnsiC.g 
 javac -classpath $CP1 *.java 
 java -classpath $CP1 ParseMain ParseMain.java 
 
