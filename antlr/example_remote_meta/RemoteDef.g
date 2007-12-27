@@ -1,6 +1,6 @@
 /**
  * Simple Remote Definition Meta Language
- * Grammar Definition for Antlr
+ * Grammar Definition for Antlr (3.0+)
  * Date: 12/27/2007
  * Author: Berlin Brown
  *
