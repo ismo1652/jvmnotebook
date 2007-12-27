@@ -56,7 +56,7 @@ attribute_expression :
 	;
 	
 attribute_key :
-	AT_SIGN_IDENTIFIER IDENTIFIER_ATOM COLON
+	AT_SIGN_IDENTIFIER  ( IDENTIFIER_ATOM )* COLON
 	{ 
 		System.out.println("INFO: define attribute key: [" + $IDENTIFIER_ATOM.text + "]");
 	}
