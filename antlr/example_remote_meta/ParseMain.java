@@ -11,6 +11,11 @@ public class ParseMain {
 			RemoteDefParser g = new RemoteDefParser(tokens);
 
 			System.out.println("Running Parse");
+			try {
+			    g.root_meta_declarations();
+			} catch(Exception e) {
+			    e.printStackTrace();
+			}
 			System.out.println("Done");
 	}
 }

@@ -15,6 +15,6 @@ CP1=".;$LIBb;$LIB1;$LIB2;$LIB3"
 
 java -classpath $CP1 org.antlr.Tool RemoteDef.g 
 javac -classpath $CP1 *.java 
-java -classpath $CP1 ParseMain ParseMain.java 
+java -classpath $CP1 ParseMain ExampleRemoteDef.def 
 
 
