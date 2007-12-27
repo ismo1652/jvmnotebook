@@ -5,22 +5,25 @@
 (@remoteid: blah;
  @remotekey: thekey;
  @remotedef-vers: 1;
- @remotedef-descr: Botlist Remote Def Meta Format;
+ @remotedef-descr: Botlist_Remote_Def_Meta_Format;
  
 .operation { @action: update-description;
 	     @action-id: 4442323;
 	     @sysid: 555;
 	     @objid: 3334343;
-	<<<Data (payload)>>>}
+	<<<Data (payload)>>>
+	}
 .operation { @action: update-description;
 	     @action-id: 444342442;
 	     @sysid: 12;
 	     @objid: 33332323;
-	<<<Data (payload)>>>}
+	<<<Data (payload)>>>
+	}
 .operation { @action: submit-link;
 	     @action-id: 444342442;
 	     @sysid: 12;
 	     @objid: 33332323;
 	     @strip: true;
-	<<<http://www.test.com/>>>}
+	<<<http://www.test.com/>>>
+	}
 )
