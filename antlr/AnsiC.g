@@ -93,7 +93,7 @@ scope Symbols; // put parameters and locals into same scope for now
 }
 	:	declaration_specifiers? declarator
 		(	declaration+ compound_statement	// K&R style
-		|	compound_statement				// ANSI style
+		|	compound_statement		// ANSI style
 		)
 	;
 

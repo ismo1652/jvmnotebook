@@ -1,5 +1,6 @@
 /**
  * Simple Remote Definition Meta Language
+ * (with parsing, more practical usage)
  * Grammar Definition for Antlr (3.0+)
  * Date: 12/27/2007
  * Author: Berlin Brown
@@ -22,9 +23,34 @@ options {
     k = 2;
 }
 
-root_meta_declarations : 
-	meta_declaration+
-	;
+scope Symbols {
+	Map types; // JAVA definition
+}
+
+
+@header {
+import java.util.Set;
+import java.util.Map;
+import java.util.HashSet;
+import java.util.HashMap;
+}
+
+@members {
+	private Map rootNamespaceAttributes = new HashMap();
+	
+	Map getRootNamespaceAttributes() {
+		return rootNamespaceAttributes;		
+	}
+}
+
+
+root_meta_declarations 
+	scope Symbols; 
+	@init {
+	  $Symbols::types = new HashMap();
+	} : 
+		meta_declaration+
+		;
 
 meta_declaration :
 	root_namespace
@@ -69,11 +95,14 @@ operation_declaration_list :
  * <code>@some_attribute: some_value;</code>
  */
 attribute_expression :
-	attribute_key IDENTIFIER_ATOM END_EXPRESSION
+	AT_SIGN_IDENTIFIER attribute_atom_key COLON IDENTIFIER_ATOM END_EXPRESSION
 	{
 		// JAVA COMMENT: print the attribute key
 		System.out.println("INFO: define attribute expr: [" + $IDENTIFIER_ATOM.text + "]");
-		System.out.println("INFO: define attribute key: [" + $IDENTIFIER_ATOM.text + "]");
+		System.out.println("INFO: key: " + $attribute_atom_key.text);
+		
+		$Symbols::types.put($attribute_atom_key.text, $IDENTIFIER_ATOM.text);
+		getRootNamespaceAttributes().put($attribute_atom_key.text, $IDENTIFIER_ATOM.text);		
 	}
 	;
 	
@@ -84,7 +113,11 @@ attribute_key :
 		System.out.println("INFO: define attribute key: [" + $attribute_val.text + "]");
 	}
 	;
-
+	
+attribute_atom_key :
+	( IDENTIFIER_ATOM )*
+	;	
+	
 attribute_val :
 	( IDENTIFIER_ATOM )*
 	;	
@@ -109,9 +142,7 @@ fragment LETTER :
 DATA_PAYLOAD_VALUE : 
 	'<<<' ( . )* '>>>'
 	{
-		// JAVA COMMENT: set channel = 99
-		// channel=99;
-		System.out.println(".");
+		// JAVA COMMENT:
 	}
 	;
 
