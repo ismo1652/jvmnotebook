@@ -4,6 +4,11 @@
  * Date: 12/27/2007
  * Author: Berlin Brown
  *
+ * Description Current Version:
+ *
+ * Parse the Example Remote Def file and 
+ * print the important values.
+ *
  * Also see, http://javadude.com/articles/antlrtut/
  */
 
@@ -31,6 +36,7 @@ meta_declaration :
 root_namespace :
 	OPEN_PAREN ( operation_declaration_list|statement_expression_list )+ CLOSE_PAREN
 	{ 
+		// JAVA COMMENT: name space defined.
 		System.out.println("INFO: ROOT NAMESPACE FOUND: ");
 	}
 	;
@@ -41,7 +47,13 @@ statement_expression_list :
 
 operation_declaration_list :
 	( IDENTIFIER_ATOM? OPEN_BRACE ( statement_expression_list | DATA_PAYLOAD_VALUE )+
-	CLOSE_BRACE )+		
+	CLOSE_BRACE )		
+	{
+		// JAVA COMMENT: print the data payload
+		if ($DATA_PAYLOAD_VALUE != null) {
+			System.out.println("INFO: data payload: [" + $DATA_PAYLOAD_VALUE.text + "]");
+		}
+	}
 	;
 
 /**
@@ -50,17 +62,23 @@ operation_declaration_list :
  */
 attribute_expression :
 	attribute_key IDENTIFIER_ATOM END_EXPRESSION
-	{ 
+	{
+		// JAVA COMMENT: print the attribute key
 		System.out.println("INFO: define attribute expr: [" + $IDENTIFIER_ATOM.text + "]");
 	}
 	;
 	
 attribute_key :
-	AT_SIGN_IDENTIFIER  ( IDENTIFIER_ATOM )* COLON
+	AT_SIGN_IDENTIFIER attribute_val COLON
 	{ 
-		System.out.println("INFO: define attribute key: [" + $IDENTIFIER_ATOM.text + "]");
+		// JAVA COMMENT: print the attribute value
+		System.out.println("INFO: define attribute key: [" + $attribute_val.text + "]");
 	}
 	;
+
+attribute_val :
+	( IDENTIFIER_ATOM )*
+	;	
 
 //***********************************************
 // Misc Utility Definitions and Tokens
@@ -80,15 +98,18 @@ fragment LETTER :
 	;	
 
 DATA_PAYLOAD_VALUE : 
-	'<<<' ( options {greedy=false;} : . )* '>>>'
+	'<<<' ( . )* '>>>'
 	{
 		// JAVA COMMENT: set channel = 99
-		channel=99;
+		// channel=99;
+		System.out.println(".");
 	}
 	;
 
 //***********************************************
 // Operators
+//
+// For example, open and close parens are defined
 //***********************************************
 
 COLON : ':' ;
@@ -106,7 +127,7 @@ OPEN_BRACE : '{' ;
 CLOSE_BRACE : '}' ;
 
 //***********************************************
-// Ignore
+// Ignore (whitespace, comments)
 //***********************************************
 
 WS :
