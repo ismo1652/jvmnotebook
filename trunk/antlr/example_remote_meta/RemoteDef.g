@@ -45,6 +45,14 @@ statement_expression_list :
 	( attribute_expression )+
 	;
 
+/**
+ * Attributes are defined with  @attr: val;
+ * Sub hash data structures are defined by
+ * ID { <DATA> }
+ *
+ * Data payloads (String Content) is enclosed
+ * between <<< and >>> tags.
+ */
 operation_declaration_list :
 	( IDENTIFIER_ATOM? OPEN_BRACE ( statement_expression_list | DATA_PAYLOAD_VALUE )+
 	CLOSE_BRACE )		

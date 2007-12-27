@@ -1,6 +1,16 @@
 //*************************************
 // Example Remote Def File
 // Date: 12/27/2007
+//
+// The root namespace is separated by
+// the open and close parens ( <DATA> )
+//
+// Attributes are defined with  @attr: val;
+// Sub hash data structures are defined by
+// ID { <DATA> }
+//
+// Data payloads (String Content) is enclosed
+// between <<< and >>> tags.
 //*************************************
 (@remoteid: blah;
  @remotekey: thekey;
