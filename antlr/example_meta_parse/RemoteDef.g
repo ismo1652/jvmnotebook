@@ -10,6 +10,9 @@
  * Parse the Example Remote Def file and 
  * print the important values.
  *
+ * In total, we are only building basic data structures
+ * out of the meta language file (lists, maps, etc)
+ *
  * Also see, http://javadude.com/articles/antlrtut/
  */
 
@@ -37,9 +40,15 @@ import java.util.HashMap;
 
 @members {
 	private Map rootNamespaceAttributes = new HashMap();
+	private Stack rootOperations = new Stack();
+	private boolean buildRootOperationFlag = false;
 	
 	Map getRootNamespaceAttributes() {
 		return rootNamespaceAttributes;		
+	}
+	
+	Stack getRootOperations() {
+		return rootOperations;
 	}
 }
 
@@ -49,8 +58,8 @@ root_meta_declarations
 	@init {
 	  $Symbols::types = new HashMap();
 	} : 
-		meta_declaration+
-		;
+	meta_declaration+
+	;
 
 meta_declaration :
 	root_namespace
@@ -60,17 +69,37 @@ meta_declaration :
  * Only one root namespace, allowed.
  */
 root_namespace :
-	OPEN_PAREN ( operation_declaration_list|statement_expression_list )+ CLOSE_PAREN
+	OPEN_PAREN ( operation_declaration_list|statement_expression_list|end_root_attr_expression )+ CLOSE_PAREN
 	{ 
 		// JAVA COMMENT: name space defined.
 		System.out.println("INFO: ROOT NAMESPACE FOUND: ");
 	}
 	;
 
+/**
+ * Root expression list
+ */
 statement_expression_list :
 	( attribute_expression )+
 	;
 
+end_root_attr_expression : 
+	'----'	
+	{
+		System.out.println("END OF ROOT ATTRIBUTES FOUND");
+		buildRootOperationFlag = true;
+	}
+	;
+	
+begin_oper_attr_expression : 
+	IDENTIFIER_ATOM
+	{
+		System.out.println("BEGIN OPERATIONS FOUND");
+		// JAVA_COMMENT: create a new operation stack.
+		rootOperations.push(new HashMap());
+	}
+	;
+	
 /**
  * Attributes are defined with  @attr: val;
  * Sub hash data structures are defined by
@@ -80,15 +109,18 @@ statement_expression_list :
  * between <<< and >>> tags.
  */
 operation_declaration_list :
-	( IDENTIFIER_ATOM? OPEN_BRACE ( statement_expression_list | DATA_PAYLOAD_VALUE )+
+	( begin_oper_attr_expression OPEN_BRACE ( statement_expression_list | DATA_PAYLOAD_VALUE )+
 	CLOSE_BRACE )		
-	{
+	{		
 		// JAVA COMMENT: print the data payload
 		if ($DATA_PAYLOAD_VALUE != null) {
 			System.out.println("INFO: data payload: [" + $DATA_PAYLOAD_VALUE.text + "]");
-		}
+			((Map) (rootOperations.peek())).put("data.payload", $DATA_PAYLOAD_VALUE.text);
+		} // End if
 	}
 	;
+
+
 
 /**
  * Process a attribute statement expression, which has the following syntax:
@@ -102,7 +134,13 @@ attribute_expression :
 		System.out.println("INFO: key: " + $attribute_atom_key.text);
 		
 		$Symbols::types.put($attribute_atom_key.text, $IDENTIFIER_ATOM.text);
-		getRootNamespaceAttributes().put($attribute_atom_key.text, $IDENTIFIER_ATOM.text);		
+		
+		// If operations enabled, accumulate that map data
+		if (buildRootOperationFlag) { 			
+			((Map) (rootOperations.peek())).put($attribute_atom_key.text, $IDENTIFIER_ATOM.text);
+		} else {
+			getRootNamespaceAttributes().put($attribute_atom_key.text, $IDENTIFIER_ATOM.text);
+		}
 	}
 	;
 	
