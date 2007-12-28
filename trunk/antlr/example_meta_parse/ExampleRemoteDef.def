@@ -16,7 +16,7 @@
  @remotekey: thekey;
  @remotedef-vers: 1;
  @remotedef-descr: Botlist_Remote_Def_Meta_Format;
- 
+ ----
 .operation { @action: update-description;
 	     @action-id: 4442323;
 	     @sysid: 555;
