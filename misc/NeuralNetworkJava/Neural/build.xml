@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<!-- ====================================================== -->
+<!-- Berlin Brown -->
+<!-- bigbinc@hotmail.com -->
+<!-- ====================================================== -->
+<project name="Neural-Proj" default="package" basedir=".">
+
+	<property name="bot.home" value="../../spiritbot" />
+	<property name="hyper.lib" value="${bot.home}/lib/hsqldb.jar" />
+
+	<!-- - Defaults -->	
+	<property name="src.dir"   value="${basedir}/src/org" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="build.classes.dir" value="${basedir}/build/classes" />
+
+	<path id="classpath">
+		<pathelement location="${spirit.lib}" />
+		<pathelement location="${logger.lib}" />
+		<fileset dir="${basedir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="prepare">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+	</target>
+
+	<target name="compile" depends="prepare">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" includes="**">
+		<classpath refid="classpath"/>
+		<classpath>
+			<pathelement location="${basedir}/src"/>
+		</classpath>
+		</javac>
+	</target>
+
+	<target name="package" depends="compile">
+		<jar jarfile="build/Neural.jar">
+		<fileset dir="${build.classes.dir}">
+			<include name="org/retro/gis/*.class"/>
+		</fileset>
+		</jar>
+	</target>
+
+	<target name="deploy" depends="package">
+		<copy todir="${final.deploy}" filtering="no"> 		
+		<fileset dir="${build.classes.dir}">
+			<include name="org/retro/gis/*.class"/>
+		</fileset>		
+		</copy>
+	</target>
+
+	<target name="run" depends="package">
+		<java classname="org.retro.gis.MainDrawCircle" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+		<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		</java>
+	</target>
+
+
+
+	<target name="g" depends="package">
+		<java classname="org.retro.gis.NeuralSOM" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+		<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		<arg value="config/smallwords.txt"/>
+		</java>
+	</target>
+
+
+	<target name="p" depends="package">
+		<java classname="org.retro.gis.NeuralSOM" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+		<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		<arg value="config/words.txt"/>
+		</java>
+	</target>
+
+
+	<target name="w" depends="package">
+		<java classname="org.retro.gis.NeuralWords" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+		<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		<arg value="10000"/>
+		<arg value="0.1"/>
+		<arg value="0.9"/>
+		<arg value="0"/>
+		</java>
+	</target>
+	
+	<!-- Z = XOR Test -->
+	<target name="z" depends="package">
+		<java classname="org.retro.gis.NeuralTestF" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+		<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		<arg value="10000"/>
+		<arg value="0.1"/>
+		<arg value="0.9"/>
+		<arg value="0"/>
+		</java>
+	</target>
+
+	<target name="x" depends="package">
+		<java classname="org.retro.gis.NeuralXORThree" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+			<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		<arg value="10000"/>
+		<arg value="0.1"/>
+		<arg value="0.9"/>
+		<arg value="0"/>
+		</java>
+	</target>
+
+	<target name="y" depends="package">
+		<java classname="org.retro.gis.NeuralAND" 
+			fork="yes" dir=".">
+		<classpath refid="classpath"/>
+		<classpath>
+			<pathelement location="${basedir}/build/classes"/>
+		</classpath>
+		<arg value="10000"/>
+		<arg value="0.1"/>
+		<arg value="0.9"/>
+		<arg value="0"/>
+		</java>
+	</target>
+
+	<!--
+	  * see Caudill 
+	  * see XorSP
+	  * see Autoasso
+	  -->
+
+	<target name="run-old" depends="package">
+	
+		<java classname="org.retro.gis.NeuralTestA" fork="yes" dir=".">
+			<classpath refid="classpath"/>
+			<classpath>
+				<pathelement location="${basedir}/build/classes"/>
+			</classpath>
+			<arg value="5000"/>
+			<arg value="0.1"/>
+			<arg value="0.9"/>
+			<arg value="0"/>
+		</java>
+
+		<!-- 10 5000 .3 .9 0 -->
+	       	<java classname="org.retro.gis.NeuralTestB" fork="yes" dir=".">
+			<classpath refid="classpath"/>
+			<classpath>
+				<pathelement location="${basedir}/build/classes"/>
+			</classpath>
+			<arg value="10"/>
+			<arg value="5000"/>
+			<arg value="0.3"/>
+			<arg value="0.9"/>
+			<arg value="0"/>
+		</java>
+
+		<java classname="org.retro.gis.NeuralTestC" fork="yes" dir=".">
+			<classpath refid="classpath"/>
+			<classpath>
+				<pathelement location="${basedir}/build/classes"/>
+			</classpath>
+			<arg value="5000"/>
+			<arg value="0.1"/>
+			<arg value="0.9"/>
+			<arg value="0"/>
+		</java>
+
+		<java classname="org.retro.gis.NeuralTestD" fork="yes" dir=".">
+			<classpath refid="classpath"/>
+			<classpath>
+				<pathelement location="${basedir}/build/classes"/>
+			</classpath>
+			<arg value="3"/>
+			<arg value="10000"/>
+			<arg value="0.1"/>
+			<arg value="0.9"/>
+			<arg value="0"/>
+		</java>
+
+		
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+</project>

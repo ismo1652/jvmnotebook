@@ -1,0 +1,37 @@
+#
+#
+# Berlin Brown
+#
+# $Id: LOGGER_CONFIG,v 1.1 2004/05/08 18:55:00 bigbinc Exp $
+#
+# logger config
+#
+
+log4j.rootLogger=debug, stdout, A1
+
+# [ Console Appender ]
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+
+log4j.appender.stdout.layout.ConversionPattern= [%t] %-5p - %m%n
+
+
+# [ config logger for a file ]
+#----------------------------------------------------------
+# [ File Appender ]
+log4j.appender.A1=org.apache.log4j.RollingFileAppender
+log4j.appender.A1.File=log/loggerout.log
+
+log4j.appender.A1.MaxFileSize=200KB
+
+# [ keep a backup file ]
+log4j.appender.A1.MaxBackupIndex=1
+
+# [ Layout ]
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d [%t] %-5p %c -%m%n
+
+#----------------------------------------------------------
+
+# [ ....done ]
+
