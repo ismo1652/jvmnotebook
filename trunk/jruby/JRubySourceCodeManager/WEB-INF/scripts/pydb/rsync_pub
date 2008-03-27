@@ -1,0 +1,19 @@
+##
+## Perform a rsync on the public host
+##
+
+PUBLIC_HOST=WEBSITE.com
+CUR_USER=USER
+TARGET_DIR=/home/samba/samba/newspiritsync
+ABS_SRC_DIR=/users/home/
+
+#
+# mkdir -p ; no error if directory exists
+
+SRC_PATH=${CUR_USER}@${PUBLIC_HOST}:${ABS_SRC_DIR}
+
+echo "Running rsync on SRC: ${SRC_PATH}" 
+rsync -avz ${SRC_PATH} ${TARGET_DIR}
+
+echo "Done."
+

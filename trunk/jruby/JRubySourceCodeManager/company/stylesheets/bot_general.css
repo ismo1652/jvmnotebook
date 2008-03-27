@@ -1,0 +1,579 @@
+/**
+ *=========================================================
+ * Berlin Brown
+ *
+ * spiritbot_general.css
+ *=========================================================
+ */
+h1.bot_titlelogo {
+	color: #816943;
+	font-size: 16pt;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-weight: bold;
+	background-color: #F5EDE2;
+	padding: 6px 6px 6px 6px;
+	border-bottom: 2px solid #816943;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.body_content_wrapper {
+	width: 90%;
+	margin-top: 6px;
+	margin-left: 6px;
+	border-top: 2px solid #816943;
+	padding: 0px 0px 0px 0px;
+}
+
+th.bot_list_header {
+	border-bottom: 1px solid #CDCE85;
+	text-align: left;
+	background-color: #F5EDE2;
+}
+
+td.bot_list_column {
+	font-size: 8pt;
+	padding: 2px 2px 2px 2px;
+}
+
+/**
+ *=========================================================
+ * Application Footer, including Version and Copyright Info.
+ * This will be placed in the layout directory.
+ *=========================================================
+ */
+.bot_footer_group {
+	text-align: center;
+	border-top: 1px solid #816943;
+	border-bottom: 2px solid #816943;
+	width: 90%;
+	margin-top: 6px;
+}
+
+.bot_footer_version {
+	background-color: #f4efd9;
+	color: #777;
+	font-size: 8pt;
+	width: 100%;
+}
+
+.bot_footer_copyright_links {
+	background-color: #f4eed3;
+	color: #777;
+	font-size: 8pt;
+	border-bottom: 1px solid #ded5ac;
+}
+
+.bot_list_content {
+	margin-top: 4px;
+	margin-left: 35px;
+}
+
+.bot_col_botname {
+	background-color: #E5EFFA;
+}
+
+/** Small addition to position the external links */
+.external_link_style {
+	margin-top: 2px;
+	padding-right: 3px;
+}
+
+/**
+ *=========================================================
+ * Header Console
+ *=========================================================
+ */
+.bot_header_home_console {
+	text-align: right;
+	font-size: 9pt;
+	background-color: #efe4d2;
+	margin-top: 0px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+}
+
+/**
+ * Header link Settings
+ */
+a.console {
+	color: #333;
+	font-size: 9pt;
+}
+
+a.console:visited {
+	color: #333;
+	font-size: 9pt;
+}
+
+a.console:hover {
+	color: #fff;
+	background-color: #49733D;
+	font-size: 9pt;
+}
+
+/** End of Default Link Settings */
+
+/**
+ *=========================================================
+ * Keyword link settings
+ *=========================================================
+ */
+a.keywords {
+	color: #556800;
+	font-size: 8pt;
+}
+
+a.keywords:visited {
+	color: #556800;
+	font-size: 8pt;
+}
+
+a.keywords:hover {
+	color: #556800;
+	font-size: 8pt;
+	background-color: #CCC;
+}
+
+/** End keyword link settings */
+/**
+ * Image Header Top
+ */
+.bot_section_image {
+	border-top: 2px solid #E2E0BD;
+}
+
+/**
+ * CSS for a group of title and link
+ */
+.bot_title_link_group {
+	margin-bottom: 1em;
+	border-top: 2px solid #E2E0BD;
+}
+
+/**
+ * Styles associated with  the name page
+ */
+.bot_title_people_forname {
+	font-size: 8pt;
+	color: #777;
+}
+
+.bot_title_people_group {
+	margin-bottom: 2px;
+	border-top: 1px solid #E0E0E0;
+}
+
+/**
+ * Used with the stats pages, the title CSS
+ */
+.bot_title_stats_fortitle {
+	background-color: #FDF9F3;
+	border-bottom: 1px solid #CDE8B5;
+	padding-left: 8px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	font-size: 5pt;
+}
+
+td.bot_title_stats_fortitle_text {
+	font-size: 9pt;
+}
+
+.bot_title_link_fortitle {
+	background-color: #FCFFEC;
+	padding-left: 8px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	border-right: 1px solid #777;
+}
+/**
+ *=========================================================
+ * Added to distinguish between a feed link
+ *=========================================================
+ */
+.bot_title_link_fortitle_feed {
+	background-color: #FBFCF5;
+	border-bottom: 1px solid #CDE8B5;
+	padding-left: 8px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+}
+
+.bot_title_link_forkeywords {
+	background-color: #F2F2F2;
+	padding-left: 12px;
+	padding-right: 4px;
+	color: #777;
+	font-size: 8pt;
+}
+
+.bot_title_link_forlink {
+	background-color: #EFEFFA;
+	padding-left: 12px;
+	padding-right: 4px;
+	color: #777;
+	font-size: 8pt;
+}
+
+.bot_title_link_forpostedby {
+	color: #666;
+	font-size: 8pt;
+}
+
+.bot_title_link_fordomain {
+	color: #A1505A;
+}
+
+/**
+ * Link Information Group - RSS or USER submitted
+ */
+.bot_title_link_for_type {
+	background-color: #ECF6FF;
+}
+
+/**
+ * Display for the extended information
+ */
+.bot_title_forextended {
+	font-size: 9px;
+	color: #880000;
+}
+
+.bot_title_forextended {
+	font-size: 9px;
+	color: #880000;
+}
+
+.bot_title_highlight_date {
+	background-color: #FCF9D4;
+}
+
+/** End of Link Information on the main universe-home screen */
+.bot_counter_display {
+	color: #444;
+	font-size: 8pt;
+	text-align: right;
+}
+
+/**
+ *=========================================================
+ * Link Navigation Bar
+ *=========================================================
+ */
+.bot_link_navigation_group {
+	margin-top: 4px;
+}
+
+.bot_link_navigation {
+	color: #FFF;
+	background-color: #8FB192;
+	font-weight: bold;
+	margin-top: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding: 2px 2px 2px 2px;
+}
+
+a.linkbar {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 11pt;
+	background-color: transparent;
+}
+
+a.linkbar:visited {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 11pt;
+	background-color: transparent;
+}
+
+a.linkbar:hover {
+	color: #fff;
+	background-color: #49733D;
+	text-decoration: none;
+	font-size: 11pt;
+	background-color: transparent;
+}
+
+
+a.public_linkbar {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 8pt;
+	background-color: transparent;
+}
+
+a.public_linkbar:visited {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 8pt;
+	background-color: transparent;
+}
+
+a.public_linkbar:hover {
+	color: #FFD368;
+	background-color: #49733D;
+	text-decoration: none;
+	font-size: 8pt;
+	background-color: transparent;
+}
+
+/**
+ *=========================================================
+ * General Info Section, displayed on the far right
+ * of the link lists
+ *=========================================================
+ */
+.bot_info_section_group {
+	border: 1px solid #E2E0BD;
+}
+
+.bot_info_section_header {
+	color: #FFF;
+	background-color: #86622D;
+	padding: 2px 2px 2px 2px;
+	font-size: 9pt;
+	text-align: right;
+}
+
+.bot_info_section_newtags {
+	margin-top: 2px;
+}
+.bot_info_tag_header {
+	padding: 2px 2px 2px 2px;
+	color: white;
+	background-color: #8E826E;
+	font-size: 10pt;
+	text-align: left;
+}
+.bot_info_section_keywords {
+	width: 98%;
+	text-align: left;
+	border-left: 1px solid #8E826E;
+	border-right: 1px solid #8E826E;
+	border-bottom:  1px solid #8E826E;
+	padding: 2px 2px 2px 2px;
+}
+
+/**
+ * Bot Information Section - The total report information section
+ */
+#bot_info_section_totals {
+}
+
+/** Use collapse or separate */
+#bot_info_section_totals table {
+	border-collapse: separate;
+ 	border-width: 1px;
+	border-color: #BE8619;
+	border-style:solid;
+}
+#bot_info_section_totals th {
+	font-size: 8pt;
+	padding: 2px 8px 2px 2px;
+	border-top: 1px solid #BE8619;
+	background-color: #E6B87D;
+	color: white;
+	text-align: left;
+
+}
+#bot_info_section_totals td {
+	font-size: 8pt;
+	color: #666;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-top: 1px solid #BE8619;
+}
+
+
+/**
+ *=========================================================
+ * About Styles
+ *=========================================================
+ */
+.bot_about_content {
+	margin-left: 35px;
+}
+
+.bot_about_date_header {
+	background-color: #49733D;
+	color: #fff;
+	font-weight: bold;
+	font-size: 9pt;
+	padding: 6px 6px 6px 6px;
+}
+
+ul.bot_about_text,ol.bot_about_text,p.bot_about_text {
+	font-size: 10pt;
+}
+
+.bot_about_text {
+	font-size: 10pt;
+}
+
+/**
+ *=========================================================
+ * Account Styles
+ *=========================================================
+ */
+.bot_account_section {
+	font-size: 9pt;
+	background-color: #F9F8FF;
+	border: 2px solid #CCC;
+	width: 340px;
+	padding: 8px 8px 8px 8px;
+	color: #666;
+}
+
+.bot_profile_sect_add_link {
+	font-size: 9pt;
+	background-color: #FFFEF0;
+	border: 2px solid #CCC;
+	width: 90%;
+	padding: 8px 8px 8px 8px;
+	color: #666;
+}
+
+/**
+ *=========================================================
+ * Header and Information Window Styles
+ *=========================================================
+ */
+th.bot_info_header {
+	font-size: 9pt;
+	padding: 2px 8px 2px 2px;
+	border: 1px solid #BE8619;
+	background-color: #E6B87D;
+	color: white;
+	text-align: left;
+}
+
+th.bot_info_marker_left {
+	background-color: #99B1EE;
+	color: #99B1EE;
+}
+
+/**
+ *=========================================================
+ * Breadcrumbs
+ *=========================================================
+ */
+div.breadcrumbs_group {
+	border-bottom: 1px solid #e0e0e0;
+	margin-right: 40px;
+	margin-left: 40px;
+	FONT-SIZE: 10px;
+	COLOR: #777777;
+}
+A.breadcrumbs:link {
+	COLOR: #777777;
+	FONT-SIZE: 10px;
+	text-decoration: none;
+}
+
+A.breadcrumbs:visited {
+	COLOR: #777777;
+	FONT-SIZE: 10px;
+	text-decoration: none;
+}
+
+A.breadcrumbs:active {
+	COLOR: #777777;
+	CURSOR: wait;
+	FONT-SIZE: 10px;
+	text-decoration: none;
+}
+
+A.breadcrumbs:hover {
+	COLOR: #777777;
+	CURSOR: wait;
+	FONT-SIZE: 10px;
+	text-decoration: none;
+	background-color: white;
+}
+/** End of Link Breadcrumbs */
+
+/**
+ *=========================================================
+ * Error and Messages with Red highlights
+ *=========================================================
+ */
+#info_spam_addition {
+  border: 2px solid red;
+  padding: 6px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  background-color: #f0f0f0;
+}
+
+#info_spam_addition h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 2px 2px 2px 2px;
+  font-size: 10px;
+  margin: -7px;
+  background-color: #CE8181;
+  color: #fff;
+}
+
+#info_spam_addition p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+/**
+ * Background and Format for Information Messages
+ */
+.bot_generic_info_message {
+
+ 	background-color: #FFFFDA;
+ 	color: #777;
+ 	padding: 6px 6px 6px 16px;
+ 	border-bottom: 1px solid #CE910D;
+
+}
+
+/**
+ * Show Detailed Information Section For a Link
+ */
+#show_detailed_info_sect {
+	background-color: #FFFFFF;
+	padding: 18px 18px 18px 18px;
+	border: 1px solid #AAA;
+}
+
+#show_detailed_info_sect h1 {
+	font-size: 14pt;
+	color: #555;
+}
+.show_detailed_info_data {
+	margin-left: 10px;
+}
+
+.show_detailed_info_highlight {
+	color: #666;
+	font-size: 9pt;
+	background-color: FFF2E3;
+}
+
+/**
+ * INDEX Orange Header Data
+ */
+.index_orange_background_header {
+	background-color: #F3E08A;
+	padding: 6px 6px 6px 6px;
+	color: #5370C5;
+}
+.index_orange_background_data {
+	background-color: #FEF6D1;
+	color: #AE910A;
+	font-size: 12pt;
+}
+
+
+
+/** End of file */
