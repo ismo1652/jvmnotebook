@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC
+    "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+	<servlet>
+		<servlet-name>botlistings</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!--
+		- Maps the example dispatcher to /example/*. All handler mappings in
+		- example-servlet.xml will by default be applied to this subpath.
+		- If a mapping isn't a /* subpath, the handler mappings are considered
+		- relative to the web app root.
+		-
+		- A single dispatcher could get mapped to multiple paths, like any servlet.
+	-->
+	<servlet-mapping>
+		<servlet-name>botlistings</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- *********************** -->
+	<!--  TAGLIBS defined -->
+	<!-- *********************** -->
+	<taglib>
+		<taglib-uri>/spring</taglib-uri>
+		<taglib-location>/WEB-INF/spring.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>
+			http://jakarta.apache.org/taglibs/datetime-1.0
+		</taglib-uri>
+		<taglib-location>/WEB-INF/taglibs-datetime.tld</taglib-location>
+	</taglib>
+	
+	<taglib>
+		<taglib-uri>
+			http://jakarta.apache.org/taglibs/request-1.0
+		</taglib-uri>
+		<taglib-location>/WEB-INF/taglibs-request.tld</taglib-location>
+	</taglib>
+	
+
+</web-app>

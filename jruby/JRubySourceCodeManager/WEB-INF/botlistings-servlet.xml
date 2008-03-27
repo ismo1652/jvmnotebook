@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!--
+	** Application context definition for "springapp" DispatcherServlet **
+	
+	Berlin Brown
+	Date: 11/6/2006
+-->
+<beans>
+	
+	<!-- *************************** -->
+	<!-- Datasource Bean Definitions -->
+	<!-- *************************** -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql:///botlist_development</value>
+		</property>
+		<property name="username">
+			<value>USER</value>
+		</property>
+		<property name="password">
+			<value>PASSWORD</value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>Botlist.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- Note: use of implementation -->
+	<bean id="userLinkDaoBean" class="org.spirit.dao.impl.BotListUserLinkDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>		
+	
+	<bean id="userVisitAuditDaoBean" class="org.spirit.dao.impl.BotListUserVisitAuditDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="postListingDaoBean" class="org.spirit.dao.impl.BotListPostListingDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="postWebFileDaoBean" class="org.spirit.dao.impl.BotListSystemWebFileDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<!-- ******************************** -->
+	<!-- Spring Controller and View Beans -->
+	<!-- ******************************** -->
+	<bean id="radController" class="org.spirit.spring.BotListRubyController">
+		<property name="jspDir" value="WEB-INF/jsps" />
+		<property name="initScript" value="WEB-INF/jsps/INIT.rb" />		
+		<!-- Capture the Data Access Object -->
+		<property name="userLinkDao">
+			<ref bean="userLinkDaoBean"/>
+		</property>
+		<property name="userVisitAuditDao">
+			<ref bean="userVisitAuditDaoBean"/>
+		</property>
+		<property name="postListingDao">
+			<ref bean="postListingDaoBean"/>
+		</property>		
+		<property name="postWebFileDao">
+			<ref bean="postWebFileDaoBean"/>
+		</property>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="prefix" value="/WEB-INF/jsps/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="radDefaultHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/spring/*">radController</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
