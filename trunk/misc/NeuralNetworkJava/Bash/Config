@@ -1,0 +1,18 @@
+
+#
+#
+#
+#===========================
+#
+# Config File
+# - Use the compilevar - to use 
+# ANT on a lot of the scripts
+#
+#===========================
+#
+
+GO_JAVA_HOME=/home/bigbinc/java/j2sdk1.4.1_06
+GO_JBOSS_HOME=/home/bigbinc/java/jboss-3.2
+
+#  ---- [ Y or N ]
+COMPILEVAR="Y"
