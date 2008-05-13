@@ -13,11 +13,31 @@
 ;;
 ;; References:
 ;; [1] http://www.lispworks.com/documentation/HyperSpec/Front/X_Master.htm
+;;
+;; Less verbose example:
+;; http://anthonyf.wordpress.com/2006/05/03/project-euler-and-lisp/
+;; -----------------
+;;(defproblem 1 233168
+;;  "Add all the natural numbers below 1000 that are multiples of 3 or 5."
+;;  (loop for x from 3 to 999
+;;        when (or (zerop (mod x 3))
+;;                 (zerop (mod x 5)))
+;;        sum x))
+;;
+;; Or:
+;;
+;; (+ (loop for x from 3 to 999 by 3
+;; sum x)
+;; (loop for x from 5 to 999 by 5
+;; sum x))
 ;;**********************************************
+
+(defun sum-list (lst)
+  (loop for x in lst sum x))
 
 (defun accum (val max lst)
   (if (<= val max)
-    (accum (+ 1 val) max 
+    (accum (+ 1 val) max
            (cons val lst))
     lst))
 (defun multiple-three-five (lst)
@@ -28,11 +48,11 @@
              (or (= (mod val 3) 0)               
                  (= (mod val 5) 0)))
           (push val new-lst)))))
-  
+
 (defun euler1 ()
-  (let* ((acc-lst (accum 0 9 ()))
+  (let* ((acc-lst (accum 0 999 ()))
          (new-lst (multiple-three-five acc-lst)))
-    (format t "Sum=~a~%" (+ new-lst))))
+    (format t "Sum=~a~%" (sum-list new-lst))))
   
 (defun main ()
   (format t "INFO: Running Project Euler~%")
