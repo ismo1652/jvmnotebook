@@ -67,7 +67,7 @@
 
 (defun euler2-web ()
   "From JonRock (LISP)"
-  (reduce #'+ (remove-if-not #'evenp (list-fibs 1000000))))
+  (reduce #'+ (remove-if-not #'evenp (list-fibs 4000000))))
 
 (defun euler2 ()
   "Driver function, invoke the euler calls"
@@ -79,7 +79,6 @@
       (format t "-->(2)~a~%" f)
       (format t "-->(3)~a~%" z))))
 
-  
 (defun main ()
   (format t "INFO: Running Project Euler~%") 
   (euler2)
