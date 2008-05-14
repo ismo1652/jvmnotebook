@@ -57,13 +57,28 @@
                       (fib-aux (1- n) f2 (+ f1 f2)))))
            (fib-aux n 0 1)))
 
+(defun list-fibs (limit)
+  (let ((fibs '(2 1)))
+    (do ((nextfib (+ (car fibs) (cadr fibs))
+                  (+ (car fibs) (cadr fibs))))
+        ((> nextfib limit))
+      (setq fibs (cons nextfib fibs)))
+    fibs))
+
+(defun euler2-web ()
+  "From JonRock (LISP)"
+  (reduce #'+ (remove-if-not #'evenp (list-fibs 1000000))))
+
 (defun euler2 ()
   "Driver function, invoke the euler calls"
   (progn
     (let ((e (fib 10))
-          (f (tail-fib-eul 40)))
+          (f (tail-fib-eul 40))
+          (z (euler2-web)))
       (format t "-->~a~%" e)
-      (format t "-->(2)~a~%" f))))
+      (format t "-->(2)~a~%" f)
+      (format t "-->(3)~a~%" z))))
+
   
 (defun main ()
   (format t "INFO: Running Project Euler~%") 
