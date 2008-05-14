@@ -26,10 +26,8 @@
 ;;
 ;; Or:
 ;;
-;; (+ (loop for x from 3 to 999 by 3
-;; sum x)
-;; (loop for x from 5 to 999 by 5
-;; sum x))
+;; (+ (loop for x from 3 to 999 by 3 sum x)
+;;	  (loop for x from 5 to 999 by 5 sum x))
 ;;**********************************************
 
 (defun sum-list (lst)

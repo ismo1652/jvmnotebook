@@ -3,4 +3,4 @@
 all: run
 
 run:
-	clisp euler1.lisp
+	clisp euler2.lisp
