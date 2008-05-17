@@ -17,10 +17,19 @@
 ;; [4] http://www.unixuser.org/~euske/doc/cl/loop.html
 ;;**********************************************
 
-(defun find-prime (n)
-  " Loop through all of the primes and check
-  ((loop for i on '(1 2 3) do (print i))
-
+(defun div-mod (num prime)
+  "divmod, return quotient and remainder as a list tuple"
+  (list (floor (/ num prime)) (rem num prime)))
+	
+(defun find-prime (n lst)
+  " Loop through all of the primes and check"
+  (let ((max 0))
+	(loop for prime in (reverse lst)
+	   do (let ((a (first (div-mod n prime)))
+				(b (second (div-mod n prime))))
+			(when (zerop b) (setf max prime))))
+	max))
+ 
 (defun sieve-primes(n)
   "Use Sieve_of_Eratosthenes to find all of the primes up to the number.
  [1] create an array and list with initial value 1
@@ -38,8 +47,9 @@
     prime-lst))
 
 (defun main ()
-  (format t "INFO: Running Project Euler~%") 
-  (print (sieve 40))
-  (format t "INFO: Done~%"))
+  (format t "INFO: Running Project Euler~%")
+  (let ((n 775146))
+	(print (find-prime n (sieve-primes n))))  
+  (format t "~%INFO: Done~%"))
 
 (main)
