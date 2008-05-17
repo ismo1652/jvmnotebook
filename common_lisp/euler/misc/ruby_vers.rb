@@ -20,17 +20,18 @@ def sieve(n)
   store
 end
 def determine
-  primes = sieve(40)
+  primes = sieve(600851475143)
   #num = 317584931803
-  num = 40
+  num = 600851475143
   max = 0
-  puts primes
   primes.each { |prime| 
     a, b = num.divmod(prime)
     if b == 0 then max = prime end
   }
   max
 end
+
+600,851,475,143
 
 puts "-----"
 puts determine
