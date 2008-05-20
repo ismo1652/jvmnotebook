@@ -33,7 +33,7 @@
 (defun main ()
   (format t "INFO: Running Project Euler~%")
   ;; Good primer = 1,000,000,000 
-  (print (euler5 500000000 11 20 20))
+  (print (euler5 50000000000 11 20 20))
   (format t "~%INFO: Done~%"))
 
 (main)
