@@ -69,12 +69,15 @@
 
 (defparameter *rank-tabl* (make-hash-table))
 (setf (gethash :royal-flush *rank-tabl*) 10)
+(setf (gethash :straight-flush *rank-tabl*) 9)
 (setf (gethash :four-kind   *rank-tabl*) 8)
 (setf (gethash :full-house  *rank-tabl*) 7)
+(setf (gethash :flush       *rank-tabl*) 6)
 (setf (gethash :straight    *rank-tabl*) 5)
 (setf (gethash :three-kind  *rank-tabl*) 4)
 (setf (gethash :two-pairs   *rank-tabl*) 3)
 (setf (gethash :one-pair    *rank-tabl*) 2)
+(setf (gethash :high-card   *rank-tabl*) 1)
 
 ;; A hand consists of a list tuple (VALUE/SUIT strings)
 
@@ -155,6 +158,19 @@ if there were an empty string between them. E.g. #\Space"
 	       (eql a b)))
 	 hand (cdr hand)))
 
+(defun player-one-higher (player-lst)
+  " Does player one have a higher set of cards"
+  (let ((ctr 0)
+	(res :tie))
+    (loop for i in player-lst
+	  for ply-one = (first i)
+	  for ply-two = (second i)
+	  for c = (incf ctr)
+	  while (> ply-one ply-two)
+	  finally (if (and (= ctr 5) (> ply-one ply-two)) 
+		      (setf res :player-one) 
+		    (setf res :player-two))) res))
+
 (defun consective-p (hand)
   "Check if the value is consective or not.  The first
  value in the list is the high hand."
@@ -169,10 +185,19 @@ if there were an empty string between them. E.g. #\Space"
  E.g. Royal Flush.
  The consective rank can only consist of:
  Straight, Straight Flush, or Royal Flush."
-  (let ((high-card (first (first val-score))))
-    (when (consective-p val-score)
-      (cond ((= high-card 13) :royal-flush)
-	    (t :straight)))))
+  (let ((high-card (first (first val-score)))
+	(is-stra (same-suit-p score)))
+    (if (consective-p val-score)
+	(cond ((and is-stra
+		    (= high-card 13)) :royal-flush)
+	      (is-stra :straight-flush)
+	      (t :straight))
+      (when (same-suit-p score) :flush))))
+
+(defun high-value (no-pairs-rank)
+  (if no-pairs-rank
+      no-pairs-rank
+    :high-card))
 
 (defun find-rank (score val-score)
   "Given the score data structure, actually find the poker name
@@ -187,7 +212,7 @@ if there were an empty string between them. E.g. #\Space"
 	   :full-house)
 	  ((and (> count 1)
 		(same-suit-p score))
-	   :straight)
+	   :flush)
 	  ((= count 3) 
 	   :three-kind)
 	  ((and (= count 2) (= second-count 2)) 
@@ -195,26 +220,58 @@ if there were an empty string between them. E.g. #\Space"
 	  ((= count 2) 
 	   :one-pair)
 	  ((= count 1)
-	   (find-rank-consecutive score val-score)))))
+	   (high-value 
+	    (find-rank-consecutive score val-score))))))
 	   
 (defun normalize-score (score)
   (if score score 0))
 
-(defun find-winner (a-rank-one a-rank-two)
+(defun init-player-list (str-one str-two) 
+  " Build a list of card values between two players (<card-one, card-two>, ...)"
+  (let ((hands-one (get-hands str-one))
+	(hands-two (get-hands str-two)))
+    (player-val-list (reverse (quicksort hands-one 
+					 #'(lambda (x) 
+					     (card-value (first x)))))
+		     (reverse (quicksort hands-two 
+					 #'(lambda (x) 
+					     (card-value (first x))))))))
+(defun player-val-list (lst-one lst-two)
+  " Build a list of card values between two players (<card-one, card-two>, ...)"
+  (if (null lst-one) nil
+    (let ((val-one (card-value (first (first lst-one))))
+	  (val-two (card-value (first (first lst-two)))))
+      (cons (list val-one val-two) 
+	    (player-val-list (cdr lst-one) (cdr lst-two))))))
+
+(defun find-winner (a-rank-one a-rank-two sum-one sum-two score-lst)
   (let ((rank-one (normalize-score (gethash a-rank-one *rank-tabl*)))
 	(rank-two (normalize-score (gethash a-rank-two *rank-tabl*))))
     (cond ((or (zerop rank-one) (zerop rank-two)) 
 	   (list :undetermined rank-one rank-two))
 	  ((> rank-one rank-two) (list :player-one rank-one rank-two))
 	  ((< rank-one rank-two) (list :player-two rank-one rank-two))
-	  ((= rank-one rank-two) (list :tie rank-one rank-two)))))
+	  ((= rank-one rank-two)
+	   (let ((res (list (player-one-higher (fifth score-lst))
+			    rank-one rank-two)))
+	     res)))))
+
+(defun sum-hand-value (hand)
+  (loop for i in hand
+	sum (first i)))
 
 (defun invoke-hand-stats (proc-fn player-one player-two 
 				  score-lst stats)
-  "Helper function for invoking the other stats helpers"
+  "Helper function for invoking the other stats helpers.
+ first: sort by value
+ third: sort by rank
+ second: sort by value
+ fourth: sort by rank"  
   (let* ((rank-one (find-rank (first score-lst) (third score-lst)))
 	 (rank-two (find-rank (second score-lst) (fourth score-lst)))
-	 (winner (find-winner rank-one rank-two)))
+	 (sum-hand-one (sum-hand-value (first score-lst)))
+	 (sum-hand-two (sum-hand-value (second score-lst)))
+	 (winner (find-winner rank-one rank-two sum-hand-one sum-hand-two score-lst)))
     (funcall proc-fn
 	     player-one player-two 
 	     stats
@@ -226,6 +283,7 @@ if there were an empty string between them. E.g. #\Space"
   (let* ((hand line)
 	 (hand-one (subseq hand 0 14))
 	 (hand-two (subseq hand 15))
+	 (player-lst (init-player-list hand-one hand-two))
 	 ;; Build a list of lists, sorted score hands
 	 ;; (<player one hand, sorted by count of card value>,
 	 ;;  <player two hand, sorted by count of card value>,
@@ -237,7 +295,9 @@ if there were an empty string between them. E.g. #\Space"
 		     (find-pairs-tabl hand-two 
 				      #'(lambda (x) (first (second x))))
 		     (find-pairs-tabl hand-one #'first)
-		     (find-pairs-tabl hand-two #'first))))
+		     (find-pairs-tabl hand-two #'first)
+		     player-lst
+		     )))
     (invoke-hand-stats proc-fn player-one player-two 
 		       score-lst stats)))
 		 
