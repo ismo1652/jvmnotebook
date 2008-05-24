@@ -3,4 +3,4 @@
 all: run
 
 run:
-	clisp euler3.lisp
+	clisp euler54.lisp
