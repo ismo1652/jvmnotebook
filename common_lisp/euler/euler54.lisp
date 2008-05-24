@@ -147,6 +147,14 @@ if there were an empty string between them. E.g. #\Space"
 	 (pairs-lst-one (hash-table->list pairs-one)))
     (reverse (quicksort pairs-lst-one access-fn))))
 
+(defun same-suit-p (hand)
+  "Check the hand score to determine if the player has a flush"
+  (every #'(lambda (x y)
+	     (let ((a (second (second x)))
+		   (b (second (second y))))
+	       (eql a b)))
+	 hand (cdr hand)))
+
 (defun consective-p (hand)
   "Check if the value is consective or not.  The first
  value in the list is the high hand."
@@ -177,6 +185,9 @@ if there were an empty string between them. E.g. #\Space"
 	   :four-kind)
 	  ((and (= count 3) (= second-count 2)) 
 	   :full-house)
+	  ((and (> count 1)
+		(same-suit-p score))
+	   :straight)
 	  ((= count 3) 
 	   :three-kind)
 	  ((and (= count 2) (= second-count 2)) 
