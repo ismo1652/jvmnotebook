@@ -1,6 +1,5 @@
 ##
-
 all: run
 
 run:
-	clisp euler54.lisp
+	clisp euler96.lisp
