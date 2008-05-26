@@ -2,4 +2,4 @@
 all: run
 
 run:
-	clisp euler10.lisp
+	clisp euler17.lisp
