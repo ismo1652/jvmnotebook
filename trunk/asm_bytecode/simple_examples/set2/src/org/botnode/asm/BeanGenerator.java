@@ -132,7 +132,7 @@ public class BeanGenerator extends ClassLoader {
   public static void main(final String [] args) throws Exception {
       
       System.out.println("Running");      
-      BeanGenerator cg = new BeanGenerator();
+      Operations cg = new Operations();
       PrintWriter pw = new PrintWriter(System.out, true);
       byte[] b = cg.generate(pw);                 
       Class c = cg.defineClass("pkg.Bean", b, 0, b.length);
