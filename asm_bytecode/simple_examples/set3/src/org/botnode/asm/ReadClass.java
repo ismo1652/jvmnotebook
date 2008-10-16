@@ -32,8 +32,11 @@ package org.botnode.asm;
 
 import java.io.PrintWriter;
 
+import org.objectweb.asm.ClassAdapter;
 import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.util.TraceClassVisitor;
 
 /**
  * ASM example class.
@@ -49,9 +52,13 @@ public class ReadClass extends ClassLoader {
 
         Class c = Class.forName("org.botnode.asm.ReadClass");
 
+        // Read a class and then write the data to system out.
         ClassReader cr = new ClassReader("org.botnode.asm.ReadClass");
-        ClassNode cn = new ClassNode();
-        cr.accept(cn, ClassReader.SKIP_DEBUG);
+        ClassWriter cw = new ClassWriter(cr, 0);
+        ClassVisitor tcv = new TraceClassVisitor(cw, pw);
+        ClassAdapter cv = new ClassAdapter(tcv);
+        cr.accept(cv, 0);
+        cw.toByteArray();
     }
 
 }
