@@ -9,4 +9,6 @@ package org.botnode.asm;
  */
 public class MethodWriter {
 
+	
+	
 }
