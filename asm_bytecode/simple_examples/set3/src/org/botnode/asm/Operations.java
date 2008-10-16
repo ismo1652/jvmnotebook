@@ -61,222 +61,257 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.util.TraceClassVisitor;
 
 /**
- * ASM example class. 
+ * ASM example class.
  */
 public class Operations extends ClassLoader {
 
-	public void buildConstantCalc(final MethodVisitor mv) {
-		mv.visitCode();
+    public void buildConstantCalc(final MethodVisitor mv) {
+        mv.visitCode();
 
-		// visitVarInsn,
-		// Visits a local variable instruction: ILOAD, LLOAD, FLOAD, DLOAD, ALOAD, 
-		//                     ISTORE, LSTORE, FSTORE, DSTORE, ASTORE, or RET.
+        // visitVarInsn,
+        // Visits a local variable instruction: ILOAD, LLOAD, FLOAD, DLOAD, ALOAD,
+        //                     ISTORE, LSTORE, FSTORE, DSTORE, ASTORE, or RET.
 
-		/*
-		 * From the asm guide:
-		 *        
-		 * The first instruction pushes this on the operand stack, as before. The second
-		 * instruction pushes the local variable 1, which was initialized with the f argument
-		 * value during the creation of the frame for this method call. The third
-		 * instruction pops these two values and stores the int value in the f field of
-		 * the referenced object, i.e. in this.f. The last instruction, which is implicit
-		 * in the source code but which is mandatory in the compiled code, destroys the
-		 * current execution frame and returns to the caller.
-		 * 
-		 * Example Setter:
-		 * 
-		 * public void setF(int f) {
-		 *   this.f = f;
-		 * }
-		 * 
-		 * ALOAD 0
-		 * ILOAD 1
-		 * PUTFIELD pkg/Bean f I
-		 * RETURN
-		 */
+        /*
+         * From the asm guide:
+         *
+         * The first instruction pushes this on the operand stack, as before. The second
+         * instruction pushes the local variable 1, which was initialized with the f argument
+         * value during the creation of the frame for this method call. The third
+         * instruction pops these two values and stores the int value in the f field of
+         * the referenced object, i.e. in this.f. The last instruction, which is implicit
+         * in the source code but which is mandatory in the compiled code, destroys the
+         * current execution frame and returns to the caller.
+         *
+         * Example Setter:
+         *
+         * public void setF(int f) {
+         *   this.f = f;
+         * }
+         *
+         * ALOAD 0
+         * ILOAD 1
+         * PUTFIELD pkg/Bean f I
+         * RETURN
+         */
 
-		// Push 'this' onto the stack
-		mv.visitVarInsn(ALOAD, 0);
-		
-		// Add 1 + whatever F is on the stack      
-		mv.visitInsn(ICONST_1);
-		mv.visitInsn(ICONST_1);
-		           
-		mv.visitInsn(IADD);
-		mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
+        // Push 'this' onto the stack
+        mv.visitVarInsn(ALOAD, 0);
 
-		// Return void
-		mv.visitInsn(RETURN);
+        // Add 1 + whatever F is on the stack
+        mv.visitInsn(ICONST_1);
+        mv.visitInsn(ICONST_1);
 
-		// Visits the maximum stack size and the maximum number of local variables of the method.
-		mv.visitMaxs(3, 1);
-		mv.visitEnd();
-	}
+        mv.visitInsn(IADD);
+        mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
 
-	public void buildFieldCalc(final MethodVisitor mv) {
-		mv.visitCode();
-	
-		// Push 'this' onto the stack
-		mv.visitVarInsn(ALOAD, 0);		
-		
-		// Push 'this' onto the stack 
-		mv.visitVarInsn(ALOAD, 0);		
-		mv.visitFieldInsn(GETFIELD, "pkg/Bean", "f", "I");
-		
-		mv.visitVarInsn(ALOAD, 0);
-		mv.visitFieldInsn(GETFIELD, "pkg/Bean", "f", "I");           
-		mv.visitInsn(IADD);
-		
-		// 'this' is still on the stack
-		mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
+        // Return void
+        mv.visitInsn(RETURN);
 
-		// Return void
-		mv.visitInsn(RETURN);
+        // Visits the maximum stack size and the maximum number of local variables of the method.
+        mv.visitMaxs(3, 1);
+        mv.visitEnd();
+    }
 
-		// Visits the maximum stack size and the maximum number of local variables of the method.
-		mv.visitMaxs(3, 1);
-		mv.visitEnd();
-	}
 
-	
-	public byte[] generate(PrintWriter printWriter) {
+    /*
+    --------------------------------------
+    public testCalc_2b()V
+     ALOAD 0
+     DUP
+     GETFIELD org/botnode/asm/SimpleClassDecompile.forSimpleCalc2b : I
+     ALOAD 0
+     GETFIELD org/botnode/asm/SimpleClassDecompile.forSimpleCalc2b : I
+     IADD
+     PUTFIELD org/botnode/asm/SimpleClassDecompile.forSimpleCalc2b : I
+     MAXSTACK = 3
+     MAXLOCALS = 1
 
-		ClassWriter cw = new ClassWriter(0);
-		ClassVisitor tcv = new TraceClassVisitor(cw, printWriter);
-		ClassAdapter cv = new ClassAdapter(tcv);
+    --------------------------------------
+    // access flags 1
+    // Another example:
+    public testCalc_2c()V
+    L0
+     LINENUMBER 80 L0
+     ALOAD 0
+     DUP
+     GETFIELD org/botnode/asm/SimpleClassDecompile.forSimpleCalc2b : I
+     ICONST_1
+     IADD
+     PUTFIELD org/botnode/asm/SimpleClassDecompile.forSimpleCalc2b : I
+    L1
+     LINENUMBER 81 L1
+     RETURN
+    L2
+     LOCALVARIABLE this Lorg/botnode/asm/SimpleClassDecompile; L0 L2 0
+     MAXSTACK = 3
+     MAXLOCALS = 1
+    --------------------------------------
+     */
+    public void buildFieldCalc(final MethodVisitor mv) {
+        mv.visitCode();
 
-		cv.visit(V1_5, ACC_PUBLIC, "pkg/Bean", null, "java/lang/Object", null);
-		cv.visitSource("Bean.java", null);
+        // Push 'this' onto the stack
+        mv.visitVarInsn(ALOAD, 0);
 
-		// Define a private field
-		FieldVisitor fv = cv.visitField(ACC_PRIVATE, "f", "I", null, null);
-		if (fv != null) {
-			fv.visitEnd();
-		}
-		MethodVisitor mv;
+        // Push 'this' onto the stack
+        mv.visitVarInsn(ALOAD, 0);
+        mv.visitFieldInsn(GETFIELD, "pkg/Bean", "f", "I");
 
-		//*********************************
-		// Build the object
-		//*********************************
-		mv = cv.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
-		if (mv != null) {
-			mv.visitCode();
-			mv.visitVarInsn(ALOAD, 0);
-			mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>",
-					"()V");
-			mv.visitInsn(RETURN);
-			mv.visitMaxs(1, 1);
-			mv.visitEnd();
-		}
+        mv.visitVarInsn(ALOAD, 0);
+        mv.visitFieldInsn(GETFIELD, "pkg/Bean", "f", "I");
+        mv.visitInsn(IADD);
 
-		//*********************************
-		// Define the method 'get'
-		//*********************************
-		mv = cv.visitMethod(ACC_PUBLIC, "getF", "()I", null, null);
-		if (mv != null) {
-			mv.visitCode();
-			mv.visitVarInsn(ALOAD, 0);
-			mv.visitFieldInsn(GETFIELD, "pkg/Bean", "f", "I");
-			mv.visitInsn(IRETURN);
-			mv.visitMaxs(1, 1);
-			mv.visitEnd();
-		}
+        // 'this' is still on the stack
+        mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
 
-		//*********************************
-		// Define the method 'set'
-		//*********************************
-		mv = cv.visitMethod(ACC_PUBLIC, "setF", "(I)V", null, null);
-		if (mv != null) {
-			mv.visitCode();
-			mv.visitVarInsn(ALOAD, 0);
-			mv.visitVarInsn(ILOAD, 1);
-			mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
-			mv.visitInsn(RETURN);
-			mv.visitMaxs(2, 2);
-			mv.visitEnd();
-		}
+        // Return void
+        mv.visitInsn(RETURN);
 
-		mv = cv.visitMethod(ACC_PUBLIC, "checkAndSetF", "(I)V", null, null);
-		if (mv != null) {
+        // Visits the maximum stack size and the maximum number of local variables of the method.
+        mv.visitMaxs(3, 1);
+        mv.visitEnd();
+    }
 
-			mv.visitCode();
-			mv.visitVarInsn(ILOAD, 1);
 
-			Label label = new Label();
-			mv.visitJumpInsn(IFLT, label);
-			mv.visitVarInsn(ALOAD, 0);
-			mv.visitVarInsn(ILOAD, 1);
-			mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
+    public byte[] generate(PrintWriter printWriter) {
 
-			Label end = new Label();
-			mv.visitJumpInsn(GOTO, end);
-			mv.visitLabel(label);
-			mv.visitFrame(F_SAME, 0, null, 0, null);
-			mv.visitTypeInsn(NEW, "java/lang/IllegalArgumentException");
-			mv.visitInsn(DUP);
-			mv.visitMethodInsn(INVOKESPECIAL,
-					"java/lang/IllegalArgumentException", "<init>", "()V");
-			mv.visitInsn(ATHROW);
-			mv.visitLabel(end);
-			mv.visitFrame(F_SAME, 0, null, 0, null);
-			mv.visitInsn(RETURN);
-			mv.visitMaxs(2, 2);
-			mv.visitEnd();
-		}
+        ClassWriter cw = new ClassWriter(0);
+        ClassVisitor tcv = new TraceClassVisitor(cw, printWriter);
+        ClassAdapter cv = new ClassAdapter(tcv);
 
-		//*******************************************
-		// Create an add method
-		//*******************************************
-		mv = cv.visitMethod(ACC_PUBLIC, "calcConstant", "()V", null, null);
-		if (mv != null) {
-			buildConstantCalc(mv);
-		}
-		
-		mv = cv.visitMethod(ACC_PUBLIC, "calcField", "()V", null, null);
-		if (mv != null) {
-			buildFieldCalc(mv);
-		}
-		
-		// End of create class.
-		cv.visitEnd();
-		
+        cv.visit(V1_5, ACC_PUBLIC, "pkg/Bean", null, "java/lang/Object", null);
+        cv.visitSource("Bean.java", null);
 
-		//*******************************************
-		// Convert the data to a byte array
-		//*******************************************
-		return cw.toByteArray();
-	}
+        // Define a private field
+        FieldVisitor fv = cv.visitField(ACC_PRIVATE, "f", "I", null, null);
+        if (fv != null) {
+            fv.visitEnd();
+        }
+        MethodVisitor mv;
 
-	public static void main(final String[] args) throws Exception {
+        //*********************************
+        // Build the object
+        //*********************************
+        mv = cv.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
+        if (mv != null) {
+            mv.visitCode();
+            mv.visitVarInsn(ALOAD, 0);
+            mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>",
+                    "()V");
+            mv.visitInsn(RETURN);
+            mv.visitMaxs(1, 1);
+            mv.visitEnd();
+        }
 
-		System.out.println("Running");
-		Operations cg = new Operations();
-		PrintWriter pw = new PrintWriter(System.out, true);
-		byte[] b = cg.generate(pw);
-		Class c = cg.defineClass("pkg.Bean", b, 0, b.length);
-		Object bean = c.newInstance();
+        //*********************************
+        // Define the method 'get'
+        //*********************************
+        mv = cv.visitMethod(ACC_PUBLIC, "getF", "()I", null, null);
+        if (mv != null) {
+            mv.visitCode();
+            mv.visitVarInsn(ALOAD, 0);
+            mv.visitFieldInsn(GETFIELD, "pkg/Bean", "f", "I");
+            mv.visitInsn(IRETURN);
+            mv.visitMaxs(1, 1);
+            mv.visitEnd();
+        }
 
-		final Class c2[] = {};
-		final Method getF = c.getMethod("getF", c2);
-		final Method calc = c.getMethod("calcField", c2);
+        //*********************************
+        // Define the method 'set'
+        //*********************************
+        mv = cv.visitMethod(ACC_PUBLIC, "setF", "(I)V", null, null);
+        if (mv != null) {
+            mv.visitCode();
+            mv.visitVarInsn(ALOAD, 0);
+            mv.visitVarInsn(ILOAD, 1);
+            mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
+            mv.visitInsn(RETURN);
+            mv.visitMaxs(2, 2);
+            mv.visitEnd();
+        }
 
-		Class[] classes1 = { int.class };
-		Method setF = c.getMethod("setF", classes1);
-		Object[] args1 = { 999 };
-		setF.invoke(bean, args1);
+        mv = cv.visitMethod(ACC_PUBLIC, "checkAndSetF", "(I)V", null, null);
+        if (mv != null) {
 
-		// Invoke the getter.      
-		final int val = ((Integer) getF.invoke(bean)).intValue();
-		System.out.println("Running =>" + val);
+            mv.visitCode();
+            mv.visitVarInsn(ILOAD, 1);
 
-		// Invoke the getter.      
-		final int val2 = ((Integer) getF.invoke(bean)).intValue();
-		System.out.println("Running (2) =>" + val2);
+            Label label = new Label();
+            mv.visitJumpInsn(IFLT, label);
+            mv.visitVarInsn(ALOAD, 0);
+            mv.visitVarInsn(ILOAD, 1);
+            mv.visitFieldInsn(PUTFIELD, "pkg/Bean", "f", "I");
 
-		calc.invoke(bean);
-		final int val3 = ((Integer) getF.invoke(bean)).intValue();
-		System.out.println("Running (3) =>" + val3);
+            Label end = new Label();
+            mv.visitJumpInsn(GOTO, end);
+            mv.visitLabel(label);
+            mv.visitFrame(F_SAME, 0, null, 0, null);
+            mv.visitTypeInsn(NEW, "java/lang/IllegalArgumentException");
+            mv.visitInsn(DUP);
+            mv.visitMethodInsn(INVOKESPECIAL,
+                    "java/lang/IllegalArgumentException", "<init>", "()V");
+            mv.visitInsn(ATHROW);
+            mv.visitLabel(end);
+            mv.visitFrame(F_SAME, 0, null, 0, null);
+            mv.visitInsn(RETURN);
+            mv.visitMaxs(2, 2);
+            mv.visitEnd();
+        }
 
-	}
+        //*******************************************
+        // Create an add method
+        //*******************************************
+        mv = cv.visitMethod(ACC_PUBLIC, "calcConstant", "()V", null, null);
+        if (mv != null) {
+            buildConstantCalc(mv);
+        }
+
+        mv = cv.visitMethod(ACC_PUBLIC, "calcField", "()V", null, null);
+        if (mv != null) {
+            buildFieldCalc(mv);
+        }
+
+        // End of create class.
+        cv.visitEnd();
+
+
+        //*******************************************
+        // Convert the data to a byte array
+        //*******************************************
+        return cw.toByteArray();
+    }
+
+    public static void main(final String[] args) throws Exception {
+
+        System.out.println("Running");
+        Operations cg = new Operations();
+        PrintWriter pw = new PrintWriter(System.out, true);
+        byte[] b = cg.generate(pw);
+        Class c = cg.defineClass("pkg.Bean", b, 0, b.length);
+        Object bean = c.newInstance();
+
+        final Class c2[] = {};
+        final Method getF = c.getMethod("getF", c2);
+        final Method calc = c.getMethod("calcField", c2);
+
+        Class[] classes1 = { int.class };
+        Method setF = c.getMethod("setF", classes1);
+        Object[] args1 = { 999 };
+        setF.invoke(bean, args1);
+
+        // Invoke the getter.
+        final int val = ((Integer) getF.invoke(bean)).intValue();
+        System.out.println("Running =>" + val);
+
+        // Invoke the getter.
+        final int val2 = ((Integer) getF.invoke(bean)).intValue();
+        System.out.println("Running (2) =>" + val2);
+
+        calc.invoke(bean);
+        final int val3 = ((Integer) getF.invoke(bean)).intValue();
+        System.out.println("Running (3) =>" + val3);
+
+    }
 
 }
