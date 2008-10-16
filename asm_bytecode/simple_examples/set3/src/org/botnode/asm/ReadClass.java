@@ -36,25 +36,22 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.tree.ClassNode;
 
 /**
- * ASM example class. 
+ * ASM example class.
  */
 public class ReadClass extends ClassLoader {
 
+    public static void main(final String[] args) throws Exception {
 
-	public void generate(PrintWriter printWriter) throws Exception {
-		
-	}
+        System.out.println("Running");
 
-	public static void main(final String[] args) throws Exception {
+        ReadClass cg = new ReadClass();
+        PrintWriter pw = new PrintWriter(System.out, true);
 
-		System.out.println("Running");
-		
-		ReadClass cg = new ReadClass();
-		PrintWriter pw = new PrintWriter(System.out, true);		
-		
-		ClassReader cr = new ClassReader("ReadClass");		
+        Class c = Class.forName("org.botnode.asm.ReadClass");
+
+        ClassReader cr = new ClassReader("org.botnode.asm.ReadClass");
         ClassNode cn = new ClassNode();
         cr.accept(cn, ClassReader.SKIP_DEBUG);
-	}
+    }
 
 }
