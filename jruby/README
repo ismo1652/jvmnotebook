@@ -1,0 +1,20 @@
+
+ Wikipedia Definition:
+ http://en.wikipedia.org/wiki/JRuby
+ ----------------------------------
+ 
+ JRuby is a Java implementation of the Ruby interpreter, being developed by the JRuby team.
+
+ JRuby is free software released under a three-way CPL/GPL/LGPL license.
+
+ JRuby is tightly integrated with Java to allow the embedding 
+ of the interpreter into any Java application with full two-way 
+ access between the Java and the Ruby code. (Compare Jython for the Python language.)
+
+ JRuby's lead developers are 
+ Charles Nutter [1], Thomas Enebo [2] Ola Bini [3] and Nick Sieger [4]. 
+ In September 2006, Sun Microsystems hired Enebo and Nutter to work on JRuby full time.[1] 
+ In June 2007, ThoughtWorks hired Ola Bini to work on Ruby and JRuby.[2]
+ 
+ ----------------------------------
+ 
