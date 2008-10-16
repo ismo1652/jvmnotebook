@@ -88,6 +88,7 @@ public class SimpleClassDecompile implements Serializable {
 
         --------------------------------------
         // access flags 1
+        // Another example:
         public testCalc_2c()V
         L0
          LINENUMBER 80 L0
