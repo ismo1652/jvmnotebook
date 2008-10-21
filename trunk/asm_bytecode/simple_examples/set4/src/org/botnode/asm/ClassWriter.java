@@ -4,14 +4,16 @@
  */
 package org.botnode.asm;
 
-import org.objectweb.asm.FieldWriter;
-import org.objectweb.asm.MethodWriter;
-
 /**
  * @author bbrown
  */
 public class ClassWriter {
-
+    
+    /**
+     * Minor and major version numbers of the class to be generated.
+     */
+    int version;
+    
     public static final int COMPUTE_FRAMES = 2;
 
     public static final int COMPUTE_MAXS = 1;
@@ -32,9 +34,7 @@ public class ClassWriter {
     static final int TYPE_NORMAL = 13;
     static final int TYPE_UNINIT = 14;
     static final int TYPE_MERGED = 15;
-
-    private int version;
-
+    
     private int access;
 
 
@@ -43,6 +43,13 @@ public class ClassWriter {
      */
     int index;
 
+    /**
+     * A reusable key used to look for items in the {@link #items} hash table.
+     */
+    final Item key;   
+    final Item key2;
+    final Item key3;
+    
     /**
      * The constant pool's hash table data.
      */
@@ -89,8 +96,10 @@ public class ClassWriter {
     static {
         int i;
         byte[] b = new byte[220];
-        String s = "AAAAAAAAAAAAAAAABCKLLDDDDDEEEEEEEEEEEEEEEEEEEEAAAAAAAADD" + "DDDEEEEEEEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                + "AAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIDNOAA" + "AAAAGGGGGGGHAFBFAAFFAAQPIIJJIIIIIIIIIIIIIIIIII";
+        String s = "AAAAAAAAAAAAAAAABCKLLDDDDDEEEEEEEEEEEEEEEEEEEEAAAAAAAADD" 
+                +  "DDDEEEEEEEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                +  "AAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIDNOAA" 
+                +  "AAAAGGGGGGGHAFBFAAFFAAQPIIJJIIIIIIIIIIIIIIIIII";
         for (i = 0; i < b.length; ++i) {
             b[i] = (byte) (s.charAt(i) - 'A');
         }
@@ -107,10 +116,233 @@ public class ClassWriter {
         pool = new ByteVector();
         items = new Item[256];
         threshold = (int) (0.75d * items.length);
+        key = new Item();
+        key2 = new Item();
+        key3 = new Item();
         this.computeMaxs = (flags & COMPUTE_MAXS) != 0;
         this.computeFrames = (flags & COMPUTE_FRAMES) != 0;
     }
 
+    // ------------------------------------------------------------------------
+    // New Variable Definitions.
+    // ------------------------------------------------------------------------
+    
+    /**
+     * Adds an UTF8 string to the constant pool of the class being build. Does
+     * nothing if the constant pool already contains a similar item. <i>This
+     * method is intended for {@link Attribute} sub classes, and is normally not
+     * needed by class generators or adapters.</i>         
+     */
+    public int newUTF8(final String value) {
+        key.set(UTF8, value, null, null);
+        Item result = get(key);
+        if (result == null) {
+            pool.putByte(UTF8).putUTF8(value);
+            result = new Item(index++, key);
+            put(result);
+        }
+        return result.index;
+    }
+    
+    /**
+     * Adds a number or string constant to the constant pool of the class being
+     * build. Does nothing if the constant pool already contains a similar item.     
+     */
+    Item newConstItem(final Object cst) {
+        
+        if (cst instanceof Integer) {
+            int val = ((Integer) cst).intValue();
+            return newInteger(val);
+        } else if (cst instanceof Byte) {
+            int val = ((Byte) cst).intValue();
+            return newInteger(val);
+        } else if (cst instanceof Character) {
+            int val = ((Character) cst).charValue();
+            return newInteger(val);
+        } else if (cst instanceof Short) {
+            int val = ((Short) cst).intValue();
+            return newInteger(val);
+        } else if (cst instanceof Boolean) {
+            int val = ((Boolean) cst).booleanValue() ? 1 : 0;
+            return newInteger(val);
+        } else if (cst instanceof Float) {
+            float val = ((Float) cst).floatValue();
+            return newFloat(val);
+        } else if (cst instanceof Long) {
+            long val = ((Long) cst).longValue();
+            return newLong(val);
+        } else if (cst instanceof Double) {
+            double val = ((Double) cst).doubleValue();
+            return newDouble(val);
+        } else if (cst instanceof String) {
+            return newString((String) cst);
+        } else if (cst instanceof Type) {
+            Type t = (Type) cst;
+            return newClassItem(t.getSort() == Type.OBJECT ? t.getInternalName() : t.getDescriptor());
+        } else {
+            throw new IllegalArgumentException("value " + cst);
+        }
+    }
+    
+    /**
+     * Adds a class reference to the constant pool of the class being build.
+     * Does nothing if the constant pool already contains a similar item. 
+     *
+     */
+    Item newClassItem(final String value) {
+        key2.set(CLASS, value, null, null);
+        Item result = get(key2);
+        if (result == null) {
+            pool.put12(CLASS, newUTF8(value));
+            result = new Item(index++, key2);
+            put(result);
+        }
+        return result;
+    }
+
+    
+    
+    /**
+     * Adds a number or string constant to the constant pool of the class being
+     * build. Does nothing if the constant pool already contains a similar item.
+     * <i>This method is intended for {@link Attribute} sub classes, and is
+     * normally not needed by class generators or adapters.</i>
+     */
+    public int newConst(final Object cst) {
+        return newConstItem(cst).index;
+    }
+    
+    /**
+     * Adds an integer to the constant pool of the class being build. Does
+     * nothing if the constant pool already contains a similar item.
+     */
+    Item newInteger(final int value) {
+        key.set(value);
+        Item result = get(key);
+        if (result == null) {
+            pool.putByte(INT).putInt(value);
+            result = new Item(index++, key);
+            put(result);
+        }
+        return result;
+    }
+
+    /**
+     * Adds a float to the constant pool of the class being build. Does nothing
+     * if the constant pool already contains a similar item.
+     */
+    Item newFloat(final float value) {
+        key.set(value);
+        Item result = get(key);
+        if (result == null) {
+            pool.putByte(FLOAT).putInt(key.intVal);
+            result = new Item(index++, key);
+            put(result);
+        }
+        return result;
+    }
+
+    /**
+     * Adds a long to the constant pool of the class being build. Does nothing
+     * if the constant pool already contains a similar item.  
+     */
+    Item newLong(final long value) {
+        key.set(value);
+        Item result = get(key);
+        if (result == null) {
+            pool.putByte(LONG).putLong(value);
+            result = new Item(index, key);
+            put(result);
+            index += 2;
+        }
+        return result;
+    }
+
+    /**
+     * Adds a double to the constant pool of the class being build. Does nothing
+     * if the constant pool already contains a similar item.
+     */
+    Item newDouble(final double value) {
+        key.set(value);
+        Item result = get(key);
+        if (result == null) {
+            pool.putByte(DOUBLE).putLong(key.longVal);
+            result = new Item(index, key);
+            put(result);
+            index += 2;
+        }
+        return result;
+    }
+
+    /**
+     * Adds a string to the constant pool of the class being build. Does nothing
+     * if the constant pool already contains a similar item.
+     */
+    private Item newString(final String value) {
+        key2.set(STR, value, null, null);
+        Item result = get(key2);
+        if (result == null) {
+            pool.put12(STR, newUTF8(value));
+            result = new Item(index++, key2);
+            put(result);
+        }
+        return result;
+    }
+        
+    //*****************************************************
+    // GET and PUT:
+    //*****************************************************
+    
+    /**
+     * Returns the constant pool's hash table item which is equal to the given
+     * item.
+     */
+    private Item get(final Item key) {
+        Item i = items[key.hashCode % items.length];
+        while (i != null && !key.isEqualTo(i)) {
+            i = i.next;
+        }
+        return i;
+    }
+    
+    /**
+     * Puts the given item in the constant pool's hash table. The hash table
+     * <i>must</i> not already contains this item.     
+     */
+    private void put(final Item i) {
+        if (index > threshold) {
+            int ll = items.length;
+            int nl = ll * 2 + 1;
+            Item[] newItems = new Item[nl];
+            for (int l = ll - 1; l >= 0; --l) {
+                Item j = items[l];
+                while (j != null) {
+                    int index = j.hashCode % newItems.length;
+                    Item k = j.next;
+                    j.next = newItems[index];
+                    newItems[index] = j;
+                    j = k;
+                }
+            }
+            items = newItems;
+            threshold = (int) (nl * 0.75);
+        }
+        int index = i.hashCode % items.length;
+        i.next = items[index];
+        items[index] = i;
+    }
+
+    /**
+     * Puts one byte and two shorts into the constant pool.     
+     */
+    private void put122(final int b, final int s1, final int s2) {
+        pool.put12(b, s1).putShort(s2);
+    }
+       
+    //*****************************************************
+    // To Byte Array:
+    //*****************************************************
+    
     public byte[] toByteArray() {
 
         int size = 24 + (2 * interfaceCount);
@@ -176,6 +408,5 @@ public class ClassWriter {
         }
 
         return out.data;
-    } // End of the Method
-
+    } // End of the Method toByteArray
 }
