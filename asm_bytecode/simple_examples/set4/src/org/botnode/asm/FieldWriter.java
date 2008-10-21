@@ -29,8 +29,6 @@
  */
 package org.botnode.asm;
 
-import org.objectweb.asm.Attribute;
-
 /**
  * An FieldVisitor that generates Java fields in bytecode form.
  *
@@ -118,19 +116,7 @@ final class FieldWriter {
         if ((access & Opcodes.ACC_DEPRECATED) != 0) {
             cw.newUTF8("Deprecated");
             size += 6;
-        }
-        if (ClassReader.SIGNATURES && signature != 0) {
-            cw.newUTF8("Signature");
-            size += 8;
-        }
-        if (ClassReader.ANNOTATIONS && anns != null) {
-            cw.newUTF8("RuntimeVisibleAnnotations");
-            size += 8 + anns.getSize();
-        }
-        if (ClassReader.ANNOTATIONS && ianns != null) {
-            cw.newUTF8("RuntimeInvisibleAnnotations");
-            size += 8 + ianns.getSize();
-        }
+        }               
         if (attrs != null) {
             size += attrs.getSize(cw, null, 0, -1, -1);
         }
