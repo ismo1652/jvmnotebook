@@ -1,0 +1,39 @@
+# Berlin Brown
+# Simple python script for parsing the garbage collection output
+# 12/21/2008
+#
+# The following arguments were passed to the JVM:
+# java -verbosegc -verbosegc -verbosegc
+#   -XX:+PrintGCDetails -XX:+PrintGCTimeStamps CrashJVM -Xms24MB -Xmx32MB > gc_anal.txt
+#
+# Tested with:
+#
+# java version "1.6.0_10"
+# Java(TM) SE Runtime Environment (build 1.6.0_10-b33)
+# Java HotSpot(TM) Client VM (build 11.0-b15, mixed mode, sharing)
+#
+# Operating System:
+#
+# Linux houston 2.6.27-9-generic #1 SMP Thu Nov 20 21:57:00 UTC 2008 i686 GNU/Linux
+#
+# For regex notes, see:
+# http://www.amk.ca/python/howto/regex/
+#
+# http://java.sun.com/docs/hotspot/gc1.4.2/example.html
+# The minor collection output for these options produce output of the form
+# [GC [<collector>: <starting occupancy1> -> <ending occupancy1>, <pause time1> secs] <starting occupancy3> -> <ending occupancy3>, <pause time3> secs]
+
+Usage:
+
+Use './c.sh' to compile the Java programs.  Two class files
+will be generated.
+
+Use './r.sh' to launch the heap analysis server tool.
+Visit http://localhost:7000 for the heap analysis web application.
+
+Use 'python gc_parse.py' to parse the java GC statistics
+
+Use './g.sh' to generate the gnu plot chart data
+
+Use './plot.sh' to generate a gnuplot PNG image
+
