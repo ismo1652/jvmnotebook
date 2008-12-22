@@ -22,8 +22,6 @@ set key left top
 set autoscale
 set xlabel 'gc_iter'
 set ylabel 'gc start occupancy in kb'
-set xrange [20:26]
-set yrange [12000:26000]
 plot '${INPUT_PLOT_FILE}' using 1:6 title 'GC Results' with linespoints 
 " > gnuplot_tmp_cmd.tmp 
 
