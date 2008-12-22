@@ -35,7 +35,8 @@ import re
 
 # Edit the following input config variable
 # (Try gc_anal.txt or gc_normal_anal.txt)
-DEFAULT_FILENAME        = "gc_anal.txt"
+#DEFAULT_FILENAME        = "gc_anal.txt"
+DEFAULT_FILENAME        = "gc_server_anal.txt"
 DEFAULT_OUTPUT_FILENAME = "image_gc_analysis.txt"
 
 TIME_IDX              = 2
