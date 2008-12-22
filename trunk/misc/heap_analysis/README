@@ -1,4 +1,7 @@
-# Berlin Brown
+#
+# Copyright (C) 2008-2009  Berlin Brown (Botnode.com).  All rights reserved.
+# Contact berlin.brown@gmail.com for more questions
+#
 # Simple python script for parsing the garbage collection output
 # 12/21/2008
 #
@@ -22,6 +25,7 @@
 # http://java.sun.com/docs/hotspot/gc1.4.2/example.html
 # The minor collection output for these options produce output of the form
 # [GC [<collector>: <starting occupancy1> -> <ending occupancy1>, <pause time1> secs] <starting occupancy3> -> <ending occupancy3>, <pause time3> secs]
+
 
 Usage:
 
