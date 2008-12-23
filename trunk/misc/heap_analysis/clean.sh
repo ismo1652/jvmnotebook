@@ -12,3 +12,4 @@ rm -vf image_gc_analysis.txt
 rm -vf gc_anal.txt
 rm -vf gc_normal_anal.txt
 rm -vf gc_server_anal.txt
+rm -vf dump.txt
