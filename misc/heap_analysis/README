@@ -41,3 +41,49 @@ Use './g.sh' to generate the gnu plot chart data
 
 Use './plot.sh' to generate a gnuplot PNG image
 
+#########
+# Notes
+#########
+
+With a main class and the Better Report Bean.
+class server.BetterReportBean
+36 garbage collections were performed.
+
+Here is some output from the garbage colection report:
+...
+[GC 1277K->390K(5056K), 0.0006050 secs]
+[GC 1286K->399K(5056K), 0.0005540 secs]
+[GC 1294K->407K(5056K), 0.0005580 secs]
+[GC 1303K->416K(5056K), 0.0009580 secs]
+[GC 1311K->424K(5056K), 0.0006540 secs]
+[GC 1320K->431K(5056K), 0.0007520 secs]
+[GC 1327K->431K(5056K), 0.0012980 secs]
+...
+...
+Time to garbage collect:
+(* 39 0.00070)
+0.027 seconds.
+
+The histogram data from the heap analysis tool shows a total size of:
+647,190
+
+With the normal class, Simple Report Bean, there
+were.
+468 garbage collections. 
+
+Here is some output from the garbage collection report:
+...
+GC 15539K->14179K(20844K), 0.0034280 secs]
+[GC 15587K->14221K(20844K), 0.0033610 secs]
+[GC 15629K->14269K(20844K), 0.0033300 secs]
+[GC 15677K->14311K(20844K), 0.0033950 secs]
+[GC 15719K->14323K(20844K), 0.0033050 secs]
+...
+...
+
+Time to garbage collect = 1.55 seconds
+(* 470  0.0033050 )
+
+The histogram data from the heap analysis tool shows a total size of:
+1,516,712 bytes
+
