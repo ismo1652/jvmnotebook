@@ -1,4 +1,4 @@
-;;; Copyright (c) Berlin Brown and botnode.com:. All rights reserved.
+;;; Copyright (c) Berlin Brown:. All rights reserved.
 ;;;
 ;;; http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/SWTMenuExample.htm
 ;;; -------------------------------------------------------
