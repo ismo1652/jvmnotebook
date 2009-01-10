@@ -183,7 +183,6 @@
 ;;**************************************
 ;; Lock the thread on this file, to wait until the frame is closed.
 ;;**************************************
-(let [o (new Object)] 
-  (locking o (. o (wait))))
+(let [o (new Object)] (locking o (. o (wait))))
 
 ;;; End of Script
