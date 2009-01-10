@@ -24,35 +24,16 @@
 ;; Begin Routines
 ;;**************************************
 
-(def display    (new Display))
-(def shell      (new Shell display))
-(def resources  (ResourceBundle/getBundle "octane_main"))
-
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
 (def text-style 2818)
 
-(defn exit [] (. System (exit 0)))
-
-(def shell-close-listener
-     (proxy [ShellAdapter] [] 
-            (shellClosed [evt]
-                         (exit))))
-
-;;**************************************
-;; Line Style Class Definition
-;;**************************************
-
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
 ;; (output) LineStyleEvent.background line background color (output)
-(def line-style
+(def style-listener
      (proxy [LineStyleListener] []
-            (lineGetStyle [event] (print "test"))))
-     
-;;**************************************
-;; Continue
-;;**************************************
+            (lineGetStyle [event] (println "(listening for style)"))))
 
 (defn create-styled-text-area [sh]
   (let [text (new StyledText sh text-style)
@@ -65,23 +46,97 @@
     (set! (. spec grabExcessVerticalSpace)   true)
     (doto text    
       (. setLayoutData spec)
-      (. addLineStyleListener line-style)
+      (. addLineStyleListener style-listener)
       (. setEditable false)
-      (. setBackground bg))))
+      (. setBackground bg))
+	text))
+
+
+(def display    (new Display))
+(def shell      (new Shell display))
+(def resources  (ResourceBundle/getBundle "octane_main"))
+(def fileDialog (new FileDialog shell, SWT/CLOSE))
+
+(def styled-text (create-styled-text-area shell))
+
+(defn exit [] 
+  (. System (exit 0)))
+
+(def shell-close-listener
+     (proxy [ShellAdapter] [] 
+            (shellClosed [evt]
+                         (exit))))
+
+;;**************************************
+;; File Utilities
+;;**************************************
+
+(defn display-error [msg]
+  (doto (new MessageBox shell SWT/ICON_ERROR)
+	(. setMessage msg)
+	(. open)))
+
+(defn open-file-util [file file-path]
+  ;; Java oriented approach for opening file
+  #^"[C" (make-array (. Character TYPE) 3)
+  (let [stream (new FileInputStream file-path)
+			   instr (new BufferedReader (new InputStreamReader stream))
+			   ;; Use type hints to ensure a character type.
+			   readBuffer #^"[C" (make-array (. Character TYPE) 2048)
+			   buf (new StringBuffer)]
+	(loop [n (. instr read readBuffer)]
+	  (when (> n 0)
+		(. buf append readBuffer 0 n) 
+		(recur (. instr read readBuffer))))
+	(. instr close)
+	(. buf toString)))
+
+(defn open-file [name]
+  (when name
+	(println (str "Opening File: " name))
+	(let [file (new File name)]
+	  (if (not (. file exists))
+		(display-error "File does not exist")
+		(let [disp (. styled-text getDisplay)
+				   file-str-data (open-file-util file (. file getPath))]
+		  (. disp asyncExec
+			 (proxy [Runnable] [] 
+					(run [] (. styled-text setText file-str-data))))
+		  )))))
+
+(defn dialog-open-file []
+  (. fileDialog setFilterExtensions (into-array ["*.java", "*.*"]))
+  (open-file (. fileDialog open)))
+
+     
+;;**************************************
+;; Continue
+;;**************************************
 
 (defn create-file-menu [disp sh]
   (prn "huh")
   ;; Note change in 'doto' call, dot needed.
   (let [bar    (. sh getMenuBar)
         menu   (new Menu bar)
-        item   (new MenuItem menu (. SWT PUSH))]
-    (prn menu)
+        item   (new MenuItem menu (. SWT PUSH))
+		item-exit (new MenuItem menu (. SWT PUSH))]
     (doto item
+	  ;; Open File
       (. setText (. resources getString "Open_menuitem"))
-      (. addSelectionListener (proxy [SelectionAdapter] [] 
-                                     (widgetSelected [evt]
-                                                     prn "yoa"))))
-    (prn menu)
+      (. addSelectionListener 
+		 (proxy [SelectionAdapter] [] 
+				(widgetSelected [evt]
+								(dialog-open-file)
+								println "Opening File"))))
+	(doto item-exit
+	  (. setText (. resources getString "Exit_menuitem"))
+	  (. addSelectionListener 
+		 (proxy [SelectionAdapter] [] 
+				(widgetSelected [evt]
+								(exit)
+								println "Exiting"))))
+	
+	  ;; Exit 
     menu))
 
 (defn create-menu-bar [disp sh]
@@ -106,7 +161,6 @@
 (defn simple-swt [disp sh]
   (create-menu-bar disp sh)
   (create-shell disp sh)
-  (create-styled-text-area sh)
   (doto sh    
     (. setSize 640 480)
     (. (open)))
