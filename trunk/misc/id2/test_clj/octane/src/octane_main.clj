@@ -4,12 +4,13 @@
 ;;; -------------------------------------------------------
 (import '(org.eclipse.swt.widgets Display Shell Text Widget))
 (import '(org.eclipse.swt.widgets Label Menu MenuItem Control))
-(import '(org.eclipse.swt.widgets FileDialog MessageBox))
+(import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
 
 (import '(org.eclipse.swt.custom LineStyleEvent StyledText
                                  LineStyleListener StyleRange))
 
-(import '(org.eclipse.swt.layout GridData GridLayout))
+(import '(org.eclipse.swt.graphics Color RGB))
+(import '(org.eclipse.swt.layout GridData GridLayout RowLayout))
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.events 
           SelectionAdapter SelectionEvent ShellAdapter ShellEvent))
@@ -18,7 +19,7 @@
                   FileNotFoundException
                   IOException InputStreamReader Reader))
 (import '(java.text MessageFormat))
-(import '(java.util ResourceBundle))
+(import '(java.util ResourceBundle Vector))
 
 ;;**************************************
 ;; Begin Routines
@@ -27,13 +28,44 @@
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
 (def text-style 2818)
+(def colors-vec (new Vector))
+
+(defn init-colors []  
+  ;; Orange highlight color = 250, 209, 132
+  (let [disp (. Display getDefault)]
+	(. colors-vec addElement (new Color disp (new RGB 250 209 132)))))
+
+(defn search-keyword [keyword line]
+  (not (nil? (re-seq #"[0-9]+" line))))
+
+(defn add-select-style [styles-vec cur-style]
+  ;; Set the event styles
+  (. styles-vec addElement cur-style))
+
+(defn style-handler [event]
+  (let [styles-vec (new Vector)
+				   line (. event lineText)
+				   lo   (. event lineOffset)
+				   len  (. (. event lineText) length)
+				   l    (+ lo len)
+				   bg   (. colors-vec get 0)
+				   all-bold (new StyleRange lo len nil bg SWT/BOLD)]   
+	;; Add the event styles if needed
+	(when (search-keyword "IBM" line)
+	  (add-select-style styles-vec all-bold))
+	;; Associate the even style with the display
+	(let [arr (make-array StyleRange (. styles-vec size))]
+	  (set! (. event styles) arr)
+	  (. styles-vec copyInto (. event styles)))))
+	  
 
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
 ;; (output) LineStyleEvent.background line background color (output)
 (def style-listener
-     (proxy [LineStyleListener] []
-            (lineGetStyle [event] (println "(listening for style)"))))
+     (proxy 
+	  [LineStyleListener] []
+	  (lineGetStyle [event] (style-handler event))))
 
 (defn create-styled-text-area [sh]
   (let [text (new StyledText sh text-style)
@@ -58,14 +90,14 @@
 (def fileDialog (new FileDialog shell, SWT/CLOSE))
 
 (def styled-text (create-styled-text-area shell))
+(def search-box (new Text shell SWT/BORDER))
 
 (defn exit [] 
   (. System (exit 0)))
 
 (def shell-close-listener
      (proxy [ShellAdapter] [] 
-            (shellClosed [evt]
-                         (exit))))
+            (shellClosed [evt] (exit))))
 
 ;;**************************************
 ;; File Utilities
@@ -78,7 +110,6 @@
 
 (defn open-file-util [file file-path]
   ;; Java oriented approach for opening file
-  #^"[C" (make-array (. Character TYPE) 3)
   (let [stream (new FileInputStream file-path)
 			   instr (new BufferedReader (new InputStreamReader stream))
 			   ;; Use type hints to ensure a character type.
@@ -105,7 +136,7 @@
 		  )))))
 
 (defn dialog-open-file []
-  (. fileDialog setFilterExtensions (into-array ["*.java", "*.*"]))
+  (. fileDialog setFilterExtensions (into-array ["*.*"]))
   (open-file (. fileDialog open)))
 
      
@@ -113,8 +144,12 @@
 ;; Continue
 ;;**************************************
 
+(defn create-grid-layout []
+  (let [gridLayout (new GridLayout)]
+	(set! (. gridLayout numColumns) 1)
+	gridLayout))
+
 (defn create-file-menu [disp sh]
-  (prn "huh")
   ;; Note change in 'doto' call, dot needed.
   (let [bar    (. sh getMenuBar)
         menu   (new Menu bar)
@@ -149,21 +184,20 @@
         
 (defn create-shell [disp sh]
   ;; Note change in 'doto' call, dot needed.
-  (let [layout (new GridLayout)]
-    (set! (. layout numColumns) 1)
+  (let [layout (create-grid-layout)]
     (doto sh
       (. setText (. resources getString "Window_title"))
       (. setLayout layout)
       (. addShellListener (proxy [ShellAdapter] [] 
                                  (shellClosed [evt]
                                               (exit)))))))
-  
+
 (defn simple-swt [disp sh]
   (create-menu-bar disp sh)
   (create-shell disp sh)
-  (doto sh    
-    (. setSize 640 480)
-    (. (open)))
+  (init-colors)
+  (. sh setSize 880 680)
+  (. sh (open))
   (loop [] (if (. shell (isDisposed))
              (. disp (dispose))
              (let [] (if (not (. disp (readAndDispatch)))
