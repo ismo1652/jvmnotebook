@@ -1,9 +1,52 @@
+;;; -------------------------------------------------------
 ;;; Copyright (c) Berlin Brown:. All rights reserved.
 ;;;
-;;; http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/SWTMenuExample.htm
+;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
+;;; http://www.opensource.org/licenses/bsd-license.php
+
+;;; All rights reserved.
+
+;;; Redistribution and use in source and binary forms, with or without modification,
+;;; are permitted provided that the following conditions are met:
+
+;;;    * Redistributions of source code must retain the above copyright notice,
+;;;    this list of conditions and the following disclaimer.
+;;;    * Redistributions in binary form must reproduce the above copyright notice,
+;;;    this list of conditions and the following disclaimer in the documentation
+;;;    and/or other materials provided with the distribution.
+;;;    * Neither the name of the Botnode.com (Berlin Brown) nor
+;;;    the names of its contributors may be used to endorse or promote
+;;;    products derived from this software without specific prior written permission.
+
+;;; THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+;;; "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+;;; LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+;;; A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+;;; CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+;;; EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+;;; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+;;; PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+;;; LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+;;;
+;;;
+;;; Date:  1/5/2009
+;;; Description:
+;;;     Simple 'Find' keyword in File with SWT and Clojure
+;;; Contact:  Berlin Brown <berlin dot brown at gmail.com>
+;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
+;;;          Enter a search term and then open a file, if the term
+;;;          is found on the line then the line will be higlighted.
+
+;;; Key Functions: simple-swt create-file-menu
 ;;; -------------------------------------------------------
+
+(ns org.octane)
+
+(import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget))
-(import '(org.eclipse.swt.widgets Label Menu MenuItem Control))
+(import '(org.eclipse.swt.widgets Label Menu MenuItem Control Listener))
 (import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
 
 (import '(org.eclipse.swt.custom LineStyleEvent StyledText
@@ -11,8 +54,7 @@
 
 (import '(org.eclipse.swt.graphics Color RGB))
 (import '(org.eclipse.swt.layout GridData GridLayout RowLayout))
-(import '(org.eclipse.swt SWT))
-(import '(org.eclipse.swt.events 
+(import '(org.eclipse.swt.events VerifyListener
           SelectionAdapter SelectionEvent ShellAdapter ShellEvent))
 
 (import '(java.io BufferedReader File FileInputStream
@@ -24,6 +66,9 @@
 ;;**************************************
 ;; Begin Routines
 ;;**************************************
+(def length)
+(def search-box)
+(def search-keyword)
 
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
@@ -35,12 +80,12 @@
   (let [disp (. Display getDefault)]
 	(. colors-vec addElement (new Color disp (new RGB 250 209 132)))))
 
-(defn search-keyword [keyword line]
-  (not (nil? (re-seq #"[0-9]+" line))))
-
 (defn add-select-style [styles-vec cur-style]
   ;; Set the event styles
   (. styles-vec addElement cur-style))
+
+(defn search-term? []
+  (if (> (length (. search-box getText)) 2) true false))
 
 (defn style-handler [event]
   (let [styles-vec (new Vector)
@@ -50,22 +95,24 @@
 				   l    (+ lo len)
 				   bg   (. colors-vec get 0)
 				   all-bold (new StyleRange lo len nil bg SWT/BOLD)]   
-	;; Add the event styles if needed
-	(when (search-keyword "IBM" line)
-	  (add-select-style styles-vec all-bold))
+	;; Add the event styles if needed   
+    (when (search-term?)
+      (when (search-keyword (. search-box getText) line)
+        (add-select-style styles-vec all-bold)))
 	;; Associate the even style with the display
 	(let [arr (make-array StyleRange (. styles-vec size))]
 	  (set! (. event styles) arr)
 	  (. styles-vec copyInto (. event styles)))))
-	  
 
+(defn search-keyword [keyword line]
+  (not (nil? (re-seq (re-pattern keyword) line))))
+	  
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
 ;; (output) LineStyleEvent.background line background color (output)
 (def style-listener
-     (proxy 
-	  [LineStyleListener] []
-	  (lineGetStyle [event] (style-handler event))))
+     (proxy [LineStyleListener] []
+            (lineGetStyle [event] (style-handler event))))
 
 (defn create-styled-text-area [sh]
   (let [text (new StyledText sh text-style)
@@ -90,7 +137,7 @@
 (def fileDialog (new FileDialog shell, SWT/CLOSE))
 
 (def styled-text (create-styled-text-area shell))
-(def search-box (new Text shell SWT/BORDER))
+(def search-box  (new Text shell SWT/BORDER))
 
 (defn exit [] 
   (. System (exit 0)))
@@ -108,7 +155,10 @@
 	(. setMessage msg)
 	(. open)))
 
-(defn open-file-util [file file-path]
+(defn 
+  #^{:doc "Use java oriented approach for loading a file into memory"}
+  open-file-util [file file-path]
+
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
 			   instr (new BufferedReader (new InputStreamReader stream))
@@ -129,20 +179,28 @@
 	  (if (not (. file exists))
 		(display-error "File does not exist")
 		(let [disp (. styled-text getDisplay)
-				   file-str-data (open-file-util file (. file getPath))]
+              file-str-data (open-file-util file (. file getPath))]
 		  (. disp asyncExec
 			 (proxy [Runnable] [] 
-					(run [] (. styled-text setText file-str-data))))
-		  )))))
+					(run [] (. styled-text setText file-str-data)))))))))
 
 (defn dialog-open-file []
-  (. fileDialog setFilterExtensions (into-array ["*.*"]))
+  (. fileDialog setFilterExtensions (into-array ["*.*", "*.log"]))
   (open-file (. fileDialog open)))
 
      
 ;;**************************************
 ;; Continue
 ;;**************************************
+
+(defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
+
+(def find-text-listener
+     (proxy [Listener] []
+            (handleEvent [event]
+                         (when (= (. event detail) SWT/TRAVERSE_RETURN)
+                           (println "word")
+                           (println (. search-box getText))))))
 
 (defn create-grid-layout []
   (let [gridLayout (new GridLayout)]
@@ -167,6 +225,7 @@
 	  (. setText (. resources getString "Exit_menuitem"))
 	  (. addSelectionListener 
 		 (proxy [SelectionAdapter] [] 
+
 				(widgetSelected [evt]
 								(exit)
 								println "Exiting"))))
@@ -192,11 +251,18 @@
                                  (shellClosed [evt]
                                               (exit)))))))
 
-(defn simple-swt [disp sh]
+(defn 
+  #^{:doc "Initialize the SWT window, set the size add all components"}
+  simple-swt [disp sh]
+
   (create-menu-bar disp sh)
   (create-shell disp sh)
   (init-colors)
-  (. sh setSize 880 680)
+  ;; Modify already created objects
+  (let [gd (new GridData SWT/FILL SWT/FILL true false)]
+    (. search-box addListener SWT/Traverse find-text-listener)
+    (. search-box setLayoutData gd))
+  (. sh setSize 880 700)
   (. sh (open))
   (loop [] (if (. shell (isDisposed))
              (. disp (dispose))
