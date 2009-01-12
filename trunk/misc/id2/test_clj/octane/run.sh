@@ -22,8 +22,9 @@ else
 	echo "$LIB2 does not exist, exiting"
 fi
 
+echo $OS
 case "$OS" in 
-	"Linux" )
+	CYGWIN* )
 		LIB1=`cygpath -w $LIB1` 
 		LIB2=`cygpath -w $LIB2`
 		CP=".;${LIB1};${LIB2};" ;;
