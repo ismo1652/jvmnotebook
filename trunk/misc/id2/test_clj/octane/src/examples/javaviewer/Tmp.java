@@ -1,4 +1,5 @@
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
@@ -16,6 +17,8 @@ public class Tmp {
 		button0.setText ("button0");
 		
 		Text text = new Text(shell, SWT.BORDER | SWT.FILL);
+        GridData gd = new GridData(SWT.FILL, SWT.FILL, true, false);
+        text.setLayoutData(gd);
 		text.setText ("Text Field");
 		
 		shell.setSize(500, 400);
