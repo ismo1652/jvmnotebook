@@ -1,9 +1,13 @@
 #!/bin/sh
 
-L=`cygpath -w ../../../lib/swt/win32/swt.jar`
+L1=../../../lib/swt/win32/swt.jar
+L2=../../../lib/swt/linux/swt.jar
+#L=`cygpath -w ../../../lib/swt/win32/swt.jar`
 
-echo $L
+L1=$L2
 
 
-javac -classpath ".;$L" *.java
-java -classpath ".;$L"  JavaViewer
+echo $L1
+
+javac -classpath ".:$L1" *.java
+java -classpath ".:$L1"  Tmp 
