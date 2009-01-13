@@ -69,16 +69,22 @@
 (def length)
 (def search-box)
 (def search-keyword)
+(def clear-buffer)
+(def refresh-textarea)
 
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
 (def text-style 2818)
 (def colors-vec (new Vector))
 
+(def buffer-1 (new StringBuffer 2048))
+
 (defn init-colors []  
   ;; Orange highlight color = 250, 209, 132
+  ;; Light grey for default text.
   (let [disp (. Display getDefault)]
-    (. colors-vec addElement (new Color disp (new RGB 250 209 132)))))
+	(. colors-vec addElement (new Color disp (new RGB 250 209 132)))
+	(. colors-vec addElement (new Color disp (new RGB 100 100 100)))))	
 
 (defn add-select-style [styles-vec cur-style]
   ;; Set the event styles
@@ -89,24 +95,27 @@
 
 (defn style-handler [event]
   (let [styles-vec (new Vector)
-                   line (. event lineText)
-                   lo   (. event lineOffset)
-                   len  (. (. event lineText) length)
-                   l    (+ lo len)
-                   bg   (. colors-vec get 0)
-                   all-bold (new StyleRange lo len nil bg SWT/BOLD)]   
-    ;; Add the event styles if needed   
+				   line (. event lineText)
+				   lo   (. event lineOffset)
+				   len  (. (. event lineText) length)
+				   l    (+ lo len)
+				   bg   (. colors-vec get 0)
+				   fgl  (. colors-vec get 1)
+				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
+				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
+	;; Add the event styles if needed   
     (when (search-term?)
-      (when (search-keyword (. search-box getText) line)
-        (add-select-style styles-vec all-bold)))
-    ;; Associate the even style with the display
-    (let [arr (make-array StyleRange (. styles-vec size))]
-      (set! (. event styles) arr)
-      (. styles-vec copyInto (. event styles)))))
+      (if (search-keyword (. search-box getText) line)
+        (add-select-style styles-vec all-bold)
+		(add-select-style styles-vec light)))
+	;; Associate the even style with the display
+	(let [arr (make-array StyleRange (. styles-vec size))]
+	  (set! (. event styles) arr)
+	  (. styles-vec copyInto (. event styles)))))
 
 (defn search-keyword [keyword line]
   (not (nil? (re-seq (re-pattern keyword) line))))
-      
+	  
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
 ;; (output) LineStyleEvent.background line background color (output)
@@ -128,8 +137,7 @@
       (. addLineStyleListener style-listener)
       (. setEditable false)
       (. setBackground bg))
-    text))
-
+	text))
 
 (def display    (new Display))
 (def shell      (new Shell display))
@@ -152,8 +160,8 @@
 
 (defn display-error [msg]
   (doto (new MessageBox shell SWT/ICON_ERROR)
-    (. setMessage msg)
-    (. open)))
+	(. setMessage msg)
+	(. open)))
 
 (defn 
   #^{:doc "Use java oriented approach for loading a file into memory"}
@@ -161,76 +169,84 @@
 
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
-               instr (new BufferedReader (new InputStreamReader stream))
-               ;; Use type hints to ensure a character type.
-               readBuffer #^"[C" (make-array (. Character TYPE) 2048)
-               buf (new StringBuffer)]
-    (loop [n (. instr read readBuffer)]
-      (when (> n 0)
-        (. buf append readBuffer 0 n) 
-        (recur (. instr read readBuffer))))
-    (. instr close)
-    (. buf toString)))
+			   instr (new BufferedReader (new InputStreamReader stream))
+			   ;; Use type hints to ensure a character type.
+			   readBuffer #^"[C" (make-array (. Character TYPE) 2048)
+			   buf (new StringBuffer)]
+	(loop [n (. instr read readBuffer)]
+	  (when (> n 0)
+		(. buf append readBuffer 0 n) 
+		(recur (. instr read readBuffer))))
+	(. instr close)
+	(. buf toString)))
 
 (defn open-file [name]
   (when name
-    (println (str "Opening File: " name))
-    (let [file (new File name)]
-      (if (not (. file exists))
-        (display-error "File does not exist")
-        (let [disp (. styled-text getDisplay)
-              file-str-data (open-file-util file (. file getPath))]
-          (. disp asyncExec
-             (proxy [Runnable] [] 
-                    (run [] (. styled-text setText file-str-data)))))))))
+	(println (str "Opening File: " name))
+	(let [file (new File name)]
+	  (if (not (. file exists))
+		(display-error "File does not exist")
+		(let [disp (. styled-text getDisplay)
+				   file-str-data (open-file-util file (. file getPath))]
+		  (. disp asyncExec
+			 (proxy [Runnable] []
+					(run []
+						 (clear-buffer buffer-1)
+						 (. buffer-1 append file-str-data)
+						 (. styled-text setText (. buffer-1 toString))))))))))
 
 (defn dialog-open-file []
   (. fileDialog setFilterExtensions (into-array ["*.*", "*.log"]))
   (open-file (. fileDialog open)))
 
-     
+(defn refresh-textarea []
+  (let [disp (. styled-text getDisplay)]			 
+	(. disp asyncExec
+	   (proxy [Runnable] []
+			  (run [] (. styled-text setText (. buffer-1 toString)))))))
+
 ;;**************************************
 ;; Continue
 ;;**************************************
+
+(defn clear-buffer [buf]
+  (. buf setLength 0))
 
 (defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
 
 (def find-text-listener
      (proxy [Listener] []
             (handleEvent [event]
-                         (when (= (. event detail) SWT/TRAVERSE_RETURN)
-                           (println "word")
-                           (println (. search-box getText))))))
-
+                         (when (= (. event detail) SWT/TRAVERSE_RETURN)                           
+                           (println (. search-box getText))
+						   (refresh-textarea)))))
+						   
 (defn create-grid-layout []
   (let [gridLayout (new GridLayout)]
-    (set! (. gridLayout numColumns) 1)
-    gridLayout))
+	(set! (. gridLayout numColumns) 1)
+	gridLayout))
 
 (defn create-file-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar    (. sh getMenuBar)
         menu   (new Menu bar)
         item   (new MenuItem menu (. SWT PUSH))
-        item-exit (new MenuItem menu (. SWT PUSH))]
+		item-exit (new MenuItem menu (. SWT PUSH))]
     (doto item
-      ;; Open File
+	  ;; Open File
       (. setText (. resources getString "Open_menuitem"))
       (. addSelectionListener 
-         (proxy [SelectionAdapter] [] 
-                (widgetSelected [evt]
-                                (dialog-open-file)
-                                println "Opening File"))))
-    (doto item-exit
-      (. setText (. resources getString "Exit_menuitem"))
-      (. addSelectionListener 
-         (proxy [SelectionAdapter] [] 
-
-                (widgetSelected [evt]
-                                (exit)
-                                println "Exiting"))))
-    
-      ;; Exit 
+		 (proxy [SelectionAdapter] [] 
+				(widgetSelected [evt]
+								(dialog-open-file)
+								println "Opening File"))))
+	(doto item-exit
+	  (. setText (. resources getString "Exit_menuitem"))
+	  (. addSelectionListener 
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [evt]
+								(exit) println "Exiting"))))	
+	  ;; Exit 
     menu))
 
 (defn create-menu-bar [disp sh]
@@ -270,10 +286,9 @@
                        (. disp (sleep)))
                   (recur)))))
 
-
 ;;**************************************
 ;; Main Entry Point
-;;**************************************
+;**************************************
 
 (defn main []
   (println "Running")
