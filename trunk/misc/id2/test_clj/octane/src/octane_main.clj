@@ -45,7 +45,7 @@
 (ns org.octane)
 
 (import '(org.eclipse.swt SWT))
-(import '(org.eclipse.swt.widgets Display Shell Text Widget))
+(import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(org.eclipse.swt.widgets Label Menu MenuItem Control Listener))
 (import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
 
@@ -69,16 +69,23 @@
 (def length)
 (def search-box)
 (def search-keyword)
+(def tab-folder)
+(def clear-buffer)
+(def refresh-textarea)
 
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
 (def text-style 2818)
 (def colors-vec (new Vector))
 
+(def buffer-1 (new StringBuffer 2048))
+
 (defn init-colors []  
   ;; Orange highlight color = 250, 209, 132
+  ;; Light grey for default text.
   (let [disp (. Display getDefault)]
-	(. colors-vec addElement (new Color disp (new RGB 250 209 132)))))
+	(. colors-vec addElement (new Color disp (new RGB 250 209 132)))
+	(. colors-vec addElement (new Color disp (new RGB 100 100 100)))))	
 
 (defn add-select-style [styles-vec cur-style]
   ;; Set the event styles
@@ -94,11 +101,14 @@
 				   len  (. (. event lineText) length)
 				   l    (+ lo len)
 				   bg   (. colors-vec get 0)
-				   all-bold (new StyleRange lo len nil bg SWT/BOLD)]   
+				   fgl  (. colors-vec get 1)
+				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
+				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
 	;; Add the event styles if needed   
     (when (search-term?)
-      (when (search-keyword (. search-box getText) line)
-        (add-select-style styles-vec all-bold)))
+      (if (search-keyword (. search-box getText) line)
+        (add-select-style styles-vec all-bold)
+		(add-select-style styles-vec light)))
 	;; Associate the even style with the display
 	(let [arr (make-array StyleRange (. styles-vec size))]
 	  (set! (. event styles) arr)
@@ -116,13 +126,10 @@
 
 (defn create-styled-text-area [sh]
   (let [text (new StyledText sh text-style)
-        spec (new GridData)
+        spec (new GridData GridData/FILL GridData/FILL true true)
         disp (Display/getDefault)
         bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
-    (set! (. spec horizontalAlignment)       GridData/FILL)
-    (set! (. spec grabExcessHorizontalSpace) true)
-    (set! (. spec verticalAlignment)         GridData/FILL)
-    (set! (. spec grabExcessVerticalSpace)   true)
+	(. tab-folder setLayoutData spec)
     (doto text    
       (. setLayoutData spec)
       (. addLineStyleListener style-listener)
@@ -130,13 +137,14 @@
       (. setBackground bg))
 	text))
 
-
 (def display    (new Display))
 (def shell      (new Shell display))
 (def resources  (ResourceBundle/getBundle "octane_main"))
 (def fileDialog (new FileDialog shell, SWT/CLOSE))
 
-(def styled-text (create-styled-text-area shell))
+(def tab-folder  (new TabFolder shell SWT/BORDER))
+(def tab-area-1  (new TabItem tab-folder SWT/NULL))
+(def styled-text (create-styled-text-area tab-folder))
 (def search-box  (new Text shell SWT/BORDER))
 
 (defn exit [] 
@@ -158,7 +166,6 @@
 (defn 
   #^{:doc "Use java oriented approach for loading a file into memory"}
   open-file-util [file file-path]
-
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
 			   instr (new BufferedReader (new InputStreamReader stream))
@@ -179,29 +186,40 @@
 	  (if (not (. file exists))
 		(display-error "File does not exist")
 		(let [disp (. styled-text getDisplay)
-              file-str-data (open-file-util file (. file getPath))]
+				   file-str-data (open-file-util file (. file getPath))]
 		  (. disp asyncExec
-			 (proxy [Runnable] [] 
-					(run [] (. styled-text setText file-str-data)))))))))
+			 (proxy [Runnable] []
+					(run []
+						 (clear-buffer buffer-1)
+						 (. buffer-1 append file-str-data)
+						 (. styled-text setText (. buffer-1 toString))))))))))
 
 (defn dialog-open-file []
   (. fileDialog setFilterExtensions (into-array ["*.*", "*.log"]))
   (open-file (. fileDialog open)))
 
-     
+(defn refresh-textarea []
+  (let [disp (. styled-text getDisplay)]			 
+	(. disp asyncExec
+	   (proxy [Runnable] []
+			  (run [] (. styled-text setText (. buffer-1 toString)))))))
+
 ;;**************************************
 ;; Continue
 ;;**************************************
+
+(defn clear-buffer [buf]
+  (. buf setLength 0))
 
 (defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
 
 (def find-text-listener
      (proxy [Listener] []
             (handleEvent [event]
-                         (when (= (. event detail) SWT/TRAVERSE_RETURN)
-                           (println "word")
-                           (println (. search-box getText))))))
-
+                         (when (= (. event detail) SWT/TRAVERSE_RETURN)                           
+                           (println (. search-box getText))
+						   (refresh-textarea)))))
+						   
 (defn create-grid-layout []
   (let [gridLayout (new GridLayout)]
 	(set! (. gridLayout numColumns) 1)
@@ -224,12 +242,9 @@
 	(doto item-exit
 	  (. setText (. resources getString "Exit_menuitem"))
 	  (. addSelectionListener 
-		 (proxy [SelectionAdapter] [] 
-
+		 (proxy [SelectionAdapter] []
 				(widgetSelected [evt]
-								(exit)
-								println "Exiting"))))
-	
+								(exit) println "Exiting"))))	
 	  ;; Exit 
     menu))
 
@@ -254,7 +269,10 @@
 (defn 
   #^{:doc "Initialize the SWT window, set the size add all components"}
   simple-swt [disp sh]
-
+  
+  ;; Set the tab folder and items with the main text area
+  (. tab-area-1 setText    "Main Area")
+  (. tab-area-1 setControl styled-text)
   (create-menu-bar disp sh)
   (create-shell disp sh)
   (init-colors)
@@ -262,7 +280,7 @@
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)
     (. search-box setLayoutData gd))
-  (. sh setSize 880 700)
+  (. sh setSize 880 740)
   (. sh (open))
   (loop [] (if (. shell (isDisposed))
              (. disp (dispose))
@@ -272,7 +290,7 @@
 
 ;;**************************************
 ;; Main Entry Point
-;;**************************************
+;**************************************
 
 (defn main []
   (println "Running")
