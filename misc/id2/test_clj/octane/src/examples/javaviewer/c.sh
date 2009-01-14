@@ -35,7 +35,7 @@ esac
 
 echo $CP
 javac -cp $CP *.java
-java -cp $CP Tmp
+java -cp $CP Tabs 
 
 
 # End of Script
