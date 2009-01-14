@@ -27,10 +27,10 @@ case "$OS" in
 	CYGWIN* )
 		LIB1=`cygpath -w $LIB1` 
 		LIB2=`cygpath -w $LIB2`
-		CP=".;${LIB1};${LIB2};" ;;
+		CP=".;src;${LIB1};${LIB2};" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:${LIB1}:${LIB2}:" ;;
+		CP=".:src:${LIB1}:${LIB2}:" ;;
 esac 
 
 echo $CP

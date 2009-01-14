@@ -42,7 +42,10 @@
 ;;; Key Functions: simple-swt create-file-menu
 ;;; -------------------------------------------------------
 
-(ns org.octane)
+(ns org.octane
+    (load "octane_main_constants")
+    (load "public_objects")
+    (load "octane_utils"))
 
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
@@ -58,8 +61,7 @@
           SelectionAdapter SelectionEvent ShellAdapter ShellEvent))
 
 (import '(java.io BufferedReader File FileInputStream
-                  FileNotFoundException
-                  IOException InputStreamReader Reader))
+                  FileNotFoundException IOException InputStreamReader Reader))
 (import '(java.text MessageFormat))
 (import '(java.util ResourceBundle Vector))
 
@@ -69,23 +71,16 @@
 (def length)
 (def search-box)
 (def search-keyword)
-(def tab-folder)
 (def clear-buffer)
 (def refresh-textarea)
-
-;; Hard code the style to avoid calling bitwise operator
-;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
-(def text-style 2818)
-(def colors-vec (new Vector))
-
-(def buffer-1 (new StringBuffer 2048))
+(def create-styled-text-area)
 
 (defn init-colors []  
   ;; Orange highlight color = 250, 209, 132
   ;; Light grey for default text.
   (let [disp (. Display getDefault)]
-	(. colors-vec addElement (new Color disp (new RGB 250 209 132)))
-	(. colors-vec addElement (new Color disp (new RGB 100 100 100)))))	
+	(. colors-vec addElement (new Color disp orange-sel-color))
+	(. colors-vec addElement (new Color disp lightgrey-color))))
 
 (defn add-select-style [styles-vec cur-style]
   ;; Set the event styles
@@ -98,7 +93,7 @@
   (let [styles-vec (new Vector)
 				   line (. event lineText)
 				   lo   (. event lineOffset)
-				   len  (. (. event lineText) length)
+				   len  (. line length)
 				   l    (+ lo len)
 				   bg   (. colors-vec get 0)
 				   fgl  (. colors-vec get 1)
@@ -125,7 +120,7 @@
             (lineGetStyle [event] (style-handler event))))
 
 (defn create-styled-text-area [sh]
-  (let [text (new StyledText sh text-style)
+  (let [text (new StyledText sh swt-text-style)
         spec (new GridData GridData/FILL GridData/FILL true true)
         disp (Display/getDefault)
         bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
@@ -137,18 +132,7 @@
       (. setBackground bg))
 	text))
 
-(def display    (new Display))
-(def shell      (new Shell display))
-(def resources  (ResourceBundle/getBundle "octane_main"))
-(def fileDialog (new FileDialog shell, SWT/CLOSE))
-
-(def tab-folder  (new TabFolder shell SWT/BORDER))
-(def tab-area-1  (new TabItem tab-folder SWT/NULL))
 (def styled-text (create-styled-text-area tab-folder))
-(def search-box  (new Text shell SWT/BORDER))
-
-(defn exit [] 
-  (. System (exit 0)))
 
 (def shell-close-listener
      (proxy [ShellAdapter] [] 
@@ -207,16 +191,10 @@
 ;;**************************************
 ;; Continue
 ;;**************************************
-
-(defn clear-buffer [buf]
-  (. buf setLength 0))
-
-(defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
-
 (def find-text-listener
      (proxy [Listener] []
             (handleEvent [event]
-                         (when (= (. event detail) SWT/TRAVERSE_RETURN)                           
+                         (when (= (. event detail) SWT/TRAVERSE_RETURN)
                            (println (. search-box getText))
 						   (refresh-textarea)))))
 						   
@@ -268,10 +246,10 @@
 
 (defn 
   #^{:doc "Initialize the SWT window, set the size add all components"}
-  simple-swt [disp sh]
+  create-gui-window [disp sh]
   
   ;; Set the tab folder and items with the main text area
-  (. tab-area-1 setText    "Main Area")
+  (. tab-area-1 setText    tab-1-title)
   (. tab-area-1 setControl styled-text)
   (create-menu-bar disp sh)
   (create-shell disp sh)
@@ -280,7 +258,7 @@
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)
     (. search-box setLayoutData gd))
-  (. sh setSize 880 740)
+  (. sh setSize win-size-width win-size-height)
   (. sh (open))
   (loop [] (if (. shell (isDisposed))
              (. disp (dispose))
@@ -291,10 +269,9 @@
 ;;**************************************
 ;; Main Entry Point
 ;**************************************
-
 (defn main []
   (println "Running")
-  (simple-swt display shell))
+  (create-gui-window display shell))
 
 (main)
 
