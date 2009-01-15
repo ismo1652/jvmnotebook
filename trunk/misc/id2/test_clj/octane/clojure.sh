@@ -3,6 +3,7 @@
 OS=`uname -a`
 LIB1=./lib/clojure.jar
 LIB2=./lib/swt/win32/swt.jar
+LIB3=./lib/jline-0.9.94.jar
 LIB2_LINUX=./lib/swt/linux/swt.jar
 
 # Check the clojure library path
@@ -30,11 +31,11 @@ case "$OS" in
 		CP=".;${LIB1};${LIB2};" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:${LIB1}:${LIB2}:" ;;
+		CP=".:${LIB1}:${LIB2}:${LIB3}" ;;
 esac 
 
 echo $CP
-java -cp $CP clojure.lang.Repl
+java -classpath $CP jline.ConsoleRunner clojure.lang.Repl
 
 
 # End of Script
