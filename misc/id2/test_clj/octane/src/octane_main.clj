@@ -142,6 +142,7 @@
 (defn open-file [name]
   (when name
 	(history-add-text (str "Loading file => " name "\n"))
+    (status-set-text  (str "Loading file => " name))
 	(let [file (new File name)]
 	  (if (not (. file exists))
 		(display-error "File does not exist")
@@ -175,6 +176,7 @@
 ;;**************************************
 ;; Continue
 ;;**************************************
+
 (def find-text-listener
      (proxy [Listener] []
             (handleEvent [event]
@@ -233,7 +235,8 @@
     (create-menu-bar disp sh)
     (create-shell    disp sh)
     (init-colors)
-    (history-add-text (get-hist-header)))
+    (history-add-text (get-hist-header))
+    (status-set-text  (str "Octane GUI loaded " (date-time))))
 
 (defn
   #^{:doc "Initialize the SWT window, set the size add all components"}
@@ -246,6 +249,7 @@
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)
     (. search-box setLayoutData gd))
+  (create-status-bar)
   (. sh setSize win-size-width win-size-height)
   (. sh (open))
   (loop [] (if (. shell (isDisposed))
