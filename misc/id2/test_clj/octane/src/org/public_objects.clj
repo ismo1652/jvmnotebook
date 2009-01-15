@@ -61,9 +61,9 @@
 (def buffer-2    (new StringBuffer 4096))
 (def buffer-3    (new StringBuffer 4096))
 
-(def display     (new Display))
-(def shell       (new Shell display))
-(def resources   (ResourceBundle/getBundle "octane_main"))
+(def resources-win (ResourceBundle/getBundle "octane_win"))
+(def display       (new Display))
+(def shell         (new Shell display))
 
 (def fileDialog  (new FileDialog shell, SWT/CLOSE))
 

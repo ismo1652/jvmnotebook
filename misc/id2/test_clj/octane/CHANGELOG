@@ -1,6 +1,8 @@
-
-
-###
+###############################################################################
+#
+###############################################################################
+	+ 1/15/2009	Berlin Brown	berlin dot brown at gmail.com
+		* Reorganized library, split out functions in to separate files.
 
 	+ 1/5/2009	Berlin Brown	berlin dot brown at gmail.com
 		* Added initial import of search code

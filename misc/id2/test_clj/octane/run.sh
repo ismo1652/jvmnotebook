@@ -1,6 +1,9 @@
 #!/bin/sh
 
 OS=`uname -a`
+
+# Put the configuration directory in the classpath
+CONF_LIB=./conf
 LIB1=./lib/clojure.jar
 LIB2=./lib/swt/win32/swt.jar
 LIB3=./lib/jline-0.9.94.jar
@@ -29,14 +32,14 @@ case "$OS" in
 	CYGWIN* )
 		LIB1=`cygpath -w $LIB1` 
 		LIB2=`cygpath -w $LIB2`
-		CP=".;src;${LIB1};${LIB2};" ;;
+		CONF_LIB=`cygpath -w $CONF_LIB`
+		CP=".;src;${LIB1};${LIB2};$CONF_LIB" ;;
 	*)
 		LIB2=$LIB2_LINUX
 		CP=".:src:${LIB1}:${LIB2}:${LIB3}" ;;
 esac 
 
 echo $CP
-java -classpath $CP clojure.lang.Repl src/octane_main.clj
-
+java -Xms200m -Xmx324m -classpath $CP clojure.lang.Repl src/octane_main.clj
 
 # End of Script

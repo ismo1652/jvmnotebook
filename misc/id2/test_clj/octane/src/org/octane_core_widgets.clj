@@ -48,6 +48,11 @@
 
 (def styled-text)
 
+(defn display-error [msg]
+  (doto (new MessageBox shell SWT/ICON_ERROR)
+	(. setMessage msg)
+	(. open)))
+
 (defn init-colors []  
   ;; Orange highlight color = 250, 209, 132
   ;; Light grey for default text.
