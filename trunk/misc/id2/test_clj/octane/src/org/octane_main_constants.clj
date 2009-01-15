@@ -70,6 +70,7 @@
 (def tab-1-title      "Main Buffer View")
 (def tab-2-title      "Secondary Buffer View")
 (def tab-3-title      "History Console")
+(def tab-4-title      "Command Console")
 
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL

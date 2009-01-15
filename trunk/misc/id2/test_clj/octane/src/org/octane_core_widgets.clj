@@ -72,9 +72,27 @@
   (. tab-area-3 setText    tab-3-title)
   (. tab-area-3 setControl tab-text-3))
 
+(defn create-tab-4 []
+  (. tab-area-4 setText    tab-4-title)
+  (. tab-area-4 setControl tab-text-4))
+
 (defn create-all-tabs []
   (create-tab-1)
   (create-tab-2)
-  (create-tab-3))
+  (create-tab-3)
+  (create-tab-4))
+
+(def status-arm-listener
+     (proxy [Listener] []
+            (handleEvent [event])))
+
+(defn create-status-bar []
+  (let [gd (new GridData SWT/FILL SWT/FILL true false)]
+    (. status-bar setLayoutData gd)
+    (. status-bar addListener SWT/Arm status-arm-listener)))
+
+(defn status-set-text [text]
+  (. status-bar setText text)
+  (. status-bar update))
 
 ;;; End of Script
