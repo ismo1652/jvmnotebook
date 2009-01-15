@@ -50,4 +50,6 @@
 
 (defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
 
+(defn date-time [] (str (new java.util.Date)))
+
 ;;; End of Script

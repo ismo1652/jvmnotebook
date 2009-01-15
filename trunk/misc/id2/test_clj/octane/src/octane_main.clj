@@ -43,27 +43,14 @@
 ;;; -------------------------------------------------------
 
 (ns org.octane
+    (load "swt_imports")
     (load "octane_main_constants")
     (load "public_objects")
     (load "octane_utils")
 	(load "octane_core_widgets"))
 
-(import '(org.eclipse.swt SWT))
-(import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
-(import '(org.eclipse.swt.widgets Label Menu MenuItem Control Listener))
-(import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
-
-(import '(org.eclipse.swt.custom LineStyleEvent StyledText
-                                 LineStyleListener StyleRange))
-
-(import '(org.eclipse.swt.graphics Color RGB))
-(import '(org.eclipse.swt.layout GridData GridLayout RowLayout))
-(import '(org.eclipse.swt.events VerifyListener
-          SelectionAdapter SelectionEvent ShellAdapter ShellEvent))
-
 (import '(java.io BufferedReader File FileInputStream
                   FileNotFoundException IOException InputStreamReader Reader))
-(import '(java.text MessageFormat))
 (import '(java.util ResourceBundle Vector))
 
 ;;**************************************
@@ -136,12 +123,6 @@
 ;;**************************************
 ;; File Utilities
 ;;**************************************
-
-(defn display-error [msg]
-  (doto (new MessageBox shell SWT/ICON_ERROR)
-	(. setMessage msg)
-	(. open)))
-
 (defn 
   #^{:doc "Use java oriented approach for loading a file into memory"}
   open-file-util [file file-path]
@@ -160,7 +141,6 @@
 
 (defn open-file [name]
   (when name
-	(println (str "Loading => " name))
 	(history-add-text (str "Loading file => " name "\n"))
 	(let [file (new File name)]
 	  (if (not (. file exists))
@@ -185,6 +165,7 @@
 			  (run [] (. styled-text setText (. buffer-1 toString)))))))
 
 (defn history-add-text [text]
+  (println text)
   (. buffer-3 append text)
   (let [disp (. tab-text-3 getDisplay)]
 	(. disp asyncExec
@@ -198,7 +179,7 @@
      (proxy [Listener] []
             (handleEvent [event]
                          (when (= (. event detail) SWT/TRAVERSE_RETURN)
-                           (println (. search-box getText))
+                           (history-add-text (str "Searching for " (. search-box getText) "\n"))
 						   (refresh-textarea)))))
 						   
 (defn create-grid-layout []
@@ -214,14 +195,14 @@
 		item-exit (new MenuItem menu (. SWT PUSH))]
     (doto item
 	  ;; Open File
-      (. setText (. resources getString "Open_menuitem"))
+      (. setText (. resources-win getString "Open_menuitem"))
       (. addSelectionListener 
 		 (proxy [SelectionAdapter] [] 
 				(widgetSelected [evt]
 								(dialog-open-file)
 								println "Opening File"))))
 	(doto item-exit
-	  (. setText (. resources getString "Exit_menuitem"))
+	  (. setText (. resources-win getString "Exit_menuitem"))
 	  (. addSelectionListener 
 		 (proxy [SelectionAdapter] []
 				(widgetSelected [evt]
@@ -234,28 +215,33 @@
         item (new MenuItem bar (. SWT CASCADE))]
     (. sh setMenuBar bar)
     (doto item
-      (. setText (. resources getString "File_menuitem"))
+      (. setText (. resources-win getString "File_menuitem"))
       (. setMenu (create-file-menu disp sh)))))
         
 (defn create-shell [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [layout (create-grid-layout)]
     (doto sh
-      (. setText (. resources getString "Window_title"))
+      (. setText (. resources-win getString "Window_title"))
       (. setLayout layout)
       (. addShellListener (proxy [ShellAdapter] [] 
                                  (shellClosed [evt]
                                               (exit)))))))
 
-(defn 
+(defn init-gui-helper [disp sh]
+    (create-all-tabs)
+    (create-menu-bar disp sh)
+    (create-shell    disp sh)
+    (init-colors)
+    (history-add-text (get-hist-header)))
+
+(defn
   #^{:doc "Initialize the SWT window, set the size add all components"}
   create-gui-window [disp sh]
   
   ;; Set the tab folder and items with the main text area
-  (create-all-tabs)
-  (create-menu-bar disp sh)
-  (create-shell disp sh)
-  (init-colors)
+  ;; and other SWT oriented inits.
+  (init-gui-helper disp sh)
   ;; Modify already created objects
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)

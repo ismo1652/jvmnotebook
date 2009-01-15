@@ -47,6 +47,20 @@
 (import '(org.eclipse.swt.graphics Color RGB))
 (import '(org.eclipse.swt SWT))
 
+(import '(java.text MessageFormat))
+
+(def date-time)
+
+(def hist-header-msg
+"************************************************************
+ * Octane Log Viewer Init
+ * Launched at {0}
+ ************************************************************
+")
+
+(defn get-hist-header []
+  (. MessageFormat format hist-header-msg (to-array [(date-time)])))
+
 (def win-size-width    880)
 (def win-size-height   750)
 

@@ -28,7 +28,8 @@ case "$OS" in
 	CYGWIN* )
 		LIB1=`cygpath -w $LIB1` 
 		LIB2=`cygpath -w $LIB2`
-		CP=".;${LIB1};${LIB2};" ;;
+		LIB3=`cygpath -w $LIB3`
+		CP=".;${LIB1};${LIB2};${LIB3}" ;;
 	*)
 		LIB2=$LIB2_LINUX
 		CP=".:${LIB1}:${LIB2}:${LIB3}" ;;
