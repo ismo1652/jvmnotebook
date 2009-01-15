@@ -44,37 +44,32 @@
 
 (in-ns 'org.octane)
 
-(import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
-(import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
-(import '(java.util ResourceBundle Vector))
 
-(def tab-folder)
+(def styled-text)
 
-(def swt-tabtext-style (bit-or SWT/BORDER 
-							   (bit-or SWT/MULTI 
-									   (bit-or SWT/H_SCROLL
-											   (bit-or SWT/V_SCROLL 1)))))
+(defn init-colors []  
+  ;; Orange highlight color = 250, 209, 132
+  ;; Light grey for default text.
+  (let [disp (. Display getDefault)]
+	(. colors-vec addElement (new Color disp orange-sel-color))
+	(. colors-vec addElement (new Color disp lightgrey-color))))
 
-(def colors-vec  (new Vector))
-(def buffer-1    (new StringBuffer 4096))
-(def buffer-2    (new StringBuffer 4096))
-(def buffer-3    (new StringBuffer 4096))
+(defn create-tab-1 []
+  (. tab-area-1 setText    tab-1-title)
+  (. tab-area-1 setControl styled-text))
 
-(def display     (new Display))
-(def shell       (new Shell display))
-(def resources   (ResourceBundle/getBundle "octane_main"))
+(defn create-tab-2 []
+  (. tab-area-2 setText    tab-2-title)
+  (. tab-area-2 setControl tab-text-2))
 
-(def fileDialog  (new FileDialog shell, SWT/CLOSE))
+(defn create-tab-3 []
+  (. tab-area-3 setText    tab-3-title)
+  (. tab-area-3 setControl tab-text-3))
 
-(def tab-folder  (new TabFolder shell SWT/NULL))
-(def tab-area-1  (new TabItem tab-folder SWT/NULL))
-(def tab-area-2  (new TabItem tab-folder SWT/NULL))
-(def tab-area-3  (new TabItem tab-folder SWT/NULL))
-
-(def search-box  (new Text shell SWT/BORDER))
-
-(def tab-text-2  (new Text tab-folder swt-tabtext-style))
-(def tab-text-3  (new Text tab-folder swt-tabtext-style))
+(defn create-all-tabs []
+  (create-tab-1)
+  (create-tab-2)
+  (create-tab-3))
 
 ;;; End of Script

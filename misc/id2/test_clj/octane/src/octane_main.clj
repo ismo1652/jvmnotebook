@@ -45,7 +45,8 @@
 (ns org.octane
     (load "octane_main_constants")
     (load "public_objects")
-    (load "octane_utils"))
+    (load "octane_utils")
+	(load "octane_core_widgets"))
 
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
@@ -74,13 +75,7 @@
 (def clear-buffer)
 (def refresh-textarea)
 (def create-styled-text-area)
-
-(defn init-colors []  
-  ;; Orange highlight color = 250, 209, 132
-  ;; Light grey for default text.
-  (let [disp (. Display getDefault)]
-	(. colors-vec addElement (new Color disp orange-sel-color))
-	(. colors-vec addElement (new Color disp lightgrey-color))))
+(def history-add-text)
 
 (defn add-select-style [styles-vec cur-style]
   ;; Set the event styles
@@ -165,7 +160,8 @@
 
 (defn open-file [name]
   (when name
-	(println (str "Opening File: " name))
+	(println (str "Loading => " name))
+	(history-add-text (str "Loading file => " name "\n"))
 	(let [file (new File name)]
 	  (if (not (. file exists))
 		(display-error "File does not exist")
@@ -187,6 +183,13 @@
 	(. disp asyncExec
 	   (proxy [Runnable] []
 			  (run [] (. styled-text setText (. buffer-1 toString)))))))
+
+(defn history-add-text [text]
+  (. buffer-3 append text)
+  (let [disp (. tab-text-3 getDisplay)]
+	(. disp asyncExec
+	   (proxy [Runnable] []
+			  (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
 
 ;;**************************************
 ;; Continue
@@ -249,8 +252,7 @@
   create-gui-window [disp sh]
   
   ;; Set the tab folder and items with the main text area
-  (. tab-area-1 setText    tab-1-title)
-  (. tab-area-1 setControl styled-text)
+  (create-all-tabs)
   (create-menu-bar disp sh)
   (create-shell disp sh)
   (init-colors)

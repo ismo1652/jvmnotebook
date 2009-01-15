@@ -45,17 +45,23 @@
 (in-ns 'org.octane)
 
 (import '(org.eclipse.swt.graphics Color RGB))
+(import '(org.eclipse.swt SWT))
 
 (def win-size-width    880)
-(def win-size-height   740)
+(def win-size-height   750)
 
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
 
 (def tab-1-title      "Main Buffer View")
+(def tab-2-title      "Secondary Buffer View")
+(def tab-3-title      "History Console")
 
 ;; Hard code the style to avoid calling bitwise operator
 ;; SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL
-(def swt-text-style  2818)
+(def swt-text-style (bit-or SWT/BORDER 
+							(bit-or SWT/MULTI 
+									(bit-or SWT/H_SCROLL
+											(bit-or SWT/V_SCROLL 1)))))
 
 ;;; End of Script
