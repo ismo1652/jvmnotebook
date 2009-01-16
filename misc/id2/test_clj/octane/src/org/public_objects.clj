@@ -61,9 +61,6 @@
 (def buffer-2    (new StringBuffer 4096))
 (def buffer-3    (new StringBuffer 4096))
 
-(def resources-win      (ResourceBundle/getBundle "octane_win"))
-(def resources-core-sys (ResourceBundle/getBundle "octane_core_sys"))
-
 (def display       (new Display))
 (def shell         (new Shell display))
 
@@ -82,8 +79,5 @@
 (def tab-text-4  (new Text tab-folder swt-tabtext-style))
 
 (def status-bar  (new Label shell SWT/BORDER))
-
-(defn prop-core-sys [key]
-  (. resources-core-sys getString "Octane_Sys_filemonitor_delay"))
 
 ;;; End of Script
