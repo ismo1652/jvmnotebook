@@ -134,6 +134,8 @@
 				   file-str-data (open-file-util file (. file getPath))]
           ;; Set the file state opened, and start monitor loop
           (set-file-state true)
+          (let [info-txt (get-file-info-header)]
+            (when info-txt (history-add-text info-txt)))
           (file-monitor-loop file)
           ;; Check for file last modified
 		  (. disp asyncExec
@@ -144,7 +146,7 @@
 						 (. styled-text setText (. buffer-1 toString))))))))))
 
 (defn dialog-open-file []
-  (. fileDialog setFilterExtensions (into-array ["*.*", "*.log"]))
+  (. fileDialog setFilterExtensions (into-array *openfile-wildcard-seq*))
   (open-file (. fileDialog open) false))
 
 (defn refresh-textarea []

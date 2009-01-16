@@ -53,9 +53,17 @@
 
 (def hist-header-msg
 "************************************************************
- * Octane Log Viewer Init
- * Launched at {0}
- ************************************************************
+* Octane Log Viewer Init
+* Launched at {0}
+************************************************************
+")
+
+(def file-info-msg
+"------------------------------------------------------------
+- File Info Properties
+- Last Modified     : {0}
+- Number of Lines   : {1}
+------------------------------------------------------------
 ")
 
 (defn get-hist-header []
@@ -78,5 +86,7 @@
 							(bit-or SWT/MULTI 
 									(bit-or SWT/H_SCROLL
 											(bit-or SWT/V_SCROLL 1)))))
+(def *openfile-wildcard-seq* ["*.*" "*.log"
+                              "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
 
 ;;; End of Script

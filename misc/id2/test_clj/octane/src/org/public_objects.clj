@@ -61,8 +61,8 @@
 (def buffer-2    (new StringBuffer 4096))
 (def buffer-3    (new StringBuffer 4096))
 
-(def display       (new Display))
-(def shell         (new Shell display))
+(def display     (new Display))
+(def shell       (new Shell display))
 
 (def fileDialog  (new FileDialog shell, SWT/CLOSE))
 
