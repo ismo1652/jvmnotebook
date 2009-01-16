@@ -40,6 +40,8 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
+;;; Also see: 
+;;; http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/index.html
 ;;; -------------------------------------------------------
 
 (ns org.octane
@@ -81,8 +83,9 @@
 				   l    (+ lo len)
 				   bg   (. colors-vec get 0)
 				   fgl  (. colors-vec get 1)
-				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
-				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
+				   all-bold (new StyleRange lo l nil bg   SWT/BOLD)
+				   light    (new StyleRange lo l fgl nil  SWT/NORMAL)]
+    (println (str lo " | " l))
 	;; Add the event styles if needed   
     (when (search-term?)
       (if (search-keyword (. search-box getText) line)

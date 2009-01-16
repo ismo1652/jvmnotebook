@@ -61,8 +61,9 @@
 (defn get-file-info-header []
   (when (and (not (nil? @cur-file-info)) (get-file-state))
     (. MessageFormat format 
-       file-info-msg (to-array [(@cur-file-info :last-mod)
-                                (@cur-file-info :line-num)]))))
+       file-info-msg (to-array [(@cur-file-info :last-mod)  (@cur-file-info :line-num)
+                                (@cur-file-info :file-name) (@cur-file-info :parent-dirname)
+                                (@cur-file-info :file-path) (@cur-file-info :file-size)]))))
       
 (def  file-state             (ref {:open-state false}))
 (defn get-file-state []      (@file-state :open-state))
@@ -117,6 +118,5 @@
                    (. file  canWrite) (. file  exists) (. file  length))
 	(. instr close)
 	(. buf toString)))
-
 
 ;;; End of Script
