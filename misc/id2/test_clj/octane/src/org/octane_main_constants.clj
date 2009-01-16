@@ -60,9 +60,13 @@
 
 (def file-info-msg
 "------------------------------------------------------------
-- File Info Properties
-- Last Modified     : {0}
-- Number of Lines   : {1}
+- File Info Properties#
+- File Name : {2}
+- Absolute Path : {4}
+- Parent Directory : {3}
+- Last Modified : {0}
+- Number of Lines : {1}
+- File Size : {5}
 ------------------------------------------------------------
 ")
 
