@@ -43,9 +43,11 @@
 ;;; -------------------------------------------------------
 
 (ns org.octane
+    (load "octane_config")
     (load "swt_imports")
     (load "octane_main_constants")
     (load "public_objects")
+    (load "octane_file_utils")
     (load "octane_utils")
 	(load "octane_core_widgets"))
 
@@ -120,34 +122,20 @@
      (proxy [ShellAdapter] [] 
             (shellClosed [evt] (exit))))
 
-;;**************************************
-;; File Utilities
-;;**************************************
-(defn 
-  #^{:doc "Use java oriented approach for loading a file into memory"}
-  open-file-util [file file-path]
-  ;; Java oriented approach for opening file
-  (let [stream (new FileInputStream file-path)
-			   instr (new BufferedReader (new InputStreamReader stream))
-			   ;; Use type hints to ensure a character type.
-			   readBuffer #^"[C" (make-array (. Character TYPE) 2048)
-			   buf (new StringBuffer)]
-	(loop [n (. instr read readBuffer)]
-	  (when (> n 0)
-		(. buf append readBuffer 0 n) 
-		(recur (. instr read readBuffer))))
-	(. instr close)
-	(. buf toString)))
-
-(defn open-file [name]
+(defn open-file [name quiet]
   (when name
-	(history-add-text (str "Loading file => " name "\n"))
-    (status-set-text  (str "Loading file => " name))
+    (when (not quiet)
+      (history-add-text (str "Loading file => " name "\n"))
+      (status-set-text  (str "Loading file => " name)))
 	(let [file (new File name)]
 	  (if (not (. file exists))
 		(display-error "File does not exist")
 		(let [disp (. styled-text getDisplay)
 				   file-str-data (open-file-util file (. file getPath))]
+          ;; Set the file state opened, and start monitor loop
+          (set-file-state true)
+          (file-monitor-loop file)
+          ;; Check for file last modified
 		  (. disp asyncExec
 			 (proxy [Runnable] []
 					(run []
@@ -157,7 +145,7 @@
 
 (defn dialog-open-file []
   (. fileDialog setFilterExtensions (into-array ["*.*", "*.log"]))
-  (open-file (. fileDialog open)))
+  (open-file (. fileDialog open) false))
 
 (defn refresh-textarea []
   (let [disp (. styled-text getDisplay)]			 
@@ -252,7 +240,7 @@
   (create-status-bar)
   (. sh setSize win-size-width win-size-height)
   (. sh (open))
-  (loop [] (if (. shell (isDisposed))
+  (loop [] (if (. sh (isDisposed))
              (. disp (dispose))
              (let [] (if (not (. disp (readAndDispatch)))
                        (. disp (sleep)))
