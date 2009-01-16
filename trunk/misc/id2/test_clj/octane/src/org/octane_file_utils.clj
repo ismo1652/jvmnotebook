@@ -44,13 +44,26 @@
 
 (in-ns 'org.octane)
 
-(import '(java.io BufferedReader File FileInputStream
+(import '(java.io BufferedReader LineNumberReader File FileInputStream
                   FileNotFoundException IOException InputStreamReader Reader))
 (import '(java.util ResourceBundle Vector))
 
 (def open-file)
+(def get-file-state)
 
-(def  file-monitor-agent (agent false))
+(def  cur-file-info (ref {:file-name nil :file-path nil :last-mod nil :line-num 0 :file-size 0
+                                         :parent-dirname nil :writeable false :exists false}))
+(defn set-file-info [nm pth mod-t n prnt w xsts sz]
+  (dosync (commute cur-file-info assoc 
+                   :file-name nm :file-path pth :last-mod mod-t :file-size sz
+                       :line-num n :parent-dirname prnt :writeable w :exists xsts)))
+
+(defn get-file-info-header []
+  (when (and (not (nil? @cur-file-info)) (get-file-state))
+    (. MessageFormat format 
+       file-info-msg (to-array [(@cur-file-info :last-mod)
+                                (@cur-file-info :line-num)]))))
+      
 (def  file-state             (ref {:open-state false}))
 (defn get-file-state []      (@file-state :open-state))
 (defn set-file-state [state] (dosync (commute file-state assoc :open-state state)))
@@ -58,7 +71,7 @@
 (def  file-last-mod          (ref {:last-mod 0 :file-path nil}))
 (defn get-file-last-mod  []  (@file-last-mod :last-mod))
 (defn get-last-file-path []  (@file-last-mod :file-path))
-(defn set-file-last-mod  [t name] (dosync (commute file-last-mod assoc :last-mod t :file-path t)))
+(defn set-file-last-mod  [t name] (dosync (commute file-last-mod assoc :last-mod t :file-path name)))
 
 (defn file-modified? [file]
   (let [mod-t  (. file lastModified)
@@ -73,34 +86,35 @@
   (let [delay-t (prop-int resources-core-sys "Octane_Sys_filemonitor_delay")
         enable-file-mon (prop-bool resources-win-opts "file_monitor_enabled")
         pth    (. file getAbsolutePath)]
-    (send file-monitor-agent 
-          (fn [_]
-              (when enable-file-mon
-                (loop []
-                  (when (not (. shell (isDisposed)))
-                    (. Thread sleep delay-t)
-                    (when (file-modified? file)
-                      ;; Reload the file as it grows and refresh
-                      ;; the file.
-                      (open-file pth true))                    
-                    (recur))))))))
-  
+    (when enable-file-mon
+      (.start  (new Thread (fn []
+                               (while (not (. shell isDisposed))
+                                      (Thread/sleep delay-t)
+                                      (when (file-modified? file)
+                                        ;; Reload the file as it grows and refresh
+                                        ;; the file.
+                                        (open-file pth true)))))))))
+
 ;;**************************************
 ;; File Utilities
 ;;**************************************
-(defn 
+(defn
   #^{:doc "Use java oriented approach for loading a file into memory"}
   open-file-util [file file-path]
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
-        instr (new BufferedReader (new InputStreamReader stream))
+        instr (new LineNumberReader (new InputStreamReader stream))
         ;; Use type hints to ensure a character type.
         readBuffer #^"[C" (make-array (. Character TYPE) 2048)
         buf (new StringBuffer)]
 	(loop [n (. instr read readBuffer)]
 	  (when (> n 0)
-		(. buf append readBuffer 0 n) 
+		(. buf append readBuffer 0 n)
 		(recur (. instr read readBuffer))))
+    ;; File info data has been collected, set some of the file properties
+    (set-file-info (. file  getName) (. file  getAbsolutePath) 
+                   (. file  lastModified) (. instr getLineNumber) (. file  getParent)
+                   (. file  canWrite) (. file  exists) (. file  length))
 	(. instr close)
 	(. buf toString)))
 
