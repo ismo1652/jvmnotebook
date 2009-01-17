@@ -47,7 +47,7 @@
 (import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
-(import '(java.util ResourceBundle Vector))
+(import '(java.util ResourceBundle Vector Hashtable))
 
 (def tab-folder)
 
@@ -66,12 +66,14 @@
 
 (def fileDialog  (new FileDialog shell, SWT/CLOSE))
 
+;; Creation of main GUI components (order of instantiation is important here)
+;; Including main tabs, location bar and search box.
+(def location-bar (new Text shell SWT/BORDER))
 (def tab-folder  (new TabFolder shell SWT/NULL))
 (def tab-area-1  (new TabItem tab-folder SWT/NULL))
 (def tab-area-2  (new TabItem tab-folder SWT/NULL))
 (def tab-area-3  (new TabItem tab-folder SWT/NULL))
 (def tab-area-4  (new TabItem tab-folder SWT/NULL))
-
 (def search-box  (new Text shell SWT/BORDER))
 
 (def tab-text-2  (new Text tab-folder swt-tabtext-style))
@@ -79,5 +81,7 @@
 (def tab-text-4  (new Text tab-folder swt-tabtext-style))
 
 (def status-bar  (new Label shell SWT/BORDER))
+
+(def serial-files-list (new Hashtable))
 
 ;;; End of Script

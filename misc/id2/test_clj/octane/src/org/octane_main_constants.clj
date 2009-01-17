@@ -70,6 +70,10 @@
 ------------------------------------------------------------
 ")
 
+(def *work-path* "conf/sys/_work")
+
+(def *recent-file-list* (str *work-path* "/" "_sHIKXx1_recent.ser"))
+
 (defn get-hist-header []
   (. MessageFormat format hist-header-msg (to-array [(date-time)])))
 

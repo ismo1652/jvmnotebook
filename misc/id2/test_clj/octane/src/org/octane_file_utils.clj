@@ -45,12 +45,13 @@
 (in-ns 'org.octane)
 
 (import '(java.io BufferedReader LineNumberReader File FileInputStream
-                  FileNotFoundException IOException InputStreamReader Reader))
+				  ObjectInputStream
+                  FileNotFoundException IOException InputStreamReader Reader
+				  ByteArrayOutputStream ObjectOutputStream FileOutputStream))
 (import '(java.util ResourceBundle Vector))
 
-(def open-file)
-(def get-file-state)
-
+(def  open-file)
+(def  get-file-state)
 (def  cur-file-info (ref {:file-name nil :file-path nil :last-mod nil :line-num 0 :file-size 0
                                          :parent-dirname nil :writeable false :exists false}))
 (defn set-file-info [nm pth mod-t n prnt w xsts sz]
@@ -119,4 +120,40 @@
 	(. instr close)
 	(. buf toString)))
 
+(defn serialize-object [obj path]
+  (let [fos (new FileOutputStream path)
+			oos (new ObjectOutputStream fos)]
+    (try (.writeObject oos obj)
+         (finally (.close oos)))))
+
+(defn deserialize-object [path]
+  (let [fis (new FileInputStream path)
+			ins (new ObjectInputStream fis)]
+    (try (.readObject ins)
+         (finally (.close ins)))))
+
+(def  recent-file-table            (ref {:file-table nil}))
+(defn get-recent-file-table []     (@recent-file-table :file-table))
+(defn set-recent-file-table [tabl] (dosync 
+									(commute recent-file-table assoc :file-table tabl)))
+
+(defn save-file-list []
+  (let [obj (get-recent-file-table)]
+	(when obj
+	  (serialize-object obj *recent-file-list*))))
+
+(defn load-file-list []
+  (let [obj (deserialize-object *recent-file-list*)]
+	(when obj
+	  (set-recent-file-table obj)))
+  (get-recent-file-table))
+
+(defn add-recent-file [file]
+  (let [name (. file getName)
+			 path (. file getAbsolutePath)
+			 rec-tabl (get-recent-file-table)]
+	(when rec-tabl
+	  (. rec-tabl put name path))))
+
+			 	
 ;;; End of Script
