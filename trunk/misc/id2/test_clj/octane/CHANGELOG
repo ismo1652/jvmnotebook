@@ -1,6 +1,10 @@
 ###############################################################################
 #
 ###############################################################################
+	+ 1/17/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Created ability to save recent file list, added
+			recent files to menu options.
+
 	+ 1/16/2009 Berlin Brown	berlin dot brown at gmail.com
 		* Add tabbed buffer windows
 		* Added status bar 

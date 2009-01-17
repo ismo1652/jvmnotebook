@@ -48,11 +48,14 @@
                   FileNotFoundException IOException InputStreamReader Reader))
 (import '(java.util ResourceBundle Vector Hashtable))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
+(import '(java.util HashMap))
 
 (def styled-text)
 (def dialog-open-file)
 (def history-add-text)
 (def exit)
+
+(def recent-menu-state (new HashMap))
 
 (defn display-error [msg]
   (doto (new MessageBox shell SWT/ICON_ERROR)
@@ -103,9 +106,18 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; File Utilities
+;; File and Menu Utilities
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def recent-menu-listener
+	 (proxy [SelectionAdapter] []
+			(widgetSelected [evt]
+							(let [widg (. evt widget)
+									w-data (. recent-menu-state get widg)]
+							  (when w-data
+								(let [path (w-data :path)]
+								  (open-file path false)))))))
 
 (defn on-file-open [file]
   ;; Use the file instance for further operations
@@ -149,8 +161,12 @@
 		  ((fn [entry]
 			  (let [fname (. entry getKey)
 						  fval (. entry getValue)
-						  item-rec (new MenuItem menu (. SWT PUSH))]
-				(. item-rec setText fname)))
+						  item-rec (new MenuItem menu (. SWT PUSH))
+						  rec-tabl (get-recent-file-table)
+						  rec-path (. rec-tabl get fname)]
+				(. item-rec setText fname)
+				(. item-rec addSelectionListener recent-menu-listener)
+				(. recent-menu-state put item-rec {:widget item-rec :path rec-path})))
 			  i)))))
 
 (defn create-file-menu [disp sh]
@@ -176,7 +192,7 @@
 		(. setText (. resources-win getString "Exit_menuitem"))
 		(. addSelectionListener 
 		   (proxy [SelectionAdapter] []
-				  (widgetSelected [evt]
+				  (widgetSelected [evt]								  
 								(exit) println "Exiting")))))
     menu))
 
