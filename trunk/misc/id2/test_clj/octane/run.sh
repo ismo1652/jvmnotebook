@@ -36,7 +36,7 @@ case "$OS" in
 		CP=".;src;${LIB1};${LIB2};$CONF_LIB" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:src:${LIB1}:${LIB2}:${LIB3}" ;;
+		CP=".:src:${LIB1}:${LIB2}:${LIB3}:$CONF_LIB" ;;
 esac 
 
 echo $CP

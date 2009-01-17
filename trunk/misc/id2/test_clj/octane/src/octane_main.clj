@@ -53,10 +53,6 @@
     (load "octane_utils")
 	(load "octane_core_widgets"))
 
-(import '(java.io BufferedReader File FileInputStream
-                  FileNotFoundException IOException InputStreamReader Reader))
-(import '(java.util ResourceBundle Vector))
-
 ;;**************************************
 ;; Begin Routines
 ;;**************************************
@@ -85,7 +81,6 @@
 				   fgl  (. colors-vec get 1)
 				   all-bold (new StyleRange lo l nil bg   SWT/BOLD)
 				   light    (new StyleRange lo l fgl nil  SWT/NORMAL)]
-    (println (str lo " | " l))
 	;; Add the event styles if needed   
     (when (search-term?)
       (if (search-keyword (. search-box getText) line)
@@ -125,33 +120,6 @@
      (proxy [ShellAdapter] [] 
             (shellClosed [evt] (exit))))
 
-(defn open-file [name quiet]
-  (when name
-    (when (not quiet)
-      (history-add-text (str "Loading file => " name "\n"))
-      (status-set-text  (str "Loading file => " name)))
-	(let [file (new File name)]
-	  (if (not (. file exists))
-		(display-error "File does not exist")
-		(let [disp (. styled-text getDisplay)
-				   file-str-data (open-file-util file (. file getPath))]
-          ;; Set the file state opened, and start monitor loop
-          (set-file-state true)
-          (let [info-txt (get-file-info-header)]
-            (when info-txt (history-add-text info-txt)))
-          (file-monitor-loop file)
-          ;; Check for file last modified
-		  (. disp asyncExec
-			 (proxy [Runnable] []
-					(run []
-						 (clear-buffer buffer-1)
-						 (. buffer-1 append file-str-data)
-						 (. styled-text setText (. buffer-1 toString))))))))))
-
-(defn dialog-open-file []
-  (. fileDialog setFilterExtensions (into-array *openfile-wildcard-seq*))
-  (open-file (. fileDialog open) false))
-
 (defn refresh-textarea []
   (let [disp (. styled-text getDisplay)]			 
 	(. disp asyncExec
@@ -182,31 +150,8 @@
 	(set! (. gridLayout numColumns) 1)
 	gridLayout))
 
-(defn create-file-menu [disp sh]
-  ;; Note change in 'doto' call, dot needed.
-  (let [bar    (. sh getMenuBar)
-        menu   (new Menu bar)
-        item   (new MenuItem menu (. SWT PUSH))
-		item-exit (new MenuItem menu (. SWT PUSH))]
-    (doto item
-	  ;; Open File
-      (. setText (. resources-win getString "Open_menuitem"))
-      (. addSelectionListener 
-		 (proxy [SelectionAdapter] [] 
-				(widgetSelected [evt]
-								(dialog-open-file)
-								println "Opening File"))))
-	(doto item-exit
-	  (. setText (. resources-win getString "Exit_menuitem"))
-	  (. addSelectionListener 
-		 (proxy [SelectionAdapter] []
-				(widgetSelected [evt]
-								(exit) println "Exiting"))))	
-	  ;; Exit 
-    menu))
-
 (defn create-menu-bar [disp sh]
-  (let [bar (new Menu sh (. SWT BAR))
+  (let [bar  (new Menu sh (. SWT BAR))
         item (new MenuItem bar (. SWT CASCADE))]
     (. sh setMenuBar bar)
     (doto item
@@ -220,8 +165,7 @@
       (. setText (. resources-win getString "Window_title"))
       (. setLayout layout)
       (. addShellListener (proxy [ShellAdapter] [] 
-                                 (shellClosed [evt]
-                                              (exit)))))))
+                                 (shellClosed [evt] (exit)))))))
 
 (defn init-gui-helper [disp sh]
     (create-all-tabs)
@@ -241,7 +185,8 @@
   ;; Modify already created objects
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)
-    (. search-box setLayoutData gd))
+    (. search-box setLayoutData gd)
+	(. location-bar setLayoutData gd))
   (create-status-bar)
   (. sh setSize win-size-width win-size-height)
   (. sh (open))
@@ -256,13 +201,9 @@
 ;**************************************
 (defn main []
   (println "Running")
-  (create-gui-window display shell))
+  (create-gui-window display shell)
+  (let [o (new Object)] (locking o (. o (wait)))))
 
 (main)
-
-;;**************************************
-;; Lock the thread on this file, to wait until the frame is closed.
-;;**************************************
-(let [o (new Object)] (locking o (. o (wait))))
 
 ;;; End of Script

@@ -44,9 +44,15 @@
 
 (in-ns 'org.octane)
 
+(import '(java.io BufferedReader File FileInputStream
+                  FileNotFoundException IOException InputStreamReader Reader))
+(import '(java.util ResourceBundle Vector Hashtable))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 
 (def styled-text)
+(def dialog-open-file)
+(def history-add-text)
+(def exit)
 
 (defn display-error [msg]
   (doto (new MessageBox shell SWT/ICON_ERROR)
@@ -94,5 +100,84 @@
 (defn status-set-text [text]
   (. status-bar setText text)
   (. status-bar update))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; File Utilities
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn on-file-open [file]
+  ;; Use the file instance for further operations
+  (set-file-state true)
+  (let [info-txt (get-file-info-header)]
+	(when info-txt (history-add-text info-txt)))		  
+  (file-monitor-loop file)
+  (add-recent-file file)
+  (save-file-list))
+
+(defn open-file [name quiet]  
+  (when name	
+    (when (not quiet)
+      (history-add-text (str "Loading file => " name "\n"))
+      (status-set-text  (str "Loading file => " name)))
+	(let [file (new File name)]
+	  (if (not (. file exists))
+		(display-error "File does not exist")
+		(let [disp (. styled-text getDisplay)
+				   file-str-data (open-file-util file (. file getPath))]
+          ;; Set the file state opened, and start monitor loop
+		  (on-file-open file)
+          ;; Check for file last modified
+		  (. disp asyncExec
+			 (proxy [Runnable] []
+					(run []
+						 (clear-buffer buffer-1)
+						 (. buffer-1 append file-str-data)
+						 (. styled-text setText (. buffer-1 toString))))))))))
+
+(defn dialog-open-file []
+  (. fileDialog setFilterExtensions (into-array *openfile-wildcard-seq*))
+  (open-file (. fileDialog open) false))
+
+(defn create-recent-menu-items [menu]
+  ;; The recent items are a deserialized hashtable
+  (let [file-table (load-file-list)
+				   file-seq (when file-table (seq (. file-table entrySet)))]
+	(when file-seq
+	  (doseq [i file-seq]
+		  ((fn [entry]
+			  (let [fname (. entry getKey)
+						  fval (. entry getValue)
+						  item-rec (new MenuItem menu (. SWT PUSH))]
+				(. item-rec setText fname)))
+			  i)))))
+
+(defn create-file-menu [disp sh]
+  ;; Note change in 'doto' call, dot needed.
+  (let [bar    (. sh getMenuBar)
+        menu   (new Menu bar)
+        item   (new MenuItem menu (. SWT PUSH))]
+    (doto item
+	  ;; Open File
+      (. setText (. resources-win getString "Open_menuitem"))
+      (. addSelectionListener 
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [evt]
+								(dialog-open-file)
+								println "Opening File"))))
+	;; Create the recent file menu 
+	(new MenuItem menu SWT/SEPARATOR)
+	(create-recent-menu-items menu)	
+	(new MenuItem menu SWT/SEPARATOR)
+	;; Create exit menu item last.
+	(let [item-exit (new MenuItem menu (. SWT PUSH))]
+	  (doto item-exit
+		(. setText (. resources-win getString "Exit_menuitem"))
+		(. addSelectionListener 
+		   (proxy [SelectionAdapter] []
+				  (widgetSelected [evt]
+								(exit) println "Exiting")))))
+    menu))
 
 ;;; End of Script
