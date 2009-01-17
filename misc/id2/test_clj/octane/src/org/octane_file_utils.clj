@@ -154,6 +154,5 @@
 			 rec-tabl (get-recent-file-table)]
 	(when rec-tabl
 	  (. rec-tabl put name path))))
-
 			 	
 ;;; End of Script
