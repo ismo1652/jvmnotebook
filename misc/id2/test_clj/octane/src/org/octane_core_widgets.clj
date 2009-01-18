@@ -56,7 +56,8 @@
 (def exit)
 (def add-recent-buffer-menu)
 
-(def recent-menu-state (new HashMap))
+(def recent-menu-state   (new HashMap))
+(def recent-buffer-state (new HashMap))
 
 (def  buffer-menu-state        (ref {:menu-state nil}))
 (defn get-buffer-menu-state [] (@buffer-menu-state :menu-state))
@@ -124,6 +125,15 @@
 								(let [path (w-data :path)]
 								  (open-file path false)))))))
 
+(def recent-buffer-listener
+	 (proxy [SelectionAdapter] []
+			(widgetSelected [evt]
+							(let [widg (. evt widget)
+									   w-data (. recent-buffer-state get widg)]
+							  (when w-data
+								(let [path (w-data :path)]
+								  (open-file path false)))))))
+
 (defn on-file-open [file]
   ;; Use the file instance for further operations
   (set-file-state true)
@@ -182,7 +192,9 @@
 			 name (. file getName)
 			 path (. tabl-obj get name)
 			 rec-buf-item (new MenuItem menu (. SWT PUSH))]
-	(. rec-buf-item setText name)))
+	(. rec-buf-item setText name)
+	(. rec-buf-item addSelectionListener recent-buffer-listener)
+	(. recent-buffer-state put rec-buf-item {:widget rec-buf-item :path path})))
 	
 (defn create-file-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
