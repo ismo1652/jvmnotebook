@@ -199,11 +199,16 @@
 ;;**************************************
 ;; Main Entry Point
 ;**************************************
-(defn main []
+(defn main-1 []
+  dfsx
   (println "Running")
   (create-gui-window display shell)
   (let [o (new Object)] (locking o (. o (wait)))))
 
+(defn main []
+  (try (main-1)
+	   (catch Exception e 
+		 (println "ERR: " e))))
 (main)
 
 ;;; End of Script
