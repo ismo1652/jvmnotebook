@@ -126,12 +126,17 @@
     (try (.writeObject oos obj)
          (finally (.close oos)))))
 
-(defn deserialize-object [path]
+(defn deserialize-object-1 [path]
   (let [fis (new FileInputStream path)
 			ins (new ObjectInputStream fis)]
     (try (.readObject ins)
          (finally (.close ins)))))
 
+(defn deserialize-object [path]
+  (try (deserialize-object-1 path)
+	   (catch Exception e
+		 (println "WARN: Could not load recent file list: " e)))) 
+	   
 (def  recent-file-table            (ref {:file-table nil}))
 (defn get-recent-file-table []     (@recent-file-table :file-table))
 (defn set-recent-file-table [tabl] (dosync 
