@@ -200,7 +200,6 @@
 ;; Main Entry Point
 ;**************************************
 (defn main-1 []
-  dfsx
   (println "Running")
   (create-gui-window display shell)
   (let [o (new Object)] (locking o (. o (wait)))))
