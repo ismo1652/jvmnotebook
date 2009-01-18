@@ -66,7 +66,7 @@
 - Parent Directory : {3}
 - Last Modified : {0}
 - Number of Lines : {1}
-- File Size : {5}
+- File Size : {5} bytes
 ------------------------------------------------------------
 ")
 

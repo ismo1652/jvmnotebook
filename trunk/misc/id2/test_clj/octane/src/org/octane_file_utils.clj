@@ -51,6 +51,7 @@
 (import '(java.util ResourceBundle Vector))
 
 (def  open-file)
+(def  date-timel)
 (def  get-file-state)
 (def  cur-file-info (ref {:file-name nil :file-path nil :last-mod nil :line-num 0 :file-size 0
                                          :parent-dirname nil :writeable false :exists false}))
@@ -62,7 +63,7 @@
 (defn get-file-info-header []
   (when (and (not (nil? @cur-file-info)) (get-file-state))
     (. MessageFormat format 
-       file-info-msg (to-array [(@cur-file-info :last-mod)  (@cur-file-info :line-num)
+       file-info-msg (to-array [(date-timel (@cur-file-info :last-mod))  (@cur-file-info :line-num)
                                 (@cur-file-info :file-name) (@cur-file-info :parent-dirname)
                                 (@cur-file-info :file-path) (@cur-file-info :file-size)]))))
       

@@ -52,4 +52,6 @@
 
 (defn date-time [] (str (new java.util.Date)))
 
+(defn date-timel [l] (str (new java.util.Date l))) 
+
 ;;; End of Script
