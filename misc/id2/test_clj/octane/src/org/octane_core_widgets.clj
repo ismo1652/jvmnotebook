@@ -54,8 +54,13 @@
 (def dialog-open-file)
 (def history-add-text)
 (def exit)
+(def add-recent-buffer-menu)
 
 (def recent-menu-state (new HashMap))
+
+(def  buffer-menu-state        (ref {:menu-state nil}))
+(defn get-buffer-menu-state [] (@buffer-menu-state :menu-state))
+(defn set-buffer-menu-state [menu] (dosync (commute buffer-menu-state assoc :menu-state menu)))
 
 (defn display-error [msg]
   (doto (new MessageBox shell SWT/ICON_ERROR)
@@ -114,7 +119,7 @@
 	 (proxy [SelectionAdapter] []
 			(widgetSelected [evt]
 							(let [widg (. evt widget)
-									w-data (. recent-menu-state get widg)]
+									   w-data (. recent-menu-state get widg)]
 							  (when w-data
 								(let [path (w-data :path)]
 								  (open-file path false)))))))
@@ -125,7 +130,10 @@
   (let [info-txt (get-file-info-header)]
 	(when info-txt (history-add-text info-txt)))		  
   (file-monitor-loop file)
-  (add-recent-file file)
+  (let [rec-tabl (add-recent-file file)]
+	;; reuse the hashtable datastructure to add to the recent buffer
+	;; list.
+	(add-recent-buffer-menu rec-tabl file))
   (save-file-list))
 
 (defn open-file [name quiet]  
@@ -169,6 +177,13 @@
 				(. recent-menu-state put item-rec {:widget item-rec :path rec-path})))
 			  i)))))
 
+(defn add-recent-buffer-menu [tabl-obj file]
+  (let [menu (get-buffer-menu-state)
+			 name (. file getName)
+			 path (. tabl-obj get name)
+			 rec-buf-item (new MenuItem menu (. SWT PUSH))]
+	(. rec-buf-item setText name)))
+	
 (defn create-file-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar    (. sh getMenuBar)
@@ -196,4 +211,48 @@
 								(exit) println "Exiting")))))
     menu))
 
+(defn create-about-messagebox [sh]
+  (let [msgbox (new MessageBox sh SWT/NONE)
+			   about1 (. resources-win getString "About_1")
+			   about2 (. resources-win getString "About_2")]
+	(. msgbox setText about1)
+	(. msgbox setMessage about2)
+	(. msgbox open)
+	msgbox))
+	
+(defn create-help-menu [disp sh]
+  ;; Note change in 'doto' call, dot needed.
+  (let [bar (. sh getMenuBar)
+			menu (new Menu bar)
+			item (new MenuItem menu (. SWT PUSH))]
+	(doto item
+	  (. setText (. resources-win getString "About_menuitem"))
+	  (. addSelectionListener
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [event]
+								(create-about-messagebox sh)))))
+	menu))
+
+(defn create-menu-bar [disp sh]
+  (let [bar  (new Menu sh (. SWT BAR))
+        item (new MenuItem bar (. SWT CASCADE))
+		search-item (new MenuItem bar (. SWT CASCADE))
+		recent-buffers (new MenuItem bar (. SWT CASCADE))
+		help-item (new MenuItem bar (. SWT CASCADE))]
+    (. sh setMenuBar bar)
+    (doto item
+      (. setText (. resources-win getString "File_menuitem"))
+      (. setMenu (create-file-menu disp sh)))
+	(doto help-item
+	  (. setText (. resources-win getString "Help_menu_title"))
+	  (. setMenu (create-help-menu disp sh)))
+	(doto search-item
+	  (. setText (. resources-win getString "Search_menu_title")))
+	(let [buf-menu (new Menu bar)]
+	  (doto recent-buffers
+		(. setText (. resources-win getString "RecentBuffers_menu_title"))
+		(. setMenu buf-menu))
+	  (set-buffer-menu-state buf-menu))))
+	  
+	  
 ;;; End of Script

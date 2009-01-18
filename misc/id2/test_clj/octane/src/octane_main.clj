@@ -149,14 +149,6 @@
   (let [gridLayout (new GridLayout)]
 	(set! (. gridLayout numColumns) 1)
 	gridLayout))
-
-(defn create-menu-bar [disp sh]
-  (let [bar  (new Menu sh (. SWT BAR))
-        item (new MenuItem bar (. SWT CASCADE))]
-    (. sh setMenuBar bar)
-    (doto item
-      (. setText (. resources-win getString "File_menuitem"))
-      (. setMenu (create-file-menu disp sh)))))
         
 (defn create-shell [disp sh]
   ;; Note change in 'doto' call, dot needed.
@@ -164,7 +156,7 @@
     (doto sh
       (. setText (. resources-win getString "Window_title"))
       (. setLayout layout)
-      (. addShellListener (proxy [ShellAdapter] [] 
+      (. addShellListener (proxy [ShellAdapter] []
                                  (shellClosed [evt] (exit)))))))
 
 (defn init-gui-helper [disp sh]
@@ -207,7 +199,9 @@
 (defn main []
   (try (main-1)
 	   (catch Exception e 
-		 (println "ERR: " e))))
-(main)
+			  (println "ERR: " e)
+			  (exit))))
+
+(main-1)
 
 ;;; End of Script
