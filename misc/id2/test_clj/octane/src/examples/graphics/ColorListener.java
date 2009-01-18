@@ -9,7 +9,6 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
-package org.eclipse.swt.examples.graphics;
 
 /**
  * Used to perform an action after an item in a Menu has been selected.

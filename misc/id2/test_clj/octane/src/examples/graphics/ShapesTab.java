@@ -9,8 +9,6 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
-package org.eclipse.swt.examples.graphics;
-
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;
 
