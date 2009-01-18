@@ -8,7 +8,6 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.eclipse.swt.examples.graphics;
 
 /* 
  * Drawing with transformations, paths and alpha blending
