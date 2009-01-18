@@ -101,9 +101,9 @@
 ;;**************************************
 ;; File Utilities
 ;;**************************************
-(defn
+(defn open-file-util [file file-path]
   #^{:doc "Use java oriented approach for loading a file into memory"}
-  open-file-util [file file-path]
+  
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
         instr (new LineNumberReader (new InputStreamReader stream))
@@ -159,6 +159,7 @@
 			 path (. file getAbsolutePath)
 			 rec-tabl (get-recent-file-table)]
 	(when rec-tabl
-	  (. rec-tabl put name path))))
+	  (. rec-tabl put name path)
+	  rec-tabl)))
 			 	
 ;;; End of Script
