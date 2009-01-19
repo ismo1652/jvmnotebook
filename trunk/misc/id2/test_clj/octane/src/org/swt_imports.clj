@@ -47,7 +47,8 @@
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(org.eclipse.swt.widgets Label Menu MenuItem Control Listener))
-(import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
+(import '(org.eclipse.swt.widgets FileDialog MessageBox TableItem
+								  Composite Table TableColumn))
 
 (import '(org.eclipse.swt.custom LineStyleEvent StyledText
                                  LineStyleListener StyleRange))

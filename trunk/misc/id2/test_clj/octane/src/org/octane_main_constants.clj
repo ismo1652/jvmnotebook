@@ -80,8 +80,8 @@
 (def win-size-width    880)
 (def win-size-height   750)
 
-(def *db-size-width*     500)
-(def *db-size-height*    300)
+(def *db-size-width*     600)
+(def *db-size-height*    360)
 
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
