@@ -49,6 +49,7 @@
 (def resources-win      (ResourceBundle/getBundle "octane_win"))
 (def resources-core-sys (ResourceBundle/getBundle "octane_core_sys"))
 (def resources-win-opts (ResourceBundle/getBundle "octane_win_options"))
+(def resources-user     (ResourceBundle/getBundle "octane_user"))
 
 (defn prop-core-sys [key]      (. resources-core-sys getString key))
 (defn prop-core-sys-int [key]  (. Integer parseInt (prop-core-sys key)))
