@@ -64,7 +64,7 @@
 (def display     (new Display))
 (def shell       (new Shell display))
 
-(def fileDialog  (new FileDialog shell, SWT/CLOSE))
+(def fileDialog  (new FileDialog shell SWT/CLOSE))
 
 ;; Creation of main GUI components (order of instantiation is important here)
 ;; Including main tabs, location bar and search box.

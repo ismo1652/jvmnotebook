@@ -80,6 +80,9 @@
 (def win-size-width    880)
 (def win-size-height   750)
 
+(def *db-size-width*     500)
+(def *db-size-height*    300)
+
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
 
@@ -94,6 +97,9 @@
 							(bit-or SWT/MULTI 
 									(bit-or SWT/H_SCROLL
 											(bit-or SWT/V_SCROLL 1)))))
+
+(def *database-win-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE SWT/MIN))))
+
 (def *openfile-wildcard-seq* ["*.*" "*.log"
                               "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
 
