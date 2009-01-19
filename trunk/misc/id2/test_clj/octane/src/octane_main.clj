@@ -38,6 +38,8 @@
 ;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
 ;;;          Enter a search term and then open a file, if the term
 ;;;          is found on the line then the line will be higlighted.
+;;;
+;;; Clojure version: Clojure release 20081217
 
 ;;; Key Functions: simple-swt create-file-menu
 ;;; Also see: 
@@ -51,7 +53,8 @@
     (load "public_objects")
     (load "octane_file_utils")
     (load "octane_utils")
-	(load "octane_core_widgets"))
+	(load "octane_core_widgets")
+	(load "octane_file_database"))
 
 ;;**************************************
 ;; Begin Routines
@@ -134,9 +137,9 @@
 	   (proxy [Runnable] []
 			  (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
 
-;;**************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Continue
-;;**************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def find-text-listener
      (proxy [Listener] []
@@ -167,9 +170,10 @@
     (history-add-text (get-hist-header))
     (status-set-text  (str "Octane GUI loaded " (date-time))))
 
-(defn
+(defn 
   #^{:doc "Initialize the SWT window, set the size add all components"}
   create-gui-window [disp sh]
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;
   
   ;; Set the tab folder and items with the main text area
   ;; and other SWT oriented inits.
@@ -181,16 +185,17 @@
 	(. location-bar setLayoutData gd))
   (create-status-bar)
   (. sh setSize win-size-width win-size-height)
-  (. sh (open))
+  (. sh open)
   (loop [] (if (. sh (isDisposed))
              (. disp (dispose))
-             (let [] (if (not (. disp (readAndDispatch)))
-                       (. disp (sleep)))
-                  (recur)))))
+             (let []
+			   (when (not (. disp (readAndDispatch)))
+				 (. disp (sleep)))
+			   (recur)))))
 
-;;**************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Main Entry Point
-;**************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defn main-1 []
   (println "Running")
   (create-gui-window display shell)

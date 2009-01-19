@@ -1,3 +1,16 @@
-###
-
-Possi
+###############################################################################
+#
+###############################################################################
+	+ 1/18/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Add JAR file viewer, with package management, etc.
+		* Jar viewer and ASM class viewer.
+		* Add file/text file database.		
+			-------------
+			File Database for Dialog
+			-------------
+			name, end of path, group, server, short description
+		* Add analytics tools for data mining and collective intelligence.
+		* Regex helper tool with possible incremental search.
+		* Emacs like key bindings.
+		* Grep like functionality to search only the active buffers in the 
+			information database.			

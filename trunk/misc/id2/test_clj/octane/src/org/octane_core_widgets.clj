@@ -55,6 +55,7 @@
 (def history-add-text)
 (def exit)
 (def add-recent-buffer-menu)
+(def create-database-window)
 
 (def recent-menu-state   (new HashMap))
 (def recent-buffer-state (new HashMap))
@@ -62,6 +63,14 @@
 (def  buffer-menu-state        (ref {:menu-state nil}))
 (defn get-buffer-menu-state [] (@buffer-menu-state :menu-state))
 (defn set-buffer-menu-state [menu] (dosync (commute buffer-menu-state assoc :menu-state menu)))
+
+(defn shell-display-loop [disp sh dispose? msg]  
+  (loop [] (if (. sh (isDisposed))
+			 (if dispose? (. disp dispose) (println msg))
+			 (let []
+			   (when (not (. disp (readAndDispatch)))
+				 (. disp (sleep)))
+			   (recur)))))
 
 (defn display-error [msg]
   (doto (new MessageBox shell SWT/ICON_ERROR)
@@ -245,12 +254,26 @@
 								(create-about-messagebox sh)))))
 	menu))
 
+(defn create-tools-menu [disp sh]
+  ;; Note change in 'doto' call, dot needed.
+  (let [bar (. sh getMenuBar)
+			menu (new Menu bar)
+			item (new MenuItem menu (. SWT PUSH))]
+	(doto item
+	  (. setText (. resources-win getString "Database_viewer_menuitem"))
+	  (. addSelectionListener
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [event]
+								(create-database-window shell)))))
+	menu))
+
 (defn create-menu-bar [disp sh]
   (let [bar  (new Menu sh (. SWT BAR))
         item (new MenuItem bar (. SWT CASCADE))
 		search-item (new MenuItem bar (. SWT CASCADE))
 		recent-buffers (new MenuItem bar (. SWT CASCADE))
-		help-item (new MenuItem bar (. SWT CASCADE))]
+		tools-item (new MenuItem bar (. SWT CASCADE))
+		help-item (new MenuItem bar (. SWT CASCADE))]		
     (. sh setMenuBar bar)
     (doto item
       (. setText (. resources-win getString "File_menuitem"))
@@ -260,6 +283,9 @@
 	  (. setMenu (create-help-menu disp sh)))
 	(doto search-item
 	  (. setText (. resources-win getString "Search_menu_title")))
+	(doto tools-item
+	  (. setText (. resources-win getString "Tools_menu_title"))
+	  (. setMenu (create-tools-menu disp sh)))
 	(let [buf-menu (new Menu bar)]
 	  (doto recent-buffers
 		(. setText (. resources-win getString "RecentBuffers_menu_title"))

@@ -11,11 +11,21 @@
 
 
 /* Imports */
-import org.eclipse.swt.*;
-import org.eclipse.swt.events.*;
-import org.eclipse.swt.layout.*;
-import org.eclipse.swt.widgets.*;
 import java.util.ResourceBundle;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 
 /**
  * DataEntryDialog class uses <code>org.eclipse.swt</code> 
@@ -128,11 +138,11 @@ public String[] open() {
 	shell.pack();
 	shell.open();
 	Display display = shell.getDisplay();
-	while(!shell.isDisposed()){
+	while (!shell.isDisposed()) {
 		if(!display.readAndDispatch())
 			display.sleep();
 	}
-	
+		
 	return getValues();
 }
 public void setLabels(String[] labels) {

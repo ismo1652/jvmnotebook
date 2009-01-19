@@ -4,6 +4,8 @@
 	+ 1/17/2009 Berlin Brown	berlin dot brown at gmail.com
 		* Created ability to save recent file list, added
 			recent files to menu options.
+		* Added most recently opened buffer list 
+			(essentially a recent file list)
 
 	+ 1/16/2009 Berlin Brown	berlin dot brown at gmail.com
 		* Add tabbed buffer windows
