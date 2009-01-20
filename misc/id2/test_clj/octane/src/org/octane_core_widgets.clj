@@ -1,4 +1,4 @@
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) Berlin Brown:. All rights reserved.
 ;;;
 ;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
@@ -40,7 +40,7 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (in-ns 'org.octane)
 
@@ -155,7 +155,18 @@
 	(add-recent-buffer-menu rec-tabl file))
   (save-file-list))
 
-(defn open-file [name quiet]  
+(defn open-file-listener [file-str-data]
+  (proxy [Runnable] []
+		 (run []
+			  (clear-buffer buffer-1)
+			  (. buffer-1 append file-str-data)
+			  (. styled-text setText (. buffer-1 toString))
+			  ;; Attempt to set cursor to the end
+			  ;; when refresh is enabled.
+			  (when (prop-bool resources-win-opts "file_monitor_enabled")
+				(. styled-text setSelection (. styled-text getCharCount))))))
+
+(defn open-file [name quiet]
   (when name	
     (when (not quiet)
       (history-add-text (str "Loading file => " name "\n"))
@@ -168,12 +179,7 @@
           ;; Set the file state opened, and start monitor loop
 		  (on-file-open file)
           ;; Check for file last modified
-		  (. disp asyncExec
-			 (proxy [Runnable] []
-					(run []
-						 (clear-buffer buffer-1)
-						 (. buffer-1 append file-str-data)
-						 (. styled-text setText (. buffer-1 toString))))))))))
+		  (. disp asyncExec (open-file-listener file-str-data)))))))
 
 (defn dialog-open-file []
   (. fileDialog setFilterExtensions (into-array *openfile-wildcard-seq*))
@@ -197,13 +203,15 @@
 			  i)))))
 
 (defn add-recent-buffer-menu [tabl-obj file]
-  (let [menu (get-buffer-menu-state)
-			 name (. file getName)
-			 path (. tabl-obj get name)
+  (try (let [menu (get-buffer-menu-state)
+				  name (. file getName)
+				  path (. tabl-obj get name)
 			 rec-buf-item (new MenuItem menu (. SWT PUSH))]
-	(. rec-buf-item setText name)
-	(. rec-buf-item addSelectionListener recent-buffer-listener)
-	(. recent-buffer-state put rec-buf-item {:widget rec-buf-item :path path})))
+		 (. rec-buf-item setText name)
+		 (. rec-buf-item addSelectionListener recent-buffer-listener)
+		 (. recent-buffer-state put rec-buf-item {:widget rec-buf-item :path path}))
+	   (catch Exception e
+			  (println "ERR: add-recent-buffer-menu" e))))
 	
 (defn create-file-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
@@ -292,5 +300,7 @@
 		(. setMenu buf-menu))
 	  (set-buffer-menu-state buf-menu))))
 	  
-	  
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  	  
 ;;; End of Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  

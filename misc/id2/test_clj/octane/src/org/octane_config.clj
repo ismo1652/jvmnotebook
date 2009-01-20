@@ -1,4 +1,4 @@
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) Berlin Brown:. All rights reserved.
 ;;;
 ;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
@@ -40,12 +40,15 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (in-ns 'org.octane)
 
 (import '(java.util ResourceBundle Vector))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Resource Files
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (def resources-win      (ResourceBundle/getBundle "octane_win"))
 (def resources-core-sys (ResourceBundle/getBundle "octane_core_sys"))
 (def resources-win-opts (ResourceBundle/getBundle "octane_win_options"))
@@ -59,4 +62,6 @@
 (defn prop-int  [res key] (. Integer parseInt (prop-str res key)))
 (defn prop-bool [res key] (. Boolean parseBoolean (prop-str res key)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

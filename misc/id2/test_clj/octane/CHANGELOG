@@ -1,6 +1,9 @@
 ###############################################################################
 #
 ###############################################################################
+ 	+ 1/19/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Added database viewer  	
+
 	+ 1/17/2009 Berlin Brown	berlin dot brown at gmail.com
 		* Created ability to save recent file list, added
 			recent files to menu options.
