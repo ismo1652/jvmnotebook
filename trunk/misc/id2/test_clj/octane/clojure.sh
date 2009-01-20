@@ -1,4 +1,5 @@
 #!/bin/sh
+###########################################################
 
 OS=`uname -a`
 LIB1=./lib/clojure.jar
@@ -42,4 +43,6 @@ echo $CP
 java -classpath $CP jline.OctaneConsoleRunner clojure.lang.Repl $1 $2
 
 
+###########################################################
 # End of Script
+###########################################################

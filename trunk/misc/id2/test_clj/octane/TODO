@@ -2,6 +2,9 @@
 #
 ###############################################################################
 	+ 1/18/2009 Berlin Brown	berlin dot brown at gmail.com
+		* With the database viewer, add ability to pair up files.
+			For example, System Out and System Err could
+			be paired together.
 		* Add database file in simple XML parse file, 
 			and then 'jar' zip the file.
 		* Add JAR file viewer, with package management, etc.
