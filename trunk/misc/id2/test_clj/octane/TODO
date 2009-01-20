@@ -1,6 +1,13 @@
 ###############################################################################
 #
 ###############################################################################
+	+ 1/20/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Finish search features
+		* Add date/log highlighters.  Possibly WSAD log syntax highlighting.
+		* Possible SQL parser
+		* Search tool
+		* Regex builder,  new screen
+
 	+ 1/18/2009 Berlin Brown	berlin dot brown at gmail.com
 		* With the database viewer, add ability to pair up files.
 			For example, System Out and System Err could

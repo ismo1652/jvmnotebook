@@ -82,6 +82,4 @@
 
 (def status-bar  (new Label shell SWT/BORDER))
 
-(def serial-files-list (new Hashtable))
-
 ;;; End of Script
