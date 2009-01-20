@@ -136,12 +136,11 @@
 (defn deserialize-object [path]
   (try (deserialize-object-1 path)
 	   (catch Exception e
-		 (println "WARN: Could not load recent file list: " e)))) 
+		 (println "WARN <deserialize-object>: Could not load serialized file: "  path " error=" e)))) 
 	   
 (def  recent-file-table            (ref {:file-table nil}))
 (defn get-recent-file-table []     (@recent-file-table :file-table))
-(defn set-recent-file-table [tabl] (dosync 
-									(commute recent-file-table assoc :file-table tabl)))
+(defn set-recent-file-table [tabl] (dosync (commute recent-file-table assoc :file-table tabl)))
 
 (defn save-file-list []
   (let [obj (get-recent-file-table)]
@@ -149,9 +148,10 @@
 	  (serialize-object obj *recent-file-list*))))
 
 (defn load-file-list []
-  (let [obj (deserialize-object *recent-file-list*)]
-	(when obj
-	  (set-recent-file-table obj)))
+  (let [obj (deserialize-object *recent-file-list*)]    
+	(if (nil? obj)
+      (set-recent-file-table (new Hashtable))
+      (set-recent-file-table obj)))
   (get-recent-file-table))
 
 (defn add-recent-file [file]
