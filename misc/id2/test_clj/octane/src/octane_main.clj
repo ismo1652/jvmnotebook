@@ -54,8 +54,9 @@
     (load "octane_file_utils")
     (load "octane_utils")
 	(load "octane_core_widgets")
-	(load "octane_file_database"))
-
+	(load "octane_file_database")
+	(load "octane_search_dialog"))
+		  
 ;;**************************************
 ;; Begin Routines
 ;;**************************************
@@ -94,8 +95,11 @@
 	  (set! (. event styles) arr)
 	  (. styles-vec copyInto (. event styles)))))
 
+(defn octane-pattern [s flags]
+  (. Pattern compile s flags))
+
 (defn search-keyword [keyword line]
-  (not (nil? (re-seq (re-pattern keyword) line))))
+  (not (nil? (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))))
 	  
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
@@ -186,6 +190,7 @@
   (create-status-bar)
   (. sh setSize win-size-width win-size-height)
   (. sh open)
+  ;; Debug
   (loop [] (if (. sh (isDisposed))
              (. disp (dispose))
              (let []

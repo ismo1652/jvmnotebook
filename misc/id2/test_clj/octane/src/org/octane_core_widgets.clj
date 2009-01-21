@@ -56,6 +56,7 @@
 (def exit)
 (def add-recent-buffer-menu)
 (def create-database-window)
+(def create-search-dialog)
 
 (def recent-menu-state   (new HashMap))
 (def recent-buffer-state (new HashMap))
@@ -275,6 +276,19 @@
 								(create-database-window shell)))))
 	menu))
 
+(defn create-search-menu [disp sh]
+  ;; Note change in 'doto' call, dot needed.
+  (let [bar (. sh getMenuBar)
+			menu (new Menu bar)
+			item (new MenuItem menu (. SWT PUSH))]
+	(doto item
+	  (. setText (. resources-win getString "Find_menuitem"))
+	  (. addSelectionListener
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [event]
+								(create-search-dialog sh)))))
+	menu))
+
 (defn create-menu-bar [disp sh]
   (let [bar  (new Menu sh (. SWT BAR))
         item (new MenuItem bar (. SWT CASCADE))
@@ -290,7 +304,8 @@
 	  (. setText (. resources-win getString "Help_menu_title"))
 	  (. setMenu (create-help-menu disp sh)))
 	(doto search-item
-	  (. setText (. resources-win getString "Search_menu_title")))
+	  (. setText (. resources-win getString "Search_menu_title"))
+	  (. setMenu (create-search-menu disp sh)))
 	(doto tools-item
 	  (. setText (. resources-win getString "Tools_menu_title"))
 	  (. setMenu (create-tools-menu disp sh)))

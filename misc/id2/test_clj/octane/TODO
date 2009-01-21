@@ -1,8 +1,11 @@
 ###############################################################################
 #
 ###############################################################################
-	+ 1/20/2009 Berlin Brown	berlin dot brown at gmail.com
-		* Finish search features
+	+ 1/20/2009 Berlin Brown	berlin dot brown at gmail.com		
+		* Add left column line number
+		* Hex Editor Mode
+		* Draw graphics on the text editor screen
+		* (bug-fix) Escape 'regex' characters		
 		* Add date/log highlighters.  Possibly WSAD log syntax highlighting.
 		* Possible SQL parser
 		* Search tool
@@ -17,27 +20,42 @@
 		* Visible Spaces
 		* Document Properties Dialog Box
 		* Preferences Screen with Editable Table
-		* End of File Detection
+		* End of File Detection with graphic (line?)
 
-		* Documenation - User Manual, Features/Requirements, Technical Spec
+		* Documentation - User Manual, Features/Requirements, Technical Spec
+		* Script tool, ability to add search scripts
+				Could be used for:
+					1. Loading a file (agents?) and searching all the lines and see if the text appears in the
+						document.
+					2. Normal search (search "stuff")
+					3.  (open file) (seach "stuff")
+					4. Highlight with different colors, etc.
+		* Canned regex queries.
+		* Canned scripts		
+		* The regex screen will include:
+			1. Editor Screen
+			2. Example text, example log file
+			3. canned queries
+			(optional), Regex code generator.  					
 
 	+ 1/18/2009 Berlin Brown	berlin dot brown at gmail.com
 		* With the database viewer, add ability to pair up files.
 			For example, System Out and System Err could
-			be paired together.
+			be paired together. 
 		* Add database file in simple XML parse file, 
 			and then 'jar' zip the file.
 		* Add JAR file viewer, with package management, etc.
 		* Jar viewer and ASM class viewer.
-		* Add file/text file database.		
+		* Add file/text file database. @		
 			-------------
 			File Database for Dialog
 			-------------
-			name, end of path, group, server, short description
+			name, end of path, group, server, short description.
+			
 		* Add analytics tools for data mining and collective intelligence.
 		* Regex helper tool with possible incremental search.
 		* Emacs like key bindings.
 		* Grep like functionality to search only the active buffers in the 
 			information database.			
-
+			
 # End of File

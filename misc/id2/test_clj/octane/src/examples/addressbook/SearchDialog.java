@@ -74,6 +74,7 @@ public SearchDialog(Shell parent) {
 	Label label = new Label(shell, SWT.LEFT);
 	label.setText(resAddressBook.getString("Dialog_find_what"));	
 	searchText = new Text(shell, SWT.BORDER);
+	
 	GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
 	gridData.widthHint = 200;
 	searchText.setLayoutData(gridData);
@@ -121,6 +122,7 @@ public SearchDialog(Shell parent) {
 	gridData = new GridData(GridData.HORIZONTAL_ALIGN_FILL);
 	gridData.horizontalSpan = 2;
 	composite.setLayoutData(gridData);
+	
 	layout = new GridLayout();
 	layout.numColumns = 2;
 	layout.makeColumnsEqualWidth = true;

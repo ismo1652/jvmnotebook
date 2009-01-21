@@ -80,8 +80,11 @@
 (def win-size-width    880)
 (def win-size-height   750)
 
-(def *db-size-width*     600)
-(def *db-size-height*    360)
+(def *db-size-width*   600)
+(def *db-size-height*  360)
+
+(def *search-size-width*  460)
+(def *search-size-height* 290)
 
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
@@ -103,4 +106,6 @@
 (def *openfile-wildcard-seq* ["*.*" "*.log"
                               "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

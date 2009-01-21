@@ -47,7 +47,7 @@
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(org.eclipse.swt.widgets Label Menu MenuItem Control Listener))
-(import '(org.eclipse.swt.widgets FileDialog MessageBox TableItem
+(import '(org.eclipse.swt.widgets FileDialog MessageBox TableItem Button
 								  Composite Table TableColumn))
 
 (import '(org.eclipse.swt.custom LineStyleEvent StyledText
@@ -57,5 +57,6 @@
 (import '(org.eclipse.swt.layout GridData GridLayout RowLayout))
 (import '(org.eclipse.swt.events VerifyListener SelectionAdapter 
                                  SelectionEvent ShellAdapter ShellEvent))
+(import '(java.util.regex Pattern))
 
 ;;; End of Script
