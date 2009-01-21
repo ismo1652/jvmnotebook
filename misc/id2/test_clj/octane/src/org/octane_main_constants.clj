@@ -86,6 +86,9 @@
 (def *search-size-width*  460)
 (def *search-size-height* 290)
 
+(def *regex-size-width*  620)
+(def *regex-size-height* 370)
+
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
 

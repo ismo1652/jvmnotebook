@@ -55,7 +55,8 @@
     (load "octane_utils")
 	(load "octane_core_widgets")
 	(load "octane_file_database")
-	(load "octane_search_dialog"))
+	(load "octane_search_dialog")
+	(load "octane_regex_search"))
 		  
 ;;**************************************
 ;; Begin Routines
@@ -191,6 +192,7 @@
   (. sh setSize win-size-width win-size-height)
   (. sh open)
   ;; Debug
+  (create-regex-window)
   (loop [] (if (. sh (isDisposed))
              (. disp (dispose))
              (let []
