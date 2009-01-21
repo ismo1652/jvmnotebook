@@ -1,7 +1,11 @@
 ###############################################################################
 #
 ###############################################################################
-	+ 1/20/2009 Berlin Brown	berlin dot brown at gmail.com		
+	+ 1/20/2009 Berlin Brown	berlin dot brown at gmail.com
+		* With the standalone win32 tools, have it launch
+			standard linux tools: 'ls', 'find', 'grep', 'sed', 'awk', 'diff' 
+				(change the names, no conflicts)
+					
 		* Add left column line number
 		* Hex Editor Mode
 		* Draw graphics on the text editor screen
