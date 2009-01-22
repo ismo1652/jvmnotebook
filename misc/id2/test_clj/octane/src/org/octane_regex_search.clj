@@ -46,15 +46,20 @@
 
 (def *regex-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE 1))))
 
-(def regex-shell       (new Shell shell *regex-style*))
-(def regex-label       (new Label regex-shell SWT/LEFT))
-(def regex-filter-box  (new Text  regex-shell SWT/BORDER))
+(def regex-shell        (new Shell shell *regex-style*))
+(def regex-label        (new Label regex-shell SWT/LEFT))
+(def regex-edit-box     (new Text  regex-shell swt-text-style))
+(def regex-example-text (new Text  regex-shell swt-text-style))
 
 (defn create-regex-grid-layout []
   (let [gridLayout (new GridLayout)]
 	(set! (. gridLayout numColumns) 1) gridLayout))
 
-(defn init-regex-helper [sh])
+(defn init-regex-helper [sh]
+  (let [gd-textarea (new GridData GridData/FILL GridData/FILL true true)]
+	;; Set both text area with expanding grid data layout.
+	(. regex-edit-box setLayoutData gd-textarea)
+	(. regex-example-text setLayoutData gd-textarea)))
 
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
@@ -63,7 +68,7 @@
 
 	(history-add-text "Opening regex tool (Search -> Regex Search Tool)")
 	(let [layout (create-regex-grid-layout)]
-	  (. regex-shell setText (. resources-win getString "Find_dialog_title"))
+	  (. regex-shell setText (. resources-win getString "Regex_win_title"))
 	  (init-regex-helper regex-shell)
 	  (. regex-shell setLayout layout)
 	  (. regex-shell addShellListener
@@ -74,9 +79,9 @@
 	  (. regex-shell setSize *regex-size-width* *regex-size-height*)
 	  (. regex-shell open)
 	  (. regex-shell setVisible true)
-	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	  ;; Enter display/shell loop for this window
-      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	  (let [disp (. regex-shell getDisplay)]
 		(shell-display-loop disp regex-shell false "Regex tool shell disposed"))))
 
