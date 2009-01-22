@@ -1,7 +1,9 @@
 ###############################################################################
 #
 ###############################################################################
+	
 	+ 1/21/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Runtime dialog box (see Eclipse)
 		* Powerful 'search' keywords
 			#date_logs:  9 am (show me all logs at 9am)
 			#date_logs_between: 9am 10am
