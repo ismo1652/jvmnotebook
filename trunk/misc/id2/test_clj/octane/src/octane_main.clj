@@ -49,6 +49,7 @@
 (ns org.octane
     (load "octane_config")
     (load "swt_imports")
+	(load "octane_templates")
     (load "octane_main_constants")
     (load "public_objects")
     (load "octane_file_utils")
