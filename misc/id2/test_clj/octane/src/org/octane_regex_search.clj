@@ -59,7 +59,8 @@
   (let [gd-textarea (new GridData GridData/FILL GridData/FILL true true)]
 	;; Set both text area with expanding grid data layout.
 	(. regex-edit-box setLayoutData gd-textarea)
-	(. regex-example-text setLayoutData gd-textarea)))
+	(. regex-example-text setLayoutData gd-textarea)
+	(. regex-example-text setText example-regex-document)))
 
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
