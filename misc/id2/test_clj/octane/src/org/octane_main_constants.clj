@@ -91,6 +91,7 @@
 
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
+(def red-color        (new RGB 255 100 100))
 
 (def tab-1-title      "Main Buffer View")
 (def tab-2-title      "Secondary Buffer View")

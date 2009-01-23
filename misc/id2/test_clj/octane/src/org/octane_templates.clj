@@ -95,6 +95,8 @@ $ 	       The end of a line
 
 ^.*(<style type='text/css'>)(.*?)(</style>).*$
 
+<style type='text/css'> div-header { stuff } </style>
+
 Use (.*?) to get a non-greedy expression, which will allow 
 the trailing (</style>) to match at the first opportunity.
 
