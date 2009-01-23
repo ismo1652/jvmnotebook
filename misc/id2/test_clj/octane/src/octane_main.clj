@@ -1,7 +1,7 @@
 ;;; -------------------------------------------------------
-;;; Copyright (c) Berlin Brown:. All rights reserved.
+;;; Copyright (c) ....:. All rights reserved.
 ;;;
-;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
+;;; Copyright (c) 2006-2007, Botnode.com,....
 ;;; http://www.opensource.org/licenses/bsd-license.php
 
 ;;; All rights reserved.
@@ -14,7 +14,7 @@
 ;;;    * Redistributions in binary form must reproduce the above copyright notice,
 ;;;    this list of conditions and the following disclaimer in the documentation
 ;;;    and/or other materials provided with the distribution.
-;;;    * Neither the name of the Botnode.com (Berlin Brown) nor
+;;;    * Neither the name of the Botnode.com (...) nor
 ;;;    the names of its contributors may be used to endorse or promote
 ;;;    products derived from this software without specific prior written permission.
 
@@ -34,7 +34,7 @@
 ;;; Date:  1/5/2009
 ;;; Description:
 ;;;     Simple 'Find' keyword in File with SWT and Clojure
-;;; Contact:  Berlin Brown <berlin dot brown at gmail.com>
+;;; Contact:  ... <berlin dot brown at gmail.com>
 ;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
 ;;;          Enter a search term and then open a file, if the term
 ;;;          is found on the line then the line will be higlighted.
@@ -70,10 +70,6 @@
 (def create-styled-text-area)
 (def history-add-text)
 
-(defn add-select-style [styles-vec cur-style]
-  ;; Set the event styles
-  (. styles-vec addElement cur-style))
-
 (defn search-term? []
   (if (> (length (. search-box getText)) 2) true false))
 
@@ -97,9 +93,6 @@
 	  (set! (. event styles) arr)
 	  (. styles-vec copyInto (. event styles)))))
 
-(defn octane-pattern [s flags]
-  (. Pattern compile s flags))
-
 (defn search-keyword [keyword line]
   (not (nil? (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))))
 	  
@@ -116,8 +109,9 @@
         disp (Display/getDefault)
         bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
 	(. tab-folder setLayoutData spec)
-    (doto text    
+    (doto text
       (. setLayoutData spec)
+      (. setFont (styled-text-font))
       (. addLineStyleListener style-listener)
       (. setEditable false)
       (. setBackground bg))
@@ -192,6 +186,7 @@
   (create-status-bar)
   (. sh setSize win-size-width win-size-height)
   (. sh open)
+  (parse-system-args)
   ;; Debug
   (create-regex-window)
   (loop [] (if (. sh (isDisposed))
@@ -205,7 +200,8 @@
 ;; Main Entry Point
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defn main-1 []
-  (println "Running")
+  (println "Running Octane Log Viewer")
+  (println "Args =>" *command-line-args*)
   (create-gui-window display shell)
   (let [o (new Object)] (locking o (. o (wait)))))
 

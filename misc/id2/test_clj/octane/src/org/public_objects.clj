@@ -1,7 +1,7 @@
 ;;; -------------------------------------------------------
-;;; Copyright (c) Berlin Brown:. All rights reserved.
+;;; Copyright (c) ...:. All rights reserved.
 ;;;
-;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
+;;; Copyright (c) 2006-2007, Botnode.com, ...
 ;;; http://www.opensource.org/licenses/bsd-license.php
 
 ;;; All rights reserved.
@@ -14,7 +14,7 @@
 ;;;    * Redistributions in binary form must reproduce the above copyright notice,
 ;;;    this list of conditions and the following disclaimer in the documentation
 ;;;    and/or other materials provided with the distribution.
-;;;    * Neither the name of the Botnode.com (Berlin Brown) nor
+;;;    * Neither the name of the Botnode.com (...) nor
 ;;;    the names of its contributors may be used to endorse or promote
 ;;;    products derived from this software without specific prior written permission.
 
@@ -34,7 +34,7 @@
 ;;; Date:  1/5/2009
 ;;; Description:
 ;;;     Simple 'Find' keyword in File with SWT and Clojure
-;;; Contact:  Berlin Brown <berlin dot brown at gmail.com>
+;;; Contact:  ... <... dot brown at gmail.com>
 ;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
 ;;;          Enter a search term and then open a file, if the term
 ;;;          is found on the line then the line will be higlighted.
@@ -63,6 +63,8 @@
 
 (def display     (new Display))
 (def shell       (new Shell display))
+
+(defn styled-text-font [] (new Font (. shell getDisplay) "Courier New" 9 SWT/NORMAL))
 
 (def fileDialog  (new FileDialog shell SWT/CLOSE))
 

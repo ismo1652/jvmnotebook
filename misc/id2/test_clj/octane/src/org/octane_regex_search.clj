@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Copyright (c) Berlin Brown:. All rights reserved.
+;;; Copyright (c) ... Brown:. All rights reserved.
 ;;;
-;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
+;;; Copyright (c) 2006-2007, Botnode.com, ... Brown
 ;;; http://www.opensource.org/licenses/bsd-license.php
 
 ;;; All rights reserved.
@@ -14,7 +14,7 @@
 ;;;    * Redistributions in binary form must reproduce the above copyright notice,
 ;;;    this list of conditions and the following disclaimer in the documentation
 ;;;    and/or other materials provided with the distribution.
-;;;    * Neither the name of the Botnode.com (Berlin Brown) nor
+;;;    * Neither the name of the Botnode.com (... Brown) nor
 ;;;    the names of its contributors may be used to endorse or promote
 ;;;    products derived from this software without specific prior written permission.
 
@@ -34,7 +34,7 @@
 ;;; Date:  1/5/2009
 ;;; Description:
 ;;;     Simple 'Find' keyword in File with SWT and Clojure
-;;; Contact:  Berlin Brown <berlin dot brown at gmail.com>
+;;; Contact:  ... Brown <berlin dot brown at gmail.com>
 ;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
 ;;;          Enter a search term and then open a file, if the term
 ;;;          is found on the line then the line will be higlighted.
@@ -44,23 +44,100 @@
 
 (in-ns 'org.octane)
 
+(def refresh-regex-example)
 (def *regex-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE 1))))
 
 (def regex-shell        (new Shell shell *regex-style*))
 (def regex-label        (new Label regex-shell SWT/LEFT))
 (def regex-edit-box     (new Text  regex-shell swt-text-style))
-(def regex-example-text (new Text  regex-shell swt-text-style))
+(def regex-colors-vec   (new Vector))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Regex Dialog Window Functions
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn regex-get-text []    (str (. regex-edit-box getText)))
 
 (defn create-regex-grid-layout []
   (let [gridLayout (new GridLayout)]
 	(set! (. gridLayout numColumns) 1) gridLayout))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Styled Text Creation
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn init-regex-colors []  
+  ;; Orange highlight color = 250, 209, 132
+  ;; Light grey for default text.
+  (let [disp (.  regex-shell getDisplay)]
+	(. regex-colors-vec addElement (new Color disp orange-sel-color))
+	(. regex-colors-vec addElement (new Color disp lightgrey-color))))
+
+(defn regex-search-term? []
+  (println (count (. regex-edit-box getText)))
+  (if (> (count (. regex-edit-box getText)) 2) true false))
+
+(defn regex-search-keyword [keyword line]
+  (not (nil? (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))))
+
+(defn regex-style-handler [event]
+  (let [styles-vec (new Vector)
+        line (. event lineText)
+        lo   (. event lineOffset)
+        len  (. line length)
+        l    (+ lo len)
+        bg   (. regex-colors-vec get 0)
+        fgl  (. regex-colors-vec get 1)
+        all-bold (new StyleRange lo l nil bg   SWT/BOLD)
+        light    (new StyleRange lo l fgl nil  SWT/NORMAL)]
+    (when (regex-search-term?)
+      (if (regex-search-keyword (regex-get-text) line)
+        (add-select-style styles-vec all-bold)
+		(add-select-style styles-vec light)))
+	;; Associate the even style with the display
+	(let [arr (make-array StyleRange (. styles-vec size))]
+	  (set! (. event styles) arr)
+	  (. styles-vec copyInto (. event styles)))))
+
+(def regex-style-listener
+     (proxy [LineStyleListener] []
+            (lineGetStyle [event] 
+                          (regex-style-handler event))))
+  
+(defn create-regex-styled-text [sh]
+  (let [text (new StyledText sh swt-text-style)
+        gd   (new GridData GridData/FILL GridData/FILL true true)
+        disp (Display/getDefault)
+        bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
+    (doto text
+      (. setLayoutData gd)
+      (. setFont (styled-text-font))
+      (. addLineStyleListener regex-style-listener)
+      (. setEditable false)
+      (. setBackground bg))
+	text))
+
+(def regex-example-text (create-regex-styled-text regex-shell))
+
+(defn refresh-regex-example []
+  (let [disp (. regex-example-text getDisplay)]			 
+	(. disp asyncExec
+	   (proxy [Runnable] [] (run [] (. regex-example-text setText example-regex-document))))))
+
+(defn find-regex-listener []
+  (proxy [ModifyListener] []
+         (modifyText [event]
+                     (refresh-regex-example))))
 
 (defn init-regex-helper [sh]
   (let [gd-textarea (new GridData GridData/FILL GridData/FILL true true)]
 	;; Set both text area with expanding grid data layout.
 	(. regex-edit-box setLayoutData gd-textarea)
 	(. regex-example-text setLayoutData gd-textarea)
-	(. regex-example-text setText example-regex-document)))
+	(. regex-example-text setText example-regex-document)
+    (. regex-edit-box     setFont (styled-text-font))
+    (. regex-example-text setFont (styled-text-font))
+    (. regex-edit-box addModifyListener (find-regex-listener))))
 
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
@@ -70,6 +147,7 @@
 	(history-add-text "Opening regex tool (Search -> Regex Search Tool)")
 	(let [layout (create-regex-grid-layout)]
 	  (. regex-shell setText (. resources-win getString "Regex_win_title"))
+      (init-regex-colors)
 	  (init-regex-helper regex-shell)
 	  (. regex-shell setLayout layout)
 	  (. regex-shell addShellListener
