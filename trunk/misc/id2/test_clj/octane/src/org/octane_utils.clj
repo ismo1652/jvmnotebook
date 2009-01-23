@@ -48,7 +48,8 @@
 
 (defn clear-buffer [buf] (. buf setLength 0))
 
-(defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
+;;(defn length [s] (if (seq s) (+ 1 (length (rest s))) 0))
+(defn length [s] (count s))
 
 (defn date-time [] (str (new java.util.Date)))
 
@@ -58,7 +59,12 @@
 
 (defn octane-pattern [s flags] (. Pattern compile s flags))
 
-(defn add-select-style [styles-vec cur-style]
-  (. styles-vec addElement cur-style))
+(defn octane-pattern_ [s] (. Pattern compile s))
+
+(defn add-select-style [styles-vec cur-style] (. styles-vec addElement cur-style))
+
+(defn col-vec-bg []    (. colors-vec get 0))
+(defn col-vec-grey []  (. colors-vec get 1))
+(defn col-vec-red []   (. colors-vec get 2))
 
 ;;; End of Script

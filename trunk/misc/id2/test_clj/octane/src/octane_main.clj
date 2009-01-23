@@ -78,11 +78,10 @@
 				   line (. event lineText)
 				   lo   (. event lineOffset)
 				   len  (. line length)
-				   l    (+ lo len)
 				   bg   (. colors-vec get 0)
 				   fgl  (. colors-vec get 1)
-				   all-bold (new StyleRange lo l nil bg   SWT/BOLD)
-				   light    (new StyleRange lo l fgl nil  SWT/NORMAL)]
+				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
+				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
 	;; Add the event styles if needed   
     (when (search-term?)
       (if (search-keyword (. search-box getText) line)
@@ -207,7 +206,7 @@
 
 (defn main []
   (try (main-1)
-	   (catch Exception e 
+       (catch Exception e 
 			  (println "ERR: " e)
 			  (exit))))
 

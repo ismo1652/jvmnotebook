@@ -56,6 +56,10 @@
 ;; Regex Dialog Window Functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defn rcol-vec-bg []    (. regex-colors-vec get 0))
+(defn rcol-vec-grey []  (. regex-colors-vec get 1))
+(defn rcol-vec-red []   (. regex-colors-vec get 2))
+
 (defn regex-get-text []    (str (. regex-edit-box getText)))
 
 (defn create-regex-grid-layout []
@@ -71,28 +75,46 @@
   ;; Light grey for default text.
   (let [disp (.  regex-shell getDisplay)]
 	(. regex-colors-vec addElement (new Color disp orange-sel-color))
-	(. regex-colors-vec addElement (new Color disp lightgrey-color))))
+	(. regex-colors-vec addElement (new Color disp lightgrey-color))
+    (. regex-colors-vec addElement (new Color disp red-color))))
 
 (defn regex-search-term? []
-  (println (count (. regex-edit-box getText)))
-  (if (> (count (. regex-edit-box getText)) 2) true false))
+  (if  (> (count (. regex-edit-box getText)) 2) true false))
 
 (defn regex-search-keyword [keyword line]
-  (not (nil? (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))))
+  (try (re-seq (octane-pattern_ keyword) line)
+       (catch Exception e 
+              (println "WARN: invalid regex expression => " keyword)
+              false)))
 
+(defn regex-match-group [keyword line]
+  ;; Another call (redo) to regex match, find the main group, start and end.
+  (let [p (octane-pattern_ keyword)
+        m (re-matcher p line)]
+    (when (. m find) m)))
+
+(defn regex-match-style [keyword line lo]
+  (let [m (regex-match-group keyword line)]
+    (when m
+      (let [pt1 (+ lo (. m start))
+            pt2 (+ lo (. m end))
+            len (- pt2 pt1)
+            styl-tok (new StyleRange pt1 len (rcol-vec-red) (rcol-vec-grey) SWT/BOLD)]
+        styl-tok))))
+       
 (defn regex-style-handler [event]
   (let [styles-vec (new Vector)
         line (. event lineText)
         lo   (. event lineOffset)
         len  (. line length)
-        l    (+ lo len)
-        bg   (. regex-colors-vec get 0)
-        fgl  (. regex-colors-vec get 1)
-        all-bold (new StyleRange lo l nil bg   SWT/BOLD)
-        light    (new StyleRange lo l fgl nil  SWT/NORMAL)]
+        all-bold (new StyleRange lo len nil (rcol-vec-bg) SWT/BOLD)
+        light    (new StyleRange lo len (rcol-vec-grey) nil SWT/NORMAL)]
     (when (regex-search-term?)
       (if (regex-search-keyword (regex-get-text) line)
-        (add-select-style styles-vec all-bold)
+        (let [dummy1 (add-select-style styles-vec all-bold)
+              reg-fnd-style (regex-match-style (regex-get-text) line lo)]
+          ;; Check if Match found, so add the style range
+          (when reg-fnd-style (add-select-style styles-vec reg-fnd-style)))
 		(add-select-style styles-vec light)))
 	;; Associate the even style with the display
 	(let [arr (make-array StyleRange (. styles-vec size))]
@@ -101,8 +123,7 @@
 
 (def regex-style-listener
      (proxy [LineStyleListener] []
-            (lineGetStyle [event] 
-                          (regex-style-handler event))))
+            (lineGetStyle [event] (regex-style-handler event))))
   
 (defn create-regex-styled-text [sh]
   (let [text (new StyledText sh swt-text-style)
@@ -120,14 +141,17 @@
 (def regex-example-text (create-regex-styled-text regex-shell))
 
 (defn refresh-regex-example []
+  (. regex-example-text redraw)
+  (. regex-example-text update))
+
+(defn refresh-regex-example-deprecated []
   (let [disp (. regex-example-text getDisplay)]			 
 	(. disp asyncExec
 	   (proxy [Runnable] [] (run [] (. regex-example-text setText example-regex-document))))))
 
 (defn find-regex-listener []
   (proxy [ModifyListener] []
-         (modifyText [event]
-                     (refresh-regex-example))))
+         (modifyText [event] (refresh-regex-example))))
 
 (defn init-regex-helper [sh]
   (let [gd-textarea (new GridData GridData/FILL GridData/FILL true true)]
