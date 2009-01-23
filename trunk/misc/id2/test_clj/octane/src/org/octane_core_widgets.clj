@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Copyright (c) Berlin Brown:. All rights reserved.
+;;; Copyright (c) ... Brown:. All rights reserved.
 ;;;
-;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
+;;; Copyright (c) 2006-2007, Botnode.com, ... Brown
 ;;; http://www.opensource.org/licenses/bsd-license.php
 
 ;;; All rights reserved.
@@ -14,7 +14,7 @@
 ;;;    * Redistributions in binary form must reproduce the above copyright notice,
 ;;;    this list of conditions and the following disclaimer in the documentation
 ;;;    and/or other materials provided with the distribution.
-;;;    * Neither the name of the Botnode.com (Berlin Brown) nor
+;;;    * Neither the name of the Botnode.com (... Brown) nor
 ;;;    the names of its contributors may be used to endorse or promote
 ;;;    products derived from this software without specific prior written permission.
 
@@ -34,7 +34,7 @@
 ;;; Date:  1/5/2009
 ;;; Description:
 ;;;     Simple 'Find' keyword in File with SWT and Clojure
-;;; Contact:  Berlin Brown <berlin dot brown at gmail.com>
+;;; Contact:  ... Brown <berlin dot brown at gmail.com>
 ;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
 ;;;          Enter a search term and then open a file, if the term
 ;;;          is found on the line then the line will be higlighted.
@@ -50,6 +50,7 @@
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(java.util HashMap))
 
+(def open-file)
 (def styled-text)
 (def dialog-open-file)
 (def history-add-text)
@@ -64,6 +65,17 @@
 (def  buffer-menu-state        (ref {:menu-state nil}))
 (defn get-buffer-menu-state [] (@buffer-menu-state :menu-state))
 (defn set-buffer-menu-state [menu] (dosync (commute buffer-menu-state assoc :menu-state menu)))
+
+(defn parse-system-args []
+  (let [args *command-line-args*]
+    (when (not (nil? args))
+      (when (> (count args) 0)
+        ;; Open the file if it exists
+        (if (not (file-exists? (first args)))
+          (println "WARN: Invalid file path argument =>" (first args))
+          (let []
+            (println "Opening file from command-line argument list")
+            (open-file (first args) false)))))))
 
 (defn shell-display-loop [disp sh dispose? msg]  
   (loop [] (if (. sh (isDisposed))
@@ -91,15 +103,18 @@
 
 (defn create-tab-2 []
   (. tab-area-2 setText    tab-2-title)
-  (. tab-area-2 setControl tab-text-2))
+  (. tab-area-2 setControl tab-text-2)
+  (. tab-text-2 setFont    (styled-text-font)))
 
 (defn create-tab-3 []
   (. tab-area-3 setText    tab-3-title)
-  (. tab-area-3 setControl tab-text-3))
+  (. tab-area-3 setControl tab-text-3)
+  (. tab-text-3 setFont    (styled-text-font)))
 
 (defn create-tab-4 []
   (. tab-area-4 setText    tab-4-title)
-  (. tab-area-4 setControl tab-text-4))
+  (. tab-area-4 setControl tab-text-4)
+  (. tab-text-4 setFont    (styled-text-font)))
 
 (defn create-all-tabs []
   (create-tab-1)
@@ -292,10 +307,10 @@
 (defn create-menu-bar [disp sh]
   (let [bar  (new Menu sh (. SWT BAR))
         item (new MenuItem bar (. SWT CASCADE))
-		search-item (new MenuItem bar (. SWT CASCADE))
+		search-item    (new MenuItem bar (. SWT CASCADE))
 		recent-buffers (new MenuItem bar (. SWT CASCADE))
-		tools-item (new MenuItem bar (. SWT CASCADE))
-		help-item (new MenuItem bar (. SWT CASCADE))]		
+		tools-item     (new MenuItem bar (. SWT CASCADE))
+		help-item      (new MenuItem bar (. SWT CASCADE))]		
     (. sh setMenuBar bar)
     (doto item
       (. setText (. resources-win getString "File_menuitem"))

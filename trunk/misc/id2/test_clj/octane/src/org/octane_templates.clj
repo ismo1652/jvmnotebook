@@ -1,7 +1,7 @@
 ;;; -------------------------------------------------------
-;;; Copyright (c) Berlin Brown:. All rights reserved.
+;;; Copyright (c) ...:. All rights reserved.
 ;;;
-;;; Copyright (c) 2006-2007, Botnode.com, Berlin Brown
+;;; Copyright (c) 2006-2007, Botnode.com, ...
 ;;; http://www.opensource.org/licenses/bsd-license.php
 
 ;;; All rights reserved.
@@ -14,7 +14,7 @@
 ;;;    * Redistributions in binary form must reproduce the above copyright notice,
 ;;;    this list of conditions and the following disclaimer in the documentation
 ;;;    and/or other materials provided with the distribution.
-;;;    * Neither the name of the Botnode.com (Berlin Brown) nor
+;;;    * Neither the name of the Botnode.com (...) nor
 ;;;    the names of its contributors may be used to endorse or promote
 ;;;    products derived from this software without specific prior written permission.
 
@@ -34,7 +34,7 @@
 ;;; Date:  1/5/2009
 ;;; Description:
 ;;;     Simple 'Find' keyword in File with SWT and Clojure
-;;; Contact:  Berlin Brown <berlin dot brown at gmail.com>
+;;; Contact:  ... <berlin dot brown at gmail.com>
 ;;; Usage:   java -cp $CP clojure.lang.Repl src/octane_main.clj
 ;;;          Enter a search term and then open a file, if the term
 ;;;          is found on the line then the line will be higlighted.
@@ -46,6 +46,66 @@
 
 (def example-regex-document
 "
+-------------------
+ Example Regex Notes and Textpad.  Text will highlight when a regex
+ match is found.  Select the 'Find' button to query against the main buffer.
+ See the History Console for additional messages.
+-------------------
+------------------
+ Predefined Character Classes
+------------------
+.               Any character (may or may not match line terminators)
+\\d              A digit: [0-9]
+\\D              A non-digit: [^0-9]
+\\s              A whitespace character: [ \\t\\n\\x0B\\f\\r]
+\\S              A non-whitespace character: [^\\s]
+\\w              A word character: [a-zA-Z_0-9]
+\\W              A non-word character: [^\\w]
+-------------------
+ Quantifiers 
+-------------------
+X?       X??	  X?+    X, once or not at all
+X*       X*?	 X*+     X, zero or more times
+X+       X+?	 X++     X, one or more times
+X{n}     X{n}? 	 X{n}+   X, exactly n times
+X{n,}    X{n,}?	 X{n,}+  X, at least n times
+X{n,m}   X{n,m}? X{n,m}+ X, at least n but not more than m times
+
+-------------------
+ Bounday Matches
+-------------------
+^              The beginning of a line
+$ 	       The end of a line
+\\b 	       A word boundary
+\\B 	       A non-word boundary
+\\A 	       The beginning of the input
+\\G 	       The end of the previous match
+\\Z 	       The end of the input but for the final terminator, if any
+\\z 	       The end of the input
+
+[abc]          a, b, or c (simple class)
+[^abc]         Any character except a, b, or c (negation)
+[a-zA-Z]       a through z, or A through Z, inclusive (range)
+[a-d[m-p]]     a through d, or m through p: [a-dm-p] (union)
+[a-z&&[def]]   d, e, or f (intersection)
+
+-------------------
+ Examples
+-------------------
+
+^.*(<style type='text/css'>)(.*?)(</style>).*$
+
+Use (.*?) to get a non-greedy expression, which will allow 
+the trailing (</style>) to match at the first opportunity.
+
+Example Text below:
+--------------------
+20.049: [GC 28.200: [DefNew: 1921K->137K(1984K), 0.0006890 secs] 23030K->21247K(27320K), 0.0007550 secs]  [Times: user=0.00 sys=0.00, real=0.00 secs]
+--------------------
+Example Patterns:
+(\\S*):\\s*\\[GC\\s*(\\S*):\\s*
+\\[DefNew:\\s*(\\S*)(K|M)\\-\\>(\\S*)(K|M)\\((.*)$
+
 ------------------------------------------------------------
 The House of Representatives shall be composed of Members chosen every 
 second Year by the People of the several States, and the Electors in each 
