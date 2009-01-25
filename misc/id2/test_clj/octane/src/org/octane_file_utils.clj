@@ -50,6 +50,11 @@
 				  ByteArrayOutputStream ObjectOutputStream FileOutputStream))
 (import '(java.util ResourceBundle Vector))
 
+(def  clear-buffer)
+(def  styled-text)
+(def  history-add-text)
+(def  status-set-text)
+(def  *memory-usage*)
 (def  open-file)
 (def  date-timel)
 (def  get-file-state)
@@ -63,9 +68,10 @@
 (defn get-file-info-header []
   (when (and (not (nil? @cur-file-info)) (get-file-state))
     (. MessageFormat format 
-       file-info-msg (to-array [(date-timel (@cur-file-info :last-mod))  (@cur-file-info :line-num)
+       file-info-msg (to-array [(date-timel (@cur-file-info :last-mod)) (@cur-file-info :line-num)
                                 (@cur-file-info :file-name) (@cur-file-info :parent-dirname)
-                                (@cur-file-info :file-path) (@cur-file-info :file-size)]))))
+                                (@cur-file-info :file-path) (@cur-file-info :file-size)
+								(*memory-usage*)]))))
       
 (def  file-state             (ref {:open-state false}))
 (defn get-file-state []      (@file-state :open-state))
@@ -166,5 +172,37 @@
 	(when rec-tabl
 	  (. rec-tabl put name path)
 	  rec-tabl)))
-			 	
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Open the directory dialog and utilities
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn format-has-val [bval c] (if bval c "-"))
+
+(defn format-isdir-name [name is-d] (if is-d (str "<" name ">") name))
+
+(defn format-dir-file [file]
+  (let [is-d (format-has-val (. file isDirectory) "d")
+			 can-r (format-has-val (. file canRead) "r")
+			 can-w (format-has-val (. file canRead) "w")
+			 len   (. file length)
+			 name  (format-isdir-name (. file getName) (. file isDirectory))
+			 lmod  (. file lastModified)]
+	(str is-d can-r can-w " " len " " lmod " " name "\n")))
+			 
+(defn open-directory [path]
+  ;; Open the directory and then store the contents
+  ;; in the main buffer
+  (history-add-text (str "Opening directory => " path "\n"))
+  (status-set-text  (str "Opening directory => " path))
+  (let [file-dir (new File path)]
+	(when (. file-dir exists)
+	  (clear-buffer buffer-1)
+	  (doseq [fil (. file-dir listFiles)]
+		  (let []
+			(. buffer-1 append (format-dir-file fil))))
+	  (. styled-text setText (. buffer-1 toString)))))				 		
+			  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

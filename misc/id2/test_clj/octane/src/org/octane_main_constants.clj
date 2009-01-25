@@ -67,6 +67,7 @@
 - Last Modified : {0}
 - Number of Lines : {1}
 - File Size : {5} bytes
+- Memory : {6}
 ------------------------------------------------------------
 ")
 
@@ -89,9 +90,16 @@
 (def *regex-size-width*  620)
 (def *regex-size-height* 370)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; RGB colors used when setting the color scheme for a text area.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (def orange-sel-color (new RGB 250 209 132))
 (def lightgrey-color  (new RGB 100 100 100))
-(def red-color        (new RGB 255 100 100))
+(def red-color        (new RGB 255 0     0))
+(def green-color      (new RGB 18  152  14))
+(def white-color      (new RGB 255 255 255))
+(def cyan-sel-color   (new RGB 64  224 208))
+(def dark-blue-color  (new RGB 34  38  167))
 
 (def tab-1-title      "Main Buffer View")
 (def tab-2-title      "Secondary Buffer View")
