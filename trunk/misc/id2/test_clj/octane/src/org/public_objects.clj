@@ -1,4 +1,4 @@
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) ...:. All rights reserved.
 ;;;
 ;;; Copyright (c) 2006-2007, Botnode.com, ...
@@ -40,11 +40,11 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (in-ns 'org.octane)
 
-(import '(org.eclipse.swt.widgets FileDialog MessageBox Composite))
+(import '(org.eclipse.swt.widgets FileDialog DirectoryDialog MessageBox Composite))
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(java.util ResourceBundle Vector Hashtable))
@@ -67,6 +67,7 @@
 (defn styled-text-font [] (new Font (. shell getDisplay) "Courier New" 9 SWT/NORMAL))
 
 (def fileDialog  (new FileDialog shell SWT/CLOSE))
+(def directory-dialog  (new DirectoryDialog shell SWT/CLOSE))
 
 ;; Creation of main GUI components (order of instantiation is important here)
 ;; Including main tabs, location bar and search box.
@@ -84,4 +85,6 @@
 
 (def status-bar  (new Label shell SWT/BORDER))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

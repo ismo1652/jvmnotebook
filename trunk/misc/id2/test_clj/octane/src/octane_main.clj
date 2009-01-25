@@ -1,4 +1,4 @@
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) ....:. All rights reserved.
 ;;;
 ;;; Copyright (c) 2006-2007, Botnode.com,....
@@ -44,7 +44,7 @@
 ;;; Key Functions: simple-swt create-file-menu
 ;;; Also see: 
 ;;; http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/index.html
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns org.octane
     (load "octane_config")
@@ -73,6 +73,26 @@
 (defn search-term? []
   (if (> (length (. search-box getText)) 2) true false))
 
+(defn srchbox-get-text [] (str (. search-box getText)))
+
+(defn main-match-style [keyword line lo]
+  (let [m (regex-match-group keyword line)]
+    (when m
+      (let [pt1 (+ lo (. m start))
+            pt2 (+ lo (. m end))
+            len (- pt2 pt1)
+            styl-tok (new StyleRange pt1 len (col-vec-wht) (col-vec-drkb) SWT/BOLD)]
+        styl-tok))))
+
+(defn style-keyword-match [styles-vec line l-offset sty-on-sel sty-fail]
+  (when (search-term?)
+	(if (search-keyword (srchbox-get-text) line)
+	  (let [dummy1 (add-select-style styles-vec sty-on-sel)]
+		(when-let [fnd-style (main-match-style (srchbox-get-text) line l-offset)]
+				  ;; Check if Match found, so add the style range
+				  (add-select-style styles-vec fnd-style)))
+	  (add-select-style styles-vec sty-fail))))
+
 (defn style-handler [event]
   (let [styles-vec (new Vector)
 				   line (. event lineText)
@@ -83,17 +103,14 @@
 				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
 				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
 	;; Add the event styles if needed   
-    (when (search-term?)
-      (if (search-keyword (. search-box getText) line)
-        (add-select-style styles-vec all-bold)
-		(add-select-style styles-vec light)))
+	(style-keyword-match styles-vec line lo all-bold light)
 	;; Associate the even style with the display
 	(let [arr (make-array StyleRange (. styles-vec size))]
 	  (set! (. event styles) arr)
 	  (. styles-vec copyInto (. event styles)))))
 
 (defn search-keyword [keyword line]
-  (not (nil? (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))))
+  (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))
 	  
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
@@ -122,11 +139,14 @@
      (proxy [ShellAdapter] [] 
             (shellClosed [evt] (exit))))
 
-(defn refresh-textarea []
+(defn refresh-textarea-deprecated []
   (let [disp (. styled-text getDisplay)]			 
 	(. disp asyncExec
 	   (proxy [Runnable] []
 			  (run [] (. styled-text setText (. buffer-1 toString)))))))
+(defn refresh-textarea []
+  (. styled-text redraw)
+  (. styled-text update))
 
 (defn history-add-text [text]
   (println text)
@@ -167,7 +187,7 @@
     (create-shell    disp sh)
     (init-colors)
     (history-add-text (get-hist-header))
-    (status-set-text  (str "Octane GUI loaded " (date-time))))
+    (status-set-text  (str "Octane GUI loaded " (date-time) " " (*memory-usage*))))
 
 (defn 
   #^{:doc "Initialize the SWT window, set the size add all components"}
@@ -187,7 +207,6 @@
   (. sh open)
   (parse-system-args)
   ;; Debug
-  (create-regex-window)
   (loop [] (if (. sh (isDisposed))
              (. disp (dispose))
              (let []

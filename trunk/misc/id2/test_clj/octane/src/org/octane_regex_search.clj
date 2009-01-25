@@ -56,11 +56,14 @@
 ;; Regex Dialog Window Functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defn rcol-vec-bg []    (. regex-colors-vec get 0))
-(defn rcol-vec-grey []  (. regex-colors-vec get 1))
-(defn rcol-vec-red []   (. regex-colors-vec get 2))
+(defn rcol-vec-bg   [] (. regex-colors-vec get 0))
+(defn rcol-vec-grey [] (. regex-colors-vec get 1))
+(defn rcol-vec-red  [] (. regex-colors-vec get 2))
+(defn rcol-vec-cy   [] (. regex-colors-vec get 3))
+(defn rcol-vec-drkb [] (. regex-colors-vec get 4))
+(defn rcol-vec-wht  [] (. regex-colors-vec get 5))
 
-(defn regex-get-text []    (str (. regex-edit-box getText)))
+(defn regex-get-text [] (str (. regex-edit-box getText)))
 
 (defn create-regex-grid-layout []
   (let [gridLayout (new GridLayout)]
@@ -74,9 +77,13 @@
   ;; Orange highlight color = 250, 209, 132
   ;; Light grey for default text.
   (let [disp (.  regex-shell getDisplay)]
-	(. regex-colors-vec addElement (new Color disp orange-sel-color))
-	(. regex-colors-vec addElement (new Color disp lightgrey-color))
-    (. regex-colors-vec addElement (new Color disp red-color))))
+	(doto regex-colors-vec
+	  (. addElement (new Color disp orange-sel-color))
+	  (. addElement (new Color disp lightgrey-color))
+	  (. addElement (new Color disp red-color))
+	  (. addElement (new Color disp cyan-sel-color))
+	  (. addElement (new Color disp dark-blue-color))
+	  (. addElement (new Color disp white-color)))))
 
 (defn regex-search-term? []
   (if  (> (count (. regex-edit-box getText)) 2) true false))
@@ -99,7 +106,7 @@
       (let [pt1 (+ lo (. m start))
             pt2 (+ lo (. m end))
             len (- pt2 pt1)
-            styl-tok (new StyleRange pt1 len (rcol-vec-red) (rcol-vec-grey) SWT/BOLD)]
+            styl-tok (new StyleRange pt1 len (rcol-vec-wht) (rcol-vec-drkb) SWT/BOLD)]
         styl-tok))))
        
 (defn regex-style-handler [event]
@@ -111,10 +118,10 @@
         light    (new StyleRange lo len (rcol-vec-grey) nil SWT/NORMAL)]
     (when (regex-search-term?)
       (if (regex-search-keyword (regex-get-text) line)
-        (let [dummy1 (add-select-style styles-vec all-bold)
-              reg-fnd-style (regex-match-style (regex-get-text) line lo)]
-          ;; Check if Match found, so add the style range
-          (when reg-fnd-style (add-select-style styles-vec reg-fnd-style)))
+		(let [dummy1 (add-select-style styles-vec all-bold)]
+		  (when-let [reg-fnd-style (regex-match-style (regex-get-text) line lo)]
+					;; Check if Match found, so add the style range
+					(add-select-style styles-vec reg-fnd-style)))
 		(add-select-style styles-vec light)))
 	;; Associate the even style with the display
 	(let [arr (make-array StyleRange (. styles-vec size))]

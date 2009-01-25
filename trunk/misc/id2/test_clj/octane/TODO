@@ -1,6 +1,26 @@
 ###############################################################################
 #
 ###############################################################################
+	+ 1/23/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Add vocabulary
+			- Set = directory
+			- Database Viewer = virtual system for viewing files or sets
+			- Command = #<command>:<args>: ... etc
+				#script:: (load it or something)
+				#regex:1: (Blah) 
+		* Add memory				
+		
+		* Advanced database viewer
+		* Search arrow up and down for history
+		* Grep/Find tools for directories, E.g. quick access to common html/sql directories
+		* Database viewer for html sql directories
+		* Diff tool for prod, test, etc.
+	
+		* Search in 'Files' tool
+			- Open directory will print a list of all the files to the main directory
+			- Then use 'find in directory' dialog box
+				Also have the option for 'grep' in directory
+		* Launch scripts from the edit box search field with the command interface 				
 	
 	+ 1/21/2009 Berlin Brown	berlin dot brown at gmail.com
 		* Shared key bindings with emacs
@@ -54,13 +74,14 @@
 					2. Normal search (search "stuff")
 					3.  (open file) (seach "stuff")
 					4. Highlight with different colors, etc.
-		* Canned regex queries.
+					
+		* Canned regex queries. @@@@
 		* Canned scripts		
-		* The regex screen will include:
+		* The regex screen will include: @@@@
 			1. Editor Screen
 			2. Example text, example log file
-			3. canned queries
-			(optional), Regex code generator.  					
+			3. canned queries  <deprecated>
+				(optional), Regex code generator.  					
 
 	+ 1/18/2009 Berlin Brown	berlin dot brown at gmail.com
 		* With the database viewer, add ability to pair up files.
@@ -70,14 +91,14 @@
 			and then 'jar' zip the file.
 		* Add JAR file viewer, with package management, etc.
 		* Jar viewer and ASM class viewer.
-		* Add file/text file database. @		
+		* Add file/text file database. @@@@		
 			-------------
 			File Database for Dialog
 			-------------
 			name, end of path, group, server, short description.
 			
 		* Add analytics tools for data mining and collective intelligence.
-		* Regex helper tool with possible incremental search.
+		* Regex helper tool with possible incremental search. @@@@
 		* Emacs like key bindings.
 		* Grep like functionality to search only the active buffers in the 
 			information database.			

@@ -50,6 +50,7 @@
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(java.util HashMap))
 
+(def create-regex-window)
 (def open-file)
 (def styled-text)
 (def dialog-open-file)
@@ -94,8 +95,13 @@
   ;; Orange highlight color = 250, 209, 132
   ;; Light grey for default text.
   (let [disp (. Display getDefault)]
-	(. colors-vec addElement (new Color disp orange-sel-color))
-	(. colors-vec addElement (new Color disp lightgrey-color))))
+	(doto colors-vec
+	(. addElement (new Color disp orange-sel-color))
+	(. addElement (new Color disp lightgrey-color))
+	(. addElement (new Color disp red-color))
+	(. addElement (new Color disp cyan-sel-color))
+	(. addElement (new Color disp dark-blue-color))
+	(. addElement (new Color disp white-color)))))
 
 (defn create-tab-1 []
   (. tab-area-1 setText    tab-1-title)
@@ -198,8 +204,14 @@
 		  (. disp asyncExec (open-file-listener file-str-data)))))))
 
 (defn dialog-open-file []
+  (. fileDialog setText "Open File")
   (. fileDialog setFilterExtensions (into-array *openfile-wildcard-seq*))
   (open-file (. fileDialog open) false))
+
+(defn dialog-open-dir []
+  (. directory-dialog setText "Open Directory")
+  (when-let [file (. directory-dialog open)]
+			(open-directory file)))
 
 (defn create-recent-menu-items [menu]
   ;; The recent items are a deserialized hashtable
@@ -231,17 +243,26 @@
 	
 (defn create-file-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
-  (let [bar    (. sh getMenuBar)
-        menu   (new Menu bar)
-        item   (new MenuItem menu (. SWT PUSH))]
+  (let [bar       (. sh getMenuBar)
+        menu      (new Menu bar)
+        item      (new MenuItem menu (. SWT PUSH))
+		dir-item  (new MenuItem menu (. SWT PUSH))]
     (doto item
+	  ;;;;;;;;;;;;;;;;;;;;;
 	  ;; Open File
+	  ;;;;;;;;;;;;;;;;;;;;;
       (. setText (. resources-win getString "Open_menuitem"))
       (. addSelectionListener 
 		 (proxy [SelectionAdapter] []
-				(widgetSelected [evt]
-								(dialog-open-file)
+				(widgetSelected [e] (dialog-open-file)
 								println "Opening File"))))
+	(doto dir-item
+	  ;; Open the directory dialog box
+	  (. setText (. resources-win getString "Opendir_menuitem"))
+	  (. addSelectionListener
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [e] (dialog-open-dir)))))
+	  
 	;; Create the recent file menu 
 	(new MenuItem menu SWT/SEPARATOR)
 	(create-recent-menu-items menu)	
@@ -252,8 +273,7 @@
 		(. setText (. resources-win getString "Exit_menuitem"))
 		(. addSelectionListener 
 		   (proxy [SelectionAdapter] []
-				  (widgetSelected [evt]								  
-								(exit) println "Exiting")))))
+				  (widgetSelected [evt] (exit) println "Exiting")))))
     menu))
 
 (defn create-about-messagebox [sh]
@@ -274,8 +294,7 @@
 	  (. setText (. resources-win getString "About_menuitem"))
 	  (. addSelectionListener
 		 (proxy [SelectionAdapter] []
-				(widgetSelected [event]
-								(create-about-messagebox sh)))))
+				(widgetSelected [event] (create-about-messagebox sh)))))
 	menu))
 
 (defn create-tools-menu [disp sh]
@@ -287,21 +306,25 @@
 	  (. setText (. resources-win getString "Database_viewer_menuitem"))
 	  (. addSelectionListener
 		 (proxy [SelectionAdapter] []
-				(widgetSelected [event]
-								(create-database-window shell)))))
+				(widgetSelected [event] (create-database-window shell)))))
 	menu))
 
 (defn create-search-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar (. sh getMenuBar)
 			menu (new Menu bar)
-			item (new MenuItem menu (. SWT PUSH))]
+			item (new MenuItem menu (. SWT PUSH))
+			regex-item (new MenuItem menu (. SWT PUSH))]
 	(doto item
 	  (. setText (. resources-win getString "Find_menuitem"))
 	  (. addSelectionListener
 		 (proxy [SelectionAdapter] []
-				(widgetSelected [event]
-								(create-search-dialog sh)))))
+				(widgetSelected [event] (create-search-dialog sh)))))
+	(doto regex-item
+	  (. setText (. resources-win getString "Regextool_menuitem"))
+	  (. addSelectionListener
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [event] (create-regex-window)))))
 	menu))
 
 (defn create-menu-bar [disp sh]
@@ -331,6 +354,6 @@
 	  (set-buffer-menu-state buf-menu))))
 	  
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  	  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
