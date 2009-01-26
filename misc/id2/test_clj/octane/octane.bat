@@ -36,7 +36,10 @@ set OCT_LIB_SRC=%INSTALL_DIR%\src
 set CLASSPATH=%CLASSPATH%;%OCT_LIB1%;%OCT_LIB2%;%OCT_LIB3%;%OCT_LIB4%;%OCT_LIB5%;%OCT_LIB_SRC%;%INSTALL_DIR%
 
 echo %CLASSPATH%
+echo %INSTALL_DIR%
 
-%_RUNJAVA% %JAVA_OPTS% -classpath "%CLASSPATH%" clojure.lang.Repl "%INSTALL_DIR%\src\octane_main.clj" -- %1 %2 %3 %4 %5 %6
+%_RUNJAVA% %JAVA_OPTS% -classpath "%CLASSPATH%" -Doctane.install.dir="%INSTALL_DIR%" clojure.lang.Repl "%INSTALL_DIR%\src\octane_main.clj" -- %1 %2 %3 %4 %5 %6
 
 :end
+
+exit /b

@@ -55,6 +55,8 @@
 "************************************************************
 * Octane Log Viewer Init
 * Launched at {0}
+* Install Directory : {1}
+* Work Path : {2}
 ************************************************************
 ")
 
@@ -71,12 +73,16 @@
 ------------------------------------------------------------
 ")
 
-(def *work-path* "conf/sys/_work")
+;; Note: the work path may be set automatically by 'octane-config' get install directory.
+(def *newline* "\n")
 
 (def *recent-file-list* (str *work-path* "/" "_sHIKXx1_recent.ser"))
 
 (defn get-hist-header []
-  (. MessageFormat format hist-header-msg (to-array [(date-time)])))
+  (. MessageFormat format hist-header-msg (to-array [(date-time)
+                                                     *octane-install-dir* 
+                                                     *work-path*
+                                                     ])))
 
 (def win-size-width    880)
 (def win-size-height   750)
@@ -117,6 +123,8 @@
 
 (def *openfile-wildcard-seq* ["*.*" "*.log"
                               "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
+
+(def *prop-main-database* "Main_database_config")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

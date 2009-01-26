@@ -44,7 +44,9 @@
 
 (in-ns 'org.octane)
 
+(import '(java.util Date))
 (import '(java.lang Runtime))
+(import '(java.text SimpleDateFormat))
 
 (defn exit [] (. System (exit 0)))
 
@@ -91,4 +93,9 @@
   (str "(" (*used-memory-m*) "M/" 
 	   (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))
 
+(def  *dir-date-format* (new SimpleDateFormat "dd-MM-yyyy hh:mm.ss a"))
+(defn get-dir-date [l]  (. *dir-date-format* format (new Date l)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
