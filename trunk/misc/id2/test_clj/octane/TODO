@@ -2,6 +2,8 @@
 #
 ###############################################################################
 	+ 1/23/2009 Berlin Brown	berlin dot brown at gmail.com
+		* Add web proxy
+		* Add 'ant search' tool as an external launch application.
 		* Add vocabulary
 			- Set = directory
 			- Database Viewer = virtual system for viewing files or sets
