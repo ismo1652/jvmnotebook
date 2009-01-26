@@ -1,4 +1,4 @@
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) ... Brown:. All rights reserved.
 ;;;
 ;;; Copyright (c) 2006-2007, Botnode.com, ... Brown
@@ -40,7 +40,7 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
-;;; -------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (in-ns 'org.octane)
 

@@ -45,6 +45,7 @@
 (in-ns 'org.octane)
 
 (def  load-default-database)
+(def  history-add-textln)
 
 (def  database-shell (new Shell shell *database-win-style*))
 (def  db-filter-box  (new Text database-shell SWT/BORDER))
@@ -93,7 +94,7 @@
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
 	(. db-filter-box setLayoutData gd)
 	(. db-search-box setLayoutData gd))
-  (. db-search-box setText "ppooo0000000000000000000")
+  (. db-search-box setText "XXXXXXXXXXXXXX")
   (create-database-table sh))
         
 (defn
@@ -158,9 +159,10 @@
 		  (add-items-db-view x-content)))))
 
 (defn load-default-database []
-  (let [db-filename (prop-str resources-user "database")
+  (let [db-filename (prop-str resources-user *prop-main-database*)
 					xml-data (clojure.xml/parse db-filename)]
 	(when xml-data
+      (history-add-textln "Adding main file database data")
 	  (let [root (xml-data :content)]
 		;; Root contains a list of tags
 		(doseq [root-set root]

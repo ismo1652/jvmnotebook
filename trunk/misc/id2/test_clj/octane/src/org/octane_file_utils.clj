@@ -182,13 +182,14 @@
 (defn format-isdir-name [name is-d] (if is-d (str "<" name ">") name))
 
 (defn format-dir-file [file]
-  (let [is-d (format-has-val (. file isDirectory) "d")
+  (let [is-d (format-has-val (. file isDirectory)   "d")
 			 can-r (format-has-val (. file canRead) "r")
 			 can-w (format-has-val (. file canRead) "w")
 			 len   (. file length)
 			 name  (format-isdir-name (. file getName) (. file isDirectory))
 			 lmod  (. file lastModified)]
-	(str is-d can-r can-w " " len " " lmod " " name "\n")))
+    ;; Use the format syntax to get fixed width columns
+	(str (apply format "%3s %15s  %25s  %s" (list (str is-d can-r can-w) len (get-dir-date lmod) name)) *newline*)))
 			 
 (defn open-directory [path]
   ;; Open the directory and then store the contents
@@ -199,9 +200,8 @@
 	(when (. file-dir exists)
 	  (clear-buffer buffer-1)
 	  (doseq [fil (. file-dir listFiles)]
-		  (let []
-			(. buffer-1 append (format-dir-file fil))))
-	  (. styled-text setText (. buffer-1 toString)))))				 		
+		  (let [] (. buffer-1 append (format-dir-file fil))))
+	  (. styled-text setText (. buffer-1 toString)))))	 		
 			  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

@@ -52,8 +52,8 @@
 	(load "octane_templates")
     (load "octane_main_constants")
     (load "public_objects")
-    (load "octane_file_utils")
     (load "octane_utils")
+    (load "octane_file_utils")
 	(load "octane_core_widgets")
 	(load "octane_file_database")
 	(load "octane_search_dialog")
@@ -155,6 +155,8 @@
 	(. disp asyncExec
 	   (proxy [Runnable] []
 			  (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
+
+(defn history-add-textln [text] (history-add-text (str text *newline*)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Continue
