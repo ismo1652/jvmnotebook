@@ -194,11 +194,13 @@
 (defn open-directory [path]
   ;; Open the directory and then store the contents
   ;; in the main buffer
-  (history-add-text (str "Opening directory => " path "\n"))
+  (history-add-text (str "Opening directory => " path *newline*))
   (status-set-text  (str "Opening directory => " path))
   (let [file-dir (new File path)]
 	(when (. file-dir exists)
 	  (clear-buffer buffer-1)
+      ;; ADD the file path as the fist line.
+      (. buffer-1 append (str "<< Current Directory: " path *newline*))
 	  (doseq [fil (. file-dir listFiles)]
 		  (let [] (. buffer-1 append (format-dir-file fil))))
 	  (. styled-text setText (. buffer-1 toString)))))	 		
