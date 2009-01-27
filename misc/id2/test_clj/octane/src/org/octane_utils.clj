@@ -93,7 +93,7 @@
   (str "(" (*used-memory-m*) "M/" 
 	   (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))
 
-(def  *dir-date-format* (new SimpleDateFormat "dd-MM-yyyy hh:mm.ss a"))
+(def  *dir-date-format* (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
 (defn get-dir-date [l]  (. *dir-date-format* format (new Date l)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

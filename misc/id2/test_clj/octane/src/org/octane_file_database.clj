@@ -154,15 +154,16 @@
 (defn loop-db-files [xml-content]
   (doseq [xml-file xml-content]
 	  (let [x-tag (xml-file :tag)
-				  x-content (xml-file :content)]
+            x-content (xml-file :content)]
 		(when (= ":db_file" (str x-tag))
 		  (add-items-db-view x-content)))))
 
 (defn load-default-database []
   (let [db-filename (prop-str resources-user *prop-main-database*)
-					xml-data (clojure.xml/parse db-filename)]
+        db-path  (str *octane-install-dir* *name-separator* db-filename)
+        xml-data (clojure.xml/parse db-path)]
 	(when xml-data
-      (history-add-textln "Adding main file database data")
+      (history-add-textln (str "Adding main file database data, path=>" db-path))
 	  (let [root (xml-data :content)]
 		;; Root contains a list of tags
 		(doseq [root-set root]
