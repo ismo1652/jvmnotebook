@@ -5,31 +5,21 @@
 
 (defn style-handler [event]
   (let [styles-vec (new Vector)
-				   line (. event lineText)
-				   lo   (. event lineOffset)
-				   len  (. (. event lineText) length)
-				   l    (+ lo len)
-				   bg   (. colors-vec get 0)
-				   fgl  (. colors-vec get 1)
-				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
-				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
-    (when (search-term?)
-      (if (search-keyword (. search-box getText) line)
-        (add-select-style styles-vec all-bold)
-		(add-select-style styles-vec light)))
-	(let [arr (make-array StyleRange (. styles-vec size))]
-	  (set! (. event styles) arr)
-	  (. styles-vec copyInto (. event styles)))))
+line (. event lineText)
+lo   (. event lineOffset)
+len  (. (. event lineText) length)
+l    (+ lo len)
+bg   (. colors-vec get 0)
+fgl  (. colors-vec get 1)
+all-bold (new StyleRange lo len nil bg   SWT/BOLD)
+light    (new StyleRange lo len fgl nil  SWT/NORMAL)] (when (search-term?) (if (search-keyword (. search-box getText) line) (add-select-style styles-vec all-bold) (add-select-style styles-vec light))) (let [arr (make-array StyleRange (. styles-vec size))] (set! (. event styles) arr) (. styles-vec copyInto (. event styles)))))
 
-(defn search-keyword [keyword line]
-  (not (nil? (re-seq (re-pattern keyword) line))))
+(defn search-keyword [keyword line] (not (nil? (re-seq (re-pattern keyword) line))))
 	  
-(def style-listener
-     (proxy [LineStyleListener] []
-            (lineGetStyle [event] (style-handler event))))
+(def style-listener (proxy [LineStyleListener] [] (lineGetStyle [event] (style-handler event))))
 
 (defn create-styled-text-area [sh]
-  (let [text (new StyledText sh text-style)
+(let [text (new StyledText sh text-style)
         spec (new GridData)
         disp (Display/getDefault)
         bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
@@ -134,19 +124,11 @@
 				(widgetSelected [evt]
 								(dialog-open-file)
 								println "Opening File"))))
-	(doto item-exit
-	  (. setText (. resources getString "Exit_menuitem"))
-	  (. addSelectionListener 
-		 (proxy [SelectionAdapter] []
-				(widgetSelected [evt]
-								(exit) println "Exiting"))))	
-    menu))
-
-(defn create-menu-bar [disp sh]
-  (let [bar (new Menu sh (. SWT BAR))
-        item (new MenuItem bar (. SWT CASCADE))]
-    (. sh setMenuBar bar)
-    (doto item
-      (. setText (. resources getString "File_menuitem"))
-      (. setMenu (create-file-menu disp sh))))) (defn create-shell [disp sh] (let [layout (create-grid-layout)] (doto sh (. setText (. resources getString "Window_title")) (. setLayout layout) (. addShellListener (proxy [ShellAdapter] []  (shellClosed [evt] (exit))))))) (defn simple-swt [disp sh] (create-menu-bar disp sh) (create-shell disp sh) (init-colors) (let [gd (new GridData SWT/FILL SWT/FILL true false)] (. search-box addListener SWT/Traverse find-text-listener) (. search-box setLayoutData gd)) (. sh setSize 880 700) (. sh (open)) (loop [] (if (. shell (isDisposed)) (. disp (dispose)) (let [] (if (not (. disp (readAndDispatch))) (. disp (sleep))) (recur))))) (defn main [] (println "Running") (simple-swt display shell)) (main) (let [o (new Object)] (locking o (. o (wait))))
+(doto item-exit
+(. setText (. resources getString "Exit_menuitem"))
+(. addSelectionListener 
+(proxy [SelectionAdapter] []
+(widgetSelected [evt]
+(exit) println "Exiting"))))	
+    menu)) (defn create-menu-bar [disp sh] (let [bar (new Menu sh (. SWT BAR)) item (new MenuItem bar (. SWT CASCADE))] (. sh setMenuBar bar) (doto item (. setText (. resources getString "File_menuitem")) (. setMenu (create-file-menu disp sh))))) (defn create-shell [disp sh] (let [layout (create-grid-layout)] (doto sh (. setText (. resources getString "Window_title")) (. setLayout layout) (. addShellListener (proxy [ShellAdapter] []  (shellClosed [evt] (exit))))))) (defn simple-swt [disp sh] (create-menu-bar disp sh) (create-shell disp sh) (init-colors) (let [gd (new GridData SWT/FILL SWT/FILL true false)] (. search-box addListener SWT/Traverse find-text-listener) (. search-box setLayoutData gd)) (. sh setSize 880 700) (. sh (open)) (loop [] (if (. shell (isDisposed)) (. disp (dispose)) (let [] (if (not (. disp (readAndDispatch))) (. disp (sleep))) (recur))))) (defn main [] (println "Running") (simple-swt display shell)) (main) (let [o (new Object)] (locking o (. o (wait))))
 
