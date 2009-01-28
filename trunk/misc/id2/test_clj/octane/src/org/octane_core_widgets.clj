@@ -306,7 +306,7 @@
 	  (. setText (. resources-win getString "Database_viewer_menuitem"))
 	  (. addSelectionListener
 		 (proxy [SelectionAdapter] []
-				(widgetSelected [event] (create-database-window shell)))))
+				(widgetSelected [event] (create-database-window shell true)))))
 	menu))
 
 (defn create-search-menu [disp sh]
