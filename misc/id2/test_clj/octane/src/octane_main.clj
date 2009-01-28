@@ -144,6 +144,7 @@
 	(. disp asyncExec
 	   (proxy [Runnable] []
 			  (run [] (. styled-text setText (. buffer-1 toString)))))))
+
 (defn refresh-textarea []
   (. styled-text redraw)
   (. styled-text update))
@@ -205,6 +206,7 @@
     (. search-box setLayoutData gd)
 	(. location-bar setLayoutData gd))
   (create-status-bar)
+  ;; Final init, set the window size and then open
   (. sh setSize win-size-width win-size-height)
   (. sh open)
   (parse-system-args)

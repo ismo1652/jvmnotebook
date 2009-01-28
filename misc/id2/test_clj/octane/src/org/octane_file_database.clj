@@ -99,7 +99,7 @@
         
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
-	create-database-window [parent-sh]
+	create-database-window [parent-sh open-win?]
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	(history-add-text "Opening file database screen (Tools -> Database Viewer)")
@@ -113,9 +113,11 @@
 				(shellClosed [event]
 							 (set! (. event doit) false)
 							 (. database-shell setVisible false))))
-	  (. database-shell open)
-	  (. database-shell setVisible true)
-	  ;; Load the XML database
+      (if open-win? (let []
+                      (. database-shell open)
+                      (. database-shell setVisible open-win?))
+          (. database-shell setVisible true))
+        ;; Load the XML database
 	  (load-default-database)
 	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	  ;; Enter display/shell loop for this window
@@ -126,7 +128,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; XML Database processing
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (defn add-items-db-view [file-content]
   (let [tmp-db-obj (new Hashtable)]
 	(doseq [xml-file file-content]
