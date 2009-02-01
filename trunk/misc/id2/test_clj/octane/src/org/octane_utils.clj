@@ -48,6 +48,8 @@
 (import '(java.lang Runtime))
 (import '(java.text SimpleDateFormat))
 
+(def  history-add-textln)
+
 (defn exit [] (. System (exit 0)))
 
 (defn clear-buffer [buf] (. buf setLength 0))
@@ -95,6 +97,13 @@
 
 (def  *dir-date-format* (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
 (defn get-dir-date [l]  (. *dir-date-format* format (new Date l)))
+
+(defmacro when-try [body]
+  `(try ~body
+		(catch Exception ~'e
+			   (println "ERR <when-try> " ~'e)
+			   (history-add-textln (str "ERR <when-try> " ~'e *newline*))
+			   nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

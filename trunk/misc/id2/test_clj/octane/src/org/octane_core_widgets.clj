@@ -180,9 +180,7 @@
 (defn open-file-listener [file-str-data]
   (proxy [Runnable] []
 		 (run []
-			  (clear-buffer buffer-1)
-			  (. buffer-1 append file-str-data)
-			  (. styled-text setText (. buffer-1 toString))
+			  (add-main-text file-str-data)
 			  ;; Attempt to set cursor to the end
 			  ;; when refresh is enabled.
 			  (when (prop-bool resources-win-opts "file_monitor_enabled")
@@ -301,12 +299,18 @@
   ;; Note change in 'doto' call, dot needed.
   (let [bar (. sh getMenuBar)
 			menu (new Menu bar)
-			item (new MenuItem menu (. SWT PUSH))]
+			item (new MenuItem menu (. SWT PUSH))
+			code-gen-item (new MenuItem menu (. SWT PUSH))]
 	(doto item
 	  (. setText (. resources-win getString "Database_viewer_menuitem"))
 	  (. addSelectionListener
 		 (proxy [SelectionAdapter] []
 				(widgetSelected [event] (create-database-window shell true)))))
+	(doto code-gen-item
+	  (. setText (. resources-win getString "Codegen_buildxml_menuitem"))
+	  (. addSelectionListener
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [event] (run-codegen-build-xml)))))
 	menu))
 
 (defn create-search-menu [disp sh]
@@ -352,7 +356,6 @@
 		(. setText (. resources-win getString "RecentBuffers_menu_title"))
 		(. setMenu buf-menu))
 	  (set-buffer-menu-state buf-menu))))
-	  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

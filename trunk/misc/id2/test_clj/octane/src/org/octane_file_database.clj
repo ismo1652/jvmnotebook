@@ -162,7 +162,7 @@
 (defn load-default-database []
   (let [db-filename (prop-str resources-user *prop-main-database*)
         db-path  (str *octane-install-dir* *name-separator* db-filename)
-        xml-data (clojure.xml/parse db-path)]
+        xml-data (when-try (clojure.xml/parse db-path))]
 	(when xml-data
       (history-add-textln (str "Adding main file database data, path=>" db-path))
 	  (let [root (xml-data :content)]
