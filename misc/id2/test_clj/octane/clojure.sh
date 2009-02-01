@@ -1,6 +1,8 @@
 #!/bin/sh
 ###########################################################
 
+# mkdir -vp /usr/local/projects/octane/conf/sys/_work
+
 OS=`uname -a`
 LIB1=./lib/clojure.jar
 LIB2=./lib/swt/win32/swt.jar
@@ -40,7 +42,7 @@ esac
 
 echo $CP
 #java -classpath $CP jline.ConsoleRunner clojure.lang.Repl $1 $2
-java -classpath $CP jline.OctaneConsoleRunner clojure.lang.Repl $1 $2
+java -classpath $CP jline.OctaneConsoleRunner clojure.lang.Repl $1 $2 $3
 
 
 ###########################################################

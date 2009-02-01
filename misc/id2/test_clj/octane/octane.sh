@@ -3,15 +3,15 @@
 OS=`uname -a`
 
 # Install Directory Path (editable attribute)
-INSTALL_DIR=/projects/tools/home/projects/aaageneralprojects/jvmnotebook/misc/id2/test_clj/octane
+INSTALL_DIR=/usr/local/projects/octane
 
 # Put the configuration directory in the classpath
-CONF_LIB=./conf
-LIB1=./lib/clojure.jar
-LIB2=./lib/swt/win32/swt.jar
-LIB3=./lib/jline-0.9.94.jar
-LIB2_LINUX=./lib/swt/linux/swt.jar
-LIB4=./lib/org.eclipse.jface.text_3.4.1.r341_v20080827-1100.jar
+CONF_LIB=$INSTALL_DIR/conf
+LIB1=$INSTALL_DIR/lib/clojure.jar
+LIB2=$INSTALL_DIR/lib/swt/win32/swt.jar
+LIB3=$INSTALL_DIR/lib/jline-0.9.94.jar
+LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
+LIB4=$INSTALL_DIR/lib/org.eclipse.jface.text_3.4.1.r341_v20080827-1100.jar
 
 # Check the clojure library path
 if [ -f $LIB1 ]
