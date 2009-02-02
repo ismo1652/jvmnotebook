@@ -100,6 +100,8 @@ $ 	       The end of a line
 Use (.*?) to get a non-greedy expression, which will allow 
 the trailing (</style>) to match at the first opportunity.
 
+<div id='header_title'> sfdfdfsdf  Detail   sdffdskljl</div>
+
 Example Text below:
 --------------------
 20.049: [GC 28.200: [DefNew: 1921K->137K(1984K), 0.0006890 secs] 23030K->21247K(27320K), 0.0007550 secs]  [Times: user=0.00 sys=0.00, real=0.00 secs]
