@@ -1,14 +1,27 @@
 ###############################################################################
 #
 ###############################################################################
-	+ 1/31/2009 Berlin Brown
+	+ 2/2/2009 	Berlin Brown
+		* Add quick search tools, etc
+			- Quick Find in Files/Grep
+			- Quick Find in Files/Grep - last 15 minutes
+			- Quick Find in Files/Grep - last 2 hours
+			- Quick Find Java Files/Grep
+			- Quick Find Log Files/Grep
+
+		* Code gen  java / unit tests
+
+	find . -mtime 0   # find files modified between now and 1 day ago
+       	# (i.e., within the past 24 hours)
+
+	+ 1/31/2009 	Berlin Brown
 		* Web browser tools (view source)
 		* Possibly audit the tool
 
-	+ 1/29/2009 Berlin Brown
+	+ 1/29/2009 	Berlin Brown
 		* Sticky Notes?  Graphics that have text at random places
 
-	+ 1/23/2009 Berlin Brown	berlin dot brown at gmail.com
+	+ 1/23/2009 	Berlin Brown	berlihttp://www.yelp.com/topic/atlanta-your-favorite-chain-restaurantn dot brown at gmail.com
 		* Add web proxy
 		* Add 'ant search' tool as an external launch application.
 		* Add vocabulary
