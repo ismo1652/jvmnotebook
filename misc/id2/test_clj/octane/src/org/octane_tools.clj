@@ -47,6 +47,19 @@
 (defn run-codegen-build-xml []
    (add-main-text *codegen-templ-build-xml*))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Process Launch Utilities
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn start-findgrep-cmd []
+  (let [process-bld   (new ProcessBuilder (into-array [ "C:\\projects\\tools\\home\\projects\\aaageneralprojects\\jvmnotebook\\misc\\id2\\test_clj\\octane\\tools\\unxutils\\usr\\local\\wbin\\octane_find.exe" ]))
+        process       (. process-bld start)
+        istream       (. process getInputStream)
+        ireader       (new InputStreamReader istream)
+        bufreader     (new BufferedReader ireader)]
+    (loop [line (. bufreader readLine)]
+           (when line
+             (println line)
+             (recur (. bufreader readLine))))))             
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  

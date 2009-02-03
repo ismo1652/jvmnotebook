@@ -50,7 +50,7 @@
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
 (import '(java.util HashMap))
 
-(def add-codegen-options)
+(def add-findgrep-options)
 (def create-regex-window)
 (def open-file)
 (def styled-text)
@@ -331,7 +331,7 @@
 		 (proxy [SelectionAdapter] []
 				(widgetSelected [event] (create-regex-window)))))
 	;; Add the 'find/grep' menu items
-	(add-codegen-options menu)
+	(add-findgrep-options menu)
 	menu))
 
 (defn create-menu-bar [disp sh]

@@ -83,6 +83,10 @@
   (. db-file-table setHeaderVisible true)  
   (. db-file-table addSelectionListener (table-select-listener))
   ;; Add the table column headers
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; GridData = (int horizontalAlignment, int verticalAlignment, 
+  ;;        boolean grabExcessHorizontalSpace, boolean grabExcessVerticalSpace) 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (let [gd (new GridData SWT/FILL SWT/FILL true true)]
 	(doseq [t table-col-names]
 		(let [column (new TableColumn db-file-table SWT/NONE)]

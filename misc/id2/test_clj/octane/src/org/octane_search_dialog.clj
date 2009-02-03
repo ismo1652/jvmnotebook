@@ -101,18 +101,20 @@
 ;; Additional Search Utilities
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(def tmp-func
+(def findgrep-listener
 	 (proxy [SelectionAdapter] []
-			(widgetSelected [event] (println "poo!"))))
+			(widgetSelected [event] (println (. event widget))
+                            (start-findgrep-cmd))))
 
-(defn add-codegen-options [menu]
-  ;; (doseq [i ["a" "b"]] (print i))
-  (create-menu-item menu "FindGrep_grep_menuitem"   tmp-func)
-  (create-menu-item menu "FindGrep_15min_menuitem"  tmp-func)
-  (create-menu-item menu "FindGrep_2hrs_menuitem"   tmp-func)
-  (create-menu-item menu "FindGrep_java_menuitem"   tmp-func)
-  (create-menu-item menu "FindGrep_logs_menuitem"   tmp-func)
-  (create-menu-item menu "Findfiles_60min_menuitem" tmp-func))
+(defn add-findgrep-options [menu]
+  ;; Run non lazy sequence operation
+  (doseq [menu-key [{:name "FindGrep_grep_menuitem"   :proc findgrep-listener }
+                    {:name "FindGrep_15min_menuitem"  :proc findgrep-listener }
+                    {:name "FindGrep_2hrs_menuitem"   :proc findgrep-listener }
+                    {:name "FindGrep_java_menuitem"   :proc findgrep-listener }  
+                    {:name "FindGrep_logs_menuitem"   :proc findgrep-listener }
+                    {:name "Findfiles_60min_menuitem" :proc findgrep-listener } ]]
+      (create-menu-item menu (menu-key :name) (menu-key :proc))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Script
