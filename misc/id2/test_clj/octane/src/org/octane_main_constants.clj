@@ -51,9 +51,12 @@
 
 (def date-time)
 
+;; The on application load header message is used
+;;
 (def hist-header-msg
 "************************************************************
 * Octane Log Viewer Init
+* Running on system environment : {3}
 * Launched at {0}
 * Install Directory : {1}
 * Work Path : {2}
@@ -78,10 +81,13 @@
 
 (def *recent-file-list* (str *work-path* "/" "_sHIKXx1_recent.ser"))
 
+(def *system-os-name* (. System getProperty "os.name"))
+
 (defn get-hist-header []
   (. MessageFormat format hist-header-msg (to-array [(date-time)
                                                      *octane-install-dir* 
                                                      *work-path*
+                                                     *system-os-name*
                                                      ])))
 
 (def win-size-width    880)
