@@ -47,6 +47,7 @@
 (import '(java.util Date))
 (import '(java.lang Runtime))
 (import '(java.text SimpleDateFormat))
+(import '(java.io InputStreamReader BufferedReader))
 
 (def  history-add-textln)
 

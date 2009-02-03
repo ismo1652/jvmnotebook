@@ -2,6 +2,8 @@
 #
 ###############################################################################
 	+ 2/2/2009 	Berlin Brown
+		* Logger package manager (put widgets dev)
+		* Convert XHTML/HTML to PDF
 		* Add quick search tools, etc
 			- Quick Find in Files/Grep
 			- Quick Find in Files/Grep - last 15 minutes
