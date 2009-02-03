@@ -97,6 +97,23 @@
 	  (let [disp (. search-shell getDisplay)]
 		(shell-display-loop disp search-shell false "Search shell disposed"))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Additional Search Utilities
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def tmp-func
+	 (proxy [SelectionAdapter] []
+			(widgetSelected [event] (println "poo!"))))
+
+(defn add-codegen-options [menu]
+  ;; (doseq [i ["a" "b"]] (print i))
+  (create-menu-item menu "FindGrep_grep_menuitem"   tmp-func)
+  (create-menu-item menu "FindGrep_15min_menuitem"  tmp-func)
+  (create-menu-item menu "FindGrep_2hrs_menuitem"   tmp-func)
+  (create-menu-item menu "FindGrep_java_menuitem"   tmp-func)
+  (create-menu-item menu "FindGrep_logs_menuitem"   tmp-func)
+  (create-menu-item menu "Findfiles_60min_menuitem" tmp-func))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  

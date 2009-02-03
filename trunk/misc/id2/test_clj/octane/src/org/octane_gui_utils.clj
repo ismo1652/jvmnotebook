@@ -51,7 +51,14 @@
 
 (defn add-main-text [str-data]
   (add-text-buffer styled-text buffer-1 str-data))
- 
+
+(defn create-menu-item [menu res-menuitem proxy-body]
+  (let [menu-item (new MenuItem menu (. SWT PUSH))]
+	(doto menu-item
+	  (. setText (. resources-win getString res-menuitem))
+	  (. addSelectionListener proxy-body))
+	menu-item))
+	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
