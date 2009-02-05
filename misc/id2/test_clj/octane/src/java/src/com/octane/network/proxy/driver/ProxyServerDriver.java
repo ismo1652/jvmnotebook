@@ -25,9 +25,11 @@ public class ProxyServerDriver {
 	public static void main(final String [] args) {
 		
 		System.out.println("Running");
-		ProxyServer.createProxyServer(); 		
-		System.out.println("Done");
-		
+		final ProxyServer.MainServerThread server = ProxyServer.createProxyServer();
+		server.initServerSocket();
+		new Thread(server).start();
+		server.mainServerLoop();
+		System.out.println("Done");		
 	}
 	
 } // End of the class
