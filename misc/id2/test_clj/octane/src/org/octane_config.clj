@@ -96,6 +96,68 @@
 
 (def *work-path* (str *octane-install-dir* *name-separator* *work-path-1*))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; External Application Constants
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def *system-os-name* (. (. System getProperty "os.name") toLowerCase))
+
+(def *is-linux*   (> (. *system-os-name* indexOf "linux")   -1))
+(def *is-windows* (> (. *system-os-name* indexOf "windows") -1))
+
+(def *win-cat*    (str *octane-install-dir* *name-separator* "octane_cat.exe"))
+(def *win-cut*    (str *octane-install-dir* *name-separator* "octane_cut.exe"))
+(def *win-diff3*  (str *octane-install-dir* *name-separator* "octane_diff3.exe"))
+(def *win-diff*   (str *octane-install-dir* *name-separator* "octane_diff.exe"))
+(def *win-egrep*  (str *octane-install-dir* *name-separator* "octane_egrep.exe"))
+(def *win-find*   (str *octane-install-dir* *name-separator* "octane_find.exe"))
+(def *win-gawk*   (str *octane-install-dir* *name-separator* "octane_gawk.exe"))
+(def *win-grep*   (str *octane-install-dir* *name-separator* "octane_grep.exe"))
+(def *win-ls*     (str *octane-install-dir* *name-separator* "octane_ls.exe"))
+(def *win-patch*  (str *octane-install-dir* *name-separator* "octane_patch.exe"))
+(def *win-sed*    (str *octane-install-dir* *name-separator* "octane_sed.exe"))
+(def *win-touch*  (str *octane-install-dir* *name-separator* "octane_touch.exe"))
+(def *win-wc*     (str *octane-install-dir* *name-separator* "octane_wc.exe"))
+(def *win-xargs*  (str *octane-install-dir* *name-separator* "octane_xargs.exe"))
+
+(def *unix-cat*     "cat")
+(def *unix-cut*     "cut")
+(def *unix-diff3*   "diff3")
+(def *unix-diff*    "diff")
+(def *unix-egrep*   "egrep")
+(def *unix-find*    "find")
+(def *unix-gawk*    "gawk")
+(def *unix-grep*    "grep")
+(def *unix-ls*      "ls")
+(def *unix-patch*   "patch")
+(def *unix-sed*     "sed")
+(def *unix-touch*   "touch")
+(def *unix-wc*      "wc")
+(def *unix-xargs*   "xargs")
+
+;; Main data structure for holding the external search processes
+(def *process-map* {
+ :unix-cat   *unix-cat*   :win-cat    *win-cat*
+ :unix-cut   *unix-cut*   :win-cut    *win-cut*
+ :unix-diff3 *unix-diff3* :win-dif3   *win-diff3*
+ :unix-diff  *unix-diff*  :win-diff   *win-diff*
+ :unix-egrep *unix-egrep* :win-egrep  *win-egrep*
+ :unix-find  *unix-find*  :win-find   *win-find*
+ :unix-gawk  *unix-gawk*  :win-gawk   *win-gawk*
+ :unix-grep  *unix-grep*  :win-grep   *win-grep*
+ :unix-ls    *unix-ls*    :win-ls     *win-ls*
+ :unix-patch *unix-patch* :win-patch  *win-patch*
+ :unix-sed   *unix-sed*   :win-sed    *win-sed*
+ :unix-touch *unix-touch* :win-touch  *win-touch*
+ :unix-wc    *unix-wc*    :win-wc     *win-wc*
+ :unix-xargs *unix-xargs* :win-xargs  *win-xargs*
+})
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; End
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
