@@ -71,6 +71,8 @@
 
 (defn floor [d] (. Math floor d))
 
+(defn println-obj [o] (println o) o)
+
 (defn col-vec-bg []    (. colors-vec get 0))
 (defn col-vec-grey []  (. colors-vec get 1))
 (defn col-vec-red []   (. colors-vec get 2))

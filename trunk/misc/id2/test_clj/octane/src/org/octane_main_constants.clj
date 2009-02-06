@@ -81,8 +81,6 @@
 
 (def *recent-file-list* (str *work-path* "/" "_sHIKXx1_recent.ser"))
 
-(def *system-os-name* (. System getProperty "os.name"))
-
 (defn get-hist-header []
   (. MessageFormat format hist-header-msg (to-array [(date-time)
                                                      *octane-install-dir* 

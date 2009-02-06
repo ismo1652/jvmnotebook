@@ -44,14 +44,26 @@
 
 (in-ns 'org.octane)
 
+(def *process-map*)
+
 (defn run-codegen-build-xml []
    (add-main-text *codegen-templ-build-xml*))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Process Launch Utilities
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn get-process [proc-atom-str]
+  ;; Where proc-str equals E.g. 'cat', 'cut'
+  ;; Check if this a win32, is so use that particular process.
+  ;; And then check for other oses and default to the linux system
+  (cond
+   *is-windows* (*process-map* (keyword (str "win"  "-" proc-atom-str)))
+   *is-linux*   (*process-map* (keyword (str "unix" "-" proc-atom-str)))
+   :else        (*process-map* (keyword (str "unix" "-" proc-atom-str)))))
+
 (defn start-findgrep-cmd []
-  (let [process-bld   (new ProcessBuilder (into-array [ "C:\\projects\\tools\\home\\projects\\aaageneralprojects\\jvmnotebook\\misc\\id2\\test_clj\\octane\\tools\\unxutils\\usr\\local\\wbin\\octane_find.exe" ]))
+  (let [process-bld   (new ProcessBuilder (into-array [ (get-process "find") ]))
         process       (. process-bld start)
         istream       (. process getInputStream)
         ireader       (new InputStreamReader istream)
@@ -59,7 +71,8 @@
     (loop [line (. bufreader readLine)]
            (when line
              (println line)
-             (recur (. bufreader readLine))))))             
+             (recur (. bufreader readLine))))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
