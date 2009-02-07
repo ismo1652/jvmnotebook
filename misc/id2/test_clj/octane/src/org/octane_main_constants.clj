@@ -125,7 +125,7 @@
 
 (def *database-win-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE SWT/MIN))))
 
-(def *openfile-wildcard-seq* ["*.*" "*.log"
+(def *openfile-wildcard-seq* ["*.*" "*.log" "*.olog" "*.octlog"
                               "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
 
 (def *prop-main-database* "Main_database_config")
