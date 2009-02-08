@@ -64,8 +64,8 @@
 (def recent-menu-state   (new HashMap))
 (def recent-buffer-state (new HashMap))
 
-(def  buffer-menu-state        (ref {:menu-state nil}))
-(defn get-buffer-menu-state [] (@buffer-menu-state :menu-state))
+(def  buffer-menu-state            (ref {:menu-state nil}))
+(defn get-buffer-menu-state []     (@buffer-menu-state :menu-state))
 (defn set-buffer-menu-state [menu] (dosync (commute buffer-menu-state assoc :menu-state menu)))
 
 (defn parse-system-args []

@@ -44,6 +44,10 @@
 
 (in-ns 'org.octane)
 
+(defmacro async-call [disp & body]
+  `(. ~disp asyncExec (proxy [Runnable] []
+							 (run [] ~@body))))
+
 (defn add-text-buffer [text-field buffer str-data]
 	 (clear-buffer buffer)
 	 (. buffer append str-data)
@@ -51,6 +55,21 @@
 
 (defn add-main-text [str-data]
   (add-text-buffer styled-text buffer-1 str-data))
+
+(defn add-main-text-nc [line]
+  ;; Add the main text without clearing the core buffer
+  ;; Note 'buffer-1' and styled-text used as 
+  ;; GUI components
+  (try (let [buffer buffer-1
+					text-gui styled-text]
+		 (. buffer append (str line *newline*))
+		 (. text-gui setText (. buffer toString)))
+		 ;; Attempt to redraw and update
+		 ;;(. text-gui redraw)
+		 ;;(. text-gui update)
+		 ;; Set the caret position to the end
+		 ;;(. text-gui setSelection (. text-gui getCharCount)))
+	   (catch Exception e (println e))))
 
 (defn create-menu-item [menu res-menuitem proxy-body]
   (let [menu-item (new MenuItem menu (. SWT PUSH))]

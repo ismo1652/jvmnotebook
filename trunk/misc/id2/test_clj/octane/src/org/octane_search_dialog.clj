@@ -103,9 +103,10 @@
 
 (def findgrep-listener
 	 (proxy [SelectionAdapter] []
-			(widgetSelected [event] (println (. event widget))
-                            (start-findgrep-cmd))))
-
+			(widgetSelected [event]
+							(println (. event widget))							  
+							(. (new Thread (start-findgrep-thread)) start))))
+												   
 (defn add-findgrep-options [menu]
   ;; Run non lazy sequence operation
   (doseq [menu-key [{:name "FindGrep_grep_menuitem"   :proc findgrep-listener }
@@ -114,7 +115,10 @@
                     {:name "FindGrep_java_menuitem"   :proc findgrep-listener }  
                     {:name "FindGrep_logs_menuitem"   :proc findgrep-listener }
                     {:name "Findfiles_60min_menuitem" :proc findgrep-listener } ]]
-      (create-menu-item menu (menu-key :name) (menu-key :proc))))
+      (let [mitem (create-menu-item menu (menu-key :name) (menu-key :proc))]
+		;; Menu item created, now associate the widget with the global 'ref'
+		(set-findgrep-widg-state (keyword (menu-key :name)) mitem)
+		(println (get-findgrep-widg-state (keyword (menu-key :name)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Script
