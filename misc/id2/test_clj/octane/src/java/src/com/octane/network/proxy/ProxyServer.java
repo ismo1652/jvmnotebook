@@ -34,7 +34,7 @@ public class ProxyServer {
 	
 	public ProxyServer() {
 		this.clientBindPort = 7781;
-		this.serverConnectPort = 9081;
+		this.serverConnectPort = 8080;
 	}
 	
 	public static final MainServerThread createProxyServer() {

@@ -95,8 +95,7 @@
 (defn *used-memory-m*  [] (int (floor (/ (*used-memory-b*)  *megabytes*))))
 
 (defn *memory-usage* []
-  (str "(" (*used-memory-m*) "M/" 
-	   (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))
+  (str "(" (*used-memory-m*) "M/" (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))
 
 (def  *dir-date-format* (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
 (defn get-dir-date [l]  (. *dir-date-format* format (new Date l)))
@@ -107,6 +106,13 @@
 			   (println "ERR <when-try> " ~'e)
 			   (history-add-textln (str "ERR <when-try> " ~'e *newline*))
 			   nil)))
+
+(defmacro proc-time [expr]
+  `(let [start# (. System (nanoTime))
+				ret#     ~expr
+				res-t#   (/ (double (- (. System (nanoTime)) start#)) 1000000.0)
+				str-res# (str "Elapsed time: " res-t# " msecs")]
+     {:return ret# :time-text str-res# :timed res-t#}))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

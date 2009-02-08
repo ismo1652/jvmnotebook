@@ -45,6 +45,8 @@
 (in-ns 'org.octane)
 
 (def *process-map*)
+(def add-main-text-nc)
+
 
 (defn run-codegen-build-xml []
    (add-main-text *codegen-templ-build-xml*))
@@ -63,16 +65,33 @@
    :else        (*process-map* (keyword (str "unix" "-" proc-atom-str)))))
 
 (defn start-findgrep-cmd []
-  (let [process-bld   (new ProcessBuilder (into-array [ (get-process "find") ]))
-        process       (. process-bld start)
-        istream       (. process getInputStream)
-        ireader       (new InputStreamReader istream)
-        bufreader     (new BufferedReader ireader)]
-    (loop [line (. bufreader readLine)]
-           (when line
-             (println line)
-             (recur (. bufreader readLine))))))
+  (let [fnd-proc     (get-process "find")
+		process-line (when fnd-proc     (into-array [ fnd-proc "-name" "*.java" ]))
+		process-bld  (when process-line (when-try (new ProcessBuilder process-line)))
+		process      (when process-bld  (when-try (. process-bld start)))]
+	(println "@@@@@" process)
+	(when process
+	  (let [istream (. process getInputStream)
+					ireader   (new InputStreamReader istream)
+					bufreader (new BufferedReader ireader)]
+		;; First clear the main text buffer
+		(clear-buffer buffer-1)
+		(async-call display (status-set-text "Begin find search"))
+		(let [proc-time-info (proc-time (loop [line (. bufreader readLine)]
+										  (when line
+											(async-call display (add-main-text-nc line))
+											(recur (. bufreader readLine)))))
+							 msg (str "<<Completed find search>> " (proc-time-info :time-text))]
+		  (async-call display (add-main-text-nc msg))
+		  (async-call display (status-set-text msg)))))))
+
+(defn start-findgrep-thread []
+  (let [t (proxy [Runnable] []
+				 (run [] (start-findgrep-cmd)))] t))
+
+(defn start-findgrep-proc []
+  (. (new Thread (start-findgrep-thread)) start))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

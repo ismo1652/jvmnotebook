@@ -72,18 +72,35 @@
 ;; Creation of main GUI components (order of instantiation is important here)
 ;; Including main tabs, location bar and search box.
 (def location-bar (new Text shell SWT/BORDER))
-(def tab-folder  (new TabFolder shell SWT/NULL))
-(def tab-area-1  (new TabItem tab-folder SWT/NULL))
-(def tab-area-2  (new TabItem tab-folder SWT/NULL))
-(def tab-area-3  (new TabItem tab-folder SWT/NULL))
-(def tab-area-4  (new TabItem tab-folder SWT/NULL))
-(def search-box  (new Text shell SWT/BORDER))
+(def tab-folder   (new TabFolder shell SWT/NULL))
+(def tab-area-1   (new TabItem tab-folder SWT/NULL))
+(def tab-area-2   (new TabItem tab-folder SWT/NULL))
+(def tab-area-3   (new TabItem tab-folder SWT/NULL))
+(def tab-area-4   (new TabItem tab-folder SWT/NULL))
+(def search-box   (new Text shell SWT/BORDER))
 
-(def tab-text-2  (new Text tab-folder swt-tabtext-style))
-(def tab-text-3  (new Text tab-folder swt-tabtext-style))
-(def tab-text-4  (new Text tab-folder swt-tabtext-style))
+(def tab-text-2   (new Text tab-folder swt-tabtext-style))
+(def tab-text-3   (new Text tab-folder swt-tabtext-style))
+(def tab-text-4   (new Text tab-folder swt-tabtext-style))
 
-(def status-bar  (new Label shell SWT/BORDER))
+(def status-bar   (new Label shell SWT/BORDER))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Find Grep Widgets
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Use ref for public findgrep widgets, and dynamic keyword
+;; Note, the widgets must be loaded at runtime.
+
+(def  *findgrep-def-state*  (ref {:FindGrep_grep_menuitem  }))
+(def  *findgrep-15m-state*  (ref {:FindGrep_15min_menuitem }))
+(def  *findgrep-2hr-state*  (ref {:FindGrep_2hrs_menuitem  }))
+(def  *findgrep-jav-state*  (ref {:FindGrep_java_menuitem  }))
+(def  *findgrep-log-state*  (ref {:FindGrep_logs_menuitem  }))
+(def  *findgrep-60m-state*  (ref {:Findfiles_60min_menuitem}))
+
+(defn get-findgrep-widg-state [fkey]      (deref (findgrep-widg-state fkey)))
+(defn set-findgrep-widg-state [fkey widg] (dosync (commute (findgrep-widg-state fkey) assoc fkey widg)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

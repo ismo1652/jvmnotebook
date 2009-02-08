@@ -188,12 +188,13 @@
                                  (shellClosed [evt] (exit)))))))
 
 (defn init-gui-helper [disp sh]
-    (create-all-tabs)
-    (create-menu-bar disp sh)
-    (create-shell    disp sh)
-    (init-colors)
-    (history-add-text (get-hist-header))
-    (status-set-text  (str "Octane GUI loaded " (date-time) " " (*memory-usage*))))
+  (init-all-find-widgets)
+  (create-all-tabs)
+  (create-menu-bar disp sh)
+  (create-shell    disp sh)
+  (init-colors)
+  (history-add-text (get-hist-header))
+  (status-set-text  (str "Octane GUI loaded " (date-time) " " (*memory-usage*))))
 
 (defn 
   #^{:doc "Initialize the SWT window, set the size add all components"}
