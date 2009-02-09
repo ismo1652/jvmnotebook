@@ -188,7 +188,6 @@
                                  (shellClosed [evt] (exit)))))))
 
 (defn init-gui-helper [disp sh]
-  (init-all-find-widgets)
   (create-all-tabs)
   (create-menu-bar disp sh)
   (create-shell    disp sh)

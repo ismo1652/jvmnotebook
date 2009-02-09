@@ -47,7 +47,6 @@
 (def *process-map*)
 (def add-main-text-nc)
 
-
 (defn run-codegen-build-xml []
    (add-main-text *codegen-templ-build-xml*))
 
@@ -64,13 +63,25 @@
    *is-linux*   (*process-map* (keyword (str "unix" "-" proc-atom-str)))
    :else        (*process-map* (keyword (str "unix" "-" proc-atom-str)))))
 
-(defn start-findgrep-cmd []
-  (let [fnd-proc     (get-process "find")
-		process-line (when fnd-proc     (into-array [ fnd-proc "-name" "*.java" ]))
-		process-bld  (when process-line (when-try (new ProcessBuilder process-line)))
-		process      (when process-bld  (when-try (. process-bld start)))]
-	(println "@@@@@" process)
+
+(defn build-findgrep-arr [cmd cur-dir wildcard grep-args]
+  ;; Complex approach for building the arguments to 'find'
+  (let [grp (get-process "grep")
+			fst [cmd cur-dir "-name" (str "'" wildcard "'") ]
+			more (if grep-args 
+				   (conj fst "-exec" grp "-Hn" (str "'" grep-args "'") "{}" "\\;") 
+				   fst)
+			s (apply str (interpose " " more))]
+	{:array more :text s}))
+
+(defn start-findgrep-cmd [cur-dir wildcard grep-args]
+  (let [fnd-proc (get-process "find")
+				 proc-data (build-findgrep-arr fnd-proc cur-dir wildcard grep-args)
+				 process-line (when fnd-proc     (into-array (proc-data :array)))
+				 process-bld  (when process-line (when-try (new ProcessBuilder process-line)))
+				 process      (when process-bld  (when-try (. process-bld start)))]
 	(when process
+	  (history-add-text (str "Invoking find/grep command => " (proc-data :text) *newline*))
 	  (let [istream (. process getInputStream)
 					ireader   (new InputStreamReader istream)
 					bufreader (new BufferedReader ireader)]
@@ -87,7 +98,8 @@
 
 (defn start-findgrep-thread []
   (let [t (proxy [Runnable] []
-				 (run [] (start-findgrep-cmd)))] t))
+				 (run []
+					  (start-findgrep-cmd "." "*.java" nil)))] t))
 
 (defn start-findgrep-proc []
   (. (new Thread (start-findgrep-thread)) start))
