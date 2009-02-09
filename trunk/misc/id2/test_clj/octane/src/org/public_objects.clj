@@ -89,6 +89,19 @@
 
 (def status-bar   (new Label shell SWT/BORDER))
 
+;;;;;;;;;;;;;;;;;
+;; Keep the state on when a directory/open has been set
+;;;;;;;;;;;;;;;;;
+(def  *directory-open-state*    (ref nil))
+(defn get-directory-open []     (deref *directory-open-state*))
+(defn set-directory-open [path] (dosync (ref-set *directory-open-state* path)))
+
+(defn get-current-dir [] 
+  (if (get-directory-open) (get-directory-open) "."))
+
+(defn get-current-dirquote [] 
+  (if (get-directory-open) (str "'" (get-directory-open) "'") "."))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Find Grep Widgets
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
