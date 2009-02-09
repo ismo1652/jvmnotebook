@@ -69,8 +69,10 @@
 (def fileDialog  (new FileDialog shell SWT/CLOSE))
 (def directory-dialog  (new DirectoryDialog shell SWT/CLOSE))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Creation of main GUI components (order of instantiation is important here)
 ;; Including main tabs, location bar and search box.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (def location-bar (new Text shell SWT/BORDER))
 (def tab-folder   (new TabFolder shell SWT/NULL))
 (def tab-area-1   (new TabItem tab-folder SWT/NULL))
@@ -92,12 +94,31 @@
 ;; Use ref for public findgrep widgets, and dynamic keyword
 ;; Note, the widgets must be loaded at runtime.
 
-(def  *findgrep-def-state*  (ref {:FindGrep_grep_menuitem  }))
-(def  *findgrep-15m-state*  (ref {:FindGrep_15min_menuitem }))
-(def  *findgrep-2hr-state*  (ref {:FindGrep_2hrs_menuitem  }))
-(def  *findgrep-jav-state*  (ref {:FindGrep_java_menuitem  }))
-(def  *findgrep-log-state*  (ref {:FindGrep_logs_menuitem  }))
-(def  *findgrep-60m-state*  (ref {:Findfiles_60min_menuitem}))
+(def  *findgrep-def-state*  (ref {:FindGrep_grep_menuitem   nil}))
+(def  *findgrep-15m-state*  (ref {:FindGrep_15min_menuitem  nil}))
+(def  *findgrep-2hr-state*  (ref {:FindGrep_2hrs_menuitem   nil}))
+(def  *findgrep-jav-state*  (ref {:FindGrep_java_menuitem   nil}))
+(def  *findgrep-log-state*  (ref {:FindGrep_logs_menuitem   nil}))
+(def  *findgrep-60m-state*  (ref {:Findfiles_60min_menuitem nil}))
+
+(defn findgrep-widg-state [fkey]
+  (cond (= fkey :FindGrep_grep_menuitem)   *findgrep-def-state*
+		(= fkey :FindGrep_15min_menuitem)  *findgrep-15m-state*
+		(= fkey :FindGrep_2hrs_menuitem)   *findgrep-2hr-state*
+		(= fkey :FindGrep_java_menuitem)   *findgrep-jav-state* 
+		(= fkey :FindGrep_logs_menuitem)   *findgrep-log-state*
+		(= fkey :Findfiles_60min_menuitem) *findgrep-60m-state*))
+
+;;(defn run-findgrep-widget [obj]
+;;  ;; We don't have access to the keyword, have to compare with the
+;;  ;; actual object.
+;;  (cond (= obj (get-findgrep-widg-state :FindGrep_grep_menuitem)) (start-findgrep-thread)) start))))  
+;;  (cond (= fkey :FindGrep_grep_menuitem)   *findgrep-def-state*
+;;		(= fkey :FindGrep_15min_menuitem)  *findgrep-15m-state*
+;;		(= fkey :FindGrep_2hrs_menuitem)   *findgrep-2hr-state*
+;;		(= fkey :FindGrep_java_menuitem)   *findgrep-jav-state* 
+;;		(= fkey :FindGrep_logs_menuitem)   *findgrep-log-state*
+;;		(= fkey :Findfiles_60min_menuitem) *findgrep-60m-state*))
 
 (defn get-findgrep-widg-state [fkey]      (deref (findgrep-widg-state fkey)))
 (defn set-findgrep-widg-state [fkey widg] (dosync (commute (findgrep-widg-state fkey) assoc fkey widg)))

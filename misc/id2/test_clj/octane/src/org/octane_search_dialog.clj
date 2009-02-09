@@ -104,7 +104,7 @@
 (def findgrep-listener
 	 (proxy [SelectionAdapter] []
 			(widgetSelected [event]
-							(println (. event widget))							  
+							(println (. event widget))
 							(. (new Thread (start-findgrep-thread)) start))))
 												   
 (defn add-findgrep-options [menu]
