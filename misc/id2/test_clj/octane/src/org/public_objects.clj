@@ -44,6 +44,8 @@
 
 (in-ns 'org.octane)
 
+(def start-findgrep-cmd)
+
 (import '(org.eclipse.swt.widgets FileDialog DirectoryDialog MessageBox Composite))
 (import '(org.eclipse.swt SWT))
 (import '(org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem))
@@ -100,6 +102,7 @@
 (def  *findgrep-jav-state*  (ref {:FindGrep_java_menuitem   nil}))
 (def  *findgrep-log-state*  (ref {:FindGrep_logs_menuitem   nil}))
 (def  *findgrep-60m-state*  (ref {:Findfiles_60min_menuitem nil}))
+(def  *findgrep-clj-state*  (ref {:FindGrep_clj_menuitem   nil}))
 
 (defn findgrep-widg-state [fkey]
   (cond (= fkey :FindGrep_grep_menuitem)   *findgrep-def-state*
@@ -107,21 +110,14 @@
 		(= fkey :FindGrep_2hrs_menuitem)   *findgrep-2hr-state*
 		(= fkey :FindGrep_java_menuitem)   *findgrep-jav-state* 
 		(= fkey :FindGrep_logs_menuitem)   *findgrep-log-state*
-		(= fkey :Findfiles_60min_menuitem) *findgrep-60m-state*))
+		(= fkey :Findfiles_60min_menuitem) *findgrep-60m-state*
+		(= fkey :FindGrep_clj_menuitem)    *findgrep-clj-state*))
 
-;;(defn run-findgrep-widget [obj]
-;;  ;; We don't have access to the keyword, have to compare with the
-;;  ;; actual object.
-;;  (cond (= obj (get-findgrep-widg-state :FindGrep_grep_menuitem)) (start-findgrep-thread)) start))))  
-;;  (cond (= fkey :FindGrep_grep_menuitem)   *findgrep-def-state*
-;;		(= fkey :FindGrep_15min_menuitem)  *findgrep-15m-state*
-;;		(= fkey :FindGrep_2hrs_menuitem)   *findgrep-2hr-state*
-;;		(= fkey :FindGrep_java_menuitem)   *findgrep-jav-state* 
-;;		(= fkey :FindGrep_logs_menuitem)   *findgrep-log-state*
-;;		(= fkey :Findfiles_60min_menuitem) *findgrep-60m-state*))
-
-(defn get-findgrep-widg-state [fkey]      (deref (findgrep-widg-state fkey)))
+(defn get-findgrep-widg-state [fkey]      (deref  (findgrep-widg-state fkey)))
 (defn set-findgrep-widg-state [fkey widg] (dosync (commute (findgrep-widg-state fkey) assoc fkey widg)))
+
+(defn get-findgrep-helper [key] 
+  ((get-findgrep-widg-state key) key))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

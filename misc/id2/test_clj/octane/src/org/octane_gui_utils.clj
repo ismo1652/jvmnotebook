@@ -64,11 +64,11 @@
 					text-gui styled-text]
 		 (. buffer append (str line *newline*))
 		 (. text-gui setText (. buffer toString)))
-		 ;; Attempt to redraw and update
-		 ;;(. text-gui redraw)
-		 ;;(. text-gui update)
-		 ;; Set the caret position to the end
-		 ;;(. text-gui setSelection (. text-gui getCharCount)))
+	   ;; Attempt to redraw and update
+	   ;;(. text-gui redraw)
+	   ;;(. text-gui update)
+	   ;; Set the caret position to the end
+	   ;;(. text-gui setSelection (. text-gui getCharCount)))
 	   (catch Exception e (println e))))
 
 (defn create-menu-item [menu res-menuitem proxy-body]
@@ -77,6 +77,14 @@
 	  (. setText (. resources-win getString res-menuitem))
 	  (. addSelectionListener proxy-body))
 	menu-item))
+
+(defn async-status-text [disp msg]
+  (async-call disp (status-set-text msg)))
+
+(defn async-status-history [disp msg]
+  ;; Set the status bar and history
+  (async-call disp (status-set-text msg))
+  (async-call disp (history-add-text (str msg *newline*))))
 	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

@@ -54,6 +54,8 @@
 ;; Process Launch Utilities
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(def *search-text-state* (agent nil))
+
 (defn get-process [proc-atom-str]
   ;; Where proc-str equals E.g. 'cat', 'cut'
   ;; Check if this a win32, is so use that particular process.
@@ -67,9 +69,9 @@
 (defn build-findgrep-arr [cmd cur-dir wildcard grep-args]
   ;; Complex approach for building the arguments to 'find'
   (let [grp (get-process "grep")
-			fst [cmd cur-dir "-name" (str "'" wildcard "'") ]
+			fst [cmd cur-dir "-name" (str "" wildcard "") ]
 			more (if grep-args 
-				   (conj fst "-exec" grp "-Hn" (str "'" grep-args "'") "{}" "\\;") 
+				   (conj fst "-exec" grp "-Hn" (str "" grep-args "") "{}" ";") 
 				   fst)
 			s (apply str (interpose " " more))]
 	{:array more :text s}))
@@ -77,7 +79,7 @@
 (defn start-findgrep-cmd [cur-dir wildcard grep-args]
   (let [fnd-proc (get-process "find")
 				 proc-data (build-findgrep-arr fnd-proc cur-dir wildcard grep-args)
-				 process-line (when fnd-proc     (into-array ["find" "-name" "\\'*.java\\'"]))
+				 process-line (when fnd-proc     (into-array (proc-data :array)))
 				 process-bld  (when process-line (when-try (new ProcessBuilder process-line)))
 				 process      (when process-bld  (when-try (. process-bld start)))]
 	(when process
@@ -96,13 +98,38 @@
 		  (async-call display (add-main-text-nc msg))
 		  (async-call display (status-set-text msg)))))))
 
-(defn start-findgrep-thread []
-  (let [t (proxy [Runnable] []
-				 (run []
-					  (start-findgrep-cmd "." "*.java" nil)))] t))
+(defn start-findgrep-thread-java [widget]
+  (proxy [Runnable] []
+		 (run [] (start-findgrep-cmd "." "*.java" nil))))
 
-(defn start-findgrep-proc []
-  (. (new Thread (start-findgrep-thread)) start))
+(defn run-findgrep-widget [obj-inst search-str]
+  ;; We don't have access to the keyword, have to compare with the
+  ;; actual object (string)
+  ;; TODO: fix the following code
+  (if (and search-str (> (length search-str) 1))
+	(let [obj (str obj-inst)]
+	  (cond (= obj (get-findgrep-helper      :FindGrep_grep_menuitem))
+			(start-findgrep-cmd "." "*.*"    search-str)
+			(= obj (get-findgrep-helper      :FindGrep_15min_menuitem))
+			(start-findgrep-cmd "." "*.*"    search-str)
+			(= obj (get-findgrep-helper      :FindGrep_2hrs_menuitem))
+			(start-findgrep-cmd "." "*.*"    search-str)
+			(= obj (get-findgrep-helper      :FindGrep_java_menuitem))
+			(start-findgrep-cmd "." "*.java" search-str)
+			(= obj (get-findgrep-helper      :FindGrep_clj_menuitem))
+			(start-findgrep-cmd "." "*.clj"  search-str)
+			(= obj (get-findgrep-helper      :FindGrep_logs_menuitem))
+			(start-findgrep-cmd "." "*.log"  search-str)))
+	(async-status-history display (str "Invalid Search Text at " (date-time)))))
+	
+(defn start-findgrep-thread [widget search-str delay?]
+  ;; See octane_tools findgrep-listener for when this function
+  ;; gets invoked.
+  (when delay?
+	;; Delay the operation so that that the 'agent' has set our search value.
+	(. Thread sleep 100))
+  (proxy [Runnable] []
+		 (run [] (run-findgrep-widget widget search-str))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
