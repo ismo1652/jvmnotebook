@@ -54,6 +54,7 @@
 (def  styled-text)
 (def  history-add-text)
 (def  status-set-text)
+(def  location-set-text)
 (def  *memory-usage*)
 (def  open-file)
 (def  date-timel)
@@ -200,7 +201,8 @@
 	(when (. file-dir exists)
 	  ;; Set the open directory global
 	  (set-directory-open path)	  
-	  (clear-buffer buffer-1)
+	  (location-set-text path)
+	  (clear-buffer buffer-1)	  
       ;; ADD the file path as the fist line.
       (. buffer-1 append (str "<< Current Directory: " path *newline*))
 	  (doseq [fil (. file-dir listFiles)]
