@@ -104,8 +104,16 @@
 (def findgrep-listener
 	 (proxy [SelectionAdapter] []
 			(widgetSelected [event]
-							(println (. event widget))
-							(. (new Thread (start-findgrep-thread)) start))))
+							;; With the async call, set the agent value
+							;; based on the search box value							
+							(. display asyncExec 
+							   (proxy [Runnable] []
+									  (run [] 
+										   (let [val (. search-box getText)]
+											 (send *search-text-state* (fn [_] val))))))
+							(let [widg-str (str (. event widget))]
+							  (. (new Thread
+									  (start-findgrep-thread widg-str @*search-text-state* true)) start)))))
 												   
 (defn add-findgrep-options [menu]
   ;; Run non lazy sequence operation
@@ -114,10 +122,11 @@
                     {:name "FindGrep_2hrs_menuitem"   :proc findgrep-listener }
                     {:name "FindGrep_java_menuitem"   :proc findgrep-listener }  
                     {:name "FindGrep_logs_menuitem"   :proc findgrep-listener }
-                    {:name "Findfiles_60min_menuitem" :proc findgrep-listener } ]]
+                    {:name "Findfiles_60min_menuitem" :proc findgrep-listener }
+					{:name "FindGrep_clj_menuitem"    :proc findgrep-listener } ]]
       (let [mitem (create-menu-item menu (menu-key :name) (menu-key :proc))]
 		;; Menu item created, now associate the widget with the global 'ref'
-		(set-findgrep-widg-state (keyword (menu-key :name)) mitem)
+		(set-findgrep-widg-state (keyword (menu-key :name)) (str mitem))
 		(println (get-findgrep-widg-state (keyword (menu-key :name)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
