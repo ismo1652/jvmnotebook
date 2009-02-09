@@ -77,7 +77,7 @@
 (defn start-findgrep-cmd [cur-dir wildcard grep-args]
   (let [fnd-proc (get-process "find")
 				 proc-data (build-findgrep-arr fnd-proc cur-dir wildcard grep-args)
-				 process-line (when fnd-proc     (into-array ["find" "-name" "*.java"]))
+				 process-line (when fnd-proc     (into-array ["find" "-name" "\\'*.java\\'"]))
 				 process-bld  (when process-line (when-try (new ProcessBuilder process-line)))
 				 process      (when process-bld  (when-try (. process-bld start)))]
 	(when process
