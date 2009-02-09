@@ -198,6 +198,8 @@
   (status-set-text  (str "Opening directory => " path))
   (let [file-dir (new File path)]
 	(when (. file-dir exists)
+	  ;; Set the open directory global
+	  (set-directory-open path)	  
 	  (clear-buffer buffer-1)
       ;; ADD the file path as the fist line.
       (. buffer-1 append (str "<< Current Directory: " path *newline*))

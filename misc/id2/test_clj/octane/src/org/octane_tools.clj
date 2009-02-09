@@ -107,27 +107,25 @@
   ;; actual object (string)
   ;; TODO: fix the following code
   (if (and search-str (> (length search-str) 1))
-	(let [obj (str obj-inst)]
+	(let [obj (str obj-inst)
+			  cur-dir (get-current-dir)]
 	  (cond (= obj (get-findgrep-helper      :FindGrep_grep_menuitem))
-			(start-findgrep-cmd "." "*.*"    search-str)
+			(start-findgrep-cmd cur-dir "*.*"    search-str)
 			(= obj (get-findgrep-helper      :FindGrep_15min_menuitem))
-			(start-findgrep-cmd "." "*.*"    search-str)
+			(start-findgrep-cmd cur-dir "*.*"    search-str)
 			(= obj (get-findgrep-helper      :FindGrep_2hrs_menuitem))
-			(start-findgrep-cmd "." "*.*"    search-str)
+			(start-findgrep-cmd cur-dir "*.*"    search-str)
 			(= obj (get-findgrep-helper      :FindGrep_java_menuitem))
-			(start-findgrep-cmd "." "*.java" search-str)
+			(start-findgrep-cmd cur-dir "*.java" search-str)
 			(= obj (get-findgrep-helper      :FindGrep_clj_menuitem))
-			(start-findgrep-cmd "." "*.clj"  search-str)
+			(start-findgrep-cmd cur-dir "*.clj"  search-str)
 			(= obj (get-findgrep-helper      :FindGrep_logs_menuitem))
-			(start-findgrep-cmd "." "*.log"  search-str)))
+			(start-findgrep-cmd cur-dir "*.log"  search-str)))
 	(async-status-history display (str "Invalid Search Text at " (date-time)))))
 	
 (defn start-findgrep-thread [widget search-str delay?]
   ;; See octane_tools findgrep-listener for when this function
   ;; gets invoked.
-  (when delay?
-	;; Delay the operation so that that the 'agent' has set our search value.
-	(. Thread sleep 100))
   (proxy [Runnable] []
 		 (run [] (run-findgrep-widget widget search-str))))
 
