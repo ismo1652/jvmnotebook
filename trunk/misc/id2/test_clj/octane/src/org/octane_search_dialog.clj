@@ -106,7 +106,7 @@
 			(widgetSelected [event]
 							;; With the async call, set the agent value
 							;; based on the search box value							
-							(. display asyncExec 
+							(. display syncExec 
 							   (proxy [Runnable] []
 									  (run [] 
 										   (let [val (. search-box getText)]
