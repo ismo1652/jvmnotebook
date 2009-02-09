@@ -142,6 +142,10 @@
   (. status-bar setText text)
   (. status-bar update))
 
+(defn location-set-text [text]
+  (. location-bar setText text)
+  (. location-bar update))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; File and Menu Utilities
