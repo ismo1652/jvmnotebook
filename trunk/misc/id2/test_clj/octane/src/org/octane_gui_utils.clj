@@ -35,6 +35,10 @@
 (defn add-main-text [str-data]
   (add-text-buffer styled-text buffer-1 str-data))
 
+(defn async-add-text [disp text-field buffer str-data]
+  ;; For example, text-field = styled-text
+  (async-call disp (add-text-buffer text-field buffer str-data)))
+
 (defn add-main-text-nc [line]
   ;; Add the main text without clearing the core buffer
   ;; Note 'buffer-1' and styled-text used as 
@@ -64,6 +68,34 @@
   ;; Set the status bar and history
   (async-call disp (status-set-text msg))
   (async-call disp (history-add-text (str msg *newline*))))
+
+(defn start-process [proc-args-lst buffer]
+  ;; Example usage: (start-process [ "explorer.exe" ] buffer-1)
+  (try
+   (let [process-line (into-array proc-args-lst)
+         process-bld  (when process-line (when-try (new ProcessBuilder process-line)))
+         process      (when process-bld  (when-try (. process-bld start)))]
+     (when process
+       (async-status-history display (str "Invoking process => " proc-args-lst *newline*))
+       ;; Wrap the request within a thread.
+       (let [proc-thread
+             (proxy [Runnable][]
+                    (run []
+                         (let [istream   (. process getInputStream)
+                               ireader   (new InputStreamReader istream)
+                               bufreader (new BufferedReader ireader)]
+                           ;; First clear the main text buffer
+                           (clear-buffer buffer)
+                           (let [proc-time-info (proc-time (loop [line (. bufreader readLine)]
+                                                             (when line
+                                                               (async-call display (add-main-text-nc line))
+                                                               (recur (. bufreader readLine)))))
+                                 msg (str "<<Completed process>> " (proc-time-info :time-text))]
+                             (async-call display (add-main-text-nc msg))
+                             (async-call display (status-set-text msg))))))]
+         ;; Launch the process thread
+         (. (new Thread proc-thread) start))))
+   (catch Exception e (. e printStackTrace))))
 	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

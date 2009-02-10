@@ -188,19 +188,20 @@
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)
     (. search-box setLayoutData gd)
-	(. location-bar setLayoutData gd))
+	(. location-bar setLayoutData gd)
+    (. location-bar addListener SWT/Traverse location-text-listener))
   (create-status-bar)
   ;; Final init, set the window size and then open
-  (. sh setSize win-size-width win-size-height)
-  (. sh open)
+  (doto sh
+    (. setSize win-size-width win-size-height)
+    (. open))
   (parse-system-args)
   ;; Debug
   (loop [] (if (. sh (isDisposed))
              (. disp (dispose))
-             (let []
-			   (when (not (. disp (readAndDispatch)))
-				 (. disp (sleep)))
-			   (recur)))))
+             (let [] (when (not (. disp (readAndDispatch)))
+                       (. disp (sleep)))
+                  (recur)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Main Entry Point
@@ -214,10 +215,11 @@
 (defn main []
   (try (main-1)
        (catch Exception e 
-			  (println "ERR: " e)
+			  (println "<Main ERR> " e)
+              (. e printStackTrace)
 			  (exit))))
+(main)
 
-(main-1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
 ;;; End of Script

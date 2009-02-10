@@ -11,7 +11,7 @@ set CURRENT_DIR=%cd%
 
 set INSTALL_DIR=C:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\misc\id2\test_clj\octane
 
-set JAVA_OPTS=-Xms200m -Xmx324m
+set JAVA_OPTS=-Xms128m -Xmx224m
 
 
 REM -----------------------------------------------------------------
