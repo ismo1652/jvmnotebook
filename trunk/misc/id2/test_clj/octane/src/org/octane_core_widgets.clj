@@ -250,7 +250,11 @@
 
     (doto run-expl      
       ;; Win explorer option
-      (. setText (. resources-win getString "Filemanager_menuitem")))
+      ;; see octane_tools.clj for the file manager launcher
+      (. setText (. resources-win getString "Filemanager_menuitem"))
+      (. addSelectionListener 
+		 (proxy [SelectionAdapter] []
+				(widgetSelected [e] (start-filemanager-proc)))))
 	  
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	;; Create the recent file menu options

@@ -215,8 +215,7 @@
                          (when (= (. event detail) SWT/TRAVERSE_RETURN)
                            (async-status-history display (str "Opening from location bar " (. location-bar getText)))
                            (open-file-or-dir (. location-bar getText))))))
-                           
-			  
+                          			  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

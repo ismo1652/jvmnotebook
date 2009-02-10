@@ -86,6 +86,9 @@
 (def *win-tools-dir* (str *name-separator* "tools" *name-separator* "unxutils" *name-separator* 
                           "usr" *name-separator* "local" *name-separator* "wbin" *name-separator*))
 
+;; Note: only invoke the manager when the OS is windows.
+(def *win-explorer-exe* "explorer.exe")
+
 (def *win-cat*    (str *octane-install-dir* *win-tools-dir* "octane_cat.exe"))
 (def *win-cut*    (str *octane-install-dir* *win-tools-dir* "octane_cut.exe"))
 (def *win-diff3*  (str *octane-install-dir* *win-tools-dir* "octane_diff3.exe"))
