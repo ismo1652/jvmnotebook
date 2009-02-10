@@ -71,8 +71,9 @@
 (def win-size-width    880)
 (def win-size-height   750)
 
-(def *db-size-width*   600)
-(def *db-size-height*  360)
+(def *db-size-width*   700)
+(def *db-size-height*  460)
+(def *db-col-size*     130)
 
 (def *search-size-width*  460)
 (def *search-size-height* 290)

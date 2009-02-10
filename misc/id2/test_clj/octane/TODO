@@ -7,6 +7,11 @@
 		* Add 'Graphs' sections
 		* Add 'Analytics' menu option
 		* Possibly add a 'command line' interface to the app
+		* Add quick keys (emacs based)
+		* Open explorer on current working directory 
+		* Database viewer, search and replace at command line
+
+		rsdev01 , rstest01 ; napol1 , naubm01
 			
 	+ 2/7/2009 	Berlin Brown
 		* JETTY web server

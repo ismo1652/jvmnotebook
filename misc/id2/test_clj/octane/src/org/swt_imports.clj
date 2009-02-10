@@ -32,7 +32,7 @@
                                  LineStyleListener StyleRange))
 
 (import '(org.eclipse.swt.graphics Color RGB FontData Font))
-(import '(org.eclipse.swt.layout GridData GridLayout RowLayout))
+(import '(org.eclipse.swt.layout GridData GridLayout RowLayout RowData))
 (import '(org.eclipse.swt.events VerifyListener SelectionAdapter ModifyListener SelectionListener
                                  SelectionEvent ShellAdapter ShellEvent))
 (import '(java.util.regex Pattern))
