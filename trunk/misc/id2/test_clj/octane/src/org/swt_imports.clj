@@ -33,7 +33,7 @@
 
 (import '(org.eclipse.swt.graphics Color RGB FontData Font))
 (import '(org.eclipse.swt.layout GridData GridLayout RowLayout))
-(import '(org.eclipse.swt.events VerifyListener SelectionAdapter ModifyListener
+(import '(org.eclipse.swt.events VerifyListener SelectionAdapter ModifyListener SelectionListener
                                  SelectionEvent ShellAdapter ShellEvent))
 (import '(java.util.regex Pattern))
 ;;(import '(org.eclipse.jface.text.source LineNumberRulerColumn))
