@@ -107,6 +107,16 @@
   (proxy [Runnable] []
 		 (run [] (run-findgrep-widget widget search-str))))
 
+
+(defn start-filemanager-proc []
+  ;; Open the explorer if the directory is available
+  (let [loc-text (. location-bar getText)]
+    (let [file (new File loc-text)]
+      (if (not (. file exists))
+        (async-status-history display (str "File does not exist => " loc-text))
+        (when (and (. file isDirectory) *is-windows*)
+          (start-process [ *win-explorer-exe* (. file getAbsolutePath) ] buffer-1))))))
+          
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
