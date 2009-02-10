@@ -38,7 +38,7 @@
 (defn add-main-text-nc [line]
   ;; Add the main text without clearing the core buffer
   ;; Note 'buffer-1' and styled-text used as 
-  ;; GUI components
+  ;; GUI components. (NC = no clear)
   (try (let [buffer buffer-1
 					text-gui styled-text]
 		 (. buffer append (str line *newline*))

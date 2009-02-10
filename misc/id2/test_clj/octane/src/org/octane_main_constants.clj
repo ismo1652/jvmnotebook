@@ -103,7 +103,11 @@
 									(bit-or SWT/H_SCROLL
 											(bit-or SWT/V_SCROLL 1)))))
 
-(def *database-win-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE SWT/MIN))))
+(def *database-win-style*   (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE SWT/MIN))))
+(def *database-text-button* "Format Database View")
+(def *database-name-button* "Filter Name")
+(def *database-grp-button*  "Filter Group")
+(def *database-serv-button* "Filter Server")
 
 (def *openfile-wildcard-seq* ["*.*" "*.log" "*.olog" "*.octlog"
                               "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
