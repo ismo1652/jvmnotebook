@@ -39,7 +39,9 @@
 	(load "octane_core_widgets")
 	(load "octane_file_database")
 	(load "octane_search_dialog")
-	(load "octane_regex_search"))
+	(load "octane_regex_search")
+    (load "octane_analytics")
+    (load "octane_graphs"))
 		  
 ;;**************************************
 ;; Begin Routines

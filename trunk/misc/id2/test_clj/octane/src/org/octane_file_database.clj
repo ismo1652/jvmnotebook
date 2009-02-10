@@ -30,10 +30,11 @@
 (def  db-filter-box       (new Text database-shell SWT/BORDER))
 (def  db-file-table       (new Table database-shell (bit-or SWT/SINGLE (bit-or SWT/BORDER SWT/FULL_SELECTION))))
 (def  db-search-box       (new Text database-shell SWT/BORDER))
-(def  db-totext-button    (new Button database-shell SWT/PUSH))
-(def  db-filternm-button  (new Button database-shell SWT/PUSH))
-(def  db-filtergrp-button (new Button database-shell SWT/PUSH))
-(def  db-filtersrv-button (new Button database-shell SWT/PUSH))
+(def  db-button-comp      (new Composite database-shell SWT/NONE))
+(def  db-totext-button    (new Button db-button-comp SWT/PUSH))
+(def  db-filternm-button  (new Button db-button-comp SWT/PUSH))
+(def  db-filtergrp-button (new Button db-button-comp SWT/PUSH))
+(def  db-filtersrv-button (new Button db-button-comp SWT/PUSH))
 
 ;; Five table columns, loaded from database configuration file.
 (def  table-col-names ["Name" "Path" "Group" "Server" "Description"])
@@ -99,25 +100,29 @@
 	(doseq [t table-col-names]
 		(let [column (new TableColumn db-file-table SWT/NONE)]
 		  (. column setText  t)
-		  (. column setWidth 110)))
+		  (. column setWidth *db-col-size*)))
 	(. db-file-table setLayoutData gd)))
 
-(defn init-database-helper [sh]
-  (let [gd        (new GridData SWT/FILL SWT/FILL true false)
-        gd-button (new GridData)]
-	(. db-filter-box setLayoutData  gd)
-	(. db-search-box setLayoutData  gd)
-    (set! (. gd-button widthHint)  160)
-    (set! (. gd-button heightHint)  32)
-    (. db-totext-button setText *database-text-button*)
-    (. db-totext-button setLayoutData gd-button)
+(defn init-buttons-composite [sh]
+  (let [comp db-button-comp
+        gd-comp   (new GridData)
+        gd-button (new RowData 148 30)]
+    (. comp setLayoutData gd-comp)
+    (. comp setLayout (new RowLayout))
+    (doto db-totext-button    (. setText *database-text-button*) (. setLayoutData gd-button))
     (doto db-filternm-button  (. setText *database-name-button*) (. setLayoutData gd-button))
     (doto db-filtersrv-button (. setText *database-grp-button*)  (. setLayoutData gd-button))
-    (doto db-filtergrp-button (. setText *database-serv-button*) (. setLayoutData gd-button)))
-  (. db-search-box setText "XXXXXXXXXXXXXX")
-  (. db-totext-button addSelectionListener (format-db-button-listener))
-  (create-database-table sh))
-        
+    (doto db-filtergrp-button (. setText *database-serv-button*) (. setLayoutData gd-button))))  
+
+(defn init-database-helper [sh]
+  (let [gd (new GridData SWT/FILL SWT/FILL true false)]
+    (init-buttons-composite sh)
+	(. db-filter-box setLayoutData  gd)
+	(. db-search-box setLayoutData  gd)
+    (. db-search-box setText "XXXXXXXXXXXXXX")
+    (. db-totext-button addSelectionListener (format-db-button-listener))
+    (create-database-table sh)))
+
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
 	create-database-window [parent-sh open-win?]

@@ -38,6 +38,8 @@
 (def add-recent-buffer-menu)
 (def create-database-window)
 (def create-search-dialog)
+(def create-analytics-menu)
+(def create-graphs-menu)
 
 (def recent-menu-state   (new HashMap))
 (def recent-buffer-state (new HashMap))
@@ -170,11 +172,12 @@
 				(. styled-text setSelection (. styled-text getCharCount))))))
 
 (defn open-file [name quiet]
-  (when name	
+  (when name
     (when (not quiet)
-      (history-add-text (str "Loading file => " name "\n"))
-      (status-set-text  (str "Loading file => " name)))
+      (history-add-text  (str "Loading file => " name "\n"))
+      (status-set-text   (str "Loading file => " name)))
 	(let [file (new File name)]
+      (location-set-text name)
 	  (if (not (. file exists))
 		(display-error "File does not exist")
 		(let [disp (. styled-text getDisplay)
@@ -227,10 +230,11 @@
   (let [bar       (. sh getMenuBar)
         menu      (new Menu bar)
         item      (new MenuItem menu (. SWT PUSH))
-		dir-item  (new MenuItem menu (. SWT PUSH))]
+		dir-item  (new MenuItem menu (. SWT PUSH))
+        run-expl  (new MenuItem menu (. SWT PUSH))]
     (doto item
 	  ;;;;;;;;;;;;;;;;;;;;;
-	  ;; Open File
+	  ;; Open File Menu Option
 	  ;;;;;;;;;;;;;;;;;;;;;
       (. setText (. resources-win getString "Open_menuitem"))
       (. addSelectionListener 
@@ -243,8 +247,14 @@
 	  (. addSelectionListener
 		 (proxy [SelectionAdapter] []
 				(widgetSelected [e] (dialog-open-dir)))))
+
+    (doto run-expl      
+      ;; Win explorer option
+      (. setText (. resources-win getString "Filemanager_menuitem")))
 	  
-	;; Create the recent file menu 
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;; Create the recent file menu options
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	(new MenuItem menu SWT/SEPARATOR)
 	(create-recent-menu-items menu)	
 	(new MenuItem menu SWT/SEPARATOR)
@@ -322,8 +332,13 @@
 		search-item    (new MenuItem bar (. SWT CASCADE))
 		recent-buffers (new MenuItem bar (. SWT CASCADE))
 		tools-item     (new MenuItem bar (. SWT CASCADE))
+		analytics-item (new MenuItem bar (. SWT CASCADE))
+		graphs-item    (new MenuItem bar (. SWT CASCADE))
 		help-item      (new MenuItem bar (. SWT CASCADE))]		
     (. sh setMenuBar bar)
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; Build the Main Window Menu Bar
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     (doto item
       (. setText (. resources-win getString "File_menuitem"))
       (. setMenu (create-file-menu disp sh)))
@@ -336,6 +351,11 @@
 	(doto tools-item
 	  (. setText (. resources-win getString "Tools_menu_title"))
 	  (. setMenu (create-tools-menu disp sh)))
+    (doto analytics-item
+      (. setText (. resources-win getString "Analytics_menu_title")))
+    (doto graphs-item
+      (. setText (. resources-win getString "Graphs_menu_title"))
+      (. setMenu (create-graphs-menu disp sh)))
 	(let [buf-menu (new Menu bar)]
 	  (doto recent-buffers
 		(. setText (. resources-win getString "RecentBuffers_menu_title"))
