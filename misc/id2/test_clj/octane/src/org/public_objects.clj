@@ -74,6 +74,10 @@
 (defn get-directory-open []     (deref *directory-open-state*))
 (defn set-directory-open [path] (dosync (ref-set *directory-open-state* path)))
 
+(def  *curfile-open-state*    (ref nil))
+(defn get-curfile-open []     (deref *curfile-open-state*))
+(defn set-curfile-open [path] (dosync (ref-set *curfile-open-state* path)))
+
 (defn get-current-dir [] 
   (if (get-directory-open) (get-directory-open) "."))
 

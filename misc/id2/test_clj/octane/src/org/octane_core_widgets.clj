@@ -110,8 +110,7 @@
   (create-tab-4))
 
 (def status-arm-listener
-     (proxy [Listener] []
-            (handleEvent [event])))
+     (proxy [Listener] [] (handleEvent [event])))
 
 (defn create-status-bar []
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
@@ -177,11 +176,12 @@
       (history-add-text  (str "Loading file => " name "\n"))
       (status-set-text   (str "Loading file => " name)))
 	(let [file (new File name)]
+      (set-curfile-open name)
       (location-set-text name)
 	  (if (not (. file exists))
 		(display-error "File does not exist")
 		(let [disp (. styled-text getDisplay)
-				   file-str-data (open-file-util file (. file getPath))]
+              file-str-data (open-file-util file (. file getPath))]
           ;; Set the file state opened, and start monitor loop
 		  (on-file-open file)
           ;; Check for file last modified

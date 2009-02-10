@@ -28,12 +28,18 @@
 				  ByteArrayOutputStream ObjectOutputStream FileOutputStream))
 (import '(java.util ResourceBundle Vector))
 
+(def  async-status-history)
 (def  clear-buffer)
 (def  styled-text)
 (def  history-add-text)
 (def  status-set-text)
 (def  location-set-text)
+(def  refresh-textarea)
+(def  async-status-history)
 (def  *memory-usage*)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Note: open file dialog is in octane_core_widgets.clj
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (def  open-file)
 (def  date-timel)
 (def  get-file-state)
@@ -171,10 +177,11 @@
 	(str (apply format "%3s %15s  %25s  %s" (list (str is-d can-r can-w) len (get-dir-date lmod) name)) *newline*)))
 			 
 (defn open-directory [path]
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Open the directory and then store the contents
   ;; in the main buffer
-  (history-add-text (str "Opening directory => " path *newline*))
-  (status-set-text  (str "Opening directory => " path))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (async-status-history display (str "Opening directory => " path *newline*))
   (let [file-dir (new File path)]
 	(when (. file-dir exists)
 	  ;; Set the open directory global
@@ -186,6 +193,29 @@
 	  (doseq [fil (. file-dir listFiles)]
 		  (let [] (. buffer-1 append (format-dir-file fil))))
 	  (. styled-text setText (. buffer-1 toString)))))	 		
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Location Bar and Utilities
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn open-file-or-dir [name]
+  ;; Check if the file exists, open the file or directory
+  (let [file  (new File name)]
+    (if (not (. file exists))
+      (async-status-history display (str "File does not exist => " name))
+      (if (. file isDirectory)
+        (open-directory (. file getAbsolutePath))
+        (open-file (. file getAbsolutePath) false)))))
+
+(def location-text-listener
+     ;; Use (. box addListener SWT/Traverse location-text-listener)
+     ;; to add the action listener.
+     (proxy [Listener] []
+            (handleEvent [event]
+                         (when (= (. event detail) SWT/TRAVERSE_RETURN)
+                           (async-status-history display (str "Opening from location bar " (. location-bar getText)))
+                           (open-file-or-dir (. location-bar getText))))))
+                           
 			  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
