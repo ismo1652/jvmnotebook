@@ -2,6 +2,15 @@
 #
 ###############################################################################
 	+ 2/8/2009	Berlin Brown
+		* Avoid the following shortcuts:
+			http://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts
+
+			- Shortcut - Quick search
+			
+			- Shortcut - add to notes
+			- Shortcut - Open explorer
+			- Shortcut - Open database view
+
 		* Add 'Run' Tools menu option,
 		  where the 'server' tools are found
 		* Add 'Graphs' sections
@@ -10,6 +19,7 @@
 		* Add quick keys (emacs based)
 		* Open explorer on current working directory 
 		* Database viewer, search and replace at command line
+		* NOTE taker
 
 		rsdev01 , rstest01 ; napol1 , naubm01
 			
