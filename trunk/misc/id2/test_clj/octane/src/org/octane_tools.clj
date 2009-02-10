@@ -107,7 +107,6 @@
   (proxy [Runnable] []
 		 (run [] (run-findgrep-widget widget search-str))))
 
-
 (defn start-filemanager-proc []
   ;; Open the explorer if the directory is available
   (let [loc-text (. location-bar getText)]
