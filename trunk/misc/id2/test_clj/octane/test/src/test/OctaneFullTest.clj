@@ -4,1483 +4,1408 @@
 
 (ns test.OctaneFullTest
     (:import (junit.framework Assert))
-	(:gen-class
+	(:gen_class
 	 :extends junit.framework.TestCase))
+
+(defn -init [_] ()) 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "parse_system_args"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_parse_system_args [_]
+  (Assert/fail "Test not implemented (parse_system_args)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "shell_display_loop"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_shell_display_loop [_]
+  (Assert/fail "Test not implemented (shell_display_loop)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "get_hist_header"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_get_hist_header [_]
+  (Assert/fail "Test not implemented (get_hist_header)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "serialize_object"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_serialize_object [_]
+  (Assert/fail "Test not implemented (serialize_object)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "recent_buffer_state"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_recent_buffer_state [_]
+  (Assert/fail "Test not implemented (recent_buffer_state)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "search_find_button"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_search_find_button [_]
+  (Assert/fail "Test not implemented (search_find_button)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "regex_example_text"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_regex_example_text [_]
+  (Assert/fail "Test not implemented (regex_example_text)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "hist_header_msg"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_hist_header_msg [_]
+  (Assert/fail "Test not implemented (hist_header_msg)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "add_select_style"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_add_select_style [_]
+  (Assert/fail "Test not implemented (add_select_style)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "init_search_helper"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_init_search_helper [_]
+  (Assert/fail "Test not implemented (init_search_helper)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "set_file_state"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_set_file_state [_]
+  (Assert/fail "Test not implemented (set_file_state)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "tab_text_4"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_tab_text_4 [_]
+  (Assert/fail "Test not implemented (tab_text_4)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "search_shell"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_search_shell [_]
+  (Assert/fail "Test not implemented (search_shell)" ))
  
+  
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "parse-system-args"
+;; Test case for "create_graphs_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-parse-system-args [_]
-  (Assert/fail "Test not implemented (parse-system-args)" ))
+(defn -test_create_graphs_menu [_]
+  (Assert/fail "Test not implemented (create_graphs_menu)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "shell-display-loop"
+;; Test case for "tab_text_3"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-shell-display-loop [_]
-  (Assert/fail "Test not implemented (shell-display-loop)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-hist-header"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-hist-header [_]
-  (Assert/fail "Test not implemented (get-hist-header)" ))
+(defn -test_tab_text_3 [_]
+  (Assert/fail "Test not implemented (tab_text_3)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "serialize-object"
+;; Test case for "init_colors"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-serialize-object [_]
-  (Assert/fail "Test not implemented (serialize-object)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "recent-buffer-state"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-recent-buffer-state [_]
-  (Assert/fail "Test not implemented (recent-buffer-state)" ))
+(defn -test_init_colors [_]
+  (Assert/fail "Test not implemented (init_colors)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-find-button"
+;; Test case for "deserialize_object"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-find-button [_]
-  (Assert/fail "Test not implemented (search-find-button)" ))
+(defn -test_deserialize_object [_]
+  (Assert/fail "Test not implemented (deserialize_object)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-example-text"
+;; Test case for "tab_text_2"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-example-text [_]
-  (Assert/fail "Test not implemented (regex-example-text)" ))
+(defn -test_tab_text_2 [_]
+  (Assert/fail "Test not implemented (tab_text_2)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "hist-header-msg"
+;; Test case for "get_findgrep_widg_state"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-hist-header-msg [_]
-  (Assert/fail "Test not implemented (hist-header-msg)" ))
-    
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-select-style"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-select-style [_]
-  (Assert/fail "Test not implemented (add-select-style)" ))
-    
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-search-helper"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-search-helper [_]
-  (Assert/fail "Test not implemented (init-search-helper)" ))
+(defn -test_get_findgrep_widg_state [_]
+  (Assert/fail "Test not implemented (get_findgrep_widg_state)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-file-state"
+;; Test case for "history_add_textln"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-file-state [_]
-  (Assert/fail "Test not implemented (set-file-state)" ))
+(defn -test_history_add_textln [_]
+  (Assert/fail "Test not implemented (history_add_textln)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-text-4"
+;; Test case for "prop_core_sys"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-text-4 [_]
-  (Assert/fail "Test not implemented (tab-text-4)" ))
+(defn -test_prop_core_sys [_]
+  (Assert/fail "Test not implemented (prop_core_sys)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-shell"
+;; Test case for "regex_match_style"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-shell [_]
-  (Assert/fail "Test not implemented (search-shell)" ))
- 
+(defn -test_regex_match_style [_]
+  (Assert/fail "Test not implemented (regex_match_style)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-graphs-menu"
+;; Test case for "regex_edit_box"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-graphs-menu [_]
-  (Assert/fail "Test not implemented (create-graphs-menu)" ))
-    
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-text-3"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-text-3 [_]
-  (Assert/fail "Test not implemented (tab-text-3)" ))
-    
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-colors"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-colors [_]
-  (Assert/fail "Test not implemented (init-colors)" ))
-    
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "deserialize-object"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-deserialize-object [_]
-  (Assert/fail "Test not implemented (deserialize-object)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-text-2"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-text-2 [_]
-  (Assert/fail "Test not implemented (tab-text-2)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-findgrep-widg-state"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-findgrep-widg-state [_]
-  (Assert/fail "Test not implemented (get-findgrep-widg-state)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "history-add-textln"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-history-add-textln [_]
-  (Assert/fail "Test not implemented (history-add-textln)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "prop-core-sys"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-prop-core-sys [_]
-  (Assert/fail "Test not implemented (prop-core-sys)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-match-style"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-match-style [_]
-  (Assert/fail "Test not implemented (regex-match-style)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-edit-box"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-edit-box [_]
-  (Assert/fail "Test not implemented (regex-edit-box)" ))
+(defn -test_regex_edit_box [_]
+  (Assert/fail "Test not implemented (regex_edit_box)" ))
     
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-composite"
+;; Test case for "search_composite"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-composite [_]
-  (Assert/fail "Test not implemented (search-composite)" ))
+(defn -test_search_composite [_]
+  (Assert/fail "Test not implemented (search_composite)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "build-findgrep-arr"
+;; Test case for "build_findgrep_arr"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-build-findgrep-arr [_]
-  (Assert/fail "Test not implemented (build-findgrep-arr)" ))
+(defn -test_build_findgrep_arr [_]
+  (Assert/fail "Test not implemented (build_findgrep_arr)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "styled-text-font"
+;; Test case for "styled_text_font"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-styled-text-font [_]
-  (Assert/fail "Test not implemented (styled-text-font)" ))
+(defn -test_styled_text_font [_]
+  (Assert/fail "Test not implemented (styled_text_font)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "open-file-listener"
+;; Test case for "open_file_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-open-file-listener [_]
-  (Assert/fail "Test not implemented (open-file-listener)" ))
+(defn -test_open_file_listener [_]
+  (Assert/fail "Test not implemented (open_file_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-directory-open"
+;; Test case for "set_directory_open"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-directory-open [_]
-  (Assert/fail "Test not implemented (set-directory-open)" ))
+(defn -test_set_directory_open [_]
+  (Assert/fail "Test not implemented (set_directory_open)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-box"
+;; Test case for "search_box"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-box [_]
-  (Assert/fail "Test not implemented (search-box)" ))
+(defn -test_search_box [_]
+  (Assert/fail "Test not implemented (search_box)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "table-col-names"
+;; Test case for "table_col_names"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-table-col-names [_]
-  (Assert/fail "Test not implemented (table-col-names)" ))
+(defn -test_table_col_names [_]
+  (Assert/fail "Test not implemented (table_col_names)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-folder"
+;; Test case for "tab_folder"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-folder [_]
-  (Assert/fail "Test not implemented (tab-folder)" ))
+(defn -test_tab_folder [_]
+  (Assert/fail "Test not implemented (tab_folder)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "loop-db-files"
+;; Test case for "loop_db_files"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-loop-db-files [_]
-  (Assert/fail "Test not implemented (loop-db-files)" ))
+(defn -test_loop_db_files [_]
+  (Assert/fail "Test not implemented (loop_db_files)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-search-dialog"
+;; Test case for "create_search_dialog"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-search-dialog [_]
-  (Assert/fail "Test not implemented (create-search-dialog)" ))
+(defn -test_create_search_dialog [_]
+  (Assert/fail "Test not implemented (create_search_dialog)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-match-group"
+;; Test case for "regex_match_group"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-match-group [_]
-  (Assert/fail "Test not implemented (regex-match-group)" ))
+(defn -test_regex_match_group [_]
+  (Assert/fail "Test not implemented (regex_match_group)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "file-last-mod"
+;; Test case for "file_last_mod"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-file-last-mod [_]
-  (Assert/fail "Test not implemented (file-last-mod)" ))
+(defn -test_file_last_mod [_]
+  (Assert/fail "Test not implemented (file_last_mod)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "shell-close-listener"
+;; Test case for "shell_close_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-shell-close-listener [_]
-  (Assert/fail "Test not implemented (shell-close-listener)" ))
+(defn -test_shell_close_listener [_]
+  (Assert/fail "Test not implemented (shell_close_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "start-filemanager-proc"
+;; Test case for "start_filemanager_proc"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-start-filemanager-proc [_]
-  (Assert/fail "Test not implemented (start-filemanager-proc)" ))
+(defn -test_start_filemanager_proc [_]
+  (Assert/fail "Test not implemented (start_filemanager_proc)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "serialize-object-1"
+;; Test case for "serialize_object_1"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-serialize-object-1 [_]
-  (Assert/fail "Test not implemented (serialize-object-1)" ))
+(defn -test_serialize_object_1 [_]
+  (Assert/fail "Test not implemented (serialize_object_1)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "open-file-util"
+;; Test case for "open_file_util"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-open-file-util [_]
-  (Assert/fail "Test not implemented (open-file-util)" ))
+(defn -test_open_file_util [_]
+  (Assert/fail "Test not implemented (open_file_util)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "rcol-vec-bg"
+;; Test case for "rcol_vec_bg"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-rcol-vec-bg [_]
-  (Assert/fail "Test not implemented (rcol-vec-bg)" ))
+(defn -test_rcol_vec_bg [_]
+  (Assert/fail "Test not implemented (rcol_vec_bg)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-colors-vec"
+;; Test case for "regex_colors_vec"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-colors-vec [_]
-  (Assert/fail "Test not implemented (regex-colors-vec)" ))
+(defn -test_regex_colors_vec [_]
+  (Assert/fail "Test not implemented (regex_colors_vec)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "recent-menu-listener"
+;; Test case for "recent_menu_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-recent-menu-listener [_]
-  (Assert/fail "Test not implemented (recent-menu-listener)" ))
+(defn -test_recent_menu_listener [_]
+  (Assert/fail "Test not implemented (recent_menu_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "red-color"
+;; Test case for "red_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-red-color [_]
-  (Assert/fail "Test not implemented (red-color)" ))
+(defn -test_red_color [_]
+  (Assert/fail "Test not implemented (red_color)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-buffer-menu-state"
+;; Test case for "get_buffer_menu_state"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-buffer-menu-state [_]
-  (Assert/fail "Test not implemented (get-buffer-menu-state)" ))
+(defn -test_get_buffer_menu_state [_]
+  (Assert/fail "Test not implemented (get_buffer_menu_state)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "resources-user"
+;; Test case for "resources_user"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-resources-user [_]
-  (Assert/fail "Test not implemented (resources-user)" ))
+(defn -test_resources_user [_]
+  (Assert/fail "Test not implemented (resources_user)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "example-regex-document"
+;; Test case for "example_regex_document"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-example-regex-document [_]
-  (Assert/fail "Test not implemented (example-regex-document)" ))
+(defn -test_example_regex_document [_]
+  (Assert/fail "Test not implemented (example_regex_document)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "green-color"
+;; Test case for "green_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-green-color [_]
-  (Assert/fail "Test not implemented (green-color)" ))
+(defn -test_green_color [_]
+  (Assert/fail "Test not implemented (green_color)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "println-obj"
+;; Test case for "println_obj"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-println-obj [_]
-  (Assert/fail "Test not implemented (println-obj)" ))
+(defn -test_println_obj [_]
+  (Assert/fail "Test not implemented (println_obj)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-recent-menu-items"
+;; Test case for "create_recent_menu_items"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-recent-menu-items [_]
-  (Assert/fail "Test not implemented (create-recent-menu-items)" ))
+(defn -test_create_recent_menu_items [_]
+  (Assert/fail "Test not implemented (create_recent_menu_items)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "resources-win-opts"
+;; Test case for "resources_win_opts"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-resources-win-opts [_]
-  (Assert/fail "Test not implemented (resources-win-opts)" ))
+(defn -test_resources_win_opts [_]
+  (Assert/fail "Test not implemented (resources_win_opts)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-file-menu"
+;; Test case for "create_file_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-file-menu [_]
-  (Assert/fail "Test not implemented (create-file-menu)" ))
+(defn -test_create_file_menu [_]
+  (Assert/fail "Test not implemented (create_file_menu)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "format-has-val"
+;; Test case for "format_has_val"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-format-has-val [_]
-  (Assert/fail "Test not implemented (format-has-val)" ))
+(defn -test_format_has_val [_]
+  (Assert/fail "Test not implemented (format_has_val)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "col-vec-grey"
+;; Test case for "col_vec_grey"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-col-vec-grey [_]
-  (Assert/fail "Test not implemented (col-vec-grey)" ))
+(defn -test_col_vec_grey [_]
+  (Assert/fail "Test not implemented (col_vec_grey)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "refresh-regex-example"
+;; Test case for "refresh_regex_example"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-refresh-regex-example [_]
-  (Assert/fail "Test not implemented (refresh-regex-example)" ))
+(defn -test_refresh_regex_example [_]
+  (Assert/fail "Test not implemented (refresh_regex_example)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "history-add-text"
+;; Test case for "history_add_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-history-add-text [_]
-  (Assert/fail "Test not implemented (history-add-text)" ))
+(defn -test_history_add_text [_]
+  (Assert/fail "Test not implemented (history_add_text)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-filter-box"
+;; Test case for "db_filter_box"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-filter-box [_]
-  (Assert/fail "Test not implemented (db-filter-box)" ))
+(defn -test_db_filter_box [_]
+  (Assert/fail "Test not implemented (db_filter_box)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-buffer-menu-state"
+;; Test case for "set_buffer_menu_state"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-buffer-menu-state [_]
-  (Assert/fail "Test not implemented (set-buffer-menu-state)" ))
+(defn -test_set_buffer_menu_state [_]
+  (Assert/fail "Test not implemented (set_buffer_menu_state)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "save-file-list"
+;; Test case for "save_file_list"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-save-file-list [_]
-  (Assert/fail "Test not implemented (save-file-list)" ))
+(defn -test_save_file_list [_]
+  (Assert/fail "Test not implemented (save_file_list)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "col-vec-drkb"
+;; Test case for "col_vec_drkb"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-col-vec-drkb [_]
-  (Assert/fail "Test not implemented (col-vec-drkb)" ))
+(defn -test_col_vec_drkb [_]
+  (Assert/fail "Test not implemented (col_vec_drkb)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-area-3"
+;; Test case for "tab_area_3"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-area-3 [_]
-  (Assert/fail "Test not implemented (tab-area-3)" ))
+(defn -test_tab_area_3 [_]
+  (Assert/fail "Test not implemented (tab_area_3)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-area-4"
+;; Test case for "tab_area_4"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-area-4 [_]
-  (Assert/fail "Test not implemented (tab-area-4)" ))
+(defn -test_tab_area_4 [_]
+  (Assert/fail "Test not implemented (tab_area_4)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-findgrep-widg-state"
+;; Test case for "set_findgrep_widg_state"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-findgrep-widg-state [_]
-  (Assert/fail "Test not implemented (set-findgrep-widg-state)" ))
+(defn -test_set_findgrep_widg_state [_]
+  (Assert/fail "Test not implemented (set_findgrep_widg_state)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-style-listener"
+;; Test case for "regex_style_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-style-listener [_]
-  (Assert/fail "Test not implemented (regex-style-listener)" ))
-  
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "findgrep-widg-state"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-findgrep-widg-state [_]
-  (Assert/fail "Test not implemented (findgrep-widg-state)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-area-2"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-area-2 [_]
-  (Assert/fail "Test not implemented (tab-area-2)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "clear-buffer"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-clear-buffer [_]
-  (Assert/fail "Test not implemented (clear-buffer)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "rcol-vec-grey"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-rcol-vec-grey [_]
-  (Assert/fail "Test not implemented (rcol-vec-grey)" ))
+(defn -test_regex_style_listener [_]
+  (Assert/fail "Test not implemented (regex_style_listener)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-shell"
+;; Test case for "findgrep_widg_state"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-shell [_]
-  (Assert/fail "Test not implemented (regex-shell)" ))
+(defn -test_findgrep_widg_state [_]
+  (Assert/fail "Test not implemented (findgrep_widg_state)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "tab_area_2"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_tab_area_2 [_]
+  (Assert/fail "Test not implemented (tab_area_2)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "clear_buffer"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_clear_buffer [_]
+  (Assert/fail "Test not implemented (clear_buffer)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "rcol_vec_grey"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_rcol_vec_grey [_]
+  (Assert/fail "Test not implemented (rcol_vec_grey)" ))
+  
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "regex_shell"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_regex_shell [_]
+  (Assert/fail "Test not implemented (regex_shell)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "open-directory"
+;; Test case for "open_directory"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-open-directory [_]
-  (Assert/fail "Test not implemented (open-directory)" ))
+(defn -test_open_directory [_]
+  (Assert/fail "Test not implemented (open_directory)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "find-text-listener"
+;; Test case for "find_text_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-find-text-listener [_]
-  (Assert/fail "Test not implemented (find-text-listener)" ))
+(defn -test_find_text_listener [_]
+  (Assert/fail "Test not implemented (find_text_listener)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-grid-layout"
+;; Test case for "create_grid_layout"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-grid-layout [_]
-  (Assert/fail "Test not implemented (create-grid-layout)" ))
+(defn -test_create_grid_layout [_]
+  (Assert/fail "Test not implemented (create_grid_layout)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "async-status-history"
+;; Test case for "async_status_history"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-async-status-history [_]
-  (Assert/fail "Test not implemented (async-status-history)" ))
+(defn -test_async_status_history [_]
+  (Assert/fail "Test not implemented (async_status_history)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "style-handler"
+;; Test case for "style_handler"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-style-handler [_]
-  (Assert/fail "Test not implemented (style-handler)" ))
+(defn -test_style_handler [_]
+  (Assert/fail "Test not implemented (style_handler)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-area-1"
+;; Test case for "tab_area_1"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-area-1 [_]
-  (Assert/fail "Test not implemented (tab-area-1)" ))
+(defn -test_tab_area_1 [_]
+  (Assert/fail "Test not implemented (tab_area_1)" ))
   
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "prop-bool"
+;; Test case for "prop_bool"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-prop-bool [_]
-  (Assert/fail "Test not implemented (prop-bool)" ))
+(defn -test_prop_bool [_]
+  (Assert/fail "Test not implemented (prop_bool)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-status-bar"
+;; Test case for "create_status_bar"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-status-bar [_]
-  (Assert/fail "Test not implemented (create-status-bar)" ))
+(defn -test_create_status_bar [_]
+  (Assert/fail "Test not implemented (create_status_bar)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "rcol-vec-cy"
+;; Test case for "rcol_vec_cy"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-rcol-vec-cy [_]
-  (Assert/fail "Test not implemented (rcol-vec-cy)" ))
+(defn -test_rcol_vec_cy [_]
+  (Assert/fail "Test not implemented (rcol_vec_cy)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "when-try"
+;; Test case for "when_try"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-when-try [_]
-  (Assert/fail "Test not implemented (when-try)" ))
+(defn -test_when_try [_]
+  (Assert/fail "Test not implemented (when_try)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "directory-dialog"
+;; Test case for "directory_dialog"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-directory-dialog [_]
-  (Assert/fail "Test not implemented (directory-dialog)" ))
+(defn -test_directory_dialog [_]
+  (Assert/fail "Test not implemented (directory_dialog)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "load-file-list"
+;; Test case for "load_file_list"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-load-file-list [_]
-  (Assert/fail "Test not implemented (load-file-list)" ))
+(defn -test_load_file_list [_]
+  (Assert/fail "Test not implemented (load_file_list)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-current-dir"
+;; Test case for "get_current_dir"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-current-dir [_]
-  (Assert/fail "Test not implemented (get-current-dir)" ))
+(defn -test_get_current_dir [_]
+  (Assert/fail "Test not implemented (get_current_dir)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "recent-buffer-listener"
+;; Test case for "recent_buffer_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-recent-buffer-listener [_]
-  (Assert/fail "Test not implemented (recent-buffer-listener)" ))
+(defn -test_recent_buffer_listener [_]
+  (Assert/fail "Test not implemented (recent_buffer_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "display"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-display [_]
+(defn -test_display [_]
   (Assert/fail "Test not implemented (display)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-main-text"
+;; Test case for "add_main_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-main-text [_]
-  (Assert/fail "Test not implemented (add-main-text)" ))
+(defn -test_add_main_text [_]
+  (Assert/fail "Test not implemented (add_main_text)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-filtersrv-button"
+;; Test case for "db_filtersrv_button"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-filtersrv-button [_]
-  (Assert/fail "Test not implemented (db-filtersrv-button)" ))
+(defn -test_db_filtersrv_button [_]
+  (Assert/fail "Test not implemented (db_filtersrv_button)" ))
   
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "main-match-style"
+;; Test case for "main_match_style"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-main-match-style [_]
-  (Assert/fail "Test not implemented (main-match-style)" ))
+(defn -test_main_match_style [_]
+  (Assert/fail "Test not implemented (main_match_style)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-style-handler"
+;; Test case for "regex_style_handler"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-style-handler [_]
-  (Assert/fail "Test not implemented (regex-style-handler)" ))
+(defn -test_regex_style_handler [_]
+  (Assert/fail "Test not implemented (regex_style_handler)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "location-bar"
+;; Test case for "location_bar"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-location-bar [_]
-  (Assert/fail "Test not implemented (location-bar)" ))
+(defn -test_location_bar [_]
+  (Assert/fail "Test not implemented (location_bar)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-regex-helper"
+;; Test case for "init_regex_helper"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-regex-helper [_]
-  (Assert/fail "Test not implemented (init-regex-helper)" ))
+(defn -test_init_regex_helper [_]
+  (Assert/fail "Test not implemented (init_regex_helper)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-button-comp"
+;; Test case for "db_button_comp"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-button-comp [_]
-  (Assert/fail "Test not implemented (db-button-comp)" ))
+(defn -test_db_button_comp [_]
+  (Assert/fail "Test not implemented (db_button_comp)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "octane-pattern"
+;; Test case for "octane_pattern"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-octane-pattern [_]
-  (Assert/fail "Test not implemented (octane-pattern)" ))
+(defn -test_octane_pattern [_]
+  (Assert/fail "Test not implemented (octane_pattern)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-curfile-open"
+;; Test case for "set_curfile_open"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-curfile-open [_]
-  (Assert/fail "Test not implemented (set-curfile-open)" ))
+(defn -test_set_curfile_open [_]
+  (Assert/fail "Test not implemented (set_curfile_open)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "open-file-or-dir"
+;; Test case for "open_file_or_dir"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-open-file-or-dir [_]
-  (Assert/fail "Test not implemented (open-file-or-dir)" ))
+(defn -test_open_file_or_dir [_]
+  (Assert/fail "Test not implemented (open_file_or_dir)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "resources-core-sys"
+;; Test case for "resources_core_sys"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-resources-core-sys [_]
-  (Assert/fail "Test not implemented (resources-core-sys)" ))
+(defn -test_resources_core_sys [_]
+  (Assert/fail "Test not implemented (resources_core_sys)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-current-dirquote"
+;; Test case for "get_current_dirquote"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-current-dirquote [_]
-  (Assert/fail "Test not implemented (get-current-dirquote)" ))
+(defn -test_get_current_dirquote [_]
+  (Assert/fail "Test not implemented (get_current_dirquote)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-gui-helper"
+;; Test case for "init_gui_helper"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-gui-helper [_]
-  (Assert/fail "Test not implemented (init-gui-helper)" ))
+(defn -test_init_gui_helper [_]
+  (Assert/fail "Test not implemented (init_gui_helper)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-regex-grid-layout"
+;; Test case for "create_regex_grid_layout"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-regex-grid-layout [_]
-  (Assert/fail "Test not implemented (create-regex-grid-layout)" ))
+(defn -test_create_regex_grid_layout [_]
+  (Assert/fail "Test not implemented (create_regex_grid_layout)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "prop-str"
+;; Test case for "prop_str"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-prop-str [_]
-  (Assert/fail "Test not implemented (prop-str)" ))
+(defn -test_prop_str [_]
+  (Assert/fail "Test not implemented (prop_str)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-4-title"
+;; Test case for "tab_4_title"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-4-title [_]
-  (Assert/fail "Test not implemented (tab-4-title)" ))
+(defn -test_tab_4_title [_]
+  (Assert/fail "Test not implemented (tab_4_title)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-search-grid-layout"
+;; Test case for "create_search_grid_layout"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-search-grid-layout [_]
-  (Assert/fail "Test not implemented (create-search-grid-layout)" ))
+(defn -test_create_search_grid_layout [_]
+  (Assert/fail "Test not implemented (create_search_grid_layout)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-recent-file-table"
+;; Test case for "set_recent_file_table"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-recent-file-table [_]
-  (Assert/fail "Test not implemented (set-recent-file-table)" ))
+(defn -test_set_recent_file_table [_]
+  (Assert/fail "Test not implemented (set_recent_file_table)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "file-info-msg"
+;; Test case for "file_info_msg"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-file-info-msg [_]
-  (Assert/fail "Test not implemented (file-info-msg)" ))
+(defn -test_file_info_msg [_]
+  (Assert/fail "Test not implemented (file_info_msg)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-search-menu"
+;; Test case for "create_search_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-search-menu [_]
-  (Assert/fail "Test not implemented (create-search-menu)" ))
+(defn -test_create_search_menu [_]
+  (Assert/fail "Test not implemented (create_search_menu)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-table-item"
+;; Test case for "add_table_item"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-table-item [_]
-  (Assert/fail "Test not implemented (add-table-item)" ))
+(defn -test_add_table_item [_]
+  (Assert/fail "Test not implemented (add_table_item)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-keyword"
+;; Test case for "search_keyword"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-keyword [_]
-  (Assert/fail "Test not implemented (search-keyword)" ))
+(defn -test_search_keyword [_]
+  (Assert/fail "Test not implemented (search_keyword)" ))
       
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "octane-pattern_"
+;; Test case for "octane_pattern_"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-octane-pattern_ [_]
-  (Assert/fail "Test not implemented (octane-pattern_)" ))
+(defn -test_octane_pattern_ [_]
+  (Assert/fail "Test not implemented (octane_pattern_)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "database-shell"
+;; Test case for "database_shell"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-database-shell [_]
-  (Assert/fail "Test not implemented (database-shell)" ))
+(defn -test_database_shell [_]
+  (Assert/fail "Test not implemented (database_shell)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-process"
+;; Test case for "get_process"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-process [_]
-  (Assert/fail "Test not implemented (get-process)" ))
+(defn -test_get_process [_]
+  (Assert/fail "Test not implemented (get_process)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-file-last-mod"
+;; Test case for "get_file_last_mod"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-file-last-mod [_]
-  (Assert/fail "Test not implemented (get-file-last-mod)" ))
+(defn -test_get_file_last_mod [_]
+  (Assert/fail "Test not implemented (get_file_last_mod)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "cur-file-info"
+;; Test case for "cur_file_info"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-cur-file-info [_]
-  (Assert/fail "Test not implemented (cur-file-info)" ))
+(defn -test_cur_file_info [_]
+  (Assert/fail "Test not implemented (cur_file_info)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-2-title"
+;; Test case for "tab_2_title"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-2-title [_]
-  (Assert/fail "Test not implemented (tab-2-title)" ))
+(defn -test_tab_2_title [_]
+  (Assert/fail "Test not implemented (tab_2_title)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "file-exists?"
+;; Test case for "file_exists?"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-file-exists? [_]
-  (Assert/fail "Test not implemented (file-exists?)" ))
+(defn -test_file_exists? [_]
+  (Assert/fail "Test not implemented (file_exists?)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "style-keyword-match"
+;; Test case for "style_keyword_match"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-style-keyword-match [_]
-  (Assert/fail "Test not implemented (style-keyword-match)" ))
+(defn -test_style_keyword_match [_]
+  (Assert/fail "Test not implemented (style_keyword_match)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "date-time"
+;; Test case for "date_time"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-date-time [_]
-  (Assert/fail "Test not implemented (date-time)" ))
+(defn -test_date_time [_]
+  (Assert/fail "Test not implemented (date_time)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "win-size-width"
+;; Test case for "win_size_width"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-win-size-width [_]
-  (Assert/fail "Test not implemented (win-size-width)" ))
+(defn -test_win_size_width [_]
+  (Assert/fail "Test not implemented (win_size_width)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "main-generate-test-cases"
+;; Test case for "main_generate_test_cases"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-main-generate-test-cases [_]
-  (Assert/fail "Test not implemented (main-generate-test-cases)" ))
+(defn -test_main_generate_test_cases [_]
+  (Assert/fail "Test not implemented (main_generate_test_cases)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "rcol-vec-wht"
+;; Test case for "rcol_vec_wht"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-rcol-vec-wht [_]
-  (Assert/fail "Test not implemented (rcol-vec-wht)" ))
+(defn -test_rcol_vec_wht [_]
+  (Assert/fail "Test not implemented (rcol_vec_wht)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "floor"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-floor [_]
+(defn -test_floor [_]
   (Assert/fail "Test not implemented (floor)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-findgrep-options"
+;; Test case for "add_findgrep_options"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-findgrep-options [_]
-  (Assert/fail "Test not implemented (add-findgrep-options)" ))
+(defn -test_add_findgrep_options [_]
+  (Assert/fail "Test not implemented (add_findgrep_options)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "col-vec-bg"
+;; Test case for "col_vec_bg"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-col-vec-bg [_]
-  (Assert/fail "Test not implemented (col-vec-bg)" ))
+(defn -test_col_vec_bg [_]
+  (Assert/fail "Test not implemented (col_vec_bg)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "format-db-button-listener"
+;; Test case for "format_db_button_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-format-db-button-listener [_]
-  (Assert/fail "Test not implemented (format-db-button-listener)" ))
+(defn -test_format_db_button_listener [_]
+  (Assert/fail "Test not implemented (format_db_button_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-last-file-path"
+;; Test case for "get_last_file_path"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-last-file-path [_]
-  (Assert/fail "Test not implemented (get-last-file-path)" ))
+(defn -test_get_last_file_path [_]
+  (Assert/fail "Test not implemented (get_last_file_path)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "format-isdir-name"
+;; Test case for "format_isdir_name"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-format-isdir-name [_]
-  (Assert/fail "Test not implemented (format-isdir-name)" ))
+(defn -test_format_isdir_name [_]
+  (Assert/fail "Test not implemented (format_isdir_name)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "lightgrey-color"
+;; Test case for "lightgrey_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-lightgrey-color [_]
-  (Assert/fail "Test not implemented (lightgrey-color)" ))
+(defn -test_lightgrey_color [_]
+  (Assert/fail "Test not implemented (lightgrey_color)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "col-vec-red"
+;; Test case for "col_vec_red"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-col-vec-red [_]
-  (Assert/fail "Test not implemented (col-vec-red)" ))
+(defn -test_col_vec_red [_]
+  (Assert/fail "Test not implemented (col_vec_red)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "srchbox-get-text"
+;; Test case for "srchbox_get_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-srchbox-get-text [_]
-  (Assert/fail "Test not implemented (srchbox-get-text)" ))
+(defn -test_srchbox_get_text [_]
+  (Assert/fail "Test not implemented (srchbox_get_text)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-get-text"
+;; Test case for "regex_get_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-get-text [_]
-  (Assert/fail "Test not implemented (regex-get-text)" ))
+(defn -test_regex_get_text [_]
+  (Assert/fail "Test not implemented (regex_get_text)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-search-keyword"
+;; Test case for "regex_search_keyword"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-search-keyword [_]
-  (Assert/fail "Test not implemented (regex-search-keyword)" ))
+(defn -test_regex_search_keyword [_]
+  (Assert/fail "Test not implemented (regex_search_keyword)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-analytics-menu"
+;; Test case for "create_analytics_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-analytics-menu [_]
-  (Assert/fail "Test not implemented (create-analytics-menu)" ))
+(defn -test_create_analytics_menu [_]
+  (Assert/fail "Test not implemented (create_analytics_menu)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "date-timel"
+;; Test case for "date_timel"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-date-timel [_]
-  (Assert/fail "Test not implemented (date-timel)" ))
+(defn -test_date_timel [_]
+  (Assert/fail "Test not implemented (date_timel)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "colors-vec"
+;; Test case for "colors_vec"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-colors-vec [_]
-  (Assert/fail "Test not implemented (colors-vec)" ))
+(defn -test_colors_vec [_]
+  (Assert/fail "Test not implemented (colors_vec)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "async-add-text"
+;; Test case for "async_add_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-async-add-text [_]
-  (Assert/fail "Test not implemented (async-add-text)" ))
+(defn -test_async_add_text [_]
+  (Assert/fail "Test not implemented (async_add_text)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "on-file-open"
+;; Test case for "on_file_open"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-on-file-open [_]
-  (Assert/fail "Test not implemented (on-file-open)" ))
+(defn -test_on_file_open [_]
+  (Assert/fail "Test not implemented (on_file_open)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "load-default-database"
+;; Test case for "load_default_database"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-load-default-database [_]
-  (Assert/fail "Test not implemented (load-default-database)" ))
+(defn -test_load_default_database [_]
+  (Assert/fail "Test not implemented (load_default_database)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "find-regex-listener"
+;; Test case for "find_regex_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-find-regex-listener [_]
-  (Assert/fail "Test not implemented (find-regex-listener)" ))
+(defn -test_find_regex_listener [_]
+  (Assert/fail "Test not implemented (find_regex_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "refresh-textarea-deprecated"
+;; Test case for "refresh_textarea_deprecated"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-refresh-textarea-deprecated [_]
-  (Assert/fail "Test not implemented (refresh-textarea-deprecated)" ))
+(defn -test_refresh_textarea_deprecated [_]
+  (Assert/fail "Test not implemented (refresh_textarea_deprecated)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-search-term?"
+;; Test case for "regex_search_term?"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-search-term? [_]
-  (Assert/fail "Test not implemented (regex-search-term?)" ))
+(defn -test_regex_search_term? [_]
+  (Assert/fail "Test not implemented (regex_search_term?)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-text-buffer"
+;; Test case for "add_text_buffer"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-text-buffer [_]
-  (Assert/fail "Test not implemented (add-text-buffer)" ))
+(defn -test_add_text_buffer [_]
+  (Assert/fail "Test not implemented (add_text_buffer)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-file-info"
+;; Test case for "set_file_info"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-file-info [_]
-  (Assert/fail "Test not implemented (set-file-info)" ))
+(defn -test_set_file_info [_]
+  (Assert/fail "Test not implemented (set_file_info)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "resources-win"
+;; Test case for "resources_win"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-resources-win [_]
-  (Assert/fail "Test not implemented (resources-win)" ))
+(defn -test_resources_win [_]
+  (Assert/fail "Test not implemented (resources_win)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "async-call"
+;; Test case for "async_call"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-async-call [_]
-  (Assert/fail "Test not implemented (async-call)" ))
+(defn -test_async_call [_]
+  (Assert/fail "Test not implemented (async_call)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-findgrep-helper"
+;; Test case for "get_findgrep_helper"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-findgrep-helper [_]
-  (Assert/fail "Test not implemented (get-findgrep-helper)" ))
+(defn -test_get_findgrep_helper [_]
+  (Assert/fail "Test not implemented (get_findgrep_helper)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-label"
+;; Test case for "search_label"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-label [_]
-  (Assert/fail "Test not implemented (search-label)" ))
+(defn -test_search_label [_]
+  (Assert/fail "Test not implemented (search_label)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-install-dir-1"
+;; Test case for "get_install_dir_1"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-install-dir-1 [_]
-  (Assert/fail "Test not implemented (get-install-dir-1)" ))
+(defn -test_get_install_dir_1 [_]
+  (Assert/fail "Test not implemented (get_install_dir_1)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-all-tabs"
+;; Test case for "create_all_tabs"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-all-tabs [_]
-  (Assert/fail "Test not implemented (create-all-tabs)" ))
+(defn -test_create_all_tabs [_]
+  (Assert/fail "Test not implemented (create_all_tabs)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "buffer-3"
+;; Test case for "buffer_3"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-buffer-3 [_]
-  (Assert/fail "Test not implemented (buffer-3)" ))
+(defn -test_buffer_3 [_]
+  (Assert/fail "Test not implemented (buffer_3)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-items-db-view"
+;; Test case for "add_items_db_view"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-items-db-view [_]
-  (Assert/fail "Test not implemented (add-items-db-view)" ))
+(defn -test_add_items_db_view [_]
+  (Assert/fail "Test not implemented (add_items_db_view)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "table-select-listener"
+;; Test case for "table_select_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-table-select-listener [_]
-  (Assert/fail "Test not implemented (table-select-listener)" ))
+(defn -test_table_select_listener [_]
+  (Assert/fail "Test not implemented (table_select_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-database-window"
+;; Test case for "create_database_window"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-database-window [_]
-  (Assert/fail "Test not implemented (create-database-window)" ))
+(defn -test_create_database_window [_]
+  (Assert/fail "Test not implemented (create_database_window)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "col-vec-cy"
+;; Test case for "col_vec_cy"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-col-vec-cy [_]
-  (Assert/fail "Test not implemented (col-vec-cy)" ))
+(defn -test_col_vec_cy [_]
+  (Assert/fail "Test not implemented (col_vec_cy)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "length"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-length [_]
+(defn -test_length [_]
   (Assert/fail "Test not implemented (length)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "location-text-listener"
+;; Test case for "location_text_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-location-text-listener [_]
-  (Assert/fail "Test not implemented (location-text-listener)" ))
+(defn -test_location_text_listener [_]
+  (Assert/fail "Test not implemented (location_text_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "deserialize-object-1"
+;; Test case for "deserialize_object_1"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-deserialize-object-1 [_]
-  (Assert/fail "Test not implemented (deserialize-object-1)" ))
+(defn -test_deserialize_object_1 [_]
+  (Assert/fail "Test not implemented (deserialize_object_1)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "styled-text"
+;; Test case for "styled_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-styled-text [_]
-  (Assert/fail "Test not implemented (styled-text)" ))
+(defn -test_styled_text [_]
+  (Assert/fail "Test not implemented (styled_text)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-help-menu"
+;; Test case for "create_help_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-help-menu [_]
-  (Assert/fail "Test not implemented (create-help-menu)" ))
+(defn -test_create_help_menu [_]
+  (Assert/fail "Test not implemented (create_help_menu)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-regex-window"
+;; Test case for "create_regex_window"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-regex-window [_]
-  (Assert/fail "Test not implemented (create-regex-window)" ))
+(defn -test_create_regex_window [_]
+  (Assert/fail "Test not implemented (create_regex_window)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "dialog-open-file"
+;; Test case for "dialog_open_file"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-dialog-open-file [_]
-  (Assert/fail "Test not implemented (dialog-open-file)" ))
+(defn -test_dialog_open_file [_]
+  (Assert/fail "Test not implemented (dialog_open_file)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-menu-item"
+;; Test case for "create_menu_item"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-menu-item [_]
-  (Assert/fail "Test not implemented (create-menu-item)" ))
+(defn -test_create_menu_item [_]
+  (Assert/fail "Test not implemented (create_menu_item)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "dark-blue-color"
+;; Test case for "dark_blue_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-dark-blue-color [_]
-  (Assert/fail "Test not implemented (dark-blue-color)" ))
+(defn -test_dark_blue_color [_]
+  (Assert/fail "Test not implemented (dark_blue_color)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "col-vec-wht"
+;; Test case for "col_vec_wht"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-col-vec-wht [_]
-  (Assert/fail "Test not implemented (col-vec-wht)" ))
+(defn -test_col_vec_wht [_]
+  (Assert/fail "Test not implemented (col_vec_wht)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "shell"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-shell [_]
+(defn -test_shell [_]
   (Assert/fail "Test not implemented (shell)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "display-error"
+;; Test case for "display_error"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-display-error [_]
-  (Assert/fail "Test not implemented (display-error)" ))
+(defn -test_display_error [_]
+  (Assert/fail "Test not implemented (display_error)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-install-dir"
+;; Test case for "get_install_dir"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-install-dir [_]
-  (Assert/fail "Test not implemented (get-install-dir)" ))
+(defn -test_get_install_dir [_]
+  (Assert/fail "Test not implemented (get_install_dir)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-buttons-composite"
+;; Test case for "init_buttons_composite"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-buttons-composite [_]
-  (Assert/fail "Test not implemented (init-buttons-composite)" ))
+(defn -test_init_buttons_composite [_]
+  (Assert/fail "Test not implemented (init_buttons_composite)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "buffer-1"
+;; Test case for "buffer_1"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-buffer-1 [_]
-  (Assert/fail "Test not implemented (buffer-1)" ))
+(defn -test_buffer_1 [_]
+  (Assert/fail "Test not implemented (buffer_1)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-gui-window"
+;; Test case for "create_gui_window"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-gui-window [_]
-  (Assert/fail "Test not implemented (create-gui-window)" ))
+(defn -test_create_gui_window [_]
+  (Assert/fail "Test not implemented (create_gui_window)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-db-grid-layout"
+;; Test case for "create_db_grid_layout"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-db-grid-layout [_]
-  (Assert/fail "Test not implemented (create-db-grid-layout)" ))
+(defn -test_create_db_grid_layout [_]
+  (Assert/fail "Test not implemented (create_db_grid_layout)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "status-set-text"
+;; Test case for "status_set_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-status-set-text [_]
-  (Assert/fail "Test not implemented (status-set-text)" ))
+(defn -test_status_set_text [_]
+  (Assert/fail "Test not implemented (status_set_text)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "proc-time"
+;; Test case for "proc_time"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-proc-time [_]
-  (Assert/fail "Test not implemented (proc-time)" ))
+(defn -test_proc_time [_]
+  (Assert/fail "Test not implemented (proc_time)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "fileDialog"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-fileDialog [_]
+(defn -test_fileDialog [_]
   (Assert/fail "Test not implemented (fileDialog)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "rcol-vec-red"
+;; Test case for "rcol_vec_red"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-rcol-vec-red [_]
-  (Assert/fail "Test not implemented (rcol-vec-red)" ))
+(defn -test_rcol_vec_red [_]
+  (Assert/fail "Test not implemented (rcol_vec_red)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-styled-text-area"
+;; Test case for "create_styled_text_area"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-styled-text-area [_]
-  (Assert/fail "Test not implemented (create-styled-text-area)" ))
+(defn -test_create_styled_text_area [_]
+  (Assert/fail "Test not implemented (create_styled_text_area)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "white-color"
+;; Test case for "white_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-white-color [_]
-  (Assert/fail "Test not implemented (white-color)" ))
+(defn -test_white_color [_]
+  (Assert/fail "Test not implemented (white_color)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "buffer-2"
+;; Test case for "buffer_2"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-buffer-2 [_]
-  (Assert/fail "Test not implemented (buffer-2)" ))
+(defn -test_buffer_2 [_]
+  (Assert/fail "Test not implemented (buffer_2)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "findgrep-listener"
+;; Test case for "findgrep_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-findgrep-listener [_]
-  (Assert/fail "Test not implemented (findgrep-listener)" ))
+(defn -test_findgrep_listener [_]
+  (Assert/fail "Test not implemented (findgrep_listener)" ))
       
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-directory-open"
+;; Test case for "get_directory_open"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-directory-open [_]
-  (Assert/fail "Test not implemented (get-directory-open)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-tab-4"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-tab-4 [_]
-  (Assert/fail "Test not implemented (create-tab-4)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "run-codegen-build-xml"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-run-codegen-build-xml [_]
-  (Assert/fail "Test not implemented (run-codegen-build-xml)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "refresh-textarea"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-refresh-textarea [_]
-  (Assert/fail "Test not implemented (refresh-textarea)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "prop-core-sys-int"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-prop-core-sys-int [_]
-  (Assert/fail "Test not implemented (prop-core-sys-int)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "print-test-case"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-print-test-case [_]
-  (Assert/fail "Test not implemented (print-test-case)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-filtergrp-button"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-filtergrp-button [_]
-  (Assert/fail "Test not implemented (db-filtergrp-button)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-menu-bar"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-menu-bar [_]
-  (Assert/fail "Test not implemented (create-menu-bar)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-file-table"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-file-table [_]
-  (Assert/fail "Test not implemented (db-file-table)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-tab-3"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-tab-3 [_]
-  (Assert/fail "Test not implemented (create-tab-3)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "file-state"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-file-state [_]
-  (Assert/fail "Test not implemented (file-state)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "status-arm-listener"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-status-arm-listener [_]
-  (Assert/fail "Test not implemented (status-arm-listener)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-database-table"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-database-table [_]
-  (Assert/fail "Test not implemented (create-database-table)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-file-state"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-file-state [_]
-  (Assert/fail "Test not implemented (get-file-state)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "async-status-text"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-async-status-text [_]
-  (Assert/fail "Test not implemented (async-status-text)" ))
+(defn -test_get_directory_open [_]
+  (Assert/fail "Test not implemented (get_directory_open)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-main-text-nc"
+;; Test case for "run_codegen_build_xml"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-main-text-nc [_]
-  (Assert/fail "Test not implemented (add-main-text-nc)" ))
+(defn -test_run_codegen_build_xml [_]
+  (Assert/fail "Test not implemented (run_codegen_build_xml)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "run-findgrep-widget"
+;; Test case for "refresh_textarea"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-run-findgrep-widget [_]
-  (Assert/fail "Test not implemented (run-findgrep-widget)" ))
+(defn -test_refresh_textarea [_]
+  (Assert/fail "Test not implemented (refresh_textarea)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "prop_core_sys_int"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_prop_core_sys_int [_]
+  (Assert/fail "Test not implemented (prop_core_sys_int)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "print_test_case"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_print_test_case [_]
+  (Assert/fail "Test not implemented (print_test_case)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "db_filtergrp_button"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_db_filtergrp_button [_]
+  (Assert/fail "Test not implemented (db_filtergrp_button)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "create_menu_bar"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_create_menu_bar [_]
+  (Assert/fail "Test not implemented (create_menu_bar)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "db_file_table"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_db_file_table [_]
+  (Assert/fail "Test not implemented (db_file_table)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "file_state"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_file_state [_]
+  (Assert/fail "Test not implemented (file_state)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "status_arm_listener"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_status_arm_listener [_]
+  (Assert/fail "Test not implemented (status_arm_listener)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "create_database_table"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_create_database_table [_]
+  (Assert/fail "Test not implemented (create_database_table)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "get_file_state"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_get_file_state [_]
+  (Assert/fail "Test not implemented (get_file_state)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "async_status_text"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_async_status_text [_]
+  (Assert/fail "Test not implemented (async_status_text)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "add_main_text_nc"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_add_main_text_nc [_]
+  (Assert/fail "Test not implemented (add_main_text_nc)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "run_findgrep_widget"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_run_findgrep_widget [_]
+  (Assert/fail "Test not implemented (run_findgrep_widget)" ))
       
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "regex-label"
+;; Test case for "regex_label"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-regex-label [_]
-  (Assert/fail "Test not implemented (regex-label)" ))
+(defn -test_regex_label [_]
+  (Assert/fail "Test not implemented (regex_label)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-database-helper"
+;; Test case for "init_database_helper"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-database-helper [_]
-  (Assert/fail "Test not implemented (init-database-helper)" ))
+(defn -test_init_database_helper [_]
+  (Assert/fail "Test not implemented (init_database_helper)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "prop-core-sys-bool"
+;; Test case for "prop_core_sys_bool"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-prop-core-sys-bool [_]
-  (Assert/fail "Test not implemented (prop-core-sys-bool)" ))
+(defn -test_prop_core_sys_bool [_]
+  (Assert/fail "Test not implemented (prop_core_sys_bool)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-tab-2"
+;; Test case for "create_tab_2"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-tab-2 [_]
-  (Assert/fail "Test not implemented (create-tab-2)" ))
-  
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "swt-text-style"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-swt-text-style [_]
-  (Assert/fail "Test not implemented (swt-text-style)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "swt-tabtext-style"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-swt-tabtext-style [_]
-  (Assert/fail "Test not implemented (swt-tabtext-style)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-term?"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-term? [_]
-  (Assert/fail "Test not implemented (search-term?)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "refresh-regex-example-deprecated"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-refresh-regex-example-deprecated [_]
-  (Assert/fail "Test not implemented (refresh-regex-example-deprecated)" ))
+(defn -test_create_tab_2 [_]
+  (Assert/fail "Test not implemented (create_tab_2)" ))
   
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "recent-menu-state"
+;; Test case for "swt_text_style"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-recent-menu-state [_]
-  (Assert/fail "Test not implemented (recent-menu-state)" ))
+(defn -test_swt_text_style [_]
+  (Assert/fail "Test not implemented (swt_text_style)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-recent-file"
+;; Test case for "swt_tabtext_style"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-recent-file [_]
-  (Assert/fail "Test not implemented (add-recent-file)" ))
+(defn -test_swt_tabtext_style [_]
+  (Assert/fail "Test not implemented (swt_tabtext_style)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-tools-menu"
+;; Test case for "search_term?"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-tools-menu [_]
-  (Assert/fail "Test not implemented (create-tools-menu)" ))
+(defn -test_search_term? [_]
+  (Assert/fail "Test not implemented (search_term?)" ))
+      
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "recent_menu_state"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_recent_menu_state [_]
+  (Assert/fail "Test not implemented (recent_menu_state)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "dialog-open-dir"
+;; Test case for "add_recent_file"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-dialog-open-dir [_]
-  (Assert/fail "Test not implemented (dialog-open-dir)" ))
+(defn -test_add_recent_file [_]
+  (Assert/fail "Test not implemented (add_recent_file)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-totext-button"
+;; Test case for "create_tools_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-totext-button [_]
-  (Assert/fail "Test not implemented (db-totext-button)" ))
+(defn -test_create_tools_menu [_]
+  (Assert/fail "Test not implemented (create_tools_menu)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "win-size-height"
+;; Test case for "dialog_open_dir"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-win-size-height [_]
-  (Assert/fail "Test not implemented (win-size-height)" ))
+(defn -test_dialog_open_dir [_]
+  (Assert/fail "Test not implemented (dialog_open_dir)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-tab-1"
+;; Test case for "db_totext_button"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-tab-1 [_]
-  (Assert/fail "Test not implemented (create-tab-1)" ))
+(defn -test_db_totext_button [_]
+  (Assert/fail "Test not implemented (db_totext_button)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "file-monitor-loop"
+;; Test case for "win_size_height"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-file-monitor-loop [_]
-  (Assert/fail "Test not implemented (file-monitor-loop)" ))
+(defn -test_win_size_height [_]
+  (Assert/fail "Test not implemented (win_size_height)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "recent-file-table"
+;; Test case for "create_tab_1"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-recent-file-table [_]
-  (Assert/fail "Test not implemented (recent-file-table)" ))
+(defn -test_create_tab_1 [_]
+  (Assert/fail "Test not implemented (create_tab_1)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-search-box"
+;; Test case for "file_monitor_loop"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-search-box [_]
-  (Assert/fail "Test not implemented (db-search-box)" ))
-  
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "format-db-table"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-format-db-table [_]
-  (Assert/fail "Test not implemented (format-db-table)" ))
-  
+(defn -test_file_monitor_loop [_]
+  (Assert/fail "Test not implemented (file_monitor_loop)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-about-messagebox"
+;; Test case for "recent_file_table"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-about-messagebox [_]
-  (Assert/fail "Test not implemented (create-about-messagebox)" ))
-  
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-3-title"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-3-title [_]
-  (Assert/fail "Test not implemented (tab-3-title)" ))
+(defn -test_recent_file_table [_]
+  (Assert/fail "Test not implemented (recent_file_table)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "set-file-last-mod"
+;; Test case for "db_search_box"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-set-file-last-mod [_]
-  (Assert/fail "Test not implemented (set-file-last-mod)" ))
+(defn -test_db_search_box [_]
+  (Assert/fail "Test not implemented (db_search_box)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "add-recent-buffer-menu"
+;; Test case for "format_db_table"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-add-recent-buffer-menu [_]
-  (Assert/fail "Test not implemented (add-recent-buffer-menu)" ))
+(defn -test_format_db_table [_]
+  (Assert/fail "Test not implemented (format_db_table)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "create_about_messagebox"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_create_about_messagebox [_]
+  (Assert/fail "Test not implemented (create_about_messagebox)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "set_file_last_mod"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_set_file_last_mod [_]
+  (Assert/fail "Test not implemented (set_file_last_mod)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "search-filter-box"
+;; Test case for "add_recent_buffer_menu"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-search-filter-box [_]
-  (Assert/fail "Test not implemented (search-filter-box)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "orange-sel-color"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-orange-sel-color [_]
-  (Assert/fail "Test not implemented (orange-sel-color)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "cyan-sel-color"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-cyan-sel-color [_]
-  (Assert/fail "Test not implemented (cyan-sel-color)" ))
+(defn -test_add_recent_buffer_menu [_]
+  (Assert/fail "Test not implemented (add_recent_buffer_menu)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "rcol-vec-drkb"
+;; Test case for "search_filter_box"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-rcol-vec-drkb [_]
-  (Assert/fail "Test not implemented (rcol-vec-drkb)" ))
+(defn -test_search_filter_box [_]
+  (Assert/fail "Test not implemented (search_filter_box)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "main-1"
+;; Test case for "orange_sel_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-main-1 [_]
-  (Assert/fail "Test not implemented (main-1)" ))  
+(defn -test_orange_sel_color [_]
+  (Assert/fail "Test not implemented (orange_sel_color)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-regex-styled-text"
+;; Test case for "cyan_sel_color"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-regex-styled-text [_]
-  (Assert/fail "Test not implemented (create-regex-styled-text)" ))
+(defn -test_cyan_sel_color [_]
+  (Assert/fail "Test not implemented (cyan_sel_color)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "location-set-text"
+;; Test case for "rcol_vec_drkb"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-location-set-text [_]
-  (Assert/fail "Test not implemented (location-set-text)" ))
+(defn -test_rcol_vec_drkb [_]
+  (Assert/fail "Test not implemented (rcol_vec_drkb)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "start-findgrep-cmd"
+;; Test case for "create_regex_styled_text"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-start-findgrep-cmd [_]
-  (Assert/fail "Test not implemented (start-findgrep-cmd)" ))
+(defn -test_create_regex_styled_text [_]
+  (Assert/fail "Test not implemented (create_regex_styled_text)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "location_set_text"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_location_set_text [_]
+  (Assert/fail "Test not implemented (location_set_text)" ))
+    
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "start_findgrep_cmd"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_start_findgrep_cmd [_]
+  (Assert/fail "Test not implemented (start_findgrep_cmd)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "buffer-menu-state"
+;; Test case for "buffer_menu_state"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-buffer-menu-state [_]
-  (Assert/fail "Test not implemented (buffer-menu-state)" ))
+(defn -test_buffer_menu_state [_]
+  (Assert/fail "Test not implemented (buffer_menu_state)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "start-findgrep-thread"
+;; Test case for "start_findgrep_thread"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-start-findgrep-thread [_]
-  (Assert/fail "Test not implemented (start-findgrep-thread)" ))
+(defn -test_start_findgrep_thread [_]
+  (Assert/fail "Test not implemented (start_findgrep_thread)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "style-listener"
+;; Test case for "style_listener"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-style-listener [_]
-  (Assert/fail "Test not implemented (style-listener)" ))
+(defn -test_style_listener [_]
+  (Assert/fail "Test not implemented (style_listener)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "init-regex-colors"
+;; Test case for "init_regex_colors"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-init-regex-colors [_]
-  (Assert/fail "Test not implemented (init-regex-colors)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "main"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-main [_]
-  (Assert/fail "Test not implemented (main)" ))
- 
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "db-filternm-button"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-db-filternm-button [_]
-  (Assert/fail "Test not implemented (db-filternm-button)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "tab-1-title"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-tab-1-title [_]
-  (Assert/fail "Test not implemented (tab-1-title)" ))
-  
+(defn -test_init_regex_colors [_]
+  (Assert/fail "Test not implemented (init_regex_colors)" ))
+   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "exit"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-exit [_]
+(defn -test_exit [_]
   (Assert/fail "Test not implemented (exit)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "start-process"
+;; Test case for "start_process"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-start-process [_]
-  (Assert/fail "Test not implemented (start-process)" ))
+(defn -test_start_process [_]
+  (Assert/fail "Test not implemented (start_process)" ))
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-file-info-header"
+;; Test case for "get_file_info_header"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-file-info-header [_]
-  (Assert/fail "Test not implemented (get-file-info-header)" ))
+(defn -test_get_file_info_header [_]
+  (Assert/fail "Test not implemented (get_file_info_header)" ))
+      
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "format_dir_file"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_format_dir_file [_]
+  (Assert/fail "Test not implemented (format_dir_file)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "file-modified?"
+;; Test case for "get_curfile_open"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-file-modified? [_]
-  (Assert/fail "Test not implemented (file-modified?)" ))
+(defn -test_get_curfile_open [_]
+  (Assert/fail "Test not implemented (get_curfile_open)" ))
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "prop_int"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_prop_int [_]
+  (Assert/fail "Test not implemented (prop_int)" ))  
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "format-dir-file"
+;; Test case for "get_dir_date"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-format-dir-file [_]
-  (Assert/fail "Test not implemented (format-dir-file)" ))
+(defn -test_get_dir_date [_]
+  (Assert/fail "Test not implemented (get_dir_date)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "create-shell"
+;; Test case for "get_recent_file_table"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-create-shell [_]
-  (Assert/fail "Test not implemented (create-shell)" ))
+(defn -test_get_recent_file_table [_]
+  (Assert/fail "Test not implemented (get_recent_file_table)" ))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-curfile-open"
+;; Test case for "start_findgrep_thread_java"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-curfile-open [_]
-  (Assert/fail "Test not implemented (get-curfile-open)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "prop-int"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-prop-int [_]
-  (Assert/fail "Test not implemented (prop-int)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "status-bar"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-status-bar [_]
-  (Assert/fail "Test not implemented (status-bar)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "open-file"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-open-file [_]
-  (Assert/fail "Test not implemented (open-file)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-dir-date"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-dir-date [_]
-  (Assert/fail "Test not implemented (get-dir-date)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "get-recent-file-table"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-get-recent-file-table [_]
-  (Assert/fail "Test not implemented (get-recent-file-table)" ))
-  
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Test case for "start-findgrep-thread-java"
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn OctaneFullTest-start-findgrep-thread-java [_]
-  (Assert/fail "Test not implemented (start-findgrep-thread-java)" ))
+(defn -test_start_findgrep_thread_java [_]
+  (Assert/fail "Test not implemented (start_findgrep_thread_java)" ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
