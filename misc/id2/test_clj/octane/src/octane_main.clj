@@ -41,7 +41,8 @@
 	(load "octane_search_dialog")
 	(load "octane_regex_search")
     (load "octane_analytics")
-    (load "octane_graphs"))
+    (load "octane_graphs")
+    (load "octane_testing"))
 		  
 ;;**************************************
 ;; Begin Routines
@@ -218,8 +219,8 @@
 			  (println "<Main ERR> " e)
               (. e printStackTrace)
 			  (exit))))
-(main)
-
+;;(main)
+(main-generate-test-cases)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
 ;;; End of Script

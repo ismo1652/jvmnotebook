@@ -62,24 +62,22 @@
 (def *recent-file-list* (str *work-path* "/" "_sHIKXx1_recent.ser"))
 
 (defn get-hist-header []
-  (. MessageFormat format hist-header-msg (to-array [(date-time)
-                                                     *octane-install-dir* 
-                                                     *work-path*
-                                                     *system-os-name*
-                                                     ])))
+  (. MessageFormat format hist-header-msg 
+     (to-array [(date-time)
+                *octane-install-dir* *work-path* *system-os-name* ])))
 
-(def win-size-width    880)
-(def win-size-height   750)
+(def win-size-width       880)
+(def win-size-height      750)
 
-(def *db-size-width*   700)
-(def *db-size-height*  460)
-(def *db-col-size*     130)
+(def *db-size-width*      700)
+(def *db-size-height*     460)
+(def *db-col-size*        130)
 
 (def *search-size-width*  460)
 (def *search-size-height* 290)
 
-(def *regex-size-width*  620)
-(def *regex-size-height* 370)
+(def *regex-size-width*   620)
+(def *regex-size-height*  370)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; RGB colors used when setting the color scheme for a text area.
