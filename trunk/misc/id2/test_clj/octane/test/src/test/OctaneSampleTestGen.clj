@@ -2,7 +2,7 @@
 ;;; Copyright (c) ....:. All rights reserved.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns test.OctaneTestGen
+(ns test.OctaneSampleTestGen
     (:import (junit.framework Assert))
 	(:gen-class
      :methods [[testDog [] void]]
