@@ -1,10 +1,11 @@
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Copyright (c) ....:. All rights reserved.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns test.OctaneFullTest
     (:import (junit.framework Assert))
-	(:gen_class
+	(:gen-class
 	 :extends junit.framework.TestCase
      :methods
 [    
