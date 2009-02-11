@@ -22,6 +22,31 @@
 
 (in-ns 'org.octane)
 
+(def *header-testcase*
+";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Copyright (c) ....:. All rights reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns test
+    (import (junit.framework Assert)))
+")
+
+(def *footer-testcase*
+"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; End of Test Case
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+")
+
+(def *simple-testcase*
+"  
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for \"{0}\"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn OctaneFullTest-{0} [_]
+  (Assert/fail \"Test not implemented ({0})\" ))
+")
+     
 (def example-regex-document
 "
 -------------------
