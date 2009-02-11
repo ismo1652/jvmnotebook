@@ -220,7 +220,8 @@
               (. e printStackTrace)
 			  (exit))))
 ;;(main)
-(main-generate-test-cases)
+;;(main-generate-test-cases)
+(main-generate-testgen)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
 ;;; End of Script
