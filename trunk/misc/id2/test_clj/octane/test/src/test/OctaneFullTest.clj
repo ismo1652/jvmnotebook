@@ -2,8 +2,10 @@
 ;;; Copyright (c) ....:. All rights reserved.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns test
-    (import (junit.framework Assert)))
+(ns test.OctaneFullTest
+    (:import (junit.framework Assert))
+	(:gen-class
+	 :extends junit.framework.TestCase))
  
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "parse-system-args"
