@@ -27,6 +27,27 @@
 (defn print-test-case [test-name]
   (. MessageFormat format *simple-testcase* (to-array [test-name])))
 
+(defn main-generate-testgen []
+  ;; Auto generate the test cases for JUnit
+  (println "<INFO main-generate-test gen main> " (date-time))
+  (try (let [filename (str "test" *name-separator* "_work" *name-separator* "OctaneTestGen.clj")
+             fos      (new FileOutputStream filename)
+             bos      (new BufferedOutputStream fos)
+             pw       (new PrintWriter bos)]
+         ;; First, write the header
+         (. pw print (str *header-testgen* *newline*))		 
+         ;;(doseq [pub-func-arr (ns-publics 'org.octane)] 
+         ;;    (let [pub-func (first pub-func-arr)]
+         ;;     (. pw print (print-test-case pub-func))))
+         (. pw println *footer-testcase*)
+         (. pw flush)
+         (doto fos (. flush) (. close)))
+       (catch Exception e
+              (. e printStackTrace))
+       (finally
+        (println "<INFO main-generate-testgen> : completed. " (date-time))
+        (exit))))
+
 (defn main-generate-test-cases []
   ;; Auto generate the test cases for JUnit
   (println "<INFO main-generate-test-cases> : Code generating test cases. " (date-time))
