@@ -2,7 +2,7 @@
 ;;; Copyright (c) ....:. All rights reserved.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(compile 'test.OctaneTestGen)
+(compile 'test.OctaneFullTest)
 (. System exit 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case

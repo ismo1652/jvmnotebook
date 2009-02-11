@@ -38,9 +38,10 @@ case "$OS" in
 		LIB2=`cygpath -w $LIB2`
 		CONF_LIB=`cygpath -w $CONF_LIB`
 		LIB4=`cygpath -w $LIB4`
+		LIB5=`cygpath -w $LIB5`
 		INSTALL_DIR=`cygpath -w $INSTALL_DIR`		
 		# SET THE CLASSPATH for CYGWIN
-		CP=".;src;${LIB1};${LIB2};$CONF_LIB;$LIB4" ;;
+		CP=".;test;src;classes;${LIB1};${LIB2};$CONF_LIB;$LIB4;$LIB5" ;;
 	*)
 		LIB2=$LIB2_LINUX
 		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:$CONF_LIB" ;;
