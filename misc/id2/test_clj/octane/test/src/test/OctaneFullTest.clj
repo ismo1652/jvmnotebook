@@ -4,7 +4,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns test.OctaneFullTest
-    (:import (junit.framework Assert))
+    (:import (junit.framework Assert))            
 	(:gen-class
 	 :extends junit.framework.TestCase
      :methods
@@ -245,6 +245,11 @@
 
 (defn -init [_] ()) 
 	
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Simple prototype test for string split
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "parse_system_args"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
