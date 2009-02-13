@@ -240,10 +240,11 @@
         [ test_get_dir_date [] void]
         [ test_get_recent_file_table [] void]
         [ test_start_findgrep_thread_java [] void]
+		[ test_prototype_cmd_line_db [] void ]
  ]))
 
 (defn -init [_] ()) 
-
+	
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "parse_system_args"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1641,6 +1642,21 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 (defn -test_start_findgrep_thread_java [_]
   (Assert/fail "Test not implemented (start_findgrep_thread_java)" ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test case for "parse_system_args"
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -test_prototype_cmd_line_db [_]
+  (let [a " abc , 123 ; uuu , ggg"
+		  b (. a split ";")]
+	(Assert/assertTrue (str "-test_prototype_cmd_line_db - simple proto split")
+					   (> (count b) 0))
+	(doseq [i b]
+		(let [c (. i split ",")
+				d (. (first c) trim)
+				e (. (second c) trim)]
+		  (Assert/assertTrue "-test_prototype_cmd_line_db" 
+							 (or (= d "abc") (= d "uuu")))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case

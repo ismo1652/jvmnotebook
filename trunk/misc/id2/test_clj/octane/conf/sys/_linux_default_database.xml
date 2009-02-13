@@ -6,7 +6,25 @@ Linux Log Files, including Apache2 access and error logs
 ]]>
 </description>
 <file_set>
-  <!-- First file definition -->
+  <!-- First file definition -->  
+  <db_file>
+	<file_name>
+	  Apache2 directory
+	</file_name>
+	<file_path>
+	  /var/log/apache2
+	</file_path>
+	<file_group>
+	  Apache
+	</file_group>
+	<file_server>
+	  localhost
+	</file_server>
+	<file_descr>
+	  Apache Access Logs
+	</file_descr>	
+  </db_file>
+
   <db_file>
 	<file_name>
 	  access.log

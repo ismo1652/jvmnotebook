@@ -92,6 +92,24 @@
 				str-res# (str "Elapsed time: " res-t# " msecs")]
      {:return ret# :time-text str-res# :timed res-t#}))
 
+
+(defn simple-term-searchrepl [cmd-line, str-data]
+  ;; Search and replace in the following format - " abc , 123 ; uuu , ggg"
+  ;; Note: fix hack against lisp, (string buffer)
+  (if (not (and cmd-line (> (length cmd-line) 1)))
+	nil
+	(let [splt (. cmd-line split ";")
+			   buf (new StringBuffer)]
+	  (. buf append str-data)
+	  (doseq [i splt]
+		  (let [for-repl (. i split ",")
+						 f (. (first for-repl) trim)
+						 s (. (second for-repl) trim)
+						 cur-data (. buf toString)]			
+			(. buf setLength 0)
+			(. buf append (. cur-data replaceAll f s))))
+	  (. buf toString))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

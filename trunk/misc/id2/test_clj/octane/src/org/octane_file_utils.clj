@@ -205,7 +205,7 @@
       (async-status-history display (str "File does not exist => " name))
       (if (. file isDirectory)
         (open-directory (. file getAbsolutePath))
-        (open-file (. file getAbsolutePath) false)))))
+        (open-file (. file getAbsolutePath) true)))))
 
 (def location-text-listener
      ;; Use (. box addListener SWT/Traverse location-text-listener)
