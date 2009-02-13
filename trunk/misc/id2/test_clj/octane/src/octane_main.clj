@@ -25,25 +25,25 @@
 ;;; http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/index.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns org.octane
-    (load "octane_config")
-    (load "swt_imports")
-	(load "octane_templates")
-	(load "octane_codegen_templates")
-    (load "octane_main_constants")
-    (load "public_objects")
-    (load "octane_utils")
-    (load "octane_file_utils")
-	(load "octane_gui_utils")
-	(load "octane_tools")
-	(load "octane_core_widgets")
-	(load "octane_file_database")
-	(load "octane_search_dialog")
-	(load "octane_regex_search")
-    (load "octane_analytics")
-    (load "octane_graphs")
-    (load "octane_testing"))
-		  
+(ns octane
+    (load "octane/octane_config")
+    (load "octane/swt_imports")
+    (load "octane/octane_templates")
+    (load "octane/octane_codegen_templates")
+    (load "octane/octane_main_constants")
+    (load "octane/public_objects")
+    (load "octane/octane_utils")
+    (load "octane/octane_file_utils")
+    (load "octane/octane_gui_utils")
+    (load "octane/octane_tools")
+    (load "octane/octane_core_widgets")
+    (load "octane/octane_file_database")
+    (load "octane/octane_search_dialog")
+    (load "octane/octane_regex_search")
+    (load "octane/octane_analytics")
+    (load "octane/octane_graphs")
+    (load "octane/octane_testing"))
+          
 ;;**************************************
 ;; Begin Routines
 ;;**************************************
@@ -71,32 +71,32 @@
 
 (defn style-keyword-match [styles-vec line l-offset sty-on-sel sty-fail]
   (when (search-term?)
-	(if (search-keyword (srchbox-get-text) line)
-	  (let [dummy1 (add-select-style styles-vec sty-on-sel)]
-		(when-let [fnd-style (main-match-style (srchbox-get-text) line l-offset)]
-				  ;; Check if Match found, so add the style range
-				  (add-select-style styles-vec fnd-style)))
-	  (add-select-style styles-vec sty-fail))))
+    (if (search-keyword (srchbox-get-text) line)
+      (let [dummy1 (add-select-style styles-vec sty-on-sel)]
+        (when-let [fnd-style (main-match-style (srchbox-get-text) line l-offset)]
+                  ;; Check if Match found, so add the style range
+                  (add-select-style styles-vec fnd-style)))
+      (add-select-style styles-vec sty-fail))))
 
 (defn style-handler [event]
   (let [styles-vec (new Vector)
-				   line (. event lineText)
-				   lo   (. event lineOffset)
-				   len  (. line length)
-				   bg   (. colors-vec get 0)
-				   fgl  (. colors-vec get 1)
-				   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
-				   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
-	;; Add the event styles if needed   
-	(style-keyword-match styles-vec line lo all-bold light)
-	;; Associate the even style with the display
-	(let [arr (make-array StyleRange (. styles-vec size))]
-	  (set! (. event styles) arr)
-	  (. styles-vec copyInto (. event styles)))))
+                   line (. event lineText)
+                   lo   (. event lineOffset)
+                   len  (. line length)
+                   bg   (. colors-vec get 0)
+                   fgl  (. colors-vec get 1)
+                   all-bold (new StyleRange lo len nil bg   SWT/BOLD)
+                   light    (new StyleRange lo len fgl nil  SWT/NORMAL)]
+    ;; Add the event styles if needed   
+    (style-keyword-match styles-vec line lo all-bold light)
+    ;; Associate the even style with the display
+    (let [arr (make-array StyleRange (. styles-vec size))]
+      (set! (. event styles) arr)
+      (. styles-vec copyInto (. event styles)))))
 
 (defn search-keyword [keyword line]
   (re-seq (octane-pattern keyword Pattern/CASE_INSENSITIVE) line))
-	  
+      
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
 ;; (output) LineStyleEvent.background line background color (output)
@@ -109,14 +109,14 @@
         spec (new GridData GridData/FILL GridData/FILL true true)
         disp (Display/getDefault)
         bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
-	(. tab-folder setLayoutData spec)
+    (. tab-folder setLayoutData spec)
     (doto text
       (. setLayoutData spec)
       (. setFont (styled-text-font))
       (. addLineStyleListener style-listener)
       (. setEditable false)
       (. setBackground bg))
-	text))
+    text))
 
 (def styled-text (create-styled-text-area tab-folder))
 
@@ -125,10 +125,10 @@
             (shellClosed [evt] (exit))))
 
 (defn refresh-textarea-deprecated []
-  (let [disp (. styled-text getDisplay)]			 
-	(. disp asyncExec
-	   (proxy [Runnable] []
-			  (run [] (. styled-text setText (. buffer-1 toString)))))))
+  (let [disp (. styled-text getDisplay)]             
+    (. disp asyncExec
+       (proxy [Runnable] []
+              (run [] (. styled-text setText (. buffer-1 toString)))))))
 
 (defn refresh-textarea []
   (. styled-text redraw)
@@ -138,9 +138,9 @@
   (println text)
   (. buffer-3 append text)
   (let [disp (. tab-text-3 getDisplay)]
-	(. disp asyncExec
-	   (proxy [Runnable] []
-			  (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
+    (. disp asyncExec
+       (proxy [Runnable] []
+              (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
 
 (defn history-add-textln [text] (history-add-text (str text *newline*)))
 
@@ -153,12 +153,12 @@
             (handleEvent [event]
                          (when (= (. event detail) SWT/TRAVERSE_RETURN)
                            (history-add-text (str "Searching for " (. search-box getText) "\n"))
-						   (refresh-textarea)))))
-						   
+                           (refresh-textarea)))))
+                           
 (defn create-grid-layout []
   (let [gridLayout (new GridLayout)]
-	(set! (. gridLayout numColumns) 1)
-	gridLayout))
+    (set! (. gridLayout numColumns) 1)
+    gridLayout))
         
 (defn create-shell [disp sh]
   ;; Note change in 'doto' call, dot needed.
@@ -189,7 +189,7 @@
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (. search-box addListener SWT/Traverse find-text-listener)
     (. search-box setLayoutData gd)
-	(. location-bar setLayoutData gd)
+    (. location-bar setLayoutData gd)
     (. location-bar addListener SWT/Traverse location-text-listener))
   (create-status-bar)
   ;; Final init, set the window size and then open
@@ -216,13 +216,13 @@
 (defn main []
   (try (main-1)
        (catch Exception e 
-			  (println "<Main ERR> " e)
+              (println "<Main ERR> " e)
               (. e printStackTrace)
-			  (exit))))
+              (exit))))
 (main)
 ;;(main-generate-test-cases)
 ;;(main-generate-testgen)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      
 ;;; End of Script
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      
