@@ -27,7 +27,7 @@
 (def  history-add-textln)
 
 (def  database-shell      (new Shell shell *database-win-style*))
-(def  db-filter-box       (new Text database-shell SWT/BORDER))
+(def  db-location-box       (new Text database-shell SWT/BORDER))
 (def  db-file-table       (new Table database-shell (bit-or SWT/SINGLE (bit-or SWT/BORDER SWT/FULL_SELECTION))))
 (def  db-search-box       (new Text database-shell SWT/BORDER))
 (def  db-button-comp      (new Composite database-shell SWT/NONE))
@@ -42,6 +42,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Proxy Helper for Database Buttons
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn db-loc-bar []
+  (. db-location-box getText))
 
 (defn format-db-table []
   ;; Format the db table to text and add to the buffer
@@ -75,14 +78,20 @@
 
 (defn table-select-listener []
   (proxy [SelectionAdapter][]
-		 (widgetDefaultSelected [event]
-								(let [items (. db-file-table getSelection)]								  
-								  (when (> (count items) 0)
-									;; We can extract the open path
-									;; straight from the table item data.
-									(let [item (first items)
-											   db-path (. item getText 1)]									  
-									  (open-file db-path true)))))))
+		 (widgetDefaultSelected 
+		  [event]
+		  (let [items (. db-file-table getSelection)]								  
+			(when (> (count items) 0)									
+			  ;; We can extract the open path
+			  ;; straight from the table item data.
+			  (let [item (first items)
+						 db-path (. item getText 1)]
+				(let [cmd-line-repl (simple-term-searchrepl (db-loc-bar) db-path)]
+				  (if cmd-line-repl
+					(let []
+					  (history-add-text (str *newline* "Database screen, command-line search replace: " db-path " -> " cmd-line-repl *newline*))
+					  (open-file-or-dir cmd-line-repl))
+					(open-file-or-dir db-path)))))))))
 
 (defn
   #^{:doc "Create the database viewer table"}
@@ -117,8 +126,9 @@
 (defn init-database-helper [sh]
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
     (init-buttons-composite sh)
-	(. db-filter-box setLayoutData  gd)
-	(. db-search-box setLayoutData  gd)
+	(. db-location-box setLayoutData gd)
+	(. db-location-box setText "term1 , term2 ; term3 , term4")
+	(. db-search-box setLayoutData gd)   
     (. db-search-box setText "XXXXXXXXXXXXXX")
     (. db-totext-button addSelectionListener (format-db-button-listener))
     (create-database-table sh)))

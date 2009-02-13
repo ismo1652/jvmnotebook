@@ -219,9 +219,9 @@
 			  (println "<Main ERR> " e)
               (. e printStackTrace)
 			  (exit))))
-;;(main)
+(main)
 ;;(main-generate-test-cases)
-(main-generate-testgen)
+;;(main-generate-testgen)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
 ;;; End of Script

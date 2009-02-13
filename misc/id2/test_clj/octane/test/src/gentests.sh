@@ -59,6 +59,8 @@ FILE2=main_gen_tests.clj
 FILE=$FILE1
 MAIN=$MAIN1
 
+mkdir -vp classes
+
 java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl $FILE 
 java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" junit.textui.TestRunner $MAIN 
 
