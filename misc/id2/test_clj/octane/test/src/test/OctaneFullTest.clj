@@ -4,7 +4,24 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns test.OctaneFullTest
-    (:import (junit.framework Assert))            
+    (:import (junit.framework Assert))   
+	(:use    octane.toolkit.octane_utils
+			 octane.toolkit.octane_analytics
+			 octane.toolkit.octane_codegen_templates
+			 octane.toolkit.octane_config
+			 octane.toolkit.octane_core_widgets
+			 octane.toolkit.octane_file_database
+			 octane.toolkit.octane_file_utils
+			 octane.toolkit.octane_graphs
+			 octane.toolkit.octane_gui_utils
+			 octane.toolkit.octane_main_constants
+			 octane.toolkit.octane_regex_search
+			 octane.toolkit.octane_search_dialog
+			 octane.toolkit.octane_templates
+			 octane.toolkit.octane_testing
+			 octane.toolkit.octane_tools
+			 octane.toolkit.octane_utils
+			 octane.toolkit.public_objects)
 	(:gen-class
 	 :extends junit.framework.TestCase
      :methods
@@ -241,15 +258,11 @@
         [ test_get_recent_file_table [] void]
         [ test_start_findgrep_thread_java [] void]
 		[ test_prototype_cmd_line_db [] void ]
+		[ test_public_octane_funcs [] void ]
  ]))
 
 (defn -init [_] ()) 
 	
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Simple prototype test for string split
-;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Test case for "parse_system_args"
 ;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1662,6 +1675,10 @@
 				e (. (second c) trim)]
 		  (Assert/assertTrue "-test_prototype_cmd_line_db" 
 							 (or (= d "abc") (= d "uuu")))))))
+
+(defn -test_public_octane_funcs [_]
+  (Assert/assertTrue "Test if public octane functions"
+   (> (count (ns-publics 'octane.toolkit.octane_utils)) 0)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
