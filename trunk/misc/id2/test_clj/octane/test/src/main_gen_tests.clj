@@ -3,8 +3,15 @@
 ;;; Copyright (c) ....:. All rights reserved.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(compile 'test.OctaneSampleTestGen)
-(compile 'test.OctaneFullTest)
+(defn main []
+	(compile 'test.OctaneSampleTestGen)
+	;;(compile 'test.OctaneFullTest)
+	(compile 'test.OctaneSampleMockTest)
+	(compile 'test.OctaneGraphsAnalyticsTest))
+
+(try (main)
+	(catch Exception e (. e printStackTrace)))
+
 (. System exit 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

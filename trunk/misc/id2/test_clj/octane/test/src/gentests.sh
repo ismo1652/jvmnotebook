@@ -15,6 +15,12 @@ LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
 LIB4=$INSTALL_DIR/lib/org.eclipse.jface.text_3.4.1.r341_v20080827-1100.jar
 LIB5=$INSTALL_DIR/lib/junit-4.4.jar
 
+LIB6=$TOP_DIR/lib/jmock/jmock-2.5.1.jar 
+LIB7=$TOP_DIR/lib/jmock/hamcrest-library-1.1.jar
+LIB8=$TOP_DIR/lib/jmock/hamcrest-core-1.1.jar
+LIB9=$TOP_DIR/lib/jmock/cglib-nodep-2.1_3.jar
+LIB10=$TOP_DIR/lib/jmock/objenesis-1.0.jar
+LIB11=$TOP_DIR/lib/jmock/jmock-legacy-2.5.1.jar
 CLOJURE=$TOP_DIR/../../src
 
 # Check the clojure library path
@@ -47,7 +53,7 @@ case "$OS" in
 		CP=".;test;src;classes;${LIB1};${LIB2};$CONF_LIB;$LIB4;$LIB5" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:${CLOJURE}:$CONF_LIB" ;;
+		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:${LIB6}:${LIB7}:${LIB8}:${LIB9}:${LIB10}:${LIB11}:${CLOJURE}:$CONF_LIB" ;;
 esac 
 
 echo "(SCRIPT): -------------------------"
@@ -60,9 +66,10 @@ FILE1=main_gen_tests.clj
 
 MAIN2=test.OctaneSampleTestGen
 FILE2=main_gen_tests.clj
-
+MAIN3=test.OctaneSampleMockTest
+MAIN4=test.OctaneGraphsAnalyticsTest
 FILE=$FILE1
-MAIN=$MAIN1
+MAIN=$MAIN4
 
 mkdir -vp classes
 

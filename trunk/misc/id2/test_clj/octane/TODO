@@ -1,6 +1,29 @@
 ###############################################################################
 #
 ###############################################################################
+	+ 2/15/2009	Berlin Brown
+		* Test cases, documentation
+		* Keystrokes
+
+	+ 2/14/2009	Berlin Brown	
+		* Output data to text buffer
+			E.g. that will be used with chart.
+
+			- Keyword Exception search
+			- Data related every two minutes
+				- Or different granuluar
+
+				- (1) SystemOut
+					Sec Log Serv
+					Exception			
+				- (2) SystemErr
+				- (3) Garbage Collection
+					- After free, total
+				- (3b) Time between garbage collection
+				- (4) RequestLog
+				- (5) SQL Errors
+				- (6) DB2 Query
+
 	+ 2/12/2009     Berlin Brown
 		* Big file split, possibly with Java tool
 		* Jetty Server or simple server for
