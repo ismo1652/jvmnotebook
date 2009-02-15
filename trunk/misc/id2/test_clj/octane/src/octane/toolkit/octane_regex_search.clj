@@ -169,12 +169,12 @@
     (. regex-example-text setFont (styled-text-font))
     (. regex-edit-box addModifyListener (find-regex-listener))))
 
-(defn
-    #^{:doc "Initialize the file database SWT window, set the size add all components"}
-    create-regex-window []
+(defn create-regex-window
+    "Initialize the file database SWT window, set the size add all components"
+	[]
     ;;;;;;;;;;;;;;;;;;;;;;
 
-    (history-add-text "Opening regex tool (Search -> Regex Search Tool)")
+    (history-add-textln "Opening regex tool (Search -> Regex Search Tool)")
     (let [layout (create-regex-grid-layout)]
       (. regex-shell setText (. resources-win getString "Regex_win_title"))
       (init-regex-colors)

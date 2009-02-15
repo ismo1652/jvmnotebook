@@ -31,6 +31,8 @@
 			 (org.eclipse.swt SWT)
 			 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
 			 (org.eclipse.swt.graphics Color RGB FontData Font)
+			 (org.eclipse.swt.events VerifyListener SelectionAdapter ModifyListener SelectionListener
+									 SelectionEvent ShellAdapter ShellEvent)
 			 (org.eclipse.swt.widgets MessageBox Label Menu MenuItem Control Listener)))
 
 (def status-set-text)
@@ -153,7 +155,19 @@
     (. addElement (new Color disp dark-blue-color))
     (. addElement (new Color disp white-color)))))
 
-    
+(defn refresh-textarea []
+  (. *styled-text* redraw)
+  (. *styled-text* update))
+
+(defn shell-close-adapter 
+  " Create a proxy object used with a SWT widget 'addShellListener'"
+  [cur-shell]
+  ;;;;;;;;;;;;;
+  (proxy [ShellAdapter][]
+		 (shellClosed [event]
+					  (set! (. event doit) false)
+					  (. cur-shell setVisible false))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

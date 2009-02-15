@@ -5,6 +5,14 @@ LIB1=../../../lib/clojure.jar
 LIB2=../../../lib/swt/win32/swt.jar
 LIB2_LINUX=../../../lib/swt/linux/swt.jar
 
+LIB3=../../../lib/jfreechart/jcommon-1.0.15.jar
+LIB4=../../../lib/jfreechart/jfreechart-1.0.12-experimental.jar
+LIB5=../../../lib/jfreechart/jfreechart-1.0.12-swt.jar
+LIB6=../../../lib/jfreechart/jfreechart-1.0.12.jar
+LIB7=../../../lib/jfreechart/swtgraphics2d.jar
+
+LIB_JFREE=$LIB3:$LIB4:$LIB5:$LIB6:$LIB7
+
 # Check the clojure library path
 if [ -f $LIB1 ]
 then
@@ -30,12 +38,15 @@ case "$OS" in
 		CP=".;${LIB1};${LIB2};" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:${LIB1}:${LIB2}:" ;;
+		CP=".:${LIB1}:${LIB2}:${LIB_JFREE}" ;;
 esac 
 
 echo $CP
 javac -cp $CP *.java
-java -cp $CP Tabs 
+#java -cp $CP Tabs 
+java -cp $CP SWTTimeSeriesDemo 
+#java -cp $CP SWTPieChartDemo1 
+#java -cp $CP SWTBarChartDemo1
+#java -cp $CP SWTMultipleAxisDemo1
 
-
-# End of Script
+#End of Script

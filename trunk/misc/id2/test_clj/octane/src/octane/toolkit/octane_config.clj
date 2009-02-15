@@ -49,6 +49,8 @@
 (defn prop-int  [res key] (. Integer parseInt (prop-str res key)))
 (defn prop-bool [res key] (. Boolean parseBoolean (prop-str res key)))
 
+(defn res-win-str [key]   (. resources-win getString key))
+
 (defn get-install-dir-1 []  
   ;; The install directory is set by the 'octane.install.dir' property key
   ;; If this value is empty, attempt to use the current working directory
