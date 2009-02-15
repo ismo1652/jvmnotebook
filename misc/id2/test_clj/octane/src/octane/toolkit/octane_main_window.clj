@@ -25,18 +25,47 @@
 ;;; http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/index.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns octane.toolkit.octane_main_window)
+(ns octane.toolkit.octane_main_window
+	(:use    octane.toolkit.octane_utils
+			 octane.toolkit.octane_analytics
+			 octane.toolkit.octane_codegen_templates
+			 octane.toolkit.octane_config
+			 octane.toolkit.octane_core_widgets
+			 octane.toolkit.octane_file_database
+			 octane.toolkit.octane_file_utils
+			 octane.toolkit.octane_graphs
+			 octane.toolkit.octane_gui_utils
+			 octane.toolkit.octane_main_constants
+			 octane.toolkit.octane_regex_search
+			 octane.toolkit.octane_search_dialog
+			 octane.toolkit.octane_templates
+			 octane.toolkit.octane_testing
+			 octane.toolkit.octane_tools
+			 octane.toolkit.octane_utils
+			 octane.toolkit.public_objects)
+	(:import (org.eclipse.swt SWT)
+			 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
+			 (org.eclipse.swt.widgets Label Menu MenuItem Control Listener)
+			 (org.eclipse.swt.widgets FileDialog MessageBox TableItem Button
+									  Composite Table TableColumn)
+			 (org.eclipse.swt.custom LineStyleEvent StyledText
+									 LineStyleListener StyleRange)
+			 (org.eclipse.swt.graphics Color RGB FontData Font)
+			 (org.eclipse.swt.layout GridData GridLayout RowLayout RowData)
+			 (org.eclipse.swt.events VerifyListener SelectionAdapter ModifyListener SelectionListener
+									 SelectionEvent ShellAdapter ShellEvent)
+			 (org.eclipse.swt.widgets FileDialog DirectoryDialog MessageBox Composite)
+			 (org.eclipse.swt SWT)
+			 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
+			 (java.util ResourceBundle Vector Hashtable)
+			 (java.util.regex Pattern)))
 
 ;;**************************************
 ;; Begin Routines
 ;;**************************************
-(def search-box)
 (def search-keyword)
-(def refresh-textarea)
-(def create-styled-text-area)
 
-(defn search-term? []
-  (if (> (length (. search-box getText)) 2) true false))
+(defn search-term? [] (if (> (length (. search-box getText)) 2) true false))
 
 (defn srchbox-get-text [] (str (. search-box getText)))
 
@@ -80,25 +109,9 @@
 ;; Event.detail line start offset (input) Event.text line text (input)
 ;; LineStyleEvent.styles Enumeration of StyleRanges, need to be in order.
 ;; (output) LineStyleEvent.background line background color (output)
-(def style-listener
+(def text-style-listener
      (proxy [LineStyleListener] []
             (lineGetStyle [event] (style-handler event))))
-
-(defn create-styled-text-area [sh]
-  (let [text (new StyledText sh swt-text-style)
-			 spec (new GridData GridData/FILL GridData/FILL true true)
-			 disp (Display/getDefault)
-			 bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
-    (. tab-folder setLayoutData spec)
-    (doto text
-      (. setLayoutData spec)
-      (. setFont (styled-text-font))
-      (. addLineStyleListener style-listener)
-      (. setEditable false)
-      (. setBackground bg))
-    text))
-
-(def *styled-text* (create-styled-text-area tab-folder))
 
 (def shell-close-listener
      (proxy [ShellAdapter] [] 
@@ -108,11 +121,7 @@
   (let [disp (. *styled-text* getDisplay)]             
     (. disp asyncExec
        (proxy [Runnable] []
-              (run [] (. styled-text setText (. buffer-1 toString)))))))
-
-(defn refresh-textarea []
-  (. *styled-text* redraw)
-  (. *styled-text* update))
+              (run [] (. *styled-text* setText (. buffer-1 toString)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Continue
@@ -173,6 +182,26 @@
              (let [] (when (not (. disp (readAndDispatch)))
                        (. disp (sleep)))
                   (recur)))))
+
+;;**************************************
+;; Application Main Entry Point
+;**************************************
+(defn main-1 
+  " Application Entry Point, launch the main window and wait for events"
+  []
+  ;;;;
+
+  (println "Launching Octane Text Viewer...")
+  (create-gui-window *display* *shell*)
+  (let [o (new Object)] (locking o (. o (wait)))))
+
+(defn -main [& args]
+  (try (main-1)
+	   (catch Exception e
+			  (println "ERR at <Main>: " e)
+			  (exit))))
+
+(-main)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      
 ;;; End of Script

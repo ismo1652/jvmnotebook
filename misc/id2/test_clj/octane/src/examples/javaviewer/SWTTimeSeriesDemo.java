@@ -78,20 +78,20 @@ public class SWTTimeSeriesDemo
 
         JFreeChart chart = ChartFactory.createTimeSeriesChart(
             "Legal & General Unit Trust Prices",  // title
-            "Date",             // x-axis label
-            "Price Per Unit",   // y-axis label
-            dataset,            // data
-            true,               // create legend?
-            true,               // generate tooltips?
-            false               // generate URLs?
+            "Date",                               // x-axis label
+            "Price Per Unit",                     // y-axis label
+            dataset,                              // data
+            true,                                 // create legend?
+            true,                                 // generate tooltips?
+            false                                 // generate URLs?
         );
 
         chart.setBackgroundPaint(Color.white);
-
-        XYPlot plot = (XYPlot) chart.getPlot();
-        plot.setBackgroundPaint(Color.lightGray);
-        plot.setDomainGridlinePaint(Color.white);
-        plot.setRangeGridlinePaint(Color.white);
+        XYPlot plot = (XYPlot) chart.getPlot();        
+        plot.setBackgroundPaint(Color.white);
+        plot.setDomainGridlinePaint(Color.lightGray);
+        plot.setRangeGridlinePaint(Color.lightGray);
+        
         plot.setAxisOffset(new RectangleInsets(5.0, 5.0, 5.0, 5.0));
         plot.setDomainCrosshairVisible(true);
         plot.setRangeCrosshairVisible(true);
@@ -117,7 +117,7 @@ public class SWTTimeSeriesDemo
      */
     private static XYDataset createDataset() {
 
-        TimeSeries s1 = new TimeSeries("L&G European Index Trust", Month.class);
+        TimeSeries s1 = new TimeSeries("L&G European Index Trust", Month.class);        
         s1.add(new Month(2, 2001), 181.8);
         s1.add(new Month(3, 2001), 167.3);
         s1.add(new Month(4, 2001), 153.8);
@@ -176,10 +176,12 @@ public class SWTTimeSeriesDemo
         shell.setSize(600, 300);
         shell.setLayout(new FillLayout());
         shell.setText("Time series demo for jfreechart running with SWT");
+        
         ChartComposite frame = new ChartComposite(shell, SWT.NONE, chart, true);
         frame.setDisplayToolTips(true);
         frame.setHorizontalAxisTrace(false);
         frame.setVerticalAxisTrace(false);
+        
         shell.open();
         while (!shell.isDisposed()) {
             if (!display.readAndDispatch())

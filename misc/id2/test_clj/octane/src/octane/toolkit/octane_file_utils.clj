@@ -44,7 +44,6 @@
 (def open-file-util)
 (def open-file)
 (def file-monitor-loop)
-(def refresh-textarea)
 (def get-file-state)
 (def set-file-state)
 (def get-file-info-header)

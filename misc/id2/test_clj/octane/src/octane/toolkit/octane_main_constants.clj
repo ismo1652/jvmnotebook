@@ -78,6 +78,9 @@
 (def *regex-size-width*   620)
 (def *regex-size-height*  370)
 
+(def *graph-size-width*   700)
+(def *graph-size-height*  600)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; RGB colors used when setting the color scheme for a text area.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -85,7 +85,8 @@
   `(try ~body
         (catch Exception ~'e
                (println "ERR <when-try> " ~'e)
-               (history-add-textln (str "ERR <when-try> " ~'e *newline*))
+			   (try (history-add-textln (str "ERR <when-try> " ~'e *newline*))
+					(catch Exception ~'e2 (println "ERR2 <when-try>")))
                nil)))
 
 (defmacro proc-time [expr]
@@ -122,7 +123,6 @@
               (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
 
 (defn history-add-textln [text] (history-add-text (str text *newline*)))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

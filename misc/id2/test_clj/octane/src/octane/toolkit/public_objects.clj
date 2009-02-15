@@ -40,6 +40,11 @@
 
 (def tab-folder)
 
+(def swt-textarea-style (bit-or SWT/BORDER 
+								(bit-or SWT/MULTI 
+                                    (bit-or SWT/H_SCROLL
+                                            (bit-or SWT/V_SCROLL 1)))))
+
 (def swt-tabtext-style (bit-or SWT/BORDER 
                                (bit-or SWT/MULTI 
                                        (bit-or SWT/H_SCROLL
@@ -52,7 +57,6 @@
 
 (def *display*   (new Display))
 (def *shell*     (new Shell *display*))
-(def *styled-text*)
 
 (defn styled-text-font [] (new Font (. *shell* getDisplay) "Courier New" 9 SWT/NORMAL))
 
@@ -76,6 +80,30 @@
 (def tab-text-4   (new Text tab-folder swt-tabtext-style))
 
 (def status-bar   (new Label *shell* SWT/BORDER))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Create the styled text area
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn create-styled-text-area
+  " The styled text area is the main(first tab) text area on the window.  Most
+ text will get displayed in this text area.  The text area is also attached to a tab. 
+ @see octane_main_window.clj"
+  [sh]
+  ;;;;;;;;;;;;;;;;;;;;
+  (let [text (new StyledText sh swt-textarea-style)
+			 gd-tab (new GridData GridData/FILL GridData/FILL true true)
+			 disp (Display/getDefault)
+			 bg   (. disp (getSystemColor SWT/COLOR_WHITE))]
+    (. tab-folder setLayoutData gd-tab)
+    (doto text
+      (. setLayoutData gd-tab)
+      (. setFont (styled-text-font))
+      (. setEditable false)
+      (. setBackground bg))
+    text))
+
+(def *styled-text* (create-styled-text-area tab-folder))
 
 ;;;;;;;;;;;;;;;;;
 ;; Keep the state on when a directory/open has been set
@@ -107,7 +135,7 @@
 (def  *findgrep-jav-state*  (ref {:FindGrep_java_menuitem   nil}))
 (def  *findgrep-log-state*  (ref {:FindGrep_logs_menuitem   nil}))
 (def  *findgrep-60m-state*  (ref {:Findfiles_60min_menuitem nil}))
-(def  *findgrep-clj-state*  (ref {:FindGrep_clj_menuitem   nil}))
+(def  *findgrep-clj-state*  (ref {:FindGrep_clj_menuitem    nil}))
 
 (defn findgrep-widg-state [fkey]
   (cond (= fkey :FindGrep_grep_menuitem)   *findgrep-def-state*
