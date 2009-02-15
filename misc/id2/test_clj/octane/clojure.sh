@@ -41,8 +41,8 @@ case "$OS" in
 esac 
 
 echo $CP
-#java -classpath $CP jline.ConsoleRunner clojure.lang.Repl $1 $2
-java -classpath $CP jline.OctaneConsoleRunner clojure.lang.Repl $1 $2 $3
+java -classpath $CP jline.ConsoleRunner clojure.lang.Repl $1 $2
+#java -classpath $CP jline.OctaneConsoleRunner clojure.lang.Repl $1 $2 $3
 
 
 ###########################################################

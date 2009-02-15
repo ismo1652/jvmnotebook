@@ -13,6 +13,14 @@ LIB3=$INSTALL_DIR/lib/jline-0.9.94.jar
 LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
 LIB4=$INSTALL_DIR/lib/org.eclipse.jface.text_3.4.1.r341_v20080827-1100.jar
 
+JFREE_LIB=$INSTALL_DIR/lib/jfreechart
+LIB6=$JFREE_LIB/gnujaxp.jar
+LIB7=$JFREE_LIB/jcommon-1.0.15.jar
+LIB8=$JFREE_LIB/jfreechart-1.0.12-experimental.jar
+LIB9=$JFREE_LIB/jfreechart-1.0.12.jar
+LIB10=$JFREE_LIB/jfreechart-1.0.12-swt.jar
+LIB11=$JFREE_LIB/swtgraphics2d.jar
+
 # Check the clojure library path
 if [ -f $LIB1 ]
 then
@@ -42,11 +50,16 @@ case "$OS" in
 		CP=".;src;${LIB1};${LIB2};$CONF_LIB;$LIB4" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:src:${LIB1}:${LIB2}:${LIB3}:$CONF_LIB" ;;
+		LIB_CP_JFREE=$LIB6:$LIB7:$LIB8:$LIB9:$LIB10:$LIB11
+		CP=".:src:${LIB1}:${LIB2}:${LIB3}:$LIB_CP_JFREE:$CONF_LIB" ;;
 esac 
 
+echo "(SCRIPT): --------------------------------"
 echo "(SCRIPT): install directory= $INSTALL_DIR"
 echo "(SCRIPT): classpath= $CP"
-java -Xms200m -Xmx324m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl src/octane_main.clj
+echo "(SCRIPT): --------------------------------"
+
+java -Xms128m -Xmx224m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" \
+  clojure.lang.Repl src/octane/toolkit/octane_main_window.clj
 
 # End of Script
