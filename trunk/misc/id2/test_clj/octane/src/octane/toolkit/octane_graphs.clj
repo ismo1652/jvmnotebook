@@ -25,8 +25,11 @@
 			 octane.toolkit.octane_config
 			 octane.toolkit.public_objects
 			 octane.toolkit.octane_utils
-			 octane.toolkit.octane_gui_utils)
+			 octane.toolkit.octane_gui_utils
+			 octane.toolkit.ws_garbage_collection)
+	
 	(:import 			 
+	 (java.util Date)
 	 (org.eclipse.swt.graphics Color RGB)
 	 (org.eclipse.swt SWT)
 	 (java.text MessageFormat)
@@ -56,18 +59,39 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Time Series Creation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn create-timegc-dataset
+  "Load the XML file with the garbage collection data and create a dataset"
+  [filename]
+  ;;;;;;;;;;
+  (let [ts-free (new TimeSeries "Free Bytes (After GC)" Second)
+				ts-total (new TimeSeries "Total Bytes (After GC)" Second)
+				dataset  (new TimeSeriesCollection)
+				raw-data (load-native-gc-xml filename true)]
+	(doseq [mem-struct raw-data]
+		(let [tstamp (mem-struct :timestamp)
+					 date-stamp (new Date tstamp)
+					 sec-stamp  (new Second date-stamp)
+					 free  ((mem-struct :memory) :freebytes)
+					 total ((mem-struct :memory) :totalbytes)]
+		  (. ts-free  addOrUpdate sec-stamp (parse-long (str free)))
+		  (. ts-total addOrUpdate sec-stamp (parse-long (str total)))))
+	(. dataset addSeries ts-free)
+	(. dataset addSeries ts-total)
+	dataset))
+
 (defn create-timegc-chart
   "Create a time series chart with the given dataset."
   [dataset]
   ;;;;;;;;;;
   (let [chart (. ChartFactory createTimeSeriesChart
-				 "Legal & General Unit Trust Prices"  ;; title
-				 "Date"                               ;; x-axis label
-				 "Price Per Unit"                     ;; y-axis label
-				 dataset                              ;; data
-				 true                                 ;; create legend?
-				 true                                 ;; generate tooltips?
-				 false)                               ;; generate URLs?
+				 "Native-Stderr Garbage Collection"  ;; title
+				 "Timestamp"                         ;; x-axis label
+				 "Memory Bytes"                      ;; y-axis label
+				 dataset                             ;; data
+				 true                                ;; create legend?
+				 true                                ;; generate tooltips?
+				 false)                              ;; generate URLs?
 			  plot (. chart getPlot)]
 	(doto plot
 	  (. setBackgroundPaint     java.awt.Color/white)
@@ -123,15 +147,18 @@
     "Initialize the file database SWT window, set the size add all components"
     []
     ;;;;;;;;;;;;;;;;;;;;;;;;;
-	(history-add-textln "Opening GC graph ()")
+	(history-add-textln 
+	 (str "Opening GC graph (), gc-file => " (user-variable "Graphs_gctime_logs")))
 
 	(doto *graph-gc-shell*
 	  (. setSize *graph-size-width* *graph-size-height*)
 	  (. setLayout (new FillLayout))
 	  (. addShellListener (shell-close-adapter *graph-gc-shell*)))
 	
-	(let [chart (create-timegc-chart nil)
-				frame (new ChartComposite *graph-gc-shell* SWT/NONE chart true)]
+	(let [gc-filename (user-variable "Graphs_gctime_logs")
+					  dataset (create-timegc-dataset gc-filename)
+					  chart   (create-timegc-chart dataset)
+					  frame   (new ChartComposite *graph-gc-shell* SWT/NONE chart true)]
 	  (doto frame
         (. setDisplayToolTips     true)
         (. setHorizontalAxisTrace false)

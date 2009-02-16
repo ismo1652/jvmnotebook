@@ -87,9 +87,12 @@
 
 (defn system-variable
   "Replace an instance of the system property within a given string"
-  [var str]
+  [var str to]
   ;;;;;;;
-  (when str (. str replaceAll var *octane-install-dir*)))
+  (when str (. str replaceAll var to)))
+
+(defn user-variable [key]
+  (system-var-install-dir (prop-str resources-user key)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; External Application Constants
