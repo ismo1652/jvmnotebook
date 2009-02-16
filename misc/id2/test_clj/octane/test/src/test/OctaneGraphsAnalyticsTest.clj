@@ -4,16 +4,34 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns test.OctaneGraphsAnalyticsTest
-    (:import (junit.framework Assert))   
+    (:import (junit.framework Assert)
+			 (java.io InputStreamReader BufferedReader ByteArrayInputStream))
 	(:use
+	 octane.toolkit.octane_utils
 	 octane.toolkit.ws_garbage_collection)
 	(:gen-class
 	 :extends junit.framework.TestCase
      :methods
 	 [    
+	  ;;[ test_print_gc_xml [] void ]
 	  [ test_load_gc_xml [] void ]
-	  [ test_get_tenured [] void ]
+	  ;;[ test_get_tenured [] void ]
+	  [ test_get_timestamp_attr [] void ]
+	  [ test_parse-gc-aftags [] void ]
 	  ]))
+
+
+(def example-gc-xml-2
+	 "<?xml version=\"1.0\" ?>
+<verbosegc version=\"200802_08\">
+<af type=\"tenured\" id=\"1\" timestamp=\"Feb 14 06:02:17 2009\" intervalms=\"0.000\">
+  <minimum requested_bytes=\"32\" />
+</af>
+<af type=\"tenured\" id=\"2\" timestamp=\"Feb 14 06:03:17 2009\" intervalms=\"0.000\">
+  <minimum requested_bytes=\"34\" />
+</af>
+</verbosegc>
+")
 
 
 (def example-gc-xml 
@@ -113,17 +131,46 @@
 
 
 (defn -init [_] ()) 
-	
+
+(defn -test_print_gc_xml [_]
+  (let [s2 example-gc-xml
+		   strm (new ByteArrayInputStream (. s2 getBytes))]
+	(let [data (clojure.xml/parse strm)
+			   content (data :content)]
+	  (doseq [i content] 
+		  (let []
+			(println "Type: " (class i))
+			(when (= (class i) clojure.lang.PersistentStructMap)
+			  (println "-->" i "<--")))))))
+			
 (defn -test_load_gc_xml [_]
   (let [s2 example-gc-xml]
 	(let [res (load-native-gc-xml s2)]
 	  (Assert/assertNotNull res)
+	  (pprint-list res)
+	  (doseq [node res]
+		  (Assert/assertNotNull "Invalid Result Data" node))
 	  )))
 
 (defn -test_get_tenured [_]
   (let [s (list example-for-tenured)]
 	(get-tenured-tags s)))
 
+(defn -test_get_timestamp_attr [_]
+  (let [data {:tag :af, :attrs {:timestamp "Feb 14 06:02:17 2009", :id 1 }}]
+	(Assert/assertEquals "Feb 14 06:02:17 2009" (get-timestamp-attr data))
+	(Assert/assertTrue (= 1234609337000 (parse-timestamp-date "Feb 14 06:02:17 2009")))))
+
+(defn -test_parse-gc-aftags [_]
+  (let [str example-gc-xml-2
+			strm (new ByteArrayInputStream (. str getBytes))
+			doc (clojure.xml/parse strm)
+			content-print (doc :content)]
+	;; Example Input af-data:
+	;;  ( {:af-tag [{:tag :minimum, :attrs {:requested_bytes 32}, :content nil}], :timestamp 1234609337000} 
+    ;;    {:af-tag [{:tag :minimum, :attrs {:requested_bytes 34}, :content nil}], :timestamp 1234609397000})
+	(Assert/assertNotNull (parse-gc-aftags doc))))
+				 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

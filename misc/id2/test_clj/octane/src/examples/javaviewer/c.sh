@@ -44,7 +44,8 @@ esac
 echo $CP
 javac -cp $CP *.java
 #java -cp $CP Tabs 
-java -cp $CP SWTTimeSeriesDemo 
+#java -cp $CP SWTTimeSeriesDemo 
+java -cp $CP SWTTimeSeriesDemo2 
 #java -cp $CP SWTPieChartDemo1 
 #java -cp $CP SWTBarChartDemo1
 #java -cp $CP SWTMultipleAxisDemo1

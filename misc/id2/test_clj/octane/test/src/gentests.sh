@@ -68,6 +68,8 @@ MAIN2=test.OctaneSampleTestGen
 FILE2=main_gen_tests.clj
 MAIN3=test.OctaneSampleMockTest
 MAIN4=test.OctaneGraphsAnalyticsTest
+MAIN5=test.OctaneUtilsTest
+
 FILE=$FILE1
 MAIN=$MAIN4
 
