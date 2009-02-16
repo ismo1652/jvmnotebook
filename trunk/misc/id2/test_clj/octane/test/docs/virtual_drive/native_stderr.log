@@ -1,0 +1,469 @@
+<?xml version="1.0" ?>
+
+<verbosegc version="200802_08">
+
+<af type="tenured" id="1" timestamp="Feb 14 06:02:17 2009" intervalms="0.000">
+  <minimum requested_bytes="32" />
+  <time exclusiveaccessms="0.025" />
+  <tenured freebytes="5032960" totalbytes="100663296" percent="4" >
+    <soa freebytes="0" totalbytes="95630336" percent="0" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <gc type="global" id="1" totalid="1" intervalms="0.000">
+    <refs_cleared soft="280" threshold="32" weak="502" phantom="0" />
+    <finalization objectsqueued="359" />
+    <timesms mark="19.164" sweep="2.340" compact="0.000" total="21.612" />
+    <tenured freebytes="88476424" totalbytes="100663296" percent="87" >
+      <soa freebytes="83443464" totalbytes="95630336" percent="87" />
+      <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="88476392" totalbytes="100663296" percent="87" >
+    <soa freebytes="83443432" totalbytes="95630336" percent="87" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <time totalms="22.213" />
+</af>
+
+<af type="tenured" id="2" timestamp="Feb 14 06:02:21 2009" intervalms="3387.788">
+  <minimum requested_bytes="32" />
+  <time exclusiveaccessms="0.026" />
+  <tenured freebytes="5032960" totalbytes="100663296" percent="4" >
+    <soa freebytes="0" totalbytes="95630336" percent="0" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <gc type="global" id="2" totalid="2" intervalms="3388.433">
+    <refs_cleared soft="0" threshold="32" weak="39" phantom="0" />
+    <finalization objectsqueued="4" />
+    <timesms mark="21.233" sweep="1.965" compact="0.000" total="23.300" />
+    <tenured freebytes="87948504" totalbytes="100663296" percent="87" >
+      <soa freebytes="82915544" totalbytes="95630336" percent="86" />
+      <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="87948472" totalbytes="100663296" percent="87" >
+    <soa freebytes="82915512" totalbytes="95630336" percent="86" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <time totalms="23.973" />
+</af>
+
+<af type="tenured" id="3" timestamp="Feb 14 06:02:24 2009" intervalms="3273.623">
+  <minimum requested_bytes="32" />
+  <time exclusiveaccessms="0.027" />
+  <tenured freebytes="5032960" totalbytes="100663296" percent="4" >
+    <soa freebytes="0" totalbytes="95630336" percent="0" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <gc type="global" id="3" totalid="3" intervalms="3274.184">
+    <refs_cleared soft="0" threshold="32" weak="3" phantom="0" />
+    <finalization objectsqueued="0" />
+    <timesms mark="19.187" sweep="1.430" compact="0.000" total="20.713" />
+    <tenured freebytes="86263984" totalbytes="100663296" percent="85" >
+      <soa freebytes="81231024" totalbytes="95630336" percent="84" />
+      <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="86263952" totalbytes="100663296" percent="85" >
+    <soa freebytes="81230992" totalbytes="95630336" percent="84" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <time totalms="21.300" />
+</af>
+
+
+<af type="tenured" id="4" timestamp="Feb 14 06:02:28 2009" intervalms="3802.532">
+  <minimum requested_bytes="320" />
+  <time exclusiveaccessms="0.029" />
+  <tenured freebytes="5032960" totalbytes="100663296" percent="4" >
+    <soa freebytes="0" totalbytes="95630336" percent="0" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <gc type="global" id="4" totalid="4" intervalms="3803.115">
+    <refs_cleared soft="0" threshold="32" weak="65" phantom="0" />
+    <finalization objectsqueued="15" />
+    <timesms mark="27.221" sweep="2.006" compact="0.000" total="29.354" />
+    <tenured freebytes="83497824" totalbytes="100663296" percent="82" >
+      <soa freebytes="78464864" totalbytes="95630336" percent="82" />
+      <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="83497152" totalbytes="100663296" percent="82" >
+    <soa freebytes="78464192" totalbytes="95630336" percent="82" />
+    <loa freebytes="5032960" totalbytes="5032960" percent="100" />
+  </tenured>
+  <time totalms="29.967" />
+</af>
+
+<af type="tenured" id="5" timestamp="Feb 14 06:02:31 2009" intervalms="3643.383">
+  <minimum requested_bytes="2728" />
+  <time exclusiveaccessms="0.035" />
+  <tenured freebytes="4816944" totalbytes="100663296" percent="4" >
+    <soa freebytes="45776" totalbytes="95630336" percent="0" />
+    <loa freebytes="4771168" totalbytes="5032960" percent="94" />
+  </tenured>
+  <gc type="global" id="5" totalid="5" intervalms="3643.990">
+    <refs_cleared soft="0" threshold="32" weak="118" phantom="0" />
+    <finalization objectsqueued="25" />
+    <timesms mark="27.791" sweep="1.706" compact="0.000" total="29.604" />
+    <tenured freebytes="80400720" totalbytes="100663296" percent="79" >
+      <soa freebytes="76374352" totalbytes="96636928" percent="79" />
+      <loa freebytes="4026368" totalbytes="4026368" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="80397760" totalbytes="100663296" percent="79" >
+    <soa freebytes="76371392" totalbytes="96636928" percent="79" />
+    <loa freebytes="4026368" totalbytes="4026368" percent="100" />
+  </tenured>
+  <time totalms="30.252" />
+</af>
+
+<af type="tenured" id="6" timestamp="Feb 14 06:02:36 2009" intervalms="4160.451">
+  <minimum requested_bytes="30232" />
+  <time exclusiveaccessms="0.034" />
+  <tenured freebytes="3934016" totalbytes="100663296" percent="3" >
+    <soa freebytes="21392" totalbytes="96636928" percent="0" />
+    <loa freebytes="3912624" totalbytes="4026368" percent="97" />
+  </tenured>
+  <gc type="global" id="6" totalid="6" intervalms="4161.036">
+    <refs_cleared soft="1" threshold="32" weak="222" phantom="0" />
+    <finalization objectsqueued="33" />
+    <timesms mark="40.676" sweep="2.131" compact="0.000" total="42.920" />
+    <tenured freebytes="77779968" totalbytes="100663296" percent="77" >
+      <soa freebytes="74760192" totalbytes="97643520" percent="76" />
+      <loa freebytes="3019776" totalbytes="3019776" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="77749736" totalbytes="100663296" percent="77" >
+    <soa freebytes="74729960" totalbytes="97643520" percent="76" />
+    <loa freebytes="3019776" totalbytes="3019776" percent="100" />
+  </tenured>
+  <time totalms="43.548" />
+</af>
+
+<af type="tenured" id="7" timestamp="Feb 14 06:02:41 2009" intervalms="5338.042">
+  <minimum requested_bytes="56" />
+  <time exclusiveaccessms="0.037" />
+  <tenured freebytes="3019776" totalbytes="100663296" percent="2" >
+    <soa freebytes="0" totalbytes="97643520" percent="0" />
+    <loa freebytes="3019776" totalbytes="3019776" percent="100" />
+  </tenured>
+  <gc type="global" id="7" totalid="7" intervalms="5338.645">
+    <refs_cleared soft="46" threshold="32" weak="291" phantom="0" />
+    <finalization objectsqueued="72" />
+    <timesms mark="39.817" sweep="2.014" compact="0.000" total="41.955" />
+    <tenured freebytes="73325880" totalbytes="100663296" percent="72" >
+      <soa freebytes="71312696" totalbytes="98650112" percent="72" />
+      <loa freebytes="2013184" totalbytes="2013184" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="73325088" totalbytes="100663296" percent="72" >
+    <soa freebytes="71311904" totalbytes="98650112" percent="72" />
+    <loa freebytes="2013184" totalbytes="2013184" percent="100" />
+  </tenured>
+  <time totalms="42.583" />
+</af>
+
+<af type="tenured" id="8" timestamp="Feb 14 06:02:58 2009" intervalms="16718.737">
+  <minimum requested_bytes="32" />
+  <time exclusiveaccessms="0.038" />
+  <tenured freebytes="2013184" totalbytes="100663296" percent="1" >
+    <soa freebytes="0" totalbytes="98650112" percent="0" />
+    <loa freebytes="2013184" totalbytes="2013184" percent="100" />
+  </tenured>
+  <gc type="global" id="8" totalid="8" intervalms="16719.343">
+    <refs_cleared soft="13" threshold="32" weak="69" phantom="0" />
+    <finalization objectsqueued="52" />
+    <timesms mark="43.782" sweep="2.516" compact="0.000" total="46.428" />
+    <tenured freebytes="70310040" totalbytes="100663296" percent="69" >
+      <soa freebytes="69303448" totalbytes="99656704" percent="69" />
+      <loa freebytes="1006592" totalbytes="1006592" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="70310008" totalbytes="100663296" percent="69" >
+    <soa freebytes="69303416" totalbytes="99656704" percent="69" />
+    <loa freebytes="1006592" totalbytes="1006592" percent="100" />
+  </tenured>
+  <time totalms="47.074" />
+</af>
+
+<af type="tenured" id="9" timestamp="Feb 14 06:03:01 2009" intervalms="3290.137">
+  <minimum requested_bytes="32" />
+  <time exclusiveaccessms="0.064" />
+  <tenured freebytes="1006592" totalbytes="100663296" percent="0" >
+    <soa freebytes="0" totalbytes="99656704" percent="0" />
+    <loa freebytes="1006592" totalbytes="1006592" percent="100" />
+  </tenured>
+  <gc type="global" id="9" totalid="9" intervalms="3290.775">
+    <refs_cleared soft="6" threshold="32" weak="82" phantom="19" />
+    <finalization objectsqueued="30" />
+    <timesms mark="48.751" sweep="2.560" compact="0.000" total="51.429" />
+    <tenured freebytes="68509072" totalbytes="100663296" percent="68" >
+      <soa freebytes="67603344" totalbytes="99757568" percent="67" />
+      <loa freebytes="905728" totalbytes="905728" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="68509040" totalbytes="100663296" percent="68" >
+    <soa freebytes="67603312" totalbytes="99757568" percent="67" />
+    <loa freebytes="905728" totalbytes="905728" percent="100" />
+  </tenured>
+  <time totalms="52.131" />
+</af>
+
+<af type="tenured" id="10" timestamp="Feb 14 06:03:06 2009" intervalms="4724.901">
+  <minimum requested_bytes="32" />
+  <time exclusiveaccessms="0.090" />
+  <tenured freebytes="905728" totalbytes="100663296" percent="0" >
+    <soa freebytes="0" totalbytes="99757568" percent="0" />
+    <loa freebytes="905728" totalbytes="905728" percent="100" />
+  </tenured>
+  <gc type="global" id="10" totalid="10" intervalms="4725.744">
+    <refs_cleared soft="1" threshold="32" weak="141" phantom="3" />
+    <finalization objectsqueued="132" />
+    <timesms mark="57.411" sweep="2.718" compact="0.000" total="60.295" />
+    <tenured freebytes="59935232" totalbytes="100663296" percent="59" >
+      <soa freebytes="59130368" totalbytes="99858432" percent="59" />
+      <loa freebytes="804864" totalbytes="804864" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="59935200" totalbytes="100663296" percent="59" >
+    <soa freebytes="59130336" totalbytes="99858432" percent="59" />
+    <loa freebytes="804864" totalbytes="804864" percent="100" />
+  </tenured>
+  <time totalms="61.228" />
+</af>
+
+<af type="tenured" id="11" timestamp="Feb 14 06:03:09 2009" intervalms="2962.277">
+  <minimum requested_bytes="8208" />
+  <time exclusiveaccessms="0.071" />
+  <tenured freebytes="9467040" totalbytes="100663296" percent="9" >
+    <soa freebytes="8662176" totalbytes="99858432" percent="8" />
+    <loa freebytes="804864" totalbytes="804864" percent="100" />
+  </tenured>
+  <gc type="global" id="11" totalid="11" intervalms="2962.931">
+    <refs_cleared soft="27" threshold="32" weak="19" phantom="0" />
+    <finalization objectsqueued="20" />
+    <timesms mark="65.826" sweep="2.622" compact="0.000" total="68.578" />
+    <tenured freebytes="63256536" totalbytes="100663296" percent="62" >
+      <soa freebytes="62552024" totalbytes="99958784" percent="62" />
+      <loa freebytes="704512" totalbytes="704512" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="63248328" totalbytes="100663296" percent="62" >
+    <soa freebytes="62543816" totalbytes="99958784" percent="62" />
+    <loa freebytes="704512" totalbytes="704512" percent="100" />
+  </tenured>
+  <time totalms="69.308" />
+</af>
+
+<af type="tenured" id="12" timestamp="Feb 14 06:03:09 2009" intervalms="379.058">
+  <minimum requested_bytes="61688" />
+  <time exclusiveaccessms="0.067" />
+  <tenured freebytes="18233512" totalbytes="100663296" percent="18" >
+    <soa freebytes="17529000" totalbytes="99958784" percent="17" />
+    <loa freebytes="704512" totalbytes="704512" percent="100" />
+  </tenured>
+  <gc type="global" id="12" totalid="12" intervalms="379.672">
+    <refs_cleared soft="0" threshold="32" weak="13" phantom="3" />
+    <finalization objectsqueued="5" />
+    <timesms mark="56.356" sweep="2.878" compact="0.000" total="59.359" />
+    <tenured freebytes="60759840" totalbytes="100663296" percent="60" >
+      <soa freebytes="60156192" totalbytes="100059648" percent="60" />
+      <loa freebytes="603648" totalbytes="603648" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="60698152" totalbytes="100663296" percent="60" >
+    <soa freebytes="60094504" totalbytes="100059648" percent="60" />
+    <loa freebytes="603648" totalbytes="603648" percent="100" />
+  </tenured>
+  <time totalms="60.299" />
+</af>
+
+<af type="tenured" id="13" timestamp="Feb 14 06:03:10 2009" intervalms="587.070">
+  <minimum requested_bytes="8208" />
+  <time exclusiveaccessms="0.069" />
+  <tenured freebytes="6248272" totalbytes="100663296" percent="6" >
+    <soa freebytes="5644624" totalbytes="100059648" percent="5" />
+    <loa freebytes="603648" totalbytes="603648" percent="100" />
+  </tenured>
+  <gc type="global" id="13" totalid="13" intervalms="587.971">
+    <refs_cleared soft="0" threshold="32" weak="1" phantom="3" />
+    <finalization objectsqueued="1" />
+    <timesms mark="63.643" sweep="3.043" compact="0.000" total="66.827" />
+    <tenured freebytes="56884816" totalbytes="100663296" percent="56" >
+      <soa freebytes="56381520" totalbytes="100160000" percent="56" />
+      <loa freebytes="503296" totalbytes="503296" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="56876608" totalbytes="100663296" percent="56" >
+    <soa freebytes="56373312" totalbytes="100160000" percent="56" />
+    <loa freebytes="503296" totalbytes="503296" percent="100" />
+  </tenured>
+  <time totalms="67.537" />
+</af>
+
+<af type="tenured" id="14" timestamp="Feb 14 06:03:10 2009" intervalms="379.783">
+  <minimum requested_bytes="8208" />
+  <time exclusiveaccessms="0.192" />
+  <tenured freebytes="10153480" totalbytes="100663296" percent="10" >
+    <soa freebytes="9650184" totalbytes="100160000" percent="9" />
+    <loa freebytes="503296" totalbytes="503296" percent="100" />
+  </tenured>
+  <gc type="global" id="14" totalid="14" intervalms="380.413">
+    <refs_cleared soft="11" threshold="32" weak="10" phantom="0" />
+    <finalization objectsqueued="3" />
+    <timesms mark="64.055" sweep="2.771" compact="0.000" total="66.950" />
+    <tenured freebytes="54878632" totalbytes="100663296" percent="54" >
+      <soa freebytes="54476200" totalbytes="100260864" percent="54" />
+      <loa freebytes="402432" totalbytes="402432" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="54870424" totalbytes="100663296" percent="54" >
+    <soa freebytes="54467992" totalbytes="100260864" percent="54" />
+    <loa freebytes="402432" totalbytes="402432" percent="100" />
+  </tenured>
+  <time totalms="67.771" />
+</af>
+
+<af type="tenured" id="15" timestamp="Feb 14 06:03:11 2009" intervalms="461.266">
+  <minimum requested_bytes="8208" />
+  <time exclusiveaccessms="0.070" />
+  <tenured freebytes="7282272" totalbytes="100663296" percent="7" >
+    <soa freebytes="6879840" totalbytes="100260864" percent="6" />
+    <loa freebytes="402432" totalbytes="402432" percent="100" />
+  </tenured>
+  <gc type="global" id="15" totalid="15" intervalms="461.886">
+    <compaction movecount="536742" movebytes="29244536" reason="heap fragmented" />
+    <refs_cleared soft="0" threshold="32" weak="2" phantom="0" />
+    <finalization objectsqueued="1" />
+    <timesms mark="65.367" sweep="3.546" compact="198.552" total="267.619" />
+    <tenured freebytes="71415464" totalbytes="100663296" percent="70" >
+      <soa freebytes="71113896" totalbytes="100361728" percent="70" />
+      <loa freebytes="301568" totalbytes="301568" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="71407256" totalbytes="100663296" percent="70" >
+    <soa freebytes="71105688" totalbytes="100361728" percent="70" />
+    <loa freebytes="301568" totalbytes="301568" percent="100" />
+  </tenured>
+  <time totalms="268.309" />
+</af>
+
+<af type="tenured" id="16" timestamp="Feb 14 06:03:12 2009" intervalms="695.284">
+  <minimum requested_bytes="8616" />
+  <time exclusiveaccessms="0.066" />
+  <tenured freebytes="301568" totalbytes="100663296" percent="0" >
+    <soa freebytes="0" totalbytes="100361728" percent="0" />
+    <loa freebytes="301568" totalbytes="301568" percent="100" />
+  </tenured>
+  <gc type="global" id="16" totalid="16" intervalms="695.966">
+    <refs_cleared soft="0" threshold="32" weak="33" phantom="3" />
+    <finalization objectsqueued="3" />
+    <timesms mark="69.263" sweep="1.318" compact="0.000" total="70.714" />
+    <tenured freebytes="69859672" totalbytes="100663296" percent="69" >
+      <soa freebytes="69658456" totalbytes="100462080" percent="69" />
+      <loa freebytes="201216" totalbytes="201216" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="69851056" totalbytes="100663296" percent="69" >
+    <soa freebytes="69649840" totalbytes="100462080" percent="69" />
+    <loa freebytes="201216" totalbytes="201216" percent="100" />
+  </tenured>
+  <time totalms="71.460" />
+</af>
+
+<af type="tenured" id="17" timestamp="Feb 14 06:03:13 2009" intervalms="710.872">
+  <minimum requested_bytes="8208" />
+  <time exclusiveaccessms="0.067" />
+  <tenured freebytes="216520" totalbytes="100663296" percent="0" >
+    <soa freebytes="15304" totalbytes="100462080" percent="0" />
+    <loa freebytes="201216" totalbytes="201216" percent="100" />
+  </tenured>
+  <gc type="global" id="17" totalid="17" intervalms="711.491">
+    <refs_cleared soft="0" threshold="32" weak="17" phantom="0" />
+    <finalization objectsqueued="18" />
+    <timesms mark="68.741" sweep="1.866" compact="0.000" total="70.741" />
+    <tenured freebytes="67074232" totalbytes="100663296" percent="66" >
+      <soa freebytes="66973880" totalbytes="100562944" percent="66" />
+      <loa freebytes="100352" totalbytes="100352" percent="100" />
+    </tenured>
+  </gc>
+  <tenured freebytes="67066024" totalbytes="100663296" percent="66" >
+    <soa freebytes="66965672" totalbytes="100562944" percent="66" />
+    <loa freebytes="100352" totalbytes="100352" percent="100" />
+  </tenured>
+  <time totalms="71.428" />
+</af>
+
+<af type="tenured" id="18" timestamp="Feb 14 06:03:13 2009" intervalms="606.082">
+  <minimum requested_bytes="152" />
+  <time exclusiveaccessms="0.232" />
+  <tenured freebytes="100352" totalbytes="100663296" percent="0" >
+    <soa freebytes="0" totalbytes="100562944" percent="0" />
+    <loa freebytes="100352" totalbytes="100352" percent="100" />
+  </tenured>
+  <gc type="global" id="18" totalid="18" intervalms="606.916">
+    <refs_cleared soft="0" threshold="32" weak="29" phantom="0" />
+    <finalization objectsqueued="37" />
+    <timesms mark="75.239" sweep="1.996" compact="0.000" total="77.401" />
+    <tenured freebytes="64809288" totalbytes="100663296" percent="64" >
+      <soa freebytes="64809288" totalbytes="100663296" percent="64" />
+      <loa freebytes="0" totalbytes="0" percent="0" />
+    </tenured>
+  </gc>
+  <tenured freebytes="64801000" totalbytes="100663296" percent="64" >
+    <soa freebytes="64801000" totalbytes="100663296" percent="64" />
+    <loa freebytes="0" totalbytes="0" percent="0" />
+  </tenured>
+  <time totalms="78.467" />
+</af>
+
+<af type="tenured" id="19" timestamp="Feb 14 06:03:14 2009" intervalms="86.544">
+  <minimum requested_bytes="31592" />
+  <time exclusiveaccessms="0.071" />
+  <tenured freebytes="34834904" totalbytes="100663296" percent="34" >
+    <soa freebytes="34834904" totalbytes="100663296" percent="34" />
+    <loa freebytes="0" totalbytes="0" percent="0" />
+  </tenured>
+  <gc type="global" id="19" totalid="19" intervalms="87.167">
+    <refs_cleared soft="1" threshold="32" weak="7" phantom="0" />
+    <finalization objectsqueued="3" />
+    <timesms mark="74.866" sweep="2.262" compact="0.000" total="77.259" />
+    <tenured freebytes="64492488" totalbytes="100663296" percent="64" >
+      <soa freebytes="64492488" totalbytes="100663296" percent="64" />
+      <loa freebytes="0" totalbytes="0" percent="0" />
+    </tenured>
+  </gc>
+  <tenured freebytes="64460896" totalbytes="100663296" percent="64" >
+    <soa freebytes="64460896" totalbytes="100663296" percent="64" />
+    <loa freebytes="0" totalbytes="0" percent="0" />
+  </tenured>
+  <time totalms="77.955" />
+</af>
+
+<af type="tenured" id="20" timestamp="Feb 14 06:03:14 2009" intervalms="15.046">
+  <minimum requested_bytes="45656" />
+  <time exclusiveaccessms="0.063" />
+  <tenured freebytes="50991560" totalbytes="100663296" percent="50" >
+    <soa freebytes="50991560" totalbytes="100663296" percent="50" />
+    <loa freebytes="0" totalbytes="0" percent="0" />
+  </tenured>
+  <gc type="global" id="20" totalid="20" intervalms="22.106">
+    <refs_cleared soft="0" threshold="32" weak="2" phantom="0" />
+    <finalization objectsqueued="1" />
+    <timesms mark="78.062" sweep="1.879" compact="0.000" total="80.112" />
+    <tenured freebytes="64450552" totalbytes="100663296" percent="64" >
+      <soa freebytes="64450552" totalbytes="100663296" percent="64" />
+      <loa freebytes="0" totalbytes="0" percent="0" />
+    </tenured>
+  </gc>
+  <tenured freebytes="64404896" totalbytes="100663296" percent="63" >
+    <soa freebytes="64404896" totalbytes="100663296" percent="63" />
+    <loa freebytes="0" totalbytes="0" percent="0" />
+  </tenured>
+  <time totalms="87.236" />
+</af>
+
+</verbosegc>
+
+
