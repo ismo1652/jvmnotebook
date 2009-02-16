@@ -4,6 +4,21 @@
 	+ 2/15/2009	Berlin Brown
 		* Test cases, documentation
 		* Keystrokes
+		* Add system properties definition
+		
+		FEATURES NOT COMPLETE, first release:
+			1. Scripts
+			2. Web documentation
+			3. Web server / app server
+
+		FEATURES MUST COMPLETE:
+			1. Keystrokes
+			2. Finish search
+			3. Analytics
+			4. Better code generation (add junit, clojure test, etc)
+			5. Doc - XML -> XSL
+			6. Open Jars, Open Zip Files
+			7. Open large files
 
 	+ 2/14/2009	Berlin Brown	
 		* Output data to text buffer

@@ -124,6 +124,16 @@
 
 (defn history-add-textln [text] (history-add-text (str text *newline*)))
 
+(defn pprint-list
+  "Simple pretty print a list"
+  [lst]
+  ;;;;;;;;;;
+  (doseq [x lst]
+	  (let []
+		(println "<Begin Element>")
+		(println x)
+		(println "<End Element>" \newline))))
+  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

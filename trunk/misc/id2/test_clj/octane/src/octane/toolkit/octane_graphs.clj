@@ -133,9 +133,9 @@
 	(let [chart (create-timegc-chart nil)
 				frame (new ChartComposite *graph-gc-shell* SWT/NONE chart true)]
 	  (doto frame
-        (. setDisplayToolTips true)
+        (. setDisplayToolTips     true)
         (. setHorizontalAxisTrace false)
-        (. setVerticalAxisTrace false)))
+        (. setVerticalAxisTrace   false)))
 
 	;; Open the graph window
 	(doto *graph-gc-shell*

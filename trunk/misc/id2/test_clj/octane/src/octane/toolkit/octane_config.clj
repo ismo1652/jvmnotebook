@@ -76,6 +76,21 @@
 
 (def *work-path* (str *octane-install-dir* *name-separator* *work-path-1*))
 
+(def *SYS_INSTALL_DIR* "_SYS_INSTALL_DIR_")
+
+(defn system-var-install-dir
+  "Replace an instance of the system property within a given string"
+  [str]
+  ;;;;;;;
+  (when str
+	(. str replaceAll *SYS_INSTALL_DIR* *octane-install-dir*)))
+
+(defn system-variable
+  "Replace an instance of the system property within a given string"
+  [var str]
+  ;;;;;;;
+  (when str (. str replaceAll var *octane-install-dir*)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; External Application Constants
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -139,9 +154,9 @@
  :unix-xargs *unix-xargs* :win-xargs  *win-xargs*
 })
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; End
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; End Application Constants
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

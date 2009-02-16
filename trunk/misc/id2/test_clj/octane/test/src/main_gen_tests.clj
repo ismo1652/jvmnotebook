@@ -7,7 +7,8 @@
 	(compile 'test.OctaneSampleTestGen)
 	;;(compile 'test.OctaneFullTest)
 	(compile 'test.OctaneSampleMockTest)
-	(compile 'test.OctaneGraphsAnalyticsTest))
+	(compile 'test.OctaneGraphsAnalyticsTest)
+	(compile 'test.OctaneUtilsTest))
 
 (try (main)
 	(catch Exception e (. e printStackTrace)))
