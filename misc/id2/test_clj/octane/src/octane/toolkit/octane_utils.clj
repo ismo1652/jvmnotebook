@@ -24,6 +24,7 @@
 	(:use    octane.toolkit.public_objects
 			 octane.toolkit.octane_main_constants)
 	(:import (java.util Date)
+			 (java.text SimpleDateFormat)
 			 (java.lang Runtime)
 			 (java.text SimpleDateFormat)
 			 (java.io InputStreamReader BufferedReader File)
@@ -53,6 +54,10 @@
 (defn floor [d] (. Math floor d))
 
 (defn println-obj [o] (println o) o)
+
+(defn parse-long [str]
+  (try (Long/parseLong str) 
+       (catch NumberFormatException nfe 0)))
 
 (defn col-vec-bg   []  (. colors-vec get 0))
 (defn col-vec-grey []  (. colors-vec get 1))
@@ -133,6 +138,17 @@
 		(println "<Begin Element>")
 		(println x)
 		(println "<End Element>" \newline))))
+
+(defn parse-timestamp-date
+  "Return the long representation for the timestamp"
+  [str-date]
+  ;;;;;;;;;;;;;;;  
+  (let [sdf (new SimpleDateFormat "MMM d HH:mm:ss yyyy")]
+	(try (. (. sdf parse str-date) getTime)
+		 (catch Exception e (println "Warn: invalid date format =>" str-date)
+				str-date))))
+
+
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

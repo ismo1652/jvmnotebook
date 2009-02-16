@@ -145,7 +145,7 @@
 			
 (defn -test_load_gc_xml [_]
   (let [s2 example-gc-xml]
-	(let [res (load-native-gc-xml s2)]
+	(let [res (load-native-gc-xml s2 false)]
 	  (Assert/assertNotNull res)
 	  (pprint-list res)
 	  (doseq [node res]

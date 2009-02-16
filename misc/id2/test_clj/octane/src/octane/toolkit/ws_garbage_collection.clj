@@ -26,15 +26,6 @@
 	 (java.text SimpleDateFormat)
 	 (java.io InputStreamReader BufferedReader ByteArrayInputStream)))
 
-(defn parse-timestamp-date
-  "Return the long representation for the timestamp"
-  [str-date]
-  ;;;;;;;;;;;;;;;  
-  (let [sdf (new SimpleDateFormat "MMM d HH:mm:ss yyyy")]
-	(try (. (. sdf parse str-date) getTime)
-		 (catch Exception e (println "Warn: invalid date format =>" str-date)
-				str-date))))
-
 (defn get-timestamp-attr
   "Get the timestamp attributes from the 'af' tag
  Extract from : :attrs {:id 1, :type tenured, :timestamp
@@ -120,9 +111,9 @@
 			  (for [my-mem-data tenr-tags]
 				(let [mem-lst (my-mem-data :memory)]
 				  ;; Memory list is a list, we only want the second element.
-				  {:timestamp (my-mem-data :timestamp) :memeory (second mem-lst) } )))))
+				  {:timestamp (my-mem-data :timestamp) :memory (second mem-lst) } )))))
 			  
-(defn load-native-gc-xml
+(defn parse-native-gc-xml
   "Load the garbage collection xml document, native_stderr.log.
  Extract the XML memory data after the 'gc/garbage collection' tag.
  @return List of data point values {:totalbytes 100663296, :freebytes 88476392, :percent 87} ..."
@@ -132,7 +123,26 @@
 	(let [strm (new ByteArrayInputStream (. xml-str getBytes))]
 	  (when-let [xml-data (when-try (clojure.xml/parse strm))]
 				(parse-aftags-tenured (parse-gc-aftags xml-data))))))
+
+(defn parse-native-gc-file
+  "Load the garbage collection xml document, native_stderr.log.
+ Extract the XML memory data after the 'gc/garbage collection' tag.
+ @return List of data point values {:totalbytes 100663296, :freebytes 88476392, :percent 87} ..."
+  [xml-str]
+  ;;;;;;;;;;;;;;;
+  (when xml-str
+	(when-let [xml-data (when-try (clojure.xml/parse xml-str))]
+			  (parse-aftags-tenured (parse-gc-aftags xml-data)))))
+
+(defn load-native-gc-xml
+  "Load the garbage collection xml document, native_stderr.log.
+ Extract the XML memory data after the 'gc/garbage collection' tag.
+ @return List of data point values {:totalbytes 100663296, :freebytes 88476392, :percent 87} ..."
+  [data file?]
+  ;;;;;;;;;;;;;
+  (if file? (parse-native-gc-file data)
+	  (parse-native-gc-xml data)))
 				
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;load-native-gc-xml
