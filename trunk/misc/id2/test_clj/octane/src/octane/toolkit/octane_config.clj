@@ -87,7 +87,7 @@
 
 (defn system-variable
   "Replace an instance of the system property within a given string"
-  [var str to]
+  [str var to]
   ;;;;;;;
   (when str (. str replaceAll var to)))
 

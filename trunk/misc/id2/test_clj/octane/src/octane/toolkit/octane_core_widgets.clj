@@ -31,7 +31,8 @@
 			 octane.toolkit.octane_file_database
 			 octane.toolkit.octane_graphs
 			 octane.toolkit.octane_search_dialog
-			 octane.toolkit.octane_regex_search)
+			 octane.toolkit.octane_regex_search
+			 octane.toolkit.octane_analytics)
 	(:import (java.util Date)
 			 (org.eclipse.swt SWT)
 			 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
@@ -210,7 +211,8 @@
       (. setText (. resources-win getString "Tools_menu_title"))
       (. setMenu (create-tools-menu disp sh)))
     (doto analytics-item
-      (. setText (. resources-win getString "Analytics_menu_title")))
+      (. setText (. resources-win getString "Analytics_menu_title"))
+	  (. setMenu (create-analytics-menu disp sh)))
     (doto graphs-item
       (. setText (. resources-win getString "Graphs_menu_title"))
       (. setMenu (create-graphs-menu disp sh)))

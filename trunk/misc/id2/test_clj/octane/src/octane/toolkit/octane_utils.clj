@@ -24,6 +24,7 @@
 	(:use    octane.toolkit.public_objects
 			 octane.toolkit.octane_main_constants)
 	(:import (java.util Date)
+			 (java.nio CharBuffer)
 			 (java.text SimpleDateFormat)
 			 (java.lang Runtime)
 			 (java.text SimpleDateFormat)
@@ -148,8 +149,29 @@
 		 (catch Exception e (println "Warn: invalid date format =>" str-date)
 				str-date))))
 
+(defn doc-filter-regex
+  "Return a string document with only the lines of interest"
+  [doc regex-filter]
+  ;;;;;;;;;;;;;;;;;;;
+  (let [res-buffer (new StringBuffer 1024)
+				   bit-pattr (bit-or Pattern/MULTILINE (bit-or Pattern/CASE_INSENSITIVE 1))
+				   p     (octane-pattern (str "^.*" regex-filter ".*$") bit-pattr)
+				   cbuff (. CharBuffer wrap doc)
+				   m     (. p matcher cbuff)]
+	(loop [fnd? (. m find)]
+	  (when fnd?
+		(. res-buffer append (str (. m group) *newline*))
+		(recur (. m find))))
+	;; Return the buffer string
+	(. res-buffer toString)))
 
-  
+(defn flatten [x]
+  (let [s? #(instance? clojure.lang.Sequential %)] 
+	(filter (complement s?) (tree-seq s? seq x))))
+
+(defn keyword-frequency [col]
+  (reduce (fn [counts x] (merge-with + counts {x 1})) {} col))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

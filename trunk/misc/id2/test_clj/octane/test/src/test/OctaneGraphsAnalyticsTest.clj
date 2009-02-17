@@ -8,7 +8,9 @@
 			 (java.io InputStreamReader BufferedReader ByteArrayInputStream))
 	(:use
 	 octane.toolkit.octane_utils
-	 octane.toolkit.ws_garbage_collection)
+	 octane.toolkit.octane_main_constants
+	 octane.toolkit.ws_garbage_collection
+	 octane.toolkit.octane_analytics)
 	(:gen-class
 	 :extends junit.framework.TestCase
      :methods
@@ -18,8 +20,9 @@
 	  ;;[ test_get_tenured [] void ]
 	  [ test_get_timestamp_attr [] void ]
 	  [ test_parse-gc-aftags [] void ]
+	  [ test_simple_reglog_regex [] void ]
+	  [ test_simple_reglog_regex2 [] void ]
 	  ]))
-
 
 (def example-gc-xml-2
 	 "<?xml version=\"1.0\" ?>
@@ -129,6 +132,17 @@
  ]
 )
 
+(def example-request-log
+"
+============
+222.22.22.221 - ABCDX - [13/Feb/2009:07:33:38 -0400] \"POST /Servlet1 HTTP/1.1\" 200 - 
+222.22.22.222 - ABCDY - [13/Feb/2009:07:33:38 -0400] \"POST /Servlet2 HTTP/1.1\" 200 - 
+222.22.22.223 - ABCDZ - [13/Feb/2009:07:33:38 -0400] \"POST /Servlet3 HTTP/1.1\" 404 - 
+222.22.22.224 - ABCDA - [13/Feb/2009:07:33:38 -0400] \"POST /Servlet3 HTTP/1.1\" 500 - 
+222.22.22.225 - ABCDB - [13/Feb/2009:07:33:38 -0400] \"POST /Servlet5 HTTP/1.1\" 200 -
+========
+Example
+")
 
 (defn -init [_] ()) 
 
@@ -147,7 +161,6 @@
   (let [s2 example-gc-xml]
 	(let [res (load-native-gc-xml s2 false)]
 	  (Assert/assertNotNull res)
-	  (pprint-list res)
 	  (doseq [node res]
 		  (Assert/assertNotNull "Invalid Result Data" node))
 	  )))
@@ -170,7 +183,39 @@
 	;;  ( {:af-tag [{:tag :minimum, :attrs {:requested_bytes 32}, :content nil}], :timestamp 1234609337000} 
     ;;    {:af-tag [{:tag :minimum, :attrs {:requested_bytes 34}, :content nil}], :timestamp 1234609397000})
 	(Assert/assertNotNull (parse-gc-aftags doc))))
-				 
+
+(defn -test_simple_reglog_regex [_] 
+  (let [r *request-log-regex*
+		  line "222.22.22.222 - ABCDE - [13/Feb/2009:07:33:38 -0400] \"POST /Servlet1 HTTP/1.1\" 200 - "
+		  p  (octane-pattern_ r)
+		  m  (. p matcher line)]
+	(. m find)
+	(Assert/assertTrue   "Invalid group count" (= (. m groupCount) 5))
+	(Assert/assertEquals "222.22.22.222" (. m group 1))
+	(Assert/assertEquals "ABCDE" (. m group 2))
+	(Assert/assertEquals "13/Feb/2009:07:33:38 -0400" (. m group 3))
+	(Assert/assertEquals "POST /Servlet1 HTTP/1.1" (. m group 4))
+	(Assert/assertEquals "200" (. m group 5))))
+
+(defn -test_simple_reglog_regex2 [_] 
+  (let [r *request-log-regex*
+		  data example-request-log
+		  lines (seq (.split data *newline*))
+		  pttr  (octane-pattern_ r)]
+	(let [freq 
+		  (keyword-frequency
+		   (flatten
+			(loop [all-lines lines prev-list ()]
+			  (if all-lines
+				(let [res (when-let [lst (build-request-list pttr all-lines)]
+									(cons lst prev-list))]
+				  (recur (rest all-lines) (if res res prev-list)))
+				prev-list))))]
+	  (Assert/assertNotNull freq))))
+
+(defn -test_simple_reglog_regex3 [_] 
+  (Assert/assertNotNull (request-frequency example-request-log)))
+		 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
