@@ -19,7 +19,10 @@
 			3. Analytics       (!)
 			4. Doc - XML -> XSL
 			5. Open Jars, Open Zip Files
-			6. Open large files (?) - might limit opening large files
+			6. Open large files (?) - might limit opening large files, java nio
+				Possible max of 28MB
+			7. Log4j (very careful)
+			8. Timeout/Alarm long running processes
 
 	+ 2/14/2009	Berlin Brown	
 		* Output data to text buffer

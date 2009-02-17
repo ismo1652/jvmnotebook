@@ -140,6 +140,8 @@
     gridLayout))
         
 (defn create-shell [disp sh]
+  ;; Create shell and continue with other inits
+  (. *styled-text* addLineStyleListener text-style-listener)
   ;; Note change in 'doto' call, dot needed.
   (let [layout (create-grid-layout)]
     (doto sh
@@ -159,7 +161,7 @@
 (defn 
   #^{:doc "Initialize the SWT window, set the size add all components"}
   create-gui-window [disp sh]
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   
   ;; Set the tab folder and items with the main text area
   ;; and other SWT oriented inits.
@@ -190,7 +192,6 @@
   " Application Entry Point, launch the main window and wait for events"
   []
   ;;;;
-
   (println "Launching Octane Text Viewer...")
   (create-gui-window *display* *shell*)
   (let [o (new Object)] (locking o (. o (wait)))))
