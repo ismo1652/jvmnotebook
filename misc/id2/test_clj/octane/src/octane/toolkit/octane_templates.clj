@@ -59,6 +59,9 @@
  Example Regex Notes and Textpad.  Text will highlight when a regex
  match is found.  Select the 'Find' button to query against the main buffer.
  See the History Console for additional messages.
+
+ Note: when applying the regex in the regex window, use [SINGLE BACKSLASH] to escape
+       a particular character.
 -------------------
 ------------------
  Predefined Character Classes
@@ -118,6 +121,11 @@ Example Text below:
 Example Patterns:
 (\\S*):\\s*\\[GC\\s*(\\S*):\\s*
 \\[DefNew:\\s*(\\S*)(K|M)\\-\\>(\\S*)(K|M)\\((.*)$
+
+------------------------------------------------------------
+222.222.22.222 - XXXXX - [13/Feb/2009:00:19:58 -0400] \"POST /Servlet HTTP/1.1\" 200 - 
+
+ | app01 | someapp | some.sql | whatid | theurl | 2009.02.13:13:24:58:936 | 2009.02.13:13:24:58:940 | 4 | data=YYYY,x_template=1
 
 ------------------------------------------------------------
 The House of Representatives shall be composed of Members chosen every 

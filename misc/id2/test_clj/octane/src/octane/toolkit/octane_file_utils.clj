@@ -25,8 +25,7 @@
 			 octane.toolkit.octane_config
 			 octane.toolkit.public_objects
 			 octane.toolkit.octane_utils
-			 octane.toolkit.octane_gui_utils
-			 octane.toolkit.octane_core_widgets)
+			 octane.toolkit.octane_gui_utils)
 	(:import (org.eclipse.swt.graphics Color RGB)
 			 (org.eclipse.swt SWT)
 			 (java.text MessageFormat)
@@ -139,34 +138,62 @@
               (when (prop-bool resources-win-opts "file_monitor_enabled")
                 (. *styled-text* setSelection (. *styled-text* getCharCount))))))
 
-(defn open-file [name quiet]
+(defn open-file
+  " Attempt to open a file and set the content to the main buffer."
+  [name quiet]
+  ;;;;;;;;;;;;;;;;;;;;;;
   (when name
     (when (not quiet)
-      (history-add-text  (str "Loading file => " name "\n"))
-      (status-set-text   (str "Loading file => " name)))
+	  (async-status-history *display* (str "Loading file => " name)))
     (let [file (new File name)]
       (set-curfile-open name)
       (location-set-text name)
-      (if (not (. file exists))
-        (display-error "File does not exist")
-        (let [disp (. *styled-text* getDisplay)
-				   file-str-data (open-file-util file (. file getPath))]
-          ;; Set the file state opened, and start monitor loop
-          (on-file-open file)
-          ;; Check for file last modified
-          (. disp asyncExec (open-file-listener file-str-data)))))))
+      (if (not (. file exists)) (display-error "File does not exist")
+		  (let [disp (. *styled-text* getDisplay)
+					 file-str-data (open-file-util file (. file getPath))]
+			;; Set the file state opened, and start monitor loop
+			(on-file-open file)
+			;; Check for file last modified
+			(. disp asyncExec (open-file-listener file-str-data)))))))
 
-(defn dialog-open-file []
+(defn dialog-open-file 
+  "On some input widget event, invoke the open dialog.  When the user
+ selects a file, the filename is returned from FileDialog.open."
+  []
+  ;;;;;;
   (. fileDialog setText "Open File")
   (. fileDialog setFilterExtensions (into-array *openfile-wildcard-seq*))
   (open-file (. fileDialog open) false))
 
+(defn simple-openfile-handler 
+  "This function is used with the simple dialog file opener, when the dialog
+ opener is invoked, this handler function will get invoked with the path of the
+ file to open.  
+ Where file-handler takes the following arguments : <DISPLAY> <FILE> <PATH>"
+  [my-disp path file-handler] 
+  ;;;;;;;;;;;;;;;;
+  (async-status-history my-disp (str "Loading file => " path))
+  (let [file (new File path)]
+	(set-curfile-open path)
+	(location-set-text path)
+	(file-handler my-disp file path)))
+
+(defn simple-dialog-open-file 
+  "On some input widget event, invoke the open dialog.  When the user
+ selects a file, the filename is returned from FileDialog.open."
+  [disp fn-handler wild-cards]
+  ;;;;;;
+  (. fileDialog setText "Open File")
+  (. fileDialog setFilterExtensions (into-array wild-cards))
+  (when fn-handler
+	(when-let [path-file (. fileDialog open)]
+			  (simple-openfile-handler disp path-file fn-handler))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Note: open file dialog is in octane_core_widgets.clj
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(def  cur-file-info (ref {:file-name nil :file-path nil :last-mod nil :line-num 0 :file-size 0
-                                         :parent-dirname nil :writeable false :exists false}))
+(def cur-file-info (ref {:file-name nil :file-path nil :last-mod nil :line-num 0 :file-size 0
+						:parent-dirname nil :writeable false :exists false}))
 (defn set-file-info [nm pth mod-t n prnt w xsts sz]
   (dosync (commute cur-file-info assoc 
                    :file-name nm :file-path pth :last-mod mod-t :file-size sz
@@ -211,12 +238,11 @@
                                         ;; the file.
                                         (open-file pth true)))))))))
 
-;;**************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; File Utilities
-;;**************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defn open-file-util [file file-path]
-  #^{:doc "Use java oriented approach for loading a file into memory"}
-  
+  #^{:doc "Use java oriented approach for loading a file into memory"}  
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
         instr (new LineNumberReader (new InputStreamReader stream))
@@ -228,9 +254,14 @@
         (. buf append readBuffer 0 n)
         (recur (. instr read readBuffer))))
     ;; File info data has been collected, set some of the file properties
-    (set-file-info (. file  getName) (. file  getAbsolutePath) 
-                   (. file  lastModified) (. instr getLineNumber) (. file  getParent)
-                   (. file  canWrite) (. file  exists) (. file  length))
+    (set-file-info (. file getName) 
+				   (. file getAbsolutePath) 
+                   (. file lastModified) 
+				   (. instr getLineNumber) 
+				   (. file getParent)
+                   (. file canWrite) 
+				   (. file exists) 
+				   (. file length))
     (. instr close)
     (. buf toString)))
 
@@ -256,7 +287,6 @@
        (catch Exception e
          (println "WARN <deserialize-object>: Could not load serialized file: "  path " error=" e)))) 
       
-
 (defn save-file-list []
   (let [obj (get-recent-file-table)]
     (when obj
@@ -317,7 +347,9 @@
 ;; Location Bar and Utilities
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defn open-file-or-dir [name]
+(defn open-file-or-dir 
+  " Detect if the path is a file or a directory and open accordingly."
+  [name]
   ;; Check if the file exists, open the file or directory
   (let [file  (new File name)]
     (if (not (. file exists))
@@ -350,7 +382,6 @@
           (let []
             (println "Opening file from command-line argument list")
             (open-file (first args) false)))))))
-
                                         
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

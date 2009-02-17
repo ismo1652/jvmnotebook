@@ -5,20 +5,21 @@
 		* Test cases, documentation
 		* Keystrokes
 		* Add system properties definition
+		* USE JAVA NIO for large files
 		
 		FEATURES NOT COMPLETE, first release:
-			1. Scripts
-			2. Web documentation
-			3. Web server / app server
+			1. Scripts (X)
+			2. Web documentation (X)
+			3. Web server / app server (X)
+			4. Better code generation (add junit, clojure test, etc)
 
 		FEATURES MUST COMPLETE:
-			1. Keystrokes
-			2. Finish search
-			3. Analytics
-			4. Better code generation (add junit, clojure test, etc)
-			5. Doc - XML -> XSL
-			6. Open Jars, Open Zip Files
-			7. Open large files
+			1. Keystrokes      (+)
+			2. Finish search   (+)
+			3. Analytics       (!)
+			4. Doc - XML -> XSL
+			5. Open Jars, Open Zip Files
+			6. Open large files (?) - might limit opening large files
 
 	+ 2/14/2009	Berlin Brown	
 		* Output data to text buffer

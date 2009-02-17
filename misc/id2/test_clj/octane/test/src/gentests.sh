@@ -23,6 +23,14 @@ LIB10=$TOP_DIR/lib/jmock/objenesis-1.0.jar
 LIB11=$TOP_DIR/lib/jmock/jmock-legacy-2.5.1.jar
 CLOJURE=$TOP_DIR/../../src
 
+JFREE_LIB=$TOP_DIR/../../lib/jfreechart
+LIB6j=$JFREE_LIB/gnujaxp.jar
+LIB7j=$JFREE_LIB/jcommon-1.0.15.jar
+LIB8j=$JFREE_LIB/jfreechart-1.0.12-experimental.jar
+LIB9j=$JFREE_LIB/jfreechart-1.0.12.jar
+LIB10j=$JFREE_LIB/jfreechart-1.0.12-swt.jar
+LIB11j=$JFREE_LIB/swtgraphics2d.jar
+
 # Check the clojure library path
 if [ -f $LIB1 ]
 then
@@ -53,7 +61,8 @@ case "$OS" in
 		CP=".;test;src;classes;${LIB1};${LIB2};$CONF_LIB;$LIB4;$LIB5" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:${LIB6}:${LIB7}:${LIB8}:${LIB9}:${LIB10}:${LIB11}:${CLOJURE}:$CONF_LIB" ;;
+		LIB_CP_JFREE=$LIB6j:$LIB7j:$LIB8j:$LIB9j:$LIB10j:$LIB11j
+		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:${LIB6}:${LIB7}:${LIB8}:${LIB9}:${LIB10}:${LIB11}:$LIB_CP_JFREE:${CLOJURE}:$CONF_LIB" ;;
 esac 
 
 echo "(SCRIPT): -------------------------"
@@ -76,7 +85,7 @@ MAIN=$MAIN4
 mkdir -vp classes
 
 java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl $FILE 
-java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" junit.textui.TestRunner $MAIN 
+java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" junit.textui.TestRunner $MAIN
 
 #;;;;;;;;;;;;;;;;
 # End of Script

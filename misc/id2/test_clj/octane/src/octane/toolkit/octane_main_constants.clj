@@ -110,8 +110,9 @@
 (def *database-grp-button*  "Filter Group")
 (def *database-serv-button* "Filter Server")
 
-(def *openfile-wildcard-seq* ["*.*" "*.log" "*.olog" "*.octlog"
+(def *openfile-wildcard-seq* ["*.*" "*.log" "*.olog" "*.ologs" "*.octlog"
                               "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
+(def *sysout-wildcard-seq*   ["*.log" "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri" "*.*"])
 
 (def *prop-main-database* "Main_database_config")
 
