@@ -18,10 +18,11 @@
 	  ;;[ test_print_gc_xml [] void ]
 	  [ test_load_gc_xml [] void ]
 	  ;;[ test_get_tenured [] void ]
-	  [ test_get_timestamp_attr [] void ]
-	  [ test_parse-gc-aftags [] void ]
-	  [ test_simple_reglog_regex [] void ]
-	  [ test_simple_reglog_regex2 [] void ]
+	  [ test_get_timestamp_attr    [] void ]
+	  [ test_parse-gc-aftags       [] void ]
+	  [ test_simple_reglog_regex   [] void ]
+	  [ test_simple_reglog_regex2  [] void ]
+	  [ test_build_queryregex-list [] void ]
 	  ]))
 
 (def example-gc-xml-2
@@ -144,6 +145,17 @@
 Example
 ")
 
+(def example-query-log
+"
+============
+ | app01 | file.sql | data2 | u3 | 2009.02.09:08:00:13:397 | 2009.02.09:08:00:15:475 | 444 | doc=3
+ | app02 | file2.sql | data3 | u3 | 2009.02.09:08:00:13:397 | 2009.02.09:08:00:15:475 | 444 | doc=3
+ | app03 | file3.sql | data4 | u3 | 2009.02.09:08:00:13:397 | 2009.02.09:08:00:15:475 | 444 | doc=3
+ | app03 | file3.sql | data4 | u3 | 2009.02.09:08:00:13:397 | 2009.02.09:08:00:15:475 | 444 | doc=3
+========
+Example
+")
+
 (defn -init [_] ()) 
 
 (defn -test_print_gc_xml [_]
@@ -215,6 +227,17 @@ Example
 
 (defn -test_simple_reglog_regex3 [_] 
   (Assert/assertNotNull (request-frequency example-request-log)))
+
+(defn -test_build_queryregex-list [_]
+  (let [data example-query-log
+			 lines (seq (.split data *newline*))]
+	(let [res (loop [all-lines lines prev-list ()]
+				(if all-lines
+				  (let [res (when-let [lst (build-queryregex-list all-lines)]
+									  (cons lst prev-list))]
+					(recur (rest all-lines) (if res res prev-list)))
+				  prev-list))]
+	  (println (keyword-frequency (flatten res))))))
 		 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case

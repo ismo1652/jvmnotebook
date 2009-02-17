@@ -56,8 +56,11 @@
 (def *request-log-regex*
 	 "([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})\\s-\\s(\\S*?)\\s-\\s\\[(.*?)\\]\\s\\\"(.*?)\\\"\\s([0-9]{3})")
 
+(def *query-log-regex--*
+	 "\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|.*$")
+
 (def *query-log-regex*
-	 "\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|")
+	 "\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?)\\s\\|\\s(\\S*?).*$")
 
 (defn build-request-list [pttr all-lines]
   (let [m (. pttr matcher (first all-lines))]
@@ -68,6 +71,18 @@
 			   req    (. m group 4)
 			   status (. m group 5)]
 		(list ip uid req status)))))
+
+(defn build-queryregex-list [all-lines]
+  (let [pattr (octane-pattern_ *query-log-regex*)
+			  m (. pattr matcher (first all-lines))]
+	(when (. m find)
+	  (let [app (. m group 1)
+				query (. m group 2)
+				func  (. m group 3)]
+		(list app query func)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn request-frequency
   "Analyze the lines of the request log and return a map of keyword frequency statistics"
@@ -95,7 +110,7 @@
 		(. my-disp asyncExec (proxy [Runnable] []
 									(run [] (add-main-text filter-data)))))))
 
-(defn analytics-reqlog-stats
+(defn analytics-reqlog-stats  
   [file-str-data]
   ;;;;;;;;;;;;;;;;;;
   (let [req-map (request-frequency file-str-data)
@@ -103,6 +118,45 @@
 	(doseq [req-data req-map]
 		(. buf append (str req-data \newline)))
 	(. buf toString)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Query Regex Helpers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn query-frequency
+  "Analyze the lines of the request log and return a map of keyword frequency statistics"
+  [doc-str]
+  ;;;;;;;;;;;;;;;;;;;
+  (keyword-frequency
+   (flatten
+	(loop [all-lines (seq (.split doc-str *newline*)) prev-list ()]
+	  (if all-lines
+		(let [res (when-let [lst (build-queryregex-list all-lines)]
+							(cons lst prev-list))]
+		  (recur (rest all-lines) (if res res prev-list)))
+		prev-list)))))
+
+(defn analytics-query-stats  
+  [file-str-data]
+  ;;;;;;;;;;;;;;;;;;
+  (let [my-map (query-frequency file-str-data) buf (new StringBuffer)]
+	(doseq [my-data my-map]
+		(. buf append (str my-data \newline)))
+	(. buf toString)))
+
+(defn analytics-query-handler
+  "This function is used with the simple dialog file opener, when the dialog
+ opener is invoked, this handler function will get invoked with the path of the
+ file to open"
+  [my-disp file path] 
+  ;;;;;;;;;;;;;;;;  
+  (if (not (. file exists)) (display-error "File does not exist")
+	  (let [file-str-data (open-file-util file (. file getPath))
+						  filter-data ( analytics-query-stats file-str-data)]
+		(. my-disp asyncExec (proxy [Runnable] []
+									(run [] (add-main-text filter-data)))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn analytics-reqlog-stats-handler
   "This function is used with the simple dialog file opener, when the dialog
@@ -143,12 +197,11 @@
 		 (proxy [SelectionAdapter] []
 				(widgetSelected [e] 
 								(simple-dialog-open-file 
-								 *display* analytics-reqlog-stats-handler
+								 *display* analytics-query-handler
 								 *sysout-wildcard-seq*)))))))
 ;;;;;;;;;;;;;;;;;;;;;;;
-	;; End of Function
+	;; End of Function add menu items //->
 ;;;;;;;;;;;;;;;;;;;;;;;
-
 
 (defn create-analytics-menu
   "Build the analytics menu items"
