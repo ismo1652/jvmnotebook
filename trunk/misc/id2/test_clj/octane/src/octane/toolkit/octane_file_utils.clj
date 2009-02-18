@@ -133,7 +133,7 @@
   (proxy [Runnable] []
          (run []
               (add-main-text file-str-data)
-              ;; Attempt to set cursor to the end
+              ;; Attempt to set cursor/caret to the end
               ;; when refresh is enabled.
               (when (prop-bool resources-win-opts "file_monitor_enabled")
                 (. *styled-text* setSelection (. *styled-text* getCharCount))))))

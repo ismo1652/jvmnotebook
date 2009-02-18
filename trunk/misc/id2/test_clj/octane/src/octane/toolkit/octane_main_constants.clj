@@ -24,14 +24,21 @@
 
 (ns octane.toolkit.octane_main_constants
 	(:use  octane.toolkit.octane_utils
-		   octane.toolkit.octane_config))
+		   octane.toolkit.octane_config)
+    (:import  (org.eclipse.swt.graphics Color RGB)
+              (org.eclipse.swt SWT)
+              (java.text MessageFormat)
+              (java.util.regex Pattern)
+              (java.nio CharBuffer MappedByteBuffer)
+              (java.nio.channels FileChannel)
+              (java.nio.charset Charset)
+              (java.nio.charset CharsetDecoder)
+              (java.util.regex Matcher)
+              (java.util.regex Pattern)
+              (java.util.regex PatternSyntaxException)
+              (java.nio ByteBuffer)))
 
-(import '(org.eclipse.swt.graphics Color RGB))
-(import '(org.eclipse.swt SWT))
-(import '(java.text MessageFormat))
-
-;; The on application load header message is used
-;;
+;; The on application load header message 
 (def hist-header-msg
 "************************************************************
 * Octane Log Viewer Init
@@ -115,6 +122,21 @@
 (def *sysout-wildcard-seq*   ["*.log" "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri" "*.*"])
 
 (def *prop-main-database* "Main_database_config")
+
+;; For Regex Patterns, Flags may include CASE_INSENSITIVE, MULTILINE, DOTALL, UNICODE_CASE, and CANON_EQ
+;; Establish the charset and decoder, used with grep functionality.
+(def *regex-line-pattern* (. Pattern compile ".*\\r?\\n"))
+(def *iso-8859-charset*   (. Charset forName "ISO-8859-15"))
+(def *charset-decoder*    (. *iso-8859-charset* newDecoder))
+
+(defn get-char-buf-decoder
+  "Get java nio character buffer from decoder"
+  [doc]
+  ;;;;;;;;;;;
+  (let [dummy1 (. *charset-decoder* reset)
+        ;; BugFix/Hack, adding newline to end of document
+        char-buf (. *charset-decoder* decode (. ByteBuffer wrap (. (str doc \newline) getBytes)))]
+    char-buf))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

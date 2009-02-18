@@ -103,7 +103,7 @@
          (widgetDefaultSelected 
           [event]
           (let [items (. db-file-table getSelection)]                                  
-            (when (> (count items) 0)                                    
+            (when (> (count items) 0)                      
               ;; We can extract the open path
               ;; straight from the table item data.
               (let [item (first items)

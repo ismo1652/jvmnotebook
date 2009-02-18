@@ -18,6 +18,8 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
+;;; See the eclipse documentation:
+;;; http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/index.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns octane.toolkit.octane_search_dialog
@@ -39,12 +41,34 @@
 
 (def *search-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE 1))))
 
-(def search-shell        (new Shell *shell* *search-style*))
-(def search-label        (new Label search-shell SWT/LEFT))
-(def search-filter-box   (new Text search-shell SWT/BORDER))
-(def search-composite    (new Composite search-shell SWT/NONE))
-(def search-find-button  (new Button search-composite SWT/PUSH))
-(def search-close-button (new Button search-composite SWT/PUSH))
+;; Find next 'matcher' state
+(def  *find-next-state*           (ref nil))
+(defn get-find-next-state []      (deref *find-next-state*))
+(defn set-find-next-state [match] (dosync (ref-set *find-next-state* match)))
+
+(defn set-find-next-matcher
+  "Create a new regex matcher for use with 'find-next'"
+  [doc regex-str-term]
+  ;;;;;;;;;;;;;;;;;;;;;
+  (set-find-next-state (new-find-next-matcher doc regex-str-term)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Create the Widgets
+;; Will be positioned on order of creation
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(def search-shell          (new Shell *shell* *search-style*))
+(def search-label          (new Label search-shell SWT/LEFT))
+(def search-filter-box     (new Text search-shell SWT/BORDER))
+
+(def regex-find-label      (new Label search-shell SWT/LEFT))
+(def regex-check-box       (new Button search-shell SWT/CHECK))
+(def casesens-find-label   (new Label search-shell SWT/LEFT))
+(def casesens-check-box    (new Button search-shell SWT/CHECK))
+
+(def search-composite      (new Composite search-shell SWT/NONE))
+(def search-find-button    (new Button search-composite SWT/PUSH))
+(def search-close-button   (new Button search-composite SWT/PUSH))
+(def search-status-label   (new Label search-shell (bit-or SWT/LEFT (bit-or SWT/BORDER 1))))
 
 (defn create-search-grid-layout []
   (let [gridLayout (new GridLayout)]
@@ -52,31 +76,112 @@
     (set! (. gridLayout marginWidth)  10)
     (set! (. gridLayout numColumns) 2) gridLayout))
 
-(defn init-search-helper
-  "Create the layout and place with the widgets for the search box"
-  [sh]
-  ;;;;;
-  (let [gd-textbox (new GridData GridData/FILL_HORIZONTAL)
-        gd-composite (new GridData GridData/HORIZONTAL_ALIGN_FILL)
-        comp-layout  (new RowLayout)
-        rowd-find    (new RowData 98 26)]
-    (. search-label setText (prop-str resources-win "Search_for_label"))
-    (set! (. gd-textbox widthHint) 200)
-    (. search-filter-box setLayoutData gd-textbox)
-    ;; Set the button composite widget
-    (set! (. gd-composite horizontalSpan) 2)
-    (. search-composite setLayoutData gd-composite)
-    ;; Position the buttons a couple of pixels away.
-    (set! (. comp-layout marginTop)  12)
-    (set! (. comp-layout marginLeft) 28)
-    (. search-composite setLayout comp-layout)
-    ;; Set the composite buttons
+(defn search-label-set-text
+  "Helper function to set the search label text"
+  []
+  ;;;
+  (. search-label setText (prop-str resources-win "Search_for_label"))
+  (. regex-find-label setText "Regular Expressions:")
+  (. casesens-find-label setText "Case Sensitive:")
+  (. search-status-label setText (str "Find Keyword Dialog Opened - " (date-time))))
+
+(def search-on-close-listener
+     (proxy [SelectionListener][]
+            (widgetSelected [event]
+                            (set! (. event doit) false)
+                            (. search-shell setVisible false))
+            (widgetDefaultSelected [event]
+                                   (set! (. event doit) false)
+                                   (. search-shell setVisible false))))
+
+(defn on-found-term-handler
+  "Handler for when a term is found"
+  [sdisp m term text]
+  ;;;;;;;;;;;;;;;;;
+  (. search-status-label setText (str "Found term => " term " at " (. m start)))
+  ;;(async-call *display* (fn [_]
+                            (println "dogs")
+                            (. *styled-text* setSelection (. m start))
+                            (refresh-textarea))
+
+(defn search-find-next-handler
+  "When the user selects the find next button, invoke this find next handler.
+ Search the main buffer for the term in the 'find' box."
+  [event]
+  ;;;;;;;;;;;;
+  (let [disp (. search-shell getDisplay)
+        term (. search-filter-box getText)
+        text (. *styled-text* getText)]
+    (if (and disp term text (> (length text) 0) (> (length term) 0))
+      ;; Create the find next matcher from the document and term
+      (let [fns (get-find-next-state)
+            m (if fns fns (new-find-next-matcher text term))]
+        ;; Set the public matcher object, if it doesnt exist
+        (when (not fns) (set-find-next-state m))
+        (if (. m find)
+          ;; Get the position
+          (on-found-term-handler disp m term text)
+          (. search-status-label setText (str "Could not find term => " term))))
+      (let []
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Err:
+        ;; Send status error message, could not find
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        (if (not term) 
+          (. search-status-label setText "Invalid Search Term (empty)")
+          (. search-status-label setText "Invalid Search Term (empty)"))
+        (if (not text) 
+          (. search-status-label setText "Invalid Buffer Document (empty)")
+          (. search-status-label setText "Invalid Buffer Document (empty)"))))))
+
+(def search-find-next-listener
+     (proxy [SelectionListener][]
+            (widgetSelected [event] (search-find-next-handler event))
+            (widgetDefaultSelected [event] (search-find-next-handler event))))
+
+(defn init-search-buttons
+  "Set the default properties for the search buttons"
+  []
+  ;; Set the composite buttons
+  (let [rowd-find (new RowData 98 24)]
     (. search-find-button setText "Find Next")
     (. search-find-button setLayoutData rowd-find)
     (. search-find-button setEnabled true)
+    (. search-find-button addSelectionListener search-find-next-listener)
     (. search-close-button setText "Close")
     (. search-close-button setLayoutData rowd-find)
-    (. search-close-button setEnabled true)))
+    (. search-close-button setEnabled true)
+    (. search-close-button addSelectionListener search-on-close-listener)))
+
+(defn init-search-helper
+  "Create the layout and place with the widgets for the search box
+ Notes On Grid Data (useful for search widgets):
+ GridData(int horizontalAlignment, int verticalAlignment, boolean grabExcessHorizontalSpace, 
+               boolean grabExcessVerticalSpace, int horizontalSpan, int verticalSpan)"
+  [sh]
+  ;;;;;
+  (let [gd-textbox (new GridData GridData/FILL_HORIZONTAL)
+        gd-composite   (new GridData SWT/NONE)
+        gd-status-bar  (new GridData SWT/FILL SWT/FILL true false 2 1)
+        comp-layout    (new RowLayout)]
+    (search-label-set-text)
+    (set! (. gd-textbox widthHint) 200)
+    (. search-filter-box setLayoutData gd-textbox)
+    (. search-status-label setLayoutData gd-status-bar)
+    ;; Set the button composite widget
+    (set! (. gd-composite horizontalSpan) 2)
+    ;; verticalAlignment specifies how controls will be positioned vertically within a cell
+    (set! (. gd-composite horizontalAlignment) SWT/LEFT)
+    (. search-composite setLayoutData gd-composite)
+    ;; Position the buttons a couple of pixels away.
+    (set! (. comp-layout marginTop)  4)
+    (set! (. comp-layout marginLeft) 2)
+    (. search-composite setLayout comp-layout)    
+    (init-search-buttons)))
+
+;;;;;;;;;;;;;;;;;;;;
+;; End of Function
+;;;;;;;;;;;;;;;;;;;;
 
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
@@ -132,7 +237,7 @@
       (let [mitem (create-menu-item menu (menu-key :name) (menu-key :proc))]
         ;; Menu item created, now associate the widget with the global 'ref'
         (set-findgrep-widg-state (keyword (menu-key :name)) (str mitem))
-        (println (get-findgrep-widg-state (keyword (menu-key :name)))))))
+        (get-findgrep-widg-state (keyword (menu-key :name))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Script

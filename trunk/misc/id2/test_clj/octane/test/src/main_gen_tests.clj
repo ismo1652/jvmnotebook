@@ -6,7 +6,7 @@
 (defn main []
 	(compile 'test.OctaneSampleTestGen)
 	;;(compile 'test.OctaneFullTest)
-	(compile 'test.OctaneSampleMockTest)
+	;;(compile 'test.OctaneSampleMockTest)
 	(compile 'test.OctaneGraphsAnalyticsTest)
 	(compile 'test.OctaneUtilsTest))
 
