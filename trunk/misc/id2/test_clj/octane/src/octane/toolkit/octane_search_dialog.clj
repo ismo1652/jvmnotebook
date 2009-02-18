@@ -39,32 +39,44 @@
 
 (def *search-style* (bit-or SWT/CLOSE (bit-or SWT/BORDER (bit-or SWT/TITLE 1))))
 
-(def search-shell       (new Shell *shell* *search-style*))
-(def search-label       (new Label search-shell SWT/LEFT))
-(def search-filter-box  (new Text search-shell SWT/BORDER))
-(def search-composite   (new Composite search-shell SWT/NONE))
-(def search-find-button (new Button search-composite SWT/PUSH))
+(def search-shell        (new Shell *shell* *search-style*))
+(def search-label        (new Label search-shell SWT/LEFT))
+(def search-filter-box   (new Text search-shell SWT/BORDER))
+(def search-composite    (new Composite search-shell SWT/NONE))
+(def search-find-button  (new Button search-composite SWT/PUSH))
+(def search-close-button (new Button search-composite SWT/PUSH))
 
 (defn create-search-grid-layout []
   (let [gridLayout (new GridLayout)]
+    (set! (. gridLayout marginHeight)  8)
+    (set! (. gridLayout marginWidth)  10)
     (set! (. gridLayout numColumns) 2) gridLayout))
 
-(defn init-search-helper [sh]
+(defn init-search-helper
+  "Create the layout and place with the widgets for the search box"
+  [sh]
+  ;;;;;
   (let [gd-textbox (new GridData GridData/FILL_HORIZONTAL)
-                   gd-composite (new GridData GridData/HORIZONTAL_ALIGN_FILL)
-                   layout (new GridLayout)
-                   gd-find (new GridData GridData/HORIZONTAL_ALIGN_END)]    
+        gd-composite (new GridData GridData/HORIZONTAL_ALIGN_FILL)
+        comp-layout  (new RowLayout)
+        rowd-find    (new RowData 98 26)]
     (. search-label setText (prop-str resources-win "Search_for_label"))
     (set! (. gd-textbox widthHint) 200)
     (. search-filter-box setLayoutData gd-textbox)
+    ;; Set the button composite widget
     (set! (. gd-composite horizontalSpan) 2)
     (. search-composite setLayoutData gd-composite)
-    (set! (. layout numColumns) 2)
-    (set! (. layout makeColumnsEqualWidth) true)
-    (. search-composite setLayout layout)
-    (. search-find-button setText "Find")
-    (. search-find-button setLayoutData gd-find)
-    (. search-find-button setEnabled true)))
+    ;; Position the buttons a couple of pixels away.
+    (set! (. comp-layout marginTop)  12)
+    (set! (. comp-layout marginLeft) 28)
+    (. search-composite setLayout comp-layout)
+    ;; Set the composite buttons
+    (. search-find-button setText "Find Next")
+    (. search-find-button setLayoutData rowd-find)
+    (. search-find-button setEnabled true)
+    (. search-close-button setText "Close")
+    (. search-close-button setLayoutData rowd-find)
+    (. search-close-button setEnabled true)))
 
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
