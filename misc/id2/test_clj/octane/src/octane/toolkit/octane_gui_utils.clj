@@ -42,7 +42,11 @@
     (. setMessage msg)
     (. open)))
 
-(defmacro async-call [disp & body]
+(defmacro async-call 
+  "Asynchronous execute call.  Create a proxy Runnable object and then execute the 
+ body code"
+  [disp & body]
+  ;;;;;;;;;;;;;;
   `(. ~disp asyncExec (proxy [Runnable] []
                              (run [] ~@body))))
 

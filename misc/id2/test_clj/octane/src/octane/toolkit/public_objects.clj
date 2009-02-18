@@ -40,15 +40,13 @@
 
 (def tab-folder)
 
-(def swt-textarea-style (bit-or SWT/BORDER 
-								(bit-or SWT/MULTI 
-                                    (bit-or SWT/H_SCROLL
-                                            (bit-or SWT/V_SCROLL 1)))))
+(def swt-textarea-style (bit-or SWT/BORDER (bit-or SWT/MULTI 
+                                                   (bit-or SWT/H_SCROLL
+                                                           (bit-or SWT/V_SCROLL 1)))))
 
-(def swt-tabtext-style (bit-or SWT/BORDER 
-                               (bit-or SWT/MULTI 
-                                       (bit-or SWT/H_SCROLL
-                                               (bit-or SWT/V_SCROLL 1)))))
+(def swt-tabtext-style (bit-or SWT/BORDER (bit-or SWT/MULTI 
+                                                  (bit-or SWT/H_SCROLL
+                                                          (bit-or SWT/V_SCROLL 1)))))
 
 (def colors-vec  (new Vector))
 (def buffer-1    (new StringBuffer 4096))

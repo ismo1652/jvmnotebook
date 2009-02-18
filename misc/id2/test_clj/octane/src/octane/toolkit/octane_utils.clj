@@ -18,6 +18,7 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
+;;; See for regex: http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns octane.toolkit.octane_utils
@@ -28,7 +29,8 @@
 			 (java.text SimpleDateFormat)
 			 (java.lang Runtime)
 			 (java.text SimpleDateFormat)
-			 (java.io InputStreamReader BufferedReader File)
+             (java.nio.channels FileChannel FileChannel$MapMode)
+			 (java.io InputStreamReader FileInputStream BufferedReader File)
 			 (java.util.regex Pattern)))
 
 (def history-add-text)
@@ -47,6 +49,11 @@
 (defn file-exists? [path] (let [file (new File path)] (. file exists)))
 
 (defn octane-pattern [s flags] (. Pattern compile s flags))
+
+(defn octane-safe-pattern [s flags] 
+  (when s    
+    (try (. Pattern compile s flags)
+         (catch Exception e nil))))         
 
 (defn octane-pattern_ [s] (. Pattern compile s))
 
@@ -171,6 +178,73 @@
 
 (defn keyword-frequency [col]
   (reduce (fn [counts x] (merge-with + counts {x 1})) {} col))
+
+(defn simple-grep-regex?
+  "Determine if the text is found"
+  [doc regex-str]
+  ;;;;;;;;;;;;
+  (let [pattr (octane-safe-pattern regex-str
+                                   (bit-or Pattern/CASE_INSENSITIVE (bit-or Pattern/DOTALL 1)))
+        dummy1  (. *charset-decoder* reset)
+        pattr-m (. pattr matcher doc)]
+    (. pattr-m find)))
+
+(defn simple-grep?
+  "Determine if the text is found"
+  [doc term]
+  ;;;;;;;;;;;;;;;;;;;;
+  (simple-grep-regex? doc (str term)))
+
+(defn new-find-next-matcher
+  "Create a new regex matcher for use with 'find-next'"
+  [doc regex-str-term]
+  ;;;;;;;;;;;;;;;
+  (let [flags     (bit-or Pattern/CASE_INSENSITIVE (bit-or Pattern/DOTALL Pattern/MULTILINE))
+        pattr     (octane-safe-pattern regex-str-term flags)
+        char-buf  (get-char-buf-decoder doc)
+        m-pattr   (. pattr matcher char-buf)]
+    m-pattr))
+
+(defn doc-loop-handler
+  "Loop through all the lines in a file and invoke the given handler
+ function.   Where 'my-func' takes one parameter, the current line string."
+  [doc my-func]
+  ;;;;;;;;;;;;;;;
+  (let [char-buf2 (get-char-buf-decoder doc)
+        lm (. *regex-line-pattern* matcher char-buf2)]
+    ;; Loop till end of file/document detected
+    (loop [srch-res (. lm find)]
+      (when srch-res
+        (my-func (. lm group))
+        (recur (. lm find))))))
+
+(defn doc-file-loop-handler
+  "Loop through all the lines in a file and invoke the given handler
+ function.   Where 'my-func' takes two parameters, the current line string and line number."
+  [filename my-func]
+  ;;;;;;;;;;;;;;;;;;;;
+  (let [fis (new FileInputStream (new File filename))
+        fc  (. fis getChannel)
+        sz  (. fc size)
+        bb  (. fc map FileChannel$MapMode/READ_ONLY 0 sz)
+        cb  (. *charset-decoder* decode bb)
+        lm  (. *regex-line-pattern* matcher cb)]
+    ;; Loop till end of file/document detected
+    (loop [srch-res? (. lm find) line-no 0]
+      (when srch-res?
+        (my-func (. lm group) line-no)
+        (recur (. lm find) (+ line-no 1))))))
+
+(defn doc-file-grep
+  "Loop through all the lines in a file and search for the term."
+  [filename term]
+  ;;;;;;;;;;;;;;;;;;;;
+  (let [buf (new StringBuffer)]
+    (doc-file-loop-handler filename 
+                           (fn [line line-num]               
+                               (when (simple-grep? line term)
+                                 (. buf append (str filename ": line " line-num ": " line)))))
+    (. buf toString)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
