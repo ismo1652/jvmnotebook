@@ -80,7 +80,7 @@ MAIN4=test.OctaneGraphsAnalyticsTest
 MAIN5=test.OctaneUtilsTest
 
 FILE=$FILE1
-MAIN=$MAIN4
+MAIN=$MAIN5
 
 mkdir -vp classes
 

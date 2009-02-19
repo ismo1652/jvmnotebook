@@ -14,7 +14,8 @@
              (java.util.regex Matcher)
              (java.util.regex Pattern)
              (java.util.regex PatternSyntaxException)
-             (java.nio ByteBuffer))
+             (java.nio ByteBuffer)
+			 (java.io File))
      (:use
       octane.toolkit.octane_config
       octane.toolkit.octane_main_constants
@@ -28,6 +29,7 @@
        [ test_doc_filter_regex [] void ]
        [ test_regex_grep_prototype [] void ]
        [ test_regex_find_next [] void ]
+	   [ test_traverse_dir [] void ]
        ]))
 
  (defn -init [_] ()) 
@@ -102,6 +104,13 @@ AFilter
      (set-find-next-matcher example-doc term)
      (let [m (get-find-next-state)]
        (Assert/assertTrue (. m find)))))
+
+(defn -test_traverse_dir [_]
+  (let [a (fn [x] (println x))
+		  b (fn [file]
+				(println file)
+				(println (doc-file-grep (. file getAbsolutePath) "test")))]
+	  (traverse-directory (new File ".") a b)))
          
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
