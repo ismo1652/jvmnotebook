@@ -47,8 +47,17 @@
  body code"
   [disp & body]
   ;;;;;;;;;;;;;;
-  `(. ~disp asyncExec (proxy [Runnable] []
-                             (run [] ~@body))))
+  `(. ~disp asyncExec (proxy [Runnable] [] (run [] ~@body))))
+
+(defmacro get-sync-call 
+  "Synchronous execute call.  Create a proxy Runnable object and then execute the 
+ body code"
+  [disp & body]
+  ;;;;;;;;;;;;;;
+  `(let [val-res# (ref nil)]
+     (. ~disp syncExec (proxy [Runnable] [] (run [] (dosync (ref-set val-res# ~@body)))))
+     (. Thread sleep 50)
+     (deref val-res#)))
 
 (defn add-text-buffer [text-field buffer str-data]
      (clear-buffer buffer)

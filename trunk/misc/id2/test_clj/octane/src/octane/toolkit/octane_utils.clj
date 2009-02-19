@@ -252,12 +252,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Directory File Traversal
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defn create-filename-filter [ext]
+(defn create-filename-filter [cur-file-obj ext]
   (proxy [FilenameFilter] []
 		 (accept [dir-file name]
-				 (if (and name ext)		   
-				   (if (. (str name) endsWith (str ext)) true false)
-				   false))))
+				 (if (and name ext)	   
+				   (. (str name) endsWith (str ext))
+                   false))))
+
+(defn traverse-accept-files [cur-file-obj full-ext]
+  (if (and cur-file-obj (. cur-file-obj isFile))
+    (let [name (. cur-file-obj getName)]
+      (. name endsWith (str full-ext)))
+    false))
 
 (defn traverse-directory 
   "Recursively search the directory"
@@ -265,8 +271,9 @@
   ;;;;;;;;;;;;;;
   (when f-cur-obj
 	(if (. f-cur-obj isFile)
-	  (when func-on-file (func-on-file f-cur-obj))
-	  (let [files (. f-cur-obj listFiles (create-filename-filter "clj"))]
+	  (when (and func-on-file (traverse-accept-files f-cur-obj ".clj"))
+        (func-on-file f-cur-obj))
+	  (let [files (. f-cur-obj listFiles)]
 		;; Current file is a directory
 		(when func-on-dir (func-on-dir f-cur-obj))
 		(doseq [file files]

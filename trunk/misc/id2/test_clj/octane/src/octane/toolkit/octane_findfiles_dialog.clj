@@ -93,39 +93,63 @@
                                    (set! (. event doit) false)
                                    (. *findfiles-shell* setVisible false))))
 
+(def on-findfiles-dir-func (fn [d] false))
+
+(def on-findfiles-file-func
+     ;; Return lambda function, on file handler
+     (fn [file]
+         (let [filename (. file getAbsolutePath)
+               disp    (. *findfiles-shell* getDisplay)
+               term    (get-sync-call disp (. findfiles-filter-box getText))]
+           (doc-file-loop-handler filename
+                                  (fn [line line-num]
+                                      ;; Lambda function for on find string
+                                      ;; Update the display with the 'grep' information.
+                                      (when (simple-grep? line term)
+                                        (async-call *display*
+                                                    (add-main-text-nc
+                                                     (str filename ": line " line-num ": " (.trim line))))))))))
+
 (defn findfiles-find-handler
   "When the user selects the find next button, invoke this find next handler.
  Search the main buffer for the term in the 'find' box."
   [event]
   ;;;;;;;;;;;;
   (let [disp    (. *findfiles-shell* getDisplay)
-        term    (. findfiles-filter-box getText)
+        term    (get-sync-call disp (. findfiles-filter-box getText))
         cur-dir "."]
     (if (and disp term cur-dir (> (length cur-dir) 0) (> (length term) 0))
 	  (let []
 		;; Establish the directory and file functions.
-		(let [dir-func 
-			  (fn [d] (async-call *display* 
-								  (add-main-text-nc (str "Searching directory => " (. d getAbsolutePath)))))
-			  file-func
-			  (fn [file] (println file))]
-		(traverse-directory (new File ".") dir-func file-func))
+        (async-status-history *display* (str "Begin Find File Search For => " term " at "(date-time)))
+		(let [dir-func  on-findfiles-dir-func
+			  file-func on-findfiles-file-func]
+          (traverse-directory (new File ".") dir-func file-func))
+        (async-status-history *display* (str "End Find File Search")))
       (let []
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Err:
         ;; Send status error message, could not find
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         (if (not term) 
-          (. findfiles-status-label setText "Invalid Search Term (empty)")
-          (. findfiles-status-label setText "Invalid Search Term (empty)"))
-        (if (not cur-dir) 
-          (. findfiles-status-label setText "Invalid Directory (empty)")
-          (. findfiles-status-label setText "Invalid Directory (empty)")))))))
+          (async-call disp (. findfiles-status-label setText "Invalid Search Term (empty)"))
+          (async-call disp (. findfiles-status-label setText "Invalid Search Term (empty)")))
+        (if (not cur-dir)
+          (async-call disp (. findfiles-status-label setText "Invalid Directory (empty)"))
+          (async-call disp (. findfiles-status-label setText "Invalid Directory (empty)")))))))
+
+(defn findfiles-find-thread
+  "When the user selects the find next button, invoke this find next handler.
+ Search the main buffer for the term in the 'find' box."
+  [event]
+  ;;;;;;;;;;;;
+  (let [prox (proxy [Runnable][] (run [] (findfiles-find-handler event)))]
+    (. (new Thread prox) start)))
 
 (def findfiles-find-next-listener
      (proxy [SelectionListener][]
-            (widgetSelected [event] (findfiles-find-handler event))
-            (widgetDefaultSelected [event] (findfiles-find-handler event))))
+            (widgetSelected [event] (findfiles-find-thread event))
+            (widgetDefaultSelected [event] (findfiles-find-thread event))))
 
 (defn init-findfiles-buttons
   "Set the default properties for the search buttons"
@@ -199,4 +223,4 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Script
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
