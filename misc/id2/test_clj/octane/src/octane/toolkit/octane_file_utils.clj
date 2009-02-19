@@ -178,11 +178,12 @@
 	(location-set-text path)
 	(file-handler my-disp file path)))
 
-(defn simple-dialog-open-file 
+(defn simple-dialog-open-file
   "On some input widget event, invoke the open dialog.  When the user
- selects a file, the filename is returned from FileDialog.open."
+ selects a file, the filename is returned from FileDialog.open
+ Where file-handler takes the following arguments : <DISPLAY> <FILE> <PATH>"
   [disp fn-handler wild-cards]
-  ;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (. fileDialog setText "Open File")
   (. fileDialog setFilterExtensions (into-array wild-cards))
   (when fn-handler
@@ -242,7 +243,7 @@
 ;; File Utilities
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defn open-file-util [file file-path]
-  #^{:doc "Use java oriented approach for loading a file into memory"}  
+  #^{:doc "Use java oriented approach for loading a file into memory" }  
   ;; Java oriented approach for opening file
   (let [stream (new FileInputStream file-path)
         instr (new LineNumberReader (new InputStreamReader stream))

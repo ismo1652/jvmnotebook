@@ -57,6 +57,7 @@
 (def  db-filternm-button  (new Button db-button-comp SWT/PUSH))
 (def  db-filtergrp-button (new Button db-button-comp SWT/PUSH))
 (def  db-filtersrv-button (new Button db-button-comp SWT/PUSH))
+(def  db-win-close-button (new Button db-button-comp SWT/PUSH))
 
 ;; Five table columns, loaded from database configuration file.
 (def  table-col-names ["Name" "Path" "Group" "Server" "Description"])
@@ -134,16 +135,28 @@
           (. column setWidth *db-col-size*)))
     (. db-file-table setLayoutData gd)))
 
+(def db-on-close-listener
+     (proxy [SelectionListener][]
+            (widgetSelected [event]
+                            (set! (. event doit) false)
+                            (. database-shell setVisible false))
+            (widgetDefaultSelected [event]
+                                   (set! (. event doit) false)
+                                   (. database-shell setVisible false))))
+
 (defn init-buttons-composite [sh]
   (let [comp db-button-comp
-        gd-comp   (new GridData)
-        gd-button (new RowData 148 30)]
+        gd-comp       (new GridData)
+        gd-button     (new RowData *db-button-width* *db-button-height*)
+        gd-med-button (new RowData *db-bttn-med-width* *db-button-height*)]
     (. comp setLayoutData gd-comp)
     (. comp setLayout (new RowLayout))
     (doto db-totext-button    (. setText *database-text-button*) (. setLayoutData gd-button))
-    (doto db-filternm-button  (. setText *database-name-button*) (. setLayoutData gd-button))
+    (doto db-filternm-button  (. setText *database-name-button*) (. setLayoutData gd-med-button))
     (doto db-filtersrv-button (. setText *database-grp-button*)  (. setLayoutData gd-button))
-    (doto db-filtergrp-button (. setText *database-serv-button*) (. setLayoutData gd-button))))  
+    (doto db-filtergrp-button (. setText *database-serv-button*) (. setLayoutData gd-med-button))
+    (doto db-win-close-button (. setText *database-quit-button*) (. setLayoutData gd-med-button)
+          (. addSelectionListener  db-on-close-listener))))
 
 (defn init-database-helper [sh]
   (let [gd (new GridData SWT/FILL SWT/FILL true false)]
@@ -158,7 +171,7 @@
 (defn
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
     create-database-window [parent-sh open-win?]
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     (history-add-textln "Opening file database screen (Tools -> Database Viewer)")
     (let [layout (create-db-grid-layout)]
@@ -217,10 +230,26 @@
         (when (= ":db_file" (str x-tag))
           (add-items-db-view x-content)))))
 
+(defn try-open-db-file
+  "Attempt to open database XML file."
+  [db-filename db-path]
+  ;;;;;;;;;;;;;;
+  ;; Strange BUG: why is 'file://' needed.
+  (try (let [xml-data (clojure.xml/parse (str "file:///" db-path))]
+         xml-data)
+       (catch Exception e
+              ;; Build error message and return nil.
+              (let [err-buf (new StringBuffer)]
+                (. err-buf append
+                   (str "ERR: while opening DB file : " (. e getMessage)
+                        *newline* "ERR: DB-Filename => " db-filename *newline* "ERR: path => " db-path))
+                (history-add-textln (. err-buf toString)))
+              nil)))
+      
 (defn load-default-database []
   (let [db-filename (prop-str resources-user *prop-main-database*)
         db-path  (str *octane-install-dir* *name-separator* db-filename)
-        xml-data (when-try (clojure.xml/parse db-path))]
+        xml-data (try-open-db-file db-filename db-path)]
     (when xml-data
       (history-add-textln (str "Adding main file database data, path=>" db-path))
       (let [root (xml-data :content)]

@@ -75,9 +75,13 @@
 (def win-size-width       880)
 (def win-size-height      750)
 
-(def *db-size-width*      700)
-(def *db-size-height*     460)
+(def *db-size-width*      760)
+(def *db-size-height*     510)
 (def *db-col-size*        130)
+
+(def *db-button-width*    150)
+(def *db-bttn-med-width*  130)
+(def *db-button-height*    28)
 
 (def *search-size-width*  460)
 (def *search-size-height* 290)
@@ -118,10 +122,13 @@
 (def *database-name-button* "Filter Name")
 (def *database-grp-button*  "Filter Group")
 (def *database-serv-button* "Filter Server")
+(def *database-quit-button* "Exit")
 
 (def *openfile-wildcard-seq* ["*.*" "*.log" "*.olog" "*.ologs" "*.octlog"
-                              "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri"])
-(def *sysout-wildcard-seq*   ["*.log" "*.Mon" "*.Tues" "*.Wed" "*.Thu" "*.Fri" "*.*"])
+                              "*.Mon" "*.Tue" "*.Wed" "*.Thu" "*.Fri"])
+(def *sysout-wildcard-seq*   ["*.log" "*.Mon" "*.Tue" "*.Wed" "*.Thu" "*.Fri" "*.*"])
+
+(def *jar-wildcard-seq*      ["*.jar" "*.zip" "*.*"])
 
 (def *prop-main-database* "Main_database_config")
 

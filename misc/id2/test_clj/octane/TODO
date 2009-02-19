@@ -19,16 +19,17 @@
 				- Find Box
 				- Finish Regex Search
 			3. Analytics       (!)
-			4. Doc - XML -> XSL
+			4. Doc - XML -> XSL (? later)
 			5. Open Jars, Open Zip Files
 			6. Open large files (?) - might limit opening large files, java nio
 				Possible max of 28MB
 			7. Log4j (very careful) ??
 			8. Timeout/Alarm long running processes
-			9. Dynamic Styled Text 
+			9. Dynamic Styled Text (?) 
 			10. Install Tool
 			11. (optional Classpath Tool) 
-			12. New find file
+			12. New find file (!)
+			13. Script 
 
 	+ 2/14/2009	Berlin Brown	
 		* Output data to text buffer
