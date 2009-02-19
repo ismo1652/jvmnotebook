@@ -188,7 +188,6 @@
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
     create-search-dialog [parent-sh]
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
     (history-add-text "Opening search screen (Search -> Find)")
     (let [layout (create-search-grid-layout)]
       (. search-shell setText (. resources-win getString "Find_dialog_title"))
@@ -236,6 +235,7 @@
   ;; Load the normal find/grep menu items
   (let [item-findgrep (create-menu-item menu "FindGrep_newgrep_menuitem" new-findfiles-listener)]
 	(. item-findgrep setAccelerator (+ SWT/MOD1 (int \G))))
+  (new MenuItem menu SWT/SEPARATOR)
   ;; Run non lazy sequence operation
   (doseq [menu-key [{:name "FindGrep_grep_menuitem"   :proc findgrep-listener }
                     {:name "FindGrep_15min_menuitem"  :proc findgrep-listener }

@@ -21,9 +21,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns octane.toolkit.ws_garbage_collection
-	(:use octane.toolkit.octane_utils)
+	(:use 
+     octane.toolkit.octane_utils
+     octane.toolkit.octane_file_utils)    
 	(:import 
 	 (java.text SimpleDateFormat)
+     (java.io File)
 	 (java.io InputStreamReader BufferedReader ByteArrayInputStream)))
 
 (defn get-timestamp-attr
@@ -124,6 +127,39 @@
 	  (when-let [xml-data (when-try (clojure.xml/parse strm))]
 				(parse-aftags-tenured (parse-gc-aftags xml-data))))))
 
+(defn load-and-parse-gc-file
+  "Load the garbage collection xml document, native_stderr.log.
+ Extract the XML memory data after the 'gc/garbage collection' tag.
+ @return List of data point values {:totalbytes 100663296, :freebytes 88476392, :percent 87} ..."
+  [file-path parse-handler]
+  (let [file (new File file-path)]
+    ;; With the created File object, read the file into a string
+    ;; And possibly pass through the parser handler.
+    (let [xml-str-doc (if parse-handler (parse-handler (open-file-util file file-path))
+                         (open-file-util file file-path))]
+      ;; If we made it this far, load the XML str and return the XML data structure
+      (parse-native-gc-xml xml-str-doc))))
+
+(defn simple-parse-gc-file-handler
+  "Format the input XML data to ensure that it is well-formed.  Return new document"
+  [xml-data]
+  ;;;;;;;;;;;;;;;
+  (when xml-data
+    ;; Trim the XML document, and ensure that an end tag is available
+    (let [vgc      "</verbosegc>"
+          s1       (. xml-data trim)
+          end-tag? (simple-grep? s1 vgc)
+          s2       (if end-tag? s1 (str s1 vgc))]
+      s2)))
+
+(defn simple-parse-gc-file
+  "Load the garbage collection xml document, native_stderr.log.
+ Extract the XML memory data after the 'gc/garbage collection' tag.
+ @return List of data point values {:totalbytes 100663296, :freebytes 88476392, :percent 87} ..."
+  [file-path]
+  ;;;;;;;;;;;;
+  (load-and-parse-gc-file file-path simple-parse-gc-file-handler))
+
 (defn parse-native-gc-file
   "Load the garbage collection xml document, native_stderr.log.
  Extract the XML memory data after the 'gc/garbage collection' tag.
@@ -132,8 +168,8 @@
   ;;;;;;;;;;;;;;;
   (when xml-str
 	(when-let [xml-data (when-try (clojure.xml/parse xml-str))]
-			  (parse-aftags-tenured (parse-gc-aftags xml-data)))))
-
+        (parse-aftags-tenured (parse-gc-aftags xml-data)))))
+    
 (defn load-native-gc-xml
   "Load the garbage collection xml document, native_stderr.log.
  Extract the XML memory data after the 'gc/garbage collection' tag.

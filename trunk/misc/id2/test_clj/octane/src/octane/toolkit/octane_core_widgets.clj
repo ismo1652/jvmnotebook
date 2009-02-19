@@ -32,7 +32,8 @@
 			 octane.toolkit.octane_graphs
 			 octane.toolkit.octane_search_dialog
 			 octane.toolkit.octane_regex_search
-			 octane.toolkit.octane_analytics)
+			 octane.toolkit.octane_analytics
+             octane.toolkit.octane_jar_viewer)    
 	(:import (java.util Date)
 			 (org.eclipse.swt SWT)
 			 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
@@ -98,9 +99,10 @@
         menu      (new Menu bar)
         item      (new MenuItem menu (. SWT PUSH))
         dir-item  (new MenuItem menu (. SWT PUSH))
+        dummy1    (new MenuItem menu SWT/SEPARATOR)
         run-expl  (new MenuItem menu (. SWT PUSH))]
     (doto item
-      ;;;;;;;;;;;;;;;;;;;;;;;;
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;
       ;; Open File Menu Option
       ;;;;;;;;;;;;;;;;;;;;;;;;;
       (. setText (. resources-win getString "Open_menuitem"))
@@ -116,8 +118,7 @@
       (. addSelectionListener
          (proxy [SelectionAdapter] []
                 (widgetSelected [e] (dialog-open-dir)))))
-
-    (doto run-expl      
+    (doto run-expl
       ;; Win explorer option
       ;; see octane_tools.clj for the file manager launcher
       (. setText (. resources-win getString "Filemanager_menuitem"))
@@ -125,7 +126,16 @@
       (. addSelectionListener 
          (proxy [SelectionAdapter] []
                 (widgetSelected [e] (start-filemanager-proc)))))
-      
+    (doto (new MenuItem menu (. SWT PUSH))
+      ;; Jar viewers
+      (. setText (. resources-win getString "Jarfileview_menuitem"))
+	  (. setAccelerator (+ SWT/MOD1 (int \J)))
+      (. addSelectionListener 
+         (proxy [SelectionAdapter] []
+                (widgetSelected [e] (jar-viewer-handler)))))
+    ;; [Deprecated, TODO](doto (new MenuItem menu (. SWT PUSH))
+    ;;  ;; Jar viewers
+    ;;  (. setText (. resources-win getString "Jardirview_menuitem")))
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;; Create the recent file menu options
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

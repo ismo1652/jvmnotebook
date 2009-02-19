@@ -26,6 +26,7 @@
 			 octane.toolkit.public_objects
 			 octane.toolkit.octane_utils
 			 octane.toolkit.octane_gui_utils
+             octane.toolkit.octane_file_utils
 			 octane.toolkit.ws_garbage_collection)
 	
 	(:import 			 
@@ -55,6 +56,7 @@
 (def *graph-gc-shell* (new Shell *shell* *graph-style*))
 
 (def create-graph-gc-window)
+(def graph-gc-byfile-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Time Series Creation
@@ -67,7 +69,7 @@
   (let [ts-free (new TimeSeries "Free Bytes (After GC)" Second)
 				ts-total (new TimeSeries "Total Bytes (After GC)" Second)
 				dataset  (new TimeSeriesCollection)
-				raw-data (load-native-gc-xml filename true)]
+				raw-data (simple-parse-gc-file filename)]
 	(doseq [mem-struct raw-data]
 		(let [tstamp (mem-struct :timestamp)
 					 date-stamp (new Date tstamp)
@@ -108,12 +110,12 @@
 
 (defn add-graph-menuitems [menu]
   (let [ sysout-item (new MenuItem menu (. SWT CASCADE))
-					 syserr-item  (new MenuItem menu (. SWT CASCADE))
-					 gc-item      (new MenuItem menu (. SWT CASCADE))
-					 gc-time-item (new MenuItem menu (. SWT CASCADE))
-					 req-item     (new MenuItem menu (. SWT CASCADE))
-					 errs-item    (new MenuItem menu (. SWT CASCADE))
-					 query-item   (new MenuItem menu (. SWT CASCADE)) ]
+         syserr-item  (new MenuItem menu (. SWT CASCADE))
+         gc-item      (new MenuItem menu (. SWT CASCADE))
+         gc-time-item (new MenuItem menu (. SWT CASCADE))
+         req-item     (new MenuItem menu (. SWT CASCADE))
+         errs-item    (new MenuItem menu (. SWT CASCADE))
+         query-item   (new MenuItem menu (. SWT CASCADE)) ]
 	(doto sysout-item
 	  (. setText (res-win-str "Graphs_sysout_menuitem")))
 	(doto syserr-item
@@ -132,16 +134,77 @@
 	(doto query-item
 	  (. setText (res-win-str "Graphs_query_menuitem")))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Graph Menu Creation (Open file to launch graph)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn add-graph-file-menuitems [menu]
+  (new MenuItem menu SWT/SEPARATOR)
+  (let [ sysout-item (new MenuItem menu (. SWT CASCADE))
+         syserr-item  (new MenuItem menu (. SWT CASCADE))
+         gc-item      (new MenuItem menu (. SWT CASCADE))
+         req-item     (new MenuItem menu (. SWT CASCADE))
+         query-item   (new MenuItem menu (. SWT CASCADE)) ]
+	(doto sysout-item
+	  (. setText (res-win-str "Graphs_sysout_file_menuitem")))
+	(doto syserr-item
+	  (. setText (res-win-str "Graphs_syserr_file_menuitem")))
+	(doto gc-item
+	  (. setText (res-win-str "Graphs_gctime_file_menuitem"))
+	  (. addSelectionListener
+         (proxy [SelectionAdapter] []
+                (widgetSelected [e] (graph-gc-byfile-window)))))
+	(doto req-item
+	  (. setText (res-win-str "Graphs_req_file_menuitem")))
+	(doto query-item
+	  (. setText (res-win-str "Graphs_query_file_menuitem")))))
+
 (defn create-graphs-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
-  (let [bar (. sh getMenuBar)
+  (let [bar  (. sh getMenuBar)
         menu (new Menu bar)]
 	(add-graph-menuitems menu)
+    (add-graph-file-menuitems menu)
     menu))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Graph Window Creation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn safe-create-dataset
+  "Create a dataset object based on information from file"
+  [gc-filename]
+  ;;;;;;;;;;;;;
+  (try (create-timegc-dataset gc-filename)
+       (catch Exception e
+              (history-add-textln
+               (str "ERR: create gc dataset file => " gc-filename \newline "ERR: " (. e getMessage)))
+              nil)))
+
+(defn create-graph-gc-file
+    "Initialize the file database SWT window, set the size add all components"
+    [filename]
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+	(doto *graph-gc-shell*
+	  (. setSize *graph-size-width* *graph-size-height*)
+	  (. setLayout (new FillLayout))
+	  (. addShellListener (shell-close-adapter *graph-gc-shell*)))
+	(let [gc-filename filename
+          dataset (safe-create-dataset gc-filename)
+          chart   (create-timegc-chart dataset)
+          frame   (new ChartComposite *graph-gc-shell* SWT/NONE chart true)]
+	  (doto frame
+        (. setDisplayToolTips     true)
+        (. setHorizontalAxisTrace false)
+        (. setVerticalAxisTrace   false)))
+	;; Open the graph window
+	(doto *graph-gc-shell*
+	  (. open) (. setVisible true))
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;; Enter display/shell loop for this window
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	(let [disp (. *graph-gc-shell* getDisplay)]
+	  (shell-display-loop disp *graph-gc-shell* false "Graph GC shell disposed")))
 
 (defn create-graph-gc-window
     "Initialize the file database SWT window, set the size add all components"
@@ -149,31 +212,21 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;
 	(history-add-textln 
 	 (str "Opening GC graph (), gc-file => " (user-variable "Graphs_gctime_logs")))
+    (create-graph-gc-file (user-variable "Graphs_gctime_logs")))
 
-	(doto *graph-gc-shell*
-	  (. setSize *graph-size-width* *graph-size-height*)
-	  (. setLayout (new FillLayout))
-	  (. addShellListener (shell-close-adapter *graph-gc-shell*)))
-	
-	(let [gc-filename (user-variable "Graphs_gctime_logs")
-					  dataset (create-timegc-dataset gc-filename)
-					  chart   (create-timegc-chart dataset)
-					  frame   (new ChartComposite *graph-gc-shell* SWT/NONE chart true)]
-	  (doto frame
-        (. setDisplayToolTips     true)
-        (. setHorizontalAxisTrace false)
-        (. setVerticalAxisTrace   false)))
+(def graph-gc-byfile-handler
+     (fn [disp file path] 
+         ;; Handler for the graph garbage collection by file
+         (when file
+           (history-add-textln (str "Opening GC graph by file (), gc-file => " (. file getAbsolutePath)))
+           (create-graph-gc-file (. file getAbsolutePath)))))
 
-	;; Open the graph window
-	(doto *graph-gc-shell*
-	  (. open)
-	  (. setVisible true))
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	;; Enter display/shell loop for this window
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	(let [disp (. *graph-gc-shell* getDisplay)]
-	  (shell-display-loop disp *graph-gc-shell* false "Graph GC shell disposed")))
+(defn graph-gc-byfile-window
+    "Initialize the file database SWT window, set the size add all components"
+    []
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+    (simple-dialog-open-file 
+     (. *graph-gc-shell* getDisplay) graph-gc-byfile-handler *sysout-wildcard-seq*))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
