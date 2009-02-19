@@ -89,7 +89,10 @@
     (. status-bar setLayoutData gd)
     (. status-bar addListener SWT/Arm status-arm-listener)))
     
-(defn create-file-menu [disp sh]
+(defn create-file-menu 
+  "Add accelator CTRL + O, for OPEN MENU"
+  [disp sh]
+  ;;;;;;;;;;
   ;; Note change in 'doto' call, dot needed.
   (let [bar       (. sh getMenuBar)
         menu      (new Menu bar)
@@ -101,6 +104,8 @@
       ;; Open File Menu Option
       ;;;;;;;;;;;;;;;;;;;;;
       (. setText (. resources-win getString "Open_menuitem"))
+	  ;; Add accelator CTRL + O, for OPEN MENU
+	  (. setAccelerator (+ SWT/MOD1 (int \O)))
       (. addSelectionListener 
          (proxy [SelectionAdapter] []
                 (widgetSelected [e] (dialog-open-file)
@@ -116,6 +121,7 @@
       ;; Win explorer option
       ;; see octane_tools.clj for the file manager launcher
       (. setText (. resources-win getString "Filemanager_menuitem"))
+	  (. setAccelerator (+ SWT/MOD1 (int \E)))
       (. addSelectionListener 
          (proxy [SelectionAdapter] []
                 (widgetSelected [e] (start-filemanager-proc)))))
@@ -147,7 +153,9 @@
                 (widgetSelected [event] (create-about-messagebox sh)))))
     menu))
 
-(defn create-tools-menu [disp sh]
+(defn create-tools-menu 
+  "Add the accelerator CTRL - D for the database viewer"
+  [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar (. sh getMenuBar)
             menu (new Menu bar)
@@ -155,6 +163,7 @@
             code-gen-item (new MenuItem menu (. SWT PUSH))]
     (doto item
       (. setText (. resources-win getString "Database_viewer_menuitem"))
+	  (. setAccelerator (+ SWT/MOD1 (int \D)))
       (. addSelectionListener
          (proxy [SelectionAdapter] []
                 (widgetSelected [event] (create-database-window *shell* true)))))
@@ -165,14 +174,17 @@
                 (widgetSelected [event] (run-codegen-build-xml)))))
     menu))
 
-(defn create-search-menu [disp sh]
+(defn create-search-menu 
+  "Add accelator CTRL + O, for FIND FILE"
+  [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar (. sh getMenuBar)
             menu (new Menu bar)
             item (new MenuItem menu (. SWT PUSH))
-            regex-item (new MenuItem menu (. SWT PUSH))]
+            regex-item (new MenuItem menu (. SWT PUSH))]	
     (doto item
       (. setText (. resources-win getString "Find_menuitem"))
+	  (. setAccelerator (+ SWT/MOD1 (int \F)))
       (. addSelectionListener
          (proxy [SelectionAdapter] []
                 (widgetSelected [event] (create-search-dialog sh)))))

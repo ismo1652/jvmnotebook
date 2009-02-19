@@ -99,10 +99,8 @@
   [sdisp m term text]
   ;;;;;;;;;;;;;;;;;
   (. search-status-label setText (str "Found term => " term " at " (. m start)))
-  ;;(async-call *display* (fn [_]
-                            (println "dogs")
-                            (. *styled-text* setSelection (. m start))
-                            (refresh-textarea))
+  (. *styled-text* setSelection (. m start))
+  (refresh-textarea))
 
 (defn search-find-next-handler
   "When the user selects the find next button, invoke this find next handler.

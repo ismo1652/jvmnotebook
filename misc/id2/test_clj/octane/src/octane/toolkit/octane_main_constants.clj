@@ -98,6 +98,8 @@
 (def white-color      (new RGB 255 255 255))
 (def cyan-sel-color   (new RGB 64  224 208))
 (def dark-blue-color  (new RGB 34  38  167))
+(def yellow-color     (new RGB 255 255   0))
+(def black-color      (new RGB 10  10   10))
 
 (def tab-1-title      "Main Buffer View")
 (def tab-2-title      "Secondary Buffer View")

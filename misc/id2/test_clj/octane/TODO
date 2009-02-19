@@ -23,7 +23,7 @@
 			5. Open Jars, Open Zip Files
 			6. Open large files (?) - might limit opening large files, java nio
 				Possible max of 28MB
-			7. Log4j (very careful)
+			7. Log4j (very careful) ??
 			8. Timeout/Alarm long running processes
 			9. Dynamic Styled Text 
 			10. Install Tool
