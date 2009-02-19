@@ -69,7 +69,11 @@
 
 (defn srchbox-get-text [] (str (. search-box getText)))
 
-(defn main-match-style [keyword line lo]
+(defn main-match-style 
+  "A match has been found on the particular keyword.  Add the style with light foreground, 
+ dark (dark blue) background."
+  [keyword line lo]
+  ;;;;;;;;;;;;;;;;;;
   (let [m (regex-match-group keyword line)]
     (when m
       (let [pt1 (+ lo (. m start))
@@ -78,14 +82,36 @@
             styl-tok (new StyleRange pt1 len (col-vec-wht) (col-vec-drkb) SWT/BOLD)]
         styl-tok))))
 
-(defn style-keyword-match [styles-vec line l-offset sty-on-sel sty-fail]
+(defn findnext-match-style 
+  "A match has been found on the particular keyword.  Add the style with light foreground, 
+ dark (dark blue) background."
+  []
+  ;;;;;;;;;;;;;;;;;;
+  (let [m (get-find-next-state)]
+    (when m
+      (let [pt1 (. m start)
+            pt2 (. m end)
+            len (- pt2 pt1)
+            styl-tok (new StyleRange pt1 len (col-vec-blk) (col-vec-yllw) SWT/BOLD)]
+        styl-tok))))
+
+(defn style-keyword-match 
+  "When a search term is available and the keyword matches, add the selection style on the
+ main buffer text area.  Otherwise, add the fail style"
+  [styles-vec line l-offset sty-on-sel sty-fail]
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (when (search-term?)
     (if (search-keyword (srchbox-get-text) line)
+	  ;; Add the select style and attempt to do keyword style
       (let [dummy1 (add-select-style styles-vec sty-on-sel)]
         (when-let [fnd-style (main-match-style (srchbox-get-text) line l-offset)]
-                  ;; Check if Match found, so add the style range
-                  (add-select-style styles-vec fnd-style)))
-      (add-select-style styles-vec sty-fail))))
+                  ;; Check if match found, so add the style range for the keyword
+				  ;; selection
+                  (add-select-style styles-vec fnd-style))
+		;; Add style if 'find-next' term is available
+		(when-let [fnd-style (findnext-match-style)]
+				  (add-select-style styles-vec fnd-style)))
+	  (add-select-style styles-vec sty-fail))))
 
 (defn style-handler [event]
   (let [styles-vec (new Vector)

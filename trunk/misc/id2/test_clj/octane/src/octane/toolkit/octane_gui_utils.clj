@@ -157,7 +157,9 @@
     (. addElement (new Color disp red-color))
     (. addElement (new Color disp cyan-sel-color))
     (. addElement (new Color disp dark-blue-color))
-    (. addElement (new Color disp white-color)))))
+    (. addElement (new Color disp white-color))
+	(. addElement (new Color disp yellow-color))
+	(. addElement (new Color disp black-color)))))
 
 (defn refresh-textarea []
   (. *styled-text* redraw)

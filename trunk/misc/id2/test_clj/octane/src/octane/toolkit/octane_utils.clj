@@ -73,6 +73,8 @@
 (defn col-vec-cy   []  (. colors-vec get 3))
 (defn col-vec-drkb []  (. colors-vec get 4))
 (defn col-vec-wht  []  (. colors-vec get 5))
+(defn col-vec-yllw []  (. colors-vec get 6))
+(defn col-vec-blk  []  (. colors-vec get 7))
 
 (def  *megabytes*      (* 1024.0 1024.0))
 (def  *java-runtime*   (. Runtime getRuntime))
