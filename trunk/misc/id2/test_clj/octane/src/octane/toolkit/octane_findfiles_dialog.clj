@@ -30,6 +30,7 @@
 	 octane.toolkit.octane_config
 	 octane.toolkit.octane_tools)
 	(:import 
+	 (java.io File)
 	 (org.eclipse.swt SWT)
 	 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
 	 (org.eclipse.swt.widgets FileDialog MessageBox TableItem Button
@@ -92,16 +93,23 @@
                                    (set! (. event doit) false)
                                    (. *findfiles-shell* setVisible false))))
 
-(defn findfiles-find-next-handler
+(defn findfiles-find-handler
   "When the user selects the find next button, invoke this find next handler.
  Search the main buffer for the term in the 'find' box."
   [event]
   ;;;;;;;;;;;;
-  (let [disp (. *findfiles-shell* getDisplay)
-        term (. findfiles-filter-box getText)
-        text (. *styled-text* getText)]
-    (if (and disp term text (> (length text) 0) (> (length term) 0))
-	  ()
+  (let [disp    (. *findfiles-shell* getDisplay)
+        term    (. findfiles-filter-box getText)
+        cur-dir "."]
+    (if (and disp term cur-dir (> (length cur-dir) 0) (> (length term) 0))
+	  (let []
+		;; Establish the directory and file functions.
+		(let [dir-func 
+			  (fn [d] (async-call *display* 
+								  (add-main-text-nc (str "Searching directory => " (. d getAbsolutePath)))))
+			  file-func
+			  (fn [file] (println file))]
+		(traverse-directory (new File ".") dir-func file-func))
       (let []
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Err:
@@ -110,14 +118,14 @@
         (if (not term) 
           (. findfiles-status-label setText "Invalid Search Term (empty)")
           (. findfiles-status-label setText "Invalid Search Term (empty)"))
-        (if (not text) 
-          (. findfiles-status-label setText "Invalid Buffer Document (empty)")
-          (. findfiles-status-label setText "Invalid Buffer Document (empty)"))))))
+        (if (not cur-dir) 
+          (. findfiles-status-label setText "Invalid Directory (empty)")
+          (. findfiles-status-label setText "Invalid Directory (empty)")))))))
 
 (def findfiles-find-next-listener
      (proxy [SelectionListener][]
-            (widgetSelected [event] (findfiles-find-next-handler event))
-            (widgetDefaultSelected [event] (findfiles-find-next-handler event))))
+            (widgetSelected [event] (findfiles-find-handler event))
+            (widgetDefaultSelected [event] (findfiles-find-handler event))))
 
 (defn init-findfiles-buttons
   "Set the default properties for the search buttons"

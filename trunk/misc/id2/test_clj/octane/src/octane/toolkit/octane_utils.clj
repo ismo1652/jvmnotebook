@@ -30,7 +30,7 @@
 			 (java.lang Runtime)
 			 (java.text SimpleDateFormat)
              (java.nio.channels FileChannel FileChannel$MapMode)
-			 (java.io InputStreamReader FileInputStream BufferedReader File)
+			 (java.io InputStreamReader FileInputStream BufferedReader File FilenameFilter)
 			 (java.util.regex Pattern)))
 
 (def history-add-text)
@@ -247,6 +247,30 @@
                                (when (simple-grep? line term)
                                  (. buf append (str filename ": line " line-num ": " line)))))
     (. buf toString)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Directory File Traversal
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn create-filename-filter [ext]
+  (proxy [FilenameFilter] []
+		 (accept [dir-file name]
+				 (if (and name ext)		   
+				   (if (. (str name) endsWith (str ext)) true false)
+				   false))))
+
+(defn traverse-directory 
+  "Recursively search the directory"
+  [f-cur-obj func-on-dir func-on-file]
+  ;;;;;;;;;;;;;;
+  (when f-cur-obj
+	(if (. f-cur-obj isFile)
+	  (when func-on-file (func-on-file f-cur-obj))
+	  (let [files (. f-cur-obj listFiles (create-filename-filter "clj"))]
+		;; Current file is a directory
+		(when func-on-dir (func-on-dir f-cur-obj))
+		(doseq [file files]
+			(traverse-directory file func-on-dir func-on-file))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

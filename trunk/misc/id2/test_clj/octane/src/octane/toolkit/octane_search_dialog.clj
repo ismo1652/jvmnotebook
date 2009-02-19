@@ -28,7 +28,8 @@
 	 octane.toolkit.public_objects
 	 octane.toolkit.octane_gui_utils
 	 octane.toolkit.octane_config
-	 octane.toolkit.octane_tools)
+	 octane.toolkit.octane_tools
+	 octane.toolkit.octane_findfiles_dialog)	
 	(:import 
 	 (org.eclipse.swt SWT)
 	 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
@@ -142,10 +143,10 @@
   []
   ;; Set the composite buttons
   (let [rowd-find (new RowData 98 24)]
-    (. search-find-button setText "Find Next")
-    (. search-find-button setLayoutData rowd-find)
-    (. search-find-button setEnabled true)
-    (. search-find-button addSelectionListener search-find-next-listener)
+    (. search-find-button  setText "Find Next")
+    (. search-find-button  setLayoutData rowd-find)
+    (. search-find-button  setEnabled true)
+    (. search-find-button  addSelectionListener search-find-next-listener)
     (. search-close-button setText "Close")
     (. search-close-button setLayoutData rowd-find)
     (. search-close-button setEnabled true)
@@ -175,8 +176,10 @@
     (set! (. comp-layout marginTop)  4)
     (set! (. comp-layout marginLeft) 2)
     (. search-composite setLayout comp-layout)    
-    (init-search-buttons)))
-
+    (init-search-buttons)
+	;; Check the state of the matcher, if available, reset.
+	(let [fns (get-find-next-state)]  (when fns (. fns reset)))))
+			  
 ;;;;;;;;;;;;;;;;;;;;
 ;; End of Function
 ;;;;;;;;;;;;;;;;;;;;
@@ -222,8 +225,17 @@
                             (let [widg-str (str (. event widget))]
                               (. (new Thread
                                       (start-findgrep-thread widg-str @*search-text-state* true)) start)))))
+
+(def new-findfiles-listener
+     (proxy [SelectionAdapter] []
+			;; Open the find files dialog
+			(widgetSelected [event]
+							(create-findfiles-dialog *shell*))))
                                                    
 (defn add-findgrep-options [menu]
+  ;; Load the normal find/grep menu items
+  (let [item-findgrep (create-menu-item menu "FindGrep_newgrep_menuitem" new-findfiles-listener)]
+	(. item-findgrep setAccelerator (+ SWT/MOD1 (int \G))))
   ;; Run non lazy sequence operation
   (doseq [menu-key [{:name "FindGrep_grep_menuitem"   :proc findgrep-listener }
                     {:name "FindGrep_15min_menuitem"  :proc findgrep-listener }

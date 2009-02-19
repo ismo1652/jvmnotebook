@@ -100,9 +100,9 @@
         dir-item  (new MenuItem menu (. SWT PUSH))
         run-expl  (new MenuItem menu (. SWT PUSH))]
     (doto item
-      ;;;;;;;;;;;;;;;;;;;;;
+      ;;;;;;;;;;;;;;;;;;;;;;;;
       ;; Open File Menu Option
-      ;;;;;;;;;;;;;;;;;;;;;
+      ;;;;;;;;;;;;;;;;;;;;;;;;;
       (. setText (. resources-win getString "Open_menuitem"))
 	  ;; Add accelator CTRL + O, for OPEN MENU
 	  (. setAccelerator (+ SWT/MOD1 (int \O)))
