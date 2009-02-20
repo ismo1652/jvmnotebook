@@ -147,10 +147,11 @@
   (when xml-data
     ;; Trim the XML document, and ensure that an end tag is available
     (let [vgc      "</verbosegc>"
-          s1       (. xml-data trim)
+          s1       (. xml-data trim)         
           end-tag? (simple-grep? s1 vgc)
-          s2       (if end-tag? s1 (str s1 vgc))]
-      s2)))
+          s2       (if end-tag? s1 (str s1 vgc))
+          s3       (. s2 replaceAll "<init>" "")]
+      s3)))
 
 (defn simple-parse-gc-file
   "Load the garbage collection xml document, native_stderr.log.
