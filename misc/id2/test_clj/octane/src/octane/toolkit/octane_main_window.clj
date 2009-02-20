@@ -105,12 +105,12 @@
 	  ;; Add the select style and attempt to do keyword style
       (let [dummy1 (add-select-style styles-vec sty-on-sel)]
         (when-let [fnd-style (main-match-style (srchbox-get-text) line l-offset)]
-                  ;; Check if match found, so add the style range for the keyword
-				  ;; selection
-                  (add-select-style styles-vec fnd-style))
+            ;; Check if match found, so add the style range for the keyword
+            ;; selection
+            (add-select-style styles-vec fnd-style))
 		;; Add style if 'find-next' term is available
 		(when-let [fnd-style (findnext-match-style)]
-				  (add-select-style styles-vec fnd-style)))
+            (add-select-style styles-vec fnd-style)))
 	  (add-select-style styles-vec sty-fail))))
 
 (defn style-handler [event]

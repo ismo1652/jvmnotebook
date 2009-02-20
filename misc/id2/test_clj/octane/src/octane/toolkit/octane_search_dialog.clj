@@ -115,6 +115,8 @@
       ;; Create the find next matcher from the document and term
       (let [fns (get-find-next-state)
             m (if fns fns (new-find-next-matcher text term))]
+        ;; Also set the 'quick' search text bar at the bottom of the main window
+        (async-call *display* (. search-box setText term))
         ;; Set the public matcher object, if it doesnt exist
         (when (not fns) (set-find-next-state m))
         (if (. m find)
@@ -138,6 +140,10 @@
             (widgetSelected [event] (search-find-next-handler event))
             (widgetDefaultSelected [event] (search-find-next-handler event))))
 
+(def search-find-next-traverse
+     (proxy [Listener][]
+            (handleEvent [event] (search-find-next-handler event))))
+
 (defn init-search-buttons
   "Set the default properties for the search buttons"
   []
@@ -147,6 +153,8 @@
     (. search-find-button  setLayoutData rowd-find)
     (. search-find-button  setEnabled true)
     (. search-find-button  addSelectionListener search-find-next-listener)
+    ;; Also add the on return listener to invoke 'find next'
+    (. search-filter-box   addListener SWT/Traverse search-find-next-traverse)
     (. search-close-button setText "Close")
     (. search-close-button setLayoutData rowd-find)
     (. search-close-button setEnabled true)
