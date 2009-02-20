@@ -120,9 +120,13 @@
         ;; Set the public matcher object, if it doesnt exist
         (when (not fns) (set-find-next-state m))
         (if (. m find)
-          ;; Get the position
-          (on-found-term-handler disp m term text)
-          (. search-status-label setText (str "Could not find term => " term))))
+		  (do	   
+			;; On the valid case, has a match
+			(on-found-term-handler disp m term text))
+		  ;; Otherwise case, not one term found
+		  (do (. search-status-label setText
+				 (str "Could not find term => " term))
+			  (. m reset))))
       (let []
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Err:
@@ -196,7 +200,7 @@
     #^{:doc "Initialize the file database SWT window, set the size add all components"}
     create-search-dialog [parent-sh]
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    (history-add-text "Opening search screen (Search -> Find)")
+    (history-add-textln "Opening search screen (Search -> Find)")
     (let [layout (create-search-grid-layout)]
       (. search-shell setText (. resources-win getString "Find_dialog_title"))
       (init-search-helper search-shell)
