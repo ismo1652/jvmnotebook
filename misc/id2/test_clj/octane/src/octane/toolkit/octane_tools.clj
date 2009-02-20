@@ -63,6 +63,11 @@
             s (apply str (interpose " " more))]
     {:array more :text s}))
 
+(defn simple-tdiff [tstart]
+  (let [tend (. System currentTimeMillis)
+			 diff (- tend tstart)]
+	diff))
+
 (defn start-findgrep-cmd [cur-dir wildcard grep-args]
   (let [fnd-proc (get-process "find")
                  proc-data (build-findgrep-arr fnd-proc cur-dir wildcard grep-args)
@@ -73,7 +78,8 @@
       (history-add-text (str "Invoking find/grep command => " (proc-data :text) *newline*))
       (let [istream (. process getInputStream)
                     ireader   (new InputStreamReader istream)
-                    bufreader (new BufferedReader ireader)]
+                    bufreader (new BufferedReader ireader)
+					tstart (. System currentTimeMillis) ]
         ;; First clear the main text buffer
         (clear-buffer buffer-1)
         (async-call *display* (status-set-text "Begin find search"))
@@ -81,7 +87,7 @@
                                           (when line
                                             (async-call *display* (add-main-text-nc line))
                                             (recur (. bufreader readLine)))))
-                             msg (str "<<Completed find search>> " (proc-time-info :time-text))]
+                             msg (str "<<Completed find search>> " (simple-tdiff tstart) " ms")]
           (async-call *display* (add-main-text-nc msg))
           (async-call *display* (status-set-text msg)))))))
 

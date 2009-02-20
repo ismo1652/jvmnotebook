@@ -119,14 +119,16 @@
         term    (get-sync-call disp (. findfiles-filter-box getText))
         cur-dir "."]
     (if (and disp term cur-dir (> (length cur-dir) 0) (> (length term) 0))
-	  (let []
+	  (let [tstart (. System currentTimeMillis)]
 		;; Establish the directory and file functions.
         (async-status-history *display* (str "Begin Find File Search For => " term " at "(date-time)))
 		(let [dir-func  on-findfiles-dir-func
 			  file-func on-findfiles-file-func]
           (traverse-directory (new File ".") dir-func file-func))
-        (async-status-history *display* (str "End Find File Search")))
-      (let []
+		(let [tend (. System currentTimeMillis)
+				   diff (- tend tstart)]
+		  (async-status-history *display* (str "End Find File Search, process time => " diff " ms"))))
+      (do
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Err:
         ;; Send status error message, could not find
