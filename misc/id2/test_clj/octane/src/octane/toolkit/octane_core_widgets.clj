@@ -135,6 +135,7 @@
                 (widgetSelected [e] (jar-viewer-handler)))))
     (doto (new MenuItem menu (. SWT PUSH))
       (. setText (. resources-win getString "Open_archive_menuitem"))
+	  (. setAccelerator (+ SWT/MOD1 (int \Z)))
       (. addSelectionListener open-archive-file-listener))
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;; Create the recent file menu options
@@ -146,6 +147,7 @@
     (let [item-exit (new MenuItem menu (. SWT PUSH))]
       (doto item-exit
         (. setText (. resources-win getString "Exit_menuitem"))
+		(. setAccelerator (+ SWT/MOD1 (int \Q)))
         (. addSelectionListener 
            (proxy [SelectionAdapter] []
                   (widgetSelected [evt] (exit) println "Exiting")))))
@@ -168,16 +170,20 @@
   [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar (. sh getMenuBar)
-            menu (new Menu bar)
-            item (new MenuItem menu (. SWT PUSH))
-            code-gen-item (new MenuItem menu (. SWT PUSH))]
-    (doto item
+            menu   (new Menu bar)]
+    (doto (new MenuItem menu (. SWT PUSH))
       (. setText (. resources-win getString "Database_viewer_menuitem"))
 	  (. setAccelerator (+ SWT/MOD1 (int \D)))
       (. addSelectionListener
          (proxy [SelectionAdapter] []
                 (widgetSelected [event] (create-database-window *shell* true)))))
-    (doto code-gen-item
+	(doto (new MenuItem menu (. SWT PUSH))
+	  (. setText (. resources-win getString "File_properties_menuitem"))
+	  (. addSelectionListener win-file-prop-listener))
+	(doto (new MenuItem menu (. SWT PUSH))
+	  (. setText (. resources-win getString "Search_statistics_menuitem")))
+	(new MenuItem menu SWT/SEPARATOR)
+    (doto (new MenuItem menu (. SWT PUSH))
       (. setText (. resources-win getString "Codegen_buildxml_menuitem"))
       (. addSelectionListener
          (proxy [SelectionAdapter] []

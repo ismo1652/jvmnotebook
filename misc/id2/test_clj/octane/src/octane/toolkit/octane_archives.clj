@@ -29,7 +29,8 @@
 	 octane.toolkit.public_objects
 	 octane.toolkit.octane_gui_utils
 	 octane.toolkit.octane_config
-     octane.toolkit.octane_file_utils)
+     octane.toolkit.octane_file_utils
+	 octane.toolkit.octane_jar_viewer)
 	(:import 
 	 (java.io File)
 	 (org.eclipse.swt SWT)
@@ -41,7 +42,7 @@
 							 SelectionEvent ShellAdapter ShellEvent)
 	 (org.eclipse.swt.widgets Label Menu MenuItem Control Listener)
      (com.octane.util.zip UncompressInputStream)
-     (java.io FileInputStream InputStream )     
+     (java.io FileInputStream InputStream ByteArrayOutputStream)     
      (java.util.zip ZipInputStream InflaterInputStream)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -53,33 +54,55 @@
   (try (let [zin (new ZipInputStream (new FileInputStream infile))]
          (loop [entry (. zin getNextEntry)
                 ctr   0]
-           (println "-->" ctr  " --->" entry)
            (when entry
-             (println "-->" ctr)
              (recur (. zin getNextEntry) (+ ctr 1))))
          (. zin close))
        (catch Exception e (. e printStackTrace))))
 
-(defn open-compressed-has-file?
-  "Open an archive file and determine if there is only one entry"
+(defn open-compressed-file
+  "Open an archive file and LZC unix compressed .Z extension"
   [infile]
   ;;;;;;;;;;;;
-  (try (let [zin (new InflaterInputStream (new FileInputStream infile))]
-         (loop [entry (. zin getNextEntry)
-                ctr   0]
-           (println "-->" ctr  " --->" entry)
-           (when entry
-             (println "-->" ctr)
-             (recur (. zin getNextEntry) (+ ctr 1))))
-         (. zin close))
-       (catch Exception e (. e printStackTrace))))
-                  
+  (try (let [zin (new UncompressInputStream (new FileInputStream infile))
+				  bbuf #^"[B" (make-array (. Byte TYPE) 20480)
+				  bout (new ByteArrayOutputStream 20480)]
+		 (loop [got (. zin read bbuf)
+					tot 0]		  
+		   (when (> got 0)
+			 (. bout write bbuf, 0 got)
+			 (recur (. zin read bbuf) (+ tot 1))))
+		 ;; With the byte array outputstream
+		 ;; Convert the bytes to string
+		 (. bout flush)
+		 (. zin close)
+		 (new String (. bout toByteArray)))
+       (catch Exception e 
+			  (. e printStackTrace)
+			  nil)))
+
+(defn win-open-compressed-file
+  "Open an archive file and LZC unix compressed .Z extension"
+  [infile]
+  ;;;;;;;;;;;;
+  (let [data (open-compressed-file infile)]
+	(async-status-history *display* (str "Open LZC (unix compressed) file => " infile *newline*))
+	(async-add-main-text data)))
+
+(defn check-archive-handler
+  "Determine the archive type based on the extension and handle accordingly"
+  [disp file path]
+  ;;;;;;;;;;;;;;;;;
+  (cond (. path endsWith ".Z")   (win-open-compressed-file file)
+		(. path endsWith ".jar") (open-jar-file file)
+		(. path endsWith ".zip") (println "Not implemented")
+		:default                 (println "Not implemented")))
+		                  
 (defn open-archive-file-handler
   "Open the archive file.   Open the file  in the main buffer if only ONE text file exists.
  If more than one exists than just list the entries."
   [disp file path]
   ;;;;;;;;;;;;;;;;;
-  (open-archive-has-file? file))
+  (check-archive-handler disp file path))
   
 (def open-archive-file-listener
      ;; Open the archive file.   Open the file  in the main buffer if only ONE text file exists.
