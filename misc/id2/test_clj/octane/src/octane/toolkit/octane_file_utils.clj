@@ -207,7 +207,17 @@
                                 (@cur-file-info :file-name) (@cur-file-info :parent-dirname)
                                 (@cur-file-info :file-path) (@cur-file-info :file-size)
                                 (*memory-usage*)]))))
-      
+
+(defn get-simple-file-info [msg]
+  (when (and (not (nil? @cur-file-info)) (get-file-state))
+    (. MessageFormat format 
+       msg (to-array [(date-timel (@cur-file-info :last-mod)) (@cur-file-info :line-num)
+					  (@cur-file-info :file-name) (@cur-file-info :parent-dirname)
+					  (@cur-file-info :file-path) (@cur-file-info :file-size)
+					  (*memory-usage*) 
+					  (*file-size-m* (@cur-file-info :file-size))
+					   ]))))
+     
 (def  file-state             (ref {:open-state false}))
 (defn get-file-state []      (@file-state :open-state))
 (defn set-file-state [state] (dosync (commute file-state assoc :open-state state)))
@@ -389,13 +399,38 @@
 ;; Document and Search Properties
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defn win-prop-err-msg [msg filename]
+  (let [fin-msg (str "Err opening file : " msg " => " filename \newline "At " (date-time))]
+	(async-status-history *display* fin-msg)
+	(display-error fin-msg)))
+
+(defn win-prop-open-file
+  "Open a text file and retur file information stats"
+  [file path]
+  ;;;;;;;;;;;;;
+  (open-file-util file path)
+  (let [fin-msg (get-simple-file-info simple-file-info-msg)]
+	(add-secondary-text fin-msg)
+	;; Open the info box
+	(create-info-messagebox *shell* "File Properties" fin-msg)))
+
 (defn win-file-prop-handler
   "Determine the file type and print the document properties.
  The current file is taken from the location bar."
   []
   ;;;;;;
   (let [filename (. location-bar getText)]
-	
+	(if (and filename (> (. filename length) 3))
+	  (let [ext (file-extension filename)
+				file    (new File filename)
+				is-dir? (.isDirectory file)]
+		(if (not (. file exists))
+		  (do (win-prop-err-msg "File does not exist" filename))
+		  (cond (= "jar" ext) (println "jar")
+				(= "Z"   ext) (println "Z")
+				(= "zip" ext) (println "d")
+				:default      (win-prop-open-file file filename))))
+	  (do (win-prop-err-msg "Get Properties - Invalid filename from location bar (empty)" filename)))))
 
 (def win-file-prop-listener
 	 (proxy [SelectionAdapter] []

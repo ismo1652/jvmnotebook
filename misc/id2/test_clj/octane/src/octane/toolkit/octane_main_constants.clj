@@ -51,6 +51,18 @@
 ************************************************************
 ")
 
+(def simple-file-info-msg
+"File Info Properties:
+File Name : {2}
+Absolute Path : {4}
+Parent Directory : {3}
+Last Modified : {0}
+Number of Lines : {1}
+File Size : {5} bytes
+File Size (MB): {7} MB
+Memory after load : {6}
+---------------------------------------------------------------------------------------------")
+
 (def file-info-msg
 "------------------------------------------------------------
 - File Info Properties#

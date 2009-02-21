@@ -65,6 +65,20 @@
 
 (defn println-obj [o] (println o) o)
 
+(defn file-extension-
+  "Get the file-extension from a filename"
+  [filename n] 
+  ;;;;;;;;;;;;;
+  (when (> (. filename length) (+ n 1))
+	(. filename substring (- (. filename length) n))))
+
+(defn file-extension
+  "Get the file-extension from a filename.
+ Also synonymous with (re-find #'[^.]*$' 'foo.bar.baz.jar)"
+  [filename]
+  ;;;;;;;;;;;;
+  (last (.split filename "\\.")))
+
 (defn parse-long [str]
   (try (Long/parseLong str) 
        (catch NumberFormatException nfe 0)))
@@ -91,6 +105,8 @@
 (defn *total-memory-m* [] (int (floor (/ (*total-memory-b*) *megabytes*))))
 (defn *max-memory-m*   [] (int (floor (/ (*max-memory-b*)   *megabytes*))))
 (defn *used-memory-m*  [] (int (floor (/ (*used-memory-b*)  *megabytes*))))
+
+(defn *file-size-m*    [file-size] (/ file-size  *megabytes*))
 
 (defn *memory-usage* []
   (str "(" (*used-memory-m*) "M/" (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))

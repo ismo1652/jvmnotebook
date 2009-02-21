@@ -179,6 +179,7 @@
                 (widgetSelected [event] (create-database-window *shell* true)))))
 	(doto (new MenuItem menu (. SWT PUSH))
 	  (. setText (. resources-win getString "File_properties_menuitem"))
+	  (. setAccelerator (+ SWT/MOD1 (int \I)))
 	  (. addSelectionListener win-file-prop-listener))
 	(doto (new MenuItem menu (. SWT PUSH))
 	  (. setText (. resources-win getString "Search_statistics_menuitem")))
