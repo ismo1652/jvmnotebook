@@ -117,6 +117,7 @@
             m (if fns fns (new-find-next-matcher text term))]
         ;; Also set the 'quick' search text bar at the bottom of the main window
         (async-call *display* (. search-box setText term))
+        (async-call *display* (update-textarea))
         ;; Set the public matcher object, if it doesnt exist
         (when (not fns) (set-find-next-state m))
         (if (. m find)
@@ -129,8 +130,9 @@
 			  (. m reset))))
       (let []
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; Err:
+        ;; On ERR:
         ;; Send status error message, could not find
+        ;; (Bug with branching logic)
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         (if (not term) 
           (. search-status-label setText "Invalid Search Term (empty)")

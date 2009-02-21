@@ -82,7 +82,7 @@
 					tstart (. System currentTimeMillis) ]
         ;; First clear the main text buffer
         (clear-buffer buffer-1)
-        (async-call *display* (status-set-text "Begin find search"))
+        (async-call *display* (status-set-text "Begin find/grep search"))
         (let [proc-time-info (proc-time (loop [line (. bufreader readLine)]
                                           (when line
                                             (async-call *display* (add-main-text-nc line))
@@ -92,8 +92,7 @@
           (async-call *display* (status-set-text msg)))))))
 
 (defn start-findgrep-thread-java [widget]
-  (proxy [Runnable] []
-         (run [] (start-findgrep-cmd "." "*.java" nil))))
+  (proxy [Runnable] [] (run [] (start-findgrep-cmd "." "*.java" nil))))
 
 (defn run-findgrep-widget [obj-inst search-str]
   ;; We don't have access to the keyword, have to compare with the

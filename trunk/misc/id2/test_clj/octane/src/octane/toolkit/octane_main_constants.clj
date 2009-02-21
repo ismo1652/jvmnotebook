@@ -130,6 +130,8 @@
 
 (def *jar-wildcard-seq*      ["*.jar" "*.zip" "*.*"])
 
+(def *zip-wildcard-seq*      [ "*.zip" "*.Z"  "*.jar" "*.*" ])
+
 (def *prop-main-database* "Main_database_config")
 
 ;; For Regex Patterns, Flags may include CASE_INSENSITIVE, MULTILINE, DOTALL, UNICODE_CASE, and CANON_EQ

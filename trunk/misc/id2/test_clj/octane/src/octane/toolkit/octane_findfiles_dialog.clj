@@ -120,8 +120,16 @@
         cur-dir "."]
     (if (and disp term cur-dir (> (length cur-dir) 0) (> (length term) 0))
 	  (let [tstart (. System currentTimeMillis)]
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 		;; Establish the directory and file functions.
-        (async-status-history *display* (str "Begin Find File Search For => " term " at "(date-time)))
+        ;; First, send out startup messages and init routines
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        (async-status-history *display* (str "Begin Find in Files Search For (Please wait for process to complete) => " term " at "(date-time)))
+        (async-add-main-text (str "<<< Begin Find in Files Search >>>" \newline))               
+         ;; Also set the 'quick' search text bar at the bottom of the main window
+        (async-call *display* (. search-box setText term))
+        (async-call *display* (update-textarea))
+        ;; Continue with traverse directory
 		(let [dir-func  on-findfiles-dir-func
 			  file-func on-findfiles-file-func]
           (traverse-directory (new File ".") dir-func file-func))
