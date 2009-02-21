@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Note: the cygwin launch is deprecated use ./octane.bat
+#
 OS=`uname -a`
 
 # Install Directory Path (editable attribute)
@@ -12,6 +14,8 @@ LIB2=$INSTALL_DIR/lib/swt/win32/swt.jar
 LIB3=$INSTALL_DIR/lib/jline-0.9.94.jar
 LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
 LIB4=$INSTALL_DIR/lib/org.eclipse.jface.text_3.4.1.r341_v20080827-1100.jar
+
+OCT_COMMONS=$INSTALL_DIR/lib/octane_commons.jar
 
 JFREE_LIB=$INSTALL_DIR/lib/jfreechart
 LIB6=$JFREE_LIB/gnujaxp.jar
@@ -51,7 +55,7 @@ case "$OS" in
 	*)
 		LIB2=$LIB2_LINUX
 		LIB_CP_JFREE=$LIB6:$LIB7:$LIB8:$LIB9:$LIB10:$LIB11
-		CP=".:src:${LIB1}:${LIB2}:${LIB3}:$LIB_CP_JFREE:$CONF_LIB" ;;
+		CP=".:src:${LIB1}:${LIB2}:${LIB3}:$LIB_CP_JFREE:$OCT_COMMONS:$CONF_LIB" ;;
 esac 
 
 echo "(SCRIPT): --------------------------------"

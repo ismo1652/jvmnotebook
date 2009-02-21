@@ -24,7 +24,8 @@
 
 (ns octane.toolkit.octane_main_constants
 	(:use  octane.toolkit.octane_utils
-		   octane.toolkit.octane_config)
+		   octane.toolkit.octane_config
+		   octane.toolkit.octane_version)	
     (:import  (org.eclipse.swt.graphics Color RGB)
               (org.eclipse.swt SWT)
               (java.text MessageFormat)
@@ -42,6 +43,7 @@
 (def hist-header-msg
 "************************************************************
 * Octane Log Viewer Init
+* Version: {4}
 * Running on system environment : {3}
 * Launched at {0}
 * Install Directory : {1}
@@ -62,15 +64,32 @@
 ------------------------------------------------------------
 ")
 
+(def *about-version-msg*
+"Octane Text Viewer
+
+Version: {0}
+
+{1}
+
+Octane is text viewer application for
+viewing and searching through plain text documents.  
+It also contains graph and charting utilities.
+
+At least Java Runtime 1.5 is required")
+
+(def  *about-version*
+	 (. MessageFormat format *about-version-msg*
+		(to-array [*OCTANE_VERSION* (. resources-win getString "About_2")])))
+
 ;; Note: the work path may be set automatically by 'octane-config' get install directory.
 (def *newline* "\n")
 
 (def *recent-file-list* (str *work-path* "/" "_sHIKXx1_recent.ser"))
 
 (defn get-hist-header []
-  (. MessageFormat format hist-header-msg 
+  (. MessageFormat format hist-header-msg
      (to-array [(str (new java.util.Date))
-                *octane-install-dir* *work-path* *system-os-name* ])))
+                *octane-install-dir* *work-path* *system-os-name* *OCTANE_VERSION*])))
 
 (def win-size-width       880)
 (def win-size-height      750)
@@ -130,7 +149,7 @@
 
 (def *jar-wildcard-seq*      ["*.jar" "*.zip" "*.*"])
 
-(def *zip-wildcard-seq*      [ "*.zip" "*.Z"  "*.jar" "*.*" ])
+(def *zip-wildcard-seq*      [ "*.Z" "*.zip" "*.jar" "*.*" ])
 
 (def *prop-main-database* "Main_database_config")
 

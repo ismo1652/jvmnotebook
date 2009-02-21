@@ -158,7 +158,7 @@
 (defn create-about-messagebox [sh]
   (let [msgbox (new MessageBox sh SWT/NONE)
                about1 (. resources-win getString "About_1")
-               about2 (. resources-win getString "About_2")]
+               about2 *about-version*]
     (. msgbox setText about1)
     (. msgbox setMessage about2)
     (. msgbox open)

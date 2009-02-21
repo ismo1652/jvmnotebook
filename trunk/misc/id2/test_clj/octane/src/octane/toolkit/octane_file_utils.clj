@@ -384,6 +384,22 @@
           (let []
             (println "Opening file from command-line argument list")
             (open-file (first args) false)))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Document and Search Properties
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn win-file-prop-handler
+  "Determine the file type and print the document properties.
+ The current file is taken from the location bar."
+  []
+  ;;;;;;
+  (let [filename (. location-bar getText)]
+	
+
+(def win-file-prop-listener
+	 (proxy [SelectionAdapter] []
+			(widgetSelected [e] (win-file-prop-handler))))
                                         
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
