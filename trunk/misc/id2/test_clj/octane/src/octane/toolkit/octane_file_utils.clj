@@ -216,7 +216,7 @@
 					  (@cur-file-info :file-path) (@cur-file-info :file-size)
 					  (*memory-usage*) 
 					  (*file-size-m* (@cur-file-info :file-size))
-					   ]))))
+					  ]))))
      
 (def  file-state             (ref {:open-state false}))
 (defn get-file-state []      (@file-state :open-state))
@@ -352,7 +352,7 @@
       (. buffer-1 append (str "<< Current Directory: " path *newline*))
       (doseq [fil (. file-dir listFiles)]
           (let [] (. buffer-1 append (format-dir-file fil))))
-      (. *styled-text* setText (. buffer-1 toString)))))             
+      (. *styled-text* setText (. buffer-1 toString)))))        
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Location Bar and Utilities
