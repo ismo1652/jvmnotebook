@@ -65,13 +65,28 @@
 			<arg value="${basedir}/WEB-INF/classes/version.properties"/>            
 		</java>
     </target>
+	
+    <target name="run.decompress" depends="compile">
+    	<java classname="com.octane.util.zip.UncompressInputStream">
+			<classpath refid="classpath" />
+			<classpath>
+				<pathelement location="${basedir}" />
+				<pathelement location="${build.classes.dir}" />
+			</classpath>    	            
+			<arg value="C:/temp/native_stderr.log.090216060203.Z" />
+		</java>
+    </target>
+
 
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->		
     <!-- Target: Build -->
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
     <target name="jar" depends="compile">
+    	<jar destfile="${build.dir}/octane_commons.jar">
+    	    <fileset dir="${build.classes.dir}" includes="**/*.class" />
+		</jar>    		
     </target>
-   
+			
 	<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
 	<!-- Main Clean -->
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
