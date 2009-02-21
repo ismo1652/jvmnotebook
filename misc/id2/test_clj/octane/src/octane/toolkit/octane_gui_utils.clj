@@ -182,14 +182,14 @@
   ;; Light grey for default text.
   (let [disp (. Display getDefault)]
     (doto colors-vec
-    (. addElement (new Color disp orange-sel-color))
-    (. addElement (new Color disp lightgrey-color))
-    (. addElement (new Color disp red-color))
-    (. addElement (new Color disp cyan-sel-color))
-    (. addElement (new Color disp dark-blue-color))
-    (. addElement (new Color disp white-color))
-	(. addElement (new Color disp yellow-color))
-	(. addElement (new Color disp black-color)))))
+	  (. addElement (new Color disp orange-sel-color))
+	  (. addElement (new Color disp lightgrey-color))
+	  (. addElement (new Color disp red-color))
+	  (. addElement (new Color disp cyan-sel-color))
+	  (. addElement (new Color disp dark-blue-color))
+	  (. addElement (new Color disp white-color))
+	  (. addElement (new Color disp yellow-color))
+	  (. addElement (new Color disp black-color)))))
 
 (defn refresh-textarea []
   (. *styled-text* redraw)
