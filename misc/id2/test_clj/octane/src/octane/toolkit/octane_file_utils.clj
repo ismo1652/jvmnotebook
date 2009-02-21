@@ -365,8 +365,9 @@
      (proxy [Listener] []
             (handleEvent [event]
                          (when (= (. event detail) SWT/TRAVERSE_RETURN)
-                           (async-status-history *display* (str "Opening from location bar " (. location-bar getText)))
-                           (open-file-or-dir (. location-bar getText))))))
+                           (async-status-history *display* (str "Opening from location bar " 
+                                                                (. location-bar getText)))
+                           (open-file-or-dir (octane-trim (. location-bar getText)))))))
 
 (defn dialog-open-dir []
   (. directory-dialog setText "Open Directory")

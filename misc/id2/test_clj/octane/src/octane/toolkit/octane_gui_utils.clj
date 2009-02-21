@@ -44,7 +44,7 @@
 
 (defmacro async-call 
   "Asynchronous execute call.  Create a proxy Runnable object and then execute the 
- body code"
+ body code.  Calling code with async avoids illegal thread exceptions"
   [disp & body]
   ;;;;;;;;;;;;;;
   `(. ~disp asyncExec (proxy [Runnable] [] (run [] ~@body))))
@@ -59,17 +59,27 @@
      (. Thread sleep 50)
      (deref val-res#)))
 
-(defn add-text-buffer [text-field buffer str-data]
-     (clear-buffer buffer)
-     (. buffer append str-data)
-     (. text-field setText (. buffer toString)))
+(defn add-text-buffer 
+  "Add FULL text to a buffer, clear the buffer and add the text"
+  [text-field buffer str-data]
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (clear-buffer buffer)
+  (. buffer append str-data)
+  (. text-field setText (. buffer toString)))
 
-(defn add-main-text [str-data]
+(defn add-main-text
+  "Add FULL text to the main buffer buffer, clear the buffer and add the text"
+  [str-data]
+  ;;;;;;;;;;
   (add-text-buffer *styled-text* buffer-1 str-data))
 
 (defn async-add-text [disp text-field buffer str-data]
   ;; For example, text-field = styled-text
   (async-call disp (add-text-buffer text-field buffer str-data)))
+
+(defn async-add-main-text [str-data]
+  ;; For example, text-field = styled-text
+  (async-call *display* (add-main-text str-data)))
 
 (defn add-main-text-nc [line]
   ;; Add the main text without clearing the core buffer
@@ -137,7 +147,6 @@
   (. location-bar setText text)
   (. location-bar update))
 
-
 (defn shell-display-loop [disp sh dispose? msg]  
   (loop [] (if (. sh (isDisposed))
              (if dispose? (. disp dispose) (println msg))
@@ -145,7 +154,6 @@
                (when (not (. disp (readAndDispatch)))
                  (. disp (sleep)))
                (recur)))))
-
 
 (defn create-about-messagebox [sh]
   (let [msgbox (new MessageBox sh SWT/NONE)
@@ -172,6 +180,9 @@
 
 (defn refresh-textarea []
   (. *styled-text* redraw)
+  (. *styled-text* update))
+
+(defn update-textarea []
   (. *styled-text* update))
 
 (defn shell-close-adapter 

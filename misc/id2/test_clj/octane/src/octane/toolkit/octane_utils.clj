@@ -50,6 +50,8 @@
 
 (defn octane-pattern [s flags] (. Pattern compile s flags))
 
+(defn octane-trim [s] (when s (. s trim)))
+
 (defn octane-safe-pattern [s flags] 
   (when s    
     (try (. Pattern compile s flags)

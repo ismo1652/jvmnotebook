@@ -33,7 +33,8 @@
 			 octane.toolkit.octane_search_dialog
 			 octane.toolkit.octane_regex_search
 			 octane.toolkit.octane_analytics
-             octane.toolkit.octane_jar_viewer)    
+             octane.toolkit.octane_jar_viewer
+             octane.toolkit.octane_archives)
 	(:import (java.util Date)
 			 (org.eclipse.swt SWT)
 			 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
@@ -106,7 +107,6 @@
       ;; Open File Menu Option
       ;;;;;;;;;;;;;;;;;;;;;;;;;
       (. setText (. resources-win getString "Open_menuitem"))
-	  ;; Add accelator CTRL + O, for OPEN MENU
 	  (. setAccelerator (+ SWT/MOD1 (int \O)))
       (. addSelectionListener 
          (proxy [SelectionAdapter] []
@@ -133,9 +133,9 @@
       (. addSelectionListener 
          (proxy [SelectionAdapter] []
                 (widgetSelected [e] (jar-viewer-handler)))))
-    ;; [Deprecated, TODO](doto (new MenuItem menu (. SWT PUSH))
-    ;;  ;; Jar viewers
-    ;;  (. setText (. resources-win getString "Jardirview_menuitem")))
+    (doto (new MenuItem menu (. SWT PUSH))
+      (. setText (. resources-win getString "Open_archive_menuitem"))
+      (. addSelectionListener open-archive-file-listener))
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;; Create the recent file menu options
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
