@@ -73,6 +73,12 @@
   ;;;;;;;;;;
   (add-text-buffer *styled-text* buffer-1 str-data))
 
+(defn add-secondary-text
+  "Add FULL text to the main buffer buffer, clear the buffer and add the text"
+  [str-data]
+  ;;;;;;;;;;
+  (add-text-buffer tab-text-2 buffer-2 str-data))
+
 (defn async-add-text [disp text-field buffer str-data]
   ;; For example, text-field = styled-text
   (async-call disp (add-text-buffer text-field buffer str-data)))
@@ -161,6 +167,13 @@
                about2 *about-version*]
     (. msgbox setText about1)
     (. msgbox setMessage about2)
+    (. msgbox open)
+    msgbox))
+
+(defn create-info-messagebox [sh titl msg]
+  (let [msgbox (new MessageBox sh SWT/NONE)]
+    (. msgbox setText titl)
+    (. msgbox setMessage msg)
     (. msgbox open)
     msgbox))
 

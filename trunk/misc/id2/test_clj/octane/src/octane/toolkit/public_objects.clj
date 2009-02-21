@@ -73,6 +73,7 @@
 (def tab-area-4   (new TabItem tab-folder SWT/NULL))
 (def search-box   (new Text *shell* SWT/BORDER))
 
+;; Tab-text-2 is associated with the secondary text area
 (def tab-text-2   (new Text tab-folder swt-tabtext-style))
 (def tab-text-3   (new Text tab-folder swt-tabtext-style))
 (def tab-text-4   (new Text tab-folder swt-tabtext-style))
