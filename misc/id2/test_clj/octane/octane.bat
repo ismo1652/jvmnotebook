@@ -33,6 +33,8 @@ set OCT_LIB4=%INSTALL_DIR%\lib
 set OCT_LIB5=%INSTALL_DIR%\conf
 set OCT_LIB_SRC=%INSTALL_DIR%\src
 
+set OCT_COMMONS=%INSTALL_DIR%\lib\octane_commons.jar
+
 REM -- Set JFree Chart Libraries --
 set JFREE_LIB=%INSTALL_DIR%\lib\jfreechart
 set JLIB6=%JFREE_LIB%\gnujaxp.jar
@@ -45,7 +47,7 @@ set JLIB11=%JFREE_LIB%\swtgraphics2d.jar
 REM -- Set the jFree chart libraries --
 set LIB_CP_JFREE=%JLIB6%;%JLIB7%;%JLIB8%;%JLIB9%;%JLIB10%;%JLIB11%
 
-set CLASSPATH=%CLASSPATH%;%OCT_LIB1%;%OCT_LIB2%;%OCT_LIB3%;%OCT_LIB4%;%OCT_LIB5%;%OCT_LIB_SRC%;%LIB_CP_JFREE%;%INSTALL_DIR%
+set CLASSPATH=%CLASSPATH%;%OCT_LIB1%;%OCT_LIB2%;%OCT_LIB3%;%OCT_LIB4%;%OCT_LIB5%;%OCT_LIB_SRC%;%LIB_CP_JFREE%;%OCT_COMMONS%;%INSTALL_DIR%
 
 echo (SCRIPT) ------------------------------------
 echo %CLASSPATH%
