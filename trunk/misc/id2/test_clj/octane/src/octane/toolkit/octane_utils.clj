@@ -50,14 +50,14 @@
 
 (defn octane-pattern [s flags] (. Pattern compile s flags))
 
+(defn octane-pattern_ [s] (. Pattern compile s))
+
 (defn octane-trim [s] (when s (. s trim)))
 
 (defn octane-safe-pattern [s flags] 
   (when s    
     (try (. Pattern compile s flags)
          (catch Exception e nil))))         
-
-(defn octane-pattern_ [s] (. Pattern compile s))
 
 (defn add-select-style [styles-vec cur-style] (. styles-vec addElement cur-style))
 
@@ -111,7 +111,10 @@
 (defn *memory-usage* []
   (str "(" (*used-memory-m*) "M/" (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))
 
-(def  *dir-date-format* (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
+(def  *dir-date-format*    (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
+
+;; Example sysout date format = '2/12/09 13:11:12:784 EST'
+(def  *sysout-date-format* (new SimpleDateFormat "MM/dd/yy HH:mm:ss:SSS z"))
 (defn get-dir-date [l]  (. *dir-date-format* format (new Date l)))
 
 (defmacro when-try [body]
@@ -120,6 +123,12 @@
                (println "ERR <when-try> " ~'e)
 			   (try (history-add-textln (str "ERR <when-try> " ~'e *newline*))
 					(catch Exception ~'e2 (println "ERR2 <when-try>")))
+               nil)))
+
+(defmacro when-try_ [body]
+  `(try ~body
+        (catch Exception ~'e
+               (println "ERR <when-try> " ~'e)
                nil)))
 
 (defmacro proc-time [expr]
@@ -175,6 +184,12 @@
 	(try (. (. sdf parse str-date) getTime)
 		 (catch Exception e (println "Warn: invalid date format =>" str-date)
 				str-date))))
+
+(defn parse-sysout-date
+  "Return the long representation for system out timestamp"
+  [str-date]
+  ;;;;;;;;;;;
+  (when-try_  (.getTime (.parse *sysout-date-format* str-date))))
 
 (defn doc-filter-regex
   "Return a string document with only the lines of interest"
