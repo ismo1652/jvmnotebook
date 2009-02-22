@@ -81,7 +81,6 @@
 				func  (. m group 3)]
 		(list app query func)))))
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn request-frequency

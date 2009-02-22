@@ -51,6 +51,8 @@
 (def save-file-list)
 (def load-file-list)
 
+(def *sysout-timestamp-regex*  "(\\[(.*?)\\]\\s[0-9]{8})")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Recent menu buffer routines
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -435,7 +437,38 @@
 (def win-file-prop-listener
 	 (proxy [SelectionAdapter] []
 			(widgetSelected [e] (win-file-prop-handler))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Build Simple XY Plot of Search Term Data
+;; No GUI libraries are required.  Open the file, and
+;; only collect the lines with found search terms.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn on-sysout-line-func [list-ref]
+  (fn [line] 
+	  (let [m (.matcher (octane-pattern_ *sysout-timestamp-regex*) line)]
+		(when (.find m)
+		  (let [ref-data {:timestamp (parse-sysout-date (.group m 2))
+						  :line (.substring line (+ 1 (.end m))) } ]
+			;; Update the state of 'list-ref' as
+			;; as a new list with the new element.
+			;; In common lisp, this would be 'push'
+			(sync nil (ref-set list-ref
+							   (conj @list-ref ref-data))))))))
+							
+(defn get-log-search-terms
+  "Create a list of data structures with the found term and a timestamp
+ on when that that search term was found"
+  [filename term-regex]
+  ;;;;;;;;;;; 
+  (let [file (new File filename)
+			 file-data (open-file-util file filename)]
+	(let [lines-found (doc-filter-regex file-data term-regex)
+					  list-ref (ref [])]
+	  (doc-loop-handler lines-found (on-sysout-line-func list-ref))
+	  @list-ref)))
                                         
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -18,6 +18,8 @@
 ;;;          is found on the line then the line will be higlighted.
 
 ;;; Key Functions: simple-swt create-file-menu
+;;;
+;;; Also see: http://www.jfree.org/jfreechart/api/javadoc/index.html?org/jfree/chart/ChartFactory.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns octane.toolkit.octane_graphs
@@ -28,8 +30,8 @@
 			 octane.toolkit.octane_gui_utils
              octane.toolkit.octane_file_utils
 			 octane.toolkit.ws_garbage_collection)
-	
-	(:import 			 
+	(:import 			 	 
+	 (java.awt GradientPaint)
 	 (java.util Date)
 	 (org.eclipse.swt.graphics Color RGB)
 	 (org.eclipse.swt SWT)
@@ -43,7 +45,9 @@
 	 (org.jfree.chart ChartFactory JFreeChart)
 	 (org.jfree.chart.axis DateAxis)
 	 (org.jfree.chart.plot XYPlot)
-	 (org.jfree.chart.renderer.xy XYItemRenderer)
+	 (org.jfree.chart.renderer.xy XYLine3DRenderer)
+	 (org.jfree.chart.renderer.xy XYItemRenderer XYDotRenderer YIntervalRenderer
+								  XYShapeRenderer XYSplineRenderer)
 	 (org.jfree.chart.renderer.xy XYLineAndShapeRenderer)
 	 (org.jfree.data.time Month Second TimeSeries TimeSeriesCollection)
 	 (org.jfree.data.xy XYDataset)
@@ -57,6 +61,7 @@
 
 (def create-graph-gc-window)
 (def graph-gc-byfile-window)
+(def graph-search-byfile-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Time Series Creation
@@ -86,6 +91,7 @@
   "Create a time series chart with the given dataset."
   [dataset]
   ;;;;;;;;;;
+  ;; The default renderer is an XYLineAndShapeRenderer for the time series chart.
   (let [chart (. ChartFactory createTimeSeriesChart
 				 "Native-Stderr Garbage Collection"  ;; title
 				 "Timestamp"                         ;; x-axis label
@@ -94,14 +100,17 @@
 				 true                                ;; create legend?
 				 true                                ;; generate tooltips?
 				 false)                              ;; generate URLs?
-			  plot (. chart getPlot)]
+			  plot              (. chart getPlot)
+			  xyLineShapeRender (new XYLineAndShapeRenderer)]
 	(doto plot
 	  (. setBackgroundPaint     java.awt.Color/white)
 	  (. setDomainGridlinePaint java.awt.Color/lightGray)
 	  (. setRangeGridlinePaint  java.awt.Color/lightGray)
 	  (. setAxisOffset (new RectangleInsets 5.0 5.0 5.0 5.0))
 	  (. setDomainCrosshairVisible true)
-	  (. setRangeCrosshairVisible true))
+	  (. setRangeCrosshairVisible true)
+	  (. setRenderer xyLineShapeRender))
+	;;(. chart setBackgroundPaint (new GradientPaint 0 0 java.awt.Color/white 0 1000 java.awt.Color/blue))
 	chart))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -109,30 +118,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn add-graph-menuitems [menu]
-  (let [ sysout-item (new MenuItem menu (. SWT CASCADE))
-         syserr-item  (new MenuItem menu (. SWT CASCADE))
-         gc-item      (new MenuItem menu (. SWT CASCADE))
-         gc-time-item (new MenuItem menu (. SWT CASCADE))
-         req-item     (new MenuItem menu (. SWT CASCADE))
-         errs-item    (new MenuItem menu (. SWT CASCADE))
-         query-item   (new MenuItem menu (. SWT CASCADE)) ]
-	(doto sysout-item
-	  (. setText (res-win-str "Graphs_sysout_menuitem")))
-	(doto syserr-item
-	  (. setText (res-win-str "Graphs_syserr_menuitem")))
-	(doto gc-item
-	  (. setText (res-win-str "Graphs_gctime_menuitem"))
-	  (. addSelectionListener
-         (proxy [SelectionAdapter] []
-                (widgetSelected [e] (create-graph-gc-window)))))
-	(doto gc-time-item
-	  (. setText (res-win-str "Graphs_gctimems_menuitem")))
-	(doto req-item
-	  (. setText (res-win-str "Graphs_req_menuitem")))
-	(doto errs-item
-	  (. setText (res-win-str "Graphs_errs_menuitem")))
-	(doto query-item
-	  (. setText (res-win-str "Graphs_query_menuitem")))))
+  (doto (new MenuItem menu (. SWT CASCADE))
+	(. setText (res-win-str "Graphs_gctime_menuitem"))
+	(. addSelectionListener
+	   (proxy [SelectionAdapter] []
+			  (widgetSelected [e] (create-graph-gc-window)))))
+  (doto (new MenuItem menu (. SWT CASCADE))
+	(. setText (res-win-str "Graphs_search_menuitem"))
+	(. addSelectionListener
+	   (proxy [SelectionAdapter] []
+			  (widgetSelected [e] (graph-search-byfile-window))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Graph Menu Creation (Open file to launch graph)
@@ -140,24 +135,17 @@
 
 (defn add-graph-file-menuitems [menu]
   (new MenuItem menu SWT/SEPARATOR)
-  (let [ sysout-item (new MenuItem menu (. SWT CASCADE))
-         syserr-item  (new MenuItem menu (. SWT CASCADE))
-         gc-item      (new MenuItem menu (. SWT CASCADE))
-         req-item     (new MenuItem menu (. SWT CASCADE))
-         query-item   (new MenuItem menu (. SWT CASCADE)) ]
-	(doto sysout-item
-	  (. setText (res-win-str "Graphs_sysout_file_menuitem")))
-	(doto syserr-item
-	  (. setText (res-win-str "Graphs_syserr_file_menuitem")))
-	(doto gc-item
-	  (. setText (res-win-str "Graphs_gctime_file_menuitem"))
-	  (. addSelectionListener
-         (proxy [SelectionAdapter] []
-                (widgetSelected [e] (graph-gc-byfile-window)))))
-	(doto req-item
-	  (. setText (res-win-str "Graphs_req_file_menuitem")))
-	(doto query-item
-	  (. setText (res-win-str "Graphs_query_file_menuitem")))))
+  (doto (new MenuItem menu (. SWT CASCADE))
+	(. setText (res-win-str "Graphs_gctime_file_menuitem"))
+	(. addSelectionListener
+	   (proxy [SelectionAdapter] []
+			  (widgetSelected [e] (graph-gc-byfile-window)))))
+  (doto (new MenuItem menu (. SWT CASCADE))
+	(. setText (res-win-str "Graphs_search_file_menuitem"))
+	(. addSelectionListener
+	   (proxy [SelectionAdapter] []
+			  (widgetSelected [e] (graph-search-byfile-window))))))
+  
 
 (defn create-graphs-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
@@ -225,8 +213,93 @@
     "Initialize the file database SWT window, set the size add all components"
     []
     ;;;;;;;;;;;;;;;;;;;;;;;;;
-    (simple-dialog-open-file 
-     (. *graph-gc-shell* getDisplay) graph-gc-byfile-handler *sysout-wildcard-seq*))
+    (simple-dialog-open-file *display* graph-gc-byfile-handler *sysout-wildcard-seq*))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Simple XY Plot of Search Term Data
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn create-timestamp-dataset
+  "Load the XML file with the system out data and create a chart dataset.
+ where dataset-func takes args (2) : filename application-data and returns the data structs."
+  [filename title dataset-func app-obj]
+  ;;;;;;;;;;
+  (let [ts (new TimeSeries title Second)
+		   dataset  (new TimeSeriesCollection)
+		   raw-data (dataset-func filename app-obj)]
+	(doseq [sys-struct raw-data]
+		(let [tstamp (sys-struct :timestamp)
+					 date-stamp (new Date tstamp)
+					 sec-stamp  (new Second date-stamp)]
+		  (. ts addOrUpdate sec-stamp 1.0)))
+	(. dataset addSeries ts)
+	dataset))
+
+
+(defn create-sysout-chart
+  "Create a time series chart with the given dataset."
+  [dataset]
+  ;;;;;;;;;;
+  ;; The default renderer is an XYLineAndShapeRenderer for the time series chart.
+  (let [chart (. ChartFactory createTimeSeriesChart
+				 "System Ouput Search Term Occurrence"  ;; title
+				 "Timestamp"                         ;; x-axis label
+				 "Occurred At"                       ;; y-axis label
+				 dataset                             ;; data
+				 true                                ;; create legend?
+				 true                                ;; generate tooltips?
+				 false)                              ;; generate URLs?
+			  plot              (. chart getPlot)
+			  xyLineShapeRender (new YIntervalRenderer)]
+	(doto plot
+	  (. setBackgroundPaint     java.awt.Color/white)
+	  (. setDomainGridlinePaint java.awt.Color/lightGray)
+	  (. setRangeGridlinePaint  java.awt.Color/lightGray)
+	  (. setAxisOffset (new RectangleInsets 5.0 5.0 5.0 5.0))
+	  (. setDomainCrosshairVisible true)
+	  (. setRangeCrosshairVisible true)
+	  (. setRenderer xyLineShapeRender))
+	;;(. chart setBackgroundPaint (new GradientPaint 0 0 java.awt.Color/white 0 1000 java.awt.Color/blue))
+	chart))
+
+(defn create-graph-sysout-file
+    "Initialize the file database SWT window, set the size add all components"
+    [filename]
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+	(doto *graph-gc-shell*
+	  (. setSize *graph-size-width* *graph-size-height*)
+	  (. setLayout (new FillLayout))
+	  (. addShellListener (shell-close-adapter *graph-gc-shell*)))
+	(let [gc-filename filename
+          dataset (when-try (create-timestamp-dataset gc-filename "Found At" get-log-search-terms "CaPolPopupServlet"))
+          chart   (create-sysout-chart dataset)
+          frame   (new ChartComposite *graph-gc-shell* SWT/NONE chart true)]
+	  (doto frame
+        (. setDisplayToolTips     true)
+        (. setHorizontalAxisTrace false)
+        (. setVerticalAxisTrace   false)))
+	;; Open the graph window
+	(doto *graph-gc-shell*
+	  (. open) (. setVisible true))
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;; Enter display/shell loop for this window
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	(let [disp (. *graph-gc-shell* getDisplay)]
+	  (shell-display-loop disp *graph-gc-shell* false "Graph GC shell disposed")))
+
+(def graph-search-byfile-handler
+     (fn [disp file path] 
+         ;; Handler for the graph garbage collection by file
+         (when file
+           (history-add-textln (str "Opening Search graph by file () => " (. file getAbsolutePath)))
+           (create-graph-sysout-file (. file getAbsolutePath)))))
+
+(defn graph-search-byfile-window
+    "Initialize the file database SWT window, set the size add all components"
+    []
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+    (simple-dialog-open-file
+     *display* graph-search-byfile-handler *sysout-wildcard-seq*))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
