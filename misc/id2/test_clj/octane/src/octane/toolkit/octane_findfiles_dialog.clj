@@ -212,7 +212,7 @@
   [parent-sh]
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-  (history-add-text "Opening find files screen (Search -> Open New Find in Files)")
+  (history-add-textln "Opening find files screen (Search -> Open New Find in Files)")
   (let [layout (create-findfiles-grid-layout)]
 	(. *findfiles-shell* setText "Find in Files")
 	(init-findfiles-helper *findfiles-shell*)
