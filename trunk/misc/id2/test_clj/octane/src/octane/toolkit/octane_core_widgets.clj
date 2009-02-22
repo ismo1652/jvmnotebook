@@ -214,6 +214,17 @@
     (add-findgrep-options menu)
     menu))
 
+(defn add-buffer-menuitems [menu]
+  (doto (new MenuItem menu (. SWT CASCADE))
+	(. setText (res-win-str "Swap_buffer_to_second_menuitem"))
+	(. setAccelerator SWT/F4)
+	(. addSelectionListener swap-buffer-to-listener))
+  (doto (new MenuItem menu (. SWT CASCADE))
+	(. setText (res-win-str "Swap_buffer_from_second_menuitem"))
+	(. setAccelerator SWT/F3)
+	(. addSelectionListener swap-buffer-from-listener))
+  (new MenuItem menu SWT/SEPARATOR))
+
 (defn create-menu-bar [disp sh]
   (let [bar  (new Menu sh (. SWT BAR))
         item (new MenuItem bar (. SWT CASCADE))
@@ -246,6 +257,7 @@
       (. setText (. resources-win getString "Graphs_menu_title"))
       (. setMenu (create-graphs-menu disp sh)))
     (let [buf-menu (new Menu bar)]
+	  (add-buffer-menuitems buf-menu)
       (doto recent-buffers
         (. setText (. resources-win getString "RecentBuffers_menu_title"))
         (. setMenu buf-menu))
