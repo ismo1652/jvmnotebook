@@ -207,6 +207,33 @@
 					  (set! (. event doit) false)
 					  (. cur-shell setVisible false))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Swap Buffer Utilities
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn swap-buffer-to-secondary
+  []
+  ;;;;;
+  (let [main-text (. *styled-text* getText)]
+	(when (and main-text (> (.length main-text) 0))
+	  (async-status-history *display* "Swapping Buffer, from main buffer to secondary")
+	  (add-secondary-text main-text))))
+
+(def swap-buffer-to-listener
+	 (proxy [SelectionAdapter] []
+			(widgetSelected [event] (swap-buffer-to-secondary))))
+
+(defn swap-buffer-from-secondary
+  []
+  ;;;;;
+  (let [second-text (. tab-text-2 getText)]
+	(when (and second-text (> (.length second-text) 0))
+	  (async-status-history *display* "Swapping Buffer, from secondary to main buffer")
+	  (add-main-text second-text))))
+
+(def swap-buffer-from-listener
+	 (proxy [SelectionAdapter] []
+			(widgetSelected [event] (swap-buffer-from-secondary))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
