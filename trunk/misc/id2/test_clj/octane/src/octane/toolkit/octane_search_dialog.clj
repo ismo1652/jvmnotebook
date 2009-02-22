@@ -29,7 +29,8 @@
 	 octane.toolkit.octane_gui_utils
 	 octane.toolkit.octane_config
 	 octane.toolkit.octane_tools
-	 octane.toolkit.octane_findfiles_dialog)	
+	 octane.toolkit.octane_findfiles_dialog
+	 octane.toolkit.octane_batch_search)
 	(:import 
 	 (org.eclipse.swt SWT)
 	 (org.eclipse.swt.widgets Display Shell Text Widget TabFolder TabItem)
@@ -249,6 +250,8 @@
   ;; Load the normal find/grep menu items
   (let [item-findgrep (create-menu-item menu "FindGrep_newgrep_menuitem" new-findfiles-listener)]
 	(. item-findgrep setAccelerator (+ SWT/MOD1 (int \G))))
+  (let [item2 (create-menu-item menu "Search_archivebydate_menuitem" uncompress-search-listener)]
+	(. item2 setAccelerator (+ SWT/MOD1 (int \U))))
   (new MenuItem menu SWT/SEPARATOR)
   ;; Run non lazy sequence operation
   (doseq [menu-key [{:name "FindGrep_grep_menuitem"   :proc findgrep-listener }

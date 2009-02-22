@@ -12,6 +12,7 @@
 			2. Web documentation (X)
 			3. Web server / app server (X)
 			4. Better code generation (add junit, clojure test, etc)
+			5. Go to line
 
 		FEATURES MUST COMPLETE:
 			1. Keystrokes      (+)

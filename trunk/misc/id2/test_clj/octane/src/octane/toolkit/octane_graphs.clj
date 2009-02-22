@@ -62,6 +62,7 @@
 (def create-graph-gc-window)
 (def graph-gc-byfile-window)
 (def graph-search-byfile-window)
+(def graph-search-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Time Series Creation
@@ -127,7 +128,7 @@
 	(. setText (res-win-str "Graphs_search_menuitem"))
 	(. addSelectionListener
 	   (proxy [SelectionAdapter] []
-			  (widgetSelected [e] (graph-search-byfile-window))))))
+			  (widgetSelected [e] (graph-search-window))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Graph Menu Creation (Open file to launch graph)
@@ -146,7 +147,6 @@
 	   (proxy [SelectionAdapter] []
 			  (widgetSelected [e] (graph-search-byfile-window))))))
   
-
 (defn create-graphs-menu [disp sh]
   ;; Note change in 'doto' call, dot needed.
   (let [bar  (. sh getMenuBar)
@@ -300,6 +300,14 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;
     (simple-dialog-open-file
      *display* graph-search-byfile-handler *sysout-wildcard-seq*))
+
+(defn graph-search-window
+    "Initialize the file database SWT window, set the size add all components"
+    []
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+	(history-add-textln 
+	 (str "Opening GC graph (), gc-file => " (user-variable "Graphs_gctime_logs"))
+	 (create-graph-sysout-file (user-variable "Graphs_search_logs"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

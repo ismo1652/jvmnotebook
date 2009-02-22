@@ -41,13 +41,29 @@
 
 ;; The on application load header message 
 (def hist-header-msg
-"************************************************************
+"
+************************************************************
 * Octane Log Viewer Init
 * Version: {4}
 * Running on system environment : {3}
 * Launched at {0}
 * Install Directory : {1}
 * Work Path : {2}
+
+-----------
+Quick Keys:
+------------
+CTRL - O = Invoke Open File Dialog
+CTRL - D = Database File Viewer
+CTRL - E = Open the Windows Explorer File Manager
+CTRL - J = Open the Jar File Viewer
+CTRL - Z = Open a Unix Compressed Z File
+CTRL - F = Invoke the Find Dialog (Search within Main Buffer)
+CTRL - G = Invoke Find in Files Dialog
+CTRL - U = Search Acrchive Files By Date
+F4       = Swap FROM the main buffer to the secondary buffer
+F3       = Swap FROM the secondary buffer to the main buffer
+
 ************************************************************
 ")
 
@@ -64,7 +80,8 @@ Memory after load : {6}
 ---------------------------------------------------------------------------------------------")
 
 (def file-info-msg
-"------------------------------------------------------------
+"
+------------------------------------------------------------
 - File Info Properties#
 - File Name : {2}
 - Absolute Path : {4}

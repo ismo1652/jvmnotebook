@@ -158,7 +158,7 @@
 
 (defn history-add-text [text]
   (println text)
-  (. buffer-3 append text)
+  (. buffer-3 append (str (date-time) " : " text))
   (let [disp (. tab-text-3 getDisplay)]
     (. disp asyncExec
        (proxy [Runnable] []
