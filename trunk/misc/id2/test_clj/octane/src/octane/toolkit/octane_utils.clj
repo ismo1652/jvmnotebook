@@ -31,7 +31,15 @@
 			 (java.text SimpleDateFormat)
              (java.nio.channels FileChannel FileChannel$MapMode)
 			 (java.io InputStreamReader FileInputStream BufferedReader File FilenameFilter)
-			 (java.util.regex Pattern)))
+			 (java.util.regex Pattern)
+			 (java.nio CharBuffer MappedByteBuffer)
+			 (java.nio.channels FileChannel)
+			 (java.nio.charset Charset)
+			 (java.nio.charset CharsetDecoder)
+			 (java.util.regex Matcher)
+			 (java.util.regex Pattern)
+			 (java.util.regex PatternSyntaxException)
+			 (java.nio ByteBuffer)))
 
 (def history-add-text)
 (def history-add-textln)	
@@ -111,7 +119,23 @@
 (defn *memory-usage* []
   (str "(" (*used-memory-m*) "M/" (*free-memory-m*) "M [" (*total-memory-m*) "M," (*max-memory-m*) "M ])"))
 
-(def  *dir-date-format*    (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
+(def  *dir-date-format*         (new SimpleDateFormat "MM-dd-yyyy hh:mm.ss a"))
+(def  *simple-date-format*      (new SimpleDateFormat "dd/MM/yyyy"))
+(def  *simple-date-format-pack* (new SimpleDateFormat "ddMMyyyy"))
+
+;; For Regex Patterns, Flags may include CASE_INSENSITIVE, MULTILINE, DOTALL, UNICODE_CASE, and CANON_EQ
+;; Establish the charset and decoder, used with grep functionality.
+(def *util-regex-line-pattern* (. Pattern compile ".*\\r?\\n"))
+(def *util-iso-8859-charset*   (. Charset forName "ISO-8859-15"))
+(def *util-charset-decoder*    (. *util-iso-8859-charset* newDecoder))
+(defn util-get-char-buf-decoder
+  "Get java nio character buffer from decoder"
+  [doc]
+  (let [dummy1 (. *util-charset-decoder* reset)
+			   ;; BugFix/Hack, adding newline to end of document
+			   char-buf (. *util-charset-decoder* decode 
+						   (. ByteBuffer wrap (. (str doc \newline) getBytes)))]
+    char-buf))
 
 ;; Example sysout date format = '2/12/09 13:11:12:784 EST'
 (def  *sysout-date-format* (new SimpleDateFormat "MM/dd/yy HH:mm:ss:SSS z"))
@@ -121,7 +145,7 @@
   `(try ~body
         (catch Exception ~'e
                (println "ERR <when-try> " ~'e)
-			   (try (history-add-textln (str "ERR <when-try> " ~'e *newline*))
+			   (try (history-add-textln (str "ERR <when-try> " ~'e \newline))
 					(catch Exception ~'e2 (println "ERR2 <when-try>")))
                nil)))
 
@@ -164,7 +188,7 @@
        (proxy [Runnable] []
               (run [] (. tab-text-3 setText (. buffer-3 toString)))))))
 
-(defn history-add-textln [text] (history-add-text (str text *newline*)))
+(defn history-add-textln [text] (history-add-text (str text \newline)))
 
 (defn pprint-list
   "Simple pretty print a list"
@@ -202,7 +226,7 @@
 				   m     (. p matcher cbuff)]
 	(loop [fnd? (. m find)]
 	  (when fnd?
-		(. res-buffer append (str (. m group) *newline*))
+		(. res-buffer append (str (. m group) \newline))
 		(recur (. m find))))
 	;; Return the buffer string
 	(. res-buffer toString)))
@@ -220,7 +244,7 @@
   ;;;;;;;;;;;;
   (let [pattr (octane-safe-pattern regex-str
                                    (bit-or Pattern/CASE_INSENSITIVE (bit-or Pattern/DOTALL 1)))
-        dummy1  (. *charset-decoder* reset)
+        dummy1  (. *util-charset-decoder* reset)
         pattr-m (. pattr matcher doc)]
     (. pattr-m find)))
 
@@ -236,7 +260,7 @@
   ;;;;;;;;;;;;;;;
   (let [flags     (bit-or Pattern/CASE_INSENSITIVE (bit-or Pattern/DOTALL Pattern/MULTILINE))
         pattr     (octane-safe-pattern regex-str-term flags)
-        char-buf  (get-char-buf-decoder doc)
+        char-buf  (util-get-char-buf-decoder doc)
         m-pattr   (. pattr matcher char-buf)]
     m-pattr))
 
@@ -245,8 +269,8 @@
  function.   Where 'my-func' takes one parameter, the current line string."
   [doc my-func]
   ;;;;;;;;;;;;;;;
-  (let [char-buf2 (get-char-buf-decoder doc)
-        lm (. *regex-line-pattern* matcher char-buf2)]
+  (let [char-buf2 (util-get-char-buf-decoder doc)
+        lm (. *util-regex-line-pattern* matcher char-buf2)]
     ;; Loop till end of file/document detected
     (loop [srch-res (. lm find)]
       (when srch-res
@@ -262,8 +286,8 @@
         fc  (. fis getChannel)
         sz  (. fc size)
         bb  (. fc map FileChannel$MapMode/READ_ONLY 0 sz)
-        cb  (. *charset-decoder* decode bb)
-        lm  (. *regex-line-pattern* matcher cb)]
+        cb  (. *util-charset-decoder* decode bb)
+        lm  (. *util-regex-line-pattern* matcher cb)]
     ;; Loop till end of file/document detected
     (loop [srch-res? (. lm find) line-no 0]
       (when srch-res?

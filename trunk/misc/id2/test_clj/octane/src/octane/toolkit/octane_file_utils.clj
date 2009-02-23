@@ -445,7 +445,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn on-sysout-line-func [list-ref]
-  (fn [line] 
+  (fn [line]
 	  (let [m (.matcher (octane-pattern_ *sysout-timestamp-regex*) line)]
 		(when (.find m)
 		  (let [ref-data {:timestamp (parse-sysout-date (.group m 2))
@@ -467,8 +467,46 @@
 					  list-ref (ref [])]
 	  (doc-loop-handler lines-found (on-sysout-line-func list-ref))
 	  @list-ref)))
-                                        
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Temporary File Creation
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn create-temp-work-dir
+  "Create the large file work directory."
+  [filename]
+  ;;;;
+  (let [file (new File filename)]
+	(if (.exists file)
+	  (println "Working directory exists =>" (.getAbsolutePath file))		  
+	  (do (println "Creating working directory =>" (.getAbsolutePath file))
+		  (.mkdirs file)))
+	(if (.canWrite file)
+	  true
+	  (do (println "Cannot write tmp directory => " (.getAbsolutePath file))
+		  false))))
+
+(defn create-temp-work-dirp
+  "Create the large file work directory from property."
+  []
+  ;;;;
+  (create-temp-work-dir (prop-core-sys "Octane_Sys_largefile_work")))
+
+
+(defn create-archive-work-dir
+  "Create the archive working directory by date"
+  [my-date-str]
+  ;;;;;
+  (when (create-temp-work-dirp)
+	(let [tmp-work (prop-core-sys "Octane_Sys_largefile_work")
+				   date-file *simple-date-format*
+				   date-pack    *simple-date-format-pack*
+				   tmp-date     (when-try (.parse date-file my-date-str))
+				   tmp-date-str (when-try (.format date-pack tmp-date))]
+	  ;; Create the date work directory
+	  (let [ndir (str tmp-work *name-separator* "archives" *name-separator* tmp-date-str)]
+		(create-temp-work-dir ndir)
+		ndir))))
+	      
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
