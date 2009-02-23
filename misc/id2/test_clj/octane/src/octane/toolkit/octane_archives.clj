@@ -43,7 +43,9 @@
 	 (org.eclipse.swt.widgets Label Menu MenuItem Control Listener)
      (com.octane.util.zip UncompressInputStream)
      (java.io FileInputStream InputStream ByteArrayOutputStream)     
-     (java.util.zip ZipInputStream InflaterInputStream)))
+     (java.util.zip ZipInputStream InflaterInputStream)
+	 (java.io InputStreamReader 
+			  FileInputStream BufferedReader File FilenameFilter)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -80,6 +82,26 @@
 			  (. e printStackTrace)
 			  nil)))
 
+(defn stream-compressed-file
+  "Open an archive file and LZC unix compressed .Z extension"
+  [infile #^java.io.OutputStream out]
+  ;;;;;;;;;;;;
+  (try (let [zin (new UncompressInputStream (new FileInputStream infile))
+				 bbuf #^"[B" (make-array (. Byte TYPE) 20480)]
+		 (loop [got (. zin read bbuf)
+					tot 0]
+		   (when (> got 0)
+			 (. out write bbuf, 0 got)
+			 (recur (. zin read bbuf) (+ tot 1))))
+		 ;; With the byte array outputstream
+		 ;; Convert the bytes to string
+		 (. out flush)
+		 (. zin close)
+		 (. out close))
+       (catch Exception e
+			  (. e printStackTrace)
+			  nil)))
+
 (defn win-open-compressed-file
   "Open an archive file and LZC unix compressed .Z extension"
   [infile]
@@ -111,6 +133,24 @@
      (proxy [SelectionAdapter] []
             (widgetSelected [e] (simple-dialog-open-file
                                  *display* open-archive-file-handler  *zip-wildcard-seq* ))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Archive Directory Handlers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def uncompress-filename-filter
+	 (proxy [FilenameFilter] []
+			(accept [dir-file name]
+					(if name
+					  (.endsWith name  ".Z")
+					  false))))
+
+(defn zfiles-dir-handler
+  "zfile-func takes two arguments, the input 'file' object, the output tmp directory"
+  [file-path zfile-func tmp-dir]
+  (let [file (new File file-path)]
+	(doseq [cur-fil (.listFiles file uncompress-filename-filter)]
+		(zfile-func cur-fil tmp-dir))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Script
