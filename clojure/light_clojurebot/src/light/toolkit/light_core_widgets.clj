@@ -137,12 +137,12 @@
       (. setText (. resources-win getString "File_menuitem"))
       (. setMenu (create-file-menu disp sh)))
     (doto (new MenuItem bar (. SWT CASCADE))
-      (. setText (. resources-win getString "Help_menu_title"))
-      (. setMenu (create-help-menu disp sh)))
-    (doto (new MenuItem bar (. SWT CASCADE))
       (. setText (. resources-win getString "Search_menu_title"))
-      (. setMenu (create-search-menu disp sh)))))
+      (. setMenu (create-search-menu disp sh)))
+	(doto (new MenuItem bar (. SWT CASCADE))
+		  (. setText (. resources-win getString "Help_menu_title"))
+		  (. setMenu (create-help-menu disp sh)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
