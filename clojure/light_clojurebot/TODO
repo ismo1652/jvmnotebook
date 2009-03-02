@@ -1,0 +1,9 @@
+##
+###
+
+	+ 3/1/2009	Berlin Brown
+		* Add open nlp libraries
+		* Add pircbot libraries
+		* Build a simple test framework, code generation 
+		* Java script creator
+		* Java classpath checker
