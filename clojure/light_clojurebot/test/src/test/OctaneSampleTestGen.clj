@@ -30,9 +30,15 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ;;;
+;;; File: OctaneSampleTestGen.clj
 ;;;
 ;;; Date: 1/5/2009
 ;;; Description: Clojure JUnit Test Suite
+;;; Environment:
+;;;       Tested with junit-4.4, clojure_200812.jar
+;;; Usage:
+;;; java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl main_gen_tests.clj
+;;; java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" test.OctaneTestSuite 
 
 ;;; -------------------------------------------------------
 

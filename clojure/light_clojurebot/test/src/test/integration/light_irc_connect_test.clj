@@ -30,36 +30,40 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ;;;
-;;; File: OctaneTestSuite.clj
+;;; File: OctaneSampleTestGen.clj
 ;;;
 ;;; Date: 1/5/2009
 ;;; Description: Clojure JUnit Test Suite
+;;; Environment:
+;;;       Tested with junit-4.4, clojure_200812.jar
+;;; Usage:
+;;; java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl main_gen_tests.clj
+;;; java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" test.OctaneTestSuite 
 
 ;;; -------------------------------------------------------
 
-(ns test.OctaneTestSuite
-  (:import
-   (junit.framework Assert Test TestSuite)
-   (junit.textui TestRunner)
-   (test OctaneSampleTestGen)
-   (test.integration light_irc_connect_test)
-   (test.unit simple_gui_test))
-  (:gen-class
-   :methods
-   [[suite [] junit.framework.Test]]))
+(ns test.integration.light_irc_connect_test
+    (:import 
+	 (junit.framework Assert)
+	 (org.jibble.pircbot PircBot))
+	(:gen-class
+	 :extends junit.framework.TestCase
+	 :methods 
+	 [
+	  [ testPircBotConnect [] void ]
+	  ]))
 
 (defn -init [_] ())
 
-(defn -suite []
-  (let [s (new TestSuite)]
-	(.addTestSuite s OctaneSampleTestGen)
-	(.addTestSuite s light_irc_connect_test)
-	(.addTestSuite s simple_gui_test)
-	s))
-
-(defn -main [& args]
-  (println "Running Test Suite")
-  (. TestRunner run (-suite)))
+(def bot-handler
+	 (proxy [PircBot] []))
+	   
+(defn -testPircBotConnect [_]  
+  (let [bot bot-handler]
+	(.setVerbose bot true)
+	;;(.connect bot "irc.freenode.net")
+	(.changeNick bot "lightbot")))
+	;;(.joinChannel bot "#pircbot"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
