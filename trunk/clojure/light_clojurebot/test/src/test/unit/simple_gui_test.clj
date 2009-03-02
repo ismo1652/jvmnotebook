@@ -30,36 +30,53 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ;;;
-;;; File: OctaneTestSuite.clj
+;;; File: OctaneSampleTestGen.clj
 ;;;
 ;;; Date: 1/5/2009
 ;;; Description: Clojure JUnit Test Suite
+;;; Environment:
+;;;       Tested with junit-4.4, clojure_200812.jar
+;;; Usage:
+;;; java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl main_gen_tests.clj
+;;; java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" test.OctaneTestSuite 
 
 ;;; -------------------------------------------------------
 
-(ns test.OctaneTestSuite
-  (:import
-   (junit.framework Assert Test TestSuite)
-   (junit.textui TestRunner)
-   (test OctaneSampleTestGen)
-   (test.integration light_irc_connect_test)
-   (test.unit simple_gui_test))
+(ns test.unit.simple_gui_test
+  (:use
+   light.toolkit.light_gui_utils
+   light.toolkit.public_objects)
+  (:import 
+   (junit.framework Assert)
+   (org.jibble.pircbot PircBot))
   (:gen-class
-   :methods
-   [[suite [] junit.framework.Test]]))
+   :extends junit.framework.TestCase
+   :methods 
+   [
+	[ testSimpleGUICheck [] void ]
+	[ testCreateGridLayout [] void ]
+	[ testInitColorVec [] void ]
+	[ testPublicObjects [] void ]
+	]))
 
 (defn -init [_] ())
+	   
+(defn -testSimpleGUICheck [_]
+  (let [gl (create-grid-layout 1)]
+	(Assert/assertEquals 1 (. gl numColumns))))
 
-(defn -suite []
-  (let [s (new TestSuite)]
-	(.addTestSuite s OctaneSampleTestGen)
-	(.addTestSuite s light_irc_connect_test)
-	(.addTestSuite s simple_gui_test)
-	s))
+(defn -testCreateGridLayout [_]
+  (let [gl (create-grid-layout 1)]
+	(Assert/assertEquals 1 (. gl numColumns))))
 
-(defn -main [& args]
-  (println "Running Test Suite")
-  (. TestRunner run (-suite)))
+(defn -testInitColorVec [_]
+  (init-color-vec-colors)
+  (Assert/assertTrue (> (count colors-vec) 7)))
+
+(defn -testPublicObjects [_]
+  (Assert/assertNotNull *shell*)
+  (Assert/assertNotNull *display*)
+  (Assert/assertNotNull *styled-text*))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of Test Case
