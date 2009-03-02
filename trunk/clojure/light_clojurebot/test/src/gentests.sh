@@ -3,7 +3,7 @@
 OS=`uname -a`
 
 # Install Directory Path (editable attribute)
-INSTALL_DIR=/usr/local/projects/octane
+INSTALL_DIR=/home/bbrown/workspace_lang/light_clojurebot
 TOP_DIR=`pwd`
 
 # Put the configuration directory in the classpath
@@ -14,7 +14,8 @@ LIB3=$INSTALL_DIR/lib/jline-0.9.94.jar
 LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
 LIB5=$INSTALL_DIR/lib/junit-4.4.jar
 
-CLOJURE=$TOP_DIR/../../src
+LIB6=$INSTALL_DIR/lib/pircbot.jar
+CLOJURE=$INSTALL_DIR/src
 
 # Check the clojure library path
 if [ -f $LIB1 ]
@@ -46,7 +47,7 @@ case "$OS" in
 		CP=".;test;src;classes;${LIB1};${LIB2};$CONF_LIB;$LIB4;$LIB5" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:${LIB6}:${LIB7}:${LIB8}:${LIB9}:${LIB10}:${LIB11}:$LIB_CP_JFREE:${CLOJURE}:$CONF_LIB" ;;
+		CP=".:./test:src:./classes:${LIB1}:${LIB2}:${LIB3}:${LIB5}:${LIB6}:${CLOJURE}:$CONF_LIB" ;;
 esac 
 
 echo "(SCRIPT): -------------------------"
@@ -65,9 +66,9 @@ mkdir -vp classes
 # Note: the compile-path is not set for Script, use Repl
 
 echo "(SCRIPT) Creating test cases"
-java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" clojure.lang.Repl $FILE
+java -Xms128m -Xmx200m -classpath $CP -Dlight.install.dir="$INSTALL_DIR" clojure.lang.Repl $FILE
 echo "(SCRIPT) Running tests"
-java -Xms128m -Xmx200m -classpath $CP -Doctane.install.dir="$INSTALL_DIR" test.OctaneTestSuite $MAIN
+java -Xms128m -Xmx200m -classpath $CP -Dlight.install.dir="$INSTALL_DIR" test.OctaneTestSuite $MAIN
 
 #;;;;;;;;;;;;;;;;
 # End of Script
