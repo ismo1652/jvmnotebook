@@ -1,0 +1,55 @@
+Lets say you are mathematician, or a scientist, programmer.  You are really looking to come up with a cool theorem or project or whatever.
+
+There are problems with coming up with something that hasn't already hasn't been created, as well as what would be useful to others.
+
+And I can only speak for myself as a programmer.
+
+Here are some truths, facts:
+
+With everyone company I have worked for:
+1. The employees do NOT normally research new technology or try new techniques on their own.
+2. Some architect or random programmer may discover something new (like subversion or git).
+3. The new discovery is rare, every 1-2 years.  The new discovery is 4-5 years behind the industry.  The discovery takes 6 months to a year to implement.
+
+So, within the companies I HAVE WORKED for; if I work for company X and stay there 3 years.  They won't have introduced too many new technologies or techniques over the course of that 3 years.
+
+(Note: not using me as an example.  I probably do stuff that is against the company standards)
+
+I bet this is true at a lot of places, or we would see a lot of amazing technologies pop up all the time.  That technology could be a new programming language.  New web framework, etc.  seriously, how many popular languages are there 10? 20?  How many popular web frameworks?  10 20?  OK, another question.  How many programmers are out there? 10, 20 million?
+
+Theory (1): at any X company, there isn't anyone coming up with anything NEW or that useful.  Distributing that to the public.
+
+Lets say someone at company X does come up with something new, useful.  What got him here?
+
+Here is a theory that applies to me (at least over the last 10 years):
+
+1. You need a degree in Computer Science or Engineering.  If you don't have a degree, you at least need to read the same books and curriculum.
+
+2. You need to read books outside of school.
+
+3. You need to constantly keep up with technology.  On the internet, magazines, etc.
+
+4. You need to at least work as a developer or work on some larger open source project.  Something practical.
+
+
+I think this is the minimum to not just make you an office drone.  Just trying to a get paycheck.
+Permalink
+
+Here is my question, and a question I pose to myself.  What does it take to create something useful?  Something new?  For example, how did Python manifest itself.  Or Erlang?
+
+Here are my theories.
+
+1 - 4 are important.  Degree, Constantly Learn, Practical Experience.
+
+But how much of what?
+
+1. If you fall back on your degree?  You fail.  Because you aren't doing anything practical.
+
+2. If you don't learn, you will end up replicating some on e elses work and it won't be useful.
+
+3. If you don't keep up with new trends, your idea won't be useful.
+
+4. If you don't have any practical experience, your technology won't be useful.
+
+So, I guess it takes a lot of moderation.  Or does it?  Am I wrong (Arg you know I am wrong, right).
+ 
