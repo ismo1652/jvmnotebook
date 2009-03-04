@@ -1,0 +1,15 @@
+Hello, this is a description of your servlet J2EE configuration file.
+This file was created on 3/3/2009.
+
+This document is a servlet web.xml file.
+The file is a valid XML file.
+It contains 140 lines.
+
+It contains 12 filters.
+The file has 12 servlets.
+It contains 15 servlet mappings.
+The file contains 4 resource ref definitions.
+
+The resource refs include jdbc.
+
+Here is a list of the Servlets and their servlet mapping.
