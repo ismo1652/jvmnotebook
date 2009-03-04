@@ -1,0 +1,8 @@
+20090303 18:46:17,287 Info: Using filterfile: conf/badwords.txt
+20090303 18:46:17,302 Info: Using nickNameFilterfile: conf/badnicknames.txt
+20090303 18:51:48,057 Connect localhost.
+20090303 18:51:48,088 Login Guest4986 from localhost.
+20090303 18:51:48,213 Join #eirc by Guest4986.
+20090303 18:53:20,855 Part #eirc by Guest4986.
+20090303 18:53:20,855 Logout Guest4986 from localhost.
+20090303 18:53:20,855 Disconnect Guest4986@localhost (Quit).
