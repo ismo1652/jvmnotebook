@@ -45,7 +45,6 @@ case "$OS" in
 ###############################
 		LIB1=`cygpath -w $LIB1` 
 		LIB2=`cygpath -w $LIB2`
-		CONF_LIB=`cygpath -w $CONF_LIB`
 		LIB4=`cygpath -w $LIB4`
 		INSTALL_DIR=`cygpath -w $INSTALL_DIR`		
 		CP=".;src;${LIB1};${LIB2};$CONF_LIB;$LIB4" ;;

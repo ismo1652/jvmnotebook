@@ -30,7 +30,7 @@
       (lazy-cons (char ch) (char-seq reader)))))
 
 (defn piece-file [fname piece-function]
-  "returns a file as a lazy seq of pieces, using the supplied piecing function"
+  "Returns a file as a lazy seq of pieces, using the supplied piecing function"
   (piece-function (java.io.BufferedReader. (java.io.FileReader. fname))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -125,7 +125,9 @@
   (println "-------------------------------------------"))
 
 ;;;;;;; Run whole file
-
 (comment
   (load-file "/home/luke/dev/projects/markov/markov.clj"))  
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; End of File
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
