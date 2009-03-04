@@ -1,0 +1,22 @@
+20090303 18:46:17,302 Info: New nl.eo.chat.IncomingFlashTranslator pool size: 1
+20090303 18:46:17,302 Info: New nl.eo.chat.IncomingFlashTranslator pool size: 2
+20090303 18:46:17,302 Info: New nl.eo.chat.IncomingFlashTranslator pool size: 3
+20090303 18:46:17,302 Info: New nl.eo.chat.IncomingFlashTranslator pool size: 4
+20090303 18:46:17,302 Info: New nl.eo.chat.IncomingFlashTranslator pool size: 5
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingFlashTranslator pool size: 1
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingFlashTranslator pool size: 2
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingFlashTranslator pool size: 3
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingFlashTranslator pool size: 4
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingFlashTranslator pool size: 5
+20090303 18:46:17,318 Info: New nl.eo.chat.IncomingIrcTranslator pool size: 1
+20090303 18:46:17,318 Info: New nl.eo.chat.IncomingIrcTranslator pool size: 2
+20090303 18:46:17,318 Info: New nl.eo.chat.IncomingIrcTranslator pool size: 3
+20090303 18:46:17,318 Info: New nl.eo.chat.IncomingIrcTranslator pool size: 4
+20090303 18:46:17,318 Info: New nl.eo.chat.IncomingIrcTranslator pool size: 5
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingIrcTranslator pool size: 1
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingIrcTranslator pool size: 2
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingIrcTranslator pool size: 3
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingIrcTranslator pool size: 4
+20090303 18:46:17,318 Info: New nl.eo.chat.OutgoingIrcTranslator pool size: 5
+20090303 18:46:17,427 Info: Port 6667 opened.
+20090303 18:46:17,427 Info: Port 5557 opened.
