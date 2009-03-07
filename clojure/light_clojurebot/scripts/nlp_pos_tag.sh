@@ -28,6 +28,7 @@ NLP_LIB=$NLP1:$NLP2:$NLP3
 
 MODELS=$INSTALL_DIR/models
 TESTS=$INSTALL_DIR/test/example_docs
+DATA=$INSTALL_DIR/data
 
 ###############################################
 
@@ -71,11 +72,8 @@ echo "(SCRIPT): classpath= $CP"
 echo "(SCRIPT): --------------------------------"
 
 java -Xms128m -Xmx200m -classpath $CP -Dlight.install.dir="$INSTALL_DIR" \
-  opennlp.tools.lang.english.PosTagger -d \
-  $MODELS/tag.bin.gz -di $MODELS/tagdict $1 $2 $3 $4 $5
-
-##java -Xms128m -Xmx200m -classpath $CP -Dlight.install.dir="$INSTALL_DIR" \
-##  opennlp.tools.lang.english.PosTagger --help
+  opennlp.tools.lang.english.PosTagger \
+  -d $MODELS/tagdict $MODELS/tag.bin.gz < $DATA/simple_database/tag_words  $1 $2 $3 $4 $5
 
 ##############################
 # End of Script

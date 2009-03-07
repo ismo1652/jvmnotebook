@@ -20,6 +20,20 @@ LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
 
 CONF_LIB=$INSTALL_DIR/conf
 
+###########################################################
+
+NLP=$INSTALL_DIR/lib/opennlp
+NLP1=$NLP/opennlp-tools-1.4.3.jar
+NLP2=$NLP/trove.jar
+NLP3=$NLP/maxent-2.5.2.jar
+NLP_LIB=$NLP1:$NLP2:$NLP3
+
+MODELS=$INSTALL_DIR/models
+TESTS=$INSTALL_DIR/test/example_docs
+DATA=$INSTALL_DIR/data
+
+###########################################################
+
 # Check the clojure library path
 if [ -f $LIB1 ]
 then
@@ -51,7 +65,7 @@ case "$OS" in
 		CP=".;src;${LIB1};${LIB2};$CONF_LIB;$LIB4" ;;
 	*)
 		LIB2=$LIB2_LINUX
-		CP=".:src:conf:${LIB1}:${LIB2}:${LIB3}:${LIB6}:$CONF_LIB" ;;
+		CP=".:src:conf:${LIB1}:${LIB2}:${LIB3}:${LIB6}:${NLP_LIB}:$CONF_LIB" ;;
 esac 
 
 echo "(SCRIPT): --------------------------------"

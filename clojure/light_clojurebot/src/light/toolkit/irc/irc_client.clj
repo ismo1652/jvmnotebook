@@ -21,26 +21,34 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns light.toolkit.irc.irc_client
-  (:use light.toolkit.irc.irc_command_handler)
+  (:use light.toolkit.irc.irc_command_handler
+		light.toolkit.irc.irc_nlp_handler)
   (:import 
    (org.jibble.pircbot PircBot)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def *default-server*   "irc.freenode.net")
+(def *default-bot-nick* "lightbot")
+(def *default-channel*  "#botwar")
 
 (def new-bot-handler
 	 (proxy [PircBot] []
 	   (onMessage [channel sender login hostname message]
-				  (command-on-message this channel sender login hostname message))
+				  (nlp-on-message this channel sender login hostname message))
 	   (onPrivateMessage [channel sender login hostname message]
-						 (command-on-message this channel sender login hostname message))))
+						 (nlp-on-message this channel sender login hostname message))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn bot-client-main
   []
   ;;;;
   (let [bot new-bot-handler]
 	(.setVerbose bot true)
-	(.connect bot     "irc.freenode.net")
-	(.changeNick bot  "lightbot")
-	(.joinChannel bot "#botwar")))
+	(.connect bot     *default-server*)
+	(.changeNick bot  *default-bot-nick*)
+	(.joinChannel bot *default-channel*)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script
