@@ -20,12 +20,18 @@
 ;;; Key Functions: simple-swt create-file-menu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(ns light.toolkit.irc.irc_command_handler)
+(ns light.toolkit.irc.irc_command_handler
+  (:use light.toolkit.nlp.light_pos_tagger))
 
 (defn command-on-message 
   [bot channel sender login, hostname message]
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  (.sendMessage bot channel "what what in the butt??"))
+  (let [response-index (build-tag-response-index (load-pos-tag *core-tag-model* "test.txt"))
+		res-key (build-tag-key (pos-tag-response *core-tag-model* message))]
+	
+	(if-let [nlp-res ((keyword res-key) response-index)]
+	  (.sendMessage bot channel nlp-res)
+	  (.sendMessage bot channel *default-light-response*))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; End of Script

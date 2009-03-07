@@ -1,5 +1,15 @@
-##
-###
+#####################################################################
+ Light Clojure Bot
+ 
+ Light Bot is a simple IRC/Twitter bot, written in Clojure
+#####################################################################
+	
+	+ 3/5/2009	Berlin Brown
+		* Collect a large datase of clojure logs
+		* Get question and answers/responses.
+		* Collect a database of various tags.
+		* Collect a database of tags and words
+
 	+ 3/3/2009 	Berlin Brown
 		* IRC Server for Testing 
 
