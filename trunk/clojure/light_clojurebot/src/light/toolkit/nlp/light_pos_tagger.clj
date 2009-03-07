@@ -161,7 +161,7 @@
   "Remove english sentence characters, including question marks, etc"
   [line]
   ;;;;;;;;;;;
-  (.replaceAll line "\\.|\\?|,|!|;|:|\"|'|\\(|\\)" ""))
+  (.replaceAll line "\\.|\\?|,|!|;|:|\"|\\(|\\)" ""))
 
 (defn split-response
   "Split the line to return the input pos tags and response"

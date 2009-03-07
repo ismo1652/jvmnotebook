@@ -27,8 +27,7 @@
   [bot channel sender login, hostname message]
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (let [response-index (build-tag-response-index (load-pos-tag *core-tag-model* "test.txt"))
-		res-key (build-tag-key (pos-tag-response *core-tag-model* message))]
-	
+		res-key (build-tag-key (pos-tag-response *core-tag-model* message))]	
 	(if-let [nlp-res ((keyword res-key) response-index)]
 	  (.sendMessage bot channel nlp-res)
 	  (.sendMessage bot channel *default-light-response*))))

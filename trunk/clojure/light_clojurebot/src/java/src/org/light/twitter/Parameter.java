@@ -1,4 +1,4 @@
-package net.unto.twitter;
+package org.light.twitter;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
