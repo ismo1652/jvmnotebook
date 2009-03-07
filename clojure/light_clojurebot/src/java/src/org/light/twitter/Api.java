@@ -1,4 +1,4 @@
-package net.unto.twitter;
+package org.light.twitter;
 
 import org.joda.time.DateTime;
 

@@ -1,4 +1,4 @@
-package net.unto.twitter;
+package org.light.twitter;
 
 import java.io.IOException;
 import java.util.ArrayList;

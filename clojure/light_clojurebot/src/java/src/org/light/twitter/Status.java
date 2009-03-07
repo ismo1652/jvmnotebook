@@ -1,4 +1,4 @@
-package net.unto.twitter;
+package org.light.twitter;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

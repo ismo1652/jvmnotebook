@@ -9,7 +9,7 @@
     <property name="build.dir"            value="${basedir}/build" />
     <property name="build.classes.dir"    value="${basedir}/build/classes" />
     <property name="src.dir"              value="${basedir}/src" />
-    <property name="lib.dir"              value="${basedir}/src/lib" />
+    <property name="lib.dir"              value="${basedir}/../../lib" />
 
 <target name="help" description="Initialization">
             <tstamp/>
@@ -34,6 +34,10 @@
     
     <path id="classpath">
         <pathelement location="${lib.dir}/junit-4.4.jar" />
+    	<pathelement location="${lib.dir}/twitter/commons-httpclient-3.1.jar" />
+    	<pathelement location="${lib.dir}/twitter/commons-lang-2.4.jar" />
+		<pathelement location="${lib.dir}/twitter/joda-time-1.6.jar" />
+    	<pathelement location="${lib.dir}/twitter/json-lib-2.2.3-jdk15.jar" />	
     </path>
 
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
@@ -53,7 +57,7 @@
                 target="1.5"
                 srcdir="${src.dir}"
                 destdir="${build.classes.dir}"
-        		include="**/*.java" >
+        		includes="**/*.java" >
 
             <classpath refid="classpath"/>
 
@@ -65,7 +69,18 @@
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
     <target name="package" depends="compile">
     </target>
-
+	
+	<target name="jar" depends="prepare">
+		<jar destfile="${build.dir}/light_bot_commons.jar">
+	    	    <fileset dir="${build.classes.dir}"
+	    	             includes="**/*.class" />
+		</jar>
+	</target>
+		
+	<target name="deploy" depends="jar">
+		<copy file="${build.dir}/light_bot_commons.jar" tofile="${basedir}/../../lib/light_bot_commons.jar"/>
+	</target>
+	
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
     <!-- Target: Run Tests -->
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->

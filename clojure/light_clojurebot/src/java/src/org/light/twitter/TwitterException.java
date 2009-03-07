@@ -1,4 +1,4 @@
-package net.unto.twitter;
+package org.light.twitter;
 
 /**
  * An exception wrapper for the Twitter API library.
