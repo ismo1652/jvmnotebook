@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+<!-- Copyright (c) 2009 -->
+<!-- Code generated Ant Script -->
+<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+<project name="Build File" default="jar" basedir=".">
+    <property file="build.properties" /> 
+    <property name="build.dir"            value="${basedir}/build"/>
+    <property name="build.classes.dir"    value="${basedir}/build/classes"/>
+    <property name="src.dir"              value="${basedir}/src"/>
+    <property name="lib.dir"              value="${basedir}/../../lib"/>
+
+<target name="help" description="Initialization">
+	        <tstamp/>
+			<echo>
+ Additional Targets and Usage:
+ -----------------
+ compile - to compile the source, use this target.  
+           To build the  complete release package, 
+           you must compile this manually.
+
+</echo>
+	</target>
+	
+    <path id="classpath">
+    	<pathelement location="${lib.dir}/" /> 
+    	<pathelement location="${lib.dir}/clojure.jar" />
+    	<pathelement location="${lib.dir}/swt/win32/swt.jar" />    	
+    	<pathelement location="${lib.dir}/swt/linux/swt.jar" />
+    	<pathelement location="${lib.dir}/spring/spring-custom.jar" />    	
+    </path>
+
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <!-- Target: Prepare -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <target name="prepare" depends="help">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes.dir}"/>
+    </target>
+
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <!-- Target: Compile -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <target name="compile" depends="prepare">
+        <javac deprecation="true"
+                target="1.5"
+                srcdir="${src.dir}"
+                destdir="${build.classes.dir}">
+
+        	<include name="com/light/**/*.java" />        	
+            <classpath refid="classpath"/>            
+        </javac>
+    </target>	   
+
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->		
+    <!-- Target: Deploy -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <target name="deploy" depends="jar">
+		<copy file="${build.dir}/octane_commons.jar" tofile="${basedir}/../../lib/octane_commons.jar" />    	
+    </target>
+	
+
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->		
+    <!-- Target: Build -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <target name="jar" depends="compile">
+    	<jar destfile="${build.dir}/octane_commons.jar">
+    	    <fileset dir="${build.classes.dir}" includes="**/*.class" />
+		</jar>    		
+    </target>
+			
+	<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+	<!-- Main Clean -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+
+</project>
