@@ -8,7 +8,7 @@
 OS=`uname -a`
 
 # Install Directory Path (editable attribute)
-INSTALL_DIR=/usr/local/projects/light_edit
+INSTALL_DIR=/usr/local/projects/testtoolkit
 TOP_DIR=`pwd`
 
 ############################################################
@@ -83,7 +83,7 @@ echo "(SCRIPT): install directory= $INSTALL_DIR"
 echo "(SCRIPT): classpath= $CP"
 echo "(SCRIPT): -------------------------"
 
-FILE1=$INSTALL_DIR/test/src/clojure/test/compile_tests.clj
+FILE1=$INSTALL_DIR/test/src/new_win_tests/test/compile_tests.clj
 MAIN1=test.light_test_suite
 
 FILE=$FILE1

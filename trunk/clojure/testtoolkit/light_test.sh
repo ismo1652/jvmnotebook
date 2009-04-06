@@ -11,7 +11,7 @@
 OS=`uname -a`
 
 # Install Directory Path (editable attribute)
-INSTALL_DIR=/usr/local/projects/light_edit
+INSTALL_DIR=/usr/local/projects/testtoolkit
 
 # Put the configuration directory in the classpath
 CONF_LIB=$INSTALL_DIR/conf
@@ -21,7 +21,7 @@ LIB3=$INSTALL_DIR/lib/jline-0.9.94.jar
 LIB2_LINUX=$INSTALL_DIR/lib/swt/linux/swt.jar
 LIB4=$INSTALL_DIR/lib/org.eclipse.jface.text_3.4.1.r341_v20080827-1100.jar
 
-OCT_COMMONS=$INSTALL_DIR/lib/light_commons.jar
+OCT_COMMONS=$INSTALL_DIR/lib/octane_commons.jar
 
 #####################################################################
 

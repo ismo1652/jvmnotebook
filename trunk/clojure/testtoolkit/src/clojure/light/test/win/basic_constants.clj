@@ -51,6 +51,13 @@
 
 (def *process-gentests-sh* "C:\\usr\\local\\projects\\testtoolkit\\test\\src\\new_win_tests\\gentests.bat")
 
+;; Use the following for launching under linux
+;; (def *process-gentests-sh* "/usr/local/projects/testtoolkit/test/src/new_win_tests/gentests.sh")
+
+(def *process-gentests-sh-linux* "/usr/local/projects/testtoolkit/test/src/new_win_tests/gentests.sh")
+
+(println "Use the following script for linux =>  *process-gentests-sh* => "  *process-gentests-sh-linux* )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def *about-version-msg*
