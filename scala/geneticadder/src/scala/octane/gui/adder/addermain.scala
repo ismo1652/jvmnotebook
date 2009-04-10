@@ -1,9 +1,13 @@
 /*********************************************************************
  *********************************************************************/
+
+package octane.gui.adder
+
 import scala.swing._
 import scala.swing.event._
 import java.util.Date
 import java.awt.Color
+import java.awt.{Image, Point}
 
 object addermain extends GUIApplication {
 
@@ -33,7 +37,8 @@ object addermain extends GUIApplication {
 
     val frame = new MainFrame {
       title = "Genetic Adder"
-      size  = (500, 400) 
+      location = new Point(300, 300)
+      size  = (500, 400)                 
       contents = comp  
     } // End of Frame   
 
