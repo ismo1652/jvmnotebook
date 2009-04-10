@@ -3,19 +3,18 @@
 <!-- Copyright (c) 2006 - Berlin Brown -->
 <!-- Date: 4/1/2007 -->
 <!-- ****************************************************** -->
-<project name="Project" default="init" basedir=".">
+<project name="Project" default="compile" basedir=".">
 		
 	<property file="build.properties" />
 			
-	<property name="build.dir"	   value="${basedir}/build" />
+	<property name="build.dir"	       value="${basedir}/build" />
 	<property name="build.dir.classes" value="${basedir}/build/classes" />
 		
-	<property name="scala.src.dir"	value="${basedir}/scala" />
-	<property name="lib.dir"	value="${basedir}/lib" />
-	<property name="base.lib.dir"	value="${basedir}/../jvmprojectslib" />
+	<property name="scala.src.dir"	value="${basedir}/src/scala" />
+	<property name="lib.dir"        value="${basedir}/../../syslib" />	
 	
 	<target name="init" description="Initialization">
-		<tstamp/>		
+		<tstamp />
 	</target>
 
 	<!-- Target: Prepare -->
@@ -25,14 +24,17 @@
 	</target>
 	
 	<!-- Define the library files -->
-	<property name="scala-compiler.jar"  value="${base.lib.dir}/scala-compiler-2.5.0.jar" />
-	<property name="scala-library.jar"   value="${base.lib.dir}/scala-library-2.5.0.jar" />	
+	<property name="scala-compiler.jar"  value="${lib.dir}/scala/2.7.3/scala-compiler.jar" />
+	<property name="scala-library.jar"   value="${lib.dir}/scala/2.7.3/scala-library.jar" />	
+	<property name="scala-swing.jar"       value="${lib.dir}/scala/2.7.3/scala-swing.jar" />	
 
 	<!-- Target: CLASSPATH -->
 	<path id="classpath">
-		<pathelement location="${scala-compiler.jar}"/>
-		<pathelement location="${scala-library.jar}"/>
-			
+		<pathelement location="${scala-compiler.jar}" />
+		<pathelement location="${scala-library.jar}" />
+		<pathelement location="${scala-swing.jar}" />		
+				
+		<pathelement location="${build.dir.classes}" />
 	</path>
 	
 	<path id="runtime.classpath">
@@ -61,11 +63,9 @@
 	
 	<!-- Run the application -->
 	<!-- Also see the JRE_HOME -->
-	<target name="run" depends="package">
-		<java classname="PublishEntryClient" 				
-					fork="false">			
-			<classpath refid="classpath"/>
-			<classpath refid="runtime.classpath"/>			
+	<target name="run" depends="compile">
+		<java classname="addermain" fork="true">			
+			<classpath refid="classpath"/>					
 		</java>
 	</target>
 		
