@@ -1,48 +1,41 @@
-//////////////////////////////////////////////////////////////////////
-// addermain.scala
-//////////////////////////////////////////////////////////////////////
+/*********************************************************************
+ *********************************************************************/
+import scala.swing._
+import scala.swing.event._
 
-import scala.gui._
+object addermain extends SimpleGUIApplication {
 
-object canvas extends scala.gui.Application {
-  
-  val mainWindow = new container.Window {
-
-    var x = 0; var y = 0
-   
-    val canvas = new widget.Canvas {
-      import geom._
-      antialiasing = true
-      draw(Point(0, 0), Point(x, y))
-      paint = new java.awt.GradientPaint(new java.awt.Point(x - 15, y - 15), Color.Red,
-        new java.awt.Point(x + 15, y + 15), Color.Blue)
-      fill(Circle(Point(x, y), 30))
-      foreground = Color.Black
-      write("hello", Point(50, 50))
+  def top = new MainFrame {
+    title = "Convert Celsius to Fahrenheit"
+    val tempCelsius = new TextField
+    val celsiusLabel = new Label {
+      text = "Celsius"
+      border = Swing.EmptyBorder(5, 5, 5, 5)
     }
-
-    new java.util.Timer(true).scheduleAtFixedRate(new java.util.TimerTask {
-      def run = {
-        import geom._
-        x = x + 1; y = y + 1
-        canvas.clear
-        canvas.draw(Point(0, 0), Point(x, y))
-        canvas.antialiasing = true
-        canvas.paint = new java.awt.GradientPaint(new java.awt.Point(x - 15, y - 15), Color.Red,
-          new java.awt.Point(x + 15, y + 15), Color.Blue)
-        canvas.fill(geom.Circle(Point(x, y), 30))
-        canvas.foreground = Color.Black
-        canvas.write("hello", Point(50, 50))
+    val convertButton = new Button {
+      text = "Convert"//new javax.swing.ImageIcon("c:\\workspace\\gui\\images\\convert.gif")
+      //border = Border.Empty(5, 5, 5, 5)
+    }
+    val fahrenheitLabel = new Label {
+      text = "Fahrenheit     "
+      border = Swing.EmptyBorder(5, 5, 5, 5)
+      listenTo(convertButton, tempCelsius)
+      
+      def convert() {
+        val c = Integer.parseInt(tempCelsius.text)
+        val f = c * 9 / 5 + 32
+        text = "<html><font color = red>"+f+"</font> Fahrenheit</html>"
       }
-    }, 5000, 50) 
-
-    lay { canvas }
-
-    subscribe(this)
-
-    toplevel eventloop {
-      case this.Closing() => System.exit(0)
+      
+      reactions += {
+        case ButtonClicked(_) | EditDone(_) => convert()
+      }
     }
+    contents = new GridPanel(2,2) {
+      contents.append(tempCelsius, celsiusLabel, convertButton, fahrenheitLabel)
+      border = Swing.EmptyBorder(10, 10, 10, 10)
+    }
+    //defaultButton = Some(convertButton)
   }
   
 }
