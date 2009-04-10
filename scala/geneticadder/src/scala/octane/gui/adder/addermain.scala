@@ -2,43 +2,46 @@
  *********************************************************************/
 import scala.swing._
 import scala.swing.event._
+import java.util.Date
+import java.awt.Color
 
-object addermain extends SimpleGUIApplication {
+object addermain extends GUIApplication {
 
-  def top = new MainFrame {
-    title = "Convert Celsius to Fahrenheit"
-    val tempCelsius = new TextField
-    val celsiusLabel = new Label {
-      text = "Celsius"
-      border = Swing.EmptyBorder(5, 5, 5, 5)
-    }
-    val convertButton = new Button {
-      text = "Convert"//new javax.swing.ImageIcon("c:\\workspace\\gui\\images\\convert.gif")
-      //border = Border.Empty(5, 5, 5, 5)
-    }
-    val fahrenheitLabel = new Label {
-      text = "Fahrenheit     "
-      border = Swing.EmptyBorder(5, 5, 5, 5)
-      listenTo(convertButton, tempCelsius)
-      
-      def convert() {
-        val c = Integer.parseInt(tempCelsius.text)
-        val f = c * 9 / 5 + 32
-        text = "<html><font color = red>"+f+"</font> Fahrenheit</html>"
-      }
-      
-      reactions += {
-        case ButtonClicked(_) | EditDone(_) => convert()
-      }
-    }
-    contents = new GridPanel(2,2) {
-      contents.append(tempCelsius, celsiusLabel, convertButton, fahrenheitLabel)
-      border = Swing.EmptyBorder(10, 10, 10, 10)
-    }
-    //defaultButton = Some(convertButton)
-  }
+  def resourceFromClassloader(path: String): java.net.URL =
+    this.getClass.getResource(path)
   
-}
+  def resourceFromUserDirectory(path: String): java.io.File =
+    new java.io.File(System.getProperty("user.dir"), path)
+
+  def main(args: Array[String]) = run {
+
+    val comp = new Component {
+      size  = (500, 400) 
+      preferredSize = (500, 400) 
+      override def paintComponent(g: java.awt.Graphics) {
+        super.paintComponent(g)
+
+        // Paint the background with white.
+        g.setColor(Color.WHITE)
+        g.fillRect(0, 0, 500, 400)
+
+        // Paint the foreground with red.
+        g.setColor(Color.RED)
+        g.fillRect(0, 0, 30, 30)
+      }   
+    } // End of Component
+
+    val frame = new MainFrame {
+      title = "Genetic Adder"
+      size  = (500, 400) 
+      contents = comp  
+    } // End of Frame   
+
+    frame.pack()
+    frame.visible = true
+  } // End of Main
+ 
+} // End of Object
 
 //////////////////////////////
 // End of File

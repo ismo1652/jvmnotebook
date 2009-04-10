@@ -26,7 +26,7 @@
 	<!-- Define the library files -->
 	<property name="scala-compiler.jar"  value="${lib.dir}/scala/2.7.3/scala-compiler.jar" />
 	<property name="scala-library.jar"   value="${lib.dir}/scala/2.7.3/scala-library.jar" />	
-	<property name="scala-swing.jar"       value="${lib.dir}/scala/2.7.3/scala-swing.jar" />	
+	<property name="scala-swing.jar"     value="${lib.dir}/scala/2.7.3/scala-swing.jar" />	
 
 	<!-- Target: CLASSPATH -->
 	<path id="classpath">
@@ -48,7 +48,7 @@
 	<target name="compile" depends="prepare">
 	  <scalac srcdir="${scala.src.dir}" destdir="${build.dir.classes}" 
 	  		classpathref="classpath" force="never">
-	    <include name="**/*.scala"/>
+	    <include name="octane/gui/**/*.scala"/>
 	  </scalac>
 	</target>
 
