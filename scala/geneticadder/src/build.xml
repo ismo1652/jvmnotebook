@@ -35,10 +35,12 @@
 	</path>
 	
 	<target name="compile" depends="prepare">
-		 <javac srcdir="${basedir}/java"
-		         destdir="${build.dir.classes}"
-		         classpathref="classpath">
-		    <compilerarg value="-Xlint"/>
+		 <javac 
+		    debug="true"
+		    srcdir="${basedir}/java"		 	 
+		    destdir="${build.dir.classes}"
+		    classpathref="classpath">
+		 	  <compilerarg value="-Xlint"/>
 		  </javac> 
 	</target>
 
