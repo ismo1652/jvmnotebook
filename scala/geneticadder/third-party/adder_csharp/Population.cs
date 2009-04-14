@@ -7,6 +7,10 @@ namespace GeneticAlgorithm
 {
 	/// <summary>
 	/// Summary description for Population.
+	/// 
+	/// At generation 3502, here is example output.
+	/// ((c|(d&b))&((c&(d&b))|a)) --> 1
+	/// 
 	/// </summary>
 	public class Population
 	{
@@ -239,12 +243,12 @@ namespace GeneticAlgorithm
 
 
 		public void WriteNextGeneration()
-		{
+		{			
 			// just write the top 20
 			Console.WriteLine("Generation {0}\n", Generation);
 			for  (int i = 0; i <  CurrentPopulation ; i++)
 			{
-				Console.WriteLine(((Genome)Genomes[i]).ToString());
+				Console.WriteLine("Population Size=" + CurrentPopulation + " i=" + i  + ((Genome)Genomes[i]).ToString());
 			}
 
 			Console.WriteLine("Generation #{0}, Hit the enter key to continue...\n", Generation);
