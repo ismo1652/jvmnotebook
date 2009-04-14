@@ -1,3 +1,10 @@
+/**
+ * Based on 
+ * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
+ * 
+ * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
+ * 
+ */
 package org.adder;
 
 import java.util.ArrayList;
@@ -12,54 +19,54 @@ import java.util.Random;
 public class EquationGenome extends Genome {
 
     /**
-	 * 
+	 *  Number of Symbols
 	 */
     public static final int NumSymbols = 4;
 
     /**
-	 * 
+	 * Number of Functions
 	 */
     public static final int NumFunctions = 4;
 
     /**
-	 * 
+	 * The Random Seem.
 	 */
     public static final Random TheSeed = new Random(System.currentTimeMillis());
 
     /**
-	 * 
+	 * Calculation Array as a String.
 	 */
     public static final String[] CalculationStringArray = new String[Population.kLength];
 
     /**
-	 * 
+	 * Calculation Array.
 	 */
     public static final byte[] CalculationArray = new byte[Population.kLength];
 
     /**
-	 * 
+	 * The min.
 	 */
     private int theMin = 0;
 
     /**
-	 * 
+	 * The max.
 	 */
     private int theMax = 6;
 
     /**
-	 * 
+	 * Current X pos for smart genes.
 	 */
-    private int currentXPos = 0;
+    private final int currentXPos = 0;
+
+    /**
+	 * Current Y pos for smart genes.
+	 */
+    private final int currentYPos = 0;
 
     /**
 	 * 
 	 */
-    private int currentYPos = 0;
-
-    /**
-	 * 
-	 */
-    private int previousSeed = 2;
+    private final int previousSeed = 2;
 
     public boolean trialFitness;
     private List<Gene> theArray = new ArrayList<Gene>();
@@ -109,7 +116,11 @@ public class EquationGenome extends Genome {
 
         final EquationGenome gene1 = this;
         final EquationGenome gene2 = (EquationGenome) a;
-        return (int) ((-1.0) * (gene2.currentFitness - gene1.currentFitness));
+        
+        final Double gened1 = new Double(gene1.currentFitness);
+        final Double gened2 = new Double(gene2.currentFitness);
+        return gened1.compareTo(gened2);
+        //return (int) ((-1.0) * (gene2.currentFitness - gene1.currentFitness));
     }
 
     /**
@@ -125,6 +136,7 @@ public class EquationGenome extends Genome {
      * Genome constructor.
      */
     public EquationGenome() {
+    	;
 
     }
 
@@ -140,8 +152,6 @@ public class EquationGenome extends Genome {
         this.length = length;
         theMin = (int) min;
         theMax = (int) max;
-        currentXPos = 0;
-        currentYPos = 0;
 
         for (int i = 0; i < length; i++) {
 
@@ -152,7 +162,7 @@ public class EquationGenome extends Genome {
     }
 
     public void initialize() {
-
+    	;
     }
 
     public boolean canDie(double fitness) {
@@ -192,8 +202,7 @@ public class EquationGenome extends Genome {
         if (position == 0) {
             
             // Generate 0 or 1 for a
-            g.operation = nextInt(TheSeed, 0, NumSymbols);
-            
+            g.operation = nextInt(TheSeed, 0, NumSymbols);            
             return g;
         }
 
@@ -210,41 +219,36 @@ public class EquationGenome extends Genome {
 
     public void mutate() {
 
-        int AffectedGenes = TheSeed.nextInt((int) 3); // determine how many
-                                                      // genes
-        // to mutate
-
+        int AffectedGenes = TheSeed.nextInt((int) 3);
         for (int i = 0; i < AffectedGenes; i++) {
 
             mutationIndex = nextInt(TheSeed, 0, (int) length);
-            final Gene gene = (Gene) this.generateGeneValue(theMin, theMax,
-                    mutationIndex);
+            final Gene gene = (Gene) this.generateGeneValue(theMin, theMax, mutationIndex);
             theArray.set(mutationIndex, gene);
         }
 
     }
 
-    public String GetOperationString(final int operation) {
+    public String getOperationString(final int operation) {
 
         String result = "";
-
         switch (operation) {
-        case 4: // *
-            result = "&";
-            break;
-        case 5: // /
-            result = "|";
-            break;
-        case 6: // +
-            result = "^";
-            break;
-        case 7: // -
-            result = "~";
-            break;
-        default:
-            // +
-            break;
-        } // end switch
+	        case 4: // *
+	            result = "&";
+	            break;
+	        case 5: // /
+	            result = "|";
+	            break;
+	        case 6: // +
+	            result = "^";
+	            break;
+	        case 7: // -
+	            result = "~";
+	            break;
+	        default:
+	            // +
+	            break;
+	        } // end switch
 
         return result;
 
@@ -255,22 +259,22 @@ public class EquationGenome extends Genome {
         byte result = 0;
         switch (operation) {
 
-        case 4: // and
-            result = (byte) (a & b & 1);
-            break;
-        case 5: // or
-            result = (byte) ((a | b) & 1);
-            break;
-        case 6: // xor
-            result = (byte) ((a ^ b) & 1);
-            break;
-        case 7: // -
-            result = (byte) ((~a) & 1);
-            break;
-        default:
-            // +
-            break;
-        } // end switch
+	        case 4: // and
+	            result = (byte) (a & b & 1);
+	            break;
+	        case 5: // or
+	            result = (byte) ((a | b) & 1);
+	            break;
+	        case 6: // xor
+	            result = (byte) ((a ^ b) & 1);
+	            break;
+	        case 7: // -
+	            result = (byte) ((~a) & 1);
+	            break;
+	        default:
+	            // +
+	            break;
+	        } // end switch
 
         return result;
 
@@ -298,8 +302,7 @@ public class EquationGenome extends Genome {
             } else {
 
                 // operation, use it to fill calculation in array
-                _result += count + ": " + GetOperationString(g.operation) + " "
-                        + g.instruction1 + ", " + g.instruction2 + "\n";
+                _result += count + ": " + getOperationString(g.operation) + " " + g.instruction1 + ", " + g.instruction2 + "\n";
             }
 
             count++;
@@ -318,7 +321,6 @@ public class EquationGenome extends Genome {
             if (g.operation < NumSymbols) {
 
                 // a or b, assign value
-
                 switch (g.operation) {
                     case 0:
                         CalculationStringArray[count] = "a";
@@ -340,23 +342,17 @@ public class EquationGenome extends Genome {
 
             } else if (g.operation == 7) {
 
-                CalculationStringArray[count] = "("
-                        + CalculationStringArray[g.instruction1]
-                        + GetOperationString(g.operation) + ")";
+                CalculationStringArray[count] = "(" + CalculationStringArray[g.instruction1] + getOperationString(g.operation) + ")";
+                
             } else if (g.operation == 9) { // unary
 
-                CalculationStringArray[count] = "("
-                        + GetOperationString(g.operation)
-                        + CalculationStringArray[g.instruction1] + ")" + ")";
+                CalculationStringArray[count] = "(" + getOperationString(g.operation) + CalculationStringArray[g.instruction1] + ")" + ")";
+                
             } else {
 
                 // operation, use it to fill calculation in array
-                CalculationStringArray[count] = "("
-                        + CalculationStringArray[g.instruction1]
-                        + GetOperationString(g.operation)
-                        + CalculationStringArray[g.instruction2] + ")";
+                CalculationStringArray[count] = "(" + CalculationStringArray[g.instruction1] + getOperationString(g.operation) + CalculationStringArray[g.instruction2] + ")";
             }
-
             count++;
         }
 
@@ -384,8 +380,7 @@ public class EquationGenome extends Genome {
                         break;
                     case 3:
                         CalculationArray[count] = d;
-                        break;
-                    
+                        break;                    
                 }
             } else {
                 // operation, use it to fill calculation in array
@@ -399,9 +394,7 @@ public class EquationGenome extends Genome {
 
     public double calculateFullAdder() {
 
-        int index = 0;
         // use the node to calculate the fitness
-
         double calc = 0.0f;
         double sum = 0.0f;
         int count = measure[0].length;
@@ -409,20 +402,20 @@ public class EquationGenome extends Genome {
 
             calc = performCalculation(measure[i][0], measure[i][1], measure[i][2], measure[i][3]);
 
+            // Uncomment the following lines for using the error handling for different output bits
+            
             // bit 0 fitness
-            // double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 1]
-            // - calc); // last byte
+            //double error = 100 - Math.abs(measure[i][measure[1].length - 1] - calc);
             // bit 1 fitness
-            // double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 2]
-            // - calc); // last byte
+            // For this fitness/bit we should see the following: (((b&d)^a)^c) --> 1
+            //double error = 100 - Math.abs(measure[i][measure[1].length - 2] - calc);
             // bit 2 fitness
-
-            double error = 100 - Math.abs(measure[i][measure[1].length - 3] - calc); // last byte
+            // For this fitness/bit we should see the following: ((c|(d&b))&(a|c(&(d&b)))) -> 1
+            double error = 100 - Math.abs(measure[i][measure[1].length - 3] - calc);
             sum += error;
         }
 
         currentFitness = sum / (measure[0].length * 100);
-
         if (Double.isNaN(currentFitness)) {
             currentFitness = 0.01f;
         }
@@ -441,9 +434,8 @@ public class EquationGenome extends Genome {
 
     public String toString() {
 
-        String strResult = "";
-        int index = 0;
-        strResult += " -->  " + this.formEquationString();
+        String strResult = "";        
+        strResult += " --> " + this.formEquationString();
         strResult += " --> " + currentFitness;
 
         return strResult;
@@ -551,7 +543,6 @@ public class EquationGenome extends Genome {
 
         // Pick a random crossover point
         crossoverPoint = nextInt(TheSeed, 1, (int) length);
-
         EquationGenome crossingGene = (EquationGenome) g;
 
         for (int i = 0; i < crossoverPoint; i++) {
@@ -560,7 +551,6 @@ public class EquationGenome extends Genome {
             aGene2.theArray.add(theArray.get(i));
 
         }
-
         for (int j = crossoverPoint; j < length; j++) {
             if (j >= 0) {
                 aGene1.theArray.add(theArray.get(j));
@@ -578,7 +568,6 @@ public class EquationGenome extends Genome {
         } else {
             aGene = aGene2;
         }
-
         return aGene;
     }
 

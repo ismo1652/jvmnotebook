@@ -1,3 +1,10 @@
+/**
+ * Based on 
+ * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
+ * 
+ * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
+ * 
+ */
 package org.adder;
 
 import java.util.ArrayList;
@@ -5,6 +12,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ */
 public class Population {
 
     public static final int kLength = 20;
@@ -16,13 +25,13 @@ public class Population {
     public static final double kDeathFitness = 0.00f;
     public static final double kReproductionFitness = 0.0f;
 
-    private int nCrossover = kLength / 2;
+    private final int nCrossover = kLength / 2;
 
-    private List scores = new ArrayList();
-    private List genomes = new ArrayList();
-    private List genomeReproducers = new ArrayList();
-    private List genomeResults = new ArrayList();
-    private List genomeFamily = new ArrayList();
+    private List genomes = new ArrayList(20);
+    private final List scores = new ArrayList(20);    
+    private final List genomeReproducers = new ArrayList(20);
+    private final List genomeResults = new ArrayList(20);
+    private final List genomeFamily = new ArrayList(20);
 
     private int currentPopulation = kInitialPopulation;
     private int generation = 1;
@@ -34,16 +43,18 @@ public class Population {
 
         for (int i = 0; i < kInitialPopulation; i++) {
 
-            final EquationGenome aGenome = new EquationGenome(kLength, kMin, kMax);
-            int nCrossOver = EquationGenome.nextInt(EquationGenome.TheSeed, 1, (int) aGenome.length);
-            aGenome.setCrossoverPoint(nCrossover);
+            final EquationGenome aGenome = new EquationGenome(kLength, kMin, kMax);            
+            aGenome.setCrossoverPoint(EquationGenome.nextInt(EquationGenome.TheSeed, 1, (int) aGenome.length));
             aGenome.calculateFitness();
             genomes.add(aGenome);
 
         }
-
     }
 
+    /**
+     * Method mutate.
+     * @param aGene Genome
+     */
     private void mutate(final Genome aGene) {
 
         if (EquationGenome.TheSeed.nextInt(100) < (int) (kMutationFrequency * 100.0)) {
@@ -51,6 +62,12 @@ public class Population {
         }
     }
 
+    /**
+     * Method removeRange.
+     * @param elements List
+     * @param startIndex int
+     * @param endIndex int
+     */
     public static void removeRange(final List elements, final int startIndex, final int endIndex) {
         int index;
         if (startIndex > endIndex) {
@@ -62,6 +79,11 @@ public class Population {
         }
     }
 
+    /**
+     * Method clone.
+     * @param list List
+     * @return List
+     */
     public static final List clone(final List list) {
 
         final List newList = new ArrayList();
@@ -97,7 +119,6 @@ public class Population {
 
         // do the crossover of the genes and add them to the population
         doCrossover(genomeReproducers);
-
         genomes = (List) clone(genomeResults);
 
         // mutate a few genes in the new population
@@ -118,6 +139,10 @@ public class Population {
         currentPopulation = genomes.size();
     }
 
+    /**
+     * Method calculateFitnessForAll.
+     * @param genes List<EquationGenome>
+     */
     public void calculateFitnessForAll(final List<EquationGenome> genes) {
 
         for (EquationGenome lg : genes) {
@@ -125,6 +150,10 @@ public class Population {
         }
     }
 
+    /**
+     * Method doCrossover.
+     * @param genes List
+     */
     public void doCrossover(final List genes) {
 
         final List geneMoms = new ArrayList();
@@ -174,7 +203,6 @@ public class Population {
             EquationGenome babyGene2 = null;
 
             int randomnum = EquationGenome.TheSeed.nextInt(100) % 3;
-
             if (randomnum == 0) {
 
                 babyGene1 = (EquationGenome) ((EquationGenome) geneDads.get(i)).crossover((EquationGenome) geneMoms.get(i));
@@ -206,7 +234,6 @@ public class Population {
             }
 
             Collections.sort(genomeFamily);
-
             if (best2) {
 
                 // if Best2 is true, add top fitness genes
@@ -229,6 +256,10 @@ public class Population {
 
     }
 
+    /**
+     * Method checkForUndefinedFitness.
+     * @param g Genome
+     */
     public void checkForUndefinedFitness(final Genome g) {
 
         if (Double.isNaN(g.currentFitness)) {
@@ -246,13 +277,23 @@ public class Population {
 
         System.out.println("generation #" + generation + ", Hit the enter key to continue...\n");
         try {
+			Thread.sleep(60);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        /*
+        try {
             System.in.read();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        */
     }
 
+    /**
+     * Method converged.
+     * @return boolean
+     */
     public boolean converged() {
 
         int histogram = 0;
@@ -262,17 +303,14 @@ public class Population {
             final Double bd = (Double) scores.get(i - 1);
             final double a = ad.doubleValue();
             final double b = bd.doubleValue();
+            
             if ((int) (a * 10000) == (int) (b * 10000)) {
-
                 histogram++;
-
             } else {
-
                 histogram = 0;
-
             }
+            
         }
-
         if (histogram > 5)
             return true;
 
