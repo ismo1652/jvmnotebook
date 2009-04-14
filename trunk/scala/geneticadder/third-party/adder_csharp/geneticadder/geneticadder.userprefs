@@ -4,14 +4,14 @@
     <File name="../Class1.cs" line="19" column="16" />
     <File name="../Population.cs" line="12" column="6" />
     <File name="../Genome.cs" line="26" column="1" />
-    <File name="../EquationGenome.cs" line="390" column="1" />
+    <File name="../EquationGenome.cs" line="324" column="1" />
   </Files>
   <Views>
     <ViewMemento id="ProjectPad">
       <Node expanded="True">
         <Node name="geneticadder" expanded="True">
           <Node name="ExternalFiles" expanded="True">
-            <Node name="Population.cs" selected="True" />
+            <Node name="EquationGenome.cs" selected="True" />
           </Node>
         </Node>
       </Node>
@@ -21,7 +21,7 @@
     </ViewMemento>
   </Views>
   <Properties>
-    <Property key="ActiveWindow" value="/home/bbrown/workspace_projects/jvmnotebook/scala/geneticadder/third-party/adder_csharp/Population.cs" />
+    <Property key="ActiveWindow" value="/home/bbrown/workspace_projects/jvmnotebook/scala/geneticadder/third-party/adder_csharp/EquationGenome.cs" />
     <Property key="ActiveConfiguration" value="Debug" />
   </Properties>
 </UserCombinePreferences>
