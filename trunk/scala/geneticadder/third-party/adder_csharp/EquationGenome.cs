@@ -351,7 +351,6 @@ namespace GeneticAlgorithm
 				count++;
 			} // End of the For Each
 			
-			//Console.WriteLine("\n @--------------@");
 			//for (int i = 0; i < CalculationArray.Length; i++) {
 			//	Console.WriteLine("   #*v2 calc=>" + CalculationArray[i] + "    i=" + i + " 0=" + a + " 1=" + b + " 2=" +  c + " 3=" + d);				
 			//} // End of the for
@@ -380,12 +379,11 @@ namespace GeneticAlgorithm
 				// By uncommenting the line that checks bit 1 fitness, we can run our genetic algorithm on our adder inputs against the bit 1 output.  
 				// Below is the fitness function determining the error of the output calculated for the genome against the desired output of bit 1
 				////////////////////////////////////////////				// bit 0 fitness
-                // double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 1] - calc); // last byte
+                double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 1] - calc); // last byte
 				// bit 1 fitness
-                // double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 2] - calc); // last byte
-				// bit 2 fitness
-                // Console.WriteLine("   # calc=>" + calc + "    i=" + i + " 0=" + measure[i, 0] + " 1=" + measure[i, 1] + " 2=" +  measure[i,2] + " 3=" + measure[i,3]);
-				double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 3] - calc); // last byte
+                //double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 2] - calc); // last byte
+				// bit 2 fitness                
+				// double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 3] - calc); // last byte
 
 			    sum +=  error;
             }
