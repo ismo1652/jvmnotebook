@@ -56,7 +56,7 @@ public class AdderMain {
 		while (p.converged() == false) {
 			
 			p.nextGeneration();
-			if (count % 50 == 0) {
+			if ((count % 50) == 0) {
 				p.writeNextGeneration();
 			}
 			count++;
