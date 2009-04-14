@@ -52,9 +52,7 @@ namespace GeneticAlgorithm
 
 		public EquationGenome(long length, object min, object max)
 		{
-			//
-			// TODO: Add constructor logic here
-			//
+
 			Length = length;
 			TheMin = (int)min;
 			TheMax = (int)max;
@@ -558,12 +556,22 @@ namespace GeneticAlgorithm
 			//			TheArray[2] = 1;			
 			//			TheArray[3] = 0;			
 			//			TheArray[4] = 2;		
-//			strResult += " -->  " + this.FormStepsString();
+			// strResult += " -->  " + this.FormStepsString();
 	
 			strResult += " -->  " + this.FormEquationString();
-
 			strResult += " --> " + CurrentFitness.ToString();
 
+			Gene a = (Gene) TheArray[0];
+			Gene b = (Gene) TheArray[1];
+			Gene c = (Gene) TheArray[2];
+			Gene d = (Gene) TheArray[3];
+			Gene e = (Gene) TheArray[4];
+			strResult += " [0]=" + a.instruction1 + "/" + a.instruction2  +  "=" +  a.operation;
+			strResult += " [1]=" + b.instruction1 + "/" + b.instruction2  +  "=" +  b.operation;
+			strResult += " [2]=" + c.instruction1 + "/" + c.instruction2  +  "=" +  c.operation;
+			strResult += " [3]=" + d.instruction1 + "/" + d.instruction2  +  "=" +  d.operation;
+			strResult += " [4]=" + e.instruction1 + "/" + e.instruction2  +  "=" +  e.operation;
+			
 			return strResult;
 		}
 
