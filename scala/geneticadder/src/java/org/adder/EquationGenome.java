@@ -331,8 +331,7 @@ public class EquationGenome extends Genome {
                         break;
                     case 3:
                         CalculationStringArray[count] = "d";
-                        break;
-                    default: break;
+                        break;                    
                 }
 
             } else if (g.operation == 8) {
@@ -386,7 +385,7 @@ public class EquationGenome extends Genome {
                     case 3:
                         CalculationArray[count] = d;
                         break;
-                    default: break;
+                    
                 }
             } else {
                 // operation, use it to fill calculation in array
