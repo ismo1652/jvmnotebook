@@ -248,7 +248,7 @@ namespace GeneticAlgorithm
 			}
 
 			Console.WriteLine("Generation #{0}, Hit the enter key to continue...\n", Generation);
-			Console.ReadLine();
+			//Console.ReadLine();
 		}
 
 		public bool Converged()
@@ -281,5 +281,12 @@ namespace GeneticAlgorithm
 				Scores.Add(((EquationGenome)Genomes[0]).CurrentFitness);  // add top score;
 			}
 		}
+
+		public Genome GetNextGenerationBest()
+		{
+			Genomes.Sort();
+			return (Genome) Genomes[0];			
+		}
+		
 	}
 }

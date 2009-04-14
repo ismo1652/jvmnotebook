@@ -26,16 +26,37 @@ namespace GEPAlgorithm
 			p.WriteNextGeneration();
 
 			int count = 0;
+			byte res = 0;
+			EquationGenome resGenome;
 			while (p.Converged() == false)
 			{
 				p.NextGeneration();
-				if (count % 50 == 0)
+				if (count % 50 == 0) {
 					p.WriteNextGeneration();
-				count ++;
-			}
-			//
-			// TODO: Add code to start application here
-			//
-		}
-	}
-}
+										
+					resGenome = (EquationGenome) p.GetNextGenerationBest(); 
+					res = resGenome.PerformCalculation(0, 1, 1, 1);			
+					Console.WriteLine("<Loop> Result => {0}", res.ToString());
+					
+				}
+				count++;			
+			
+				if (count > 40000) {
+				    Console.WriteLine("---------------");
+				    p.WriteNextGenerationBest();
+				    Console.WriteLine("---------------");
+				    break;
+				} // End of if
+			} // End of the while
+			
+			Console.WriteLine("Done");
+
+			resGenome = (EquationGenome) p.GetNextGenerationBest(); 
+			res = resGenome.PerformCalculation(0, 1, 1, 1);			
+			Console.WriteLine("Result => {0}", res.ToString());
+			
+		} // End of Method
+		
+	} // End of Class
+	
+} // End of Namespace
