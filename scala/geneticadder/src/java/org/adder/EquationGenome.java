@@ -1,10 +1,39 @@
-/**
- * Based on 
- * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
- * 
- * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
- * 
- */
+/********************************************************************
+ *
+ * Copyright (c) 2006-2007 Berlin Brown and botnode.com  All Rights Reserved
+ *
+ * http://www.opensource.org/licenses/bsd-license.php
+
+ * All rights reserved.
+
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+
+ * * Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ * * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ * * Neither the name of the Botnode.com (Berlin Brown) nor
+ * the names of its contributors may be used to endorse or promote
+ * products derived from this software without specific prior written permission.
+
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Date:
+ * Main Description:
+ * Contact: Berlin Brown <berlin dot brown at gmail.com>
+ *********************************************************************/
 package org.adder;
 
 import java.util.ArrayList;
@@ -18,6 +47,14 @@ import java.util.Random;
  */
 public class EquationGenome extends Genome {
 
+	/*
+	 * Based on 
+	 * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
+	 * 
+	 * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
+	 * 
+	 */
+	
     /**
 	 *  Number of Symbols
 	 */
@@ -120,7 +157,6 @@ public class EquationGenome extends Genome {
         final Double gened1 = new Double(gene1.currentFitness);
         final Double gened2 = new Double(gene2.currentFitness);
         return gened1.compareTo(gened2);
-        //return (int) ((-1.0) * (gene2.currentFitness - gene1.currentFitness));
     }
 
     /**
@@ -167,8 +203,7 @@ public class EquationGenome extends Genome {
 
     public boolean canDie(double fitness) {
 
-        if (currentFitness <= (int) (fitness * 100.0f)) {
-
+        if (currentFitness <= (fitness * 100.0f)) {
             return true;
         }
 
@@ -177,7 +212,8 @@ public class EquationGenome extends Genome {
 
     public boolean canReproduce(double fitness) {
 
-        if (EquationGenome.TheSeed.nextInt(100) >= (int) (fitness * 100.0f)) {
+    	final double nint = (double) EquationGenome.TheSeed.nextInt(100);
+        if (nint >= fitness * 100.0f) {
             return true;
         }
 
@@ -398,6 +434,7 @@ public class EquationGenome extends Genome {
         double calc = 0.0f;
         double sum = 0.0f;
         int count = measure[0].length;
+        
         for (int i = 0; i < count; i++) {
 
             calc = performCalculation(measure[i][0], measure[i][1], measure[i][2], measure[i][3]);
@@ -405,17 +442,18 @@ public class EquationGenome extends Genome {
             // Uncomment the following lines for using the error handling for different output bits
             
             // bit 0 fitness
+            // For this fitness/bit we should see the following (d^b)
             //double error = 100 - Math.abs(measure[i][measure[1].length - 1] - calc);
             // bit 1 fitness
             // For this fitness/bit we should see the following: (((b&d)^a)^c) --> 1
-            //double error = 100 - Math.abs(measure[i][measure[1].length - 2] - calc);
+            double error = 100 - Math.abs(measure[i][measure[1].length - 2] - calc);
             // bit 2 fitness
             // For this fitness/bit we should see the following: ((c|(d&b))&(a|c(&(d&b)))) -> 1
-            double error = 100 - Math.abs(measure[i][measure[1].length - 3] - calc);
+            //double error = 100.0f - Math.abs(measure[i][measure[1].length - 3] - calc);
             sum += error;
         }
 
-        currentFitness = sum / (measure[0].length * 100);
+        currentFitness = sum / (measure[0].length * 100.0f);
         if (Double.isNaN(currentFitness)) {
             currentFitness = 0.01f;
         }
@@ -461,7 +499,7 @@ public class EquationGenome extends Genome {
         EquationGenome crossingGene = (EquationGenome) g;
         for (int i = 0; i < length; i++) {
 
-            if (TheSeed.nextInt(100) % 2 == 0) {
+            if ((TheSeed.nextInt(100) % 2) == 0) {
                 aGene1.theArray.add(crossingGene.theArray.get(i));
                 aGene2.theArray.add(theArray.get(i));
             } else {
@@ -470,7 +508,6 @@ public class EquationGenome extends Genome {
             }
 
         }
-
         // 50/50 chance of returning gene1 or gene2
         EquationGenome aGene = null;
         if (TheSeed.nextInt(2) == 1) {
@@ -478,7 +515,6 @@ public class EquationGenome extends Genome {
         } else {
             aGene = aGene2;
         }
-
         return aGene;
     }
 
@@ -524,7 +560,6 @@ public class EquationGenome extends Genome {
 
         // 50/50 chance of returning gene1 or gene2
         EquationGenome aGene = null;
-
         if (TheSeed.nextInt(2) == 1) {
             aGene = aGene1;
         } else {
