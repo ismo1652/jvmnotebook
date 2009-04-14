@@ -1,10 +1,39 @@
-/**
- * Based on 
- * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
- * 
- * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
- * 
- */
+/********************************************************************
+ *
+ * Copyright (c) 2006-2007 Berlin Brown and botnode.com  All Rights Reserved
+ *
+ * http://www.opensource.org/licenses/bsd-license.php
+
+ * All rights reserved.
+
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+
+ * * Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ * * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ * * Neither the name of the Botnode.com (Berlin Brown) nor
+ * the names of its contributors may be used to endorse or promote
+ * products derived from this software without specific prior written permission.
+
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Date:
+ * Main Description:
+ * Contact: Berlin Brown <berlin dot brown at gmail.com>
+ *********************************************************************/
 package org.adder;
 
 import java.util.ArrayList;
@@ -15,7 +44,15 @@ import java.util.List;
 /**
  */
 public class Population {
-
+	
+	/*
+	 * Based on 
+	 * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
+	 * 
+	 * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
+	 * 
+	 */
+	
     public static final int kLength = 20;
     public static final int kInitialPopulation = 500;
     public static final int kPopulationLimit = 500;
@@ -24,9 +61,7 @@ public class Population {
     public static final double kMutationFrequency = 0.33f;
     public static final double kDeathFitness = 0.00f;
     public static final double kReproductionFitness = 0.0f;
-
-    private final int nCrossover = kLength / 2;
-
+    
     private List genomes = new ArrayList(20);
     private final List scores = new ArrayList(20);    
     private final List genomeReproducers = new ArrayList(20);
@@ -35,7 +70,7 @@ public class Population {
 
     private int currentPopulation = kInitialPopulation;
     private int generation = 1;
-    private boolean best2 = true;
+    private final boolean best2 = true;
 
     /////////////////////////////////////////////////////////////////
     
@@ -56,8 +91,8 @@ public class Population {
      * @param aGene Genome
      */
     private void mutate(final Genome aGene) {
-
-        if (EquationGenome.TheSeed.nextInt(100) < (int) (kMutationFrequency * 100.0)) {
+    	final double nint = EquationGenome.TheSeed.nextInt(100);
+        if (nint < (kMutationFrequency * 100.0)) {
             aGene.mutate();
         }
     }
@@ -84,9 +119,9 @@ public class Population {
      * @param list List
      * @return List
      */
-    public static final List clone(final List list) {
+    public static final List clonePopulation(final List list) {
 
-        final List newList = new ArrayList();
+        final List newList = new ArrayList(80);
         for (final Iterator it = list.iterator(); it.hasNext();) {
             newList.add(it.next());
         }
@@ -119,7 +154,7 @@ public class Population {
 
         // do the crossover of the genes and add them to the population
         doCrossover(genomeReproducers);
-        genomes = (List) clone(genomeResults);
+        genomes = (List) clonePopulation(genomeResults);
 
         // mutate a few genes in the new population
         for (int i = 0; i < genomes.size(); i++) {
@@ -156,13 +191,13 @@ public class Population {
      */
     public void doCrossover(final List genes) {
 
-        final List geneMoms = new ArrayList();
-        final List geneDads = new ArrayList();
+        final List geneMoms = new ArrayList(80);
+        final List geneDads = new ArrayList(80);
 
         for (int i = 0; i < genes.size(); i++) {
 
             // randomly pick the moms and dad's
-            if (EquationGenome.TheSeed.nextInt(100) % 2 > 0) {
+            if ((EquationGenome.TheSeed.nextInt(100) % 2) > 0) {
                 geneMoms.add(genes.get(i));
             } else {
                 geneDads.add(genes.get(i));
@@ -228,9 +263,7 @@ public class Population {
             calculateFitnessForAll(genomeFamily);
 
             for (int j = 0; j < 4; j++) {
-
                 checkForUndefinedFitness((Genome) genomeFamily.get(j));
-
             }
 
             Collections.sort(genomeFamily);
@@ -311,8 +344,9 @@ public class Population {
             }
             
         }
-        if (histogram > 5)
+        if (histogram > 5) {
             return true;
+        }
 
         return false;
     }
