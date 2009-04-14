@@ -1,3 +1,11 @@
+/**
+ * Based on 
+ * http://www.c-sharpcorner.com/UploadFile/mgold/GAAdderDesign09242005053429AM/GAAdderDesign.aspx\
+ * 
+ * "Using Genetic Algorithms to Design Logic Circuits in C# By  Mike Gold February 05, 2003" 
+ * 
+ */
+
 using System;
 using GeneticAlgorithm;
 
