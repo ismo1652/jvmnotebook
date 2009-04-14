@@ -1,0 +1,24 @@
+﻿<UserCombinePreferences version="1.0" filename="/home/bbrown/workspace_projects/jvmnotebook/scala/geneticadder/third-party/adder_csharp/geneticadder/geneticadder.mds">
+  <Files>
+    <File name="../EquationGenome.cs" line="10" column="27" />
+    <File name="../Population.cs" line="1" column="1" />
+  </Files>
+  <Views>
+    <ViewMemento id="ProjectPad">
+      <Node expanded="True">
+        <Node name="geneticadder" expanded="True">
+          <Node name="ExternalFiles" expanded="True">
+            <Node name="Population.cs" selected="True" />
+          </Node>
+        </Node>
+      </Node>
+    </ViewMemento>
+    <ViewMemento id="ClassPad">
+      <Node expanded="True" />
+    </ViewMemento>
+  </Views>
+  <Properties>
+    <Property key="ActiveWindow" value="/home/bbrown/workspace_projects/jvmnotebook/scala/geneticadder/third-party/adder_csharp/Population.cs" />
+    <Property key="ActiveConfiguration" value="Debug" />
+  </Properties>
+</UserCombinePreferences>
