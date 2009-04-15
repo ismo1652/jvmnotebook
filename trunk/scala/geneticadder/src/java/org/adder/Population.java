@@ -62,11 +62,11 @@ public class Population {
     public static final double kDeathFitness = 0.00f;
     public static final double kReproductionFitness = 0.0f;
     
-    private List genomes = new ArrayList(20);
-    private final List scores = new ArrayList(20);    
-    private final List genomeReproducers = new ArrayList(20);
-    private final List genomeResults = new ArrayList(20);
-    private final List genomeFamily = new ArrayList(20);
+    private List<Genome> genomes = new ArrayList<Genome>(20);
+    private final List<Double> scores = new ArrayList<Double>(20);    
+    private final List<Genome> genomeReproducers = new ArrayList<Genome>(20);
+    private final List<Genome> genomeResults = new ArrayList<Genome>(20);
+    private final List<Genome> genomeFamily = new ArrayList<Genome>(20);
 
     private int currentPopulation = kInitialPopulation;
     private int generation = 1;
@@ -103,7 +103,7 @@ public class Population {
      * @param startIndex int
      * @param endIndex int
      */
-    public static void removeRange(final List elements, final int startIndex, final int endIndex) {
+    public static void removeRange(final List<Genome> elements, final int startIndex, final int endIndex) {
         int index;
         if (startIndex > endIndex) {
             throw new IllegalArgumentException();
@@ -119,11 +119,11 @@ public class Population {
      * @param list List
      * @return List
      */
-    public static final List clonePopulation(final List list) {
+    public static final List<Genome> clonePopulation(final List<Genome> list) {
 
-        final List newList = new ArrayList(80);
-        for (final Iterator it = list.iterator(); it.hasNext();) {
-            newList.add(it.next());
+        final List<Genome> newList = new ArrayList<Genome>(80);
+        for (final Iterator<Genome> it = list.iterator(); it.hasNext();) {
+            newList.add((Genome) it.next());
         }
         return newList;
 
@@ -154,7 +154,7 @@ public class Population {
 
         // do the crossover of the genes and add them to the population
         doCrossover(genomeReproducers);
-        genomes = (List) clonePopulation(genomeResults);
+        genomes = (List<Genome>) clonePopulation(genomeResults);
 
         // mutate a few genes in the new population
         for (int i = 0; i < genomes.size(); i++) {
@@ -178,9 +178,9 @@ public class Population {
      * Method calculateFitnessForAll.
      * @param genes List<EquationGenome>
      */
-    public void calculateFitnessForAll(final List<EquationGenome> genes) {
+    public void calculateFitnessForAll(final List<Genome> genes) {
 
-        for (EquationGenome lg : genes) {
+        for (Genome lg : genes) {
             lg.calculateFitness();
         }
     }
@@ -189,15 +189,15 @@ public class Population {
      * Method doCrossover.
      * @param genes List
      */
-    public void doCrossover(final List genes) {
+    public void doCrossover(final List<Genome> genes) {
 
-        final List geneMoms = new ArrayList(80);
-        final List geneDads = new ArrayList(80);
-
+        final List<Genome> geneMoms = new ArrayList<Genome>(80);
+        final List<Genome> geneDads = new ArrayList<Genome>(80);
+        
         for (int i = 0; i < genes.size(); i++) {
 
             // randomly pick the moms and dad's
-            if ((EquationGenome.TheSeed.nextInt(100) % 2) > 0) {
+            if ((EquationGenome.TheSeed.nextInt(100) % 2) > 20) {
                 geneMoms.add(genes.get(i));
             } else {
                 geneDads.add(genes.get(i));
@@ -237,7 +237,7 @@ public class Population {
             EquationGenome babyGene1 = null;
             EquationGenome babyGene2 = null;
 
-            int randomnum = EquationGenome.TheSeed.nextInt(100) % 3;
+            final int randomnum = EquationGenome.TheSeed.nextInt(100) % 3;
             if (randomnum == 0) {
 
                 babyGene1 = (EquationGenome) ((EquationGenome) geneDads.get(i)).crossover((EquationGenome) geneMoms.get(i));
@@ -247,14 +247,15 @@ public class Population {
 
                 babyGene1 = (EquationGenome) ((EquationGenome) geneDads.get(i)).crossover2Point((EquationGenome) geneMoms.get(i));
                 babyGene2 = (EquationGenome) ((EquationGenome) geneMoms.get(i)).crossover2Point((EquationGenome) geneDads.get(i));
+                
             } else {
 
                 babyGene1 = (EquationGenome) ((EquationGenome) geneDads.get(i)).uniformCrossover((EquationGenome) geneMoms.get(i));
                 babyGene2 = (EquationGenome) ((EquationGenome) geneMoms.get(i)).uniformCrossover((EquationGenome) geneDads.get(i));
 
-            }
+            } // End of if - else
 
-            genomeFamily.clear();
+            genomeFamily.clear();            
             genomeFamily.add(geneDads.get(i));
             genomeFamily.add(geneMoms.get(i));
             genomeFamily.add(babyGene1);
@@ -266,7 +267,7 @@ public class Population {
                 checkForUndefinedFitness((Genome) genomeFamily.get(j));
             }
 
-            Collections.sort(genomeFamily);
+            Collections.sort((List<Genome>) genomeFamily);
             if (best2) {
 
                 // if Best2 is true, add top fitness genes
