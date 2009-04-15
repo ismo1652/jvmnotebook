@@ -19,6 +19,7 @@ namespace GEPAlgorithm
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
+		/*
 		[STAThread]
 		static void Main(string[] args)
 		{
@@ -56,7 +57,7 @@ namespace GEPAlgorithm
 			Console.WriteLine("Result => {0}", res.ToString());
 			
 		} // End of Method
-		
+*/		
 	} // End of Class
 	
 } // End of Namespace
