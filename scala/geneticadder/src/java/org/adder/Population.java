@@ -238,6 +238,9 @@ public class Population {
             EquationGenome babyGene2 = null;
 
             final int randomnum = EquationGenome.TheSeed.nextInt(100) % 3;
+            
+            System.out.println("<Dad> ########$$$$ " + randomnum);
+            
             if (randomnum == 0) {
 
                 babyGene1 = (EquationGenome) ((EquationGenome) geneDads.get(i)).crossover((EquationGenome) geneMoms.get(i));

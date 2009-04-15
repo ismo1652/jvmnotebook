@@ -55,10 +55,22 @@ public class AdderMain {
 		int count = 0;
 		while (p.converged() == false) {
 			
+			System.out.println("######################");
+			System.out.println("######################");
+			System.out.println("######################");
+			System.out.println("######################");
+			System.out.println("######################");
+			System.out.println("###################### -------------------- " + count);
+			
 			p.nextGeneration();
-			if ((count % 100) == 0) {
+			if ((count % 50) == 0) {
 				p.writeNextGeneration();
 			}
+			
+			if (count > 50) {
+				break;
+			}
+			
 			count++;
 		}
 		
