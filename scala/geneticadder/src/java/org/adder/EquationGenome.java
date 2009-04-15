@@ -213,8 +213,7 @@ public class EquationGenome extends Genome {
 
     }
 
-    public Object generateGeneValue(final int min, final int max,
-            final int position) {
+    public Object generateGeneValue(final int min, final int max, final int position) {
 
         final Gene g = new Gene();
         int nextSeed = 0;
