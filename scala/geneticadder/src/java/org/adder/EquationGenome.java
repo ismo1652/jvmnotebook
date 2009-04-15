@@ -90,41 +90,26 @@ public class EquationGenome extends Genome {
 	 */
     private int theMax = 6;
 
-    /**
-	 * Current X pos for smart genes.
-	 */
-    private final int currentXPos = 0;
-
-    /**
-	 * Current Y pos for smart genes.
-	 */
-    private final int currentYPos = 0;
-
-    /**
-	 * 
-	 */
-    private final int previousSeed = 2;
-
     public boolean trialFitness;
     private List<Gene> theArray = new ArrayList<Gene>();
 
     final byte measure[][] = new byte[][] { 
-            { 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 1, 0, 0, 0, 1 }, 
-            { 0, 0, 1, 0, 0, 0, 1, 0 },
-            { 0, 0, 1, 1, 0, 0, 1, 1 }, 
-            { 0, 1, 0, 0, 0, 0, 0, 1 },
-            { 0, 1, 0, 1, 0, 0, 1, 0 }, 
-            { 0, 1, 1, 0, 0, 0, 1, 1 },
-            { 0, 1, 1, 1, 0, 1, 0, 0 }, 
-            { 1, 0, 0, 0, 0, 0, 1, 0 },
-            { 1, 0, 0, 1, 0, 0, 1, 1 }, 
-            { 1, 0, 1, 0, 0, 1, 0, 0 },
-            { 1, 0, 1, 1, 0, 1, 0, 1 },
-            { 1, 1, 0, 0, 0, 0, 1, 1 },
-            { 1, 1, 0, 1, 0, 1, 0, 0 }, 
-            { 1, 1, 1, 0, 0, 1, 0, 1 },
-            { 1, 1, 1, 1, 0, 1, 1, 0 } 
+            { 0, 0, 0, 0, 0, 0, 0, 0 },    // ROW 0
+            { 0, 0, 0, 1, 0, 0, 0, 1 },    // ROW 1
+            { 0, 0, 1, 0, 0, 0, 1, 0 },    // ROW 2
+            { 0, 0, 1, 1, 0, 0, 1, 1 },    // ROW 3
+            { 0, 1, 0, 0, 0, 0, 0, 1 },    // ROW 4
+            { 0, 1, 0, 1, 0, 0, 1, 0 },    // ROW 5
+            { 0, 1, 1, 0, 0, 0, 1, 1 },    // ROW 6
+            { 0, 1, 1, 1, 0, 1, 0, 0 },    // ROW 7
+            { 1, 0, 0, 0, 0, 0, 1, 0 },    // ROW 8
+            { 1, 0, 0, 1, 0, 0, 1, 1 },    // ROW 9
+            { 1, 0, 1, 0, 0, 1, 0, 0 },    // ROW 10
+            { 1, 0, 1, 1, 0, 1, 0, 1 },    // ROW 11
+            { 1, 1, 0, 0, 0, 0, 1, 1 },    // ROW 12
+            { 1, 1, 0, 1, 0, 1, 0, 0 },    // ROW 13
+            { 1, 1, 1, 0, 0, 1, 0, 1 },    // ROW 14
+            { 1, 1, 1, 1, 0, 1, 1, 0 }     // ROW 15
     };
 
     public static class Gene {
@@ -191,7 +176,7 @@ public class EquationGenome extends Genome {
 
         for (int i = 0; i < length; i++) {
 
-            Gene nextValue = (Gene) generateGeneValue(min, max, i);
+            final Gene nextValue = (Gene) generateGeneValue(min, max, i);
             theArray.add(nextValue);
 
         }
@@ -310,7 +295,7 @@ public class EquationGenome extends Genome {
 	        default:
 	            // +
 	            break;
-	        } // end switch
+        }; // end switch
 
         return result;
 
@@ -417,13 +402,15 @@ public class EquationGenome extends Genome {
                     case 3:
                         CalculationArray[count] = d;
                         break;                    
-                }
+                };
+                
             } else {
                 // operation, use it to fill calculation in array
                 CalculationArray[count] = doOperation(CalculationArray[g.instruction1], CalculationArray[g.instruction2], g.operation);
-            }
+            } // End of if - else
+            
             count++;
-        }
+        } // End of For Each
 
         return CalculationArray[theArray.size() - 1]; // return last calculation
     }
@@ -439,26 +426,27 @@ public class EquationGenome extends Genome {
 
             calc = performCalculation(measure[i][0], measure[i][1], measure[i][2], measure[i][3]);
 
+            ///////////////////////////////////////////////
             // Uncomment the following lines for using the error handling for different output bits
-            
+            ///////////////////////////////////////////////
             // bit 0 fitness
             // For this fitness/bit we should see the following (d^b)
-            //double error = 100 - Math.abs(measure[i][measure[1].length - 1] - calc);
+            double error = 100.0f - Math.abs(measure[i][measure[1].length - 1] - calc);
             // bit 1 fitness
             // For this fitness/bit we should see the following: (((b&d)^a)^c) --> 1
-            double error = 100 - Math.abs(measure[i][measure[1].length - 2] - calc);
+            //double error = 100.0f - Math.abs(measure[i][measure[1].length - 2] - calc);
             // bit 2 fitness
             // For this fitness/bit we should see the following: ((c|(d&b))&(a|c(&(d&b)))) -> 1
             //double error = 100.0f - Math.abs(measure[i][measure[1].length - 3] - calc);
             sum += error;
         }
-
-        currentFitness = sum / (measure[0].length * 100.0f);
-        if (Double.isNaN(currentFitness)) {
-            currentFitness = 0.01f;
+               
+        this.currentFitness = sum / (measure[0].length * 100.0f);
+        if (Double.isNaN(this.currentFitness)) {
+            this.currentFitness = 0.01f;
         }
 
-        return currentFitness;
+        return this.currentFitness;
     }
 
     public double calculateFitness() {
@@ -495,7 +483,6 @@ public class EquationGenome extends Genome {
         g.copyGeneInfo(aGene2);
 
         // swap genes randomly
-
         EquationGenome crossingGene = (EquationGenome) g;
         for (int i = 0; i < length; i++) {
 
@@ -546,8 +533,7 @@ public class EquationGenome extends Genome {
             if (j >= 0) {
                 aGene1.theArray.add(crossingGene.theArray.get(j));
                 aGene2.theArray.add(theArray.get(j));
-            } else {
-                //System.out.println("WARN: <crossover2Point> j/crossoverpoint1 less than zero = " + j);
+            } else {                
                 throw new RuntimeException("<crossover2Point> j/crossoverpoint1 less than zero = " + j);
             }
         }
@@ -591,7 +577,6 @@ public class EquationGenome extends Genome {
                 aGene1.theArray.add(theArray.get(j));
                 aGene2.theArray.add(crossingGene.theArray.get(j));
             } else {
-                //System.out.println("WARN: <crossover> j/crossoverpoint less than zero = " + j);
                 throw new RuntimeException("WARN: <crossover> j/crossoverpoint less than zero = " + j);
             }
         }
@@ -604,6 +589,6 @@ public class EquationGenome extends Genome {
             aGene = aGene2;
         }
         return aGene;
-    }
+    } // End of the Method Cross over
 
 } // End of the Class
