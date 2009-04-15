@@ -244,8 +244,7 @@ public class EquationGenome extends Genome {
         for (int i = 0; i < AffectedGenes; i++) {
 
             mutationIndex = nextInt(TheSeed, 0, (int) length);
-            final Gene gene = (Gene) this.generateGeneValue(theMin, theMax,
-                    mutationIndex);
+            final Gene gene = (Gene) this.generateGeneValue(theMin, theMax, mutationIndex);
             theArray.set(mutationIndex, gene);
         }
 
@@ -271,7 +270,9 @@ public class EquationGenome extends Genome {
             // +
             break;
         } // end switch
-
+        
+		System.out.println("@@ GetOperationString =>" + result + " " + operation);
+        
         return result;
 
     }
@@ -296,9 +297,9 @@ public class EquationGenome extends Genome {
         default:
             // +
             break;
-        }
-        ; // end switch
+        }; // end switch
 
+		//System.out.println("@@ DoOperation =>" + result + " a=" + a + " b=" + b + " c=" + operation);        
         return result;
 
     }
@@ -325,10 +326,8 @@ public class EquationGenome extends Genome {
             } else {
 
                 // operation, use it to fill calculation in array
-                _result += count + ": " + getOperationString(g.operation) + " "
-                        + g.instruction1 + ", " + g.instruction2 + "\n";
+                _result += count + ": " + getOperationString(g.operation) + " " + g.instruction1 + ", " + g.instruction2 + "\n";
             }
-
             count++;
         }
 
@@ -417,11 +416,10 @@ public class EquationGenome extends Genome {
 
             } else {
                 // operation, use it to fill calculation in array
-                CalculationArray[count] = doOperation(
-                        CalculationArray[g.instruction1],
-                        CalculationArray[g.instruction2], g.operation);
+                CalculationArray[count] = doOperation(CalculationArray[g.instruction1], CalculationArray[g.instruction2], g.operation);
             } // End of if - else
 
+            //System.out.println(" $$ Count =>" + count + " Array => " + CalculationArray[count]);             
             count++;
         } // End of For Each
 
@@ -437,17 +435,20 @@ public class EquationGenome extends Genome {
 
         for (int i = 0; i < count; i++) {
 
-            calc = performCalculation(measure[i][0], measure[i][1],
-                    measure[i][2], measure[i][3]);
+            calc = performCalculation(measure[i][0], measure[i][1], measure[i][2], measure[i][3]);
 
+			//System.out.println("###-->" + measure[i][measure[1].length - 1]);
+			//System.out.println("### (2) -->" + Math.abs(measure[i][measure[1].length - 1] - calc));			
+			//System.out.println("### (3) -->" + (measure[i][measure[1].length - 1] - calc));
+			            
             // /////////////////////////////////////////////
             // Uncomment the following lines for using the error handling for
             // different output bits
             // /////////////////////////////////////////////
             // bit 0 fitness
             // For this fitness/bit we should see the following (d^b)
-            double error = 100.0f - Math.abs(measure[i][measure[1].length - 1]
-                    - calc);
+            double error = 100.0f - Math.abs(measure[i][measure[1].length - 1] - calc);
+                                    
             // bit 1 fitness
             // For this fitness/bit we should see the following: (((b&d)^a)^c)
             // --> 1
@@ -458,10 +459,18 @@ public class EquationGenome extends Genome {
             // ((c|(d&b))&(a|c(&(d&b)))) -> 1
             // double error = 100.0f - Math.abs(measure[i][measure[1].length -
             // 3] - calc);
+            
+            //System.out.println("### (4) -->  error => " + error);
+            //System.out.println("### (5) -->  sum=" + sum);
+            
             sum += error;
-        }
-
+        }        
+        //System.out.println("### (6) --> sum=" + sum);
+        
         this.currentFitness = sum / (measure[0].length * 100.0f);
+        //System.out.println("   (7) fitness=>" + this.currentFitness); 
+                
+        
         if (Double.isNaN(this.currentFitness)) {
             this.currentFitness = 0.01f;
         }
@@ -472,6 +481,9 @@ public class EquationGenome extends Genome {
     public double calculateFitness() {
 
         currentFitness = calculateFullAdder();
+        
+        System.out.println("________________________" + currentFitness);
+        
         if (currentFitness < 0.0f) {
             currentFitness = 0.01f;
         }
