@@ -191,7 +191,9 @@ namespace GeneticAlgorithm
 					// +
 					break;
 			} // end switch
-
+			
+			Console.WriteLine("@@ GetOperationString =>" + result + " " +  operation);
+			
 			return result;
 
 		}
@@ -218,7 +220,9 @@ namespace GeneticAlgorithm
 					// +
 					break;
 			} // end switch
-
+		
+			Console.WriteLine("@@ DoOperation =>" + result + " a=" + a + " b=" + b + " c=" + operation);
+	
 			return result;
 
 		}
@@ -374,7 +378,13 @@ namespace GeneticAlgorithm
 			{
 				// Why is the calc return binary output.
 				calc = PerformCalculation(measure[i, 0],  measure[i, 1], measure[i,2], measure[i,3]);
-
+				
+				Console.WriteLine("###-->" + measure[i,measure.GetLength(1) - 1]);
+									
+				Console.WriteLine("### (2) -->" + Math.Abs(measure[i,measure.GetLength(1) - 1] - calc));
+				
+				Console.WriteLine("### (3) -->" + (measure[i,measure.GetLength(1) - 1] - calc));
+				
 				////////////////////////////////////////////
 				// By uncommenting the line that checks bit 1 fitness, we can run our genetic algorithm on our adder inputs against the bit 1 output.  
 				// Below is the fitness function determining the error of the output calculated for the genome against the desired output of bit 1
@@ -384,11 +394,16 @@ namespace GeneticAlgorithm
                 //double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 2] - calc); // last byte
 				// bit 2 fitness                
 				// double error = 100 - Math.Abs(measure[i,measure.GetLength(1) - 3] - calc); // last byte
-
+		
+				Console.WriteLine("### (4) -->  error => " + error);
+				Console.WriteLine("### (5) -->  sum=" + sum);
+	
 			    sum +=  error;
             }
-            //Console.WriteLine("   sum=>" + sum);
+            
+            Console.WriteLine("   (6) sum=>" + sum);            
 			CurrentFitness = sum/(measure.GetLength(0) * 100);
+			Console.WriteLine("   (7) fitness=>" + CurrentFitness);            
 			            		
             // The fitness value will approach 1
             //Console.WriteLine("   fitness=>" + CurrentFitness);
@@ -402,6 +417,7 @@ namespace GeneticAlgorithm
 		public override double CalculateFitness()
 		{
 			CurrentFitness = CalculateFullAdder();
+			Console.WriteLine("________________________" + CurrentFitness);
 			if (CurrentFitness < 0.0f) {
 				CurrentFitness = 0.01f;
             }

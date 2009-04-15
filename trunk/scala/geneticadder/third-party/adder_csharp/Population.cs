@@ -179,6 +179,9 @@ namespace GeneticAlgorithm
 			    EquationGenome babyGene2 = null;
 
 				int randomnum = EquationGenome.TheSeed.Next(100) % 3;
+				
+				Console.WriteLine("<Dad> ########$$$$ " + randomnum);
+				
 				if (randomnum == 0)
 				{
 					babyGene1 = (EquationGenome)((EquationGenome)GeneDads[i]).Crossover((EquationGenome)GeneMoms[i]);
