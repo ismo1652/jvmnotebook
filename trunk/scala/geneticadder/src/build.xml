@@ -25,8 +25,7 @@
 
 	<!-- Target: CLASSPATH -->
 	<path id="classpath">
-	
-				
+		<pathelement location="${basedir}/lib/junit-4.6.jar" />
 		<pathelement location="${build.dir.classes}" />
 	</path>
 	
@@ -60,6 +59,12 @@
 			<classpath refid="classpath"/>					
 		</java>
 	</target>
+	
+	<target name="test" depends="compile">
+	        <java classname="org.adder.test.AdderTestSuite" fork="false">         
+	            <classpath refid="classpath"/>                  
+	        </java>
+	    </target>
 		
 	<!-- Main Clean -->
 	<target name="clean">
