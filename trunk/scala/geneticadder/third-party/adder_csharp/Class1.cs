@@ -19,12 +19,10 @@ namespace GEPAlgorithm
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
+		/*
 		[STAThread]
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Running");
-		
-		///*
 			Population p = new Population();
 			p.WriteNextGeneration();
 
@@ -44,7 +42,7 @@ namespace GEPAlgorithm
 				}
 				count++;			
 			
-				if (count > 50) {
+				if (count > 40000) {
 				    Console.WriteLine("---------------");
 				    p.WriteNextGenerationBest();
 				    Console.WriteLine("---------------");
@@ -57,12 +55,9 @@ namespace GEPAlgorithm
 			resGenome = (EquationGenome) p.GetNextGenerationBest(); 
 			res = resGenome.PerformCalculation(0, 1, 1, 1);			
 			Console.WriteLine("Result => {0}", res.ToString());
-		
-				//*/
 			
 		} // End of Method
-		
-		
+*/		
 	} // End of Class
 	
 } // End of Namespace
