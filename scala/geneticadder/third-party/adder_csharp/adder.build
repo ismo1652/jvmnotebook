@@ -5,7 +5,7 @@
  ///////////////////////////////////////////////////////////
  Copyright Berlin Brown - 2009
  4/4/2009
- Use nant -buildfile:adder.build -t:mono-2.0
+ On win32 use nant -buildfile:adder.build -t:mono-2.0
  
  Tested with Mono win32
  Mono JIT compiler version 2.4 (tarball)
@@ -23,8 +23,9 @@
 
         <target name="build" description="compiles the source code">
             <csc target="exe" output="adder.exe" debug="${debug}">
-                <sources>
+                <sources>                    
                     <includes name="Class1.cs" />
+                    <includes name="AdderRandom.cs" />
                     <includes name="EquationGenome.cs" />
                     <includes name="Genome.cs" />
                     <includes name="Population.cs" />
