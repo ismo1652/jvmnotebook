@@ -18,8 +18,7 @@ namespace GEPAlgorithm
 	{
 		/// <summary>
 		/// The main entry point for the application.
-		/// </summary>
-		/*
+		/// </summary>	
 		[STAThread]
 		static void Main(string[] args)
 		{
@@ -56,8 +55,8 @@ namespace GEPAlgorithm
 			res = resGenome.PerformCalculation(0, 1, 1, 1);			
 			Console.WriteLine("Result => {0}", res.ToString());
 			
-		} // End of Method
-*/		
+	   } // End of Method
+		
 	} // End of Class
 	
 } // End of Namespace
