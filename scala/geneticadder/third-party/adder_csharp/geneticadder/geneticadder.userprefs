@@ -1,10 +1,9 @@
 ﻿<UserCombinePreferences version="1.0" filename="/home/bbrown/workspace_projects/jvmnotebook/scala/geneticadder/third-party/adder_csharp/geneticadder/geneticadder.mds">
   <Files>
-    <File name="../Class1.cs" line="9" column="1" />
-    <File name="../Population.cs" line="16" column="3" />
-    <File name="../Genome.cs" line="26" column="1" />
-    <File name="geneticadder/Test1.cs" line="28" column="58" />
-    <File name="../EquationGenome.cs" line="61" column="3" />
+    <File name="../EquationGenome.cs" line="370" column="26" />
+    <File name="../AdderRandom.cs" line="19" column="71" />
+    <File name="../Class1.cs" line="17" column="1" />
+    <File name="../Population.cs" line="106" column="1" />
   </Files>
   <Views>
     <ViewMemento id="ProjectPad">
