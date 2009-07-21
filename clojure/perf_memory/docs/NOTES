@@ -1,0 +1,198 @@
+###############################################################################
+#
+# Notes for performance and memory test for Clojure
+# 7/21/2009
+#
+###############################################################################
+
+"The goal of this document is to look at the performance and memory usage of Clojure
+and compare and contrast similar operations done in Java."  -- about this document?
+
+"You and your team may be a little apprehensive about using an open source JVM language.
+You may be apprehensive about using a Lisp dialect.  Clojure recently reached
+the 1.0 mark. It has had a book written about it.  There are articles and blogs written on the 
+language.  It has been used at many companies.  It is lightweight, robust, so you don't tens of thousands of engineers
+that developed Java.  It is enterprise ready.  Plus, use it and pinpoint issues as opposed to 
+just I won't use it without really a reason.  What are the reasons for using Clojure?" -- on using Clojure.
+
+"This document is mostly geared towards Java developers that are interested in a JVM language
+as opposd to Lisp deveopers that are looking at Clojure.  I want to mention the distinction because
+if you come from Common Lisp, you may not be interested in the performance of Java's collection API." -- on scope
+
+========================================
+
+Possibly add a GUI architecture for using Clojure, Scala and Java.
+
+========================================
+
+Compare typical operations between Java API performance tests
+and the Clojure Tests.
+
+http://onjava.com/pub/a/onjava/2001/05/30/optimization.html
+http://onjava.com/onjava/2001/05/30/examples/Test.java
+
+Interesting look at Java collection API.
+
+========================================
+
++ Possible File IO performance, Clojure versus Java.
+
+========================================
+
+Main Outline:  Each Section will have four tests.
+
+1. Generic Test
+2. Generic Test with a higher value for N
+3. Practical Test
+4. Practical Test with a higher value for N
+
+-------------
+
+Hopefully look at the Java cases and the clojure cases.
+
+Look at just a generic test with a high value of N. etc, etc.
+
+We do this because we may see increased memory and decreased performance as you move up N but don't
+see the same issues with more practical, one off cases.
+
+What is a practical example or example worth testing?
+
+1. (defn count-lines-handler
+  "Count the number of lines in the main buffer"
+  []
+  
+  Count number of lines in a buffer?
+  
+  How many distinct strings or tokens.
+  
+2.   "Analyze the lines of the request log and return a map of keyword frequency statistics"  
+
+--------------------
+
+see jruby performance tests:
+
+http://kenai.com/projects/jruby/sources/main/content/bench/bench_exceptions_stack_depth.rb?rev=9f22deacc68721c660c605815e700a4628fbf644
+
+main / bench / bench_loops.rb
+- def sum_with_each
+- def sum_with_times
+- def sum_with_while
+- test concat routines, possibly joining a sequence
+
+def foo(count)
+  if (count > 0)
+    foo(count - 1)
+  else
+    puts Benchmark.measure {
+      i = 0;
+      while i < 500000
+        i += 1
+        begin
+          raise ArgumentError("Hoohaw")
+        rescue
+        end
+      end
+    }
+  end
+end
+--------------------------
+
+Euler in Java, Euler in Clojure
+http://clojure-euler.wikispaces.com/Problem+001
+http://clojure-euler.wikispaces.com/Problem+002
+http://clojure-euler.wikispaces.com/Problem+004
+http://clojure-euler.wikispaces.com/Problem+005
+http://clojure-euler.wikispaces.com/Problem+006
+
+"Contributions to http://clojure-euler.wikispaces.com are licensed under a Creative Commons Attribution Share-Alike 3.0 License.
+Portions not contributed by visitors are Copyright 2009 Tangient LLC."
+
+---------------------------
+
+require 'benchmark'
+
+class Foo < Struct.new(:a, :b, :c, :d, :e)
+end
+
+def bench_struct(bm)
+  foo = Foo.new(1, 2, 3, 4, 5)
+  bm.report("struct member access") {
+    1_000_000.times { foo.a; foo.b; foo.c; foo.d; foo.e }
+  }
+  bm.report("struct member mutate") {
+    1_000_000.times { foo.a=1; foo.b=1; foo.c=1; foo.d=1; foo.e=1 }
+  }
+  bm.report("struct to_s") {
+    1_000_000.times { foo.to_s }
+  }
+  bm.report("struct each") {
+    1_000_000.times { foo.each {|x| x} }
+  }
+end
+
+if $0 == __FILE__
+  Benchmark.bmbm {|bm| bench_struct(bm)}
+end
+
+---------------------------
+
+- The XML file test
+
+- Macros versus regular code
+
+-------------
+
+Good References:
+
+Performance Tuning:
+GC Friendly Java
+Programming
+
+---------
+
+Joey Shen
+Technology Evangelist
+Sun Microsystems, Inc.
++ Typically, object allocation is very cheap!
++ Do not be afraid to allocate small objects for intermediate results
++ GCs love small, immutable objects
++ Generational GCs love small, short-lived objects
+========
++ Using short-lived immutable objects instead of
+long-lived mutable objects
++ Using clearer, simpler code with more allocations
+instead of more obscure code with fewer allocations
+=======
+
+-XX:+DisableExplicitGC
+
+--Always use finally blocks
+
+==========================
+
+Finding a Fast Quicksort Implementation for Java
+Joseph D. Darcy
+CS339 Final Project, March 21, 2002
+
+===========================
+
+Mutable Strings in Java: Design, Implementation and
+Lightweight Text | Search Algorithms
+Paolo Boldi a Sebastiano Vigna a
+aDipartimento di Scienze dell'Informazione, Università degli Studi di Milano
+
+------------------------------
+Dynamic Languages Symposium  archive
+Proceedings of the 2008 symposium on Dynamic languages table of contents
+Paphos, Cyprus 
+
+"Customers and stakeholders have substantial investments in, and are comfortable with the performance, security and stability of, industry-standard platforms like the JVM and CLR.
+ While Java and C# developers on those platforms may envy the succinctness, flexibility and productivity of dynamic languages, 
+ they have concerns about running on customer-approved infrastructure, access to their existing code base and libraries, and performance. 
+ In addition, they face ongoing problems dealing with concurrency using native threads and locking. Clojure is an effort in pragmatic dynamic language design in this context. 
+ It endeavors to be a general-purpose language suitable in those areas where Java is suitable. 
+ It reflects the reality that, for the concurrent programming future, pervasive, unmoderated mutation simply has to go. 
+ Clojure meets its goals by: embracing an industry-standard, open platform - the JVM; modernizing a venerable language - Lisp; 
+ fostering functional programming with immutable persistent data structures; and providing built-in concurrency support via software transactional memory and asynchronous agents. 
+ The result is robust, practical, and fast. This talk will focus on the motivations, mechanisms and experiences of the implementation of Clojure."
+
