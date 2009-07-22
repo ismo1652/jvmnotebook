@@ -1,0 +1,132 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2795.258453 msecs"
+Similar call using 'for'
+"Elapsed time: 2783.065701 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2862.238301 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2883.137156 msecs"
+Similar call using 'for'
+"Elapsed time: 3005.606551 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2736.981489 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2855.662267 msecs"
+Similar call using 'for'
+"Elapsed time: 2737.624173 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2711.057575 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2956.035384 msecs"
+Similar call using 'for'
+"Elapsed time: 2724.294343 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2675.36097 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 3079.396804 msecs"
+Similar call using 'for'
+"Elapsed time: 2713.92097 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2690.745655 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2828.567272 msecs"
+Similar call using 'for'
+"Elapsed time: 2711.100256 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2693.882748 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2893.022599 msecs"
+Similar call using 'for'
+"Elapsed time: 2705.707979 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2654.97705 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2849.728928 msecs"
+Similar call using 'for'
+"Elapsed time: 2699.873534 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2665.827226 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2881.313642 msecs"
+Similar call using 'for'
+"Elapsed time: 2775.753249 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2867.487737 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2895.607748 msecs"
+Similar call using 'for'
+"Elapsed time: 2815.72429 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2721.984033 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 3014.537745 msecs"
+Similar call using 'for'
+"Elapsed time: 2672.784491 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2669.613915 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+Note: mostly a test of 'map'
+"Elapsed time: 2898.479111 msecs"
+Similar call using 'for'
+"Elapsed time: 3077.142245 msecs"
+Similar call using 'for'[2]
+"Elapsed time: 2843.647167 msecs"
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])

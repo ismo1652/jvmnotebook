@@ -1,0 +1,320 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 534.64237 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3332.068841 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 559.423619 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 539.338786 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3353.470987 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 557.695457 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 530.751047 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3339.012075 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 563.283761 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 532.016342 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3336.031254 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.945714 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 528.264401 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3322.075584 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.1697 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 532.456882 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3303.860069 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.241346 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 529.079231 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3338.873265 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 559.53052 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 532.0788 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3322.342686 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.583707 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 533.31294 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3336.155636 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.794622 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 527.549341 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3300.596281 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.040198 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 530.409345 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3311.537934 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 559.428533 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 529.611048 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3318.75065 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 559.328925 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 531.93953 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3335.359208 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 571.954188 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 527.739177 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3311.231095 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.877516 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 531.280564 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3307.94824 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.790848 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 529.765005 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3305.904938 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 560.265775 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 527.367632 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3314.471718 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 562.492838 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 535.96598 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3320.33443 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 560.17805 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 532.62673 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3313.424986 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.139377 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+Size of hash :  10000
+"Elapsed time: 532.730571 msecs"
+(used:2M/1M [3M,63M ])
+Size of hash :  10000
+"Elapsed time: 3319.599994 msecs"
+(used:13M/6M [19M,63M ])
+Size of hash :  100
+"Elapsed time: 558.337668 msecs"
+(used:15M/4M [19M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:15M/4M [19M,63M ])
+(used:15M/4M [19M,63M ])
