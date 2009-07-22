@@ -5,6 +5,14 @@
 #
 ###############################################################################
 
+First Environment:
+
+java version "1.5.0_11"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_11-b03)
+Java HotSpot(TM) Client VM (build 1.5.0_11-b03, mixed mode)
+
+--------------------------------------------
+
 "The goal of this document is to look at the performance and memory usage of Clojure
 and compare and contrast similar operations done in Java."  -- about this document?
 
@@ -68,6 +76,30 @@ What is a practical example or example worth testing?
 2.   "Analyze the lines of the request log and return a map of keyword frequency statistics"  
 
 --------------------
+
+Good example 'map' string test:
+
+(map (fn [x] (.toUpperCase x)) (.split "Dasher Dancer Prancer" " "))
+
+"
+Keywords implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). 
+For example (:mykey my-hash-map :none) means the same as (get my-hash-map :mykey :none). See get."
+
+Some list operations
+
+(let [my-vector [1 2 3 4]
+      my-map {:fred "ethel"}
+      my-list (list 4 3 2 1)]
+  (list
+    (conj my-vector 5)
+    (assoc my-map :ricky "lucy")
+    (conj my-list 5)
+    ;the originals are intact
+    my-vector
+    my-map
+    my-list))
+
+---------------------
 
 see jruby performance tests:
 
