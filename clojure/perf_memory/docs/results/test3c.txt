@@ -1,0 +1,210 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 590.468842 msecs"
+"Elapsed time: 5304.096442 msecs"
+"Elapsed time: 10633.384973 msecs"
+Now run without the reflection call !
+"Elapsed time: 525.922008 msecs"
+"Elapsed time: 4991.22669 msecs"
+"Elapsed time: 10417.304768 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 597.380275 msecs"
+"Elapsed time: 5510.22601 msecs"
+"Elapsed time: 11228.71309 msecs"
+Now run without the reflection call !
+"Elapsed time: 572.1784 msecs"
+"Elapsed time: 5261.617225 msecs"
+"Elapsed time: 10298.14227 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 675.636235 msecs"
+"Elapsed time: 5734.965366 msecs"
+"Elapsed time: 11267.796862 msecs"
+Now run without the reflection call !
+"Elapsed time: 591.818358 msecs"
+"Elapsed time: 5591.024547 msecs"
+"Elapsed time: 10839.87035 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 638.140796 msecs"
+"Elapsed time: 5657.374369 msecs"
+"Elapsed time: 10721.339228 msecs"
+Now run without the reflection call !
+"Elapsed time: 547.888514 msecs"
+"Elapsed time: 5022.374971 msecs"
+"Elapsed time: 10091.079159 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 686.024665 msecs"
+"Elapsed time: 5346.080554 msecs"
+"Elapsed time: 10922.129266 msecs"
+Now run without the reflection call !
+"Elapsed time: 559.939238 msecs"
+"Elapsed time: 5903.620558 msecs"
+"Elapsed time: 11756.614705 msecs"
+(used:1M/1M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 624.114447 msecs"
+"Elapsed time: 5823.10457 msecs"
+"Elapsed time: 11411.937171 msecs"
+Now run without the reflection call !
+"Elapsed time: 573.038002 msecs"
+"Elapsed time: 5282.534639 msecs"
+"Elapsed time: 10127.029788 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 592.074918 msecs"
+"Elapsed time: 5328.218193 msecs"
+"Elapsed time: 10662.751797 msecs"
+Now run without the reflection call !
+"Elapsed time: 534.24925 msecs"
+"Elapsed time: 5317.220752 msecs"
+"Elapsed time: 10169.907174 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 642.696668 msecs"
+"Elapsed time: 5673.512808 msecs"
+"Elapsed time: 11252.71658 msecs"
+Now run without the reflection call !
+"Elapsed time: 544.529745 msecs"
+"Elapsed time: 5210.034576 msecs"
+"Elapsed time: 10369.106203 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 609.939636 msecs"
+"Elapsed time: 5369.09315 msecs"
+"Elapsed time: 11024.799307 msecs"
+Now run without the reflection call !
+"Elapsed time: 533.425022 msecs"
+"Elapsed time: 5029.616002 msecs"
+"Elapsed time: 10080.56819 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 598.622499 msecs"
+"Elapsed time: 5340.030424 msecs"
+"Elapsed time: 10795.265558 msecs"
+Now run without the reflection call !
+"Elapsed time: 531.024431 msecs"
+"Elapsed time: 5281.05223 msecs"
+"Elapsed time: 10297.147878 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 634.825396 msecs"
+"Elapsed time: 5786.214999 msecs"
+"Elapsed time: 11344.880895 msecs"
+Now run without the reflection call !
+"Elapsed time: 600.624763 msecs"
+"Elapsed time: 5469.375144 msecs"
+"Elapsed time: 10710.11283 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 663.857392 msecs"
+"Elapsed time: 5342.068989 msecs"
+"Elapsed time: 11334.194724 msecs"
+Now run without the reflection call !
+"Elapsed time: 558.786856 msecs"
+"Elapsed time: 5584.603278 msecs"
+"Elapsed time: 11595.13088 msecs"
+(used:1M/1M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 590.491722 msecs"
+"Elapsed time: 5378.930701 msecs"
+"Elapsed time: 11026.288881 msecs"
+Now run without the reflection call !
+"Elapsed time: 572.253605 msecs"
+"Elapsed time: 5329.900247 msecs"
+"Elapsed time: 10599.313696 msecs"
+(used:1M/0M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils]  07/22/2009
+(used:1M/0M [1M,63M ])
+"Elapsed time: 678.809156 msecs"
+"Elapsed time: 5537.313853 msecs"
+"Elapsed time: 10643.357945 msecs"
+Now run without the reflection call !
+"Elapsed time: 607.36904 msecs"
+"Elapsed time: 5803.584502 msecs"
+"Elapsed time: 11486.128717 msecs"
+(used:1M/1M [2M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
