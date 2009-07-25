@@ -1,0 +1,157 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 250.033251 msecs"
+"Elapsed time: 27.153724 msecs"
+"Elapsed time: 5911.874387 msecs"
+Higher Stack Depth
+"Elapsed time: 6169.037839 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.300826 msecs"
+"Elapsed time: 27.215572 msecs"
+"Elapsed time: 5879.562775 msecs"
+Higher Stack Depth
+"Elapsed time: 6156.63792 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.886219 msecs"
+"Elapsed time: 27.108792 msecs"
+"Elapsed time: 5889.33164 msecs"
+Higher Stack Depth
+"Elapsed time: 6168.268938 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 250.149971 msecs"
+"Elapsed time: 27.301541 msecs"
+"Elapsed time: 5879.278015 msecs"
+Higher Stack Depth
+"Elapsed time: 6156.935183 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 251.202219 msecs"
+"Elapsed time: 27.157204 msecs"
+"Elapsed time: 5879.548054 msecs"
+Higher Stack Depth
+"Elapsed time: 6189.703114 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 248.860602 msecs"
+"Elapsed time: 27.070409 msecs"
+"Elapsed time: 5871.666394 msecs"
+Higher Stack Depth
+"Elapsed time: 6133.658497 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 250.241493 msecs"
+"Elapsed time: 27.097942 msecs"
+"Elapsed time: 5875.893605 msecs"
+Higher Stack Depth
+"Elapsed time: 6148.17662 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.436388 msecs"
+"Elapsed time: 27.212719 msecs"
+"Elapsed time: 5865.037653 msecs"
+Higher Stack Depth
+"Elapsed time: 6142.799302 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 250.060337 msecs"
+"Elapsed time: 27.052709 msecs"
+"Elapsed time: 5872.092296 msecs"
+Higher Stack Depth
+"Elapsed time: 6144.350044 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.540286 msecs"
+"Elapsed time: 27.125272 msecs"
+"Elapsed time: 5974.136068 msecs"
+Higher Stack Depth
+"Elapsed time: 6142.922691 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.866079 msecs"
+"Elapsed time: 26.534384 msecs"
+"Elapsed time: 5866.833037 msecs"
+Higher Stack Depth
+"Elapsed time: 6136.639657 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 251.673823 msecs"
+"Elapsed time: 27.098048 msecs"
+"Elapsed time: 5866.053139 msecs"
+Higher Stack Depth
+"Elapsed time: 6140.644095 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 251.655669 msecs"
+"Elapsed time: 27.226719 msecs"
+"Elapsed time: 5866.767093 msecs"
+Higher Stack Depth
+"Elapsed time: 6145.297188 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 250.878053 msecs"
+"Elapsed time: 27.201178 msecs"
+"Elapsed time: 5865.529155 msecs"
+Higher Stack Depth
+"Elapsed time: 6191.808587 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 250.63341 msecs"
+"Elapsed time: 27.057924 msecs"
+"Elapsed time: 5881.007144 msecs"
+Higher Stack Depth
+"Elapsed time: 6148.787274 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.02281 msecs"
+"Elapsed time: 26.812182 msecs"
+"Elapsed time: 5867.639377 msecs"
+Higher Stack Depth
+"Elapsed time: 6239.685129 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Test
+(try (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (org.perf.test10_macros/try-catch (clojure.core/println Test-2)))) (catch java.lang.Exception e__138__auto__ (do (.printStackTrace e__138__auto__) (clojure.core/println e__138__auto__))))
+Test Exception and Macros
+"Elapsed time: 249.819197 msecs"
+"Elapsed time: 27.095833 msecs"
+"Elapsed time: 5881.809597 msecs"
+Higher Stack Depth
+"Elapsed time: 6145.402777 msecs"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"

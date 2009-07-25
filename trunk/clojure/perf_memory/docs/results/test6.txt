@@ -1,0 +1,638 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 89.28262 msecs"
+i:  20
+"Elapsed time: 108.359953 msecs"
+i:  30
+"Elapsed time: 133.224603 msecs"
+i:  40
+"Elapsed time: 179.099095 msecs"
+i:  50
+"Elapsed time: 225.784928 msecs"
+i:  60
+"Elapsed time: 287.388 msecs"
+i:  70
+"Elapsed time: 335.225843 msecs"
+i:  80
+"Elapsed time: 362.974556 msecs"
+i:  90
+"Elapsed time: 396.029901 msecs"
+i:  100
+"Elapsed time: 436.737084 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.326974 msecs"
+i:  10
+"Elapsed time: 0.282121 msecs"
+i:  100
+"Elapsed time: 3.521252 msecs"
+i:  1000
+"Elapsed time: 29.033343 msecs"
+i:  10000
+"Elapsed time: 195.308489 msecs"
+i:  100000
+"Elapsed time: 1896.386834 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.479498 msecs"
+i:  10
+"Elapsed time: 0.107194 msecs"
+i:  100
+"Elapsed time: 1.409511 msecs"
+i:  1000
+"Elapsed time: 7.358763 msecs"
+i:  10000
+"Elapsed time: 32.898414 msecs"
+i:  100000
+"Elapsed time: 277.706318 msecs"
+i:  1000000
+"Elapsed time: 2779.309008 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.372449 msecs"
+i:  20
+"Elapsed time: 107.31879 msecs"
+i:  30
+"Elapsed time: 131.566854 msecs"
+i:  40
+"Elapsed time: 175.535701 msecs"
+i:  50
+"Elapsed time: 218.23964 msecs"
+i:  60
+"Elapsed time: 262.097956 msecs"
+i:  70
+"Elapsed time: 316.066947 msecs"
+i:  80
+"Elapsed time: 359.380595 msecs"
+i:  90
+"Elapsed time: 394.763046 msecs"
+i:  100
+"Elapsed time: 439.745728 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.32797 msecs"
+i:  10
+"Elapsed time: 0.278956 msecs"
+i:  100
+"Elapsed time: 3.552485 msecs"
+i:  1000
+"Elapsed time: 28.838968 msecs"
+i:  10000
+"Elapsed time: 194.77001 msecs"
+i:  100000
+"Elapsed time: 1896.261026 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.474736 msecs"
+i:  10
+"Elapsed time: 0.125589 msecs"
+i:  100
+"Elapsed time: 1.408804 msecs"
+i:  1000
+"Elapsed time: 7.506555 msecs"
+i:  10000
+"Elapsed time: 32.916308 msecs"
+i:  100000
+"Elapsed time: 278.069517 msecs"
+i:  1000000
+"Elapsed time: 2775.162861 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.567884 msecs"
+i:  20
+"Elapsed time: 107.46744 msecs"
+i:  30
+"Elapsed time: 131.863136 msecs"
+i:  40
+"Elapsed time: 175.74515 msecs"
+i:  50
+"Elapsed time: 218.676073 msecs"
+i:  60
+"Elapsed time: 263.334014 msecs"
+i:  70
+"Elapsed time: 315.966302 msecs"
+i:  80
+"Elapsed time: 359.038196 msecs"
+i:  90
+"Elapsed time: 394.313273 msecs"
+i:  100
+"Elapsed time: 437.127403 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.323102 msecs"
+i:  10
+"Elapsed time: 0.278712 msecs"
+i:  100
+"Elapsed time: 3.517218 msecs"
+i:  1000
+"Elapsed time: 28.974079 msecs"
+i:  10000
+"Elapsed time: 195.336639 msecs"
+i:  100000
+"Elapsed time: 1897.770932 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.484811 msecs"
+i:  10
+"Elapsed time: 0.107059 msecs"
+i:  100
+"Elapsed time: 1.402143 msecs"
+i:  1000
+"Elapsed time: 7.352136 msecs"
+i:  10000
+"Elapsed time: 32.829343 msecs"
+i:  100000
+"Elapsed time: 278.403186 msecs"
+i:  1000000
+"Elapsed time: 2799.907783 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.831658 msecs"
+i:  20
+"Elapsed time: 106.888153 msecs"
+i:  30
+"Elapsed time: 131.175208 msecs"
+i:  40
+"Elapsed time: 174.928512 msecs"
+i:  50
+"Elapsed time: 219.091166 msecs"
+i:  60
+"Elapsed time: 262.583059 msecs"
+i:  70
+"Elapsed time: 314.998519 msecs"
+i:  80
+"Elapsed time: 359.561991 msecs"
+i:  90
+"Elapsed time: 397.045366 msecs"
+i:  100
+"Elapsed time: 435.962141 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.328361 msecs"
+i:  10
+"Elapsed time: 0.279906 msecs"
+i:  100
+"Elapsed time: 3.518861 msecs"
+i:  1000
+"Elapsed time: 28.923065 msecs"
+i:  10000
+"Elapsed time: 195.375217 msecs"
+i:  100000
+"Elapsed time: 1896.637583 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.500701 msecs"
+i:  10
+"Elapsed time: 0.113593 msecs"
+i:  100
+"Elapsed time: 1.517934 msecs"
+i:  1000
+"Elapsed time: 7.708259 msecs"
+i:  10000
+"Elapsed time: 33.86608 msecs"
+i:  100000
+"Elapsed time: 278.017687 msecs"
+i:  1000000
+"Elapsed time: 2778.552005 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.550688 msecs"
+i:  20
+"Elapsed time: 107.378286 msecs"
+i:  30
+"Elapsed time: 132.136919 msecs"
+i:  40
+"Elapsed time: 175.625613 msecs"
+i:  50
+"Elapsed time: 219.044617 msecs"
+i:  60
+"Elapsed time: 262.350754 msecs"
+i:  70
+"Elapsed time: 316.623592 msecs"
+i:  80
+"Elapsed time: 360.463204 msecs"
+i:  90
+"Elapsed time: 396.993322 msecs"
+i:  100
+"Elapsed time: 437.308262 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.328944 msecs"
+i:  10
+"Elapsed time: 0.280523 msecs"
+i:  100
+"Elapsed time: 3.562105 msecs"
+i:  1000
+"Elapsed time: 28.865419 msecs"
+i:  10000
+"Elapsed time: 195.953508 msecs"
+i:  100000
+"Elapsed time: 1901.123918 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.485724 msecs"
+i:  10
+"Elapsed time: 0.107145 msecs"
+i:  100
+"Elapsed time: 1.404662 msecs"
+i:  1000
+"Elapsed time: 7.371598 msecs"
+i:  10000
+"Elapsed time: 32.764204 msecs"
+i:  100000
+"Elapsed time: 277.75078 msecs"
+i:  1000000
+"Elapsed time: 2783.365581 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.508703 msecs"
+i:  20
+"Elapsed time: 107.357629 msecs"
+i:  30
+"Elapsed time: 131.127246 msecs"
+i:  40
+"Elapsed time: 174.443863 msecs"
+i:  50
+"Elapsed time: 218.691997 msecs"
+i:  60
+"Elapsed time: 263.100768 msecs"
+i:  70
+"Elapsed time: 315.66664 msecs"
+i:  80
+"Elapsed time: 358.196536 msecs"
+i:  90
+"Elapsed time: 396.330239 msecs"
+i:  100
+"Elapsed time: 444.7357 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.328275 msecs"
+i:  10
+"Elapsed time: 0.282523 msecs"
+i:  100
+"Elapsed time: 3.540763 msecs"
+i:  1000
+"Elapsed time: 29.127029 msecs"
+i:  10000
+"Elapsed time: 195.286549 msecs"
+i:  100000
+"Elapsed time: 1896.818078 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.485972 msecs"
+i:  10
+"Elapsed time: 0.106957 msecs"
+i:  100
+"Elapsed time: 1.400432 msecs"
+i:  1000
+"Elapsed time: 7.475657 msecs"
+i:  10000
+"Elapsed time: 33.276744 msecs"
+i:  100000
+"Elapsed time: 277.802534 msecs"
+i:  1000000
+"Elapsed time: 2777.864558 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.440167 msecs"
+i:  20
+"Elapsed time: 107.612799 msecs"
+i:  30
+"Elapsed time: 132.284628 msecs"
+i:  40
+"Elapsed time: 174.925872 msecs"
+i:  50
+"Elapsed time: 218.604937 msecs"
+i:  60
+"Elapsed time: 262.615236 msecs"
+i:  70
+"Elapsed time: 315.83178 msecs"
+i:  80
+"Elapsed time: 358.516217 msecs"
+i:  90
+"Elapsed time: 396.650299 msecs"
+i:  100
+"Elapsed time: 437.977608 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.326151 msecs"
+i:  10
+"Elapsed time: 0.279252 msecs"
+i:  100
+"Elapsed time: 3.52641 msecs"
+i:  1000
+"Elapsed time: 29.097691 msecs"
+i:  10000
+"Elapsed time: 195.114803 msecs"
+i:  100000
+"Elapsed time: 1894.05322 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.48119 msecs"
+i:  10
+"Elapsed time: 0.106935 msecs"
+i:  100
+"Elapsed time: 1.418455 msecs"
+i:  1000
+"Elapsed time: 7.70024 msecs"
+i:  10000
+"Elapsed time: 32.947575 msecs"
+i:  100000
+"Elapsed time: 279.849581 msecs"
+i:  1000000
+"Elapsed time: 2777.724363 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.686559 msecs"
+i:  20
+"Elapsed time: 107.299783 msecs"
+i:  30
+"Elapsed time: 131.578703 msecs"
+i:  40
+"Elapsed time: 174.943125 msecs"
+i:  50
+"Elapsed time: 219.009245 msecs"
+i:  60
+"Elapsed time: 263.934267 msecs"
+i:  70
+"Elapsed time: 316.141367 msecs"
+i:  80
+"Elapsed time: 358.39365 msecs"
+i:  90
+"Elapsed time: 394.995727 msecs"
+i:  100
+"Elapsed time: 436.824218 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.324876 msecs"
+i:  10
+"Elapsed time: 0.279787 msecs"
+i:  100
+"Elapsed time: 3.513241 msecs"
+i:  1000
+"Elapsed time: 28.807244 msecs"
+i:  10000
+"Elapsed time: 194.587391 msecs"
+i:  100000
+"Elapsed time: 1892.078534 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.486175 msecs"
+i:  10
+"Elapsed time: 0.10704 msecs"
+i:  100
+"Elapsed time: 1.418905 msecs"
+i:  1000
+"Elapsed time: 7.372721 msecs"
+i:  10000
+"Elapsed time: 34.017935 msecs"
+i:  100000
+"Elapsed time: 278.192561 msecs"
+i:  1000000
+"Elapsed time: 2782.658107 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.570007 msecs"
+i:  20
+"Elapsed time: 107.181612 msecs"
+i:  30
+"Elapsed time: 131.5012 msecs"
+i:  40
+"Elapsed time: 175.499656 msecs"
+i:  50
+"Elapsed time: 219.213897 msecs"
+i:  60
+"Elapsed time: 263.005089 msecs"
+i:  70
+"Elapsed time: 315.804476 msecs"
+i:  80
+"Elapsed time: 360.575412 msecs"
+i:  90
+"Elapsed time: 396.919116 msecs"
+i:  100
+"Elapsed time: 436.669348 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.336681 msecs"
+i:  10
+"Elapsed time: 0.280463 msecs"
+i:  100
+"Elapsed time: 3.541153 msecs"
+i:  1000
+"Elapsed time: 29.22693 msecs"
+i:  10000
+"Elapsed time: 195.202403 msecs"
+i:  100000
+"Elapsed time: 1898.172055 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.475378 msecs"
+i:  10
+"Elapsed time: 0.107795 msecs"
+i:  100
+"Elapsed time: 1.412567 msecs"
+i:  1000
+"Elapsed time: 7.457525 msecs"
+i:  10000
+"Elapsed time: 32.807975 msecs"
+i:  100000
+"Elapsed time: 287.565227 msecs"
+i:  1000000
+"Elapsed time: 2784.401393 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 92.61393 msecs"
+i:  20
+"Elapsed time: 111.624527 msecs"
+i:  30
+"Elapsed time: 138.001424 msecs"
+i:  40
+"Elapsed time: 184.645434 msecs"
+i:  50
+"Elapsed time: 234.108881 msecs"
+i:  60
+"Elapsed time: 266.629151 msecs"
+i:  70
+"Elapsed time: 326.146745 msecs"
+i:  80
+"Elapsed time: 362.316217 msecs"
+i:  90
+"Elapsed time: 420.424123 msecs"
+i:  100
+"Elapsed time: 459.458095 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.326448 msecs"
+i:  10
+"Elapsed time: 0.279693 msecs"
+i:  100
+"Elapsed time: 3.531364 msecs"
+i:  1000
+"Elapsed time: 29.081462 msecs"
+i:  10000
+"Elapsed time: 197.541781 msecs"
+i:  100000
+"Elapsed time: 1928.875135 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.459037 msecs"
+i:  10
+"Elapsed time: 0.106853 msecs"
+i:  100
+"Elapsed time: 1.41185 msecs"
+i:  1000
+"Elapsed time: 7.44589 msecs"
+i:  10000
+"Elapsed time: 32.660251 msecs"
+i:  100000
+"Elapsed time: 278.09287 msecs"
+i:  1000000
+"Elapsed time: 2781.150443 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [String operations 'join']  07/23/2009
+(used:1M/0M [1M,63M ])
+i:  10
+"Elapsed time: 88.668427 msecs"
+i:  20
+"Elapsed time: 107.389287 msecs"
+i:  30
+"Elapsed time: 131.870249 msecs"
+i:  40
+"Elapsed time: 174.313357 msecs"
+i:  50
+"Elapsed time: 218.829104 msecs"
+i:  60
+"Elapsed time: 271.876388 msecs"
+i:  70
+"Elapsed time: 324.230494 msecs"
+i:  80
+"Elapsed time: 359.333077 msecs"
+i:  90
+"Elapsed time: 396.553037 msecs"
+i:  100
+"Elapsed time: 437.010493 msecs"
+(used:1M/0M [1M,63M ])
+Smaller Test
+i:  1
+"Elapsed time: 0.323929 msecs"
+i:  10
+"Elapsed time: 0.279997 msecs"
+i:  100
+"Elapsed time: 3.514511 msecs"
+i:  1000
+"Elapsed time: 28.803857 msecs"
+i:  10000
+"Elapsed time: 194.747539 msecs"
+i:  100000
+"Elapsed time: 1894.551748 msecs"
+(used:1M/0M [1M,63M ])
+Test gsub
+i:  1
+"Elapsed time: 0.485446 msecs"
+i:  10
+"Elapsed time: 0.107477 msecs"
+i:  100
+"Elapsed time: 1.412538 msecs"
+i:  1000
+"Elapsed time: 7.323932 msecs"
+i:  10000
+"Elapsed time: 32.830693 msecs"
+i:  100000
+"Elapsed time: 278.542402 msecs"
+i:  1000000
+"Elapsed time: 2884.330075 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])

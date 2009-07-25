@@ -1,0 +1,150 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 537.049063 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4441.518128 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 537.345661 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4436.62268 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 533.777365 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4449.945217 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 533.163078 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4436.093268 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 532.975332 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4435.330423 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 533.015222 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4446.245964 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 534.328452 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4444.14072 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 534.396655 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4446.618776 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 534.214247 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4451.684796 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 534.300031 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4441.695039 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 537.861215 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4446.122654 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 533.918096 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4442.733901 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 534.146692 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4439.39232 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 534.494394 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4437.694721 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 532.801033 msecs"
+(used:1M/0M [2M,63M ])
+Larger list
+"Elapsed time: 4452.606685 msecs"
+(used:31M/15M [46M,63M ])
+Performing simple garbage collection cooldown
+(used:31M/15M [46M,63M ])
+(used:31M/15M [46M,63M ])
