@@ -70,17 +70,17 @@
   (binding [u-hits {} u-bytes {} s404s {} clients {} refs {}]
     (doseq [line (-> strm (java.io.InputStreamReader.)
                      java.io.BufferedReader. line-seq)]
-        (let [f (.split #"\\s+" line)]
-          (println f)
+        (let [f (.split line "\\s+")]
           (when (= "\"GET" (get f 5))
-            (let [[client u status bytes ref] (map #(get f %) [0 6 8 9 10])]
+            (let [[client u status byt ref] (map #(get f %) [0 6 8 9 10])]
               (cond
-               (= "200" status) (record client u (.parseInt Integer bytes) ref)
+               (= "200" status) (record client u (Integer/parseInt byt) ref)
                (= "304" status) (record client u 0 ref)
                (= "404" status) (acc s404s u 1))))))
     (print (count u-hits) "resources," (count s404s) "404s," (count clients) "clients\n\n")))
     
-;; (report "URIs by hit" u-hits)))
+  ;; Not printing the reports but the wide finder code is executed
+  ;; (report "URIs by hit" u-hits)))
   ;;(report "URIs by bytes" u-bytes true)
   ;;(report "404s" s404s)
   ;;(report "client addresses" clients)
@@ -102,7 +102,8 @@
   ;;;;
   (println "Running Test [] " *current-date*)
   (println (*memory-usage*))
-  (run-wide-finder-file)
+  (dotimes [_ 3]
+      (time (run-wide-finder-file)))
   (println (*memory-usage*))
   (println "Done"))
       
