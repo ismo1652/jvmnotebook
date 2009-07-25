@@ -1,0 +1,522 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.073176 msecs"
+i:  10
+"Elapsed time: 0.635967 msecs"
+i:  100
+"Elapsed time: 13.784002 msecs"
+i:  1000
+"Elapsed time: 83.627861 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.572009 msecs"
+i:  10
+"Elapsed time: 3.428896 msecs"
+i:  100
+"Elapsed time: 17.110869 msecs"
+i:  1000
+"Elapsed time: 88.654025 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 145.483893 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.068135 msecs"
+i:  10
+"Elapsed time: 0.699853 msecs"
+i:  100
+"Elapsed time: 13.786093 msecs"
+i:  1000
+"Elapsed time: 84.57696 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.582144 msecs"
+i:  10
+"Elapsed time: 3.370539 msecs"
+i:  100
+"Elapsed time: 16.947648 msecs"
+i:  1000
+"Elapsed time: 89.860128 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 145.925996 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.106451 msecs"
+i:  10
+"Elapsed time: 0.641794 msecs"
+i:  100
+"Elapsed time: 12.375927 msecs"
+i:  1000
+"Elapsed time: 84.754466 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.562231 msecs"
+i:  10
+"Elapsed time: 1.083747 msecs"
+i:  100
+"Elapsed time: 18.681773 msecs"
+i:  1000
+"Elapsed time: 90.959764 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 156.980114 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.387402 msecs"
+i:  10
+"Elapsed time: 1.462518 msecs"
+i:  100
+"Elapsed time: 17.876004 msecs"
+i:  1000
+"Elapsed time: 105.028116 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.645598 msecs"
+i:  10
+"Elapsed time: 3.988694 msecs"
+i:  100
+"Elapsed time: 20.627635 msecs"
+i:  1000
+"Elapsed time: 125.621639 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 180.833655 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.128311 msecs"
+i:  10
+"Elapsed time: 0.64526 msecs"
+i:  100
+"Elapsed time: 14.383646 msecs"
+i:  1000
+"Elapsed time: 87.218379 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.605012 msecs"
+i:  10
+"Elapsed time: 1.105748 msecs"
+i:  100
+"Elapsed time: 18.815711 msecs"
+i:  1000
+"Elapsed time: 95.832433 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 162.352016 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 2.006753 msecs"
+i:  10
+"Elapsed time: 0.956648 msecs"
+i:  100
+"Elapsed time: 23.204135 msecs"
+i:  1000
+"Elapsed time: 139.830118 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.57681 msecs"
+i:  10
+"Elapsed time: 1.091812 msecs"
+i:  100
+"Elapsed time: 27.803649 msecs"
+i:  1000
+"Elapsed time: 116.525229 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 159.544658 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.192074 msecs"
+i:  10
+"Elapsed time: 0.668929 msecs"
+i:  100
+"Elapsed time: 16.796621 msecs"
+i:  1000
+"Elapsed time: 86.08423 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.497318 msecs"
+i:  10
+"Elapsed time: 1.079722 msecs"
+i:  100
+"Elapsed time: 17.859278 msecs"
+i:  1000
+"Elapsed time: 90.373473 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 154.087721 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.144356 msecs"
+i:  10
+"Elapsed time: 1.072165 msecs"
+i:  100
+"Elapsed time: 14.861863 msecs"
+i:  1000
+"Elapsed time: 98.301463 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.564336 msecs"
+i:  10
+"Elapsed time: 1.121078 msecs"
+i:  100
+"Elapsed time: 19.055603 msecs"
+i:  1000
+"Elapsed time: 99.693211 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 170.818485 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.06291 msecs"
+i:  10
+"Elapsed time: 0.674741 msecs"
+i:  100
+"Elapsed time: 12.064525 msecs"
+i:  1000
+"Elapsed time: 91.562419 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.604952 msecs"
+i:  10
+"Elapsed time: 1.098319 msecs"
+i:  100
+"Elapsed time: 18.357281 msecs"
+i:  1000
+"Elapsed time: 90.826769 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 147.862442 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.080928 msecs"
+i:  10
+"Elapsed time: 0.735526 msecs"
+i:  100
+"Elapsed time: 13.952523 msecs"
+i:  1000
+"Elapsed time: 85.778206 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.563498 msecs"
+i:  10
+"Elapsed time: 3.242476 msecs"
+i:  100
+"Elapsed time: 17.559157 msecs"
+i:  1000
+"Elapsed time: 90.253019 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 148.345704 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.232085 msecs"
+i:  10
+"Elapsed time: 0.660124 msecs"
+i:  100
+"Elapsed time: 12.243045 msecs"
+i:  1000
+"Elapsed time: 89.099501 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.570896 msecs"
+i:  10
+"Elapsed time: 1.094011 msecs"
+i:  100
+"Elapsed time: 17.764129 msecs"
+i:  1000
+"Elapsed time: 90.100806 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 146.461818 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.070083 msecs"
+i:  10
+"Elapsed time: 0.648918 msecs"
+i:  100
+"Elapsed time: 14.56955 msecs"
+i:  1000
+"Elapsed time: 84.949978 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.57226 msecs"
+i:  10
+"Elapsed time: 1.085015 msecs"
+i:  100
+"Elapsed time: 18.643695 msecs"
+i:  1000
+"Elapsed time: 93.077154 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 146.477434 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.064808 msecs"
+i:  10
+"Elapsed time: 0.66085 msecs"
+i:  100
+"Elapsed time: 13.622237 msecs"
+i:  1000
+"Elapsed time: 83.285486 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.572893 msecs"
+i:  10
+"Elapsed time: 1.26428 msecs"
+i:  100
+"Elapsed time: 18.386227 msecs"
+i:  1000
+"Elapsed time: 90.213776 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 151.115317 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.12677 msecs"
+i:  10
+"Elapsed time: 0.637764 msecs"
+i:  100
+"Elapsed time: 12.439408 msecs"
+i:  1000
+"Elapsed time: 86.336073 msecs"
+(used:1M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.56346 msecs"
+i:  10
+"Elapsed time: 1.081229 msecs"
+i:  100
+"Elapsed time: 17.460116 msecs"
+i:  1000
+"Elapsed time: 88.762606 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 144.467039 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.135401 msecs"
+i:  10
+"Elapsed time: 0.61929 msecs"
+i:  100
+"Elapsed time: 12.469942 msecs"
+i:  1000
+"Elapsed time: 83.479859 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.563885 msecs"
+i:  10
+"Elapsed time: 1.083064 msecs"
+i:  100
+"Elapsed time: 17.895947 msecs"
+i:  1000
+"Elapsed time: 123.266202 msecs"
+(used:1M/1M [2M,63M ])
+"Elapsed time: 123.450667 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.09218 msecs"
+i:  10
+"Elapsed time: 0.735398 msecs"
+i:  100
+"Elapsed time: 13.509265 msecs"
+i:  1000
+"Elapsed time: 88.408427 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.646505 msecs"
+i:  10
+"Elapsed time: 1.124852 msecs"
+i:  100
+"Elapsed time: 18.839425 msecs"
+i:  1000
+"Elapsed time: 97.130363 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 149.397012 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.07097 msecs"
+i:  10
+"Elapsed time: 0.63811 msecs"
+i:  100
+"Elapsed time: 14.001651 msecs"
+i:  1000
+"Elapsed time: 89.505012 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.564336 msecs"
+i:  10
+"Elapsed time: 3.952634 msecs"
+i:  100
+"Elapsed time: 18.477899 msecs"
+i:  1000
+"Elapsed time: 91.094104 msecs"
+(used:2M/0M [2M,63M ])
+"Elapsed time: 148.400872 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/1M [2M,63M ])
+(used:1M/1M [2M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Quick Sort]  07/24/2009
+(used:1M/0M [1M,63M ])
+(1 3 4 5 23 35)
+Run quick sort First
+i:  1
+"Elapsed time: 1.116022 msecs"
+i:  10
+"Elapsed time: 0.677647 msecs"
+i:  100
+"Elapsed time: 13.467216 msecs"
+i:  1000
+"Elapsed time: 83.878076 msecs"
+(used:2M/0M [2M,63M ])
+Merge Sort
+i:  1
+"Elapsed time: 0.580532 msecs"
+i:  10
+"Elapsed time: 1.089266 msecs"
+i:  100
+"Elapsed time: 19.33616 msecs"
+i:  1000
+"Elapsed time: 118.255387 msecs"
+(used:1M/1M [2M,63M ])
+"Elapsed time: 121.644867 msecs"
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [2M,63M ])
+(used:1M/0M [2M,63M ])

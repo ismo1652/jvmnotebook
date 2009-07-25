@@ -1,0 +1,1861 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 54.652661 msecs"
+i:  2000
+"Elapsed time: 67.914963 msecs"
+i:  3000
+"Elapsed time: 94.648881 msecs"
+i:  4000
+"Elapsed time: 125.303474 msecs"
+i:  5000
+"Elapsed time: 158.783897 msecs"
+i:  6000
+"Elapsed time: 190.115422 msecs"
+i:  7000
+"Elapsed time: 221.628129 msecs"
+i:  8000
+"Elapsed time: 255.872201 msecs"
+i:  9000
+"Elapsed time: 290.433501 msecs"
+i:  10000
+"Elapsed time: 325.146822 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 11.920312 msecs"
+i:  2000
+"Elapsed time: 20.500989 msecs"
+i:  3000
+"Elapsed time: 29.518633 msecs"
+i:  4000
+"Elapsed time: 39.229049 msecs"
+i:  5000
+"Elapsed time: 48.751674 msecs"
+i:  6000
+"Elapsed time: 58.235516 msecs"
+i:  7000
+"Elapsed time: 68.013573 msecs"
+i:  8000
+"Elapsed time: 77.713218 msecs"
+i:  9000
+"Elapsed time: 87.029294 msecs"
+i:  10000
+"Elapsed time: 96.588369 msecs"
+i:  11000
+"Elapsed time: 106.659658 msecs"
+i:  12000
+"Elapsed time: 116.512002 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 61.924201 msecs"
+i:  2000
+"Elapsed time: 69.611157 msecs"
+i:  3000
+"Elapsed time: 106.591711 msecs"
+i:  4000
+"Elapsed time: 140.326987 msecs"
+i:  5000
+"Elapsed time: 181.441975 msecs"
+i:  6000
+"Elapsed time: 206.388193 msecs"
+i:  7000
+"Elapsed time: 241.30201 msecs"
+i:  8000
+"Elapsed time: 270.112918 msecs"
+i:  9000
+"Elapsed time: 302.589933 msecs"
+i:  10000
+"Elapsed time: 340.317269 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.127864 msecs"
+i:  2000
+"Elapsed time: 20.805311 msecs"
+i:  3000
+"Elapsed time: 29.877052 msecs"
+i:  4000
+"Elapsed time: 45.098912 msecs"
+i:  5000
+"Elapsed time: 57.230897 msecs"
+i:  6000
+"Elapsed time: 60.629658 msecs"
+i:  7000
+"Elapsed time: 76.720031 msecs"
+i:  8000
+"Elapsed time: 100.374135 msecs"
+i:  9000
+"Elapsed time: 90.239598 msecs"
+i:  10000
+"Elapsed time: 107.035692 msecs"
+i:  11000
+"Elapsed time: 112.549931 msecs"
+i:  12000
+"Elapsed time: 121.008321 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 61.370199 msecs"
+i:  2000
+"Elapsed time: 72.14615 msecs"
+i:  3000
+"Elapsed time: 103.568399 msecs"
+i:  4000
+"Elapsed time: 130.145768 msecs"
+i:  5000
+"Elapsed time: 172.947476 msecs"
+i:  6000
+"Elapsed time: 200.312205 msecs"
+i:  7000
+"Elapsed time: 232.107005 msecs"
+i:  8000
+"Elapsed time: 270.342926 msecs"
+i:  9000
+"Elapsed time: 286.29271 msecs"
+i:  10000
+"Elapsed time: 318.27762 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 11.951721 msecs"
+i:  2000
+"Elapsed time: 21.040183 msecs"
+i:  3000
+"Elapsed time: 30.928085 msecs"
+i:  4000
+"Elapsed time: 38.906332 msecs"
+i:  5000
+"Elapsed time: 48.946151 msecs"
+i:  6000
+"Elapsed time: 58.61171 msecs"
+i:  7000
+"Elapsed time: 69.805518 msecs"
+i:  8000
+"Elapsed time: 78.306768 msecs"
+i:  9000
+"Elapsed time: 87.858186 msecs"
+i:  10000
+"Elapsed time: 98.037372 msecs"
+i:  11000
+"Elapsed time: 107.325482 msecs"
+i:  12000
+"Elapsed time: 117.599474 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 54.868649 msecs"
+i:  2000
+"Elapsed time: 69.138029 msecs"
+i:  3000
+"Elapsed time: 98.438523 msecs"
+i:  4000
+"Elapsed time: 128.548305 msecs"
+i:  5000
+"Elapsed time: 160.072304 msecs"
+i:  6000
+"Elapsed time: 193.95716 msecs"
+i:  7000
+"Elapsed time: 222.985332 msecs"
+i:  8000
+"Elapsed time: 256.509352 msecs"
+i:  9000
+"Elapsed time: 286.761158 msecs"
+i:  10000
+"Elapsed time: 318.482297 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 11.908598 msecs"
+i:  2000
+"Elapsed time: 20.764308 msecs"
+i:  3000
+"Elapsed time: 29.789557 msecs"
+i:  4000
+"Elapsed time: 39.133997 msecs"
+i:  5000
+"Elapsed time: 48.924283 msecs"
+i:  6000
+"Elapsed time: 58.330981 msecs"
+i:  7000
+"Elapsed time: 68.678217 msecs"
+i:  8000
+"Elapsed time: 78.005822 msecs"
+i:  9000
+"Elapsed time: 87.353491 msecs"
+i:  10000
+"Elapsed time: 97.639442 msecs"
+i:  11000
+"Elapsed time: 107.671044 msecs"
+i:  12000
+"Elapsed time: 117.372353 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 54.384853 msecs"
+i:  2000
+"Elapsed time: 68.592372 msecs"
+i:  3000
+"Elapsed time: 100.721317 msecs"
+i:  4000
+"Elapsed time: 130.638298 msecs"
+i:  5000
+"Elapsed time: 159.593256 msecs"
+i:  6000
+"Elapsed time: 190.931977 msecs"
+i:  7000
+"Elapsed time: 222.308471 msecs"
+i:  8000
+"Elapsed time: 254.069651 msecs"
+i:  9000
+"Elapsed time: 289.137582 msecs"
+i:  10000
+"Elapsed time: 319.683583 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.187021 msecs"
+i:  2000
+"Elapsed time: 21.116228 msecs"
+i:  3000
+"Elapsed time: 29.999163 msecs"
+i:  4000
+"Elapsed time: 39.11917 msecs"
+i:  5000
+"Elapsed time: 49.863655 msecs"
+i:  6000
+"Elapsed time: 58.548579 msecs"
+i:  7000
+"Elapsed time: 69.512505 msecs"
+i:  8000
+"Elapsed time: 79.213081 msecs"
+i:  9000
+"Elapsed time: 88.559664 msecs"
+i:  10000
+"Elapsed time: 98.720962 msecs"
+i:  11000
+"Elapsed time: 110.07441 msecs"
+i:  12000
+"Elapsed time: 117.826458 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 57.11602 msecs"
+i:  2000
+"Elapsed time: 82.795685 msecs"
+i:  3000
+"Elapsed time: 102.203413 msecs"
+i:  4000
+"Elapsed time: 136.137336 msecs"
+i:  5000
+"Elapsed time: 172.037829 msecs"
+i:  6000
+"Elapsed time: 201.154488 msecs"
+i:  7000
+"Elapsed time: 239.009172 msecs"
+i:  8000
+"Elapsed time: 279.016471 msecs"
+i:  9000
+"Elapsed time: 303.629461 msecs"
+i:  10000
+"Elapsed time: 332.25541 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.174484 msecs"
+i:  2000
+"Elapsed time: 20.653686 msecs"
+i:  3000
+"Elapsed time: 29.880454 msecs"
+i:  4000
+"Elapsed time: 39.040785 msecs"
+i:  5000
+"Elapsed time: 48.689501 msecs"
+i:  6000
+"Elapsed time: 60.947623 msecs"
+i:  7000
+"Elapsed time: 75.21766 msecs"
+i:  8000
+"Elapsed time: 82.727009 msecs"
+i:  9000
+"Elapsed time: 89.923728 msecs"
+i:  10000
+"Elapsed time: 100.252915 msecs"
+i:  11000
+"Elapsed time: 109.586835 msecs"
+i:  12000
+"Elapsed time: 120.054686 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 55.306372 msecs"
+i:  2000
+"Elapsed time: 69.766774 msecs"
+i:  3000
+"Elapsed time: 96.777497 msecs"
+i:  4000
+"Elapsed time: 128.187092 msecs"
+i:  5000
+"Elapsed time: 160.810127 msecs"
+i:  6000
+"Elapsed time: 193.149613 msecs"
+i:  7000
+"Elapsed time: 226.659468 msecs"
+i:  8000
+"Elapsed time: 258.319481 msecs"
+i:  9000
+"Elapsed time: 300.481622 msecs"
+i:  10000
+"Elapsed time: 362.844936 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.342891 msecs"
+i:  2000
+"Elapsed time: 22.0689 msecs"
+i:  3000
+"Elapsed time: 32.319133 msecs"
+i:  4000
+"Elapsed time: 45.633953 msecs"
+i:  5000
+"Elapsed time: 52.737932 msecs"
+i:  6000
+"Elapsed time: 66.008907 msecs"
+i:  7000
+"Elapsed time: 73.280045 msecs"
+i:  8000
+"Elapsed time: 82.987174 msecs"
+i:  9000
+"Elapsed time: 93.22872 msecs"
+i:  10000
+"Elapsed time: 104.91243 msecs"
+i:  11000
+"Elapsed time: 117.692356 msecs"
+i:  12000
+"Elapsed time: 126.338611 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 56.886335 msecs"
+i:  2000
+"Elapsed time: 73.078202 msecs"
+i:  3000
+"Elapsed time: 99.689612 msecs"
+i:  4000
+"Elapsed time: 129.045462 msecs"
+i:  5000
+"Elapsed time: 161.378656 msecs"
+i:  6000
+"Elapsed time: 196.677862 msecs"
+i:  7000
+"Elapsed time: 222.264851 msecs"
+i:  8000
+"Elapsed time: 256.504322 msecs"
+i:  9000
+"Elapsed time: 300.685118 msecs"
+i:  10000
+"Elapsed time: 317.264043 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.065189 msecs"
+i:  2000
+"Elapsed time: 20.490057 msecs"
+i:  3000
+"Elapsed time: 31.151629 msecs"
+i:  4000
+"Elapsed time: 40.357767 msecs"
+i:  5000
+"Elapsed time: 48.557485 msecs"
+i:  6000
+"Elapsed time: 58.436201 msecs"
+i:  7000
+"Elapsed time: 69.406637 msecs"
+i:  8000
+"Elapsed time: 78.959092 msecs"
+i:  9000
+"Elapsed time: 88.114765 msecs"
+i:  10000
+"Elapsed time: 97.636563 msecs"
+i:  11000
+"Elapsed time: 107.303124 msecs"
+i:  12000
+"Elapsed time: 117.556888 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 56.152584 msecs"
+i:  2000
+"Elapsed time: 67.984589 msecs"
+i:  3000
+"Elapsed time: 96.300911 msecs"
+i:  4000
+"Elapsed time: 127.128523 msecs"
+i:  5000
+"Elapsed time: 158.832888 msecs"
+i:  6000
+"Elapsed time: 192.025947 msecs"
+i:  7000
+"Elapsed time: 222.18748 msecs"
+i:  8000
+"Elapsed time: 254.592398 msecs"
+i:  9000
+"Elapsed time: 287.977311 msecs"
+i:  10000
+"Elapsed time: 321.182761 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.046208 msecs"
+i:  2000
+"Elapsed time: 20.478216 msecs"
+i:  3000
+"Elapsed time: 29.697367 msecs"
+i:  4000
+"Elapsed time: 41.044248 msecs"
+i:  5000
+"Elapsed time: 51.791677 msecs"
+i:  6000
+"Elapsed time: 59.780491 msecs"
+i:  7000
+"Elapsed time: 68.387488 msecs"
+i:  8000
+"Elapsed time: 79.28426 msecs"
+i:  9000
+"Elapsed time: 94.917309 msecs"
+i:  10000
+"Elapsed time: 102.622128 msecs"
+i:  11000
+"Elapsed time: 106.495878 msecs"
+i:  12000
+"Elapsed time: 116.720089 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 54.324685 msecs"
+i:  2000
+"Elapsed time: 68.747967 msecs"
+i:  3000
+"Elapsed time: 96.391673 msecs"
+i:  4000
+"Elapsed time: 127.305359 msecs"
+i:  5000
+"Elapsed time: 162.992994 msecs"
+i:  6000
+"Elapsed time: 194.817203 msecs"
+i:  7000
+"Elapsed time: 223.643389 msecs"
+i:  8000
+"Elapsed time: 257.54338 msecs"
+i:  9000
+"Elapsed time: 294.326344 msecs"
+i:  10000
+"Elapsed time: 325.607024 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.895134 msecs"
+i:  2000
+"Elapsed time: 20.805507 msecs"
+i:  3000
+"Elapsed time: 30.350101 msecs"
+i:  4000
+"Elapsed time: 39.1995 msecs"
+i:  5000
+"Elapsed time: 48.91808 msecs"
+i:  6000
+"Elapsed time: 58.253186 msecs"
+i:  7000
+"Elapsed time: 69.390457 msecs"
+i:  8000
+"Elapsed time: 78.346651 msecs"
+i:  9000
+"Elapsed time: 87.768173 msecs"
+i:  10000
+"Elapsed time: 101.716308 msecs"
+i:  11000
+"Elapsed time: 115.394178 msecs"
+i:  12000
+"Elapsed time: 127.160346 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 55.236238 msecs"
+i:  2000
+"Elapsed time: 67.786212 msecs"
+i:  3000
+"Elapsed time: 109.053679 msecs"
+i:  4000
+"Elapsed time: 138.919281 msecs"
+i:  5000
+"Elapsed time: 181.581654 msecs"
+i:  6000
+"Elapsed time: 189.539138 msecs"
+i:  7000
+"Elapsed time: 220.745605 msecs"
+i:  8000
+"Elapsed time: 254.74335 msecs"
+i:  9000
+"Elapsed time: 289.261764 msecs"
+i:  10000
+"Elapsed time: 316.619944 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.278374 msecs"
+i:  2000
+"Elapsed time: 20.64387 msecs"
+i:  3000
+"Elapsed time: 31.271184 msecs"
+i:  4000
+"Elapsed time: 40.308621 msecs"
+i:  5000
+"Elapsed time: 49.215501 msecs"
+i:  6000
+"Elapsed time: 58.892183 msecs"
+i:  7000
+"Elapsed time: 68.314587 msecs"
+i:  8000
+"Elapsed time: 78.552095 msecs"
+i:  9000
+"Elapsed time: 88.956984 msecs"
+i:  10000
+"Elapsed time: 105.320679 msecs"
+i:  11000
+"Elapsed time: 108.505222 msecs"
+i:  12000
+"Elapsed time: 117.79314 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.43032 msecs"
+i:  2000
+"Elapsed time: 67.349975 msecs"
+i:  3000
+"Elapsed time: 94.661764 msecs"
+i:  4000
+"Elapsed time: 126.324638 msecs"
+i:  5000
+"Elapsed time: 158.808467 msecs"
+i:  6000
+"Elapsed time: 189.487109 msecs"
+i:  7000
+"Elapsed time: 221.923289 msecs"
+i:  8000
+"Elapsed time: 253.727686 msecs"
+i:  9000
+"Elapsed time: 286.26735 msecs"
+i:  10000
+"Elapsed time: 315.780954 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.081204 msecs"
+i:  2000
+"Elapsed time: 20.563094 msecs"
+i:  3000
+"Elapsed time: 29.584001 msecs"
+i:  4000
+"Elapsed time: 38.772906 msecs"
+i:  5000
+"Elapsed time: 49.035706 msecs"
+i:  6000
+"Elapsed time: 57.881594 msecs"
+i:  7000
+"Elapsed time: 68.054975 msecs"
+i:  8000
+"Elapsed time: 77.851013 msecs"
+i:  9000
+"Elapsed time: 86.988065 msecs"
+i:  10000
+"Elapsed time: 97.388525 msecs"
+i:  11000
+"Elapsed time: 106.726366 msecs"
+i:  12000
+"Elapsed time: 116.813554 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 63.249139 msecs"
+i:  2000
+"Elapsed time: 69.575015 msecs"
+i:  3000
+"Elapsed time: 99.472382 msecs"
+i:  4000
+"Elapsed time: 133.046511 msecs"
+i:  5000
+"Elapsed time: 164.928621 msecs"
+i:  6000
+"Elapsed time: 199.95053 msecs"
+i:  7000
+"Elapsed time: 236.860086 msecs"
+i:  8000
+"Elapsed time: 264.617496 msecs"
+i:  9000
+"Elapsed time: 298.415395 msecs"
+i:  10000
+"Elapsed time: 329.730319 msecs"
+i:  11000
+"Elapsed time: 363.198265 msecs"
+i:  12000
+"Elapsed time: 396.754615 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.296917 msecs"
+i:  2000
+"Elapsed time: 68.593526 msecs"
+i:  3000
+"Elapsed time: 96.525453 msecs"
+i:  4000
+"Elapsed time: 127.853654 msecs"
+i:  5000
+"Elapsed time: 158.928721 msecs"
+i:  6000
+"Elapsed time: 191.344955 msecs"
+i:  7000
+"Elapsed time: 221.241382 msecs"
+i:  8000
+"Elapsed time: 253.397711 msecs"
+i:  9000
+"Elapsed time: 289.014592 msecs"
+i:  10000
+"Elapsed time: 317.698261 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.187634 msecs"
+i:  2000
+"Elapsed time: 20.628908 msecs"
+i:  3000
+"Elapsed time: 30.044407 msecs"
+i:  4000
+"Elapsed time: 39.122987 msecs"
+i:  5000
+"Elapsed time: 48.745008 msecs"
+i:  6000
+"Elapsed time: 58.547869 msecs"
+i:  7000
+"Elapsed time: 69.169096 msecs"
+i:  8000
+"Elapsed time: 77.862099 msecs"
+i:  9000
+"Elapsed time: 90.436215 msecs"
+i:  10000
+"Elapsed time: 97.031933 msecs"
+i:  11000
+"Elapsed time: 107.591545 msecs"
+i:  12000
+"Elapsed time: 117.17577 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 63.035037 msecs"
+i:  2000
+"Elapsed time: 69.919614 msecs"
+i:  3000
+"Elapsed time: 100.216833 msecs"
+i:  4000
+"Elapsed time: 132.629382 msecs"
+i:  5000
+"Elapsed time: 166.090339 msecs"
+i:  6000
+"Elapsed time: 199.852427 msecs"
+i:  7000
+"Elapsed time: 234.038827 msecs"
+i:  8000
+"Elapsed time: 266.167467 msecs"
+i:  9000
+"Elapsed time: 299.42286 msecs"
+i:  10000
+"Elapsed time: 333.936236 msecs"
+i:  11000
+"Elapsed time: 365.592203 msecs"
+i:  12000
+"Elapsed time: 398.255053 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 51.753317 msecs"
+i:  2000
+"Elapsed time: 67.072175 msecs"
+i:  3000
+"Elapsed time: 95.347802 msecs"
+i:  4000
+"Elapsed time: 126.451275 msecs"
+i:  5000
+"Elapsed time: 159.718841 msecs"
+i:  6000
+"Elapsed time: 189.06509 msecs"
+i:  7000
+"Elapsed time: 219.301873 msecs"
+i:  8000
+"Elapsed time: 251.440103 msecs"
+i:  9000
+"Elapsed time: 283.089368 msecs"
+i:  10000
+"Elapsed time: 316.017265 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.105601 msecs"
+i:  2000
+"Elapsed time: 20.53709 msecs"
+i:  3000
+"Elapsed time: 29.477578 msecs"
+i:  4000
+"Elapsed time: 38.564709 msecs"
+i:  5000
+"Elapsed time: 48.41334 msecs"
+i:  6000
+"Elapsed time: 57.630091 msecs"
+i:  7000
+"Elapsed time: 67.850866 msecs"
+i:  8000
+"Elapsed time: 77.041165 msecs"
+i:  9000
+"Elapsed time: 87.217937 msecs"
+i:  10000
+"Elapsed time: 96.844981 msecs"
+i:  11000
+"Elapsed time: 106.16288 msecs"
+i:  12000
+"Elapsed time: 116.157854 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 63.191328 msecs"
+i:  2000
+"Elapsed time: 70.288804 msecs"
+i:  3000
+"Elapsed time: 99.639267 msecs"
+i:  4000
+"Elapsed time: 132.011565 msecs"
+i:  5000
+"Elapsed time: 165.873342 msecs"
+i:  6000
+"Elapsed time: 199.804462 msecs"
+i:  7000
+"Elapsed time: 233.000779 msecs"
+i:  8000
+"Elapsed time: 265.532403 msecs"
+i:  9000
+"Elapsed time: 300.161024 msecs"
+i:  10000
+"Elapsed time: 332.908839 msecs"
+i:  11000
+"Elapsed time: 371.340679 msecs"
+i:  12000
+"Elapsed time: 399.628407 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.728967 msecs"
+i:  2000
+"Elapsed time: 66.918275 msecs"
+i:  3000
+"Elapsed time: 94.606991 msecs"
+i:  4000
+"Elapsed time: 127.803813 msecs"
+i:  5000
+"Elapsed time: 157.817213 msecs"
+i:  6000
+"Elapsed time: 190.826489 msecs"
+i:  7000
+"Elapsed time: 221.806468 msecs"
+i:  8000
+"Elapsed time: 253.188766 msecs"
+i:  9000
+"Elapsed time: 285.620504 msecs"
+i:  10000
+"Elapsed time: 318.167193 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.17206 msecs"
+i:  2000
+"Elapsed time: 20.767827 msecs"
+i:  3000
+"Elapsed time: 29.997663 msecs"
+i:  4000
+"Elapsed time: 39.284649 msecs"
+i:  5000
+"Elapsed time: 48.801428 msecs"
+i:  6000
+"Elapsed time: 58.527118 msecs"
+i:  7000
+"Elapsed time: 68.745592 msecs"
+i:  8000
+"Elapsed time: 77.910486 msecs"
+i:  9000
+"Elapsed time: 87.692418 msecs"
+i:  10000
+"Elapsed time: 97.841642 msecs"
+i:  11000
+"Elapsed time: 107.658427 msecs"
+i:  12000
+"Elapsed time: 117.615586 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 64.270675 msecs"
+i:  2000
+"Elapsed time: 70.91965 msecs"
+i:  3000
+"Elapsed time: 100.416352 msecs"
+i:  4000
+"Elapsed time: 134.333204 msecs"
+i:  5000
+"Elapsed time: 166.169413 msecs"
+i:  6000
+"Elapsed time: 200.332377 msecs"
+i:  7000
+"Elapsed time: 235.832208 msecs"
+i:  8000
+"Elapsed time: 270.277927 msecs"
+i:  9000
+"Elapsed time: 298.861666 msecs"
+i:  10000
+"Elapsed time: 333.905884 msecs"
+i:  11000
+"Elapsed time: 368.78493 msecs"
+i:  12000
+"Elapsed time: 403.992341 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 57.277558 msecs"
+i:  2000
+"Elapsed time: 83.233633 msecs"
+i:  3000
+"Elapsed time: 144.309054 msecs"
+i:  4000
+"Elapsed time: 128.796158 msecs"
+i:  5000
+"Elapsed time: 166.611805 msecs"
+i:  6000
+"Elapsed time: 196.515007 msecs"
+i:  7000
+"Elapsed time: 221.545543 msecs"
+i:  8000
+"Elapsed time: 271.567249 msecs"
+i:  9000
+"Elapsed time: 330.879613 msecs"
+i:  10000
+"Elapsed time: 370.294203 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 13.360266 msecs"
+i:  2000
+"Elapsed time: 23.640206 msecs"
+i:  3000
+"Elapsed time: 31.712237 msecs"
+i:  4000
+"Elapsed time: 46.058236 msecs"
+i:  5000
+"Elapsed time: 55.310093 msecs"
+i:  6000
+"Elapsed time: 63.761939 msecs"
+i:  7000
+"Elapsed time: 76.591837 msecs"
+i:  8000
+"Elapsed time: 83.160491 msecs"
+i:  9000
+"Elapsed time: 97.436005 msecs"
+i:  10000
+"Elapsed time: 100.458103 msecs"
+i:  11000
+"Elapsed time: 109.075705 msecs"
+i:  12000
+"Elapsed time: 118.900287 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 63.511465 msecs"
+i:  2000
+"Elapsed time: 71.527881 msecs"
+i:  3000
+"Elapsed time: 100.973012 msecs"
+i:  4000
+"Elapsed time: 137.530499 msecs"
+i:  5000
+"Elapsed time: 169.539885 msecs"
+i:  6000
+"Elapsed time: 224.657324 msecs"
+i:  7000
+"Elapsed time: 266.332078 msecs"
+i:  8000
+"Elapsed time: 281.60829 msecs"
+i:  9000
+"Elapsed time: 307.937726 msecs"
+i:  10000
+"Elapsed time: 335.602228 msecs"
+i:  11000
+"Elapsed time: 366.881367 msecs"
+i:  12000
+"Elapsed time: 404.888574 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.670336 msecs"
+i:  2000
+"Elapsed time: 68.324109 msecs"
+i:  3000
+"Elapsed time: 96.754478 msecs"
+i:  4000
+"Elapsed time: 127.775599 msecs"
+i:  5000
+"Elapsed time: 163.501682 msecs"
+i:  6000
+"Elapsed time: 193.567881 msecs"
+i:  7000
+"Elapsed time: 223.391393 msecs"
+i:  8000
+"Elapsed time: 259.583731 msecs"
+i:  9000
+"Elapsed time: 288.678868 msecs"
+i:  10000
+"Elapsed time: 338.269896 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.468191 msecs"
+i:  2000
+"Elapsed time: 20.6594 msecs"
+i:  3000
+"Elapsed time: 30.023464 msecs"
+i:  4000
+"Elapsed time: 39.724506 msecs"
+i:  5000
+"Elapsed time: 49.817705 msecs"
+i:  6000
+"Elapsed time: 59.086274 msecs"
+i:  7000
+"Elapsed time: 69.360611 msecs"
+i:  8000
+"Elapsed time: 79.261839 msecs"
+i:  9000
+"Elapsed time: 88.620602 msecs"
+i:  10000
+"Elapsed time: 98.274619 msecs"
+i:  11000
+"Elapsed time: 109.191173 msecs"
+i:  12000
+"Elapsed time: 118.896325 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 63.095191 msecs"
+i:  2000
+"Elapsed time: 70.670753 msecs"
+i:  3000
+"Elapsed time: 101.25088 msecs"
+i:  4000
+"Elapsed time: 134.157369 msecs"
+i:  5000
+"Elapsed time: 166.967712 msecs"
+i:  6000
+"Elapsed time: 200.033168 msecs"
+i:  7000
+"Elapsed time: 240.413796 msecs"
+i:  8000
+"Elapsed time: 271.56199 msecs"
+i:  9000
+"Elapsed time: 302.474258 msecs"
+i:  10000
+"Elapsed time: 337.722134 msecs"
+i:  11000
+"Elapsed time: 380.223246 msecs"
+i:  12000
+"Elapsed time: 402.917974 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 56.170415 msecs"
+i:  2000
+"Elapsed time: 76.962881 msecs"
+i:  3000
+"Elapsed time: 104.039572 msecs"
+i:  4000
+"Elapsed time: 137.559235 msecs"
+i:  5000
+"Elapsed time: 172.489556 msecs"
+i:  6000
+"Elapsed time: 207.659083 msecs"
+i:  7000
+"Elapsed time: 245.469056 msecs"
+i:  8000
+"Elapsed time: 276.133671 msecs"
+i:  9000
+"Elapsed time: 314.901716 msecs"
+i:  10000
+"Elapsed time: 351.560388 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.889416 msecs"
+i:  2000
+"Elapsed time: 22.035291 msecs"
+i:  3000
+"Elapsed time: 30.694513 msecs"
+i:  4000
+"Elapsed time: 41.177659 msecs"
+i:  5000
+"Elapsed time: 56.304973 msecs"
+i:  6000
+"Elapsed time: 64.45159 msecs"
+i:  7000
+"Elapsed time: 69.590405 msecs"
+i:  8000
+"Elapsed time: 80.858821 msecs"
+i:  9000
+"Elapsed time: 89.06793 msecs"
+i:  10000
+"Elapsed time: 99.382639 msecs"
+i:  11000
+"Elapsed time: 107.808271 msecs"
+i:  12000
+"Elapsed time: 118.704877 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 65.270358 msecs"
+i:  2000
+"Elapsed time: 71.994734 msecs"
+i:  3000
+"Elapsed time: 102.81593 msecs"
+i:  4000
+"Elapsed time: 135.907946 msecs"
+i:  5000
+"Elapsed time: 169.48333 msecs"
+i:  6000
+"Elapsed time: 203.97995 msecs"
+i:  7000
+"Elapsed time: 252.677798 msecs"
+i:  8000
+"Elapsed time: 270.901274 msecs"
+i:  9000
+"Elapsed time: 335.593924 msecs"
+i:  10000
+"Elapsed time: 345.583473 msecs"
+i:  11000
+"Elapsed time: 375.895865 msecs"
+i:  12000
+"Elapsed time: 406.492048 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 53.149203 msecs"
+i:  2000
+"Elapsed time: 68.628544 msecs"
+i:  3000
+"Elapsed time: 96.57338 msecs"
+i:  4000
+"Elapsed time: 127.684142 msecs"
+i:  5000
+"Elapsed time: 160.149077 msecs"
+i:  6000
+"Elapsed time: 191.426205 msecs"
+i:  7000
+"Elapsed time: 234.63966 msecs"
+i:  8000
+"Elapsed time: 289.669866 msecs"
+i:  9000
+"Elapsed time: 305.204864 msecs"
+i:  10000
+"Elapsed time: 335.478204 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.063231 msecs"
+i:  2000
+"Elapsed time: 21.080705 msecs"
+i:  3000
+"Elapsed time: 30.497847 msecs"
+i:  4000
+"Elapsed time: 40.408623 msecs"
+i:  5000
+"Elapsed time: 49.342698 msecs"
+i:  6000
+"Elapsed time: 62.085714 msecs"
+i:  7000
+"Elapsed time: 73.340458 msecs"
+i:  8000
+"Elapsed time: 83.851931 msecs"
+i:  9000
+"Elapsed time: 97.864746 msecs"
+i:  10000
+"Elapsed time: 109.495664 msecs"
+i:  11000
+"Elapsed time: 118.648923 msecs"
+i:  12000
+"Elapsed time: 129.772752 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 76.008362 msecs"
+i:  2000
+"Elapsed time: 79.993749 msecs"
+i:  3000
+"Elapsed time: 115.99118 msecs"
+i:  4000
+"Elapsed time: 148.926255 msecs"
+i:  5000
+"Elapsed time: 175.805645 msecs"
+i:  6000
+"Elapsed time: 218.919089 msecs"
+i:  7000
+"Elapsed time: 234.104262 msecs"
+i:  8000
+"Elapsed time: 267.025825 msecs"
+i:  9000
+"Elapsed time: 336.199162 msecs"
+i:  10000
+"Elapsed time: 338.452341 msecs"
+i:  11000
+"Elapsed time: 377.577785 msecs"
+i:  12000
+"Elapsed time: 412.246817 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.965188 msecs"
+i:  2000
+"Elapsed time: 68.004671 msecs"
+i:  3000
+"Elapsed time: 97.930621 msecs"
+i:  4000
+"Elapsed time: 127.961096 msecs"
+i:  5000
+"Elapsed time: 159.220453 msecs"
+i:  6000
+"Elapsed time: 238.628144 msecs"
+i:  7000
+"Elapsed time: 237.692223 msecs"
+i:  8000
+"Elapsed time: 256.095528 msecs"
+i:  9000
+"Elapsed time: 288.111903 msecs"
+i:  10000
+"Elapsed time: 323.165954 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.265355 msecs"
+i:  2000
+"Elapsed time: 20.745575 msecs"
+i:  3000
+"Elapsed time: 29.753453 msecs"
+i:  4000
+"Elapsed time: 39.056292 msecs"
+i:  5000
+"Elapsed time: 48.731933 msecs"
+i:  6000
+"Elapsed time: 58.578285 msecs"
+i:  7000
+"Elapsed time: 67.969743 msecs"
+i:  8000
+"Elapsed time: 77.726462 msecs"
+i:  9000
+"Elapsed time: 87.392855 msecs"
+i:  10000
+"Elapsed time: 96.979539 msecs"
+i:  11000
+"Elapsed time: 107.295933 msecs"
+i:  12000
+"Elapsed time: 117.018799 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 63.45344 msecs"
+i:  2000
+"Elapsed time: 72.50635 msecs"
+i:  3000
+"Elapsed time: 110.910566 msecs"
+i:  4000
+"Elapsed time: 143.220523 msecs"
+i:  5000
+"Elapsed time: 176.919288 msecs"
+i:  6000
+"Elapsed time: 198.12721 msecs"
+i:  7000
+"Elapsed time: 232.341651 msecs"
+i:  8000
+"Elapsed time: 270.233379 msecs"
+i:  9000
+"Elapsed time: 303.592198 msecs"
+i:  10000
+"Elapsed time: 364.532518 msecs"
+i:  11000
+"Elapsed time: 452.209368 msecs"
+i:  12000
+"Elapsed time: 439.548685 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 51.843183 msecs"
+i:  2000
+"Elapsed time: 66.958715 msecs"
+i:  3000
+"Elapsed time: 95.152786 msecs"
+i:  4000
+"Elapsed time: 126.91582 msecs"
+i:  5000
+"Elapsed time: 157.979616 msecs"
+i:  6000
+"Elapsed time: 189.863798 msecs"
+i:  7000
+"Elapsed time: 220.337341 msecs"
+i:  8000
+"Elapsed time: 251.613018 msecs"
+i:  9000
+"Elapsed time: 284.729578 msecs"
+i:  10000
+"Elapsed time: 317.703659 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.131974 msecs"
+i:  2000
+"Elapsed time: 20.510064 msecs"
+i:  3000
+"Elapsed time: 29.583305 msecs"
+i:  4000
+"Elapsed time: 38.697835 msecs"
+i:  5000
+"Elapsed time: 48.830747 msecs"
+i:  6000
+"Elapsed time: 59.057741 msecs"
+i:  7000
+"Elapsed time: 68.286448 msecs"
+i:  8000
+"Elapsed time: 77.171148 msecs"
+i:  9000
+"Elapsed time: 86.754437 msecs"
+i:  10000
+"Elapsed time: 96.958577 msecs"
+i:  11000
+"Elapsed time: 106.967803 msecs"
+i:  12000
+"Elapsed time: 116.372001 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 64.845068 msecs"
+i:  2000
+"Elapsed time: 71.531968 msecs"
+i:  3000
+"Elapsed time: 100.09006 msecs"
+i:  4000
+"Elapsed time: 134.462506 msecs"
+i:  5000
+"Elapsed time: 164.049229 msecs"
+i:  6000
+"Elapsed time: 197.596023 msecs"
+i:  7000
+"Elapsed time: 231.451962 msecs"
+i:  8000
+"Elapsed time: 264.631537 msecs"
+i:  9000
+"Elapsed time: 296.680363 msecs"
+i:  10000
+"Elapsed time: 329.910832 msecs"
+i:  11000
+"Elapsed time: 363.92899 msecs"
+i:  12000
+"Elapsed time: 400.306129 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 53.161621 msecs"
+i:  2000
+"Elapsed time: 68.095922 msecs"
+i:  3000
+"Elapsed time: 95.571253 msecs"
+i:  4000
+"Elapsed time: 126.974183 msecs"
+i:  5000
+"Elapsed time: 158.783768 msecs"
+i:  6000
+"Elapsed time: 189.807769 msecs"
+i:  7000
+"Elapsed time: 220.962703 msecs"
+i:  8000
+"Elapsed time: 253.592395 msecs"
+i:  9000
+"Elapsed time: 285.31867 msecs"
+i:  10000
+"Elapsed time: 316.073513 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.206431 msecs"
+i:  2000
+"Elapsed time: 20.617856 msecs"
+i:  3000
+"Elapsed time: 29.716863 msecs"
+i:  4000
+"Elapsed time: 39.001289 msecs"
+i:  5000
+"Elapsed time: 49.688789 msecs"
+i:  6000
+"Elapsed time: 58.301508 msecs"
+i:  7000
+"Elapsed time: 68.138323 msecs"
+i:  8000
+"Elapsed time: 77.974864 msecs"
+i:  9000
+"Elapsed time: 86.921843 msecs"
+i:  10000
+"Elapsed time: 97.252474 msecs"
+i:  11000
+"Elapsed time: 107.034114 msecs"
+i:  12000
+"Elapsed time: 116.748916 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 65.296884 msecs"
+i:  2000
+"Elapsed time: 70.387997 msecs"
+i:  3000
+"Elapsed time: 100.180548 msecs"
+i:  4000
+"Elapsed time: 133.749939 msecs"
+i:  5000
+"Elapsed time: 166.294963 msecs"
+i:  6000
+"Elapsed time: 201.66933 msecs"
+i:  7000
+"Elapsed time: 234.386062 msecs"
+i:  8000
+"Elapsed time: 267.974983 msecs"
+i:  9000
+"Elapsed time: 300.405382 msecs"
+i:  10000
+"Elapsed time: 333.228267 msecs"
+i:  11000
+"Elapsed time: 367.174487 msecs"
+i:  12000
+"Elapsed time: 404.800481 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.4141 msecs"
+i:  2000
+"Elapsed time: 67.097994 msecs"
+i:  3000
+"Elapsed time: 95.634151 msecs"
+i:  4000
+"Elapsed time: 125.9657 msecs"
+i:  5000
+"Elapsed time: 157.67787 msecs"
+i:  6000
+"Elapsed time: 188.76447 msecs"
+i:  7000
+"Elapsed time: 220.496075 msecs"
+i:  8000
+"Elapsed time: 251.842604 msecs"
+i:  9000
+"Elapsed time: 283.821517 msecs"
+i:  10000
+"Elapsed time: 317.402871 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.869401 msecs"
+i:  2000
+"Elapsed time: 20.415103 msecs"
+i:  3000
+"Elapsed time: 29.692078 msecs"
+i:  4000
+"Elapsed time: 39.25533 msecs"
+i:  5000
+"Elapsed time: 48.227321 msecs"
+i:  6000
+"Elapsed time: 58.811349 msecs"
+i:  7000
+"Elapsed time: 68.903318 msecs"
+i:  8000
+"Elapsed time: 77.791397 msecs"
+i:  9000
+"Elapsed time: 87.38313 msecs"
+i:  10000
+"Elapsed time: 97.807447 msecs"
+i:  11000
+"Elapsed time: 107.10365 msecs"
+i:  12000
+"Elapsed time: 117.831181 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 65.520888 msecs"
+i:  2000
+"Elapsed time: 69.679479 msecs"
+i:  3000
+"Elapsed time: 99.261276 msecs"
+i:  4000
+"Elapsed time: 132.461893 msecs"
+i:  5000
+"Elapsed time: 165.45868 msecs"
+i:  6000
+"Elapsed time: 198.015077 msecs"
+i:  7000
+"Elapsed time: 231.762823 msecs"
+i:  8000
+"Elapsed time: 265.690817 msecs"
+i:  9000
+"Elapsed time: 302.456413 msecs"
+i:  10000
+"Elapsed time: 335.357985 msecs"
+i:  11000
+"Elapsed time: 382.223714 msecs"
+i:  12000
+"Elapsed time: 404.209695 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 54.378376 msecs"
+i:  2000
+"Elapsed time: 68.227713 msecs"
+i:  3000
+"Elapsed time: 99.25183 msecs"
+i:  4000
+"Elapsed time: 129.342608 msecs"
+i:  5000
+"Elapsed time: 160.015757 msecs"
+i:  6000
+"Elapsed time: 195.296436 msecs"
+i:  7000
+"Elapsed time: 226.892491 msecs"
+i:  8000
+"Elapsed time: 257.136504 msecs"
+i:  9000
+"Elapsed time: 294.18073 msecs"
+i:  10000
+"Elapsed time: 318.293458 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.308418 msecs"
+i:  2000
+"Elapsed time: 20.848803 msecs"
+i:  3000
+"Elapsed time: 29.775483 msecs"
+i:  4000
+"Elapsed time: 39.742841 msecs"
+i:  5000
+"Elapsed time: 49.809491 msecs"
+i:  6000
+"Elapsed time: 59.280835 msecs"
+i:  7000
+"Elapsed time: 69.029004 msecs"
+i:  8000
+"Elapsed time: 89.153718 msecs"
+i:  9000
+"Elapsed time: 90.52426 msecs"
+i:  10000
+"Elapsed time: 100.390206 msecs"
+i:  11000
+"Elapsed time: 109.530084 msecs"
+i:  12000
+"Elapsed time: 119.77984 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 65.686329 msecs"
+i:  2000
+"Elapsed time: 73.145912 msecs"
+i:  3000
+"Elapsed time: 100.825237 msecs"
+i:  4000
+"Elapsed time: 135.594293 msecs"
+i:  5000
+"Elapsed time: 169.709694 msecs"
+i:  6000
+"Elapsed time: 201.74425 msecs"
+i:  7000
+"Elapsed time: 253.825666 msecs"
+i:  8000
+"Elapsed time: 284.405734 msecs"
+i:  9000
+"Elapsed time: 313.7769 msecs"
+i:  10000
+"Elapsed time: 340.105351 msecs"
+i:  11000
+"Elapsed time: 371.572257 msecs"
+i:  12000
+"Elapsed time: 400.853677 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 52.481572 msecs"
+i:  2000
+"Elapsed time: 67.795415 msecs"
+i:  3000
+"Elapsed time: 100.158293 msecs"
+i:  4000
+"Elapsed time: 136.807826 msecs"
+i:  5000
+"Elapsed time: 160.284798 msecs"
+i:  6000
+"Elapsed time: 190.83644 msecs"
+i:  7000
+"Elapsed time: 227.226305 msecs"
+i:  8000
+"Elapsed time: 263.651188 msecs"
+i:  9000
+"Elapsed time: 288.959036 msecs"
+i:  10000
+"Elapsed time: 324.498941 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.809177 msecs"
+i:  2000
+"Elapsed time: 20.705482 msecs"
+i:  3000
+"Elapsed time: 30.407961 msecs"
+i:  4000
+"Elapsed time: 39.286461 msecs"
+i:  5000
+"Elapsed time: 49.261402 msecs"
+i:  6000
+"Elapsed time: 59.004647 msecs"
+i:  7000
+"Elapsed time: 70.836516 msecs"
+i:  8000
+"Elapsed time: 78.691089 msecs"
+i:  9000
+"Elapsed time: 87.905643 msecs"
+i:  10000
+"Elapsed time: 98.460591 msecs"
+i:  11000
+"Elapsed time: 107.235637 msecs"
+i:  12000
+"Elapsed time: 118.976422 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 66.181291 msecs"
+i:  2000
+"Elapsed time: 71.251052 msecs"
+i:  3000
+"Elapsed time: 100.350289 msecs"
+i:  4000
+"Elapsed time: 134.226683 msecs"
+i:  5000
+"Elapsed time: 172.94812 msecs"
+i:  6000
+"Elapsed time: 204.266198 msecs"
+i:  7000
+"Elapsed time: 237.2562 msecs"
+i:  8000
+"Elapsed time: 270.280119 msecs"
+i:  9000
+"Elapsed time: 302.637759 msecs"
+i:  10000
+"Elapsed time: 336.149945 msecs"
+i:  11000
+"Elapsed time: 373.690897 msecs"
+i:  12000
+"Elapsed time: 414.787892 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [Euler 2]  07/23/2009
+(used:1M/0M [1M,63M ])
+4613732
+4613732
+(5 5 3 7 3 7 6 2 3 0)
+(used:1M/0M [1M,63M ])
+i:  1000
+"Elapsed time: 90.421427 msecs"
+i:  2000
+"Elapsed time: 100.889209 msecs"
+i:  3000
+"Elapsed time: 108.170674 msecs"
+i:  4000
+"Elapsed time: 146.77606 msecs"
+i:  5000
+"Elapsed time: 172.402019 msecs"
+i:  6000
+"Elapsed time: 192.021049 msecs"
+i:  7000
+"Elapsed time: 223.915685 msecs"
+i:  8000
+"Elapsed time: 258.673772 msecs"
+i:  9000
+"Elapsed time: 293.75315 msecs"
+i:  10000
+"Elapsed time: 318.748526 msecs"
+Second version of euler - 2
+i:  1000
+"Elapsed time: 12.313155 msecs"
+i:  2000
+"Elapsed time: 20.615608 msecs"
+i:  3000
+"Elapsed time: 30.332218 msecs"
+i:  4000
+"Elapsed time: 39.732646 msecs"
+i:  5000
+"Elapsed time: 49.352356 msecs"
+i:  6000
+"Elapsed time: 59.320957 msecs"
+i:  7000
+"Elapsed time: 72.792215 msecs"
+i:  8000
+"Elapsed time: 80.745447 msecs"
+i:  9000
+"Elapsed time: 89.095388 msecs"
+i:  10000
+"Elapsed time: 100.287892 msecs"
+i:  11000
+"Elapsed time: 108.343096 msecs"
+i:  12000
+"Elapsed time: 118.635269 msecs"
+(used:1M/0M [1M,63M ])
+Running Euler Problem 13
+i:  1000
+"Elapsed time: 64.050555 msecs"
+i:  2000
+"Elapsed time: 73.065391 msecs"
+i:  3000
+"Elapsed time: 101.512466 msecs"
+i:  4000
+"Elapsed time: 135.773704 msecs"
+i:  5000
+"Elapsed time: 177.573504 msecs"
+i:  6000
+"Elapsed time: 211.637113 msecs"
+i:  7000
+"Elapsed time: 239.052096 msecs"
+i:  8000
+"Elapsed time: 272.785297 msecs"
+i:  9000
+"Elapsed time: 309.867225 msecs"
+i:  10000
+"Elapsed time: 349.161747 msecs"
+i:  11000
+"Elapsed time: 378.134656 msecs"
+i:  12000
+"Elapsed time: 401.379383 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])

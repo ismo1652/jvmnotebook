@@ -1,0 +1,176 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+mslmwunodglzrawsbvog | 100000
+"Elapsed time: 1736.574223 msecs"
+Using array list
+ehvcrxqjsfuqoydskbbl | 100000
+"Elapsed time: 1392.307185 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+gohjrgbvwprcfbsfhbfn | 100000
+"Elapsed time: 1731.388422 msecs"
+Using array list
+ddjajoyhqkzsbfodejdj | 100000
+"Elapsed time: 1394.47942 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+rubahqxbyxubktthffcu | 100000
+"Elapsed time: 1744.88072 msecs"
+Using array list
+cndwhjeebvkvqyvcbifc | 100000
+"Elapsed time: 1385.442998 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+xqwwbbjhklkyzphnpjwu | 100000
+"Elapsed time: 1730.131612 msecs"
+Using array list
+tkdancvyjyivyprwmbqo | 100000
+"Elapsed time: 1391.042987 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+wqwqvgufrikzbcdfedxt | 100000
+"Elapsed time: 1731.07017 msecs"
+Using array list
+lmiysajvmvjtsqjwmjuj | 100000
+"Elapsed time: 1390.865004 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+wzabuaxfwlmmdluiamnk | 100000
+"Elapsed time: 1732.134598 msecs"
+Using array list
+oiglnstwxlegtnilocfu | 100000
+"Elapsed time: 1392.394296 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+fvpjytfmjkucuxyyjmor | 100000
+"Elapsed time: 1743.711414 msecs"
+Using array list
+hvypatvkuimaljcnhlan | 100000
+"Elapsed time: 1390.262947 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+tgajloxmavlygrdgfkyb | 100000
+"Elapsed time: 1753.786031 msecs"
+Using array list
+hqohegnqmgmmkswszbvx | 100000
+"Elapsed time: 1403.1 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+vwwifwxebfxtgnzipuqi | 100000
+"Elapsed time: 1731.240901 msecs"
+Using array list
+iauorwyxbuesnkmspilf | 100000
+"Elapsed time: 1389.09305 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+tzxebrnpzvfajqtmmieu | 100000
+"Elapsed time: 1734.890038 msecs"
+Using array list
+oaexgsktqyzyakjbbrwl | 100000
+"Elapsed time: 1394.432192 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+ahiohamyxqrfpoytzhvu | 100000
+"Elapsed time: 1730.592276 msecs"
+Using array list
+whurmculrmsnvxsixheb | 100000
+"Elapsed time: 1393.246839 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+ewmswpkdftexaimfuuoq | 100000
+"Elapsed time: 1730.826695 msecs"
+Using array list
+twmtdvfkvuclwjmccsur | 100000
+"Elapsed time: 1391.861295 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+sdvxewladkgsfvjzmksb | 100000
+"Elapsed time: 1738.157654 msecs"
+Using array list
+rbtrgbdeqyvxktouxwvr | 100000
+"Elapsed time: 1393.978366 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+gcykvnpdgvsqfmemyxhb | 100000
+"Elapsed time: 1733.394164 msecs"
+Using array list
+ztucazkukosjuctmyisx | 100000
+"Elapsed time: 1399.404221 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+zdxybxtqijfjtyiqnlra | 100000
+"Elapsed time: 1732.532507 msecs"
+Using array list
+uowbltcpmghigqkkslbo | 100000
+"Elapsed time: 1393.791168 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+ktokzqqapjkcsjxqgpmv | 100000
+"Elapsed time: 2161.83384 msecs"
+Using array list
+mkexttutvwtowcowcieg | 100000
+"Elapsed time: 1406.254899 msecs"
+Performing simple garbage collection cooldown
+(used:9M/8M [18M,63M ])
+(used:9M/8M [18M,63M ])

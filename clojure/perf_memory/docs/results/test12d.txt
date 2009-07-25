@@ -1,0 +1,154 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+jwchqegwxcwsjkkxcimf | 100000
+"Elapsed time: 1813.97443 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@157ea4aAppr Size: 11474> | 2000
+"Elapsed time: 2184.162916 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+ggdpluffxyfsaevdvnlq | 100000
+"Elapsed time: 1806.05242 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@d3c65dAppr Size: 11469> | 2000
+"Elapsed time: 2182.067431 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+wbwsgjrcxksyftycojux | 100000
+"Elapsed time: 1776.500595 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@1fe571fAppr Size: 11471> | 2000
+"Elapsed time: 2182.977756 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+lvfhcuxqlizimmzfcjfz | 100000
+"Elapsed time: 1775.969736 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@1fe571fAppr Size: 11471> | 2000
+"Elapsed time: 2180.343107 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+nlqyhnguwzfasjpnuqkj | 100000
+"Elapsed time: 1774.297851 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@1fe571fAppr Size: 11465> | 2000
+"Elapsed time: 2182.459043 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+warpfnpzjpkzdiwrlvde | 100000
+"Elapsed time: 1778.608253 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@1fe571fAppr Size: 11470> | 2000
+"Elapsed time: 2180.720054 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+lsgwanxeqwsfwskdygdq | 100000
+"Elapsed time: 1801.206698 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@d3c65dAppr Size: 11453> | 2000
+"Elapsed time: 2183.247124 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+tzkvhlgwfiqsyhneukum | 100000
+"Elapsed time: 1805.903546 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@157ea4aAppr Size: 11472> | 2000
+"Elapsed time: 2179.418286 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+ffdyuhtmptcpionpdgug | 100000
+"Elapsed time: 1831.755948 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@83b1bAppr Size: 11477> | 2000
+"Elapsed time: 2223.103783 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+wxwrbuccedhkttoruezj | 100000
+"Elapsed time: 1852.324859 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@157ea4aAppr Size: 11469> | 2000
+"Elapsed time: 2184.258828 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+yauqpljnikpdjsngeuqw | 100000
+"Elapsed time: 1797.252132 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@83b1bAppr Size: 11473> | 2000
+"Elapsed time: 2179.887221 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+xpwfkktkoulzexxcdsgb | 100000
+"Elapsed time: 1810.894454 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@d3c65dAppr Size: 11470> | 2000
+"Elapsed time: 2184.364281 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+rbeyzrqqxwkdanzskcmr | 100000
+"Elapsed time: 1807.297715 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@157ea4aAppr Size: 11464> | 2000
+"Elapsed time: 2182.824427 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+qvmllbygtviwyrkezfrg | 100000
+"Elapsed time: 1806.133164 msecs"
+#<TinyObject org.node.perf.bean.TinyObject@157ea4aAppr Size: 11459> | 2000
+"Elapsed time: 2180.534425 msecs"
+(used:39M/11M [51M,63M ])
+Performing simple garbage collection cooldown
+(used:39M/11M [51M,63M ])
+(used:39M/11M [51M,63M ])

@@ -1,0 +1,300 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1212.796289 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.135192 msecs"
+i:  10
+"Elapsed time: 19.520764 msecs"
+i:  100
+"Elapsed time: 123.519399 msecs"
+i:  1000
+"Elapsed time: 956.080403 msecs"
+i:  10000
+"Elapsed time: 9528.803221 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1213.078605 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.108301 msecs"
+i:  10
+"Elapsed time: 19.310188 msecs"
+i:  100
+"Elapsed time: 122.491365 msecs"
+i:  1000
+"Elapsed time: 958.347826 msecs"
+i:  10000
+"Elapsed time: 9550.676167 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1206.594844 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.116726 msecs"
+i:  10
+"Elapsed time: 19.493851 msecs"
+i:  100
+"Elapsed time: 122.574247 msecs"
+i:  1000
+"Elapsed time: 955.67296 msecs"
+i:  10000
+"Elapsed time: 9518.693476 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1209.257052 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.129237 msecs"
+i:  10
+"Elapsed time: 19.889779 msecs"
+i:  100
+"Elapsed time: 122.00002 msecs"
+i:  1000
+"Elapsed time: 954.501511 msecs"
+i:  10000
+"Elapsed time: 9538.779765 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1206.899882 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.11291 msecs"
+i:  10
+"Elapsed time: 19.334601 msecs"
+i:  100
+"Elapsed time: 122.902515 msecs"
+i:  1000
+"Elapsed time: 957.15784 msecs"
+i:  10000
+"Elapsed time: 9557.109707 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1207.136087 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.114384 msecs"
+i:  10
+"Elapsed time: 19.314 msecs"
+i:  100
+"Elapsed time: 122.242522 msecs"
+i:  1000
+"Elapsed time: 955.324145 msecs"
+i:  10000
+"Elapsed time: 9537.780287 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1208.368761 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.111753 msecs"
+i:  10
+"Elapsed time: 19.367123 msecs"
+i:  100
+"Elapsed time: 122.407621 msecs"
+i:  1000
+"Elapsed time: 956.192188 msecs"
+i:  10000
+"Elapsed time: 9517.178346 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1209.563891 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.114 msecs"
+i:  10
+"Elapsed time: 19.391175 msecs"
+i:  100
+"Elapsed time: 122.912164 msecs"
+i:  1000
+"Elapsed time: 962.450493 msecs"
+i:  10000
+"Elapsed time: 9543.920127 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1206.431316 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.119271 msecs"
+i:  10
+"Elapsed time: 19.380634 msecs"
+i:  100
+"Elapsed time: 122.57095 msecs"
+i:  1000
+"Elapsed time: 957.240429 msecs"
+i:  10000
+"Elapsed time: 9524.538948 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1209.095179 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.117181 msecs"
+i:  10
+"Elapsed time: 19.41848 msecs"
+i:  100
+"Elapsed time: 122.569977 msecs"
+i:  1000
+"Elapsed time: 957.714743 msecs"
+i:  10000
+"Elapsed time: 9528.467251 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1207.301825 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.132271 msecs"
+i:  10
+"Elapsed time: 19.562722 msecs"
+i:  100
+"Elapsed time: 122.785392 msecs"
+i:  1000
+"Elapsed time: 962.269502 msecs"
+i:  10000
+"Elapsed time: 9551.874684 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1208.751258 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.106237 msecs"
+i:  10
+"Elapsed time: 19.36348 msecs"
+i:  100
+"Elapsed time: 123.352006 msecs"
+i:  1000
+"Elapsed time: 965.512159 msecs"
+i:  10000
+"Elapsed time: 9602.393371 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1206.675095 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.109159 msecs"
+i:  10
+"Elapsed time: 19.719123 msecs"
+i:  100
+"Elapsed time: 122.427151 msecs"
+i:  1000
+"Elapsed time: 1078.665211 msecs"
+i:  10000
+"Elapsed time: 9778.847818 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1211.624851 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.110933 msecs"
+i:  10
+"Elapsed time: 19.418239 msecs"
+i:  100
+"Elapsed time: 122.843349 msecs"
+i:  1000
+"Elapsed time: 1054.219019 msecs"
+i:  10000
+"Elapsed time: 9524.055174 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+(used:1M/0M [1M,63M ])
+"Elapsed time: 1210.516231 msecs"
+232792560
+Euler 5 
+i:  1
+"Elapsed time: 3.115511 msecs"
+i:  10
+"Elapsed time: 19.526028 msecs"
+i:  100
+"Elapsed time: 122.725182 msecs"
+i:  1000
+"Elapsed time: 961.733482 msecs"
+i:  10000
+"Elapsed time: 9557.93557 msecs"
+(used:1M/0M [1M,63M ])
+Done
+Performing simple garbage collection cooldown
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])

@@ -1,0 +1,225 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+nqtzzgrtcw | 100
+"Elapsed time: 15.19619 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40620> | 100
+"Elapsed time: 531.505833 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91506> | 100
+"Elapsed time: 1137.326081 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307512> | 100
+"Elapsed time: 3227.1741 msecs"
+(used:56M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:56M/7M [63M,63M ])
+(used:56M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+izkrdmrlkg | 100
+"Elapsed time: 15.02923 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40638> | 100
+"Elapsed time: 532.069789 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91494> | 100
+"Elapsed time: 1160.806024 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307562> | 100
+"Elapsed time: 3227.404875 msecs"
+(used:55M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/7M [63M,63M ])
+(used:55M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+nsbmwszsdg | 100
+"Elapsed time: 15.006812 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40612> | 100
+"Elapsed time: 532.140089 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91504> | 100
+"Elapsed time: 1135.063218 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307566> | 100
+"Elapsed time: 3226.734976 msecs"
+(used:55M/8M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/8M [63M,63M ])
+(used:55M/8M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+inswysirio | 100
+"Elapsed time: 15.147269 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40613> | 100
+"Elapsed time: 532.693451 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91506> | 100
+"Elapsed time: 1123.97392 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307500> | 100
+"Elapsed time: 3242.229784 msecs"
+(used:57M/6M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:57M/6M [63M,63M ])
+(used:57M/6M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+mhgwztwjom | 100
+"Elapsed time: 15.032752 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40633> | 100
+"Elapsed time: 531.755236 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91486> | 100
+"Elapsed time: 1134.777984 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307524> | 100
+"Elapsed time: 3225.563192 msecs"
+(used:55M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/7M [63M,63M ])
+(used:55M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+jlwdkmovkc | 100
+"Elapsed time: 15.138356 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40624> | 100
+"Elapsed time: 532.547314 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91490> | 100
+"Elapsed time: 1145.974522 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307459> | 100
+"Elapsed time: 3227.035673 msecs"
+(used:55M/8M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/8M [63M,63M ])
+(used:55M/8M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+ccygfujvjb | 100
+"Elapsed time: 15.083112 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40615> | 100
+"Elapsed time: 531.232234 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91505> | 100
+"Elapsed time: 1149.413789 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307507> | 100
+"Elapsed time: 3226.876002 msecs"
+(used:56M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:56M/7M [63M,63M ])
+(used:56M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+tlftxemoia | 100
+"Elapsed time: 14.993794 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40622> | 100
+"Elapsed time: 531.711337 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91484> | 100
+"Elapsed time: 1148.01347 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307483> | 100
+"Elapsed time: 3223.770407 msecs"
+(used:56M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:56M/7M [63M,63M ])
+(used:56M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+uqozzbwxpc | 100
+"Elapsed time: 15.083556 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40604> | 100
+"Elapsed time: 532.678049 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91490> | 100
+"Elapsed time: 1135.124134 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307527> | 100
+"Elapsed time: 3225.878065 msecs"
+(used:55M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/7M [63M,63M ])
+(used:55M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+stwxlvmecb | 100
+"Elapsed time: 14.99561 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40607> | 100
+"Elapsed time: 530.440276 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91484> | 100
+"Elapsed time: 1136.043989 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307564> | 100
+"Elapsed time: 3224.331058 msecs"
+(used:55M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/7M [63M,63M ])
+(used:55M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+zgcidazdnh | 100
+"Elapsed time: 15.0803 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40617> | 100
+"Elapsed time: 531.178411 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91500> | 100
+"Elapsed time: 1156.541608 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307526> | 100
+"Elapsed time: 3224.726092 msecs"
+(used:56M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:56M/7M [63M,63M ])
+(used:56M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+hspwcjmtrs | 100
+"Elapsed time: 15.119552 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40631> | 100
+"Elapsed time: 533.99419 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91493> | 100
+"Elapsed time: 1094.19977 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307513> | 100
+"Elapsed time: 3261.376856 msecs"
+(used:55M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:55M/7M [63M,63M ])
+(used:55M/7M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+zmdckccfon | 100
+"Elapsed time: 15.047274 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40633> | 100
+"Elapsed time: 531.954403 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91467> | 100
+"Elapsed time: 1121.660802 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307551> | 100
+"Elapsed time: 3240.232568 msecs"
+(used:57M/6M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:57M/6M [63M,63M ])
+(used:57M/6M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+vdoxmauvac | 100
+"Elapsed time: 15.025086 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40628> | 100
+"Elapsed time: 530.23444 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91495> | 100
+"Elapsed time: 1134.25393 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307555> | 100
+"Elapsed time: 3227.0225 msecs"
+(used:57M/6M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:57M/6M [63M,63M ])
+(used:57M/6M [63M,63M ])
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test []  07/24/2009
+(used:1M/0M [1M,63M ])
+tnpmsqpyiq | 100
+"Elapsed time: 15.060507 msecs"
+#<SmallObject org.node.perf.bean.SmallObject@118d189Appr Size: 40605> | 100
+"Elapsed time: 532.324583 msecs"
+#<MediumObject org.node.perf.bean.MediumObject@135ae7eAppr Size: 91479> | 100
+"Elapsed time: 1137.052178 msecs"
+#<LargeObject org.node.perf.bean.LargeObject@4a0ac5Appr Size: 307556> | 100
+"Elapsed time: 3225.295361 msecs"
+(used:56M/7M [63M,63M ])
+Performing simple garbage collection cooldown
+(used:56M/7M [63M,63M ])
+(used:56M/7M [63M,63M ])
