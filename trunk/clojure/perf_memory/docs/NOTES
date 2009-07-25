@@ -5,6 +5,36 @@
 #
 ###############################################################################
 
+http://clj-me.blogspot.com/2008/06/widefinder-2-in-clojure-naive-port-from.html
+
+"Because immutable persistent data structures.
+Because data structures are functions.
+Because lazy sequences.
+Because mutable boxes.
+Because macros.
+Because it runs on the JVM.
+Because concurrency support.
+Because I have fond memories of Caml.
+Because I was getting fed up of Javascript/Rhino"
+
+Possibly use classpath.
+
+Memory Tests to perform:
+ 
+1. Garbage collection information with timestamps, etc, especially those with more memory
+2. Run hprof /jhat
+3. Run prof?
+4. Run jconsole with screenshots
+5. Run jrat profiling
+6. Run netbeans profiling
+
+--------------------------------------------
+
+http://www.mail-archive.com/felix-language@lists.sourceforge.net/msg01977.html
+http://groups.google.com/group/comp.lang.functional/browse_frm/thread/99b8230c078d9b44
+
+Note: need to test the java startup time, separate script.
+
 First Environment:
 
 java version "1.5.0_11"
@@ -98,6 +128,9 @@ Some list operations
     my-vector
     my-map
     my-list))
+
+Use of conj to build a list
+(loop [a () i 10] (if (= i 0) a (recur (conj a "a") (- i 1))))
 
 ---------------------
 
