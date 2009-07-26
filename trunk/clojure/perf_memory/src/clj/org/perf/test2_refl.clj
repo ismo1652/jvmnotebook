@@ -52,8 +52,8 @@
   ;;;;
   (println "Running Test [test string split and other str utils] " *current-date*)
   (println (*memory-usage*))
-  (let [data (build-big-str)]
-    (println "Number of chars in str : " (count data)))
+  (time (dotimes [_ 10] (let [data (build-big-str)]
+    		(println "Number of chars in str : " (count data)))))
   (println (*memory-usage*))
   (println "Done"))
 
