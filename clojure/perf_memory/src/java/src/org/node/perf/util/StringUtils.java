@@ -87,17 +87,45 @@ public class StringUtils {
      */
     public static final String EMPTY = "";
     
+    public static final Random rand = new Random(System.currentTimeMillis()); 
+    
     /**
      * Generate a random string of characters.
      */
     public static final String randomString(final Random random, final int n) {
 
+/*
+ * In Clojure, this code might look like:
+ ----------------------------------------- 
+(defn random-string_
+  "Generate a random string of characters"
+  [#^java.util.Random random n]
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (let [buf (StringBuffer. (+ n 16))]
+    (dotimes [_ n]
+        (.append buf (char (+ 97 (.nextInt random 26)))))
+    (.toString buf)))
+
+(defn random-string
+  "Generate a random string of characters"
+  [n]
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (random-string_ (java.util.Random.) n))
+ */
+        
         final StringBuffer buf = new StringBuffer(n + 16);
         for (int i = 0; i < n; i++) {
             final char c = (char)('a' + random.nextInt(26));
             buf.append(c);        
         } // End of the for //
         return buf.toString();
+    }
+    
+    /**
+     * Generate a random string of characters.
+     */
+    public static final String randomString(final int n) {
+        return randomString(rand, n);
     }
     
     /**

@@ -5,6 +5,8 @@
 #
 ###############################################################################
 
+ cd src && ant && cd .. && ./java2.bat
+
 http://clj-me.blogspot.com/2008/06/widefinder-2-in-clojure-naive-port-from.html
 
 "Because immutable persistent data structures.

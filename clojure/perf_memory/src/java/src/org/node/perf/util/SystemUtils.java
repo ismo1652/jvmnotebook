@@ -62,13 +62,8 @@
 
 package org.node.perf.util;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author Berlin
@@ -86,6 +81,77 @@ public class SystemUtils {
      * (value is """")
      */
     public static final String EMPTY = "";
-           
+    
+    public static final SimpleDateFormat simpleDateFormat =  new SimpleDateFormat("MM/dd/yyyy");
+    
+    private static final Runtime runtime = Runtime.getRuntime();
+
+    public static final int e4 = 10000;     
+    public static final int e3 = 1000;
+    public static final int e2 = 100;
+    public static final int e1 = 10;
+    public static final int once = 1;
+    
+/*
+ -------------------------------------------
+ Based on the following Clojure library :
+ ------------------------------------------- 
+(def  *megabytes*      (* 1024.0 1024.0))
+(def  *java-runtime*   (. Runtime getRuntime))
+
+(defn *free-memory-b*  [] (. #^Runtime *java-runtime* freeMemory))
+(defn *total-memory-b* [] (. #^Runtime *java-runtime* totalMemory))
+(defn *max-memory-b*   [] (. #^Runtime *java-runtime* maxMemory))
+(defn *used-memory-b*  [] (- (*total-memory-b*) (*free-memory-b*)))
+
+;; Note: used memory == total memory - free memory
+(defn *free-memory-m*  [] (int (floor (/ (*free-memory-b*)  *megabytes*))))
+(defn *total-memory-m* [] (int (floor (/ (*total-memory-b*) *megabytes*))))
+(defn *max-memory-m*   [] (int (floor (/ (*max-memory-b*)   *megabytes*))))
+(defn *used-memory-m*  [] (int (floor (/ (*used-memory-b*)  *megabytes*))))
+*/    
+    public static final double megabytes = 1024.0 * 1024.0;
+
+    public static final long freeMemoryb() { 
+        return runtime.freeMemory();
+    }
+     
+    public static final long totalMemoryb() {
+        return runtime.totalMemory();
+    }
+    
+    public static final long maxMemoryb() {
+        return runtime.maxMemory();
+    }
+    public static final long usedMemoryb() {
+        return totalMemoryb() - freeMemoryb();
+    }
+
+    public static final int freeMemorym() {
+        return (int) Math.floor((freeMemoryb() / megabytes));
+    }
+    public static final int totalMemorym() {
+        return (int) Math.floor((totalMemoryb() / megabytes));
+    }
+    public static final int maxMemorym() {
+        return (int) Math.floor((maxMemoryb() / megabytes));
+    }
+    public static final int usedMemorym() {
+        return (int) Math.floor((usedMemoryb() / megabytes));
+    }
+    
+    public static final String memoryUsage() {
+        final StringBuffer buf = new StringBuffer(80);
+         buf.append("(used:").append(usedMemorym());
+         buf.append("M/").append(freeMemorym());
+         buf.append("M [").append(totalMemorym());
+         buf.append("M,").append(maxMemorym());
+         buf.append("M ])");
+         return buf.toString();
+    }
+    
+    public static final String currentDate() {
+        return simpleDateFormat.format(new Date());
+    }   
     
 } // End of the Class //
