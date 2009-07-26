@@ -1,0 +1,266 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.90590799999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1685.3778149999998 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 218.570606 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1685.479656 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.52764299999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1683.4310799999998 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.995851 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1688.373952 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.055903 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1685.1059209999999 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 220.249621 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1692.4840849999998 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.12386099999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1734.7326329999999 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 220.19747199999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1691.762063 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 221.476939 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1690.018989 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.364071 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1688.26622 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 218.965363 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1700.3532969999999 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 222.91731099999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1688.3240879999998 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.40371299999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1691.485999 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [now using linked list] 07/26/2009
+(used:0M/1M [1M,63M ])
+10000
+100
+10000
+100
+Elapsed time: 219.62446899999998 msecs
+(used:2M/2M [5M,63M ])
+Larger Strings
+100
+100000
+100
+100000
+Elapsed time: 1688.413447 msecs
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+(used:21M/4M [25M,63M ])
+Done
