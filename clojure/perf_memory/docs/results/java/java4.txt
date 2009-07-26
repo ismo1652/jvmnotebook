@@ -1,0 +1,544 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047375 msecs
+i :100
+Elapsed time: 2.192682 msecs
+i :200
+Elapsed time: 3.880039 msecs
+i :300
+Elapsed time: 5.816395 msecs
+i :400
+Elapsed time: 7.767453 msecs
+i :500
+Elapsed time: 9.833052 msecs
+i :600
+Elapsed time: 11.804908 msecs
+i :700
+Elapsed time: 13.447835999999999 msecs
+i :800
+Elapsed time: 15.342986 msecs
+i :900
+Elapsed time: 17.301984 msecs
+i :1000
+Elapsed time: 19.257884999999998 msecs
+i :1100
+Elapsed time: 21.195221999999998 msecs
+i :1200
+Elapsed time: 23.101229 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047639 msecs
+i :100
+Elapsed time: 2.183236 msecs
+i :200
+Elapsed time: 3.858851 msecs
+i :300
+Elapsed time: 5.788087 msecs
+i :400
+Elapsed time: 7.743052 msecs
+i :500
+Elapsed time: 9.955498 msecs
+i :600
+Elapsed time: 11.821467 msecs
+i :700
+Elapsed time: 13.465952 msecs
+i :800
+Elapsed time: 15.385444 msecs
+i :900
+Elapsed time: 17.365517 msecs
+i :1000
+Elapsed time: 19.190134 msecs
+i :1100
+Elapsed time: 21.284167999999998 msecs
+i :1200
+Elapsed time: 23.180424 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047852 msecs
+i :100
+Elapsed time: 2.186288 msecs
+i :200
+Elapsed time: 3.892069 msecs
+i :300
+Elapsed time: 5.818222 msecs
+i :400
+Elapsed time: 7.770649 msecs
+i :500
+Elapsed time: 9.852611999999999 msecs
+i :600
+Elapsed time: 11.823666999999999 msecs
+i :700
+Elapsed time: 13.473295 msecs
+i :800
+Elapsed time: 15.386951 msecs
+i :900
+Elapsed time: 17.317635 msecs
+i :1000
+Elapsed time: 19.29608 msecs
+i :1100
+Elapsed time: 21.178103 msecs
+i :1200
+Elapsed time: 23.081591 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.048111999999999995 msecs
+i :100
+Elapsed time: 2.257577 msecs
+i :200
+Elapsed time: 3.877753 msecs
+i :300
+Elapsed time: 5.852284999999999 msecs
+i :400
+Elapsed time: 7.759901999999999 msecs
+i :500
+Elapsed time: 9.847169 msecs
+i :600
+Elapsed time: 11.773204999999999 msecs
+i :700
+Elapsed time: 13.401855 msecs
+i :800
+Elapsed time: 15.317032 msecs
+i :900
+Elapsed time: 17.232779 msecs
+i :1000
+Elapsed time: 19.19598 msecs
+i :1100
+Elapsed time: 21.181635999999997 msecs
+i :1200
+Elapsed time: 23.081312 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047804 msecs
+i :100
+Elapsed time: 2.1886639999999997 msecs
+i :200
+Elapsed time: 3.8614949999999997 msecs
+i :300
+Elapsed time: 5.812264 msecs
+i :400
+Elapsed time: 7.752845 msecs
+i :500
+Elapsed time: 9.845488 msecs
+i :600
+Elapsed time: 11.808584 msecs
+i :700
+Elapsed time: 13.471903 msecs
+i :800
+Elapsed time: 15.395458999999999 msecs
+i :900
+Elapsed time: 17.320379 msecs
+i :1000
+Elapsed time: 19.256562 msecs
+i :1100
+Elapsed time: 21.427958999999998 msecs
+i :1200
+Elapsed time: 23.094188 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047511 msecs
+i :100
+Elapsed time: 2.1847879999999997 msecs
+i :200
+Elapsed time: 3.966541 msecs
+i :300
+Elapsed time: 5.815421 msecs
+i :400
+Elapsed time: 7.7565859999999995 msecs
+i :500
+Elapsed time: 9.843789 msecs
+i :600
+Elapsed time: 11.806591 msecs
+i :700
+Elapsed time: 13.467329 msecs
+i :800
+Elapsed time: 15.402631999999999 msecs
+i :900
+Elapsed time: 17.328232 msecs
+i :1000
+Elapsed time: 19.198370999999998 msecs
+i :1100
+Elapsed time: 21.122393 msecs
+i :1200
+Elapsed time: 23.199547 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047304 msecs
+i :100
+Elapsed time: 2.185784 msecs
+i :200
+Elapsed time: 3.85913 msecs
+i :300
+Elapsed time: 5.836402 msecs
+i :400
+Elapsed time: 7.824828999999999 msecs
+i :500
+Elapsed time: 9.89345 msecs
+i :600
+Elapsed time: 11.757251 msecs
+i :700
+Elapsed time: 13.402619 msecs
+i :800
+Elapsed time: 15.316948 msecs
+i :900
+Elapsed time: 17.304544 msecs
+i :1000
+Elapsed time: 19.173924 msecs
+i :1100
+Elapsed time: 21.176323999999997 msecs
+i :1200
+Elapsed time: 23.111387 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.046812 msecs
+i :100
+Elapsed time: 2.181581 msecs
+i :200
+Elapsed time: 3.859302 msecs
+i :300
+Elapsed time: 5.825391 msecs
+i :400
+Elapsed time: 7.760637999999999 msecs
+i :500
+Elapsed time: 9.853178999999999 msecs
+i :600
+Elapsed time: 11.822061 msecs
+i :700
+Elapsed time: 13.478582999999999 msecs
+i :800
+Elapsed time: 15.370185 msecs
+i :900
+Elapsed time: 17.231275 msecs
+i :1000
+Elapsed time: 19.264975 msecs
+i :1100
+Elapsed time: 21.183985 msecs
+i :1200
+Elapsed time: 23.088402 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047814999999999996 msecs
+i :100
+Elapsed time: 2.215306 msecs
+i :200
+Elapsed time: 3.879279 msecs
+i :300
+Elapsed time: 5.819605 msecs
+i :400
+Elapsed time: 7.729934999999999 msecs
+i :500
+Elapsed time: 9.801442999999999 msecs
+i :600
+Elapsed time: 11.752792 msecs
+i :700
+Elapsed time: 13.404126 msecs
+i :800
+Elapsed time: 15.355127999999999 msecs
+i :900
+Elapsed time: 17.317439 msecs
+i :1000
+Elapsed time: 19.239753999999998 msecs
+i :1100
+Elapsed time: 21.206279 msecs
+i :1200
+Elapsed time: 23.050425 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.046901 msecs
+i :100
+Elapsed time: 2.192818 msecs
+i :200
+Elapsed time: 3.879734 msecs
+i :300
+Elapsed time: 5.82694 msecs
+i :400
+Elapsed time: 7.780341 msecs
+i :500
+Elapsed time: 9.842232 msecs
+i :600
+Elapsed time: 11.805731 msecs
+i :700
+Elapsed time: 13.467419 msecs
+i :800
+Elapsed time: 15.394214999999999 msecs
+i :900
+Elapsed time: 17.250858 msecs
+i :1000
+Elapsed time: 19.185668 msecs
+i :1100
+Elapsed time: 21.202831 msecs
+i :1200
+Elapsed time: 23.115669 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047082 msecs
+i :100
+Elapsed time: 2.192691 msecs
+i :200
+Elapsed time: 3.8792899999999997 msecs
+i :300
+Elapsed time: 5.81891 msecs
+i :400
+Elapsed time: 7.762404999999999 msecs
+i :500
+Elapsed time: 9.842767 msecs
+i :600
+Elapsed time: 11.839532 msecs
+i :700
+Elapsed time: 13.463497 msecs
+i :800
+Elapsed time: 15.346907 msecs
+i :900
+Elapsed time: 17.365758 msecs
+i :1000
+Elapsed time: 19.240547 msecs
+i :1100
+Elapsed time: 21.179613999999997 msecs
+i :1200
+Elapsed time: 23.149499 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047729 msecs
+i :100
+Elapsed time: 2.190232 msecs
+i :200
+Elapsed time: 3.8799599999999996 msecs
+i :300
+Elapsed time: 6.162306999999999 msecs
+i :400
+Elapsed time: 7.757454 msecs
+i :500
+Elapsed time: 9.856397 msecs
+i :600
+Elapsed time: 11.754942 msecs
+i :700
+Elapsed time: 13.401803 msecs
+i :800
+Elapsed time: 15.317027999999999 msecs
+i :900
+Elapsed time: 17.335191 msecs
+i :1000
+Elapsed time: 19.172777 msecs
+i :1100
+Elapsed time: 21.062704999999998 msecs
+i :1200
+Elapsed time: 23.295586999999998 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047672 msecs
+i :100
+Elapsed time: 2.1896869999999997 msecs
+i :200
+Elapsed time: 3.878317 msecs
+i :300
+Elapsed time: 5.789384 msecs
+i :400
+Elapsed time: 7.759416 msecs
+i :500
+Elapsed time: 10.034733 msecs
+i :600
+Elapsed time: 11.803963 msecs
+i :700
+Elapsed time: 13.401909 msecs
+i :800
+Elapsed time: 15.31702 msecs
+i :900
+Elapsed time: 17.233729999999998 msecs
+i :1000
+Elapsed time: 19.287779 msecs
+i :1100
+Elapsed time: 21.157128999999998 msecs
+i :1200
+Elapsed time: 23.165363 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047345 msecs
+i :100
+Elapsed time: 2.188228 msecs
+i :200
+Elapsed time: 3.877919 msecs
+i :300
+Elapsed time: 5.82003 msecs
+i :400
+Elapsed time: 7.774483999999999 msecs
+i :500
+Elapsed time: 9.834762 msecs
+i :600
+Elapsed time: 11.840684999999999 msecs
+i :700
+Elapsed time: 13.480974999999999 msecs
+i :800
+Elapsed time: 15.375831 msecs
+i :900
+Elapsed time: 17.231354 msecs
+i :1000
+Elapsed time: 19.250213 msecs
+i :1100
+Elapsed time: 22.013453 msecs
+i :1200
+Elapsed time: 23.142778 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.046648999999999996 msecs
+i :100
+Elapsed time: 2.191875 msecs
+i :200
+Elapsed time: 3.88958 msecs
+i :300
+Elapsed time: 5.81456 msecs
+i :400
+Elapsed time: 7.817182 msecs
+i :500
+Elapsed time: 9.836488 msecs
+i :600
+Elapsed time: 11.79369 msecs
+i :700
+Elapsed time: 13.402536 msecs
+i :800
+Elapsed time: 15.349851 msecs
+i :900
+Elapsed time: 17.511929 msecs
+i :1000
+Elapsed time: 19.241498 msecs
+i :1100
+Elapsed time: 21.230522999999998 msecs
+i :1200
+Elapsed time: 23.156187 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047306999999999995 msecs
+i :100
+Elapsed time: 2.189939 msecs
+i :200
+Elapsed time: 3.8589599999999997 msecs
+i :300
+Elapsed time: 5.806346 msecs
+i :400
+Elapsed time: 7.7534469999999995 msecs
+i :500
+Elapsed time: 9.847526 msecs
+i :600
+Elapsed time: 11.77299 msecs
+i :700
+Elapsed time: 13.402698 msecs
+i :800
+Elapsed time: 15.390372999999999 msecs
+i :900
+Elapsed time: 17.321789 msecs
+i :1000
+Elapsed time: 19.261872999999998 msecs
+i :1100
+Elapsed time: 21.226978 msecs
+i :1200
+Elapsed time: 23.104245 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+Elapsed time: 0.047511 msecs
+i :100
+Elapsed time: 2.19204 msecs
+i :200
+Elapsed time: 3.87737 msecs
+i :300
+Elapsed time: 5.815576 msecs
+i :400
+Elapsed time: 7.869986 msecs
+i :500
+Elapsed time: 9.833404999999999 msecs
+i :600
+Elapsed time: 11.810749 msecs
+i :700
+Elapsed time: 13.500433 msecs
+i :800
+Elapsed time: 15.371796999999999 msecs
+i :900
+Elapsed time: 17.26944 msecs
+i :1000
+Elapsed time: 19.253483 msecs
+i :1100
+Elapsed time: 21.175707 msecs
+i :1200
+Elapsed time: 23.139138 msecs
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+(used:0M/1M [1M,63M ])
+Done

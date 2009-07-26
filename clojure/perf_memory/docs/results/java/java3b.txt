@@ -1,0 +1,217 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.952002 msecs
+(used:2M/0M [3M,63M ])
+Terminate batch job (Y/N)? 
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.326099 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1723.424507 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 338.528636 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.747629 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1725.269132 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 338.457047 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 167.188731 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1725.105096 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 338.334774 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.622386 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1727.190014 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.23453 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.16133399999998 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1724.441449 msecs
+(used:20M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 338.22657699999996 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.86845499999998 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1730.031742 msecs
+(used:20M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.50086799999997 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.70184799999998 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1725.590322 msecs
+(used:20M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.450478 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 171.893888 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1728.950817 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 348.553745 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 167.189378 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1730.205718 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.048207 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.72650199999998 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1727.322129 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.204433 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 172.357629 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1727.404398 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.114536 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 167.385582 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1734.3627589999999 msecs
+(used:20M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.030651 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 166.593 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1725.8109729999999 msecs
+(used:20M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 338.924167 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running with hashmap, put
+(used:0M/1M [1M,63M ])
+Size of hash : 10000
+Elapsed time: 167.28874399999998 msecs
+(used:2M/0M [3M,63M ])
+Size of hash : 10000
+Elapsed time: 1725.0262109999999 msecs
+(used:21M/2M [23M,63M ])
+Size of hash : 100
+Elapsed time: 339.30679299999997 msecs
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+(used:4M/18M [23M,63M ])
+Done

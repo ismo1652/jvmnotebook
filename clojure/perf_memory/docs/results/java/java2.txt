@@ -1,0 +1,216 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1940.5321219999998 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1944.1264629999998 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1942.2851879999998 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1943.2141729999998 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1939.840667 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1941.458758 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1956.977052 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1951.172785 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1943.563404 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1943.751585 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1942.243673 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test [test string split and other str utils] 07/26/2009
+(used:0M/1M [1M,63M ])
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Count: 1049600
+Elapsed time: 1944.1595029999999 msecs
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+(used:6M/2M [8M,63M ])
+Done
