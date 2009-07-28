@@ -75,8 +75,7 @@
 		<classpath refid="classpath" />
 	</taskdef>
 	
-	<!-- Target: Compile Scala Source -->
-	<!-- 
+	<!-- Target: Compile Scala Source -->	
 	<target name="scalac" depends="prepare">
 			<scalac srcdir="${scala.src.dir}" 
 			    destdir="${build.classes.dir}" 
@@ -84,7 +83,7 @@
 			    force="never">
 				<include name="**/*.scala"/>
 			</scalac>
-	</target> -->
+	</target>
 
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
     <!-- Target: Build -->
