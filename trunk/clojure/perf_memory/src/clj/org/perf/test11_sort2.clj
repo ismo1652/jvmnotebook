@@ -89,14 +89,10 @@
   (println "Running Test [Quick Sort] " *current-date*)
   (println (*memory-usage*))
   (println (qsort-2 [ 4 5 23 1 35 3 ]))
-  (println (qsort [ 4 5 23 1 35 3 ]))
-  (dotimes [x 5]
-      (println "i: " (int (Math/pow 10.0 x)))
-    (time (count (qsort (for [_ (range (int (Math/pow 10.0 x))) ] (.nextInt random))))))
-  (println "Second Quick Sort")
-  (dotimes [x 5]
-      (println "i: " (int (Math/pow 10.0 x)))
-    (time (count (qsort-2 (for [_ (range (int (Math/pow 10.0 x))) ] (.nextInt random))))))
+  (dotimes [x 12]
+      (let [z (int (Math/pow 3.0 x))]
+        (println "i-size: " z)
+        (time (count (qsort-2 (for [_ (range z) ] (.nextInt random)))))))
   (println (*memory-usage*))
   (println "Done"))
       
@@ -116,7 +112,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  
 (defn main [& args]
-  (try (run-test-2)
+  (try (run-test)
        (run-cool-down)
 	   (catch Exception e
 			  (println "ERR at <Main [1]>: " e)

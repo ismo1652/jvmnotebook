@@ -153,25 +153,17 @@
   (println "Running Test [] " *current-date*)
   (println (*memory-usage*))
   ;; We have to take care, the objects are large
-  (time (dotimes [_ 4]
-            ;; Sleep 100 ms, wait for GC
-            (Thread/sleep 100)
-          (dotimes [_ 14]
-              (large-object-create))))
+  
+  (time (dotimes [_ 56]                      
+              (large-object-create)))
   (println (*memory-usage*))
   ;; We have to take care, the objects are large
-  (time (dotimes [_ 4]
-            ;; Sleep 100 ms, wait for GC
-            (Thread/sleep 40)
-          (dotimes [_ 10]
-              (med-object-create))))
+  (time (dotimes [_ 40]                      
+              (med-object-create)))
   (println (*memory-usage*))
   ;; We have to take care, the objects are large
-  (time (dotimes [_ 4]
-            ;; Sleep 100 ms, wait for GC
-            (Thread/sleep 40)
-          (dotimes [_ 30]      
-              (sm-object-create))))
+  (time (dotimes [_ 120]                           
+              	(sm-object-create)))
   (println "Done"))
       
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -190,7 +182,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  
 (defn main [& args]
-  (try (run-test-4)
+  (try (run-test)
        (run-cool-down)
 	   (catch Exception e
 			  (println "ERR at <Main [1]>: " e)

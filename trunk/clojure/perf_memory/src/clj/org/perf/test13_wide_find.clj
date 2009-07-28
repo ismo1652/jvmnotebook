@@ -101,9 +101,8 @@
   []
   ;;;;
   (println "Running Test [] " *current-date*)
-  (println (*memory-usage*))
-  (dotimes [_ 3]
-      (time (run-wide-finder-file)))
+  (println (*memory-usage*))  
+	(time (run-wide-finder-file))
   (println (*memory-usage*))
   (println "Done"))
       

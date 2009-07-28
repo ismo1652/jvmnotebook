@@ -16,7 +16,7 @@
 ;; agreeing to be bound by the terms of this license.  You must not
 ;; remove this notice, or any other, from this software.
 
-(ns org.perf.test8_collection
+(ns org.perf.test8_collection2
 	(:use org.perf.octane_utils_common)
 	(:import (java.util Date)
              (java.io File)
@@ -92,12 +92,12 @@
   []
   ;;;;
   (println (*memory-usage*))
-  (dotimes [x 4]
-      (println "i: " (int (Math/pow 10.0 x)))
+  (dotimes [x 20]
+  	(let [z (int (Math/pow 2.0 x))]
+      (println "i-size: " z)
     (time
-     (dotimes [_ (int (Math/pow 10.0 x))]
-         (let [a (for [_ (range 1000)] (random-string 3))]
-           (frequencies a)))))
+     (let [a (for [_ (range z)] (random-string 3))]
+       (frequencies a)))))
   (println (*memory-usage*))
   (println "Done"))
 

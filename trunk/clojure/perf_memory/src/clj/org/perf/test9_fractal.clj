@@ -27,7 +27,10 @@
 
 
 (def runs 1)
-(def max_iterations 99888)
+;; Need to change max iterations
+;; to match the java version
+;;(def max_iterations 99888)
+(def max_iterations 2200)
 
 (defn iter [ci cr]
   (let [max_iter (int max_iterations)
