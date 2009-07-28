@@ -10,8 +10,8 @@
     <property name="build.dir"            value="${basedir}/build"/>
     <property name="build.classes.dir"    value="${basedir}/build/classes"/>
     <property name="src.dir"              value="${basedir}/java/src"/>
-	<property name="scala.src.dir"        value="${basedir}/scala/src" />
-    <property name="lib.dir"              value="${basedir}/../../lib"/>
+	<property name="scala.src.dir"        value="${basedir}/scala" />
+    <property name="lib.dir"              value="${basedir}/../lib"/>
 		
 <target name="help" description="Initialization">
 	        <tstamp/>
@@ -84,6 +84,16 @@
 				<include name="**/*.scala"/>
 			</scalac>
 	</target>
+	
+    <target name="scala" depends="compile">
+    	<java classname="org.node.perf.scala.test11_sort">
+			<classpath refid="classpath" />
+			<classpath>
+				<pathelement location="${basedir}" />
+				<pathelement location="${build.classes.dir}" />
+			</classpath>    	            			           
+		</java>
+    </target>
 
     <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
     <!-- Target: Build -->
