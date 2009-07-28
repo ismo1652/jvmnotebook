@@ -66,7 +66,12 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -86,6 +91,8 @@ public class StringUtils {
      * (value is """")
      */
     public static final String EMPTY = "";
+    
+    public static final Integer ONE = new Integer(1);
     
     public static final Random rand = new Random(System.currentTimeMillis()); 
     
@@ -119,6 +126,117 @@ public class StringUtils {
             buf.append(c);        
         } // End of the for //
         return buf.toString();
+    }
+
+    public static String buildSplitStr(int sz, int n, String delim, String postfix) {
+    /*
+    (defn build-split-str
+            "Build a string that can separated by a '|' char"
+            [sz n]
+            ;;;
+            (let [str-size (* 1 sz)
+                  buf-1 (StringBuffer. (* str-size n))]
+              (dotimes [_ n]
+                  (let [b (random-string str-size)]
+                    (.append buf-1 (str b "|"))))
+              (.append buf-1 "[END]")
+              (.toString buf-1)))
+     */
+        final StringBuffer buf1 = new StringBuffer(sz * n);
+        String b = "";
+        for (int i = 0; i < n; i++) {
+            b = randomString(sz);
+            buf1.append(b).append(delim);
+        } // End of For //
+        buf1.append(postfix);
+        return buf1.toString();
+    }
+    
+    public static final String join(final String sep, final String [] seq) {
+        
+        final StringBuffer buf = new StringBuffer(40);
+        for (int i = 0; i < seq.length; i++) {
+            buf.append(seq[i]);
+        }
+        return buf.toString();
+        
+    }
+        
+    public static Map frequencies(final List list) {
+        final Map map = new HashMap();
+        // Simple Box and then unbox the count as the value for this map //
+        for (Iterator it = list.iterator(); it.hasNext(); ) {
+            final Object o = it.next();
+            final String s = o.toString();
+            Integer prev = (Integer) map.get(s);
+            if (prev == null) {
+                // Put a new value on th map
+                final Integer count = ONE;
+                map.put(s, count);
+            } else {
+                final Integer inc = new Integer(prev.intValue() + 1);
+                map.put(s, inc);
+            } // End of the if - else //                       
+        }
+        return map;
+    }
+    
+    public static void printMap(final Map map) {
+        Set set = map.entrySet();        
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            Map.Entry e = (Map.Entry) it.next();
+            System.out.println("{Map} Key: " + e.getKey() + " | Value: " + e.getValue()); 
+        }    
+    }
+    
+    public static void printList(final List list) {               
+        for (Iterator it = list.iterator(); it.hasNext();) {
+            final Object o = it.next();
+            System.out.println("{List} " + o);  
+        }
+    }
+    public static void checkList(final List list) {
+        int i = 0;
+        for (Iterator it = list.iterator(); it.hasNext();) {
+            final Object o = it.next();
+            System.out.println("{List} " + o);
+            i++;
+            if (i >= 6) {
+                return;
+            }            
+        }
+    }
+    
+    /**
+     * Print a consolidated/small view of the map.  Only print the first 8 entries.
+     * @param map
+     */
+    public static void checkMap(final Map map) {
+        int index = 0;
+        Set set = map.entrySet();        
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            Map.Entry e = (Map.Entry) it.next();
+            System.out.println("{Map} Key: " + e.getKey() + " | Value: " + e.getValue());
+            index++;
+            if (index >= 8) {
+                break;
+            }
+        }
+        System.out.println("...");
+    }
+    
+    public static void checkMap2(final Map map) {
+        int index = 0;
+        Set set = map.entrySet();        
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            Map.Entry e = (Map.Entry) it.next();
+            System.out.println("{Map} Key: " + e.getKey() + " | Value: " + e.getValue());
+            index++;
+            if (index >= 2) {
+                break;
+            }
+        }
+        System.out.println("...");
     }
     
     /**
