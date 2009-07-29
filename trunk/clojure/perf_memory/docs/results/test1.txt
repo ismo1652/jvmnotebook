@@ -15,6 +15,7 @@ Running Test 07/21/2009
 "Elapsed time: 961.783967 msecs"
 (used:1M/0M [1M,63M ])
 Done
+
 "c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
 Running Test 07/21/2009
 (used:1M/0M [1M,63M ])
