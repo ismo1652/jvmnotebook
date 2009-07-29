@@ -5,9 +5,32 @@
 #
 ###############################################################################
 
- cd src && ant && cd .. && ./java2.bat
+hello1
+build2
+frac9
+quicksort11
+vars12
+widefinder13
+
+--------------------------------------------
+
+Scala
+
+--------------------------------------------
+
+How long did this take?  How long this take in Java?  The code does not 
+try to pit one language against another in a scientific, clean-room environent.
+
+If you don't like the performance tests, then you can see the differences
+between code A and code B. 
+
+--------------------------------------------
+
+cd src && ant && cd .. && ./java2.bat
 
 http://clj-me.blogspot.com/2008/06/widefinder-2-in-clojure-naive-port-from.html
+
+--------------------------------------------
 
 "Because immutable persistent data structures.
 Because data structures are functions.
@@ -29,6 +52,10 @@ Memory Tests to perform:
 4. Run jconsole with screenshots
 5. Run jrat profiling
 6. Run netbeans profiling
+7. Garbage collection stats
+8. Assembly decompile JIT with args
+
+-- server mode
 
 --------------------------------------------
 

@@ -12,8 +12,9 @@ i:  300
 "Elapsed time: 193.068197 msecs"
 i:  400
 "Elapsed time: 259.198553 msecs"
-i:  500
+i:  500 !!
 "Elapsed time: 330.85453 msecs"
+
 i:  600
 "Elapsed time: 406.820995 msecs"
 i:  700
@@ -22,8 +23,10 @@ i:  800
 "Elapsed time: 533.76572 msecs"
 i:  900
 "Elapsed time: 599.881714 msecs"
-i:  1000
+i:  1000 !!
 "Elapsed time: 670.842098 msecs"
+
+
 Second version of euler - 1
 i:  100
 "Elapsed time: 30.735087 msecs"
@@ -33,7 +36,7 @@ i:  300
 "Elapsed time: 87.111209 msecs"
 i:  400
 "Elapsed time: 119.379682 msecs"
-i:  500
+i:  500 !!
 "Elapsed time: 145.097625 msecs"
 i:  600
 "Elapsed time: 171.589495 msecs"
@@ -51,6 +54,9 @@ i:  1200
 "Elapsed time: 341.872834 msecs"
 (used:1M/0M [1M,63M ])
 Done
+
+-----
+
 Performing simple garbage collection cooldown
 (used:1M/0M [1M,63M ])
 (used:1M/0M [1M,63M ])
