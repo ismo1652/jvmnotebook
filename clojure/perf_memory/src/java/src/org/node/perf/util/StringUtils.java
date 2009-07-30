@@ -162,7 +162,7 @@ public class StringUtils {
         
     }
         
-    public static Map frequencies(final List list) {
+    public static final Map frequencies(final List list) {
         final Map map = new HashMap();
         // Simple Box and then unbox the count as the value for this map //
         for (Iterator it = list.iterator(); it.hasNext(); ) {
