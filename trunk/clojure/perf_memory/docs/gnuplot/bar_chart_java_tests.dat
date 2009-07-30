@@ -1,0 +1,14 @@
+JavaTest	PerformanceTime(ms)
+#####	###########	
+hello1 	27.110056         Simple hello world test, more than 10k iterations           
+build2 	1940.5321219      Build large and small set of random strings    
+string3	1673.399982       Various string operations          
+euler4 	23.101229         Euler problem number 1           
+euler5	1.5945639999999   Euler problem number 2           
+str6	436.737084        Additional string operations           
+math7	131.1656449998    Misc Math operations, including sqrt and other calls           
+coll8 	972.775771        Collection operation, simple word frequency test      
+frac9 	247.63905499998   Mandelbrot fractal          
+sort11 	62.24679          Sorting routines, mostly quick sort              
+wide13 	94.820562         Wide finder project, 10k and smaller number of lines         
+

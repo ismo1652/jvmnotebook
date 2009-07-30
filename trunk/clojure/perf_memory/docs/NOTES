@@ -5,12 +5,31 @@
 #
 ###############################################################################
 
-hello1
-build2
-frac9
-quicksort11
-vars12
-widefinder13
+http://java.sun.com/docs/hotspot/gc5.0/gc_tuning_5.html
+
+Document Layout:
+
+1. Overview and more about JVM languages?
+
+2. Performance Testing, JVM Languages
+
+3. Performance Tests
+
+http://www.javaperformancetuning.com/news/newtips087.shtml
+
+http://blog.headius.com/2009/01/my-favorite-hotspot-jvm-flags.html
+
+--------------------------------------------
+
+Must run the other tests (by Andy)
+
+--------------------------------------------
+
+hello1 - .
+build2 - 
+frac9 - X
+quicksort11 - .
+vars12 - .
 
 --------------------------------------------
 
@@ -47,11 +66,11 @@ Possibly use classpath.
 Memory Tests to perform:
  
 1. Garbage collection information with timestamps, etc, especially those with more memory
-2. Run hprof /jhat
-3. Run prof?
+2. Run hprof /jhat !! ------
+3. Run prof? !! --------
 4. Run jconsole with screenshots
-5. Run jrat profiling
-6. Run netbeans profiling
+5. Run jrat profiling !!
+6. Run netbeans profiling !!
 7. Garbage collection stats
 8. Assembly decompile JIT with args
 

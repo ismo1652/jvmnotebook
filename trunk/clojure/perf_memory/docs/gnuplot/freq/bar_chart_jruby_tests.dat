@@ -1,0 +1,7 @@
+JavaTest	PerformanceTime(ms)
+#####	###########	
+java11 	789.808104              
+jruby11 	4222.627405            
+clj11	8588.954201          
+               
+
