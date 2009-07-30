@@ -1,0 +1,116 @@
+
+100,200,300, 400, 500, 600, 700, 800, 1000,1200, 1400, 2000,2500 
+$ time ./andy_m1.bat 100 > a.p
+Elapsed time: 89.594748 msecs
+
+real    0m1.409s
+user    0m0.015s
+sys     0m0.046s
+---
+
+---
+
+---
+---
+---
+
+----
+----
+----
+----
+----
+----
+time ./andy_m1.bat 100 > a.p
+
+time ./andy_m1.bat 200 > a.p
+
+time ./andy_m1.bat 300 > a.p
+
+time ./andy_m1.bat 400 > a.p
+
+time ./andy_m1.bat 500 > a.p
+
+time ./andy_m1.bat 600 > a.p
+
+time ./andy_m1.bat 700 > a.p
+time ./andy_m1.bat 800 > a.p
+time ./andy_m1.bat 1000 > a.p
+time ./andy_m1.bat 1200 > a.p
+time ./andy_m1.bat 1400 > a.p
+time ./andy_m1.bat 2000 > a.p
+time ./andy_m1.bat 2500 > a.p
+time ./andy_m1.bat 3000 > a.p
+
+
+Elapsed time: 90.97791 msecs
+
+real    0m1.588s
+user    0m0.015s
+sys     0m0.046s
+Elapsed time: 263.893038 msecs
+
+real    0m1.675s
+user    0m0.015s
+sys     0m0.046s
+Elapsed time: 610.872097 msecs
+
+real    0m2.032s
+user    0m0.015s
+sys     0m0.031s
+Elapsed time: 982.452582 msecs
+
+real    0m2.479s
+user    0m0.031s
+sys     0m0.015s
+Elapsed time: 1495.433005 msecs
+
+real    0m2.901s
+user    0m0.015s
+sys     0m0.047s
+Elapsed time: 2091.412938 msecs
+
+real    0m3.440s
+user    0m0.015s
+sys     0m0.031s
+Elapsed time: 2843.495665 msecs
+
+real    0m4.203s
+user    0m0.031s
+sys     0m0.015s
+Elapsed time: 3650.13744 msecs
+
+real    0m5.014s
+user    0m0.015s
+sys     0m0.031s
+Elapsed time: 5680.39932 msecs
+
+real    0m7.045s
+user    0m0.031s
+sys     0m0.015s
+Elapsed time: 8208.967304 msecs
+
+real    0m9.550s
+user    0m0.015s
+sys     0m0.015s
+Elapsed time: 11126.994209 msecs
+
+real    0m12.537s
+user    0m0.015s
+sys     0m0.031s
+Elapsed time: 22588.712673 msecs
+
+real    0m23.966s
+user    0m0.015s
+sys     0m0.031s
+Elapsed time: 35210.526506 msecs
+
+real    0m36.570s
+user    0m0.015s
+sys     0m0.031s
+
+$ time ./andy_m1.bat 3000 > a.p
+Elapsed time: 50998.301209 msecs
+
+real    0m52.509s
+user    0m0.031s
+sys     0m0.031s
