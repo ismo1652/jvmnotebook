@@ -10,31 +10,22 @@ object test11_sort {
 
   // http://en.literateprograms.org/Quicksort_(Scala)
   // From scala home
-
   def sort[A <% Ordered[A]](xs: List[A]):List[A] = {
     if (xs.isEmpty || xs.tail.isEmpty) xs
-    else {
-      
-      val pivot = xs( xs.length / 2)
-      
+    else {      
+      val pivot = xs( xs.length / 2)      
       // list partition
-
       // initialize boxes
       var lows: List[A] = Nil
       var mids: List[A] = Nil
-      var highs: List[A] = Nil
-      
+      var highs: List[A] = Nil      
       for( val item <- xs) {
-
-        // classify item
-        
+        // classify item        
         if ( item == pivot) mids = item :: mids
         else if (item < pivot) lows = item :: lows
         else highs = item :: highs
       }
-
-      // return sorted list appending chunks
-      
+      // return sorted list appending chunks      
       sort(lows) ::: mids ::: sort(highs) 
     }
   }
