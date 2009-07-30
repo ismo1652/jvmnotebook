@@ -1,0 +1,14 @@
+CljTest	PerformanceTime(ms)
+#####	###########	
+hello1  145.996411    Simple hello world test, more than 10k iterations 	             
+build2  3474.550155   Build large and small set of random strings
+str3	495.028198    Various string operations           
+euler4 	341.872834    Euler problem number 1
+euler5 	116.512002    Euler problem number 2
+str6	213.379223    Additional string operations
+math7	1212.796289   Misc Math operations, including sqrt and other calls            
+coll8 	16356.185166  Collection operation, simple word frequency test
+frac9 	354.23239     Mandelbrot fractal
+sort11 	438.477163    Sorting routines, mostly quick sort
+vars12 	9542.282043   Large and small object creation
+wide13 	907.491465    Wide finder project, 10k and smaller number of lines
