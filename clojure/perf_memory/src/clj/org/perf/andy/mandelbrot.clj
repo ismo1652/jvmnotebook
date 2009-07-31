@@ -115,7 +115,7 @@
             (print (format " %02x" byte)))
         (newline))
       ;; else print in default PBM format
-      (let [ostream (BufferedOutputStream. System/out)]
+      (let [ostream (BufferedOutputStream. (java.io.PrintStream. (java.io.ByteArrayOutputStream.)))]
         (doseq [r rows]
           (. ostream write (into-array Byte/TYPE r) 0 (count r)))
         (. ostream close)))
