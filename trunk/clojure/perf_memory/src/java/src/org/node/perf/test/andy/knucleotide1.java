@@ -13,32 +13,52 @@ import java.util.*;
 import java.io.*;
 import java.util.concurrent.atomic.*;
 
+import org.node.perf.test.andy.mandelbrot1.Test1Times;
+import org.node.perf.test.util.SimpleDoTimes;
+import org.node.perf.test.util.SimpleTime;
+import org.node.perf.test.util.Times;
+import org.node.perf.util.SystemUtils;
+
 public final class knucleotide1 {
+    
+    
+    public static final class Test1Times implements Times {
+                             
+        public final void execute() {  
+            try {
+                byte source[]=readInput();
 
+                  String result[]=new String[7];
+                  AtomicInteger job=new AtomicInteger(6);
+
+                  Thread pool[]=new Thread[Runtime.getRuntime().availableProcessors()];
+                  for(int i=0;i<pool.length;i++) {
+                      pool[i]=new ProcessingThread(source, job, result);
+                      pool[i].start();
+                  }
+
+                  for(Thread t: pool) t.join();
+
+                  for(String s: result) System.out.println(s);
+             } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(-1);
+             }
+        }
+        
+    } // End of Class //
+    
+    
+    
     public static void main (String[] args) {
-      try {
-         byte source[]=readInput();
-
-           String result[]=new String[7];
-           AtomicInteger job=new AtomicInteger(6);
-
-           Thread pool[]=new Thread[Runtime.getRuntime().availableProcessors()];
-           for(int i=0;i<pool.length;i++) {
-               pool[i]=new ProcessingThread(source, job, result);
-               pool[i].start();
-           }
-
-           for(Thread t: pool) t.join();
-
-           for(String s: result) System.out.println(s);
-      } catch (Exception e) {
-         e.printStackTrace();
-         System.exit(-1);
-      }
+        new SimpleTime(new SimpleDoTimes(new Test1Times(), SystemUtils.once)).execute();
     }
 
     private static byte[] readInput() throws IOException {
-        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in, "US-ASCII"));
+        //BufferedReader reader=new BufferedReader(new InputStreamReader(System.in, "US-ASCII"));
+        
+        // I am cheating for clojure
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
 
         String s;
 
