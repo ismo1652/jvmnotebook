@@ -1,0 +1,72 @@
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.880593 ms
+Elapsed Time: 7.788209 ms
+Elapsed Time: 25.474545 ms
+Elapsed Time: 78.271558 ms
+Elapsed Time: 2881.098659 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.940772 ms
+Elapsed Time: 7.708658 ms
+Elapsed Time: 25.355708 ms
+Elapsed Time: 78.2436 ms
+Elapsed Time: 2792.390292 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.805857 ms
+Elapsed Time: 7.938598 ms
+Elapsed Time: 25.436507 ms
+Elapsed Time: 77.454399 ms
+Elapsed Time: 2681.980281 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.876962 ms
+Elapsed Time: 7.755386 ms
+Elapsed Time: 25.581166 ms
+Elapsed Time: 76.531361 ms
+Elapsed Time: 2799.063925 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.890551 ms
+Elapsed Time: 7.918898 ms
+Elapsed Time: 25.303205 ms
+Elapsed Time: 77.949932 ms
+Elapsed Time: 2731.917605 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.839063 ms
+Elapsed Time: 7.885343 ms
+Elapsed Time: 25.249003 ms
+Elapsed Time: 77.428963 ms
+Elapsed Time: 2787.81429 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.936016 ms
+Elapsed Time: 7.801912 ms
+Elapsed Time: 25.115795 ms
+Elapsed Time: 78.877654 ms
+Elapsed Time: 2692.729164 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.876033 ms
+Elapsed Time: 7.79245 ms
+Elapsed Time: 25.007649 ms
+Elapsed Time: 77.038199 ms
+Elapsed Time: 2827.331067 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.895006 ms
+Elapsed Time: 7.783419 ms
+Elapsed Time: 25.171639 ms
+Elapsed Time: 78.16426 ms
+Elapsed Time: 2727.662192 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.788147 ms
+Elapsed Time: 7.703041 ms
+Elapsed Time: 25.097674 ms
+Elapsed Time: 78.839279 ms
+Elapsed Time: 2753.392946 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.804229 ms
+Elapsed Time: 7.645193 ms
+Elapsed Time: 25.613588 ms
+Elapsed Time: 77.960477 ms
+Elapsed Time: 2758.1386 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 2.887363 ms
+Elapsed Time: 8.020134 ms
+Elapsed Time: 25.742341 ms
+Elapsed Time: 78.122557 ms
+Elapsed Time: 2703.247284 ms

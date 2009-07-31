@@ -1,0 +1,400 @@
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 8.533828 ms
+i-size 4
+Elapsed Time: 0.994189 ms
+i-size 8
+Elapsed Time: 1.354351 ms
+i-size 16
+Elapsed Time: 2.624037 ms
+i-size 32
+Elapsed Time: 4.444092 ms
+i-size 64
+Elapsed Time: 8.409447 ms
+i-size 128
+Elapsed Time: 16.109635 ms
+i-size 256
+Elapsed Time: 40.951575 ms
+i-size 512
+Elapsed Time: 20.8716 ms
+i-size 1024
+Elapsed Time: 46.15146 ms
+i-size 2048
+Elapsed Time: 18.251259 ms
+i-size 4096
+Elapsed Time: 87.511252 ms
+i-size 8192
+Elapsed Time: 61.821589 ms
+i-size 16384
+Elapsed Time: 240.677266 ms
+i-size 32768
+Elapsed Time: 292.026373 ms
+i-size 65536
+Elapsed Time: 576.682363 ms
+i-size 131072
+Elapsed Time: 1057.345267 ms
+i-size 262144
+Elapsed Time: 2011.297643 ms
+i-size 524288
+Elapsed Time: 4222.627405 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 9.467345 ms
+i-size 4
+Elapsed Time: 0.975595 ms
+i-size 8
+Elapsed Time: 1.134709 ms
+i-size 16
+Elapsed Time: 2.792101 ms
+i-size 32
+Elapsed Time: 4.322305 ms
+i-size 64
+Elapsed Time: 8.487709 ms
+i-size 128
+Elapsed Time: 16.127443 ms
+i-size 256
+Elapsed Time: 42.755273 ms
+i-size 512
+Elapsed Time: 21.596408 ms
+i-size 1024
+Elapsed Time: 49.424532 ms
+i-size 2048
+Elapsed Time: 19.270984 ms
+i-size 4096
+Elapsed Time: 89.405113 ms
+i-size 8192
+Elapsed Time: 66.595607 ms
+i-size 16384
+Elapsed Time: 244.249385 ms
+i-size 32768
+Elapsed Time: 306.915738 ms
+i-size 65536
+Elapsed Time: 607.120428 ms
+i-size 131072
+Elapsed Time: 1098.568385 ms
+i-size 262144
+Elapsed Time: 3082.796917 ms
+i-size 524288
+Elapsed Time: 6020.931386 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 8.899985 ms
+i-size 4
+Elapsed Time: 1.002847 ms
+i-size 8
+Elapsed Time: 1.134885 ms
+i-size 16
+Elapsed Time: 2.575546 ms
+i-size 32
+Elapsed Time: 4.288302 ms
+i-size 64
+Elapsed Time: 8.64822 ms
+i-size 128
+Elapsed Time: 16.123958 ms
+i-size 256
+Elapsed Time: 41.678973 ms
+i-size 512
+Elapsed Time: 21.592743 ms
+i-size 1024
+Elapsed Time: 48.386629 ms
+i-size 2048
+Elapsed Time: 18.769684 ms
+i-size 4096
+Elapsed Time: 89.328589 ms
+i-size 8192
+Elapsed Time: 64.185049 ms
+i-size 16384
+Elapsed Time: 242.018842 ms
+i-size 32768
+Elapsed Time: 303.885257 ms
+i-size 65536
+Elapsed Time: 598.595182 ms
+i-size 131072
+Elapsed Time: 1067.507252 ms
+i-size 262144
+Elapsed Time: 2037.550597 ms
+i-size 524288
+Elapsed Time: 4342.382832 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 9.138868 ms
+i-size 4
+Elapsed Time: 1.06462 ms
+i-size 8
+Elapsed Time: 1.152521 ms
+i-size 16
+Elapsed Time: 2.844374 ms
+i-size 32
+Elapsed Time: 4.39471 ms
+i-size 64
+Elapsed Time: 8.927857 ms
+i-size 128
+Elapsed Time: 16.860627 ms
+i-size 256
+Elapsed Time: 46.364207 ms
+i-size 512
+Elapsed Time: 22.802375 ms
+i-size 1024
+Elapsed Time: 48.720014 ms
+i-size 2048
+Elapsed Time: 19.705821 ms
+i-size 4096
+Elapsed Time: 92.849249 ms
+i-size 8192
+Elapsed Time: 66.188435 ms
+i-size 16384
+Elapsed Time: 254.443872 ms
+i-size 32768
+Elapsed Time: 325.186864 ms
+i-size 65536
+Elapsed Time: 629.211818 ms
+i-size 131072
+Elapsed Time: 1146.822973 ms
+i-size 262144
+Elapsed Time: 2113.688788 ms
+i-size 524288
+Elapsed Time: 4285.347577 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 9.466737 ms
+i-size 4
+Elapsed Time: 0.94781 ms
+i-size 8
+Elapsed Time: 1.12625 ms
+i-size 16
+Elapsed Time: 2.561039 ms
+i-size 32
+Elapsed Time: 4.522643 ms
+i-size 64
+Elapsed Time: 8.497851 ms
+i-size 128
+Elapsed Time: 16.650214 ms
+i-size 256
+Elapsed Time: 42.171173 ms
+i-size 512
+Elapsed Time: 21.468046 ms
+i-size 1024
+Elapsed Time: 49.026435 ms
+i-size 2048
+Elapsed Time: 18.931157 ms
+i-size 4096
+Elapsed Time: 95.135227 ms
+i-size 8192
+Elapsed Time: 70.439416 ms
+i-size 16384
+Elapsed Time: 267.062959 ms
+i-size 32768
+Elapsed Time: 329.979847 ms
+i-size 65536
+Elapsed Time: 630.424864 ms
+i-size 131072
+Elapsed Time: 1185.360547 ms
+i-size 262144
+Elapsed Time: 2307.569845 ms
+i-size 524288
+Elapsed Time: 4291.554191 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 8.747011 ms
+i-size 4
+Elapsed Time: 0.954781 ms
+i-size 8
+Elapsed Time: 1.123476 ms
+i-size 16
+Elapsed Time: 2.517051 ms
+i-size 32
+Elapsed Time: 4.483103 ms
+i-size 64
+Elapsed Time: 8.792717 ms
+i-size 128
+Elapsed Time: 16.555531 ms
+i-size 256
+Elapsed Time: 44.656191 ms
+i-size 512
+Elapsed Time: 23.072929 ms
+i-size 1024
+Elapsed Time: 47.867366 ms
+i-size 2048
+Elapsed Time: 18.273593 ms
+i-size 4096
+Elapsed Time: 91.210977 ms
+i-size 8192
+Elapsed Time: 64.99763 ms
+i-size 16384
+Elapsed Time: 245.647336 ms
+i-size 32768
+Elapsed Time: 301.365266 ms
+i-size 65536
+Elapsed Time: 603.817833 ms
+i-size 131072
+Elapsed Time: 1098.183904 ms
+i-size 262144
+Elapsed Time: 2192.740407 ms
+i-size 524288
+Elapsed Time: 4341.5695 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 9.676443 ms
+i-size 4
+Elapsed Time: 1.080898 ms
+i-size 8
+Elapsed Time: 1.25339 ms
+i-size 16
+Elapsed Time: 3.047062 ms
+i-size 32
+Elapsed Time: 4.633434 ms
+i-size 64
+Elapsed Time: 9.61097 ms
+i-size 128
+Elapsed Time: 17.582152 ms
+i-size 256
+Elapsed Time: 50.457856 ms
+i-size 512
+Elapsed Time: 22.927346 ms
+i-size 1024
+Elapsed Time: 56.008718 ms
+i-size 2048
+Elapsed Time: 22.024437 ms
+i-size 4096
+Elapsed Time: 109.386391 ms
+i-size 8192
+Elapsed Time: 72.921749 ms
+i-size 16384
+Elapsed Time: 276.921198 ms
+i-size 32768
+Elapsed Time: 319.505144 ms
+i-size 65536
+Elapsed Time: 638.223763 ms
+i-size 131072
+Elapsed Time: 1189.884269 ms
+i-size 262144
+Elapsed Time: 2807.893688 ms
+i-size 524288
+Elapsed Time: 4933.302465 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 8.895125 ms
+i-size 4
+Elapsed Time: 0.952633 ms
+i-size 8
+Elapsed Time: 1.133856 ms
+i-size 16
+Elapsed Time: 2.962985 ms
+i-size 32
+Elapsed Time: 4.394349 ms
+i-size 64
+Elapsed Time: 8.630552 ms
+i-size 128
+Elapsed Time: 16.362938 ms
+i-size 256
+Elapsed Time: 43.817807 ms
+i-size 512
+Elapsed Time: 22.301336 ms
+i-size 1024
+Elapsed Time: 48.452441 ms
+i-size 2048
+Elapsed Time: 19.00678 ms
+i-size 4096
+Elapsed Time: 90.6678 ms
+i-size 8192
+Elapsed Time: 65.458469 ms
+i-size 16384
+Elapsed Time: 249.40474 ms
+i-size 32768
+Elapsed Time: 308.896808 ms
+i-size 65536
+Elapsed Time: 639.623 ms
+i-size 131072
+Elapsed Time: 1174.020257 ms
+i-size 262144
+Elapsed Time: 2260.362428 ms
+i-size 524288
+Elapsed Time: 4338.095755 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 9.596109 ms
+i-size 4
+Elapsed Time: 1.260747 ms
+i-size 8
+Elapsed Time: 1.239996 ms
+i-size 16
+Elapsed Time: 2.852856 ms
+i-size 32
+Elapsed Time: 4.677196 ms
+i-size 64
+Elapsed Time: 9.16692 ms
+i-size 128
+Elapsed Time: 18.524316 ms
+i-size 256
+Elapsed Time: 47.880155 ms
+i-size 512
+Elapsed Time: 25.163955 ms
+i-size 1024
+Elapsed Time: 62.138387 ms
+i-size 2048
+Elapsed Time: 20.434846 ms
+i-size 4096
+Elapsed Time: 97.269557 ms
+i-size 8192
+Elapsed Time: 69.887363 ms
+i-size 16384
+Elapsed Time: 265.690138 ms
+i-size 32768
+Elapsed Time: 315.080693 ms
+i-size 65536
+Elapsed Time: 618.064313 ms
+i-size 131072
+Elapsed Time: 1115.27265 ms
+i-size 262144
+Elapsed Time: 2119.888058 ms
+i-size 524288
+Elapsed Time: 4400.78327 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Running jruby test
+i-size 2
+Elapsed Time: 8.536549 ms
+i-size 4
+Elapsed Time: 0.9689 ms
+i-size 8
+Elapsed Time: 1.130509 ms
+i-size 16
+Elapsed Time: 2.582163 ms
+i-size 32
+Elapsed Time: 4.394488 ms
+i-size 64
+Elapsed Time: 8.579812 ms
+i-size 128
+Elapsed Time: 17.079535 ms
+i-size 256
+Elapsed Time: 41.54792 ms
+i-size 512
+Elapsed Time: 21.470028 ms
+i-size 1024
+Elapsed Time: 47.391309 ms
+i-size 2048
+Elapsed Time: 18.894259 ms
+i-size 4096
+Elapsed Time: 88.25145 ms
+i-size 8192
+Elapsed Time: 63.208616 ms
+i-size 16384
+Elapsed Time: 240.325844 ms
+i-size 32768
+Elapsed Time: 295.979059 ms
+i-size 65536
+Elapsed Time: 590.039802 ms
+i-size 131072
+Elapsed Time: 1078.618979 ms
+i-size 262144
+Elapsed Time: 2007.494683 ms
+i-size 524288
+Elapsed Time: 4530.798318 ms

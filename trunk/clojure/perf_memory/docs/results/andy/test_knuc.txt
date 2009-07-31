@@ -1,0 +1,26 @@
+Java:
+
+58888   GGT
+17865   GGTA
+1893    GGTATT
+36      GGTATTTTAATT
+36      GGTATTTTAATTTATAGT
+Elapsed time: 3654.3805939999997 msecs
+
+real    0m3.855s
+user    0m0.015s
+sys     0m0.031s
+
+-------------------------
+
+
+$ time ./andy_k_c_1.bat
+"c:\projects\tools\home\projects\aaageneralproject
+ory\src\build\classes;c:\projects\tools\home\proje
+book\clojure\perf_memory\src\clj;c:\projects\tools
+cts\jvmnotebook\clojure\perf_memory\lib\clojure-1.
+Elapsed time: 105335.07657 msecs
+
+real    1m46.738s
+user    0m0.031s
+sys     0m0.031s
