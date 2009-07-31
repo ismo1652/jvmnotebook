@@ -1,0 +1,168 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Server
+List(-1802629734, -1588050349, -865638014, -499130593, -152175050, -14485911, 571793601, 978759506, 1034258559, 1511296922)
+i-size: 1
+Elapsed Time: 1.563955 ms 1
+i-size: 3
+Elapsed Time: 0.060856 ms 3
+i-size: 9
+Elapsed Time: 0.10515899999999999 ms 9
+i-size: 27
+Elapsed Time: 0.47119999999999995 ms 27
+i-size: 81
+Elapsed Time: 2.349897 ms 81
+i-size: 243
+Elapsed Time: 10.381855999999999 ms 243
+i-size: 729
+Elapsed Time: 4.287671 ms 729
+i-size: 2187
+Elapsed Time: 15.186122 ms 2187
+i-size: 6561
+Elapsed Time: 35.814862999999995 ms 6561
+i-size: 19683
+Elapsed Time: 197.236853 ms 19683
+i-size: 59049
+Elapsed Time: 602.807246 ms 59049
+i-size: 177147
+Elapsed Time: 1918.2634489999998 ms 177147
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Server
+List(-1946236251, -1855060917, 119902465, 659039213, 674891542, 975145699, 1381489900, 1739034762, 2003841968, 2036209750)
+i-size: 1
+Elapsed Time: 1.412439 ms 1
+i-size: 3
+Elapsed Time: 0.043431 ms 3
+i-size: 9
+Elapsed Time: 0.096231 ms 9
+i-size: 27
+Elapsed Time: 0.417859 ms 27
+i-size: 81
+Elapsed Time: 2.387637 ms 81
+i-size: 243
+Elapsed Time: 10.027788 ms 243
+i-size: 729
+Elapsed Time: 4.913849 ms 729
+i-size: 2187
+Elapsed Time: 15.472897 ms 2187
+i-size: 6561
+Elapsed Time: 34.795365 ms 6561
+i-size: 19683
+Elapsed Time: 200.566229 ms 19683
+i-size: 59049
+Elapsed Time: 625.742753 ms 59049
+i-size: 177147
+Elapsed Time: 2057.3916449999997 ms 177147
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Server
+List(-1840519920, -1068088384, -441496698, -267227061, -87765657, -2274704, 115248356, 204786449, 244326298, 2047626595)
+i-size: 1
+Elapsed Time: 1.43801 ms 1
+i-size: 3
+Elapsed Time: 0.044442999999999996 ms 3
+i-size: 9
+Elapsed Time: 0.12145199999999999 ms 9
+i-size: 27
+Elapsed Time: 0.410585 ms 27
+i-size: 81
+Elapsed Time: 1.996349 ms 81
+i-size: 243
+Elapsed Time: 10.723550999999999 ms 243
+i-size: 729
+Elapsed Time: 4.310994 ms 729
+i-size: 2187
+Elapsed Time: 14.282242 ms 2187
+i-size: 6561
+Elapsed Time: 36.774187 ms 6561
+i-size: 19683
+Elapsed Time: 195.76935899999998 ms 19683
+i-size: 59049
+Elapsed Time: 620.04215 ms 59049
+i-size: 177147
+Elapsed Time: 1997.0104299999998 ms 177147
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Server
+List(-1952740459, -1831556674, -1529317571, -988528481, -565279683, 85150771, 191400945, 564635071, 710006461, 1625283083)
+i-size: 1
+Elapsed Time: 1.5645719999999999 ms 1
+i-size: 3
+Elapsed Time: 0.08620799999999999 ms 3
+i-size: 9
+Elapsed Time: 0.110291 ms 9
+i-size: 27
+Elapsed Time: 0.450186 ms 27
+i-size: 81
+Elapsed Time: 2.402862 ms 81
+i-size: 243
+Elapsed Time: 10.616163 ms 243
+i-size: 729
+Elapsed Time: 4.175978 ms 729
+i-size: 2187
+Elapsed Time: 16.097658 ms 2187
+i-size: 6561
+Elapsed Time: 39.073232 ms 6561
+i-size: 19683
+Elapsed Time: 203.569303 ms 19683
+i-size: 59049
+Elapsed Time: 689.687334 ms 59049
+i-size: 177147
+Elapsed Time: 2098.564204 ms 177147
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Server
+List(-1977488976, -1319095858, -1218195571, -822168530, 381661038, 491488143, 647134432, 827974340, 935363298, 1995266761)
+i-size: 1
+Elapsed Time: 1.50596 ms 1
+i-size: 3
+Elapsed Time: 0.057593 ms 3
+i-size: 9
+Elapsed Time: 0.09204699999999999 ms 9
+i-size: 27
+Elapsed Time: 0.493384 ms 27
+i-size: 81
+Elapsed Time: 2.246775 ms 81
+i-size: 243
+Elapsed Time: 10.343029999999999 ms 243
+i-size: 729
+Elapsed Time: 4.546181 ms 729
+i-size: 2187
+Elapsed Time: 15.338707999999999 ms 2187
+i-size: 6561
+Elapsed Time: 38.287163 ms 6561
+i-size: 19683
+Elapsed Time: 194.45126299999998 ms 19683
+i-size: 59049
+Elapsed Time: 710.3513899999999 ms 59049
+i-size: 177147
+Elapsed Time: 1999.5563379999999 ms 177147
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Server
+List(-2063345681, -1523587504, -414719445, 110442817, 526471389, 789174457, 1109447032, 1534184474, 1663753091, 2089630098)
+i-size: 1
+Elapsed Time: 1.580188 ms 1
+i-size: 3
+Elapsed Time: 0.049179999999999995 ms 3
+i-size: 9
+Elapsed Time: 0.10613299999999999 ms 9
+i-size: 27
+Elapsed Time: 0.538661 ms 27
+i-size: 81
+Elapsed Time: 2.1524229999999998 ms 81
+i-size: 243
+Elapsed Time: 9.915761 ms 243
+i-size: 729
+Elapsed Time: 4.7113949999999996 ms 729
+i-size: 2187
+Elapsed Time: 14.504944 ms 2187
+i-size: 6561
+Elapsed Time: 35.054397 ms 6561
+i-size: 19683
+Elapsed Time: 187.35326799999999 ms 19683
+i-size: 59049
+Elapsed Time: 618.941012 ms 59049
+i-size: 177147
+Elapsed Time: 2076.942755 ms 177147
+Done

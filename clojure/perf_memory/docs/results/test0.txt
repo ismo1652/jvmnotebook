@@ -1,0 +1,258 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 488.743065 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 500.314112 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+
+"Elapsed time: 145.996411 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+
+[INFO Var Test]
+"Elapsed time: 1089.629015 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 904.681511 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 905.414258 msecs"
+(used:1M/0M [1M,63M ])
+Done
+
+
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 487.247229 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 502.449897 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 146.874461 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1081.452012 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 915.427195 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 926.731174 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 485.682768 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 499.631093 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.644488 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1081.79854 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 900.494299 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 903.311754 msecs"
+(used:1M/0M [1M,63M ])
+Done
+
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 486.159731 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 498.71919 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.24666 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1076.133699 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 899.616325 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 903.819479 msecs"
+(used:1M/0M [1M,63M ])
+Done
+
+4:
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 487.206982 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 500.823852 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 146.816665 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1085.238601 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 902.080425 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 906.152987 msecs"
+(used:1M/0M [1M,63M ])
+Done
+
+5:
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 485.951171 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 498.750393 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.573764 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1079.778107 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 902.14271 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 905.779666 msecs"
+(used:1M/0M [1M,63M ])
+Done
+
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 485.944283 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 499.391319 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.472942 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1080.816951 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 901.097896 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 906.799002 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 487.799329 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 499.625225 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.741753 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1086.022089 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 921.879955 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 909.946418 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 488.378379 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 503.23888 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.373087 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1086.584219 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 901.092381 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 907.471511 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 488.892096 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 499.535636 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 146.307786 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1082.127667 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 902.35674 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 900.955705 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 487.584689 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 500.403866 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 149.08929 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1083.867525 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 902.732244 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 902.792628 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 488.519129 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 502.077557 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 146.504519 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1065.994761 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 905.448629 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 902.107627 msecs"
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/26/2009
+[1] START APP --  (used:1M/0M [1M,63M ])
+"Elapsed time: 486.405686 msecs"
+[2] ^^^^ AFTER FIRST SLOW CASE --  (used:1M/0M [1M,63M ])
+"Elapsed time: 499.32985 msecs"
+[3] ^^^^ AFTER SLOW CASE WITH ANON :  (used:1M/0M [1M,63M ])
+"Elapsed time: 145.447352 msecs"
+[4] ^^^^ AFTER FAST CASE :  (used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 1083.349545 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 904.963175 msecs"
+(used:1M/0M [1M,63M ])
+[INFO Var Test]
+"Elapsed time: 915.27355 msecs"
+(used:1M/0M [1M,63M ])
+Done
