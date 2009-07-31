@@ -13,9 +13,11 @@ CALL general.bat
 
 REM #### Note, only clojure, the 'clj src' path and swt will be used during these tests
 
+set ADD1=-Xrunhprof:file=dump.hprof,format=b
+
 echo %CP%
 
-%_RUNJAVA% %JAVA_OPTS% -classpath %CP% clojure.lang.Script %INSTALL_DIR%\src\clj\org\perf\test9_fractal.clj -- %1 %2 %3 %4 %5 %6 
+%_RUNJAVA% %JAVA_OPTS% %ADD1% -classpath %CP% clojure.lang.Script %INSTALL_DIR%\src\clj\org\perf\test9_fractal.clj -- %1 %2 %3 %4 %5 %6 
 
 :end
 exit /b

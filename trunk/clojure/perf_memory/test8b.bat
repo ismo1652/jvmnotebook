@@ -13,11 +13,9 @@ CALL general.bat
 
 REM #### Note, only clojure, the 'clj src' path and swt will be used during these tests
 
-set ADD2=-verbosegc -verbosegc -verbosegc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xmx32m
-
 echo %CP%
 
-%_RUNJAVA% %JAVA_OPTS% -classpath %CP% %ADD2% org.node.perf.test.Test1BaselineHello %1 %2 %3 %4 %5 %6 
+%_RUNJAVA% %JAVA_OPTS% -classpath %CP% clojure.lang.Script %INSTALL_DIR%\src\clj\org\perf\test8_collection2.clj -- %1 %2 %3 %4 %5 %6 
 
 :end
 exit /b

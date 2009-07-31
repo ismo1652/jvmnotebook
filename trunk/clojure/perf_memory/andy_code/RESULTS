@@ -1,0 +1,79 @@
+Official results from some of the shootout source:
+See:
+http://github.com/jafingerhut/clojure-benchmarks/
+------------------------------------------------
+Times are real / user / sys on my iMac
+------------------------------------------------
+        |  sbcl  |  perl  |   ghc  |  java  |   clj
+------------------------------------------------
+           noT      noT            |  noT
+long test on my iMac:
+rcomp   |   8.3  |  11.9  |        |   8.5  | no implementation yet
+        |   4.8  |   7.9  |        |   3.6  |
+        |   2.1  |   2.3  |        |   1.4  |
+
+long test on my iMac:
+mand-   | wrong  | out of |  32.7  |  28.6  | 340.4
+elbrot  | output | mem    |  59.3  |  54.4  | 350.5
+        |        | (?)    |   0.8  |   0.4  |   4.7
+
+           noT      noT            |    T
+long test on my iMac:
+k-nuc-  | 190.9  | 306.0  |  90.5  |  52.4  | 1677.6 (27m 57.6s)
+leotide | 187.9  | 302.7  | 130.8  |  89.6  | 2245.1 (37m 25.1s)
+        |   2.4  |   1.9  |   4.6  |   1.8  |   24.2 (    24.2s)
+
+Disappointing result: Replacing dna-char-to-code-val with a macro did
+not speed things up, and may have slowed them down:
+                                            | 1800.0 (30m  0.0s)
+                                            | 2317.0 (38m 37.0s)
+                                            |   30.6 (    30.6s)
+------------------------------------------------
+
+k-nucleotide long test on benchmark shootout machine:
+        | 164.9  | 249.8  |  52.0  |  20.6  |
+        | 164.9  | 246.7  | 112.5  |  58.8  |
+        |     ?  |     ?  |     ?  |     ?  |
+
+------------------------------------------------
+
+k-nucleotide medium test on my iMac:
+        |   8.6  |  12.7  |   3.9  |   3.9  |   64.2 / 69.6 / 69.1 / 67.1
+        |   7.9  |  12.5  |   5.4  |   5.7  |   98.4 / 92.9 / 93.1 / 88.1
+        |   0.6  |   0.1  |   0.3  |   0.2  |    1.5 /  1.6 /  1.6 /  1.7
+
+k-nucleotide medium test, all clj, modified-pmap with specified number
+of parallel threads, on my iMac:
+        |   1    |   2    |   3    |   4    |   5    |   6    |
+        |  74.9  |  70.7  |  77.2  |  76.8  |  82.5  |  77.8  |
+        | 125.9  | 122.1  | 134.6  | 134.0  | 143.4  | 134.0  |
+        |   2.5  |   2.8  |   2.8  |   2.3  |   3.1  |   2.3  |
+
+------------------------------------------------
+
+------------------------------------------------
+Hardware and software used
+
+iMac with Intel Core 2 Duo, 2.16 GHz, 2 GB RAM, Mac OS X 10.5.7
+
+% java -version
+java version "1.6.0_13"
+Java(TM) SE Runtime Environment (build 1.6.0_13-b03-211)
+Java HotSpot(TM) 64-Bit Server VM (build 11.3-b02-83, mixed mode)
+
+% javac -version
+javac 1.6.0_13
+
+user> (clojure-version)
+"1.1.0-alpha-SNAPSHOT"
+
+End of Andy's Configuration:
+------------------------------------------------
+
+The following benchmark information were provided
+by Andy from his website.   Visit:
+
+http://github.com/jafingerhut/clojure-benchmarks/
+
+Some additional google clojure threads:
+http://groups.google.com/group/clojure/browse_thread/thread/e4299911f4ae8167

@@ -16,8 +16,8 @@ REM #### Note, only clojure, the 'clj src' path and swt will be used during thes
 set ADD2=-verbosegc -verbosegc -verbosegc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xmx32m
 
 echo %CP%
+%_RUNJAVA% %JAVA_OPTS% -classpath %CP% org.node.perf.test.andy.knucleotide1 < input\andy\knuc\medium-input.txt %1 %2 %3 %4 %5 %6 
 
-%_RUNJAVA% %JAVA_OPTS% -classpath %CP% %ADD2% org.node.perf.test.Test1BaselineHello %1 %2 %3 %4 %5 %6 
 
 :end
 exit /b
