@@ -1,0 +1,392 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.820562 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 95.151459 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 95.56127599999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.989311 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.891336 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.62497499999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.735252 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.904501 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.656317 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.73481199999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.87872999999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 94.837002 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 95.143309 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+0: 562/GET /ongoing/When/200x/2006/09/29/Dynamic-IDE =89
+1: 562/GET /ongoing/When/200x/2006/07/28/Open-Data =20
+2: 562/GET /ongoing/When/200x/2003/07/25/NotGaming =13
+3: 562/GET /ongoing/When/200x/2003/10/16/Debbie =8
+4: 562/GET /ongoing/When/200x/2006/01/31/Data-Protection =8
+5: 562/GET /ongoing/When/200x/2003/09/18/NXML =8
+6: 562/GET /ongoing/When/200x/2003/06/23/SamsPie =7
+7: 562/GET /ongoing/When/200x/2006/01/08/No-New-XML-Languages =6
+8: 562/GET /ongoing/When/200x/2005/11/03/Cars-and-Office-Suites =6
+9: 562/GET /ongoing/When/200x/2005/07/27/Atomic-RSS =6
+Elapsed time: 95.640373 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
