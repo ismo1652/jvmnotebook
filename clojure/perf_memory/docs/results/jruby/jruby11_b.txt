@@ -1,0 +1,36 @@
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 34.280873 ms
+Elapsed Time: 29.902143 ms
+Elapsed Time: 48.309651 ms
+Elapsed Time: 79.067771 ms
+Elapsed Time: 198.676897 ms
+Elapsed Time: 508.299182 ms
+Elapsed Time: 1653.037413 ms
+Elapsed Time: 5068.168914 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 34.726747 ms
+Elapsed Time: 27.976418 ms
+Elapsed Time: 49.094441 ms
+Elapsed Time: 75.88387 ms
+Elapsed Time: 204.578902 ms
+Elapsed Time: 503.499567 ms
+Elapsed Time: 1572.123385 ms
+Elapsed Time: 5132.834724 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 34.878822 ms
+Elapsed Time: 28.036631 ms
+Elapsed Time: 49.382387 ms
+Elapsed Time: 73.96176 ms
+Elapsed Time: 192.740115 ms
+Elapsed Time: 536.530459 ms
+Elapsed Time: 1601.184949 ms
+Elapsed Time: 4833.628106 ms
+c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory
+Elapsed Time: 34.911536 ms
+Elapsed Time: 29.005538 ms
+Elapsed Time: 48.243344 ms
+Elapsed Time: 76.585945 ms
+Elapsed Time: 197.37735 ms
+Elapsed Time: 445.897613 ms
+Elapsed Time: 1703.471906 ms
+Elapsed Time: 4832.567099 ms
