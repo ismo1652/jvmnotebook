@@ -1,0 +1,336 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: goc | Value: 1
+{Map} Key: xtm | Value: 1
+{Map} Key: cuq | Value: 1
+{Map} Key: mjx | Value: 1
+{Map} Key: wuy | Value: 1
+{Map} Key: anu | Value: 1
+{Map} Key: rjc | Value: 1
+{Map} Key: bqm | Value: 1
+...
+14.631606999999999 ms
+4.828342999999999 ms
+i: 10
+Elapsed time: 9.803628 msecs
+i: 100
+Elapsed time: 97.562451 msecs
+i: 1000
+Elapsed time: 972.775771 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: qex | Value: 1
+{Map} Key: uxo | Value: 1
+{Map} Key: ymn | Value: 1
+{Map} Key: iat | Value: 1
+{Map} Key: uxa | Value: 1
+{Map} Key: wuy | Value: 1
+{Map} Key: pfq | Value: 1
+{Map} Key: nsy | Value: 1
+...
+14.440180999999999 ms
+4.766356 ms
+i: 10
+Elapsed time: 10.002497 msecs
+i: 100
+Elapsed time: 97.391224 msecs
+i: 1000
+Elapsed time: 967.9061839999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: glt | Value: 1
+{Map} Key: zhb | Value: 1
+{Map} Key: nqk | Value: 1
+{Map} Key: mww | Value: 1
+{Map} Key: eqc | Value: 1
+{Map} Key: bir | Value: 1
+{Map} Key: zan | Value: 1
+{Map} Key: shp | Value: 1
+...
+14.517037 ms
+4.786557999999999 ms
+i: 10
+Elapsed time: 9.885142 msecs
+i: 100
+Elapsed time: 98.44717299999999 msecs
+i: 1000
+Elapsed time: 969.225659 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: ikh | Value: 1
+{Map} Key: lvf | Value: 1
+{Map} Key: glt | Value: 1
+{Map} Key: zhb | Value: 1
+{Map} Key: uxo | Value: 1
+{Map} Key: emq | Value: 1
+{Map} Key: hgx | Value: 1
+{Map} Key: dkl | Value: 1
+...
+14.417342999999999 ms
+4.866899 ms
+i: 10
+Elapsed time: 9.723531 msecs
+i: 100
+Elapsed time: 96.733768 msecs
+i: 1000
+Elapsed time: 1062.877368 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: tvs | Value: 1
+{Map} Key: xdx | Value: 1
+{Map} Key: uxo | Value: 1
+{Map} Key: sus | Value: 1
+{Map} Key: anu | Value: 1
+{Map} Key: lmx | Value: 1
+{Map} Key: qjw | Value: 1
+{Map} Key: yhz | Value: 1
+...
+14.832291999999999 ms
+4.98707 ms
+i: 10
+Elapsed time: 11.137545999999999 msecs
+i: 100
+Elapsed time: 107.99894499999999 msecs
+i: 1000
+Elapsed time: 1003.081387 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: zhb | Value: 1
+{Map} Key: zfw | Value: 1
+{Map} Key: zlk | Value: 1
+{Map} Key: bzc | Value: 1
+{Map} Key: weu | Value: 1
+{Map} Key: bak | Value: 1
+{Map} Key: qtw | Value: 1
+{Map} Key: arp | Value: 1
+...
+14.55466 ms
+4.818384 ms
+i: 10
+Elapsed time: 9.904328999999999 msecs
+i: 100
+Elapsed time: 97.818804 msecs
+i: 1000
+Elapsed time: 979.5272669999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: ouo | Value: 1
+{Map} Key: tst | Value: 1
+{Map} Key: aga | Value: 1
+{Map} Key: mww | Value: 1
+{Map} Key: bir | Value: 1
+{Map} Key: syb | Value: 1
+{Map} Key: dsj | Value: 1
+{Map} Key: kcg | Value: 1
+...
+16.224629999999998 ms
+5.372196 ms
+i: 10
+Elapsed time: 10.430667 msecs
+i: 100
+Elapsed time: 107.97546399999999 msecs
+i: 1000
+Elapsed time: 1027.561324 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: lvf | Value: 1
+{Map} Key: vwj | Value: 1
+{Map} Key: lyc | Value: 1
+{Map} Key: lhu | Value: 1
+{Map} Key: emq | Value: 1
+{Map} Key: szi | Value: 1
+{Map} Key: dem | Value: 1
+{Map} Key: dgt | Value: 1
+...
+14.576348 ms
+4.85464 ms
+i: 10
+Elapsed time: 9.743133 msecs
+i: 100
+Elapsed time: 99.44152199999999 msecs
+i: 1000
+Elapsed time: 1047.892 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: uhe | Value: 1
+{Map} Key: tst | Value: 1
+{Map} Key: ikh | Value: 1
+{Map} Key: uqs | Value: 1
+{Map} Key: bir | Value: 1
+{Map} Key: iok | Value: 1
+{Map} Key: whz | Value: 1
+{Map} Key: aba | Value: 1
+...
+14.41852 ms
+4.758268999999999 ms
+i: 10
+Elapsed time: 9.990666 msecs
+i: 100
+Elapsed time: 98.552942 msecs
+i: 1000
+Elapsed time: 986.958275 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: sol | Value: 1
+{Map} Key: bez | Value: 1
+{Map} Key: ccl | Value: 1
+{Map} Key: bcl | Value: 1
+{Map} Key: wgg | Value: 1
+{Map} Key: oud | Value: 1
+{Map} Key: ihb | Value: 1
+{Map} Key: dtx | Value: 2
+...
+14.354096 ms
+4.819907 ms
+i: 10
+Elapsed time: 9.93381 msecs
+i: 100
+Elapsed time: 102.27766 msecs
+i: 1000
+Elapsed time: 977.099036 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: axb | Value: 1
+{Map} Key: bez | Value: 1
+{Map} Key: ueb | Value: 1
+{Map} Key: ibl | Value: 2
+{Map} Key: lyc | Value: 1
+{Map} Key: goc | Value: 1
+{Map} Key: ccl | Value: 1
+{Map} Key: yeg | Value: 1
+...
+14.321679 ms
+4.782622 ms
+i: 10
+Elapsed time: 10.68108 msecs
+i: 100
+Elapsed time: 97.37815599999999 msecs
+i: 1000
+Elapsed time: 966.36222 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: ffc | Value: 1
+{Map} Key: jvw | Value: 1
+{Map} Key: ymn | Value: 1
+{Map} Key: ycf | Value: 1
+{Map} Key: snm | Value: 1
+{Map} Key: reb | Value: 1
+{Map} Key: rjc | Value: 1
+{Map} Key: voy | Value: 1
+...
+14.321738999999999 ms
+4.763946 ms
+i: 10
+Elapsed time: 9.871112 msecs
+i: 100
+Elapsed time: 97.20584699999999 msecs
+i: 1000
+Elapsed time: 971.962859 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: uhe | Value: 1
+{Map} Key: ykm | Value: 1
+{Map} Key: let | Value: 1
+{Map} Key: czb | Value: 1
+{Map} Key: mkp | Value: 1
+{Map} Key: oyq | Value: 1
+{Map} Key: bak | Value: 1
+{Map} Key: nxh | Value: 1
+...
+14.395012 ms
+4.785934999999999 ms
+i: 10
+Elapsed time: 9.711433999999999 msecs
+i: 100
+Elapsed time: 98.47787199999999 msecs
+i: 1000
+Elapsed time: 966.3908809999999 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/27/2009
+[1] START APP -- (used:0M/1M [1M,63M ])
+{Map} Key: alx | Value: 1
+{Map} Key: shp | Value: 1
+{Map} Key: ycf | Value: 1
+{Map} Key: hig | Value: 1
+{Map} Key: ghn | Value: 1
+{Map} Key: wfq | Value: 1
+{Map} Key: gtt | Value: 1
+{Map} Key: dhn | Value: 1
+...
+14.353475999999999 ms
+4.791404 ms
+i: 10
+Elapsed time: 9.797070999999999 msecs
+i: 100
+Elapsed time: 97.167141 msecs
+i: 1000
+Elapsed time: 1057.110972 msecs
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+(used:1M/0M [1M,63M ])
+Done

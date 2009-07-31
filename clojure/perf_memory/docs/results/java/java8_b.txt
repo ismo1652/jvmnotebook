@@ -1,0 +1,560 @@
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: dcj | Value: 1
+{Map} Key: xtm | Value: 1
+{Map} Key: cuq | Value: 1
+{Map} Key: jfe | Value: 1
+{Map} Key: whz | Value: 1
+{Map} Key: wyo | Value: 1
+{Map} Key: lmx | Value: 1
+{Map} Key: wpq | Value: 1
+...
+15.002294 ms
+4.897282 ms
+i-size: 2
+Elapsed time: 0.01586 msecs
+i-size: 4
+Elapsed time: 0.005872 msecs
+i-size: 8
+Elapsed time: 0.00912 msecs
+i-size: 16
+Elapsed time: 0.017019 msecs
+i-size: 32
+Elapsed time: 0.032552 msecs
+i-size: 64
+Elapsed time: 0.062058999999999996 msecs
+i-size: 128
+Elapsed time: 0.116967 msecs
+i-size: 256
+Elapsed time: 0.237976 msecs
+i-size: 512
+Elapsed time: 1.5902859999999999 msecs
+i-size: 1024
+Elapsed time: 0.9212699999999999 msecs
+i-size: 2048
+Elapsed time: 2.683398 msecs
+i-size: 4096
+Elapsed time: 4.373876 msecs
+i-size: 8192
+Elapsed time: 20.876815 msecs
+i-size: 16384
+Elapsed time: 35.388853 msecs
+i-size: 32768
+Elapsed time: 65.87150199999999 msecs
+i-size: 65536
+Elapsed time: 113.299438 msecs
+i-size: 131072
+Elapsed time: 210.519869 msecs
+i-size: 262144
+Elapsed time: 405.912663 msecs
+i-size: 524288
+Elapsed time: 789.808104 msecs
+(used:27M/3M [30M,63M ])
+(used:27M/3M [30M,63M ])
+(used:27M/3M [30M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: axb | Value: 1
+{Map} Key: xdx | Value: 1
+{Map} Key: dcj | Value: 1
+{Map} Key: ixj | Value: 1
+{Map} Key: pfq | Value: 1
+{Map} Key: rlz | Value: 1
+{Map} Key: qjw | Value: 1
+{Map} Key: shl | Value: 1
+...
+14.425982999999999 ms
+4.866121 ms
+i-size: 2
+Elapsed time: 0.012669 msecs
+i-size: 4
+Elapsed time: 0.005797 msecs
+i-size: 8
+Elapsed time: 0.009222 msecs
+i-size: 16
+Elapsed time: 0.017251 msecs
+i-size: 32
+Elapsed time: 0.047611999999999995 msecs
+i-size: 64
+Elapsed time: 0.061197999999999995 msecs
+i-size: 128
+Elapsed time: 0.11835499999999999 msecs
+i-size: 256
+Elapsed time: 0.23193799999999998 msecs
+i-size: 512
+Elapsed time: 1.5416699999999999 msecs
+i-size: 1024
+Elapsed time: 1.017764 msecs
+i-size: 2048
+Elapsed time: 2.646624 msecs
+i-size: 4096
+Elapsed time: 4.34408 msecs
+i-size: 8192
+Elapsed time: 20.185302999999998 msecs
+i-size: 16384
+Elapsed time: 34.268544999999996 msecs
+i-size: 32768
+Elapsed time: 59.928307 msecs
+i-size: 65536
+Elapsed time: 115.44030599999999 msecs
+i-size: 131072
+Elapsed time: 216.423993 msecs
+i-size: 262144
+Elapsed time: 419.22405399999997 msecs
+i-size: 524288
+Elapsed time: 963.305073 msecs
+(used:27M/7M [35M,63M ])
+(used:27M/7M [35M,63M ])
+(used:27M/7M [35M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: tvs | Value: 1
+{Map} Key: ypq | Value: 1
+{Map} Key: ejm | Value: 1
+{Map} Key: kte | Value: 1
+{Map} Key: dtx | Value: 1
+{Map} Key: qaf | Value: 1
+{Map} Key: qkj | Value: 1
+{Map} Key: zdd | Value: 1
+...
+18.777183 ms
+5.0476469999999996 ms
+i-size: 2
+Elapsed time: 0.016883 msecs
+i-size: 4
+Elapsed time: 0.005846 msecs
+i-size: 8
+Elapsed time: 0.008981 msecs
+i-size: 16
+Elapsed time: 0.016898 msecs
+i-size: 32
+Elapsed time: 0.053960999999999995 msecs
+i-size: 64
+Elapsed time: 0.061945999999999994 msecs
+i-size: 128
+Elapsed time: 0.126922 msecs
+i-size: 256
+Elapsed time: 0.23607 msecs
+i-size: 512
+Elapsed time: 1.633074 msecs
+i-size: 1024
+Elapsed time: 1.280514 msecs
+i-size: 2048
+Elapsed time: 3.2042319999999997 msecs
+i-size: 4096
+Elapsed time: 6.452125 msecs
+i-size: 8192
+Elapsed time: 25.154163 msecs
+i-size: 16384
+Elapsed time: 42.628558 msecs
+i-size: 32768
+Elapsed time: 71.360922 msecs
+i-size: 65536
+Elapsed time: 142.64659699999999 msecs
+i-size: 131072
+Elapsed time: 329.466742 msecs
+i-size: 262144
+Elapsed time: 645.639013 msecs
+i-size: 524288
+Elapsed time: 1044.21102 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: aga | Value: 1
+{Map} Key: bne | Value: 1
+{Map} Key: gdl | Value: 1
+{Map} Key: ycf | Value: 1
+{Map} Key: iji | Value: 1
+{Map} Key: nsj | Value: 1
+{Map} Key: qhl | Value: 1
+{Map} Key: nxh | Value: 1
+...
+19.625593 ms
+6.353822 ms
+i-size: 2
+Elapsed time: 0.017013999999999998 msecs
+i-size: 4
+Elapsed time: 0.005827 msecs
+i-size: 8
+Elapsed time: 0.009394 msecs
+i-size: 16
+Elapsed time: 0.017068 msecs
+i-size: 32
+Elapsed time: 0.071807 msecs
+i-size: 64
+Elapsed time: 0.07375 msecs
+i-size: 128
+Elapsed time: 0.13997099999999998 msecs
+i-size: 256
+Elapsed time: 0.286005 msecs
+i-size: 512
+Elapsed time: 2.205276 msecs
+i-size: 1024
+Elapsed time: 1.234658 msecs
+i-size: 2048
+Elapsed time: 3.1554699999999998 msecs
+i-size: 4096
+Elapsed time: 5.466322 msecs
+i-size: 8192
+Elapsed time: 21.83044 msecs
+i-size: 16384
+Elapsed time: 39.889282 msecs
+i-size: 32768
+Elapsed time: 77.37366899999999 msecs
+i-size: 65536
+Elapsed time: 166.791409 msecs
+i-size: 131072
+Elapsed time: 233.730445 msecs
+i-size: 262144
+Elapsed time: 417.47700899999995 msecs
+i-size: 524288
+Elapsed time: 940.010145 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: xzh | Value: 1
+{Map} Key: ykm | Value: 1
+{Map} Key: ymn | Value: 1
+{Map} Key: fke | Value: 1
+{Map} Key: qmi | Value: 1
+{Map} Key: ejm | Value: 1
+{Map} Key: jfe | Value: 1
+{Map} Key: hgx | Value: 1
+...
+16.182028 ms
+5.465129999999999 ms
+i-size: 2
+Elapsed time: 0.017105 msecs
+i-size: 4
+Elapsed time: 0.005660999999999999 msecs
+i-size: 8
+Elapsed time: 0.009112 msecs
+i-size: 16
+Elapsed time: 0.017547999999999998 msecs
+i-size: 32
+Elapsed time: 0.034886 msecs
+i-size: 64
+Elapsed time: 0.059843999999999994 msecs
+i-size: 128
+Elapsed time: 0.117546 msecs
+i-size: 256
+Elapsed time: 0.233476 msecs
+i-size: 512
+Elapsed time: 1.6565919999999998 msecs
+i-size: 1024
+Elapsed time: 0.9253969999999999 msecs
+i-size: 2048
+Elapsed time: 2.916118 msecs
+i-size: 4096
+Elapsed time: 4.504843 msecs
+i-size: 8192
+Elapsed time: 21.831794 msecs
+i-size: 16384
+Elapsed time: 36.330031 msecs
+i-size: 32768
+Elapsed time: 64.158821 msecs
+i-size: 65536
+Elapsed time: 178.80258 msecs
+i-size: 131072
+Elapsed time: 247.875081 msecs
+i-size: 262144
+Elapsed time: 491.304013 msecs
+i-size: 524288
+Elapsed time: 989.354115 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: cwt | Value: 1
+{Map} Key: ybe | Value: 1
+{Map} Key: fbp | Value: 1
+{Map} Key: yeg | Value: 1
+{Map} Key: zlk | Value: 1
+{Map} Key: ypq | Value: 1
+{Map} Key: qbo | Value: 1
+{Map} Key: iji | Value: 1
+...
+17.952963999999998 ms
+5.290056 ms
+i-size: 2
+Elapsed time: 0.016571 msecs
+i-size: 4
+Elapsed time: 0.005763 msecs
+i-size: 8
+Elapsed time: 0.009289 msecs
+i-size: 16
+Elapsed time: 0.017165 msecs
+i-size: 32
+Elapsed time: 0.033134 msecs
+i-size: 64
+Elapsed time: 0.06057 msecs
+i-size: 128
+Elapsed time: 0.120836 msecs
+i-size: 256
+Elapsed time: 0.236566 msecs
+i-size: 512
+Elapsed time: 1.947282 msecs
+i-size: 1024
+Elapsed time: 1.2049889999999999 msecs
+i-size: 2048
+Elapsed time: 3.300515 msecs
+i-size: 4096
+Elapsed time: 5.432064 msecs
+i-size: 8192
+Elapsed time: 23.997622999999997 msecs
+i-size: 16384
+Elapsed time: 42.428818 msecs
+i-size: 32768
+Elapsed time: 74.24842 msecs
+i-size: 65536
+Elapsed time: 146.388656 msecs
+i-size: 131072
+Elapsed time: 275.060978 msecs
+i-size: 262144
+Elapsed time: 555.404945 msecs
+i-size: 524288
+Elapsed time: 1001.1170989999999 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: tst | Value: 1
+{Map} Key: nmq | Value: 1
+{Map} Key: ueb | Value: 1
+{Map} Key: let | Value: 1
+{Map} Key: wuy | Value: 1
+{Map} Key: czb | Value: 1
+{Map} Key: iuh | Value: 1
+{Map} Key: ljd | Value: 1
+...
+14.847351 ms
+4.823543 ms
+i-size: 2
+Elapsed time: 0.012296 msecs
+i-size: 4
+Elapsed time: 0.0056879999999999995 msecs
+i-size: 8
+Elapsed time: 0.008976999999999999 msecs
+i-size: 16
+Elapsed time: 0.016936 msecs
+i-size: 32
+Elapsed time: 0.032221 msecs
+i-size: 64
+Elapsed time: 0.062006 msecs
+i-size: 128
+Elapsed time: 0.118396 msecs
+i-size: 256
+Elapsed time: 0.23198 msecs
+i-size: 512
+Elapsed time: 1.561801 msecs
+i-size: 1024
+Elapsed time: 0.9086489999999999 msecs
+i-size: 2048
+Elapsed time: 2.9818309999999997 msecs
+i-size: 4096
+Elapsed time: 4.384383 msecs
+i-size: 8192
+Elapsed time: 20.154849 msecs
+i-size: 16384
+Elapsed time: 34.458621 msecs
+i-size: 32768
+Elapsed time: 63.199374999999996 msecs
+i-size: 65536
+Elapsed time: 116.354395 msecs
+i-size: 131072
+Elapsed time: 248.96341099999998 msecs
+i-size: 262144
+Elapsed time: 432.492146 msecs
+i-size: 524288
+Elapsed time: 799.823397 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: ybe | Value: 1
+{Map} Key: fyz | Value: 1
+{Map} Key: wgg | Value: 1
+{Map} Key: oud | Value: 1
+{Map} Key: shp | Value: 1
+{Map} Key: ajo | Value: 1
+{Map} Key: qbo | Value: 1
+{Map} Key: hhf | Value: 1
+...
+14.536921 ms
+4.874448 ms
+i-size: 2
+Elapsed time: 0.012029999999999999 msecs
+i-size: 4
+Elapsed time: 0.005718 msecs
+i-size: 8
+Elapsed time: 0.009015 msecs
+i-size: 16
+Elapsed time: 0.017360999999999998 msecs
+i-size: 32
+Elapsed time: 0.032804 msecs
+i-size: 64
+Elapsed time: 0.06125 msecs
+i-size: 128
+Elapsed time: 0.117979 msecs
+i-size: 256
+Elapsed time: 0.234898 msecs
+i-size: 512
+Elapsed time: 1.5560079999999998 msecs
+i-size: 1024
+Elapsed time: 0.9203859999999999 msecs
+i-size: 2048
+Elapsed time: 2.659951 msecs
+i-size: 4096
+Elapsed time: 4.364305 msecs
+i-size: 8192
+Elapsed time: 20.295534 msecs
+i-size: 16384
+Elapsed time: 34.257678 msecs
+i-size: 32768
+Elapsed time: 62.266358 msecs
+i-size: 65536
+Elapsed time: 113.128953 msecs
+i-size: 131072
+Elapsed time: 213.643636 msecs
+i-size: 262144
+Elapsed time: 411.11106 msecs
+i-size: 524288
+Elapsed time: 811.2379 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: axb | Value: 1
+{Map} Key: lvf | Value: 1
+{Map} Key: naa | Value: 1
+{Map} Key: xhv | Value: 1
+{Map} Key: xtm | Value: 1
+{Map} Key: yeg | Value: 1
+{Map} Key: fdw | Value: 1
+{Map} Key: cuq | Value: 1
+...
+14.520665 ms
+5.057278999999999 ms
+i-size: 2
+Elapsed time: 0.012105 msecs
+i-size: 4
+Elapsed time: 0.005796 msecs
+i-size: 8
+Elapsed time: 0.009064 msecs
+i-size: 16
+Elapsed time: 0.017048 msecs
+i-size: 32
+Elapsed time: 0.032390999999999996 msecs
+i-size: 64
+Elapsed time: 0.063111 msecs
+i-size: 128
+Elapsed time: 0.11739999999999999 msecs
+i-size: 256
+Elapsed time: 0.231754 msecs
+i-size: 512
+Elapsed time: 1.609086 msecs
+i-size: 1024
+Elapsed time: 0.9176679999999999 msecs
+i-size: 2048
+Elapsed time: 2.6618749999999998 msecs
+i-size: 4096
+Elapsed time: 4.348279 msecs
+i-size: 8192
+Elapsed time: 19.867607 msecs
+i-size: 16384
+Elapsed time: 34.423997 msecs
+i-size: 32768
+Elapsed time: 60.200191999999994 msecs
+i-size: 65536
+Elapsed time: 112.79338899999999 msecs
+i-size: 131072
+Elapsed time: 215.304014 msecs
+i-size: 262144
+Elapsed time: 416.059307 msecs
+i-size: 524288
+Elapsed time: 943.018302 msecs
+(used:27M/7M [35M,63M ])
+(used:27M/7M [35M,63M ])
+(used:27M/7M [35M,63M ])
+Done
+"c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\build\classes;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\src\clj;c:\projects\tools\home\projects\aaageneralprojects\jvmnotebook\clojure\perf_memory\lib\clojure-1.0.0.jar"
+Running Test 07/28/2009
+[1] START APP -- [coll2](used:0M/1M [1M,63M ])
+{Map} Key: bez | Value: 1
+{Map} Key: ikh | Value: 1
+{Map} Key: zxs | Value: 1
+{Map} Key: aga | Value: 1
+{Map} Key: gqw | Value: 1
+{Map} Key: stk | Value: 1
+{Map} Key: eqc | Value: 1
+{Map} Key: snm | Value: 1
+...
+15.613691 ms
+5.058244 ms
+i-size: 2
+Elapsed time: 0.016593 msecs
+i-size: 4
+Elapsed time: 0.005961999999999999 msecs
+i-size: 8
+Elapsed time: 0.00915 msecs
+i-size: 16
+Elapsed time: 0.017391 msecs
+i-size: 32
+Elapsed time: 0.033957999999999995 msecs
+i-size: 64
+Elapsed time: 0.06163 msecs
+i-size: 128
+Elapsed time: 0.11986899999999999 msecs
+i-size: 256
+Elapsed time: 0.23252799999999998 msecs
+i-size: 512
+Elapsed time: 1.6462649999999999 msecs
+i-size: 1024
+Elapsed time: 0.9172319999999999 msecs
+i-size: 2048
+Elapsed time: 2.871991 msecs
+i-size: 4096
+Elapsed time: 4.485609999999999 msecs
+i-size: 8192
+Elapsed time: 22.62245 msecs
+i-size: 16384
+Elapsed time: 36.67084 msecs
+i-size: 32768
+Elapsed time: 83.562912 msecs
+i-size: 65536
+Elapsed time: 151.299498 msecs
+i-size: 131072
+Elapsed time: 276.412694 msecs
+i-size: 262144
+Elapsed time: 500.680868 msecs
+i-size: 524288
+Elapsed time: 817.279082 msecs
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+(used:27M/6M [33M,63M ])
+Done
