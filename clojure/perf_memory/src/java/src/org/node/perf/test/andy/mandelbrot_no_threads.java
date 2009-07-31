@@ -4,35 +4,59 @@
  */
 package org.node.perf.test.andy;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+
+import org.node.perf.test.util.SimpleDoTimes;
+import org.node.perf.test.util.SimpleTime;
+import org.node.perf.test.util.Times;
+import org.node.perf.util.SystemUtils;
 
 class mandelbrot_no_threads {
 
     public static void main(String[] args) throws Exception {
-        new Mandelbrot(Integer.parseInt(args[0])).compute();
+        new SimpleTime(new SimpleDoTimes(new Test1Times(Integer.parseInt(args[0])), SystemUtils.once)).execute();
     }
-
+    
+    
+    public static final class Test1Times implements Times {
+        
+        final int size;
+        final boolean printFormatPbm = true;
+        
+        public Test1Times(int s) {
+            this.size = s;
+        }
+        
+        public final void execute() { 
+            try {
+                new Mandelbrot(this.size).compute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+    }
+    
     public static class Mandelbrot {
         private static final int BUFFER_SIZE = 8192;
 
         public Mandelbrot(int size) {
             this.size = size;
             fac = 2.0 / size;
-            out = System.out;
+            //out = System.out;
+            out = new PrintStream(new ByteArrayOutputStream());
             shift = size % 8 == 0 ? 0 : (8 - size % 8);
         }
 
         final int size;
-
         final PrintStream out;
 
         final byte[] buf = new byte[BUFFER_SIZE];
 
         int bufLen = 0;
-
         final double fac;
-
         final int shift;
 
         public void compute() throws IOException {

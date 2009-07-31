@@ -38,7 +38,7 @@ public class SimpleTime implements Time {
         final long endT = System.nanoTime();
         final long diff = endT - startT;
         final double diffd = (diff * 1e-6);
-        System.out.println("Elapsed time: " + diffd + " msecs");   
+        System.err.println("Elapsed time: " + diffd + " msecs");   
     }
     private final void executeBoth() {
         final long startT = System.nanoTime();
@@ -51,7 +51,8 @@ public class SimpleTime implements Time {
         final long diff = endT - startT;
         final long diff2 = endT2 - startT2;
         final double diffd = (diff * 1e-6);
-        System.out.println("Elapsed time: " + diffd + " msecs ;" + " diff2: " +  diff2 + " msecs");   
+        System.err.println("Elapsed time: " + diffd + " msecs ;" + " diff2: " +  diff2 + " msecs");   
+        //System.err.println("Elapsed time: " + diffd + " msecs ;" + " diff2: " +  diff2 + " msecs");
     }
     
     
