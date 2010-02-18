@@ -1,0 +1,24 @@
+#summary Java OpenGL and the Google AI Tron Challenge.
+#labels Featured,google,tron
+
+==The Challenge==
+
+Google and the University of Waterloo a Computer Science Club (Waterloo, Ontario, Canada) have created an AI challenge.  This is more algorithm AI and not Turing Strong AI.  "The objective is to create an AI to play the classic game Tron, Surround, Snafu, Snake, etc."  You must submit your entry by Feb 26th, 2010.  Imagine Tron, there are two opposing players on a N x N (say 50x50) grid and the goal is to trap the other player.  The players can move north, south, east, west in the adjacent squares but into a wall or the other player's previously occupied squares.  I thought I would try my hand at the challenge.  I was actually quite pleased with their handling on the contest.  There are normally about 600+ active bots in the challenge.  The website provides great stats on how your bot is doing.  There is a graph with wins and losses and a javascript application that can replay any game.  I really didn't want to talk about my particular entry, but I wanted to show you how I tested my bot with Java's OpenGL (jogl) library.  The default google challenge starter pack comes with some crude console based game output.  I needed something more visually appealing for my testing.  I created a small testing environment in Java.  I was able to test my particular bot but the bot and the OpenGL initialization and rendering are embedded with the bot.  If I have more time, I hope to separate a running bots from the OpenGL rendering.  It would be nice for the 3D window to bind to a socket connection and wait for input from several bot clients and render the game that way.
+
+==OpenGL and jogl (Java Binding for the OpenGL API)==
+
+There is one benefit when working with Java, you can interact with a number of different mature libraries.  Even though, you normally think of writing OpenGL games or graphics programs with the C++ programming language.  You can just as easily use OpenGL with Java.  OpenGL is a framework and API for writing 2D and 3D graphics.  Most programming languages have a similar interface to OpenGL including initialization, rendering vertices and displaying the content.  OpenGL provides a lot of the legwork for rendering fast through the 3D graphics pipeline on your machine, the core OpenGL libraries do not provide a framework for developing complex games or demos.  OpenGL is as low-level a library as say the Socket API is for writing web applications.  Despite your fears about 3D or 2D graphics, OpenGL has always remained fairly simple for getting starting.  Like a lot of other graphics frameworks, OpenGL requires a set of initialization calls and then subsequent double buffering display routines.  In Java, a couple more calls are made to create a GLCanvas object and then attaching the Canvas to a Java Swing JFrame or other Swing widget.
+
+To get started, visit the jogl website and download the jogl libraries.  I am using jogl version 1.1.0.  I needed to ensure that jogl.jar, gluegen-rt.jar gluegen-rt.dll, jogl_awt.dll, jogl_cg.dll, jogl.dll were in my runtime classpath.  For Eclipse, I also needed to add the jogl directory to the java.library.path setting.
+
+-Djava.library.path=${workspace_loc:pinobot}/lib/jogl
+
+Once the libraries are included, you can start with developing your Swing JFrame/main application.
+
+==My Bot==
+
+I am using kind of a mishmash of broken algorithms.  Basically, use my post for finding out visualizing my bot.  I would go elsewhere for a good algorithm for beating the google challenge.  My bot is hovering around 290 / 600.  It was something I created over a couple of hours.  I started out with the random, select a valid direction.  Then I went to favoring an order of directions.  It seems that the best algorithm is a combination of a working flood-fill pattern, a min-max strategy in close combat and possibly a good attack strategy in an open environment.  I used a simple min-max strategy that found good paths with open squares.  My score/evaluation was based on 1 point for the the number of open squares for a particular move.  Here is a more robust set of strategies on the Waterloo forum:
+
+"The evaluation function is simple. Partition the board into squares 
+OUR bot can reach first and squares THEIR bot can reach first. 
+I think of this as a Voronoi partition of the board.   The score is simply count(OUR squares) - count(THEIR squares)."
