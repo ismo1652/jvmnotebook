@@ -1,4 +1,4 @@
-#summary Java OpenGL and the Google AI Tron Challenge.
+#summary Java OpenGL and the Google AI Tron Bot Challenge.
 #labels Featured,google,tron
 
 http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/real_gl_tron_image.png
