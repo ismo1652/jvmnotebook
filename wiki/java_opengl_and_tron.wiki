@@ -7,6 +7,8 @@ http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/real_gl
 
 Google and the University of Waterloo a Computer Science Club (Waterloo, Ontario, Canada) have created an AI challenge.  This is more algorithm AI and not Turing Strong AI.  "The objective is to create an AI to play the classic game Tron, Surround, Snafu, Snake, etc."  You must submit your entry by Feb 26th, 2010.  Imagine Tron, there are two opposing players on a N x N (say 50x50) grid and the goal is to trap the other player.  The players can move north, south, east, west in the adjacent squares but into a wall or the other player's previously occupied squares.  I thought I would try my hand at the challenge.  I was actually quite pleased with their handling on the contest.  There are normally about 600+ active bots in the challenge.  The website provides great stats on how your bot is doing.  There is a graph with wins and losses and a javascript application that can replay any game.  I really didn't want to talk about my particular entry, but I wanted to show you how I tested my bot with Java's OpenGL (jogl) library.  The default google challenge starter pack comes with some crude console based game output.  I needed something more visually appealing for my testing.  I created a small testing environment in Java.  I was able to test my particular bot but the bot and the OpenGL initialization and rendering are embedded with the bot.  If I have more time, I hope to separate a running bots from the OpenGL rendering.  It would be nice for the 3D window to bind to a socket connection and wait for input from several bot clients and render the game that way.
 
+http://csclub.uwaterloo.ca/contest/index.php
+
 http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/my_tron_bot_version_0.png
 
 ==OpenGL and jogl (Java Binding for the OpenGL API)==
@@ -17,8 +19,9 @@ http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screens
 
 To get started, visit the jogl website and download the jogl libraries.  I am using jogl version 1.1.0.  I needed to ensure that jogl.jar, gluegen-rt.jar gluegen-rt.dll, jogl_awt.dll, jogl_cg.dll, jogl.dll were in my runtime classpath.  For Eclipse, I also needed to add the jogl directory to the java.library.path setting.
 
+{{{
 -Djava.library.path=${workspace_loc:pinobot}/lib/jogl
-
+}}}
 Once the libraries are included, you can start with developing your Swing JFrame/main application.
 
 http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screenshot_2d_tron.png
@@ -32,4 +35,6 @@ I am using kind of a mishmash of broken algorithms.  Basically, use my post for 
 "The evaluation function is simple. Partition the board into squares 
 OUR bot can reach first and squares THEIR bot can reach first. 
 I think of this as a Voronoi partition of the board.   The score is simply count(OUR squares) - count(THEIR squares)."
+
+http://csclub.uwaterloo.ca/contest/forums/viewtopic.php?f=8&t=190
 
