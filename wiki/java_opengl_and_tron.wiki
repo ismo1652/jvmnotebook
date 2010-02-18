@@ -28,6 +28,38 @@ http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screens
 
 http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screenshot_init_for_opengl.png
 
+==Jogl Hello World==
+
+This is the simplest Java OpenGL application you can create:
+{{{
+package org.berlin.pino.test.functional.jogl;
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.media.opengl.GLCanvas;
+
+public class Basic {
+    public static void main(String[] args) {
+        
+        Frame frame = new Frame("Hello World!");
+        GLCanvas canvas = new GLCanvas();        
+        frame.add(canvas);
+        frame.setSize(300, 300);
+        frame.setLocation(400, 400);
+        frame.setBackground(Color.white);
+        frame.addWindowListener(new WindowAdapter() {           
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }            
+        });
+        frame.setVisible(true);
+    }    
+} // End of the class //
+
+}}}
+
 ==My Bot==
 
 I am using kind of a mishmash of broken algorithms.  Basically, use my post for finding out visualizing my bot.  I would go elsewhere for a good algorithm for beating the google challenge.  My bot is hovering around 290 / 600.  It was something I created over a couple of hours.  I started out with the random, select a valid direction.  Then I went to favoring an order of directions.  It seems that the best algorithm is a combination of a working flood-fill pattern, a min-max strategy in close combat and possibly a good attack strategy in an open environment.  I used a simple min-max strategy that found good paths with open squares.  My score/evaluation was based on 1 point for the the number of open squares for a particular move.  Here is a more robust set of strategies on the Waterloo forum:
@@ -37,4 +69,3 @@ OUR bot can reach first and squares THEIR bot can reach first.
 I think of this as a Voronoi partition of the board.   The score is simply count(OUR squares) - count(THEIR squares)."
 
 http://csclub.uwaterloo.ca/contest/forums/viewtopic.php?f=8&t=190
-
