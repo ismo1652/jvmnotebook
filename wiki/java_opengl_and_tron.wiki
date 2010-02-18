@@ -19,6 +19,8 @@ To get started, visit the jogl website and download the jogl libraries.  I am us
 
 Once the libraries are included, you can start with developing your Swing JFrame/main application.
 
+http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screenshot_2d_tron.png
+
 http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screenshot_init_for_opengl.png
 
 ==My Bot==
