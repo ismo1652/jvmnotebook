@@ -60,6 +60,117 @@ public class Basic {
 
 }}}
 
+==Java Open Nehe Game Dev Example, Rendering a Box==
+
+{{{
+package org.berlin.pino.test.jogl.box;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GLAutoDrawable;
+import javax.media.opengl.GLCanvas;
+import javax.media.opengl.GLEventListener;
+import javax.media.opengl.glu.GLU;
+
+public class GLBox implements GLEventListener, 
+               MouseListener, MouseMotionListener {
+
+    private final GLU glu = new GLU();
+    private float rtri  = 0.0f;
+    private float rquad = 0.0f;
+    
+    public static class Builder {
+        
+        public GLCanvas buildCanvas() {
+
+            GLCanvas canvas = new GLCanvas();
+            canvas.addGLEventListener(new GLBox());
+            canvas.setSize(100, 60);
+            return canvas;
+        }
+        
+    } // End of the Class //
+
+    public GL renderGLScene(final GLAutoDrawable drawable) {
+        
+        final float shiftXPos = 1.2f;
+        final GL gl = drawable.getGL();
+        gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT); // Clear and depth buffer bit
+        gl.glLoadIdentity(); // Reset The View
+        gl.glTranslatef(-4.0f + shiftXPos, 0.0f, -7.0f);
+        gl.glRotatef(rtri, 0.0f, 1.0f, 1.0f); 
+        
+        gl.glBegin(GL.GL_QUADS); // Draw A Quad        
+        gl.glColor3f(0.0f, 1.0f, 0.0f);
+        gl.glVertex3f(1.0f, 1.0f, -1.0f);   // Top Right Of The Quad (Top)
+        gl.glVertex3f(-1.0f, 1.0f, -1.0f);  // Top Left Of The Quad (Top)
+        gl.glVertex3f(-1.0f, 1.0f, 1.0f);   // Bottom Left Of The Quad (Top)
+        gl.glVertex3f(1.0f, 1.0f, 1.0f);    // Bottom Right Of The Quad (Top)
+        
+	...
+	...
+        gl.glEnd(); // Done Drawing The Quad
+
+        return gl;
+
+    }
+       
+    public void display(final GLAutoDrawable drawable) {
+                
+        final GL gl = this.renderGLScene(drawable);               
+        gl.glFlush();
+    }
+    
+    public void displayChanged(final GLAutoDrawable drawable, boolean modeChanged, boolean deviceChanged) {
+        
+    }
+    
+    public void init(final GLAutoDrawable drawable) {
+        
+        final GL gl = drawable.getGL();
+        System.err.println("INIT GL IS: " + gl.getClass().getName());
+        System.err.println("Chosen GLCapabilities: " + drawable.getChosenGLCapabilities());
+
+        gl.setSwapInterval(1);
+        
+        gl.glShadeModel(GL.GL_SMOOTH);                            // Enables Smooth Color Shading
+        gl.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);               // This Will Clear The Background Color 
+        gl.glClearDepth(1.0);                                  // Enables Clearing Of The Depth Buffer
+        gl.glEnable(GL.GL_DEPTH_TEST);                            // Enables Depth Testing
+        gl.glDepthFunc(GL.GL_LEQUAL);                             // The Type Of Depth Test To Do
+        gl.glHint(GL.GL_PERSPECTIVE_CORRECTION_HINT, GL.GL_NICEST);  // Really Nice Perspective Calculations
+    }
+
+    public void reshape(final GLAutoDrawable drawable, int x, int y, int width, int height) {
+
+        final GL gl = drawable.getGL();
+        System.err.println("GL_VENDOR: "   + gl.glGetString(GL.GL_VENDOR));
+        System.err.println("GL_RENDERER: " + gl.glGetString(GL.GL_RENDERER));
+        System.err.println("GL_VERSION: "  + gl.glGetString(GL.GL_VERSION));
+
+        if (height <= 0) {
+            height = 1;
+        }
+        final float h = (float) width / (float) height;
+        
+        gl.glViewport(0, 0, width, height);  // Reset The Current Viewport And Perspective Transformation
+        gl.glMatrixMode(GL.GL_PROJECTION);   // Select The Projection Matrix
+        gl.glLoadIdentity();                 // Reset The Projection Matrix
+        glu.gluPerspective(45.0f, h, 0.1f, 100.0f); // Calculate The Aspect Ratio Of The Window
+        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glLoadIdentity();
+    }
+    
+    ...
+    ... Click event methods 
+    ...
+    
+} // End of the Class //
+}}}
+
 ==My Bot==
 
 I am using kind of a mishmash of broken algorithms.  Basically, use my post for finding out visualizing my bot.  I would go elsewhere for a good algorithm for beating the google challenge.  My bot is hovering around 290 / 600.  It was something I created over a couple of hours.  I started out with the random, select a valid direction.  Then I went to favoring an order of directions.  It seems that the best algorithm is a combination of a working flood-fill pattern, a min-max strategy in close combat and possibly a good attack strategy in an open environment.  I used a simple min-max strategy that found good paths with open squares.  My score/evaluation was based on 1 point for the the number of open squares for a particular move.  Here is a more robust set of strategies on the Waterloo forum:
