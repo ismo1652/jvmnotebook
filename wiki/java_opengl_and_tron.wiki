@@ -62,6 +62,8 @@ public class Basic {
 
 ==Java Open Nehe Game Dev Example, Rendering a Box==
 
+http://ainotebook.googlecode.com/svn/trunk/ainotebook/pinobot/docs/media/screenshot_text_area_boxes.png
+
 {{{
 package org.berlin.pino.test.jogl.box;
 
