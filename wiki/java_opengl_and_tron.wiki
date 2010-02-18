@@ -238,4 +238,12 @@ Basic Favor Order Algorithm:
 
 http://jvmnotebook.googlecode.com/files/simple_tron_opengl.tar.gz
 
+{{{
+// Packages and Code of Interest:
+package org.berlin.tron.gl (GLGridApp)
+package org.berlin.tron.gl.game (GL3DGridBoard)
+}}}
+
+
+
 Note: I did include the source for the bot.  By the time, you figure out how to get it deployed and usable for the Google challenge, you probably would have found it better to have created your own.
