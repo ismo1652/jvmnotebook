@@ -180,3 +180,56 @@ OUR bot can reach first and squares THEIR bot can reach first.
 I think of this as a Voronoi partition of the board.   The score is simply count(OUR squares) - count(THEIR squares)."
 
 http://csclub.uwaterloo.ca/contest/forums/viewtopic.php?f=8&t=190
+
+Basic Favor Order Algorithm:
+{{{
+@Override
+    public void makeLogicMove() {
+        this.printThoughts();
+        this.printMessages();
+        
+        // If dead, don't make a move //
+        if (this.isDead()) {
+            return;
+        }         
+        if (this.getVerbose()) {
+            System.err.println("Making logic move for aibotscorer - " + this.getMoves().size());
+        }                       
+        final Move lastMove = this.getLastMoveNull();
+        if (lastMove == null) {
+            this.addMessages("-3000-AI: using default move, last move null");
+            // Revert back to the default move
+            super.makeLogicMove();
+            return;
+        }
+                           
+        final Move north = lastMove.decy();
+        final Move south = lastMove.incy();
+        final Move east  = lastMove.incx();
+        final Move west  = lastMove.decx();
+        
+        final Stack<Move> stack = (Stack<Move>) this.getMoves().getMoves();
+        final boolean nb = validateMove(stack, north);
+        final boolean sb = validateMove(stack, south);
+        final boolean eb = validateMove(stack, east);
+        final boolean wb = validateMove(stack, west);
+        if (wb) {
+            this.makeMove(west);
+            return;
+        }
+        if (nb) {
+            this.makeMove(north);
+            return;
+        }        
+        if (eb) {
+            this.makeMove(east);
+            return;
+        }                        
+        if (sb) {
+            this.makeMove(south);
+            return;
+        }        
+        this.makeMove(this.dumbRandomMove());
+        return;        
+    }       
+}}}
