@@ -20,6 +20,10 @@ import java.text.AttributedString
 import java.awt.event.KeyListener
 import java.awt.event.ActionEvent
 import java.awt.event.KeyEvent
+import java.awt.EventQueue
+
+import java.util.TimerTask
+import java.util.Timer
 
 import org.json._
 import org.berlin.net._
@@ -28,8 +32,10 @@ import org.berlin.net._
 class View2DPanel extends JPanel with KeyListener {
 	
 	var inc = 0
+	var panelLoaded = 0 
 	var text = "Not Connected"
 	var lastUrlName = ""
+    var hasDisplayData = 0		
 		
 	var attribString = new AttributedString(text)
 	attribString.addAttribute(TextAttribute.FOREGROUND, Color.blue, 0, text.length())
@@ -39,9 +45,11 @@ class View2DPanel extends JPanel with KeyListener {
 	setBackground(Color.white)
 	addKeyListener(this)
 	setFocusable(true)	
-	
-    var hasDisplayData = 0
-    
+		
+	val timer = new Timer()
+	val updateTask = new SwingTimerTask() 
+	timer.schedule(updateTask, 0, 300);
+	      
     def connect() : String = {
 		
 		val settings = new ConnectSettingsBean("http://www.reddit.com/r/politics/.json?count=" + inc + "&after=" + lastUrlName)
@@ -76,6 +84,7 @@ class View2DPanel extends JPanel with KeyListener {
 		val g2d = g.asInstanceOf[Graphics2D]
 		g2d.clearRect(0, 0, getWidth(), getHeight())
 				
+		panelLoaded = 1
 		val attribCharIterator = attribString.getIterator()
 		val frc = new FontRenderContext(null, false, false)
 		val lbm = new LineBreakMeasurer(attribCharIterator, frc)				
@@ -94,14 +103,13 @@ class View2DPanel extends JPanel with KeyListener {
 		} // End of the While //
 		
 		if (hasDisplayData == 1) {
-			g2d.drawString("Making Connection...", 4, 12)
+			g2d.drawString("...", 4, 12)
 			
 		}
 		
 	}
 	
-	def connectWithDisplay() = {
-		hasDisplayData = 1				
+	def connectWithDisplay() = {				
 		text = connect()
 		attribString = new AttributedString(text)
 		attribString.addAttribute(TextAttribute.FOREGROUND, Color.blue, 0, text.length())
@@ -113,8 +121,7 @@ class View2DPanel extends JPanel with KeyListener {
 		println("Typed -- " + hasDisplayData)
 		val c = e.getKeyChar()
 		c match {
-			case 'c' => { connectWithDisplay }
-			case 'd' => { hasDisplayData = 0 ; repaint() }			
+			case 'c' => { connectWithDisplay }					
 			case 'n' => { inc = inc + 50 ; connectWithDisplay }
 			case _   => { } 
 		} // End of match 
@@ -123,5 +130,30 @@ class View2DPanel extends JPanel with KeyListener {
     override def keyPressed(e:KeyEvent) { }
         
     override def keyReleased(e:KeyEvent) { }
+    
+    class SwingTimerTask extends java.util.TimerTask {
+    	
+    	def doRun() {
+    		    		
+    		if (panelLoaded == 0) {
+    			return
+    		}    		
+    		if (hasDisplayData == 0) {
+    			hasDisplayData = 1
+    			repaint()
+    		} else {
+    			hasDisplayData = 0
+    			repaint()
+    		} // End of if - else //    		    
+    	}
+    	def run() {
+    		if (!EventQueue.isDispatchThread()) {
+    			EventQueue.invokeLater(this)
+    		} else {
+    			doRun()
+    		}
+    	}
+    } // End of the class //
+    
 	
 } // End of the Class //
