@@ -7,13 +7,14 @@ import java.awt.Color
 object ViewApp {
 	
 	def main(args : Array[String]) : Unit = {
-			             
+			    
+		
         val frame = new JFrame("Reddit View")
         val panel2d = new View2DPanel
         
         frame.setBackground(Color.white);
         frame.add(panel2d)
-        frame.setLocation(300, 300)  
+        frame.setLocation(100, 100)  
         frame.pack()
         frame.setResizable(true)
         
