@@ -6,6 +6,8 @@ import java.awt.Graphics2D
 import java.awt.Dimension
 import java.awt.geom.Ellipse2D
 import java.awt.Color
+import java.awt.geom._
+import java.awt.BasicStroke
 
 import java.awt.Dimension
 import java.awt.Font
@@ -78,6 +80,19 @@ class View2DPanel extends JPanel with KeyListener {
 		
 	}
     
+    def renderTicker(g2d:Graphics2D) = {
+    	
+    	g2d.setColor(Color.red)    	
+    	val rect = new Rectangle2D.Double(10, 14, 20, 16)
+    	g2d.draw(rect)         
+    	g2d.fill(rect)    	
+    	
+    }
+    
+    /**
+     * Render the graphics2d display.  This method only gets
+     * invoked when the display changes, it is not double buffered.
+     */
 	override def paintComponent(g:Graphics) = {
 		
 		super.paintComponent(g)
@@ -103,12 +118,16 @@ class View2DPanel extends JPanel with KeyListener {
 		} // End of the While //
 		
 		if (hasDisplayData == 1) {
-			g2d.drawString("...", 4, 12)
-			
+			g2d.drawString("...", 4, 10)
+			renderTicker(g2d)
 		}
 		
 	}
 	
+	/**
+	 * Connect to the reddit/json site and 
+	 * set the text on the graphics 2d display.
+	 */
 	def connectWithDisplay() = {				
 		text = connect()
 		attribString = new AttributedString(text)
@@ -117,6 +136,9 @@ class View2DPanel extends JPanel with KeyListener {
 		repaint()
 	}
 	
+	/**
+	 * Event handler method when the key is typed.
+	 */
     override def keyTyped(e:KeyEvent) {
 		println("Typed -- " + hasDisplayData)
 		val c = e.getKeyChar()
@@ -131,6 +153,10 @@ class View2DPanel extends JPanel with KeyListener {
         
     override def keyReleased(e:KeyEvent) { }
     
+    /**
+     * Simple timer task, update the display
+     * with the display data flag.
+     */
     class SwingTimerTask extends java.util.TimerTask {
     	
     	def doRun() {
