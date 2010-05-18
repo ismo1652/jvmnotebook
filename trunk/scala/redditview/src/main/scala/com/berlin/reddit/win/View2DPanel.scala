@@ -18,6 +18,7 @@ import java.awt.font.TextLayout
 
 import java.text.AttributedCharacterIterator
 import java.text.AttributedString
+import java.text.CharacterIterator
 
 import java.awt.event.KeyListener
 import java.awt.event.ActionEvent
@@ -33,17 +34,25 @@ import org.berlin.net._
 
 class View2DPanel extends JPanel with KeyListener {
 	
+	val screenWidth = 1024
+	val screenHeight = 840
+	val textWidthArea = 840
+	
+	val delimLine = System.getProperty("line.separator").toCharArray()
+	
 	var inc = 0
 	var panelLoaded = 0 
 	var text = "Not Connected"
 	var lastUrlName = ""
     var hasDisplayData = 0		
 		
+    var fontSize = 12
+    
 	var attribString = new AttributedString(text)
 	attribString.addAttribute(TextAttribute.FOREGROUND, Color.blue, 0, text.length())
-    attribString.addAttribute(TextAttribute.FONT, new Font("arial", Font.PLAIN, 11), 0, text.length())
+    attribString.addAttribute(TextAttribute.FONT, new Font("arial", Font.PLAIN, fontSize), 0, text.length())
 	
-	setPreferredSize(new Dimension(800, 600))	
+	setPreferredSize(new Dimension(screenWidth, screenHeight))	
 	setBackground(Color.white)
 	addKeyListener(this)
 	setFocusable(true)	
@@ -51,11 +60,44 @@ class View2DPanel extends JPanel with KeyListener {
 	val timer = new Timer()
 	val updateTask = new SwingTimerTask() 
 	timer.schedule(updateTask, 0, 300);
-	      
+	
+	/////////////////////////////////////////////////////////////////
+	
+	/**
+	 * Helper utility, return locations where newline is present
+	 * for display on the graphics2d panel.
+	 *
+	 * @param aci
+	 * @return
+	 */
+	def getLineDelimiterLocations(aci:AttributedCharacterIterator) : Array[Int] = {
+		
+		val lineDelimiterList = new java.util.ArrayList[Int]()
+		var c = aci.first()
+		while (c != CharacterIterator.DONE) {
+			if (c == delimLine(0)) {
+				lineDelimiterList.add(aci.getIndex());
+			}
+			c = aci.next()
+		} // End of the While //
+		
+		lineDelimiterList.add(aci.getEndIndex() - 1)		
+		val lineDelimiterLocations = new Array[Int](lineDelimiterList.size())
+		var i = 0
+		while (i < lineDelimiterList.size) {
+			lineDelimiterLocations(i) = lineDelimiterList.get(i)
+			i = i + 1
+		}
+    	lineDelimiterLocations
+	}
+	
     def connect() : String = {
 		
 		val settings = new ConnectSettingsBean("http://www.reddit.com/r/politics/.json?count=" + inc + "&after=" + lastUrlName)
-        val connection = new HttpConnect(settings, null)
+				
+		val proxySettings = new SystemSettingsBean(false, "", -1);
+        val connection = new HttpConnect(settings, proxySettings);
+        connection.buildConnectProperties
 		System.getProperties().put("http.agent", SystemSettingsBean.USER_AGENT)		
         connection.connect(connection.buildURL())
 
@@ -70,14 +112,15 @@ class View2DPanel extends JPanel with KeyListener {
 			val oj = arr.getJSONObject(i)
 			val j2 = oj.getJSONObject("data")
 			lastUrlName = j2.getString("name")
+			
+			resBuf.append("-- ")
 			resBuf.append(j2.getString("title"))
 			resBuf.append("(" + j2.getString("name") + ")")
 			resBuf.append("[" + j2.getString("domain") + "]")
-			resBuf.append("                                          |       ")
+			resBuf.append(System.getProperty("line.separator")+ "..."+System.getProperty("line.separator"))
 		}
 		
-		resBuf.toString
-		
+		resBuf.toString	
 	}
     
     def renderTicker(g2d:Graphics2D) = {
@@ -106,15 +149,21 @@ class View2DPanel extends JPanel with KeyListener {
 		
 		var x = 10
 		var y = 20.0.asInstanceOf[Float]
-		val w = 600
+		val w = textWidthArea
 		val wrappingWidth = w - 15
 		
-		while (lbm.getPosition() < text.length()) {
+		val lineDelimiterLocations = getLineDelimiterLocations(attribCharIterator)
+		var currentParagraph = 0
+		while (lbm.getPosition < text.length()) {
+			 
+			val layout = lbm.nextLayout(wrappingWidth, lineDelimiterLocations(currentParagraph)+1, false)
+			if (lbm.getPosition == lineDelimiterLocations(currentParagraph)+1) {
+				currentParagraph = currentParagraph + 1
+			}
 			
-			val layout = lbm.nextLayout(wrappingWidth)
 			y = y + layout.getAscent()
 			layout.draw(g2d, x, y)
-			y = y + layout.getDescent() + layout.getLeading()
+			y = y + layout.getDescent() + layout.getLeading()			
 		} // End of the While //
 		
 		if (hasDisplayData == 1) {
@@ -132,7 +181,7 @@ class View2DPanel extends JPanel with KeyListener {
 		text = connect()
 		attribString = new AttributedString(text)
 		attribString.addAttribute(TextAttribute.FOREGROUND, Color.blue, 0, text.length())
-		attribString.addAttribute(TextAttribute.FONT, new Font("arial", Font.PLAIN, 11), 0, text.length())						
+		attribString.addAttribute(TextAttribute.FONT, new Font("arial", Font.PLAIN, fontSize), 0, text.length())						
 		repaint()
 	}
 	
@@ -145,6 +194,8 @@ class View2DPanel extends JPanel with KeyListener {
 		c match {
 			case 'c' => { connectWithDisplay }					
 			case 'n' => { inc = inc + 50 ; connectWithDisplay }
+			case 'q' => { fontSize = fontSize + 1 ; connectWithDisplay }
+			case 'a' => { fontSize = fontSize - 1 ; connectWithDisplay }
 			case _   => { } 
 		} // End of match 
     }
