@@ -64,6 +64,14 @@ public class SystemSettingsBean {
         this.proxyPort = port;       
     }
     
+    public SystemSettingsBean(final boolean enable, final String host, final int port) {
+        
+        this.httpAgent = USER_AGENT;
+        this.proxySet = enable;        
+        this.proxyHost = host;
+        this.proxyPort = port;       
+    }
+    
     public String toString() {
         return "SystemSettingsBean: proxy=" + this.proxySet + " host=" + this.proxyHost + " port="+ this.proxyPort; 
     }
