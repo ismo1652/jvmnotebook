@@ -1,3 +1,19 @@
+
+* Panel on the right, number of requests and average request time.
+
+===========
+
+Possible use of browser:
+
+
+ 1) ICEBrowser from ICESoft implements a reasonably functional browser. I haven't used recent versions; older versions had trouble with some CSS. That might not affect you, depending on your application.
+http://www.icesoft.com/products/icebrowser.html
+
+ 2) JRex is a Swing wrapper for Mozilla's rendering engine. It was recently ported to OS X. It can be difficult to get up + running, but it provides a cross-platform browser component. Since it uses the same engine as Firefox, it will render more pages correctly than most (all?) Java-only solutions.
+http://jrex.mozdev.org/
+
+=========
+
 Example Response from Reddit:
 
 http://www.reddit.com/.json
