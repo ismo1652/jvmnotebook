@@ -14,7 +14,7 @@ object ViewApp {
         
         frame.setBackground(Color.white);
         frame.add(panel2d)
-        frame.setLocation(100, 100)  
+        frame.setLocation(40, 40)  
         frame.pack()
         frame.setResizable(true)
         
