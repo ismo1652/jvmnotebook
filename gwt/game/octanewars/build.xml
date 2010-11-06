@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+<!-- Copyright (c) 2009 -->
+<!-- Code generated Ant Script -->
+<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+<project name="Build File" default="compile" basedir=".">
+    
+    <property file="build.properties" /> 
+    <property name="build.dir"            value="${basedir}/xxx" />
+    <property name="build.classes.dir"    value="${build.dir}/classes" />
+    <property name="src.dir"              value="${basedir}/src" />
+    <property name="lib.dir"              value="${basedir}/WebContent/WEB-INF/lib" />    
+    <property name="lib.install.dir"      value="${install.dir}/WEB-INF/lib" />
+    
+<target name="help" description="Initialization">
+            <tstamp/>
+            <echo>
+ Additional Targets and Usage:
+ -----------------
+ compile - to compile the source, use this target.  
+           To build the  complete release package, 
+           you must compile this manually.
+
+                                
+</echo>
+    <echo message="build.classes.dir:" />
+    <echo message="${build.classes.dir}" />
+    
+    <echo message="src.dir:" />
+    <echo message="${src.dir}" />
+</target>   
+    
+    <path id="classpath">            
+
+    </path>
+
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <!-- Target: Prepare -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <target name="prepare" depends="help">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes.dir}"/>
+    </target>
+
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <!-- Target: Compile -->
+    <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+          
+    <target name="compile" depends="prepare">
+            <javac deprecation="true"
+                    target="1.6"
+                    srcdir="${src.dir}"
+                    debug="true"
+                    destdir="${build.classes.dir}">
+                
+                <include name="**/*.java" />                                                                                                               
+                <classpath refid="classpath"/>
+            </javac>
+    </target>   
+   
+</project>
