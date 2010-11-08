@@ -48,6 +48,8 @@ import org.mortbay.jetty.webapp.WebAppContext;
  */
 public class RunServer {
 
+    public static final Logger LOG = Logger.getLogger(RunServer.class);
+
     /**
      * Main entry point.
      * 
@@ -56,7 +58,6 @@ public class RunServer {
      */
     public static void main(String[] args) throws Exception {
 
-        final Logger logger = Logger.getLogger(RunServer.class);
         final Server server = new Server();
         final SocketConnector connector = new SocketConnector();
 
@@ -72,19 +73,20 @@ public class RunServer {
 
         server.addHandler(webAppContext);
         try {
-            
-            logger.debug("STARTING SERVER");
+
+            System.out.println("STARTING SERVER");
             server.start();
             System.in.read();
-            logger.debug("STOPPING SERVER");
+            System.out.println("STOPPING SERVER");
             server.stop();
             server.join();
-            
+
         } catch (Exception e) {
-            
-            logger.error("ERROR:", e);
+
+            LOG.error("ERROR:", e);
+            e.printStackTrace();
             System.exit(1);
-            
+
         } // End of the try catch
     }
 
