@@ -109,6 +109,7 @@ public class Octanewars implements EntryPoint {
              * response.
              */
             private void sendNameToServer() {
+                
                 // First, we validate the input.
                 errorLabel.setText("");
                 String textToServer = nameField.getText();
@@ -147,4 +148,7 @@ public class Octanewars implements EntryPoint {
         sendButton.addClickHandler(handler);
         nameField.addKeyUpHandler(handler);
     }
-}
+    
+    
+} // End of the class //
+
