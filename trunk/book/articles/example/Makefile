@@ -11,6 +11,8 @@
 #	Antoine Chambert-Loir
 #	Timo Kiravuo
 
+# Berlin Brown - Tested 1/11/2011
+
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
 # "Software"), to deal in the Software without restriction, including
