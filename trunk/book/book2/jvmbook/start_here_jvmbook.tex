@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Berlin Brown - berlin dot brown at gmail.com
+%% jvmbook - 
+%% Date: 1/11/2011
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Use report or article
+\documentclass[9pt]{report}
+
+\usepackage{fancyheadings}
+\usepackage{graphicx}
+\usepackage{latexsym}
+
+\usepackage{listings}
+
+\lstset{                        % Code
+language=Java,                  % choose the language of the code
+%basicstyle=[10pt],             % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+%numberstyle=\footnotesize,     % the size of the fonts that are used for the line-numbers
+stepnumber=2,                   % the step between two line-numbers. If it's 1 each line 
+                                % will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+%backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,	                % adds a frame around the code
+tabsize=2,	                    % sets default tabsize to 2 spaces
+captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                % also try caption instead of title
+escapeinside={\%*}{*)},         % if you want to add a comment within your code
+morekeywords={*,...}            % if you want to add more keywords to the set
+}
+
+%% \pagestyle{fancy}
+
+\newcommand{\tstamp}{\today}   
+\lhead[\fancyplain{}{\thepage}]         {\fancyplain{}{\rightmark}}
+\chead[\fancyplain{}{}]                 {\fancyplain{}{}}
+\rhead[\fancyplain{}{\rightmark}]       {\fancyplain{}{\thepage}}
+\lfoot[\fancyplain{}{}]                 {\fancyplain{\tstamp}{\tstamp}}
+\rfoot[\fancyplain{\tstamp} {\tstamp}]  {\fancyplain{}{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\oddsidemargin = .05in
+\textwidth = 6.2in
+
+\headheight = 0in
+\headsep = 0in
+\topmargin = .25in
+\textheight = 8.5in
+
+\floatsep = .29in
+\textfloatsep = \floatsep
+\intextsep = \floatsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{The Java Programming Notebook - Programming on the Java Virtual Machine}
+
+\author{Berlin Brown\\
+  berlin.brown at gmail.com\\
+  Atlanta, Ga\\
+  \date{\today}}
+
+\maketitle
+
+%%--------------------------------------
+%% Abstract
+%%--------------------------------------
+
+\begin{abstract}
+
+Java is one of the most popular programming languages.
+
+\end{abstract}
+
+%%--------------------------------------
+%% Table of Contents
+%%--------------------------------------
+\tableofcontents
+
+\include{overview}
+
+\begin{lstlisting}
+public class Java {
+  public static void main(final String [] args)  {
+   System.out.println("Java");
+  }
+}
+\end{lstlisting}
+
+
+%%--------------------------------------
+%% Bibliography (set the widest label)
+%%--------------------------------------
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{references}
+
+\end{document}
+%%--------------------------------------
+%% End of document 
+%%--------------------------------------
