@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Use report or article
-\documentclass[9pt]{report}
+\documentclass[9pt]{book}
 
 \usepackage{fancyheadings}
 \usepackage{graphicx}
@@ -17,8 +17,9 @@
 
 \lstset{                        % Code
 language=Java,                  % choose the language of the code
-%basicstyle=[10pt],             % the size of the fonts that are used for the code
-numbers=left,                   % where to put the line-numbers
+basicstyle=\footnotesize\ttfamily,
+%basicstyle=\small,             % the size of the fonts that are used for the
+%code numbers=\left,                   % where to put the line-numbers
 %numberstyle=\footnotesize,     % the size of the fonts that are used for the line-numbers
 stepnumber=2,                   % the step between two line-numbers. If it's 1 each line 
                                 % will be numbered
@@ -38,26 +39,32 @@ escapeinside={\%*}{*)},         % if you want to add a comment within your code
 morekeywords={*,...}            % if you want to add more keywords to the set
 }
 
-%% \pagestyle{fancy}
-
+\pagestyle{fancy}
 \newcommand{\tstamp}{\today}   
+
 \lhead[\fancyplain{}{\thepage}]         {\fancyplain{}{\rightmark}}
 \chead[\fancyplain{}{}]                 {\fancyplain{}{}}
 \rhead[\fancyplain{}{\rightmark}]       {\fancyplain{}{\thepage}}
-\lfoot[\fancyplain{}{}]                 {\fancyplain{\tstamp}{\tstamp}}
-\rfoot[\fancyplain{\tstamp} {\tstamp}]  {\fancyplain{}{}}
 
+\lfoot[ Berlin Brown - JVM Notebook - Creative Commons License ] 
+{\footnotesize\ttfamily\fancyplain{\tstamp}{\tstamp} }
+\rfoot[\fancyplain{\tstamp} {\tstamp}]  {\footnotesize\ttfamily\fancyplain{}{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\oddsidemargin = .05in
-\textwidth = 6.2in
+%% topmargin - top margin page to header
+%% headheight - running head box
+%% headsep - height of head to body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\oddsidemargin = -0.4in
+\textwidth = 6.4in
 
 \headheight = 0in
 \headsep = 0in
-\topmargin = .25in
-\textheight = 8.5in
+\topmargin = .05in
+\textheight = 9.8in
 
-\floatsep = .29in
+\floatsep = .20in
 \textfloatsep = \floatsep
 \intextsep = \floatsep
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,40 +75,50 @@ morekeywords={*,...}            % if you want to add more keywords to the set
 
 \author{Berlin Brown\\
   berlin.brown at gmail.com\\
+  Copyright 2011 Berlin Brown.  All rights reserved.\\ 
+  This work is licensed under a Creative Commons\\
+  Attribution-Noncommercial-No Derivative Works\\
+  Version 3.0 United States License. \\
   Atlanta, Ga\\
   \date{\today}}
 
 \maketitle
 
-%%--------------------------------------
-%% Abstract
-%%--------------------------------------
-
-\begin{abstract}
-
-Java is one of the most popular programming languages.
-
-\end{abstract}
-
-%%--------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Table of Contents
-%%--------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% General Structure Notes:
+%% Overview, Introduction to Java programming
+%%   Java Tools - Development Environment (includes java1),
+%%   Object Oriented Programming,
+%%   Standard Java Libraries,
+%%   Swing programming/GUI Development,
+%%   Game/Graphic Development
+%%  
+%%   Web Development: 
+%%     Ajax, JQuery, Spring Hibernate Struts Wicket
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \include{overview}
+\include{java1}
+\include{environment_ide}
+\include{oop}
+\include{javalibs}
+\include{files_networking}
+\include{parallel}
+\include{swing}
+\include{webdevelopment}
+\include{games}
+\include{patterns}
+\include{libraries}
+\include{scala}
 
-\begin{lstlisting}
-public class Java {
-  public static void main(final String [] args)  {
-   System.out.println("Java");
-  }
-}
-\end{lstlisting}
-
-
-%%--------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Bibliography (set the widest label)
-%%--------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{plain}
 \nocite{*}
 \bibliography{references}

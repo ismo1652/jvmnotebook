@@ -11,7 +11,6 @@ You need ghostscript
 - Tex 
 - Perl
 
-
 Tetext - 3.0.0.3
 
 ghostscript - 8.63-2
@@ -44,7 +43,7 @@ B. Scala
 C. Clojure
 D. Groovy
 E. JRuby
-F. Functional Java
+F. Functional Java Libraries
 
 Libraries.
 - Wicket, Hibernate Spring, AspectJ, 
@@ -69,3 +68,17 @@ Libraries.
 - Hadoop
 
 ==========
+
+ More notes: sections in latex:
+ 
+ http://www.emerson.emory.edu/services/latex/latex_132.html
+ 
+    * \part
+    * \chapter (report style only)
+    * \section
+    * \subsection
+    * \subsubsection
+    * \paragraph
+    * \subparagraph
+    * \subsubparagraph (milstd and book-form styles only)
+    * \subsubsubparagraph (milstd and book-form styles only) 
