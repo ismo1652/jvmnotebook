@@ -1,8 +1,7 @@
-\section{Java Programming Language and Tools}
+\chapter{ Introduction to Programming with Java }
 
-Empty
+\section{Spring MVC Framework}
 
-\subsection{Spring MVC Framework}
 Spring is one of the latest Java Enterprise Edition (J2EE) replacement 
 frameworks that is supposed to provide minimal presentation layer support, 
 business logic support as well as the backend, persistance support. 
@@ -21,6 +20,26 @@ seperating the View from the Controller and Action logic, but also you need to w
 the user submits a 'print' command, seperate that logic from the 'add' logic, and what pages are
 presented to the user". Doing this within the limitations of JSP, Servlets, and Taglibs becomes difficult.
 So, This reated a need for frameworks like the Pico container and Spring, Struts. 
+
+\begin{lstlisting}
+public class Java {
+  public static void main(final String [] args)  {
+   System.out.println("Java");
+  }
+}
+\end{lstlisting}
+
+We discussed earlier how Jython is basically used for the backend 
+coding, that includes communicating with Hibernate. 
+Here are the code snippets associated with each of those operations. 
+Most of the code is fairly intuitive; at the heart of the 
+create operation, you must get the Hibernate SessionFactory 
+and initiate a transaction. Once that is done, 
+create an instance of the Hibernate POJO bean and populate 
+the bean with the data from the Struts ActionForm. 
+Once that is taken care of, use the session and transaction 
+object to save the data. The Edit operation probably contains 
+the most code and is seperated into two Jython classes.
 
 \subsection{Hibernate Object Relational Mapping and Model Beans}
 
