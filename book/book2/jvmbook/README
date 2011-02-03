@@ -45,7 +45,8 @@ D. Groovy
 E. JRuby
 F. Functional Java Libraries
 
-Libraries.
+Libraries:
+
 - Wicket, Hibernate Spring, AspectJ, 
 - Terracotta, Lucene
 - Jeff Heatons Neural Network Library.
