@@ -45,13 +45,15 @@ D. Groovy
 E. JRuby
 F. Functional Java Libraries
 
+
+- Regex expressions, web development.
+
 Libraries:
 
 - Wicket, Hibernate Spring, AspectJ, 
 - Terracotta, Lucene
 - Jeff Heatons Neural Network Library.
 - Charting libraries
-- Regex expressions, web development.
 - Natural Language Toolkit
 - XHTMLRenderer (PDF output)
 - ASM, bytecode engineering.
