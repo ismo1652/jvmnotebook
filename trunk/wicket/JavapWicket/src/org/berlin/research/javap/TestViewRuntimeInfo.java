@@ -164,7 +164,6 @@ public class TestViewRuntimeInfo extends WebPage {
         data = data.replaceAll("invokespecial", "<span style='color:#7F0055; font-weight:bold'>invokevirtual</span>");
         data = data.replaceAll("//Method", "<span style='color:#0000C6; font-weight:bold'>//Method</span>");
         
-        // pfs
         data = data.replaceAll("Asciz", "<span style='text-decoration:underline;font-weight:bold'>Asciz</span>");                
         data = data.replaceAll("BUILD_NUM", "<span style='text-decoration:underline;font-weight:bold'>BUILD_NUM</span>");
                 
