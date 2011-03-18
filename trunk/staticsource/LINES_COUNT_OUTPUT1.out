@@ -1,0 +1,797 @@
+If you were ever curious about how many classes your top projects had, this post contains the source code line count for top open source Java projects.  
+The listing is not any particular order, use your browser's find command to see the count for top projects like wicket, spring or hibernate.
+
+Maven and cloc tools were used to generate the output.
+
+<pre>
+# du -ha
+1.9M    ./ant-1.8.2.jar
+16K     ./ant-launcher-1.8.2.jar
+436K    ./antlr-2.7.6.jar
+8.0K    ./aopalliance-1.0.jar
+44K     ./asm-3.1.jar
+172K    ./bsf-2.3.0.jar
+12K     ./bytelist-1.0.6.jar
+276K    ./cglib-2.2.jar
+3.1M    ./clojure-1.2.0.jar
+188K    ./commons-beanutils-1.7.0.jar
+32K     ./commons-codec-1.2.jar
+564K    ./commons-collections-3.2.1.jar
+60K     ./commons-fileupload-1.2.1.jar
+300K    ./commons-httpclient-3.1.jar
+88K     ./commons-io-1.3.2.jar
+276K    ./commons-lang-2.5.jar
+60K     ./commons-logging-1.1.1.jar
+240K    ./constantine-0.6.jar
+308K    ./dom4j-1.6.1.jar
+184K    ./dwr-1.1.3.jar
+860K    ./freemarker-2.3.15.jar
+628K    ./google-collections-1.0.jar
+544K    ./guice-1.0.jar
+2.5M    ./hibernate-core-3.5.1-Final.jar
+248K    ./jaffl-0.5.1.jar
+228K    ./jaxen-1.1-beta-8.jar
+236K    ./jcodings-1.0.4.jar
+152K    ./jdom-1.0.jar
+468K    ./jetty-6.1.4.jar
+32K     ./jetty-management-6.1.4.jar
+128K    ./jetty-util-6.1.4.jar
+88K     ./jffi-1.0.1.jar
+88K     ./jline-0.9.93.jar
+56K     ./jnr-netdb-1.0.jar
+92K     ./jnr-posix-1.1.4.jar
+532K    ./joda-time-1.6.2.jar
+180K    ./joni-1.1.4.jar
+7.7M    ./jruby-1.5.6.jar
+16K     ./jta-1.1.jar
+472K    ./log4j-1.2.16.jar
+1012K   ./lucene-core-3.0.3.jar
+400K    ./mx4j-3.0.1.jar
+488K    ./mx4j-tools-3.0.1.jar
+236K    ./ognl-2.7.3.jar
+136K    ./servlet-api-2.5-6.0.1.jar
+132K    ./servlet-api-2.5-6.1.4.jar
+24K     ./slf4j-api-1.5.8.jar
+12K     ./slf4j-log4j12-1.5.8.jar
+2.9M    ./spring-2.5.6.jar
+320K    ./spring-aop-2.5.6.jar
+480K    ./spring-beans-2.5.6.jar
+280K    ./spring-core-2.5.6.jar
+180K    ./spring-test-2.5.6.jar
+740K    ./struts2-core-2.1.8.jar
+1.9M    ./wicket-1.4.15.jar
+2.7M    ./xalan-2.7.0.jar
+988K    ./xercesImpl-2.6.2.jar
+108K    ./xml-apis-1.0.b2.jar
+124K    ./xmlParserAPIs-2.6.2.jar
+424K    ./xom-1.1.jar
+1.5M    ./xwork-core-2.1.6.jar
+38M     .
+</pre>
+ 
+<pre>
+{SCRIPT} begin processing{SCRIPT} Counting source ./target/sources/antlr-2.7.6-sources.jar
+'In computer-based language recognition, ANother Tool for Language Recognition (ANTLR) is the name of a parser generator that uses LL(*) parsing'
+http://en.wikipedia.org/wiki/ANTLR
+
+     100 files     200 files     227 text files.
+classified 227 filesDuplicate file check 227 files (219 known unique)Unique:      100 files                                          Unique:      200 files                                               227 unique files.                              
+Counting:  100Counting:  200      11 files ignored.
+
+Processed in   T=4.0 s (54.0 files/s, 13931.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           216           5648           8409          41668
+-------------------------------------------------------------------------------
+SUM:                           216           5648           8409          41668
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/aopalliance-1.0-sources.jar
+      30 text files.
+classified 30 files      30 unique files.                              
+       0 files ignored.
+
+Processed in   T=0.5 s (60.0 files/s, 2832.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            26            186            822            229
+HTML                             4             46             58             75
+-------------------------------------------------------------------------------
+SUM:                            30            232            880            304
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/bytelist-1.0.6-sources.jar
+       2 text files.
+classified 2 files       2 unique files.                              
+       1 file ignored.
+
+Processed in   T=1.0 s (1.0 files/s, 1322.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1            140            607            575
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/cglib-2.2-sources.jar
+     100 files     122 text files.
+classified 122 filesDuplicate file check 122 files (118 known unique)Unique:      100 files                                               122 unique files.                              
+Counting:  100       1 file ignored.
+
+Processed in   T=2.0 s (60.5 files/s, 6733.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           121           1494           3130           8843
+-------------------------------------------------------------------------------
+SUM:                           121           1494           3130           8843
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/clojure-1.2.0-sources.jar
+      35 text files.
+classified 35 files      35 unique files.                              
+      35 files ignored.
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/commons-beanutils-1.7.0-sources.jar
+      87 text files.
+classified 87 files      87 unique files.                              
+       0 files ignored.
+
+Processed in   T=1.0 s (87.0 files/s, 22855.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            81           3557          10322           7922
+HTML                             6            117              0            937
+-------------------------------------------------------------------------------
+SUM:                            87           3674          10322           8859
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/commons-collections-3.2.1-sources.jar
+     100 files     200 files     289 text files.
+classified 289 filesDuplicate file check 289 files (281 known unique)Unique:      100 files                                          Unique:      200 files                                               289 unique files.                              
+Counting:  100Counting:  200       3 files ignored.
+
+Processed in   T=5.0 s (57.2 files/s, 12882.8 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           273           6426          31103          26323
+HTML                            13             29            203            330
+-------------------------------------------------------------------------------
+SUM:                           286           6455          31306          26653
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/commons-fileupload-1.2.1-sources.jar
+      35 text files.
+classified 35 files      35 unique files.                              
+       3 files ignored.
+
+Processed in   T=1.0 s (32.0 files/s, 6230.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            27            655           3333           1967
+HTML                             5             13             75            187
+-------------------------------------------------------------------------------
+SUM:                            32            668           3408           2154
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/commons-io-1.3.2-sources.jar
+      65 text files.
+classified 65 files      63 unique files.                              
+       5 files ignored.
+
+Processed in   T=1.0 s (60.0 files/s, 12924.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            55            951           7295           4406
+HTML                             5             18             70            184
+-------------------------------------------------------------------------------
+SUM:                            60            969           7365           4590
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/commons-lang-2.5-sources.jar
+      99 text files.
+classified 99 files      99 unique files.                              
+       3 files ignored.
+
+Processed in   T=4.0 s (24.0 files/s, 13909.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            85           3502          32390          19394
+HTML                            11             32            158            162
+-------------------------------------------------------------------------------
+SUM:                            96           3534          32548          19556
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/commons-logging-1.1.1-sources.jar
+      20 text files.
+classified 20 files      20 unique files.                              
+       3 files ignored.
+
+Processed in   T=1.0 s (17.0 files/s, 7253.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            14            944           3317           2680
+HTML                             3             55             42            215
+-------------------------------------------------------------------------------
+SUM:                            17            999           3359           2895
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/dom4j-1.6.1-sources.jar
+     100 files     179 text files.
+classified 179 filesDuplicate file check 179 files (177 known unique)Unique:      100 files                                               179 unique files.                              
+Counting:  100       0 files ignored.
+
+Processed in   T=3.0 s (59.7 files/s, 14334.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           166           6134          18875          17854
+HTML                            13             30              0            110
+-------------------------------------------------------------------------------
+SUM:                           179           6164          18875          17964
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+
+{SCRIPT} Counting source ./target/sources/dwr-1.1.3-sources.jar
+'DWR, or Direct Web Remoting, is a Java open source library that helps developers write web sites that include Ajax technology'
+http://en.wikipedia.org/wiki/DWR_(Java)
+
+     100 files     120 text files.
+classified 120 filesDuplicate file check 120 files (111 known unique)Unique:      100 files                                               112 unique files.                              
+Counting:  100       6 files ignored.
+
+Processed in   T=2.0 s (54.0 files/s, 9812.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            86           1764           5345           8157
+Javascript                       8            312            518           2251
+HTML                             8            118              4            766
+XML                              3             33             11            149
+DTD                              1             12             90             54
+JSP                              1              4              2             17
+CSS                              1              5              0             13
+-------------------------------------------------------------------------------
+SUM:                           108           2248           5970          11407
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/freemarker-2.3.15-sources.jar
+     100 files     200 files     300 files     309 text files.
+classified 309 filesDuplicate file check 309 files (306 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                               309 unique files.                              
+Counting:  100Counting:  200Counting:  300       4 files ignored.
+
+Processed in   T=5.0 s (61.0 files/s, 14335.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           283           4753          19554          40884
+XSD                              4            876             83           3006
+DTD                              4            594           1368            395
+HTML                            14             12              0            151
+-------------------------------------------------------------------------------
+SUM:                           305           6235          21005          44436
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/google-collections-1.0-sources.jar
+     100 files     133 text files.
+classified 132 filesDuplicate file check 132 files (130 known unique)Unique:      100 files                                               132 unique files.                              
+Counting:  100       2 files ignored.
+
+Processed in   T=3.0 s (43.7 files/s, 10706.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           131           3628          12159          16333
+-------------------------------------------------------------------------------
+SUM:                           131           3628          12159          16333
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/guice-1.0-sources.jar
+      95 text files.
+classified 95 files      95 unique files.                              
+       1 file ignored.
+
+Processed in   T=1.0 s (94.0 files/s, 9094.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            94           1242           3174           4678
+-------------------------------------------------------------------------------
+SUM:                            94           1242           3174           4678
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/hibernate-core-3.5.1-Final-sources.jar
+'Hibernate an open source Java persistence framework project'
+
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files    1000 files    1100 files    1200 files    1287 text files.
+classified 1287 filesDuplicate file check 1287 files (1151 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                          Unique:      900 files                                          Unique:     1000 files                                          Unique:     1100 files                                              1287 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900Counting:  1000Counting:  1100Counting:  1200      13 files ignored.
+
+Processed in   T=20.0 s (63.7 files/s, 10976.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                          1221          24633          66087         125761
+DTD                              2            141            177            804
+HTML                            50             51           1199            563
+XML                              1              0              0            115
+-------------------------------------------------------------------------------
+SUM:                          1274          24825          67463         127243
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jaxen-1.1-beta-8-sources.jar
+     100 files     200 files     300 files     358 text files.
+classified 358 filesDuplicate file check 358 files (341 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                               358 unique files.                              
+Counting:  100Counting:  200Counting:  300       6 files ignored.
+
+Processed in   T=6.0 s (58.7 files/s, 10097.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           297           5796          24262          19991
+XML                             34           1398            118           7706
+XSLT                             3            240             22            631
+HTML                            16             24              0            245
+CSS                              2             20              7            124
+-------------------------------------------------------------------------------
+SUM:                           352           7478          24409          28697
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jcodings-1.0.4-sources.jar
+      79 text files.
+classified 79 files      79 unique files.                              
+       1 file ignored.
+
+Processed in   T=2.0 s (39.0 files/s, 11206.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            78           1136           1823          19453
+-------------------------------------------------------------------------------
+SUM:                            78           1136           1823          19453
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jdom-1.0-sources.jar
+      68 text files.
+classified 68 files      68 unique files.                              
+       0 files ignored.
+
+Processed in   T=2.0 s (34.0 files/s, 11144.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            61           2737          11121           8362
+HTML                             7             17              0             51
+-------------------------------------------------------------------------------
+SUM:                            68           2754          11121           8413
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jetty-6.1.4-sources.jar
+     100 files     138 text files.
+classified 138 filesDuplicate file check 138 files (138 known unique)Unique:      100 files                                               138 unique files.                              
+Counting:  100       3 files ignored.
+
+Processed in   T=4.0 s (33.8 files/s, 11128.8 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           133           5336          10641          27878
+XML                              1             25            234            143
+DTD                              1             62            159             37
+-------------------------------------------------------------------------------
+SUM:                           135           5423          11034          28058
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jetty-management-6.1.4-sources.jar
+      32 text files.
+classified 32 files      32 unique files.                              
+      26 files ignored.
+
+Processed in   T=1.0 s (6.0 files/s, 1165.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             6            150            148            867
+-------------------------------------------------------------------------------
+SUM:                             6            150            148            867
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jetty-util-6.1.4-sources.jar
+      46 text files.
+classified 46 files      46 unique files.                              
+       1 file ignored.
+
+Processed in   T=2.0 s (22.5 files/s, 6007.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            45           1384           2713           7918
+-------------------------------------------------------------------------------
+SUM:                            45           1384           2713           7918
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jline-0.9.93-sources.jar
+      28 text files.
+classified 28 files      28 unique files.                              
+       4 files ignored.
+
+Processed in   T=1.0 s (24.0 files/s, 5370.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            23            875           1816           2670
+HTML                             1              1              0              8
+-------------------------------------------------------------------------------
+SUM:                            24            876           1816           2678
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/joda-time-1.6.2-sources.jar
+     100 files     177 text files.
+classified 177 filesDuplicate file check 177 files (177 known unique)Unique:      100 files                                               177 unique files.                              
+Counting:  100      15 files ignored.
+
+Processed in   T=4.0 s (40.5 files/s, 16090.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           154           5562          32438          25916
+HTML                             8             47             96            302
+-------------------------------------------------------------------------------
+SUM:                           162           5609          32534          26218
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/jta-1.1-sources.jar
+      18 text files.
+classified 18 files      18 unique files.                              
+       0 files ignored.
+
+Processed in   T=0.5 s (36.0 files/s, 3730.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            18            179           1414            272
+-------------------------------------------------------------------------------
+SUM:                            18            179           1414            272
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/junit-4.8.2-sources.jar
+     100 files     177 text files.
+classified 177 filesDuplicate file check 177 files (172 known unique)Unique:      100 files                                               177 unique files.                              
+Counting:  100       2 files ignored.
+
+Processed in   T=1.0 s (175.0 files/s, 12067.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           175           1484           3810           6773
+-------------------------------------------------------------------------------
+SUM:                           175           1484           3810           6773
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/log4j-1.2.16-sources.jar
+     100 files     200 files     227 text files.
+classified 227 filesDuplicate file check 227 files (225 known unique)Unique:      100 files                                          Unique:      200 files                                               227 unique files.                              
+Counting:  100Counting:  200       4 files ignored.
+
+Processed in   T=3.0 s (74.3 files/s, 14588.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           207           6233          16155          20630
+HTML                            15            107            220            182
+DTD                              1             50             52            135
+-------------------------------------------------------------------------------
+SUM:                           223           6390          16427          20947
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/lucene-core-3.0.3-sources.jar
+     100 files     200 files     300 files     400 files     413 text files.
+classified 413 filesDuplicate file check 413 files (397 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                               413 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400       6 files ignored.
+
+Processed in   T=7.0 s (58.1 files/s, 12036.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           393          10089          26448          45840
+HTML                            14            159            220           1498
+-------------------------------------------------------------------------------
+SUM:                           407          10248          26668          47338
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/mx4j-3.0.1-sources.jar
+     100 files     200 files     255 text files.
+classified 255 filesDuplicate file check 255 files (249 known unique)Unique:      100 files                                          Unique:      200 files                                               255 unique files.                              
+Counting:  100Counting:  200       0 files ignored.
+
+Processed in   T=5.0 s (51.0 files/s, 7246.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           255           4390           8040          23801
+-------------------------------------------------------------------------------
+SUM:                           255           4390           8040          23801
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/mx4j-tools-3.0.1-sources.jar
+     100 files     200 files     299 text files.
+classified 299 filesDuplicate file check 299 files (269 known unique)Unique:      100 files                                          Unique:      200 files                                               298 unique files.                              
+Counting:  100Counting:  200       6 files ignored.
+
+Processed in   T=4.0 s (73.2 files/s, 6849.8 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           264           3254           4826          14781
+XSLT                            25            269            268           3141
+XML                              1             23              3            197
+CSS                              1            248             17            171
+Python                           2             38             54            109
+-------------------------------------------------------------------------------
+SUM:                           293           3832           5168          18399
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/ognl-2.7.3-sources.jar
+     100 files     125 text files.
+classified 125 filesDuplicate file check 125 files (123 known unique)Unique:      100 files                                               125 unique files.                              
+Counting:  100       3 files ignored.
+
+Processed in   T=2.0 s (61.0 files/s, 12465.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           121           2881           6056          15942
+HTML                             1              7             27             18
+-------------------------------------------------------------------------------
+SUM:                           122           2888           6083          15960
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/servlet-api-2.5-6.1.4-sources.jar
+      66 text files.
+classified 66 files      64 unique files.                              
+       3 files ignored.
+
+Processed in   T=2.0 s (30.5 files/s, 11085.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+XSD                             12           1740            273           7382
+Java                            40           1855           6171           1522
+DTD                              7            714           1580            888
+HTML                             2             14             10             22
+-------------------------------------------------------------------------------
+SUM:                            61           4323           8034           9814
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/slf4j-api-1.5.8-sources.jar
+      29 text files.
+classified 29 files      29 unique files.                              
+       1 file ignored.
+
+Processed in   T=1.0 s (28.0 files/s, 3536.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            24            429           1921           1129
+HTML                             4             21              0             36
+-------------------------------------------------------------------------------
+SUM:                            28            450           1921           1165
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/slf4j-log4j12-1.5.8-sources.jar
+       7 text files.
+classified 7 files       7 unique files.                              
+       1 file ignored.
+
+Processed in   T=1.0 s (6.0 files/s, 952.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             6             88            539            325
+-------------------------------------------------------------------------------
+SUM:                             6             88            539            325
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/spring-2.5.6-sources.jar
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files    1000 files    1100 files    1200 files    1300 files    1400 files    1500 files    1600 files    1700 files    1800 files    1828 text files.
+classified 1828 filesDuplicate file check 1828 files (1585 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                          Unique:      900 files                                          Unique:     1000 files                                          Unique:     1100 files                                          Unique:     1200 files                                          Unique:     1300 files                                          Unique:     1400 files                                          Unique:     1500 files                                              1828 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900Counting:  1000Counting:  1100Counting:  1200Counting:  1300Counting:  1400Counting:  1500Counting:  1600Counting:  1700Counting:  1800       7 files ignored.
+
+Processed in   T=33.0 s (55.2 files/s, 7566.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                          1621          29314         112564          98876
+XSD                             16            342             27           5338
+HTML                           179            411              0           1294
+XML                              3             13             15            210
+DTD                              2            241            845            199
+-------------------------------------------------------------------------------
+SUM:                          1821          30321         113451         105917
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/spring-aop-2.5.6-sources.jar
+     100 files     200 files     209 text files.
+classified 209 filesDuplicate file check 209 files (205 known unique)Unique:      100 files                                          Unique:      200 files                                               209 unique files.                              
+Counting:  100Counting:  200       4 files ignored.
+
+Processed in   T=2.0 s (102.5 files/s, 12089.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           188           3231           9950          10029
+XSD                              2             39              2            755
+HTML                            15             41              0            131
+-------------------------------------------------------------------------------
+SUM:                           205           3311           9952          10915
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/spring-beans-2.5.6-sources.jar
+     100 files     200 files     278 text files.
+classified 278 filesDuplicate file check 278 files (270 known unique)Unique:      100 files                                          Unique:      200 files                                               278 unique files.                              
+Counting:  100Counting:  200       4 files ignored.
+
+Processed in   T=3.0 s (91.3 files/s, 14521.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           251           4605          17594          17150
+XSD                              6            188             21           2584
+DTD                              2            241            845            199
+HTML                            15             36              0            100
+-------------------------------------------------------------------------------
+SUM:                           274           5070          18460          20033
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/spring-core-2.5.6-sources.jar
+     100 files     162 text files.
+classified 162 filesDuplicate file check 162 files (158 known unique)Unique:      100 files                                               162 unique files.                              
+Counting:  100       2 files ignored.
+
+Processed in   T=2.0 s (80.0 files/s, 10894.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           144           2363          10067           9236
+HTML                            16             32              0             90
+-------------------------------------------------------------------------------
+SUM:                           160           2395          10067           9326
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/spring-test-2.5.6-sources.jar
+     100 files     107 text files.
+classified 107 filesDuplicate file check 107 files (104 known unique)Unique:      100 files                                               107 unique files.                              
+Counting:  100       2 files ignored.
+
+Processed in   T=1.0 s (105.0 files/s, 15359.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            90           2107           6128           6979
+HTML                            15             35              0            110
+-------------------------------------------------------------------------------
+SUM:                           105           2142           6128           7089
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/struts2-core-2.1.8-sources.jar
+     100 files     200 files     300 files     400 files     500 files     563 text files.
+classified 563 filesDuplicate file check 563 files (481 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                               561 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500     166 files ignored.
+
+Processed in   T=5.0 s (79.4 files/s, 9522.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           366           6620          17838          20914
+Javascript                       7             79            148            698
+DTD                              3             74             93            268
+XML                              1             41             56            221
+HTML                            16              3            352             62
+CSS                              4              4             81             58
+-------------------------------------------------------------------------------
+SUM:                           397           6821          18568          22221
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/wicket-1.4.15-sources.jar
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files     965 text files.
+classified 965 filesDuplicate file check 965 files (896 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                               963 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900      45 files ignored.
+
+Processed in   T=14.0 s (65.7 files/s, 13348.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           826          16752          78673          85378
+Javascript                       6            506            612           2095
+HTML                            83            172           1249           1139
+CSS                              1             21             16             99
+XML                              4             21             57             91
+-------------------------------------------------------------------------------
+SUM:                           920          17472          80607          88802
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/xalan-2.7.0-sources.jar
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files     946 text files.
+classified 946 filesDuplicate file check 946 files (896 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                               946 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900      19 files ignored.
+
+Processed in   T=28.0 s (33.1 files/s, 12432.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           906          51376         135087         161008
+HTML                            21             48            335            257
+-------------------------------------------------------------------------------
+SUM:                           927          51424         135422         161265
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/xercesImpl-2.6.2-sources.jar
+     100 files     200 files     300 files     400 files     500 files     600 files     668 text files.
+classified 668 filesDuplicate file check 668 files (628 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                               667 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600      17 files ignored.
+
+Processed in   T=15.0 s (43.4 files/s, 13456.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           651          21715          93608          86521
+-------------------------------------------------------------------------------
+SUM:                           651          21715          93608          86521
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/xml-apis-1.0.b2-sources.jar
+     100 files     177 text files.
+classified 177 filesDuplicate file check 177 files (175 known unique)Unique:      100 files                                               177 unique files.                              
+Counting:  100       8 files ignored.
+
+Processed in   T=4.0 s (42.2 files/s, 10044.8 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           153           5269          17698          12855
+DTD                              4            699            811           2027
+HTML                            11            156             22            636
+make                             1              1              0              5
+-------------------------------------------------------------------------------
+SUM:                           169           6125          18531          15523
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/xom-1.1-sources.jar
+     100 files     200 files     252 text files.
+classified 252 filesDuplicate file check 252 files (249 known unique)Unique:      100 files                                          Unique:      200 files                                               252 unique files.                              
+Counting:  100Counting:  200       0 files ignored.
+
+Processed in   T=6.0 s (42.0 files/s, 13381.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           243          13507          17243          49086
+HTML                             9            103            166            182
+-------------------------------------------------------------------------------
+SUM:                           252          13610          17409          49268
+-------------------------------------------------------------------------------
+NEXT PROJECT PROCESSED ON NEXT LINE...
+{SCRIPT} Counting source ./target/sources/xwork-core-2.1.6-sources.jar
+     100 files     200 files     300 files     340 text files.
+classified 340 filesDuplicate file check 340 files (331 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                               340 unique files.                              
+Counting:  100Counting:  200Counting:  300       2 files ignored.
+
+Processed in   T=3.0 s (112.7 files/s, 14907.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           303           5847          16295          21520
+DTD                             12            206             94            628
+XML                              2             15             14             61
+HTML                            21              1              0             41
+-------------------------------------------------------------------------------
+SUM:                           338           6069          16403          22250
+-------------------------------------------------------------------------------
+</pre>

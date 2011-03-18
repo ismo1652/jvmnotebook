@@ -1,0 +1,31 @@
+###########################################################
+# Static source analysis
+# Run on 3/10/2011
+###########################################################
+
+ Download source:
+ 
+ mvn package 
+ (Browse to the target/sources directory)
+  
+ Find Bugs:
+ 
+ lib/findbugs/bin/findbugs.bat -textui
+ or  
+ lib/findbugs/bin/findbugs.bat -jvmArgs "-Xmx256m"
+   (but also try lib/findbugs/bin/findbugs.bat -Xmx256m)
+   
+ # lib/findbugs/bin/findbugs.bat -textui -high -jvmArgs  "-Xmx256m" WebContent/WEB-INF/lib/ant-1.8.2.jar
+   
+ # lib/findbugs/bin/findbugs.bat -textui -high -html -output find-out.html -jvmArgs "-Xmx256m" WebContent/WEB-INF/lib/ant-1.8.2.jar
+   
+ PMD
+  lib/pmd-4.2.5/bin/pmd.bat src-large-nocommit/src/java/util text codesize
+  
+  lib/pmd-4.2.5/bin/pmd.bat src-large-nocommit/src/java/util text codesize -shortnames
+  
+  xml,html,text,csv,papari,summaryhtml
+  
+  # lib/pmd-4.2.5/bin/pmd.bat src-large-nocommit/src/java/util summaryhtml codesize -shortnames > out.html
+    
+  # lib/pmd-4.2.5/bin/pmd.bat src-large-nocommit/src/java/util summaryhtml basic,codesize,controversial,design -shortnames > out.html

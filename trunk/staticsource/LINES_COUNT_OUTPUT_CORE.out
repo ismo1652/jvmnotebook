@@ -1,0 +1,150 @@
+Larger projects, Oracle JDK 1.6.0.22 (src.zip)
+
+Oracle JDK 1.6.0.22 (src.zip)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                          7209         244417         910071         931087
+C                                7            437           1304           3186
+C/C++ Header                     7             56            128            169
+-------------------------------------------------------------------------------
+SUM:                          7223         244910         911503         934442
+-------------------------------------------------------------------------------
+
+$ src/java/lang/ Oracle JDK 1.6.0.22 (src.zip)
+     169 text files.
+     169 unique files.
+       0 files ignored.
+
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           169           3598          34295          17117
+-------------------------------------------------------------------------------
+SUM:                           169           3598          34295          17117
+-------------------------------------------------------------------------------
+
+$ src/java/lang/ Oracle JDK 1.6.0.22 (src.zip)
+$ perl cloc-1.53.pl src-large-nocommit/src/java/util/
+     233 text files.
+     233 unique files.
+       0 files ignored.
+
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           233           8775          60767          48541
+-------------------------------------------------------------------------------
+SUM:                           233           8775          60767          48541
+-------------------------------------------------------------------------------
+Rule name   Number of violations
+TooManyMethods  120
+TooManyFields   5
+CyclomaticComplexity    232
+ExcessiveParameterList  3
+ExcessiveMethodLength   23
+ExcessiveClassLength    29
+ExcessivePublicCount    13
+NPathComplexity 87
+NcssMethodCount 11
+NcssTypeCount   2
+
+-------
+
+Rule name   Number of violations
+AssignmentInOperand 100
+TooManyMethods  120
+CyclomaticComplexity    232
+AvoidReassigningParameters  217
+DataflowAnomalyAnalysis 1900
+ConstructorCallsOverridableMethod   30
+UselessOverridingMethod 6
+AbstractClassWithoutAbstractMethod  1
+NPathComplexity 87
+ClassWithOnlyPrivateConstructorsShouldBeFinal   4
+UnnecessaryReturn   2
+ImmutableField  75
+EmptyWhileStmt  11
+BooleanInstantiation    1
+SingularField   2
+AvoidConstantsInterface 1
+EmptyStatementNotInLoop 1
+CompareObjectsWithEquals    192
+SwitchStmtsShouldHaveDefault    17
+AvoidUsingShortType 45
+AvoidFinalLocalVariable 1
+CollapsibleIfStatements 12
+DefaultPackage  1022
+UseLocaleWithCaseConversions    5
+AvoidSynchronizedAtMethodLevel  141
+ExcessiveClassLength    29
+MissingBreakInSwitch    11
+PositionLiteralsFirstInComparisons  22
+OverrideBothEqualsAndHashcode   6
+NcssMethodCount 11
+EmptyCatchBlock 54
+AvoidUsingVolatile  82
+CallSuperInConstructor  178
+PreserveStackTrace  59
+ExcessiveParameterList  3
+ExcessivePublicCount    13
+BooleanInversion    6
+UnnecessaryParentheses  12
+UncommentedEmptyMethod  10
+AtLeastOneConstructor   1
+DontImportSun   81
+TooFewBranchesForASwitchStatement   5
+EmptyMethodInAbstractClassShouldBeAbstract  2
+UseSingleton    7
+UnnecessaryLocalBeforeReturn    8
+ExcessiveMethodLength   23
+ConfusingTernary    192
+AvoidDeeplyNestedIfStmts    8
+NullAssignment  294
+AvoidThreadGroup    1
+TooManyFields   5
+AccessorClassGeneration 9
+SimplifyBooleanExpressions  5
+UnnecessaryConstructor  16
+EmptyIfStmt 1
+SwitchDensity   7
+ForLoopShouldBeWhileLoop    1
+UseCollectionIsEmpty    5
+UnnecessaryFinalModifier    25
+UseNotifyAllInsteadOfNotify 6
+NcssTypeCount   2
+ReturnEmptyArrayRatherThanNull  2
+OptimizableToArrayCall  1
+UncommentedEmptyConstructor 57
+UnusedModifier  68
+OnlyOneReturn   1181
+
+
+$ src/java/lang/ Oracle JDK 1.6.0.22 (src.zip)
+$ perl cloc-1.53.pl src-large-nocommit/src/java/net/
+      67 text files.
+      67 unique files.
+       0 files ignored.
+
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                            67           2292          13774          10703
+-------------------------------------------------------------------------------
+SUM:                            67           2292          13774          10703
+-------------------------------------------------------------------------------
+
+$ src/java/lang/ Oracle JDK 1.6.0.22 (src.zip)
+$ perl cloc-1.53.pl src-large-nocommit/src/javax/swing/
+     620 text files.
+     620 unique files.
+       0 files ignored.
+
+http://cloc.sourceforge.net v 1.53  T=20.0 s (31.0 files/s, 16211.1 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                           620          33091         122986         168146
+-------------------------------------------------------------------------------
+SUM:                           620          33091         122986         168146
+-------------------------------------------------------------------------------
