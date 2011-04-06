@@ -8,8 +8,13 @@ Use these Eclipse plugins for basic JVM development.
 
 Updated: 4/1/2011
 
-Homepage:
+Eclipse J2EE Edition:  
+Eclipse Java EE IDE for Web Developers.  
+Version: Helios Service Release 2  
+Build id: 20110218-0911   
+
+Homepage:   
 http://www.eclipse.org/egit/
 
-Eclipse Download:
+Eclipse Download:   
 http://download.eclipse.org/egit/updates/
