@@ -1,0 +1,15 @@
+#summary Resources for Standard Eclipse Plugins
+
+= Introduction =
+
+Use these Eclipse plugins for basic JVM development.
+
+= Resources =
+
+Updated: 4/1/2011
+
+Homepage:
+http://www.eclipse.org/egit/
+
+Eclipse Download:
+http://download.eclipse.org/egit/updates/
