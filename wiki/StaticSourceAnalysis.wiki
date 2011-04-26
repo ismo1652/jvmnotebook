@@ -1,3 +1,5 @@
+=Static analysis of various open Java projects=
+
 If you were ever curious about how many classes your top projects had, this post contains the source code line count for top open source Java projects.  
 The listing is not any particular order, use your browser's find command to see the count for top projects like wicket, spring or hibernate.
 
