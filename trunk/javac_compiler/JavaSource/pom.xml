@@ -11,7 +11,9 @@
          * Maven uses a declarative syntax, unlike Ant which is more imperative
          *
          * Build open jdk java compiler.
-         * To run: mvn exec:java -Dexec.mainClass="berlin.com.sun.tools.javac.MainJavac" -e
+         * To run: 
+         * mvn exec:java -e -Dexec.mainClass="berlin.com.sun.tools.javac.MainJavac" -Dexec.args="Test.java"
+         *
          * Build phase contains goals
          * Also see http://mvnrepository.com/
          **************************************************** -->                  
@@ -72,17 +74,16 @@
     </profiles>
     <build>
         <finalName>${project.artifactId}</finalName>
-        <sourceDirectory>src</sourceDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>src</directory>
+                <directory>src/main/java</directory>
                 <includes>
                     <include>**</include>
-                    <include>**/*.properties</include>
                 </includes>
                 <excludes>
-                    <exclude>**/*.java</exclude>                    
+                    <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
         </resources>

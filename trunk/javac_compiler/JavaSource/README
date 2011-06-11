@@ -1,0 +1,22 @@
+###########################################################
+# README
+# For OpenJDK Java Compiler
+#
+# Simple for compiler with maven
+###########################################################
+
+ Building
+ ------------------
+ 
+ To build, type:
+  
+ mvn package
+ 
+ To run the compile:
+ 
+ mvn exec:java -e -Dexec.mainClass="berlin.com.sun.tools.javac.MainJavac" -Dexec.args="Test.java"
+  
+
+###########################################################
+# END
+###########################################################
