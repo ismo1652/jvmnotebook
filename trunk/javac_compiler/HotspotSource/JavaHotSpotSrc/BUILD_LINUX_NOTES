@@ -1,0 +1,153 @@
+For openjdk 6 build:
+
+openjdk-6-src-b22-28_feb_2011.tar.gz  openjdk6
+
+
+sudo apt-get install gawk alsa alsa-base alsa-utils alsa-tools libasound2-dev 
+sudo apt-get install libx11-dev libxt-dev x11proto-xext-dev libxext-dev x11proto-input-dev libxi-dev  sudo apt-get install libxtst-dev libmotif-dev xutils-dev libfreetype6-dev 
+sudo apt-get install libcups2-dev ant g++ libxrender-dev libfreetype6 libfreetype6-dev freetype2-demos
+sudo apt-get install x11proto-print-dev
+
+export LANG=C
+export ALT_BOOTDIR=/usr/lib/jvm/java-6-openjdk
+export ALT_JDK_IMPORT_PATH=$ALT_BOOTDIR 
+export ALLOW_DOWNLOADS=true
+
+chmod +x ./jdk/make/jdk_generic_profile.sh
+sudo ./jdk/make/jdk_generic_profile.sh
+sudo make sanity && make
+
+Edit jdk_generic_profile.sh
+
+export ALT_BOOTDIR=/usr/lib/jvm/java-6-sun/
+export ALT_JDK_IMPORT_PATH=$ALT_BOOTDIR 
+
+bbrown@bbrown-laptop:~/src/openjdk/openjdk6$ export ALLOW_DOWNLOADS=true
+
+ apt-file search extensions/Print.h
+x11proto-print-dev: usr/include/X11/extensions/Print.h
+
+----------
+
+
+ernal/util classes/sun/security/jgss/spi/GSSContextSpi.class
+>>>Making sec-files-win @ Sat Jun 11 18:34:30 EDT 2011 ...
+>>>Making jgss-files @ Sat Jun 11 18:34:30 EDT 2011 ...
+>>>Finished making images @ Sat Jun 11 18:34:30 EDT 2011 ...
+make[2]: Leaving directory `/home/bbrown/src/openjdk/openjdk6/jdk/make'
+make[1]: Leaving directory `/home/bbrown/src/openjdk/openjdk6'
+Control linux i586 1.6.0-internal build_product_image build finished: 11-06-11 18:34
+Control linux i586 1.6.0-internal all_product_build build finished: 11-06-11 18:34
+Control linux i586 1.6.0-internal all build finished: 11-06-11 18:34
+
+
+ 310  mv openjdk-6-src-b22-28_feb_2011.tar.gz ../
+  311  ls
+  312  make
+  313  sudo apt-get install gawk alsa alsa-base alsa-utils alsa-tools libasound2-dev 
+  314  sudo apt-get install libx11-dev libxt-dev x11proto-xext-dev libxext-dev x11proto-input-dev libxi-dev sudo
+  315  sudo apt-get install libx11-dev libxt-dev x11proto-xext-dev libxext-dev x11proto-input-dev libxi-dev
+  316  sudo apt-get install libxtst-dev libmotif-dev xutils-dev libfreetype6-dev 
+  317  sudo apt-get install libcups2-dev ant g++ libxrender-dev libfreetype6 libfreetype6-dev freetype2-demos
+  318  ls
+  319  make
+  320  export LANG=C
+  321  make
+  322  whereis java
+  323  javac
+  324  ls
+  325  make
+  326  echo JAVA_HOME
+  327  whereis javac
+  328  ls -lta /usr/bin/javac
+  329  export JAVA_HOME=/etc/alternatives/javac
+  330  ls /etc/alternatives/java
+  331  ls /etc/alternatives/java -lta
+  332  ls /usr/lib/jvm/java-6-openjdk/
+  333  ls /usr/lib/jvm/java-6-openjdk/bin
+  334  export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
+  335  make
+  336  export JAVA_HOME=
+  337  make
+  338  export ALT_BOOTDIR=/usr/lib/jvm/java-6-openjdk/
+  339  export ALT_JDK_IMPORT_PATH=$ALT_BOOTDIR
+  340  chmod +x ./jdk/make/jdk_generic_profile.sh 
+  341  sudo ./jdk/make/jdk_generic_profile.sh 
+  342  echo $ALT_BOOTDIR
+  343  sudo make sanity
+  344  sudo make
+  345  echo $ALT_BOOTDIR
+  346  echo $ALT_JDK_IMPORT
+  347  export ALT_JDK_IMPORT_PATH=$ALT_BOOTDIR
+  348  sudo make sanity
+  349  sudo make
+  350  sudo ./jdk/make/jdk_generic_profile.sh
+  351  sudo make
+  352  echo $ALT_BOOTDIR
+  353  sudo Gmake
+  354  sudo gmake
+  355  export ALT_JDK_IMPORT_PATH=$ALT_BOOTDIR
+  356  export NO_BOOTDIR=$ALT_BOOTDIR
+  357  sudo make
+  358  ls
+  359  CD MAKE
+  360  cd make
+  361  ls
+  362  grep -r BOOTDIR *
+  363  ls
+  364  cd scripts
+  365  ls
+  366  cd ..
+  367  ls
+  368  cd ..
+  369  ls
+  370  cd langtools/
+  371  ls
+  372  cd src
+  373  ls
+  374  cd. .
+  375  ls
+  376  cd ..
+  377  ls
+  378  cd ..
+  379  ls
+  380  grep -r BOOTDIR *
+  381  cd jdk
+  382  ls
+  383  cd make
+  384  ls
+  385  vi jdk_generic_profile.sh 
+  386  grep ALT_BOOT *
+  387  ls
+  388  vi jdk_generic_profile.sh 
+  389  ls
+  390  vi jdk_generic_profile.sh 
+  391  echo $ALT_BOOTDIR
+  392  vi jdk_generic_profile.sh 
+  393  ls
+  394  cd ..
+  395  ls
+  396  cd ..
+  397  ls
+  398  make
+  399  export ALLOW_DOWNLOADS=true
+  400  make
+  401  sudo apt-get install x11proto-print-dev
+  402  sudo make
+  403  ls
+  404  cd make
+  405  ls
+  406  cd ..
+  407  ls
+  408  cd jdk
+  409  s
+  410  ls
+  411  cd make
+  412  ls
+  413  ./jdk_generic_profile.sh 
+  414  cd .
+  415  cd ..
+  416  ls
+  417  make
+  418  history
+
