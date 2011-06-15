@@ -11,4 +11,53 @@ Simple Build Instructions:
      
   The files that will be imported into the jdk build will be in the "build"
   directory.
+-----------------------------
 
+usage:
+        makeDeps platform-name     platform-file     database-file [MakeDeps args] [platform args]
+        makeDeps diffs platform-name old-platform-file old-database-file new-platform-file new-database-file [MakeDeps args] [platform args]
+where platform-name is the name of a platform MakeDeps supports
+...
+
+More notes on the compile for hotspot:
+
+MakeDeps:
+
+echo /usr/lib/jvm/java-6-openjdk/bin/java -DUSE_PRECOMPILED_HEADER -classpath /tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated MakeDeps diffs UnixPlatform /tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/platform.current /tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/includeDB.current /home/bbrown/src/openjdk/openjdk6/hotspot/make/linux/platform_i486 /tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/includeDB ) > makeDeps.sh
+
+
+echo 
+/usr/lib/jvm/java-6-openjdk/bin/java 
+-DUSE_PRECOMPILED_HEADER 
+-classpath MakeDeps 
+diffs 
+UnixPlatform 
+/tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/platform.current 
+/tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/includeDB.current 
+/home/bbrown/src/openjdk/openjdk6/hotspot/make/linux/platform_i486 
+/tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/includeDB 
+) > makeDeps.sh
+
+...
+
+java -DUSE_PRECOMPILED_HEADER -classpath MakeDeps.jar MakeDeps diffs UnixPlatform generated/platform.current includeDB.current platform_i486 generated/includeDB
+
+
+...
+
+
+
+cat /home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_core   
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_gc 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_gc_parallel 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/gc_implementation/includeDB_gc_parallelScavenge 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/gc_implementation/includeDB_gc_concurrentMarkSweep 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/gc_implementation/includeDB_gc_parNew 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/gc_implementation/includeDB_gc_g1 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/gc_implementation/includeDB_gc_serial 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/gc_implementation/includeDB_gc_shared 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_jvmti 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_features 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_compiler1 
+/home/bbrown/src/openjdk/openjdk6/hotspot/src/share/vm/includeDB_compiler2 
+> /tmp/bbrown/jdk-outputdir/hotspot/outputdir/linux_i486_compiler2/product/../generated/includeDB
