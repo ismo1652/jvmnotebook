@@ -1,0 +1,4 @@
+# include "compactPermGen.hpp"
+# include "gcLocker.inline.hpp"
+# include "heapInspection.hpp"
+# include "vmGCOperations.hpp"

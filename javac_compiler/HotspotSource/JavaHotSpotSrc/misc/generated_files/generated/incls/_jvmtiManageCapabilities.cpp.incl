@@ -1,0 +1,6 @@
+# include "jvmtiEventController.hpp"
+# include "jvmtiEnvThreadState.hpp"
+# include "jvmtiThreadState.hpp"
+# include "jvmtiEnvBase.hpp"
+# include "jvmtiEnv.hpp"
+# include "jvmtiManageCapabilities.hpp"

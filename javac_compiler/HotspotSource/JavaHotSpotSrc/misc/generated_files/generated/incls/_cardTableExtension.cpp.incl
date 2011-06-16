@@ -1,0 +1,8 @@
+# include "cardTableExtension.hpp"
+# include "gcTaskManager.hpp"
+# include "psScavenge.hpp"
+# include "psPromotionLAB.hpp"
+# include "psPromotionManager.hpp"
+# include "psScavenge.inline.hpp"
+# include "oop.psgc.inline.hpp"
+# include "psTasks.hpp"
