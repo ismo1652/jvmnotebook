@@ -1,0 +1,6 @@
+# include "objectMonitor.inline.hpp"
+# include "generateOopMap.hpp"
+# include "oopMapCache.hpp"
+# include "scopeDesc.hpp"
+# include "vframeArray.hpp"
+# include "vframe_hp.hpp"

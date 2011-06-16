@@ -1,0 +1,3 @@
+# include "jfieldIDWorkaround.hpp"
+# include "jniCheck.hpp"
+# include "jvm_misc.hpp"

@@ -1,0 +1,3 @@
+# include "jmm.h"
+# include "management.hpp"
+# include "memoryManager.hpp"

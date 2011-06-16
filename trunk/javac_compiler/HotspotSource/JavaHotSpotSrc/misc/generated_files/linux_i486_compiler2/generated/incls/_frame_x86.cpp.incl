@@ -1,0 +1,3 @@
+# include "vmreg_x86.inline.hpp"
+# include "c1_Runtime1.hpp"
+# include "vframeArray.hpp"

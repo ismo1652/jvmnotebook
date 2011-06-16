@@ -1,0 +1,7 @@
+# include "compactPermGen.hpp"
+# include "filemap.hpp"
+# include "generationSpec.hpp"
+# include "tenuredGeneration.hpp"
+# include "parNewGeneration.hpp"
+# include "asParNewGeneration.hpp"
+# include "cmsPermGen.hpp"
