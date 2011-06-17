@@ -1,0 +1,3 @@
+# include "vmreg_x86.inline.hpp"
+# include "vtableStubs.hpp"
+# include "ad_x86_32.hpp"

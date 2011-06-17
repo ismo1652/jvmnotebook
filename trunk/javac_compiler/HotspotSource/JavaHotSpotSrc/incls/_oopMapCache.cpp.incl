@@ -1,0 +1,3 @@
+# include "jvmtiRedefineClassesTrace.hpp"
+# include "generateOopMap.hpp"
+# include "oopMapCache.hpp"

@@ -1,0 +1,7 @@
+# include "callGenerator.hpp"
+# include "compileLog.hpp"
+# include "divnode.hpp"
+# include "graphKit.hpp"
+# include "idealKit.hpp"
+# include "rootnode.hpp"
+# include "stringopts.hpp"

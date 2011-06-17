@@ -1,0 +1,4 @@
+# include "classLoadingService.hpp"
+# include "dictionary.hpp"
+# include "hashtable.inline.hpp"
+# include "jvmtiRedefineClassesTrace.hpp"

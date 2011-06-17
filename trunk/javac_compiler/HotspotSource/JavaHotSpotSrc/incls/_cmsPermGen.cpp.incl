@@ -1,0 +1,6 @@
+# include "cmsPermGen.hpp"
+# include "compactPermGen.hpp"
+# include "cmsLockVerifier.hpp"
+# include "concurrentGCThread.hpp"
+# include "concurrentMarkSweepThread.hpp"
+# include "concurrentMarkSweepGeneration.inline.hpp"

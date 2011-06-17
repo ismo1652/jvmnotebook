@@ -1,0 +1,5 @@
+# include "c1_MacroAssembler.hpp"
+# include "c1_Runtime1.hpp"
+# include "compiledICHolderOop.hpp"
+# include "vframeArray.hpp"
+# include "vmreg_x86.inline.hpp"
