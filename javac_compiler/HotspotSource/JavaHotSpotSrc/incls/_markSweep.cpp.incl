@@ -1,0 +1,3 @@
+# include "compileBroker.hpp"
+# include "psCompactionManager.inline.hpp"
+# include "objArrayKlass.inline.hpp"

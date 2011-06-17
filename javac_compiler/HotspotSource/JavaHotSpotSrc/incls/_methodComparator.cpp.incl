@@ -1,0 +1,2 @@
+# include "jvmtiRedefineClassesTrace.hpp"
+# include "methodComparator.hpp"

@@ -1,0 +1,5 @@
+# include "compiledICHolderOop.hpp"
+# include "compiledICHolderKlass.hpp"
+# include "compiledIC.hpp"
+# include "icBuffer.hpp"
+# include "scopeDesc.hpp"

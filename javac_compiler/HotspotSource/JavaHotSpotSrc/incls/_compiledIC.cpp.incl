@@ -1,0 +1,6 @@
+# include "compiledICHolderOop.hpp"
+# include "compiledICHolderKlass.hpp"
+# include "compiledIC.hpp"
+# include "events.hpp"
+# include "icBuffer.hpp"
+# include "vtableStubs.hpp"

@@ -1,0 +1,3 @@
+# include "compiledICHolderOop.hpp"
+# include "compiledICHolderKlass.hpp"
+# include "compiledIC.hpp"

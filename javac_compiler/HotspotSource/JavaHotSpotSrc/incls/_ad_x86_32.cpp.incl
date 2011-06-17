@@ -1,0 +1,4 @@
+# include "ad_x86_32.hpp"
+# include "compiledICHolderOop.hpp"
+# include "locknode.hpp"
+# include "vmreg_x86.inline.hpp"
