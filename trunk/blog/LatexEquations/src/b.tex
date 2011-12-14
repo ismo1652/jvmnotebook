@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{algorithmic}
+
+\oddsidemargin = .1in
+\textwidth = 6in
+\textheight = 7.5in
+\headheight = 0in
+\headsep = 0in
+\topmargin = .1in
+\floatsep = .1in
+\textfloatsep = \floatsep
+\intextsep = \floatsep
+
+\begin{document}
+{\Large
+
+\begin{equation}
+ 2 + 2 = 4
+\end{equation}
+
+\begin{equation}
+  50 apples \times 100 apples = lots of apples 
+\end{equation}
+
+%% From: http://sip.clarku.edu/tutorials/TeX/intro.html
+%% Also see: http://www.thestudentroom.co.uk/wiki/LaTex
+%% http://en.wikibooks.org/wiki/LaTeX/Algorithms_and_Pseudocode 
+
+\begin{equation}
+  x \longleftarrow u
+  y \longleftarrow 0
+\end{equation}
+
+\begin{algorithmic}
+
+  \FOR{$i = 1 \to 10$} 
+    \STATE $i \gets i + 1$
+  \ENDFOR 
+\end{algorithmic}
+
+\begin{algorithmic}                    % enter the algorithmic environment
+\REQUIRE $n \geq 0 \vee x \neq 0$
+\ENSURE $y = x^n$
+\STATE $y \Leftarrow 1$
+\IF{$n < 0$}
+\STATE $X \Leftarrow 1 / x$
+\STATE $N \Leftarrow -n$
+\ELSE
+\STATE $X \Leftarrow x$
+\STATE $N \Leftarrow n$
+\ENDIF
+\WHILE{$N \neq 0$}
+\IF{$N$ is even}
+\STATE $X \Leftarrow X \times X$
+\STATE $N \Leftarrow N / 2$
+\ELSE[$N$ is odd]
+\STATE $y \Leftarrow y \times X$
+\STATE $N \Leftarrow N - 1$
+\ENDIF
+\ENDWHILE
+\end{algorithmic}
+
+}
+
+\end{document}
