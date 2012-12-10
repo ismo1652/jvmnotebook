@@ -1,6 +1,9 @@
 ########## Makefile for JNI builds #############
 ### 11/11/2012
 ### i686-pc-mingw32-g++ (GCC) 4.5.2
+### Generic Makefile -
+### Berlin Brown
+##########
 
 CC=i686-pc-mingw32-g++ 
 FLAGS=-mwindows -Wl,--add-stdcall-alias -shared -static
