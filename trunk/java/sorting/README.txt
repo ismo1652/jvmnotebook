@@ -32,3 +32,20 @@ i:13 14
 ! Number of swaps : 811121 , sort/calls : 53899 , parti/calls : 1,579,984 , brute=2,105,032,704 ops=0
 
 
+------------------
+
+Output from TestSort:
+Based on gnupath:
+
+->j:2 2
+->j:3 4
+->j:4 10
+->j:5 12
+->j:6 13
+->j:7 16
+->j:8 16
+->j:9 19
+->j:10 21
+->j:11 23
+->j:12 23
+Compares : 1178981
