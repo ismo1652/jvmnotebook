@@ -1,3 +1,5 @@
+// Java version of quick sort
+// Berlin Brown
 import java.io.FileInputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -37,7 +39,8 @@ public class QuickSort2 {
         this.ops++;
         int store = l;
         for (int idx = l; idx < r; idx++) {
-            if (A[idx].compareTo(piv) <= 0) {
+            if (compare(A[idx], piv)) {
+            //if (A[idx].compareTo(piv) <= 0) {
                 tmp = A[idx];
                 A[idx] = A[store];
                 A[store] = tmp;
@@ -45,7 +48,7 @@ public class QuickSort2 {
                 store++;
             }
             comps++;
-        }
+        } // End of the for //
         tmp = A[r];
         A[r] = A[store];
         A[store] = tmp;
@@ -99,6 +102,11 @@ public class QuickSort2 {
         }
         System.out.println("Compares : " + q.comps);
     } // End of read method //   
+
+    protected boolean compare(Comparable<Object> a, Comparable<Object> b) {
+        return (a.compareTo(b) <= 0);
+    }
+
 
     /** QuickSort Test Case Usage */
     public static void main(final String [] args) throws Exception {
