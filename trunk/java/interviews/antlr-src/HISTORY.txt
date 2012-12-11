@@ -1,0 +1,200 @@
+  196  vi pom.xml 
+  197  mvn package
+  198  vi pom.xml 
+  199  mvn package
+  201  pw
+  202  vi pom.xml 
+  205  mvn package
+  206  vi pom.xml 
+  207  mvn package
+  208  vi pom.xml 
+  209  mvn package
+  210  vi pom.xml 
+  211  cp pom.xml y
+  212  vi pom.xml 
+  213  mvn package
+  222  find . -name '*.jar'
+  223  cp ./runtime/Java/target/antlr-runtime-3.5-SNAPSHOT.jar  ../antlr-3.5-snapshot.jar
+  226  clera
+  227  clear
+  228  java  -classpath antlr-3.5-snapshot.jar org.antlr.Tool -o org/berlin Java.g
+  230  jar
+  232  jar -tvf antlr-3.5-snapshot.jar 
+  233  l s-lta
+  235  java  -classpath antlr-3.5-snapshot.jar;antlr-antlr3-01fa1fb/ org.antlr.Tool -o org/berlin Java.g
+  236  exit
+  245  s
+  249  java  -classpath antlr-3.5-snapshot.jar;antlr-3.4-complete.jar org.antlr.Tool -o org/berlin Java.g
+  250  java  -classpath antlr-3.5-snapshot.jar:antlr-3.4-complete.jar org.antlr.Tool -o org/berlin Java.g
+  251  java  -classpath "./antlr-3.5-snapshot.jar;./antlr-3.4-complete.jar" org.antlr.Tool -o org/berlin Java.g
+  257  java *.java
+  258  javac *.java
+  265  mvn package
+  267  find . -name '*.jar'
+  271  find . -name '*.java'
+  273  vi pom.xml
+  274  mvn package
+  275  find . -name '*.java'
+  276  find . -name '*.jar'
+  278  vi pom.xml
+  279  mvn package
+  281  mvn package
+  282  mvn package
+  283  mvn package
+  284  mvn.exe package
+  285  locate mvn
+  286  pw
+  287  python
+  289  vi pom.xml
+  292  find . -name '*.jar'
+  294  cp ./tool/target/antlr-3.5-SNAPSHOT.jar ../antlr-3.5-snapshot.jar
+  297  java  -classpath antlr-3.5-snapshot.jar:antlr-3.4-complete.jar org.antlr.Tool -o org/berlin Java.g
+  298  java  -classpath antlr-3.5-snapshot.jar;antlr-3.4-complete.jar org.antlr.Tool -o org/berlin Java.g
+  299  java  -classpath "antlr-3.5-snapshot.jar;antlr-3.4-complete.jar" org.antlr.Tool -o org/berlin Java.g
+  305  javac *.java
+  306  javac  -classpath "../antlr-3.5-snapshot.jar;../antlr-3.4-complete.jar" *.java
+  308  javac -classpath '../antlr-3.5-snapshot.jar;../antlr-3.4-complete.jar' *.java
+  309  javac -classpath '../antlr-3.5-snapshot.jar:../antlr-3.4-complete.jar' *.java
+  310  javac -classpath '../../../antlr-3.5-snapshot.jar:../../../antlr-3.4-complete.jar' *.java
+  311  javac -classpath '../../../antlr-3.5-snapshot.jar:../../../antlr-3.4-complete.jar' *.java
+  312  javac -classpath '../../../antlr-3.5-snapshot.jar;../../../antlr-3.4-complete.jar' *.java
+  314  javac -classpath '../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  318  vi Main.java
+  320  javac -classpath '../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  321  grep 'com' *
+  323  vi JavaParser.java
+  325  java
+  331  rm -Rvf src
+  335  javac -classpath '../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  336  vi Main.java
+  337  javac -classpath '../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  338  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  339  vi JavaLexer.java
+  340  vi JavaLexer.java
+  341  grep habelitz *
+  342  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  343  rm *.class
+  344  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  345  vi JavaLexer.java 
+  347  vi Main.java
+  348  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  349  vi Main.java
+  351  mv Main.java M
+  352  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  353  mv Main.java
+  354  vi M
+  355  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  356  vi M
+  357  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  358  mv M Main.java
+  359  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  362  l
+  369  mvn antlr/ antlr-src
+  370  mv antlr/ antlr-src
+  371  mv antlr/ antlr-src
+  372  mv antlr/ antlr-src
+  373  mv antlr/ antlr-src
+  374  mv antlr/ antlr-src
+  375  mv antlr/ antlr-src
+  376  exit
+  385  mv antlr/ antlr-src
+  386  exit
+  400  mvn antlr antrl-src
+  402  mv antlr/ antlr-src
+  409  rm *.class
+  410  history
+  411   javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  413  rm *.class
+  414  javac --help
+  415  javac -help
+  416  history
+  417  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java -d out
+  418  javac -dout -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java 
+  419  javac -d out -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java 
+  420  mkdir out
+  421  javac -d out -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java 
+  435  rm -Rf out
+  437  mkdir bin
+  439  vi Main.java
+  440  javac -d gen -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java 
+  441  javac -d bin -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java 
+  442  l
+  447  rm -Rf bin
+  448  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java 
+  450  vi Main.java
+  451  vi Main.java
+  454  pw
+  455  dls
+  456  vi Main.java
+  457  history
+  458   javac -d bin -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  460  exit
+  473  s
+  475   javac -d bin -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  476  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  478  java Main
+  484  du -h
+  486  mvn clean
+  488  rm -Rvf gunit
+  490  rm -Rvf gunit-maven-plugin/
+  492  vi y
+  493  kls
+  495  mvn package
+  497  mvn clean
+  499  exit
+  500  d src
+  515  mvn clean
+  527  rm -Rvf target
+  534  rm -Rvf target
+  541  ant clean
+  542  la
+  544  mvn clean
+  546  mvn --help
+  547  mvn -fn
+  548  mvn -fn clean
+  550  du -h
+  551  find . -name '*.jar'
+  553  rm -Rvf antlr-ant
+  554  find . -name '*.jar'
+  555  mvn clean
+  556  mvn --help
+  557  ;
+  562  history
+  563  mvn -N install
+  564  mvn -Dgpg.skip=true -N install
+  565  mvn -Dgpg.skip=true -Dmaven.test.skip=true package
+  578  sl
+  585  find . -name '*.jar'
+  591  lls
+  598  s
+  602  rm antlr-antlr3-release-3.4-259.tar.gz
+  604  du -h
+  608  mvn clean
+  609  hisory
+  610  history
+  611  mvn -fn clean
+  616  du -h
+  620  vi Main.java
+  621  rm Main.java
+  623  vi Test.java
+  626  javac Test.java
+  627  rm Test.class
+  635  vi Main.java
+  637  javac *.java
+  638  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  642  java -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' org.berlin.Main Test.java
+  643  java -classpath '.;./antlr-3.5-snapshot.jar;./antlr-3.4-complete.jar' org.berlin.Main Test.java
+  646  vi Main.java
+  649  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  651  java -classpath '.;./antlr-3.5-snapshot.jar;./antlr-3.4-complete.jar' org.berlin.Main Test.java
+  654  vi Main.java
+  655  javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *.java
+  657  java -classpath '.;./antlr-3.5-snapshot.jar;./antlr-3.4-complete.jar' org.berlin.Main Test.java
+  660  vi Main.java
+  668  rm *.class
+  674  vi README.txt
+  675  history
+  676  q!
+  678  vi README.txt 
+  679  history
+  680  history > HISTORY.txt

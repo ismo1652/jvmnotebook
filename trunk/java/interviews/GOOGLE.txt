@@ -1,0 +1,19 @@
+What is the difference between a mutex and a semaphore? Which one would you use to protect access to an increment operation?
+Describe the algorithm for a depth-first graph traversal.
+Tree search algorithms. Write BFS and DFS code, explain run time and space requirements. Modify the code to handle trees with weighted edges and loops with BFS and DFS, make the code print out path to goal state.
+Describe the data structure that is used to manage memory. (stack)
+If you have 1 million integers, how would you sort them efficiently?
+Suppose you have an NxN matrix of positive and negative integers. Write some code that finds the sub-matrix with the maximum sum of its elements.
+Write some code to reverse a string
+Write some code to find all permutations of the letters in a particular string
+Design and describe a system/application that will most efficiently produce a report of the top 1 million Google search requests. These are the particulars: 1) You are given 12 servers to work with. They are all dual-processor machines with 4Gb of RAM, 4x400GB hard drives and networked together.(Basically, nothing more than high-end PC’s) 2) The log data has already been cleaned for you. It consists of 100 Billion log lines, broken down into 12 320 GB files of 40-byte search terms per line. 3) You can use only custom written applications or available free open-source software.
+There is an array A[N] of N numbers. You have to compose an array Output[N] such that Output[i] will be equal to multiplication of all the elements of A[N] except A[i]. For example Output[0] will be multiplication of A[1] to A[N-1] and Output[1] will be multiplication of A[0] and from A[2] to A[N-1]. Solve it without division operator and in O(n).
+How do you put a Binary Search Tree in an array in a efficient manner. Hint :: If the node is stored at the ith position and its children are at 2i and 2i+1(I mean level order wise)Its not the most efficient way.
+Design a stack. We want to push, pop, and also, retrieve the minimum element in constant time.
+How would you store 1 million phone numbers?
+What sort would you use if you required tight max time bounds and wanted highly regular performance.
+What sort would you use if you had a large data set on disk and a small amount of ram to work with?
+If a person dials a sequence of numbers on the telephone, what possible words/strings can be formed from the letters associated with those numbers?
+Suppose we have N companies, and we want to eventually merge them into one big company. How many ways are there to merge?
+Implement put/get methods of a fixed size cache with LRU replacement algorithm.
+Given a file of 4 billion 32-bit integers, how to find one that appears at least twice?
