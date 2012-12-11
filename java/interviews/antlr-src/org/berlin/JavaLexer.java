@@ -1,6 +1,6 @@
-// $ANTLR 3.5-SNAPSHOT Java.g 2012-12-11 11:24:21
+// $ANTLR 3.5-SNAPSHOT Java.g 2012-12-11 14:55:36
 
-package org.berlin;
+  package org.berlin;
 
 
 import org.antlr.runtime.*;
@@ -200,7 +200,7 @@ public class JavaLexer extends Lexer {
 	 *  needed forever the lexer part of the grammar should be changed by replacing 
 	 *  the 'if-else' stuff within the approprate lexer grammar actions.
 	 */
-	public boolean preserveWhitespacesAndComments = false;
+	public boolean preserveWhitespacesAndComments = true;
 
 
 	// delegates
