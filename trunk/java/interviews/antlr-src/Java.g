@@ -2,8 +2,7 @@
  * An ANTLRv3 capable Java 1.5 grammar for building ASTs.
  *
  * Note that there's also the tree grammar 'JavaTreeParser.g' that can be fed
- * with this grammer's output.
- *
+ * with this grammer's output. 
  *
  * Please report any detected errors or even suggestions regarding this grammar
  * to
@@ -304,7 +303,7 @@ tokens {
 }
 
 @lexer::header {
-package com.habelitz.jsobjectizer.unmarshaller.antlrbridge.generated;
+  package org.berlin;
 }
 
 @lexer::members {
@@ -317,7 +316,7 @@ package com.habelitz.jsobjectizer.unmarshaller.antlrbridge.generated;
  *  needed forever the lexer part of the grammar should be changed by replacing 
  *  the 'if-else' stuff within the approprate lexer grammar actions.
  */
-public boolean preserveWhitespacesAndComments = false;
+public boolean preserveWhitespacesAndComments = true;
 }
 
 // Starting point for parsing a Java file.
