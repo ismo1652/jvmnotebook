@@ -19,6 +19,10 @@ javac -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' *
 java -classpath '.;../../antlr-3.5-snapshot.jar;../../antlr-3.4-complete.jar' org.berlin.Main Test.java
 #########
 
+Note: antlr-3.5-snapshot.jar is based on the antlr maven compile.
+antlr-3.4.compile.jar is the binary from the antlr site.
+######################################
+
 
 Output, printing tokens in file:
 
